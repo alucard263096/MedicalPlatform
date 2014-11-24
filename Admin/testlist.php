@@ -4,5 +4,4 @@
 
   $model=new TestXmlModel();
   $model->ShowList($smarty);
-
 ?>

@@ -3,11 +3,6 @@
   <name>测试XML驱动模式</name>
   <fields>
     <field>
-      <name>id</name>
-      <key>id</key>
-      <type>primary</type>
-    </field>
-    <field>
       <name>序号</name>
       <key>seq</key>
       <type>number</type>
@@ -74,11 +69,13 @@
       <name>新增</name>
       <type>link</type>
       <url>testdetail.php</url>
+      <search>1</search>
     </option>
     <option>
       <name>删除</name>
       <type>function</type>
       <function>delete()</function>
+      <detail>detail1</detail>
     </option>
   </options>
 </root>

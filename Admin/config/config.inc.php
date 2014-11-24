@@ -3,7 +3,7 @@
 #[Root]
 $CONFIG['rootpath']		= '/MedicalPlatform/Admin';  
 $CONFIG['charset']		= 'utf-8'; 
-$CONFIG['Title']             = 'MedicalP';
+$CONFIG['Title']             = 'MedicalPlatform';
 $CONFIG['URL']="http://localhost:8080/MedicalPlatform/Admin";
 $CONFIG['lang']="zh-cn";
 
