@@ -68,8 +68,8 @@
   <options>
     <option>
       <name>新增</name>
-      <type>link</type>
-      <url>testdetail.php</url>
+      <type>function</type>
+      <function>addNew()</function>
       <search>1</search>
     </option>
     <option>

@@ -13,7 +13,15 @@
     <tr>
         {{foreach from=$row item=col key=key}}
             {{if $key!="id"}}
-        <td>{{$col}}</td>
+            {{foreach from=$ModelData.fields.field item=rs}}
+                {{if $key==$rs.key && $rs.displayinlist=="1"}}
+                    {{if $rs.gotodetail=="1"}}
+                    <td><a href="{{$PageName}}?action=edit&&id={{$row.id}}">{{$col}}</a></td>
+                    {{else}}
+                    <td>{{$col}}</td>
+                    {{/if}}
+                {{/if}}
+            {{/foreach}}
             {{/if}}
         {{/foreach}}
     </tr>

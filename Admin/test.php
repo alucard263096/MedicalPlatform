@@ -9,5 +9,9 @@
 
   }else if($action=="search"){
 	$model->ShowSearchResult($dbmgr,$smarty,$_REQUEST);
+  }else if($action=="add"){
+	$model->Add($smarty);
+  }else if($action=="edit"){
+	$model->Edit($dbmgr,$smarty,$_REQUEST["id"]);
   }
 ?>
