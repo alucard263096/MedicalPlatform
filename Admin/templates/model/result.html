@@ -1,0 +1,21 @@
+﻿
+<thead>
+    <tr>
+        {{foreach from=$ModelData.fields.field item=rs}}
+        {{if $rs.displayinlist=="1"}}
+        <th>{{$rs.name}}</th>
+        {{/if}}
+        {{/foreach}}
+    </tr>
+</thead>
+<tbody>
+    {{foreach from=$result item=row}}
+    <tr>
+        {{foreach from=$row item=col key=key}}
+            {{if $key!="id"}}
+        <td>{{$col}}</td>
+            {{/if}}
+        {{/foreach}}
+    </tr>
+    {{/foreach}}
+</tbody>

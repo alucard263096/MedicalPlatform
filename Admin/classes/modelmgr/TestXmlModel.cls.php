@@ -2,8 +2,8 @@
 
 class TestXmlModel extends XmlModel{
 	
-	public function __construct(){
-		parent::__construct("test");
+	public function __construct($pagename){
+		parent::__construct("test",$pagename);
 	}
 
 }
