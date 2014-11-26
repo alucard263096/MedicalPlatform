@@ -36,7 +36,7 @@
                                         {{foreach from=$ModelData.fields.field item=rs}}
                                         {{if $rs.search=="1"}}
                                         <div class="form-group col-md-6">
-                                            <label class="col-md-4 control-label" for="typeahead">{{$rs.name}}</label>
+                                            <label class="col-md-4 control-label" >{{$rs.name}}</label>
                                             {{if $rs.type=="text" || $rs.type=="longtext" || $rs.type=="html"}}
                                             <div class="col-md-8">
                                                 <input type="text" class="form-control" id="condition_{{$rs.key}}">
@@ -44,7 +44,7 @@
                                             {{elseif $rs.type=="datetime"}}
                                             <div class="col-md-8">
                                                 <div class="col-md-5" style="padding:0"><input type="text" class="form-control datepicker" id="condition_{{$rs.key}}_from"></div>
-                                                <div class="col-md-2" style="padding:3;text-align:center">-</div>
+                                                <div class="col-md-2" style="padding:3px;text-align:center">-</div>
                                                 <div class="col-md-5" style="padding:0"><input type="text" class="form-control datepicker" id="condition_{{$rs.key}}_to"></div>
                                             </div>                                            
                                             {{elseif $rs.type=="select" }}
@@ -80,6 +80,7 @@
                                     <table class="datatable table table-striped table-bordered" id="searchResult">
                                         <thead>
                                             <tr>
+                                                <th></th>
                                                 {{foreach from=$ModelData.fields.field item=rs}}
                                                     {{if $rs.displayinlist=="1"}}
                                                     <th>{{$rs.name}}</th>
@@ -121,21 +122,18 @@
             };
 
             $("#searchResult").load("{{$PageName}}",json,function(data){
-                $('#searchResult').dataTable({
-                    "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
-                    "sPaginationType": "bootstrap",
-                    "oLanguage": {
-                        "sLengthMenu": "_MENU_ records per page"
-                    }
-                });
+               
             });
 
         });
     });
     function addNew(){
 
-
         self.location='{{$PageName}}?action=add';
+    }
+
+    function deleteInList(){
+
     }
 
 </script>

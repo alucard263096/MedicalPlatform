@@ -28,7 +28,7 @@ $CONFIG['error_handler'] ="E_ALL";
 #[Database]
 $CONFIG['database']['provider']	= 'mysql';  //mssql,sqlsrv
 $CONFIG['database']['host']		= 'localhost';  
-$CONFIG['database']['database']	= 'PortalSite_LM';  
+$CONFIG['database']['database']	= 'medicalplatform';  
 $CONFIG['database']['user']		= 'root';  
 $CONFIG['database']['psw']		= 'root'; 
 

@@ -44,7 +44,12 @@ class XmlModel
 				foreach ($value["options"]["option"] as $option){
 					$sql=$sql." when '".$option["value"]."' then '".$option["name"]."'";
 				}
-				$sql=$sql." else 'unknow' ".$value["key"];
+				$sql=$sql." else 'unknow' ";
+				$sql=$sql." end as ".$value["key"];
+
+			}else if($value["type"]=="check"){
+
+				$sql=$sql." ,case   r_main.".$value["key"]." when 'Y' then 'ÊÇ' else '·ñ' ";
 				$sql=$sql." end as ".$value["key"];
 
 			}else{
@@ -55,7 +60,7 @@ class XmlModel
 		}
 	}
 	
-	$sql=$sql." from ".$this->XmlData["tablename"]." as r_main where 1==1 ";
+	$sql=$sql." from ".$this->XmlData["tablename"]." as r_main where 1=1 ";
 
 	foreach ($fields as $value){
 		
@@ -76,7 +81,8 @@ class XmlModel
 				}
 
 			}else{
-				if($request[$value["key"]]!=""){
+				if($request[$value["key"]]!=""
+				&&$request[$value["key"]]!="no-value"){
 
 					$sql=$sql." and '".$value["key"]."'='".$request[$value["key"]]."'";
 					
@@ -100,6 +106,15 @@ class XmlModel
     $smartyMgr->display(ROOT.'/templates/model/result.html');
 
   }
+
+  
+  public function Add($smartyMgr){
+    $smartyMgr->assign("ModelData",$this->XmlData);
+    $smartyMgr->assign("PageName",$this->PageName);
+    $smartyMgr->assign("action","add");
+    $smartyMgr->display(ROOT.'/templates/model/detail.html');
+  }
+
 }
 
 

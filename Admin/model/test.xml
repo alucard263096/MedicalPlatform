@@ -9,6 +9,7 @@
       <type>number</type>
       <displayinlist>1</displayinlist>
       <gotodetail>1</gotodetail>
+      <notnull>1</notnull>
     </field>
     <field>
       <name>名称</name>
@@ -17,12 +18,14 @@
       <displayinlist>1</displayinlist>
       <gotodetail>1</gotodetail>
       <search>1</search>
+      <notnull>1</notnull>
     </field>
     <field>
       <name>简介</name>
       <key>summary</key>
       <type>longtext</type>
       <search>1</search>
+      <notnull>1</notnull>
     </field>
     <field>
       <name>内容</name>
@@ -46,6 +49,7 @@
       <type>datetime</type>
       <displayinlist>1</displayinlist>
       <search>1</search>
+      <notnull>1</notnull>
     </field>
     <field>
       <name>状态</name>
@@ -63,6 +67,7 @@
         </option>
       </options>
       <search>1</search>
+      <notnull>1</notnull>
     </field>
   </fields>
   <options>
@@ -75,8 +80,8 @@
     <option>
       <name>删除</name>
       <type>function</type>
-      <function>delete()</function>
-      <detail>detail1</detail>
+      <function>deleteInList()</function>
+      <search>1</search>
     </option>
   </options>
 </root>

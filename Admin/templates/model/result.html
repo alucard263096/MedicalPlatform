@@ -1,6 +1,7 @@
 ﻿
 <thead>
     <tr>
+        <th></th>
         {{foreach from=$ModelData.fields.field item=rs}}
         {{if $rs.displayinlist=="1"}}
         <th>{{$rs.name}}</th>
@@ -11,6 +12,7 @@
 <tbody>
     {{foreach from=$result item=row}}
     <tr>
+        <td><input class="RowSelect" value="{{$row.id}}" /></td>
         {{foreach from=$row item=col key=key}}
             {{if $key!="id"}}
             {{foreach from=$ModelData.fields.field item=rs}}

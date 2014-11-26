@@ -15,6 +15,68 @@
     </div>
 </div>
 
+
+
+
+
+
+
+
+
+<div id="infobox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="myModalLabel" class="modal-title">信息</h4>
+            </div>
+            <div class="modal-body">
+                <p id="infobox_msg"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="warningbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="myModalLabel" class="modal-title">警告</h4>
+            </div>
+            <div class="modal-body">
+                <p id="warningbox_msg"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="errprbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="myModalLabel" class="modal-title">错误</h4>
+            </div>
+            <div class="modal-body">
+                <p id="errorbox_msg"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script type="text/javascript">
     $(function () {
 
@@ -81,6 +143,31 @@
             }
         });
     });
+
+    function infoDialog(msg) {
+        $("#infobox_msg").text(msg);
+        try{
+            $("#infobox").dialog("destroy");
+        } catch (e) { }
+        $("#infobox").dialog();
+        $("#infobox").dialog("open");
+    }
+
+    function warningDialog(msg) {
+        $("#warningbox_msg").text(msg);
+        try {
+            $("#warningbox").dialog("destroy");
+        } catch (e) { }
+        $("#warningbox").dialog("open");
+    }
+
+    function errorDialog(msg) {
+        $("#errorbox_msg").text(msg);
+        try {
+            $("#errorbox").dialog("destroy");
+        } catch (e) { }
+        $("#errorbox").dialog("open");
+    }
 </script>
 
     </body>
