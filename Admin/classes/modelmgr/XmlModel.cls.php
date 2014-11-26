@@ -49,7 +49,7 @@ class XmlModel
 
 			}else if($value["type"]=="check"){
 
-				$sql=$sql." ,case   r_main.".$value["key"]." when 'Y' then 'ÊÇ' else '·ñ' ";
+				$sql=$sql." ,case   r_main.".$value["key"]." when 'Y' then '".$value["yvalue"]."' else '".$value["nvalue"]."' ";
 				$sql=$sql." end as ".$value["key"];
 
 			}else{
@@ -70,13 +70,13 @@ class XmlModel
 
 				if($request[$value["key"]."_from"]!=""){
 
-					$sql=$sql." and '".$value["key"]."'>='".$request[$value["key"]."_from"]."'";
+					$sql=$sql." and r_main.".$value["key"].">='".mysql_real_escape_string($request[$value["key"]."_from"])."'";
 
 				}
 
 				if($request[$value["key"]."_to"]!=""){
 
-					$sql=$sql." and '".$value["key"]."'<='".$request[$value["key"]."_to"]."'";
+					$sql=$sql." and '".$value["key"]."'<='".mysql_real_escape_string($request[$value["key"]."_to"])."'";
 
 				}
 
@@ -84,7 +84,7 @@ class XmlModel
 				if($request[$value["key"]]!=""
 				&&$request[$value["key"]]!="no-value"){
 
-					$sql=$sql." and '".$value["key"]."'='".$request[$value["key"]]."'";
+					$sql=$sql." and '".$value["key"]."'='".mysql_real_escape_string($request[$value["key"]])."'";
 					
 				}
 			}
@@ -113,6 +113,61 @@ class XmlModel
     $smartyMgr->assign("PageName",$this->PageName);
     $smartyMgr->assign("action","add");
     $smartyMgr->display(ROOT.'/templates/model/detail.html');
+  }
+  
+  public function Edit($dbMgr,$smartyMgr,$id){
+
+	$sql="select * from ".$this->XmlData["tablename"]." where id=$id";
+	$query = $dbMgr->query($sql);
+	$result = $dbMgr->fetch_array($query); 
+
+	$XmlDataWithInfo=$this->assignWithInfo($this->XmlData,$result);
+	
+    $smartyMgr->assign("ModelData",$XmlDataWithInfo);
+    $smartyMgr->assign("PageName",$this->PageName);
+    $smartyMgr->assign("id",$id);
+    $smartyMgr->assign("action","edit");
+    $smartyMgr->display(ROOT.'/templates/model/detail.html');
+  }
+
+  private function assignWithInfo($XmlDataEx,$info){
+	$fields=$XmlDataEx["fields"]["field"];
+	$count=count($fields);
+	for($i=0;$i<$count;$i++){
+		$fields[$i]["value"]=$info[$fields[$i]["key"]];
+	}
+	$XmlDataEx["fields"]["field"]=$fields;
+	//print_r($XmlDataEx);
+	return $XmlDataEx;
+  }
+  public function Save($dbMgr,$request,$sysuser){
+    $sql="";
+	$dbMgr->begin_trans();
+		
+
+	if($request["primary_id"]==""){
+	
+		$sql="select ifnull(max(id),0)+1 from ".$this->XmlData["tablename"];
+		$query = $dbMgr->query($sql);
+		$result = $dbMgr->fetch_array($query); 
+		$id=$result[0];
+
+		$sql="insert into ".$this->XmlData["tablename"]." (id";
+		$fields=$this->XmlData["fields"]["field"];
+		foreach ($fields as $value){
+			$sql=$sql.",".$value["key"];
+		}
+		$sql=$sql.",created_date,created_user,updated_date,updated_user ) values (";
+		$sql=$sql.$id;
+		foreach ($fields as $value){
+			$sql=$sql.",'".mysql_real_escape_string($request[$value["key"]])."'";
+		}
+		$sql=$sql.",now(),$sysuser,now(),$sysuser )";
+		$query = $dbMgr->query($sql);
+
+	}
+	$dbMgr->commit_trans();
+	return "right".$id;
   }
 
 }

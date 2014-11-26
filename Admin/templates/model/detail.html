@@ -38,42 +38,42 @@
                                         <div class="form-group col-md-6">
                                             <label class="col-md-4 control-label" >{{$rs.name}}</label>
                                             <div class="col-md-8">
-                                                <input type="text" class="form-control" id="content_{{$rs.key}}" {{if $rs.notnull=="1" }} placeholder="必填项"  {{/if}} />
+                                                <input type="text" class="form-control" value="{{$rs.value}}" id="content_{{$rs.key}}" {{if $rs.notnull=="1" }} placeholder="必填项" {{/if}} />
                                             </div>
                                         </div>    
                                         {{elseif $rs.type=="longtext"}}
                                         <div class="form-group col-md-12">
                                             <label class="col-md-2 control-label" >{{$rs.name}}</label>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" id="content_{{$rs.key}}" {{if $rs.notnull=="1" }} placeholder="必填项"  {{/if}} />
+                                                <input type="text" class="form-control" id="content_{{$rs.key}}" value="{{$rs.value}}" {{if $rs.notnull=="1" }} placeholder="必填项" {{/if}} />
                                             </div>
                                         </div>                                            
                                         {{elseif $rs.type=="html"}}
                                         <div class="form-group col-md-12">
                                             <label class="col-md-2 control-label" >{{$rs.name}}</label>
                                             <div class="col-md-10">
-                                                <textarea id="content_{{$rs.key}}" class="ckeditor"></textarea>
+                                                <textarea id="content_{{$rs.key}}" class="ckeditor">{{$rs.value}}</textarea>
                                             </div>
                                         </div>                                            
                                         {{elseif $rs.type=="datetime"}}
                                         <div class="form-group col-md-6">
                                             <label class="col-md-4 control-label" >{{$rs.name}}</label>
                                             <div class="col-md-8">
-                                                <input type="text" class="form-control datepicker" id="content_{{$rs.key}}" {{if $rs.notnull=="1" }} placeholder="必填项"  {{/if}} />
+                                                <input type="text" class="form-control datepicker" id="content_{{$rs.key}}" value="{{$rs.value}}" {{if $rs.notnull=="1" }} placeholder="必填项" {{/if}} />
                                             </div>
                                         </div>                                            
                                         {{elseif $rs.type=="number"}}
                                         <div class="form-group col-md-6">
                                             <label class="col-md-4 control-label" >{{$rs.name}}</label>
                                             <div class="col-md-8">
-                                                <input type="number" class="form-control" value="0" id="content_{{$rs.key}}" {{if $rs.notnull=="1" }} placeholder="必填项"  {{/if}} />
+                                                <input type="number" class="form-control" value="0" id="content_{{$rs.key}}" value="{{$rs.value}}" {{if $rs.notnull=="1" }} placeholder="必填项" {{/if}} />
                                             </div>
                                         </div>                                            
                                         {{elseif $rs.type=="check"}}
                                         <div class="form-group col-md-6">
                                             <label class="col-md-4 control-label" >{{$rs.name}}</label>
                                             <div class="col-md-8">
-                                                <input id="content_{{$rs.key}}" type="checkbox"  data-on-label="<i class='glyphicon glyphicon-ok glyphicon-white'></i>" data-offlabel="<i class='glyphicon glyphicon-remove'></i>" />
+                                                <input id="content_{{$rs.key}}" type="checkbox" {{if $rs.value=="Y"}}checked{{/if}} data-on-label="<i class='glyphicon glyphicon-ok glyphicon-white'></i>" data-offlabel="<i class='glyphicon glyphicon-remove'></i>" />
                                             </div>
                                         </div>                                                      
                                         {{elseif $rs.type=="upload"}}
@@ -81,8 +81,8 @@
                                             <label class="col-md-4 control-label" >{{$rs.name}}</label>
                                             <div class="col-md-8">
                                                 <input class="form-control uniform_on" name="file_{{$rs.key}}" id="file_{{$rs.key}}" onchange="upload('{{$rs.key}}', '{{$rs.uploadmodule}}')" type="file" />
-                                                <a id="view_{{$rs.key}}" target="_blank" >查看上传</a>
-                                                <input class="uniform_on" type="hidden" id="content_{{$rs.key}}" />
+                                                <a id="view_{{$rs.key}}" target="_blank" {{if $rs.value==""}}style="display:none;"{{/if}} >查看上传</a>
+                                                <input class="uniform_on" type="hidden" id="content_{{$rs.key}}" value="{{$rs.value}}" />
                                             </div>
                                         </div>                                      
                                         {{elseif $rs.type=="select"}}
@@ -92,7 +92,7 @@
                                                 <select id="content_{{$rs.key}}" class="form-control selectize-select">
                                                     <option value="no-value">--Select--</option>
                                                     {{foreach from=$rs.options.option item=rsoption}}
-                                                    <option value="{{$rsoption.value}}">{{$rsoption.name}}</option>
+                                                    <option {{if $rs.value==$rsoption.value}}selected{{/if}} value="{{$rsoption.value}}">{{$rsoption.name}}</option>
                                                     {{/foreach}}
                                                 </select>
                                             </div>
@@ -131,19 +131,22 @@
             return;
         }
         var json={action:"save"
-        ,"primary_id":"{{}}"
+        ,"primary_id":"{{$id}}"
         {{foreach from=$ModelData.fields.field item=rs}}
         {{if $rs.type=="check"}}
         ,"{{$rs.key}}":$("#content_{{$rs.key}}").attr("checked")?"Y":"N"
         {{else}}
-        ,"{{$rs.key}}":$("#content_{{$rs.key}}").val()
+        ,"{{$rs.key}}":$("#content_{{$rs.key}}").val()=="no-value"?"":$("#content_{{$rs.key}}").val()
         {{/if}}
         {{/foreach}}
         };
         $.post("{{$PageName}}",json,function(data){
             if(data.substring(0,5)=="right"){
                 id=data.substring(5,data.length);
+                alert("保存成功");
+                {{if $action=="add"}}
                 self.location='{{$PageName}}?action=edit&&id='+id;
+                {{/if}}
             }else{
                     alert("保存失败，请联系管理员");
             }

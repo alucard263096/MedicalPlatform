@@ -13,5 +13,8 @@
 	$model->Add($smarty);
   }else if($action=="edit"){
 	$model->Edit($dbmgr,$smarty,$_REQUEST["id"]);
+  }else if($action=="save"){
+	$result=$model->Save($dbmgr,$_REQUEST,$sysuser);
+	echo $result;
   }
 ?>

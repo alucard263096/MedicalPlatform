@@ -36,6 +36,9 @@
       <name>是否</name>
       <key>is_check</key>
       <type>check</type>
+      <displayinlist>1</displayinlist>
+      <yvalue>是</yvalue>
+      <nvalue>否</nvalue>
     </field>
     <field>
       <name>图标</name>

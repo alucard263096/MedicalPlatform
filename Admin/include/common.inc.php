@@ -69,4 +69,6 @@ include ROOT.'/classes/mgr/smarty.cls.php';
 
 include ROOT.'/classes/modelmgr/XmlModel.cls.php';
 
+$sysuser=1;
+
 ?>
