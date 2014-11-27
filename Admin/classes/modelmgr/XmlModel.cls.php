@@ -28,6 +28,7 @@ class XmlModel
   
     //$searchField=$this->XmlData["fields"];
 	//print_r($this->XmlData);
+	$dataWithFKey=LoadFKeyValue($this->XmlData);
     $smartyMgr->assign("ModelData",$this->XmlData);
     $smartyMgr->assign("PageName",$this->PageName);
     $smartyMgr->display(ROOT.'/templates/model/list.html');

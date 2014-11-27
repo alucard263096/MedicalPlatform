@@ -12,6 +12,17 @@
       <notnull>1</notnull>
     </field>
     <field>
+      <name>类别</name>
+      <key>cate_id</key>
+      <type>fkey</type>
+      <displayinlist>1</displayinlist>
+      <gotodetail>1</gotodetail>
+      <notnull>1</notnull>
+      <tablenme>tb_test_category</tablenme>
+      <ntabname>r_cate</ntabname>
+      <condition>r_cate.status='A'</condition>
+    </field>
+    <field>
       <name>名称</name>
       <key>name</key>
       <type>text</type>
