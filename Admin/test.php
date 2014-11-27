@@ -16,5 +16,8 @@
   }else if($action=="save"){
 	$result=$model->Save($dbmgr,$_REQUEST,$sysuser);
 	echo $result;
+  }else if($action=="delete"){
+	$result=$model->Delete($dbmgr,$_REQUEST["idlist"],$sysuser);
+	echo $result;
   }
 ?>

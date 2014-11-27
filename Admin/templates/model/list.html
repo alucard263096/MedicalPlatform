@@ -121,19 +121,43 @@
                 {{/foreach}}
             };
 
-            $("#searchResult").load("{{$PageName}}",json,function(data){
-               
+        $("#searchResult").load("{{$PageName}}",json,function(data){
+            $('#searchResult').dataTable({"bRetrieve": true,
+                    "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
+                    "sPaginationType": "bootstrap",
+                    "oLanguage": {
+                        "sLengthMenu": "_MENU_ records per page"
+                    }
+                });
             });
 
         });
     });
     function addNew(){
-
         self.location='{{$PageName}}?action=add';
     }
 
     function deleteInList(){
-
+        var idlist="0";
+        $("#searchResult input:checkbox:checked.RowSelect").each(function(){
+            idlist+=","+$(this).val();
+        });
+        if(idlist!="0"){
+            if (window.confirm("确认要删除吗?")){
+                $.post("{{$PageName}}",{"action":"delete","idlist":idlist},function(data){
+                    if(data=="success")
+                    {
+                        alert("删除成功");
+                        $("#btnSearch").click();
+                    }
+                    else
+                    {
+                        alert("删除失败");
+                    }
+			
+                });
+            }
+        }
     }
 
 </script>

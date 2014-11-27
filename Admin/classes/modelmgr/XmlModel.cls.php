@@ -60,11 +60,11 @@ class XmlModel
 		}
 	}
 	
-	$sql=$sql." from ".$this->XmlData["tablename"]." as r_main where 1=1 ";
+	$sql=$sql." from ".$this->XmlData["tablename"]." as r_main where r_main.status<>'D' ";
 
 	foreach ($fields as $value){
 		
-		if($value["displayinlist"]=="1"){
+		if($value["search"]=="1"){
 
 			if($value["type"]=="datetime"){
 
@@ -76,7 +76,7 @@ class XmlModel
 
 				if($request[$value["key"]."_to"]!=""){
 
-					$sql=$sql." and '".$value["key"]."'<='".mysql_real_escape_string($request[$value["key"]."_to"])."'";
+					$sql=$sql." and r_main.".$value["key"]."<='".mysql_real_escape_string($request[$value["key"]."_to"])."'";
 
 				}
 
@@ -84,7 +84,7 @@ class XmlModel
 				if($request[$value["key"]]!=""
 				&&$request[$value["key"]]!="no-value"){
 
-					$sql=$sql." and '".$value["key"]."'='".mysql_real_escape_string($request[$value["key"]])."'";
+					$sql=$sql." and r_main.".$value["key"]." like '%".mysql_real_escape_string($request[$value["key"]])."%'";
 					
 				}
 			}
@@ -165,12 +165,25 @@ class XmlModel
 		$sql=$sql.",now(),$sysuser,now(),$sysuser )";
 		$query = $dbMgr->query($sql);
 
+	}else{
+		$id=$request["primary_id"];
+		$sql="update ".$this->XmlData["tablename"]." set updated_date=now(),updated_user=$sysuser";
+		$fields=$this->XmlData["fields"]["field"];
+		foreach ($fields as $value){
+			$sql=$sql.", ".$value["key"]."='".mysql_real_escape_string($request[$value["key"]])."'";
+		}
+		$sql=$sql." where id=$id";
+		$query = $dbMgr->query($sql);
 	}
 	$dbMgr->commit_trans();
 	return "right".$id;
   }
-
+  public function Delete($dbMgr,$idlist,$sysuser){
+    
+	$sql="update ".$this->XmlData["tablename"]." set status='D',updated_user=$sysuser,updated_date=now() where id in ($idlist)";
+	$query = $dbMgr->query($sql);
+	return "success";
+  }
 }
-
 
 ?>

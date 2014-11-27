@@ -66,7 +66,7 @@
                                         <div class="form-group col-md-6">
                                             <label class="col-md-4 control-label" >{{$rs.name}}</label>
                                             <div class="col-md-8">
-                                                <input type="number" class="form-control" value="0" id="content_{{$rs.key}}" value="{{$rs.value}}" {{if $rs.notnull=="1" }} placeholder="必填项" {{/if}} />
+                                                <input type="number" class="form-control" value="{{$rs.value}}" id="content_{{$rs.key}}"  {{if $rs.notnull=="1" }} placeholder="必填项" {{/if}} />
                                             </div>
                                         </div>                                            
                                         {{elseif $rs.type=="check"}}
@@ -81,7 +81,7 @@
                                             <label class="col-md-4 control-label" >{{$rs.name}}</label>
                                             <div class="col-md-8">
                                                 <input class="form-control uniform_on" name="file_{{$rs.key}}" id="file_{{$rs.key}}" onchange="upload('{{$rs.key}}', '{{$rs.uploadmodule}}')" type="file" />
-                                                <a id="view_{{$rs.key}}" target="_blank" {{if $rs.value==""}}style="display:none;"{{/if}} >查看上传</a>
+                                                <a id="view_{{$rs.key}}" target="_blank" {{if $rs.value==""}}style="display:none;"{{else}}href="{{$rootpath}}/upload/{{$rs.uploadmodule}}/{{$rs.value}}"{{/if}} >查看上传</a>
                                                 <input class="uniform_on" type="hidden" id="content_{{$rs.key}}" value="{{$rs.value}}" />
                                             </div>
                                         </div>                                      
@@ -121,7 +121,9 @@
         });
         $('input[type="checkbox"],[type="radio"]').not('#create-switch').bootstrapSwitch();
         $('#btnSave').click(save);
-
+        $("#btnReturnToList").click(function(){
+            self.location="{{$PageName}}";
+        });
 
     });
 
@@ -134,7 +136,7 @@
         ,"primary_id":"{{$id}}"
         {{foreach from=$ModelData.fields.field item=rs}}
         {{if $rs.type=="check"}}
-        ,"{{$rs.key}}":$("#content_{{$rs.key}}").attr("checked")?"Y":"N"
+        ,"{{$rs.key}}":$("#content_{{$rs.key}}").prop("checked")?"Y":"N"
         {{else}}
         ,"{{$rs.key}}":$("#content_{{$rs.key}}").val()=="no-value"?"":$("#content_{{$rs.key}}").val()
         {{/if}}
@@ -164,7 +166,7 @@
 
         if($("#content_{{$rs.key}}").val()=="no-value"
             ||$("#content_{{$rs.key}}").val()==""){
-            message+="请输入或选择{{$rs.name}}<br />";
+            message+="请输入或选择{{$rs.name}}\r\n";
         }
 
         {{/if}}
