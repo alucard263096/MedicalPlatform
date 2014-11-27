@@ -17,9 +17,10 @@
       <type>fkey</type>
       <displayinlist>1</displayinlist>
       <gotodetail>1</gotodetail>
+      <search>1</search>
       <notnull>1</notnull>
-      <tablenme>tb_test_category</tablenme>
-      <ntabname>r_cate</ntabname>
+      <tablename>tb_test_category</tablename>
+      <ntbname>r_cate</ntbname>
       <condition>r_cate.status='A'</condition>
     </field>
     <field>

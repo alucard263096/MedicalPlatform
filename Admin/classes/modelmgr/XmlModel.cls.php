@@ -24,15 +24,41 @@ class XmlModel
     return $str;
   }
   
-  public function ShowList($smartyMgr){
+  public function ShowList($dbMgr,$smartyMgr){
   
     //$searchField=$this->XmlData["fields"];
 	//print_r($this->XmlData);
-	$dataWithFKey=LoadFKeyValue($this->XmlData);
-    $smartyMgr->assign("ModelData",$this->XmlData);
+	$dataWithFKey=$this->loadFKeyValue($dbMgr,$this->XmlData);
+    $smartyMgr->assign("ModelData",$dataWithFKey);
     $smartyMgr->assign("PageName",$this->PageName);
     $smartyMgr->display(ROOT.'/templates/model/list.html');
   }
+
+  private function loadFKeyValue($dbMgr,$XmlDataEx){
+
+	$fields=$XmlDataEx["fields"]["field"];
+	$count=count($fields);
+	for($i=0;$i<$count;$i++){
+		if($fields[$i]["type"]=="fkey"
+		&&$fields[$i]["search"]=="1"){
+			
+			$options=$this->GetFKeyData($dbMgr,$fields[$i]["tablename"],$fields[$i]["ntbname"],$fields[$i]["condition"]);
+			$fields[$i]["options"]=$options;
+		}
+	}
+	$XmlDataEx["fields"]["field"]=$fields;
+	//print_r($XmlDataEx);
+	return $XmlDataEx;
+  }
+
+  private function GetFKeyData($dbMgr,$tablename,$tablerename,$condition){
+	$sql="select id,name from $tablename as $tablerename where status<>'D' and $condition";
+	$query = $dbMgr->query($sql);
+	$result = $dbMgr->fetch_array_all($query); 
+
+	return $result;
+  }
+
 
   public function ShowSearchResult($dbMgr,$smartyMgr,$request){
 	$sql="select r_main.id";

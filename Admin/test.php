@@ -5,7 +5,7 @@
   $model=new TestXmlModel("test.php");
   if($action==""){
 
-	$model->ShowList($smarty);
+	$model->ShowList($dbmgr,$smarty);
 
   }else if($action=="search"){
 	$model->ShowSearchResult($dbmgr,$smarty,$_REQUEST);
