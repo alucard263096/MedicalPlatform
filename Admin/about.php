@@ -8,5 +8,4 @@
   require 'include/common.inc.php';
   
   $smarty->display(ROOT.'/templates/about.html');
-  
 ?>
