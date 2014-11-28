@@ -146,27 +146,40 @@
         self.location='{{$PageName}}?action=add';
     }
 
-    function deleteInList(){
+    function btnDeleteInList(){
         var idlist="0";
         $("#searchResult input:checkbox:checked.RowSelect").each(function(){
             idlist+=","+$(this).val();
         });
         if(idlist!="0"){
-            if (window.confirm("确认要删除吗?")){
-                $.post("{{$PageName}}",{"action":"delete","idlist":idlist},function(data){
-                    if(data=="success")
-                    {
-                        alert("删除成功");
-                        $("#btnSearch").click();
-                    }
-                    else
-                    {
-                        alert("删除失败");
-                    }
-			
+            confirmDialog("系统消息","确认要删除吗?",function(){
+                var idlist="0";
+                $("#searchResult input:checkbox:checked.RowSelect").each(function(){
+                    idlist+=","+$(this).val();
                 });
-            }
+                if(idlist!="0"){
+                    $.post("{{$PageName}}",{"action":"delete","idlist":idlist},function(data){
+                        if(data=="success")
+                        {
+                            //infoDialog("删除成功");
+                            $("#btnSearch").click();
+                        }
+                        else
+                        {
+                            //errorDialog("删除失败");
+                        }
+			
+                    });
+                }
+            });
         }
+    }
+
+     
+
+    function testDialog(){
+
+        infoDialog("aa");
     }
 
 </script>

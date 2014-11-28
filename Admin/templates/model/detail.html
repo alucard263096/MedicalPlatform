@@ -155,12 +155,12 @@
         $.post("{{$PageName}}",json,function(data){
             if(data.substring(0,5)=="right"){
                 id=data.substring(5,data.length);
-                alert("保存成功");
+                errorDialog("保存成功");
                 {{if $action=="add"}}
                 self.location='{{$PageName}}?action=edit&&id='+id;
                 {{/if}}
             }else{
-                    alert("保存失败，请联系管理员");
+                    errorDialog("保存失败，请联系管理员");
             }
         });
 
@@ -175,12 +175,12 @@
         {{if $rs.notnull=="1" }}
             {{if $rs.type=="fkey"}}
             if($("#content_{{$rs.key}}").val()=="0"){
-                message+="请输入或选择{{$rs.name}}\r\n";
+                message+="<p>请输入或选择<span style='color:red;'>{{$rs.name}}</span></p>";
             }
             {{else}}
             if($("#content_{{$rs.key}}").val()=="no-value"
                 ||$("#content_{{$rs.key}}").val()==""){
-                message+="请输入或选择{{$rs.name}}\r\n";
+                message+="<p>请输入或选择<span style='color:red;'>{{$rs.name}}</span></p>";
             }
             {{/if}}
         {{/if}}
@@ -188,7 +188,7 @@
 
        if(message!=""){
            //infoDialog(message);
-           alert(message);
+           errorDialog(message);
            return false;
        }
        return true;
@@ -211,11 +211,11 @@
 			            $("#view_" + key).attr("href", "{{$rootpath}}/upload/"+module+"/" + str.split('|~~|')[1]).show();
                         
 			        } else {
-			            alert("上传失败");
+			            errorDialog("上传失败，请联系管理员");
 			        }
 			    },
 			    "error": function (data, status, e) {
-			        alert("上传失败");
+			        errorDialog("上传失败，请联系管理员");
 			    }
 			}
 		);

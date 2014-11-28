@@ -23,18 +23,19 @@
 
 
 
-<div id="infobox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="dialog_box" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog_boxtitle" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 id="myModalLabel" class="modal-title">信息</h4>
+                <h4 id="dialog_boxtitle" class="modal-title">系统信息</h4>
             </div>
             <div class="modal-body">
-                <p id="infobox_msg"></p>
+                <p id="dialog_boxmsg"></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="dialog_boxBtnConfirm" class="btn btn-success">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
             </div>
         </div>
     </div>
@@ -42,39 +43,6 @@
 
 
 
-<div id="warningbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 id="myModalLabel" class="modal-title">警告</h4>
-            </div>
-            <div class="modal-body">
-                <p id="warningbox_msg"></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="errprbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 id="myModalLabel" class="modal-title">错误</h4>
-            </div>
-            <div class="modal-body">
-                <p id="errorbox_msg"></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <script type="text/javascript">
@@ -139,29 +107,39 @@
     });
 
     function infoDialog(msg) {
-        $("#infobox_msg").text(msg);
-        try{
-            $("#infobox").dialog("destroy");
-        } catch (e) { }
-        $("#infobox").dialog();
-        $("#infobox").dialog("open");
+        $("#dialog_boxtitle").text("系统消息");
+        showDialog(msg);
     }
 
     function warningDialog(msg) {
-        $("#warningbox_msg").text(msg);
-        try {
-            $("#warningbox").dialog("destroy");
-        } catch (e) { }
-        $("#warningbox").dialog("open");
+        $("#dialog_boxtitle").text("系统警告");
+        showDialog(msg);
     }
 
     function errorDialog(msg) {
-        $("#errorbox_msg").text(msg);
-        try {
-            $("#errorbox").dialog("destroy");
-        } catch (e) { }
-        $("#errorbox").dialog("open");
+        $("#dialog_boxtitle").text("系统错误");
+        showDialog(msg);
     }
+    function showDialog(msg) {
+        $("#dialog_boxBtnConfirm").hide();
+        $("#dialog_boxmsg").html(msg);
+        $("#dialog_box").modal('show');
+    }
+
+    function confirmDialog(title, msg, confirmFunction) {
+
+        $("#dialog_boxtitle").text(title);
+        $("#dialog_boxmsg").html(msg);
+        $("#dialog_boxBtnConfirm").click(function () {
+
+            $("#dialog_box").modal('hide');
+            confirmFunction();
+        });
+        $("#dialog_boxBtnConfirm").show();
+        $("#dialog_box").modal("show");
+
+    }
+
 </script>
 
     </body>

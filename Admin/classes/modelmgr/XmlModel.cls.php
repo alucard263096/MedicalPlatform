@@ -124,7 +124,7 @@ class XmlModel
 
 				if($request[$value["key"]]!="0"){
 
-					$sql=$sql." and r_main.".$value["key"]."=".mysql_real_escape_string($request[$value["key"]."_from"])."";
+					$sql=$sql." and r_main.".$value["key"]."=".mysql_real_escape_string($request[$value["key"]])."";
 
 				}
 

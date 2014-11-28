@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <root>
   <name>测试XML驱动模式</name>
   <tablename>tb_test</tablename>
@@ -96,7 +96,7 @@
     <option>
       <name>删除</name>
       <type>function</type>
-      <function>deleteInList()</function>
+      <function>btnDeleteInList()</function>
       <search>1</search>
     </option>
   </options>
