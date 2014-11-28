@@ -10,7 +10,7 @@
   }else if($action=="search"){
 	$model->ShowSearchResult($dbmgr,$smarty,$_REQUEST);
   }else if($action=="add"){
-	$model->Add($smarty);
+	$model->Add($dbmgr,$smarty);
   }else if($action=="edit"){
 	$model->Edit($dbmgr,$smarty,$_REQUEST["id"]);
   }else if($action=="save"){

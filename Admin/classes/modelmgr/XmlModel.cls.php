@@ -79,6 +79,10 @@ class XmlModel
 				$sql=$sql." ,case   r_main.".$value["key"]." when 'Y' then '".$value["yvalue"]."' else '".$value["nvalue"]."' ";
 				$sql=$sql." end as ".$value["key"];
 
+			}else if($value["type"]=="fkey"){
+			
+				$sql=$sql." ,".$value["ntbname"].".name ".$value["key"];
+
 			}else{
 
 				$sql=$sql." ,r_main.".$value["key"];
@@ -87,8 +91,17 @@ class XmlModel
 		}
 	}
 	
-	$sql=$sql." from ".$this->XmlData["tablename"]." as r_main where r_main.status<>'D' ";
+	$sql=$sql." from ".$this->XmlData["tablename"]." as r_main ";
 
+	foreach ($fields as $value){
+		if($value["displayinlist"]=="1"){
+			if($value["type"]=="fkey"){
+				$sql=$sql." left join ".$value["tablename"]." ".$value["ntbname"]." on r_main.".$value["key"]."=".$value["ntbname"].".id ";
+			}
+		}
+	}
+
+	$sql=$sql."  where r_main.status<>'D' ";
 	foreach ($fields as $value){
 		
 		if($value["search"]=="1"){
@@ -107,6 +120,15 @@ class XmlModel
 
 				}
 
+			}else if($value["type"]=="fkey"){
+
+				if($request[$value["key"]]!="0"){
+
+					$sql=$sql." and r_main.".$value["key"]."=".mysql_real_escape_string($request[$value["key"]."_from"])."";
+
+				}
+
+
 			}else{
 				if($request[$value["key"]]!=""
 				&&$request[$value["key"]]!="no-value"){
@@ -120,7 +142,7 @@ class XmlModel
 
 	}
 
-	$sql=$sql." order by updated_date desc ";
+	$sql=$sql." order by r_main.updated_date desc ";
 
 
 	
@@ -135,8 +157,9 @@ class XmlModel
   }
 
   
-  public function Add($smartyMgr){
-    $smartyMgr->assign("ModelData",$this->XmlData);
+  public function Add($dbMgr,$smartyMgr){
+   $dataWithFKey=$this->loadFKeyValue($dbMgr,$this->XmlData);
+    $smartyMgr->assign("ModelData",$dataWithFKey);
     $smartyMgr->assign("PageName",$this->PageName);
     $smartyMgr->assign("action","add");
     $smartyMgr->display(ROOT.'/templates/model/detail.html');
@@ -147,10 +170,10 @@ class XmlModel
 	$sql="select * from ".$this->XmlData["tablename"]." where id=$id";
 	$query = $dbMgr->query($sql);
 	$result = $dbMgr->fetch_array($query); 
-
 	$XmlDataWithInfo=$this->assignWithInfo($this->XmlData,$result);
-	
-    $smartyMgr->assign("ModelData",$XmlDataWithInfo);
+    $dataWithFKey=$this->loadFKeyValue($dbMgr,$XmlDataWithInfo);
+
+    $smartyMgr->assign("ModelData",$dataWithFKey);
     $smartyMgr->assign("PageName",$this->PageName);
     $smartyMgr->assign("id",$id);
     $smartyMgr->assign("action","edit");

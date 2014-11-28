@@ -82,7 +82,19 @@
                                                 <a id="view_{{$rs.key}}" target="_blank" {{if $rs.value==""}}style="display:none;"{{else}}href="{{$rootpath}}/upload/{{$rs.uploadmodule}}/{{$rs.value}}"{{/if}} >查看上传</a>
                                                 <input class="uniform_on" type="hidden" id="content_{{$rs.key}}" value="{{$rs.value}}" />
                                             </div>
-                                        </div>                                      
+                                        </div>                                                 
+                                        {{elseif $rs.type=="fkey"}}
+                                        <div class="form-group col-md-6">
+                                            <label class="col-md-4 control-label">{{$rs.name}}</label>
+                                            <div class="col-md-8">
+                                                <select id="content_{{$rs.key}}" class="form-control selectize-select">
+                                                    <option value="0">--Select--</option>
+                                                    {{foreach from=$rs.options item=rsoption}}
+                                                    <option {{if $rs.value==$rsoption.id}}selected{{/if}} value="{{$rsoption.id}}">{{$rsoption.name}}</option>
+                                                    {{/foreach}}
+                                                </select>
+                                            </div>
+                                        </div>                              
                                         {{elseif $rs.type=="select"}}
                                         <div class="form-group col-md-6">
                                             <label class="col-md-4 control-label" >{{$rs.name}}</label>
@@ -161,12 +173,16 @@
 
         {{foreach from=$ModelData.fields.field item=rs}}
         {{if $rs.notnull=="1" }}
-
-        if($("#content_{{$rs.key}}").val()=="no-value"
-            ||$("#content_{{$rs.key}}").val()==""){
-            message+="请输入或选择{{$rs.name}}\r\n";
-        }
-
+            {{if $rs.type=="fkey"}}
+            if($("#content_{{$rs.key}}").val()=="0"){
+                message+="请输入或选择{{$rs.name}}\r\n";
+            }
+            {{else}}
+            if($("#content_{{$rs.key}}").val()=="no-value"
+                ||$("#content_{{$rs.key}}").val()==""){
+                message+="请输入或选择{{$rs.name}}\r\n";
+            }
+            {{/if}}
         {{/if}}
         {{/foreach}}
 
@@ -203,6 +219,9 @@
 			    }
 			}
 		);
+    }
+    function addNew(){
+        self.location='{{$PageName}}?action=add';
     }
 
 </script>

@@ -50,7 +50,7 @@
                                             {{elseif $rs.type=="fkey"}}
                                             <div class="col-md-8">
                                                 <select id="condition_{{$rs.key}}" class="form-control selectize-select">
-                                                    <option value="no-value">--Select--</option>
+                                                    <option value="0">--Select--</option>
                                                     {{foreach from=$rs.options item=rsoption}}
                                                     <option value="{{$rsoption.id}}">{{$rsoption.name}}</option>
                                                     {{/foreach}}
