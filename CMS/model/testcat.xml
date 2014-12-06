@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <name>Category Example</name>
+  <tablename>tb_test_category</tablename>
+  <searchcondition>r_main.status&lt;&gt;'D'</searchcondition>
+  <fields>
+    <field>
+      <name>Name</name>
+      <key>name</key>
+      <type>text</type>
+      <displayinlist>1</displayinlist>
+      <gotodetail>1</gotodetail>
+      <search>1</search>
+      <notnull>1</notnull>
+    </field>
+    <field>
+      <name>Status</name>
+      <key>status</key>
+      <type>select</type>
+      <displayinlist>1</displayinlist>
+      <options>
+        <option>
+          <name>启用</name>
+          <value>A</value>
+        </option>
+        <option>
+          <name>禁用</name>
+          <value>I</value>
+        </option>
+      </options>
+      <search>1</search>
+      <notnull>1</notnull>
+    </field>
+  </fields>
+  <options>
+    <option>
+      <name>新增</name>
+      <type>function</type>
+      <function>addNew()</function>
+      <search>1</search>
+      <detail>1</detail>
+    </option>
+    <option>
+      <name>删除</name>
+      <type>function</type>
+      <function>deleteInList()</function>
+      <search>1</search>
+    </option>
+  </options>
+</root>
