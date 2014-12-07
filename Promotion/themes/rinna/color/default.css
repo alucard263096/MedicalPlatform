@@ -1,0 +1,124 @@
+/* ==============================================================
+
+Template name : Rinna flat and responsive onepage template
+Categorie : One page template
+Author : Nce18cex
+Version : 1.0.1
+Created : 19 June 2013
+Last update : 22 June 2013
+
+-----------------------------------------------------------------
+CSS structure
+-----------------------------------------------------------------
+
+01. Color
+02. Background color
+03. Border color
+04. Button
+05. Custom color
+
+
+============================================================== */
+
+/*
+Color
+=========================== */
+a, a:hover,
+.home-nav .text-link:hover,
+nav li a:hover,
+nav li a.active,
+.navbar-inner nav ul li a.selected,
+.navbar-inner nav ul li a.active,
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span  
+.testimoni strong, .testimoni  span, 
+.validation, .img-caption i:hover, 
+.box.article h4 a:hover,
+ul.footer-link li a:hover, ul.footer-contact li a:hover,
+.meta-post a:hover,
+ul.related-post li a:hover, ul.cat li a:hover, ul.recent li a:hover, 
+.media-heading a:hover, ul.portfolio-categ li a:hover, ul.portfolio-categ li.active a, 
+.recent-post-box h6 a:hover, 
+li.dropdown.active a,
+li.dropdown.active > .dropdown-toggle, 
+li.dropdown .dropdown-menu a:hover{
+	color:#e55237;
+}
+
+/*
+Background color
+=========================== */
+.btn-primary,
+.box-nav,
+.navbar-inner, 
+.services-bgcolor,
+.og-details a,
+.media-icon, 
+.nav-tabs > li > a:hover,
+.intro, .headline, 
+#toTopHover, .team-desc, .folio-caption, 
+.fancybox-close, .pricing-head{
+	background-color:#e55237;
+}
+
+/*
+Border color
+=========================== */
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus,
+footer, #boxed, .img-caption i:hover,
+.folio-title, .postdate span{
+	border-color:#e55237;
+}
+
+/*
+Button
+=========================== */
+.btn-bevel.btn-primary {
+  background: rgb(229,82,55);
+  background: -moz-linear-gradient(top,  rgba(229,82,55,1) 0%, rgba(214,71,44,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(229,82,55,1)), color-stop(100%,rgba(214,71,44,1)));
+  background: -webkit-linear-gradient(top,  rgba(229,82,55,1) 0%,rgba(214,71,44,1) 100%);
+  background: -o-linear-gradient(top,  rgba(229,82,55,1) 0%,rgba(214,71,44,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(229,82,55,1) 0%,rgba(214,71,44,1) 100%);
+  background: linear-gradient(to bottom,  rgba(229,82,55,1) 0%,rgba(214,71,44,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e55237', endColorstr='#d6472c',GradientType=0 );
+  box-shadow: #b73017 0 4px 0px;
+}
+
+.btn-bevel.btn-primary:hover{
+  color:#fff;
+  background: rgb(214,71,44);
+  background: -moz-linear-gradient(top,  rgba(214,71,44,1) 0%, rgba(229,82,55,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(214,71,44,1)), color-stop(100%,rgba(229,82,55,1)));
+  background: -webkit-linear-gradient(top,  rgba(214,71,44,1) 0%,rgba(229,82,55,1) 100%);
+  background: -o-linear-gradient(top,  rgba(214,71,44,1) 0%,rgba(229,82,55,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(214,71,44,1) 0%,rgba(229,82,55,1) 100%);
+  background: linear-gradient(to bottom,  rgba(214,71,44,1) 0%,rgba(229,82,55,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6472c', endColorstr='#e55237',GradientType=0 );
+}
+
+/*
+Custom color
+=========================== */
+.yellow{
+	background:#fec415;
+}
+
+.green{
+	background:#9dc500;
+}
+
