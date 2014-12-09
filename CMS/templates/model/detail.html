@@ -37,8 +37,15 @@
                                         {{if $rs.type=="text"  }}
                                         <div class="form-group col-md-6">
                                             <label class="col-md-4 control-label" >{{$rs.name}}</label>
-                                            <div class="col-md-8">
+                                            <div class="col-md-6">
+                                                {{if $rs.ismutillang=="1"}}
+                                                {{foreach from=$SysLangConfig.langs.lang item=rslang}}
+                                                <input type="{{if $rslang.code==$SysLangCode}}text{{else}}hidden{{/if}}" {{if $action!="add" and $rs.disableindetail=="1" }}disabled="disabled" {{/if}} class="form-control" value="{{foreach from=$rs.value item=rsval}}{{if $rslang.code==$rsval.code}}{{$rsval.value}}{{/if}}{{/foreach}}" id="content_{{$rs.key}}_{{$rslang.code}}" {{if $rs.notnull=="1" }} placeholder="{{$SysLang.model.required}}" {{/if}} />
+                                                {{/foreach}}
+                                                <button {{if $action!="add" and $rs.disableindetail=="1" }}disabled="disabled" {{/if}} onclick="displayMutilLangPop('{{$rs.name}}','{{$rs.key}}')" class="btn btn-xs btn-link">{{$SysLang.model.updateotherlang}}</button>
+                                                {{else}}
                                                 <input type="text" {{if $action!="add" and $rs.disableindetail=="1"}}disabled="disabled"{{/if}} class="form-control" value="{{$rs.value}}" id="content_{{$rs.key}}" {{if $rs.notnull=="1" }} placeholder="{{$SysLang.model.required}}" {{/if}} />
+                                                {{/if}}
                                             </div>
                                         </div>                                            
                                         {{elseif $rs.type=="password"}}
@@ -51,8 +58,15 @@
                                         {{elseif $rs.type=="longtext"}}
                                         <div class="form-group col-md-12">
                                             <label class="col-md-2 control-label" >{{$rs.name}}</label>
-                                            <div class="col-md-10">
+                                            <div class="col-md-10">                                                
+                                                {{if $rs.ismutillang=="1"}}
+                                                {{foreach from=$SysLangConfig.langs.lang item=rslang}}
+                                                <input type="{{if $rslang.code==$SysLangCode}}text{{else}}hidden{{/if}}" {{if $action!="add" and $rs.disableindetail=="1" }}disabled="disabled" {{/if}} class="form-control" value="{{foreach from=$rs.value item=rsval}}{{if $rslang.code==$rsval.code}}{{$rsval.value}}{{/if}}{{/foreach}}" id="content_{{$rs.key}}_{{$rslang.code}}" {{if $rs.notnull=="1" }} placeholder="{{$SysLang.model.required}}" {{/if}} />
+                                                {{/foreach}}
+                                                <button {{if $action!="add" and $rs.disableindetail=="1" }}disabled="disabled" {{/if}} onclick="displayMutilLangPop('{{$rs.name}}','{{$rs.key}}')" class="btn btn-xs btn-link">{{$SysLang.model.updateotherlang}}</button>
+                                                {{else}}
                                                 <input type="text" class="form-control" {{if $action!="add" and $rs.disableindetail=="1"}}disabled="disabled"{{/if}} id="content_{{$rs.key}}" value="{{$rs.value}}" {{if $rs.notnull=="1" }} placeholder="{{$SysLang.model.required}}" {{/if}} />
+                                                {{/if}}
                                             </div>
                                         </div>                                            
                                         {{elseif $rs.type=="html"}}
@@ -190,6 +204,10 @@
         {{if $rs.type!="grid"}}
             {{if $rs.type=="check"}}
             ,"{{$rs.key}}":$("#content_{{$rs.key}}").prop("checked")?"Y":"N"
+            {{elseif $rs.ismutillang=="1"}}
+            {{foreach from=$SysLangConfig.langs.lang item=rslang}}
+            ,"{{$rs.key}}_{{$rslang.code}}":$("#content_{{$rs.key}}_{{$rslang.code}}").val()
+            {{/foreach}}
             {{else}}
             ,"{{$rs.key}}":$("#content_{{$rs.key}}").val()=="no-value"?"":$("#content_{{$rs.key}}").val()
             {{/if}}
@@ -220,6 +238,8 @@
             
     }
 
+            
+
     function saveValidate() {
 
         var message="";
@@ -229,6 +249,12 @@
             if($("#content_{{$rs.key}}").val()=="0"){
                 message+="<p>{{$SysLang.model.pleaseenter}}<span style='color:red;'>{{$rs.name}}</span></p>";
             }
+            {{elseif $rs.ismutillang=="1"}}
+            {{foreach from=$SysLangConfig.langs.lang item=rslang}}
+            if($("#content_{{$rs.key}}_{{$rslang.code}}").val()==""){
+                message+="<p>{{$SysLang.model.pleaseenter}}<span style='color:red;'>{{$rs.name}}（{{$rslang.name}}）</span></p>";
+            }    
+            {{/foreach}}
             {{else}}
             if($("#content_{{$rs.key}}").val()=="no-value"
                 ||$("#content_{{$rs.key}}").val()==""){

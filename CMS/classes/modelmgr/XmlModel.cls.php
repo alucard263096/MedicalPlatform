@@ -41,8 +41,7 @@ class XmlModel
 	for($i=0;$i<$count;$i++){
 		if($fields[$i]["type"]=="fkey"
 		&&$fields[$i]["search"]=="1"){
-			
-			$options=$this->GetFKeyData($dbMgr,$fields[$i]["displayfield"],$fields[$i]["tablename"],$fields[$i]["ntbname"],$fields[$i]["condition"]);
+			$options=$this->GetFKeyData($dbMgr,$fields[$i]["displayfield"],$fields[$i]["tablename"],$fields[$i]["ntbname"],$fields[$i]["condition"],$fields[$i]["ismutillang"]);
 			$fields[$i]["options"]=$options;
 		}
 	}
@@ -51,9 +50,13 @@ class XmlModel
 	return $XmlDataEx;
   }
 
-  private function GetFKeyData($dbMgr,$displayfield,$tablename,$tablerename,$condition){
-
-	$sql="select id,$displayfield as name from $tablename as $tablerename where $condition";
+  private function GetFKeyData($dbMgr,$displayfield,$tablename,$tablerename,$condition,$ismutillang){
+	Global $CONFIG;
+	if($ismutillang=="1"){
+		$sql="select oid id,$displayfield as name from $tablename"."_lang as $tablerename where lang='".$CONFIG["lang"]."' and $condition";
+	}else{
+		$sql="select id,$displayfield as name from $tablename as $tablerename where $condition";
+	}
 	$query = $dbMgr->query($sql);
 	$result = $dbMgr->fetch_array_all($query); 
 
@@ -61,6 +64,8 @@ class XmlModel
   }
 
   public function GetSearchSql($request){
+	Global $CONFIG;
+
 	$sql="select r_main.id";
 	$fields=$this->XmlData["fields"]["field"];
 	foreach ($fields as $value){
@@ -91,12 +96,24 @@ class XmlModel
 		}
 	}
 	
-	$sql=$sql." from ".$this->XmlData["tablename"]." as r_main ";
+	//$sql=$sql." from ".$this->XmlData["tablename"]." as r_main ";
+	if($this->XmlData["ismutillang"]=="1"){
+		$sql=$sql." from (select * from ".$this->XmlData["tablename"]." r_main_a 
+							inner join ".$this->XmlData["tablename"]."_lang r_main_b 
+							on r_main_a.id=r_main_b.oid and r_main_b.lang='".$CONFIG["lang"]."'  ) r_main ";
+	}else{
+		$sql=$sql." from ".$this->XmlData["tablename"]." as r_main ";
+	}
 
 	foreach ($fields as $value){
 		if($value["displayinlist"]=="1"){
 			if($value["type"]=="fkey"){
-				$sql=$sql." left join ".$value["tablename"]." ".$value["ntbname"]." on r_main.".$value["key"]."=".$value["ntbname"].".id ";
+				if($value["ismutillang"]=="1"){
+					$sql=$sql." left join ".$value["tablename"]."_lang ".$value["ntbname"]." on ".$value["ntbname"].".lang='".$CONFIG["lang"]."' and  r_main.".$value["key"]."=".$value["ntbname"].".oid ";
+				}else{
+				
+					$sql=$sql." left join ".$value["tablename"]." ".$value["ntbname"]." on r_main.".$value["key"]."=".$value["ntbname"].".id ";
+				}
 			}
 		}
 	}
@@ -190,7 +207,13 @@ class XmlModel
 	$sql="select * from ".$this->XmlData["tablename"]." where id=$id";
 	$query = $dbMgr->query($sql);
 	$result = $dbMgr->fetch_array($query); 
-	$XmlDataWithInfo=$this->assignWithInfo($this->XmlData,$result);
+
+	$sql="select * from ".$this->XmlData["tablename"]."_lang where oid=$id";
+	$query = $dbMgr->query($sql);
+	$langresult = $dbMgr->fetch_array_all($query); 
+
+
+	$XmlDataWithInfo=$this->assignWithInfo($this->XmlData,$result,$langresult);
     $dataWithFKey=$this->loadFKeyValue($dbMgr,$XmlDataWithInfo);
 
     $smartyMgr->assign("ModelData",$dataWithFKey);
@@ -200,20 +223,33 @@ class XmlModel
     $smartyMgr->display(ROOT.'/templates/model/detail.html');
   }
 
-  private function assignWithInfo($XmlDataEx,$info){
+  private function assignWithInfo($XmlDataEx,$info,$langresult){
+	
 	$fields=$XmlDataEx["fields"]["field"];
 	$count=count($fields);
 	for($i=0;$i<$count;$i++){
-		$fields[$i]["value"]=$info[$fields[$i]["key"]];
+		if($fields[$i]["ismutillang"]=="1"){
+			$valarray=Array();
+			foreach ($langresult as $rs){
+				$arr=Array();
+				$arr["code"]=$rs["lang"];
+				$arr["value"]=$rs[$fields[$i]["key"]];
+				$valarray[]=$arr;
+			}
+			$fields[$i]["value"]=$valarray;
+		}else{
+			$fields[$i]["value"]=$info[$fields[$i]["key"]];
+		}
 	}
 	$XmlDataEx["fields"]["field"]=$fields;
 	//print_r($XmlDataEx);
 	return $XmlDataEx;
   }
   public function Save($dbMgr,$request,$sysuser){
+	Global $SysLangConfig;
+
     $sql="";
 	$dbMgr->begin_trans();
-		
 
 	if($request["primary_id"]==""){
 	
@@ -222,9 +258,15 @@ class XmlModel
 		$result = $dbMgr->fetch_array($query); 
 		$id=$result[0];
 
+		$haveMutilLang=false;
+
 		$sql="insert into ".$this->XmlData["tablename"]." (id";
 		$fields=$this->XmlData["fields"]["field"];
 		foreach ($fields as $value){
+			if($value["ismutillang"]=="1"){
+				$haveMutilLang=true;
+				continue;
+			}
 			if($value["type"]=="grid"){
 				continue;
 			}
@@ -233,8 +275,10 @@ class XmlModel
 		$sql=$sql.",created_date,created_user,updated_date,updated_user ) values (";
 		$sql=$sql.$id;
 		foreach ($fields as $value){
-		
-			if($value["type"]=="grid"){
+			
+			
+			if($value["type"]=="grid"
+			||$value["ismutillang"]=="1"){
 				continue;
 			}
 
@@ -246,13 +290,35 @@ class XmlModel
 		}
 		$sql=$sql.",now(),$sysuser,now(),$sysuser )";
 		$query = $dbMgr->query($sql);
-
+		if($haveMutilLang){
+			foreach ($SysLangConfig["langs"]["lang"] as $lang){
+				$sql="insert into ".$this->XmlData["tablename"]."_lang (oid,lang";
+				$fields=$this->XmlData["fields"]["field"];
+				foreach ($fields as $value){
+					if($value["ismutillang"]=="1"){
+					$sql=$sql.",`".$value["key"]."`";
+					}
+				}
+				$sql=$sql." ) values ( $id ,'".$lang["code"]."' ";
+				foreach ($fields as $value){
+					if($value["ismutillang"]=="1"){
+						$sql=$sql.",'".mysql_real_escape_string($request[$value["key"]."_".$lang["code"]])."'";
+					}
+				}
+				$sql=$sql." )";
+				$query = $dbMgr->query($sql);
+			}
+		}
 	}else{
+		$haveMutilLang=false;
 		$id=$request["primary_id"];
 		$sql="update ".$this->XmlData["tablename"]." set updated_date=now(),updated_user=$sysuser";
 		$fields=$this->XmlData["fields"]["field"];
 		foreach ($fields as $value){
-		
+			if($value["ismutillang"]=="1"){
+				$haveMutilLang=true;
+				continue;
+			}
 			if($value["type"]=="grid"
 			||$value["type"]=="password"){
 				continue;
@@ -270,7 +336,21 @@ class XmlModel
 				$query = $dbMgr->query($sql);
 			}
 		}
+		if($haveMutilLang){
+			foreach ($SysLangConfig["langs"]["lang"] as $lang){
+				$sql="update ".$this->XmlData["tablename"]."_lang set lang='".$lang["code"]."'";
+				foreach ($fields as $value){
+					if($value["ismutillang"]=="1"){
+						$sql=$sql.", `".$value["key"]."`='".mysql_real_escape_string($request[$value["key"]."_".$lang["code"]])."'";
+					}
+				}
+				$sql=$sql." where oid=$id and lang='".$lang["code"]."'";
+				$query = $dbMgr->query($sql);
+			}
+		}
 	}
+	
+
 	$dbMgr->commit_trans();
 	return "right".$id;
   }

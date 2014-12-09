@@ -7,8 +7,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="page-header bootstrap-admin-content-title">
-                                <h1>{{$ModelData.name}} - {{$SysLang.model.list}}</h1>                                
-                                {{foreach from=$ModelData.options.option item=rs}}                                
+                                <h1>{{$ModelData.name}} - {{$SysLang.model.list}}</h1>
+                                {{foreach from=$ModelData.options.option item=rs}}
                                     {{if $rs.search=="1"}}
                                         {{if $rs.type=="link"}}    
                                     <a href="{{$rs.link}}" class="action">

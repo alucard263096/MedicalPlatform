@@ -119,11 +119,45 @@
         $("#dialog_box").modal('show');
     }
 
+    function displayMutilLangPop(name, key) {
+        $("#dialog_boxtitle").text(name);
+        str = "<div class='row form-horizontal'>";
+        {{foreach from=$SysLangConfig.langs.lang item=rslang}}
+        str=str+"<div class='form-group col-md-12'>";
+        str=str+"<label class='col-md-2 control-label' >{{$rslang.name}}</label>";
+        str=str+"<div class='col-md-8'>";
+        str=str+"<input type='text'  class='form-control'  id='lang_"+key+"_{{$rslang.code}}'  />";
+        
+        str=str+"        </div>";
+        str=str+"    </div>    ";
+        {{/foreach}}
+            str = str+"</div>";
+
+        $("#dialog_boxmsg").html(str);
+            
+        {{foreach from=$SysLangConfig.langs.lang item=rslang}}
+        $("#lang_"+key+"_{{$rslang.code}}").val($("#content_"+key+"_{{$rslang.code}}").val());
+        {{/foreach}}
+
+            $("#dialog_boxBtnConfirm").unbind("click").click(function () {
+
+                {{foreach from=$SysLangConfig.langs.lang item=rslang}}
+                $("#content_"+key+"_{{$rslang.code}}").val($("#lang_"+key+"_{{$rslang.code}}").val());
+                {{/foreach}}
+
+                $("#dialog_box").modal('hide');
+                
+            });
+            $("#dialog_boxBtnConfirm").show();
+            $("#dialog_box").modal("show");
+
+    }
+
     function confirmDialog(title, msg, confirmFunction) {
 
         $("#dialog_boxtitle").text(title);
         $("#dialog_boxmsg").html(msg);
-        $("#dialog_boxBtnConfirm").click(function () {
+        $("#dialog_boxBtnConfirm").unbind("click").click(function () {
 
             $("#dialog_box").modal('hide');
             confirmFunction();
