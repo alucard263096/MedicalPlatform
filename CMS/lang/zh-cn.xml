@@ -6,7 +6,7 @@
     <invaliduser>无效用户</invaliduser>
     <incorrectpsw>密码不正确</incorrectpsw>
     <submittips>请输入回车键或者点击登录按钮进行登录</submittips>
-    <systemlogin>文本管理系统登录</systemlogin>
+    <systemlogin>数据管理中心</systemlogin>
   </index>
   <model>
     <list>列表</list>
