@@ -117,7 +117,21 @@
                                                     {{/foreach}}
                                                 </select>
                                             </div>
-                                        </div>                              
+                                        </div>                                              
+                                        {{elseif $rs.type=="flist"}}
+                                        <div class="form-group col-md-12">
+                                            <label class="col-md-2 control-label">{{$rs.name}}</label>
+                                            <div class="col-md-10">
+                                                {{foreach from=$FListArr item=flrs}}
+                                                {{if $rs.key==$flrs.key}}
+                                                {{foreach from=$flrs.value item=rsvalue}}
+                                                <input class='uniform_on multicheckbox flist_{{$rs.key}}' type='checkbox' id='flist_{{$rs.key}}_{{$rsvalue.id}}' value='{{$rsvalue.id}}'> {{$rsvalue.name}}
+                                                {{/foreach}}
+                                                {{/if}}
+                                                {{/foreach}}
+                                                <input type="hidden" class="form-control"  id="content_{{$rs.key}}" value="{{$rs.value}}"  />
+                                            </div>
+                                        </div>                            
                                         {{elseif $rs.type=="select"}}
                                         <div class="form-group col-md-6">
                                             <label class="col-md-4 control-label" >{{$rs.name}}</label>
@@ -162,6 +176,14 @@
 {{/if}}
 {{/foreach}}
 <script>
+
+    {{foreach from=$FListArr item=rs}}
+    flistarr{{$rs.key}} = new Array();
+    {{foreach from=$rs.value item=rsvalue}}
+    flistarr{{$rs.key}}[{{$rsvalue.id}}] = "{{$rsvalue.name}}";
+    {{/foreach}}
+    {{/foreach}}
+
     $(document).ready(function(){
         myjs_detailPageLoad();
     });
@@ -186,13 +208,42 @@
         {{if $action!="add" and $rs.type=="grid"}}
         var json_{{$rs.key}}={"parenturl":"{{$request_url_encode}}"};
         $("#content_{{$rs.key}}").load("{{$rootpath}}/{{$rs.api}}{{$id}}",json_{{$rs.key}},function(data){
-
         });
+        {{elseif $action!="add" and $rs.type=="flist"}}
+        var fliststr{{$rs.key}} = $("#content_{{$rs.key}}").val();
+        var arr = fliststr{{$rs.key}}.split(",");
+        for (var i = 0; i < arr.length; i++) {
+            if ($.trim(arr[i]) != "") {
+                $("#flist_{{$rs.key}}_" + $.trim(arr[i])).prop("checked", "checked");
+            }
+        }
         {{/if}}
         {{/foreach}}
+
+
+
+
     });
 
     function save(){
+
+        {{foreach from=$ModelData.fields.field item=rs}}
+        {{if  $rs.type=="flist"}}
+        var isfirst = true;
+        var fliststr{{$rs.key}} ="";
+        $(".flist_{{$rs.key}}:checked").each(function () {
+            if (isfirst == false) {
+                fliststr{{$rs.key}} = fliststr{{$rs.key}} + ",";
+            }
+            isfirst = false;
+            fliststr{{$rs.key}} = fliststr{{$rs.key}} + $(this).val();
+        });
+        $("#content_{{$rs.key}}").val(fliststr{{$rs.key}});
+        {{/if}}
+        {{/foreach}}
+
+            myjs_beforeSave();
+
         var isGo=saveValidate();
         if(isGo==false){
             return;

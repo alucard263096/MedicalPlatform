@@ -29,7 +29,7 @@
         </submenu>
       </submenus>
     </mainmenu>
-    <mainmenu>
+    <!--<mainmenu>
       <module>website</module>
       <name>日常管理</name>
       <submenus>
@@ -124,6 +124,73 @@
           <id>product_add</id>
           <name>产品新增</name>
           <url>/Content/product.php?action=add</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>testcate_list</id>
+          <name>Test Category List</name>
+          <url>/Example/testcat.php</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>testcate_add</id>
+          <name>Test Category List</name>
+          <url>/Example/testcat.php?action=add</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>test_list</id>
+          <name>Test List</name>
+          <url>/Example/test.php</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>test_add</id>
+          <name>Test Add</name>
+          <url>/Example/test.php?action=add</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+      </submenus>
+    </mainmenu>
+    -->
+    <mainmenu>
+      <module>baseinfo</module>
+      <name>基础数据管理</name>
+      <submenus>
+        <submenu>
+          <id>effect_list</id>
+          <name>治疗功效列表</name>
+          <url>/BaseInfo/effect.php</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>effect_add</id>
+          <name>治疗功效新增</name>
+          <url>/BaseInfo/effect.php?action=add</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>usedgroup_list</id>
+          <name>适用人群列表</name>
+          <url>/BaseInfo/usedgroup.php</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>usedgroup_add</id>
+          <name>适用人群新增</name>
+          <url>/BaseInfo/usedgroup.php?action=add</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>vaccine_list</id>
+          <name>疫苗列表</name>
+          <url>/BaseInfo/vaccine.php</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>vaccine_add</id>
+          <name>疫苗新增</name>
+          <url>/BaseInfo/vaccine.php?action=add</url>
           <onlyadmin>1</onlyadmin>
         </submenu>
       </submenus>

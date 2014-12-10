@@ -26,7 +26,7 @@
 	public function getUserByName($loginname)
 	{
 		$loginname=mysql_real_escape_string($loginname);
-		$sql="select * from tb_user where login_id='$loginname' ";
+		$sql="select * from dr_tb_user where login_id='$loginname' ";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
 		return $result;
@@ -41,7 +41,7 @@
 			return "current_password_diff";
 		}
 		
-		$sql="update tb_user set password='$new_password',updated_user=$user_id,updated_date=now() where user_id=$user_id";
+		$sql="update dr_tb_user set password='$new_password',updated_user=$user_id,updated_date=now() where user_id=$user_id";
 		$query = $this->dbmgr->query($sql);
 		
 		return "success";
@@ -51,7 +51,7 @@
 	{
 		$password=parameter_filter($password);
 		
-		$sql="update tb_user set password='$password',updated_user=$sysUser_id,updated_date=now() where user_id=$user_id";
+		$sql="update dr_tb_user set password='$password',updated_user=$sysUser_id,updated_date=now() where user_id=$user_id";
 		$query = $this->dbmgr->query($sql);
 	}
 	

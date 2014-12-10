@@ -23,6 +23,9 @@ var myjs_afterResultLoad = function () {
 
 
 
+var myjs_beforeSave = function () {
+};
+
 var myjs_detailPageLoad = function () {
 };
 
@@ -39,4 +42,4 @@ var myjs_saveClick = function (json) {
 var myjs_aftersave = function (data) {
     
     return true;
-};
+}; 

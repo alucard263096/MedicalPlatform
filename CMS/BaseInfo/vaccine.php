@@ -1,32 +1,29 @@
 <?php
   require '../include/common.inc.php';
   include ROOT.'/include/init.inc.php';
+  require ROOT.'/classes/modelmgr/VaccineXmlModel.cls.php';
   $action=$_REQUEST["action"];
-  $model=new XmlModel("download","download.php");
+  $model=new VaccineXmlModel("vaccine.php");
   
-	$smarty->assign("MyModule","content");
-
+	$smarty->assign("MyModule","baseinfo");
+  
   if($action==""){
 
-	$smarty->assign("MyMenuId","download_list");
+	$smarty->assign("MyMenuId","vaccine_list");
 	$model->ShowList($dbmgr,$smarty);
 
   }else if($action=="search"){
 
 	$model->ShowSearchResult($dbmgr,$smarty,$_REQUEST);
 
-  }else if($action=="getgrid"){
-
-	$model->ShowGridResult($dbmgr,$smarty,$_REQUEST,$_REQUEST["parenturl"]);
-
   }else if($action=="add"){
 
-	$smarty->assign("MyMenuId","download_add");
+	$smarty->assign("MyMenuId","vaccine_add");
 	$model->Add($dbmgr,$smarty);
 
   }else if($action=="edit"){
 
-	$smarty->assign("MyMenuId","download_add");
+	$smarty->assign("MyMenuId","vaccine_add");
 	$model->Edit($dbmgr,$smarty,$_REQUEST["id"]);
 
   }else if($action=="save"){
