@@ -31,22 +31,12 @@ CREATE TABLE `dr_tb_vaccine_lang` (
   `injection_time` varchar(300) NOT NULL COMMENT '接种时间',
   `injection_season` varchar(300) NOT NULL COMMENT '适用季节',
   `description` varchar(1000) NOT NULL COMMENT '疫苗详细介绍',
-  `content` text NOT NULL COMMENT '网页HTML',
   `caution` varchar(1000) NOT NULL COMMENT '接种注意事项',
   `bad_effect` varchar(1000) NOT NULL COMMENT '可能产生的不良反应',
   `bad_effect_resolve` varchar(1000) NOT NULL COMMENT '产生不良反应的解决方法',
   PRIMARY KEY (`oid`,`lang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='疫苗多语言';
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dr_tb_vaccine_lang`
---
-
-LOCK TABLES `dr_tb_vaccine_lang` WRITE;
-/*!40000 ALTER TABLE `dr_tb_vaccine_lang` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dr_tb_vaccine_lang` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -57,4 +47,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-09 22:52:19
+-- Dump completed on 2014-12-11 21:24:37
