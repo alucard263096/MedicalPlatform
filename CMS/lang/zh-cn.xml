@@ -82,4 +82,7 @@
   <vaccine>
     <codehasbeenused>该疫苗编号已经被其它疫苗所使用</codehasbeenused>
   </vaccine>
+  <doctor>
+    <codehasbeenused>该执业许可证号已经被其它医生使用</codehasbeenused>
+  </doctor>
 </root>

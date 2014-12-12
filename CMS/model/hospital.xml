@@ -1,47 +1,38 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
-  <name>医生疫苗</name>
-  <tablename>dr_tb_doctor_vaccine</tablename>
+  <name>医院</name>
+  <tablename>dr_tb_hospital</tablename>
   <searchcondition>r_main.status&lt;&gt;'D'</searchcondition>
+  <ismutillang>1</ismutillang>
   <fields>
     <field>
-      <name>医生</name>
-      <key>doctor_id</key>
-      <type>fkey</type>
-      <displayfield>name</displayfield>
+      <name>医院名称</name>
+      <key>name</key>
+      <type>text</type>
+      <ismutillang>1</ismutillang>
       <displayinlist>1</displayinlist>
       <gotodetail>1</gotodetail>
       <search>1</search>
       <notnull>1</notnull>
-      <fmutillang>1</fmutillang>
-      <tablename>dr_tb_doctor</tablename>
-      <ntbname>r_doctor</ntbname>
-      <condition>r_doctor.status='A' </condition>
     </field>
     <field>
-      <name>疫苗</name>
-      <key>vaccine_id</key>
-      <type>fkey</type>
-      <displayfield>name</displayfield>
-      <displayinlist>1</displayinlist>
-      <gotodetail>1</gotodetail>
-      <search>1</search>
-      <notnull>1</notnull>
-      <fmutillang>1</fmutillang>
-      <tablename>dr_tb_vaccine</tablename>
-      <ntbname>r_vaccine</ntbname>
-      <condition>r_vaccine.status='A' </condition>
-    </field>
-    <field>
-      <name>单次接种疫苗收费</name>
-      <key>once_price</key>
-      <type>number</type>
+      <name>医院描述</name>
+      <key>description</key>
+      <type>longtext</type>
+      <ismutillang>1</ismutillang>
       <notnull>1</notnull>
     </field>
     <field>
-      <name>一次性付款收费</name>
-      <key>total_price</key>
-      <type>number</type>
+      <name>医院地址</name>
+      <key>address</key>
+      <type>longtext</type>
+      <ismutillang>1</ismutillang>
+      <notnull>1</notnull>
+    </field>
+    <field>
+      <name>地图坐标</name>
+      <key>coordinate</key>
+      <type>text</type>
       <notnull>1</notnull>
     </field>
     <field>
@@ -83,4 +74,12 @@
       <search>1</search>
     </option>
   </options>
+  <javascripts>
+    <javascript>
+      <filename>hospital.js</filename>
+      <detail>1</detail>
+    </javascript>
+    <javascript>
+    </javascript>
+  </javascripts>
 </root>

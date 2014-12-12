@@ -80,6 +80,9 @@
     <keyduplicate>Uni Key has been used</keyduplicate>
   </general>
   <vaccine>
-    <codehasbeenused>The vaccine regiter Code has been used</codehasbeenused>
+    <codehasbeenused>The Vaccine Regiter Code has been used</codehasbeenused>
   </vaccine>
+  <doctor>
+    <codehasbeenused>The doctor Licence Code has been used</codehasbeenused>
+  </doctor>
 </root>

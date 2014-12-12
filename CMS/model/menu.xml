@@ -219,8 +219,20 @@
         </submenu>
         <submenu>
           <id>doctor_add</id>
-          <name>医生列表</name>
+          <name>医生新增</name>
           <url>/Doctor/doctor.php?action=add</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>doctorvaccine_list</id>
+          <name>医生疫苗列表</name>
+          <url>/Doctor/doctorvaccine.php</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>doctorvaccine_add</id>
+          <name>医生疫苗新增</name>
+          <url>/Doctor/doctorvaccine.php?action=add</url>
           <onlyadmin>1</onlyadmin>
         </submenu>
       </submenus>

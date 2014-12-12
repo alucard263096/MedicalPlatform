@@ -151,7 +151,7 @@ class XmlModel
 
 			}else if($value["type"]=="fkey"){
 
-				if($request[$value["key"]]!="0"){
+				if($request[$value["key"]]!="0"&&$request[$value["key"]]!=""){
 					$sql=$sql." and r_main.".$value["key"]."=".mysql_real_escape_string($request[$value["key"]])."";
 				}
 
@@ -187,7 +187,6 @@ class XmlModel
 			$displayfield=$value["displayfield"];
 			$condition=$value["condition"];
 			$ismutillang=$value["fmutillang"];
-
 			$arrayvalue=$this->GetFKeyData($dbMgr,$displayfield,$tablename,$tablerename,$condition,$ismutillang);
 			
 			$Arr=Array();
