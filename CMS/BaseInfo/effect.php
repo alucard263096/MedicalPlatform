@@ -1,15 +1,14 @@
 <?php
   require '../include/common.inc.php';
   include ROOT.'/include/init.inc.php';
-  require ROOT.'/classes/modelmgr/TestCatXmlModel.cls.php';
   $action=$_REQUEST["action"];
-  $model=new TestCatXmlModel("testcat.php");
-
+  $model=new XmlModel("effect","effect.php");
+  
+	$smarty->assign("MyModule","baseinfo");
 
   if($action==""){
-  
-	$smarty->assign("MyModule","test");
-	$smarty->assign("MyMenuId","tcat_list");
+
+	$smarty->assign("MyMenuId","effect_list");
 	$model->ShowList($dbmgr,$smarty);
 
   }else if($action=="search"){
@@ -18,14 +17,12 @@
 
   }else if($action=="add"){
 
-	$smarty->assign("MyModule","test");
-	$smarty->assign("MyMenuId","tcat_add");
+	$smarty->assign("MyMenuId","effect_add");
 	$model->Add($dbmgr,$smarty);
 
   }else if($action=="edit"){
 
-	$smarty->assign("MyModule","test");
-	$smarty->assign("MyMenuId","tcat_add");
+	$smarty->assign("MyMenuId","effect_add");
 	$model->Edit($dbmgr,$smarty,$_REQUEST["id"]);
 
   }else if($action=="save"){

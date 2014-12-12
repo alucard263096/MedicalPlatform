@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
   <name>用户</name>
-  <tablename>tb_user</tablename>
+  <tablename>dr_tb_user</tablename>
   <searchcondition>r_main.status&lt;&gt;'D'</searchcondition>
   <fields>
     <field>

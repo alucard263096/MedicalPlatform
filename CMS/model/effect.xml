@@ -1,25 +1,49 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
-  <name>产品分类</name>
-  <tablename>tb_product_category</tablename>
-  <nolist>0</nolist>
+  <name>治疗效果</name>
+  <tablename>dr_tb_effect</tablename>
   <searchcondition>r_main.status&lt;&gt;'D'</searchcondition>
+  <ismutillang>1</ismutillang>
   <fields>
     <field>
-      <name>序号</name>
-      <key>seq</key>
-      <type>number</type>
+      <name>类型</name>
+      <key>type</key>
+      <type>select</type>
+      <displayinlist>1</displayinlist>
+      <options>
+        <option>
+          <name>所有可用</name>
+          <value>A</value>
+        </option>
+        <option>
+          <name>疫苗专用</name>
+          <value>Y</value>
+        </option>
+      </options>
+      <search>1</search>
       <notnull>1</notnull>
-      <disableindetail>0</disableindetail>
     </field>
     <field>
-      <name>分类名称</name>
+      <name>功效名称</name>
       <key>name</key>
       <type>text</type>
+      <ismutillang>1</ismutillang>
       <displayinlist>1</displayinlist>
       <gotodetail>1</gotodetail>
       <search>1</search>
       <notnull>1</notnull>
+    </field>
+    <field>
+      <name>功效详情</name>
+      <key>description</key>
+      <type>longtext</type>
+      <ismutillang>1</ismutillang>
+      <notnull>1</notnull>
+    </field>
+    <field>
+      <name>备注</name>
+      <key>remarks</key>
+      <type>longtext</type>
     </field>
     <field>
       <name>状态</name>
@@ -38,13 +62,6 @@
       </options>
       <search>1</search>
       <notnull>1</notnull>
-    </field>
-    <field>
-      <name>产品</name>
-      <key>productlist</key>
-      <type>grid</type>
-      <api>Content/product.php?action=getgrid&amp;category_id=</api>
-      <newitemurl>Content/product.php?action=add</newitemurl>
     </field>
   </fields>
   <options>

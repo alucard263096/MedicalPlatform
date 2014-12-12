@@ -1,15 +1,15 @@
 <?php
 
 #[Root]
-$CONFIG['rootpath']		= '/FooterCMS/CMS';  
+$CONFIG['rootpath']		= '/MedicalPlatform/CMS';  
 //$CONFIG['charset']		= 'utf-8'; 
-$CONFIG['Title']             = 'FooterCMS';
-$CONFIG['URL']="http://localhost/FooterCMS/CMS";
+$CONFIG['Title']             = 'MedicalPlatform';
+$CONFIG['URL']="http://localhost/MedicalPlatform/CMS";
 $CONFIG['lang']="zh-cn";//en-us
-$CONFIG["frontendurl"]="http://localhost/FooterCMS/";
+$CONFIG["frontendurl"]="http://localhost/MedicalPlatform/";
 $CONFIG["SessionName"]="FooterCMS";
 
-$CONFIG['smarty']['rootpath']		= '/FooterCMS/CMS'; 
+$CONFIG['smarty']['rootpath']		= '/MedicalPlatform/CMS'; 
 $CONFIG['solution_configuration']='debug';
 $CONFIG['server']		= 'windows';   //windows or linux
 
@@ -30,7 +30,7 @@ $CONFIG['error_handler'] ="E_ALL";
 #[Database]
 $CONFIG['database']['provider']	= 'mysql';  //mssql,sqlsrv
 $CONFIG['database']['host']		= 'localhost';  
-$CONFIG['database']['database']	= 'footercms';  
+$CONFIG['database']['database']	= 'medicalplatform';  
 $CONFIG['database']['user']		= 'root';  
 $CONFIG['database']['psw']		= 'root'; 
 

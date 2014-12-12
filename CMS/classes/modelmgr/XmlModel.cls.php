@@ -29,6 +29,8 @@ class XmlModel
     //$searchField=$this->XmlData["fields"];
 	//print_r($this->XmlData);
 	$dataWithFKey=$this->loadFKeyValue($dbMgr,$this->XmlData);
+
+	$this->GetFListData($dbMgr,$smartyMgr);
     $smartyMgr->assign("ModelData",$dataWithFKey);
     $smartyMgr->assign("PageName",$this->PageName);
     $smartyMgr->display(ROOT.'/templates/model/list.html');
@@ -41,7 +43,7 @@ class XmlModel
 	for($i=0;$i<$count;$i++){
 		if($fields[$i]["type"]=="fkey"
 		&&$fields[$i]["search"]=="1"){
-			$options=$this->GetFKeyData($dbMgr,$fields[$i]["displayfield"],$fields[$i]["tablename"],$fields[$i]["ntbname"],$fields[$i]["condition"],$fields[$i]["ismutillang"]);
+			$options=$this->GetFKeyData($dbMgr,$fields[$i]["displayfield"],$fields[$i]["tablename"],$fields[$i]["ntbname"],$fields[$i]["condition"],$fields[$i]["fmutillang"]);
 			$fields[$i]["options"]=$options;
 		}
 	}
@@ -53,7 +55,8 @@ class XmlModel
   private function GetFKeyData($dbMgr,$displayfield,$tablename,$tablerename,$condition,$ismutillang){
 	Global $CONFIG;
 	if($ismutillang=="1"){
-		$sql="select oid id,$displayfield as name from $tablename"."_lang as $tablerename where lang='".$CONFIG["lang"]."' and $condition";
+		$subsql=$this->GetLangTableSql($tablename,$tablerename);
+		$sql="select oid id,$displayfield as name from $subsql where $condition ";
 	}else{
 		$sql="select id,$displayfield as name from $tablename as $tablerename where $condition";
 	}
@@ -61,6 +64,14 @@ class XmlModel
 	$result = $dbMgr->fetch_array_all($query); 
 
 	return $result;
+  }
+
+  public function GetLangTableSql($tablename,$tablenickname){
+	Global $CONFIG;
+	$subsql="  (select * from $tablename ".$tablenickname."_a 
+							left join ".$tablename."_lang ".$tablenickname."_b 
+							on ".$tablenickname."_a.id=".$tablenickname."_b.oid and ".$tablenickname."_b.lang='".$CONFIG["lang"]."'  ) $tablenickname ";
+	return $subsql;
   }
 
   public function GetSearchSql($request){
@@ -98,9 +109,8 @@ class XmlModel
 	
 	//$sql=$sql." from ".$this->XmlData["tablename"]." as r_main ";
 	if($this->XmlData["ismutillang"]=="1"){
-		$sql=$sql." from (select * from ".$this->XmlData["tablename"]." r_main_a 
-							inner join ".$this->XmlData["tablename"]."_lang r_main_b 
-							on r_main_a.id=r_main_b.oid and r_main_b.lang='".$CONFIG["lang"]."'  ) r_main ";
+		$subsql=$this->GetLangTableSql($this->XmlData["tablename"],"r_main");
+		$sql=$sql." from $subsql ";
 	}else{
 		$sql=$sql." from ".$this->XmlData["tablename"]." as r_main ";
 	}
@@ -108,8 +118,9 @@ class XmlModel
 	foreach ($fields as $value){
 		if($value["displayinlist"]=="1"){
 			if($value["type"]=="fkey"){
-				if($value["ismutillang"]=="1"){
-					$sql=$sql." left join ".$value["tablename"]."_lang ".$value["ntbname"]." on ".$value["ntbname"].".lang='".$CONFIG["lang"]."' and  r_main.".$value["key"]."=".$value["ntbname"].".oid ";
+				if($value["fmutillang"]=="1"){
+					$subsql=$this->GetLangTableSql($value["tablename"],$value["ntbname"]);
+					$sql=$sql." left join $subsql on r_main.".$value["key"]."=".$value["ntbname"].".id ";
 				}else{
 				
 					$sql=$sql." left join ".$value["tablename"]." ".$value["ntbname"]." on r_main.".$value["key"]."=".$value["ntbname"].".id ";
@@ -164,14 +175,39 @@ class XmlModel
 	return $sql;
   }
 
+  public function GetFListData($dbMgr,$smartyMgr){
+	Global $CONFIG;
+
+	$Array=Array();
+	$fields=$this->XmlData["fields"]["field"];
+	foreach ($fields as $value){
+		if($value["type"]=="flist"){
+			//ismutillang
+			$tablename=$value["tablename"];
+			$tablerename=$value["ntbname"];
+			$displayfield=$value["displayfield"];
+			$condition=$value["condition"];
+			$ismutillang=$value["fmutillang"];
+
+			$arrayvalue=$this->GetFKeyData($dbMgr,$displayfield,$tablename,$tablerename,$condition,$ismutillang);
+			
+			$Arr=Array();
+			$Arr["key"]=$value["key"];
+			$Arr["value"]=$arrayvalue;
+			$Array[]=$Arr;
+		}
+	}
+	
+    $smartyMgr->assign("FListArr",$Array);
+  }
+
 
   public function ShowSearchResult($dbMgr,$smartyMgr,$request){
 	
 	$sql=$this->GetSearchSql($request);
-
 	$query = $dbMgr->query($sql);
 	$result = $dbMgr->fetch_array_all($query); 
-	
+
     $smartyMgr->assign("ModelData",$this->XmlData);
     $smartyMgr->assign("PageName",$this->PageName);
     $smartyMgr->assign("result",$result);
@@ -185,6 +221,7 @@ class XmlModel
 	$query = $dbMgr->query($sql);
 	$result = $dbMgr->fetch_array_all($query); 
 	
+	$this->GetFListData($dbMgr,$smartyMgr);
     $smartyMgr->assign("ModelData",$this->XmlData);
     $smartyMgr->assign("PageName",$this->PageName);
     $smartyMgr->assign("parenturl",$parenturl);
@@ -196,6 +233,8 @@ class XmlModel
   
   public function Add($dbMgr,$smartyMgr){
    $dataWithFKey=$this->loadFKeyValue($dbMgr,$this->XmlData);
+
+	$this->GetFListData($dbMgr,$smartyMgr);
     $smartyMgr->assign("ModelData",$dataWithFKey);
     $smartyMgr->assign("PageName",$this->PageName);
     $smartyMgr->assign("action","add");
@@ -208,13 +247,16 @@ class XmlModel
 	$query = $dbMgr->query($sql);
 	$result = $dbMgr->fetch_array($query); 
 
+	if($this->XmlData["ismutillang"]=="1"){
 	$sql="select * from ".$this->XmlData["tablename"]."_lang where oid=$id";
 	$query = $dbMgr->query($sql);
 	$langresult = $dbMgr->fetch_array_all($query); 
-
+	}
 
 	$XmlDataWithInfo=$this->assignWithInfo($this->XmlData,$result,$langresult);
     $dataWithFKey=$this->loadFKeyValue($dbMgr,$XmlDataWithInfo);
+	
+	$this->GetFListData($dbMgr,$smartyMgr);
 
     $smartyMgr->assign("ModelData",$dataWithFKey);
     $smartyMgr->assign("PageName",$this->PageName);
@@ -247,10 +289,10 @@ class XmlModel
   }
   public function Save($dbMgr,$request,$sysuser){
 	Global $SysLangConfig;
-
+	//print_r($request);
     $sql="";
 	$dbMgr->begin_trans();
-
+	$haveMutilLang=false;
 	if($request["primary_id"]==""){
 	
 		$sql="select ifnull(max(id),0)+1 from ".$this->XmlData["tablename"];
@@ -278,7 +320,7 @@ class XmlModel
 			
 			
 			if($value["type"]=="grid"
-			||$value["ismutillang"]=="1"){
+			||$value["ismutillang"]){
 				continue;
 			}
 
@@ -290,25 +332,7 @@ class XmlModel
 		}
 		$sql=$sql.",now(),$sysuser,now(),$sysuser )";
 		$query = $dbMgr->query($sql);
-		if($haveMutilLang){
-			foreach ($SysLangConfig["langs"]["lang"] as $lang){
-				$sql="insert into ".$this->XmlData["tablename"]."_lang (oid,lang";
-				$fields=$this->XmlData["fields"]["field"];
-				foreach ($fields as $value){
-					if($value["ismutillang"]=="1"){
-					$sql=$sql.",`".$value["key"]."`";
-					}
-				}
-				$sql=$sql." ) values ( $id ,'".$lang["code"]."' ";
-				foreach ($fields as $value){
-					if($value["ismutillang"]=="1"){
-						$sql=$sql.",'".mysql_real_escape_string($request[$value["key"]."_".$lang["code"]])."'";
-					}
-				}
-				$sql=$sql." )";
-				$query = $dbMgr->query($sql);
-			}
-		}
+		
 	}else{
 		$haveMutilLang=false;
 		$id=$request["primary_id"];
@@ -349,7 +373,28 @@ class XmlModel
 			}
 		}
 	}
-	
+
+	if($haveMutilLang){
+			$sql="delete from ".$this->XmlData["tablename"]."_lang where oid=$id ";
+				$query = $dbMgr->query($sql);
+			foreach ($SysLangConfig["langs"]["lang"] as $lang){
+				$sql="insert into ".$this->XmlData["tablename"]."_lang (oid,lang";
+				$fields=$this->XmlData["fields"]["field"];
+				foreach ($fields as $value){
+					if($value["ismutillang"]=="1"){
+					$sql=$sql.",`".$value["key"]."`";
+					}
+				}
+				$sql=$sql." ) values ( $id ,'".$lang["code"]."' ";
+				foreach ($fields as $value){
+					if($value["ismutillang"]=="1"){
+						$sql=$sql.",'".mysql_real_escape_string($request[$value["key"]."_".$lang["code"]])."'";
+					}
+				}
+				$sql=$sql." )";
+				$query = $dbMgr->query($sql);
+			}
+		}
 
 	$dbMgr->commit_trans();
 	return "right".$id;

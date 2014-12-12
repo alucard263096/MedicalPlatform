@@ -1,77 +1,86 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
-  <name>Test Example</name>
-  <tablename>tb_test</tablename>
-  <nolist>0</nolist>
+  <name>适用人群</name>
+  <tablename>dr_tb_used_group</tablename>
   <searchcondition>r_main.status&lt;&gt;'D'</searchcondition>
+  <ismutillang>1</ismutillang>
   <fields>
     <field>
-      <name>Seq</name>
-      <key>seq</key>
-      <type>number</type>
+      <name>类型</name>
+      <key>type</key>
+      <type>select</type>
       <displayinlist>1</displayinlist>
-      <gotodetail>1</gotodetail>
-      <notnull>1</notnull>
-      <disableindetail>0</disableindetail>
-    </field>
-    <field>
-      <name>Category</name>
-      <key>cate_id</key>
-      <type>fkey</type>
-      <displayfield>name</displayfield>
-      <displayinlist>1</displayinlist>
-      <gotodetail>1</gotodetail>
+      <options>
+        <option>
+          <name>所有可用</name>
+          <value>A</value>
+        </option>
+        <option>
+          <name>疫苗专用</name>
+          <value>Y</value>
+        </option>
+      </options>
       <search>1</search>
       <notnull>1</notnull>
-      <tablename>tb_test_category</tablename>
-      <ntbname>r_cate</ntbname>
-      <condition>r_cate.status='A'</condition>
     </field>
     <field>
-      <name>Name</name>
+      <name>适用人群名称</name>
       <key>name</key>
       <type>text</type>
+      <ismutillang>1</ismutillang>
       <displayinlist>1</displayinlist>
       <gotodetail>1</gotodetail>
       <search>1</search>
       <notnull>1</notnull>
     </field>
     <field>
-      <name>Summary</name>
-      <key>summary</key>
+      <name>适用人群描述</name>
+      <key>description</key>
       <type>longtext</type>
+      <ismutillang>1</ismutillang>
+      <notnull>1</notnull>
+    </field>
+    <field>
+      <name>适用最小年龄</name>
+      <key>min_age</key>
+      <type>number</type>
+      <notnull>1</notnull>
+    </field>
+    <field>
+      <name>适用最大年龄</name>
+      <key>max_age</key>
+      <type>number</type>
+      <notnull>1</notnull>
+    </field>
+    <field>
+      <name>适用性别</name>
+      <key>sexual</key>
+      <type>select</type>
+      <displayinlist>1</displayinlist>
+      <options>
+        <option>
+          <name>男女通用</name>
+          <value>A</value>
+        </option>
+        <option>
+          <name>男</name>
+          <value>M</value>
+        </option>
+        <option>
+          <name>女</name>
+          <value>F</value>
+        </option>
+      </options>
       <search>1</search>
       <notnull>1</notnull>
     </field>
     <field>
-      <name>Content</name>
-      <key>content</key>
-      <type>html</type>
+      <name>备注</name>
+      <key>remarks</key>
+      <type>longtext</type>
     </field>
     <field>
-      <name>Is Male</name>
-      <key>is_check</key>
-      <type>check</type>
-      <displayinlist>1</displayinlist>
-      <yvalue>Yes</yvalue>
-      <nvalue>No</nvalue>
-    </field>
-    <field>
-      <name>Image Upload</name>
-      <key>logo</key>
-      <type>upload</type>
-      <uploadmodule>test</uploadmodule>
-    </field>
-    <field>
-      <name>Applied Date</name>
-      <key>applied_date</key>
-      <type>datetime</type>
-      <displayinlist>1</displayinlist>
-      <search>1</search>
-      <notnull>1</notnull>
-    </field>
-    <field>
-      <name>Status</name>
+      <name>状态</name>
       <key>status</key>
       <type>select</type>
       <displayinlist>1</displayinlist>

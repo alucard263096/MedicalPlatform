@@ -123,6 +123,15 @@
     $(document).ready(function(){
         myjs_listPageLoad();
     });
+    
+    {{foreach from=$FListArr item=rs}}
+    flistarr{{$rs.key}} = new Array();
+    {{foreach from=$rs.value item=rsvalue}}
+    flistarr{{$rs.key}}[{{$rsvalue.id}}] = "{{$rsvalue.name}}";
+    {{/foreach}}
+    {{/foreach}}
+
+    
     $(function () {
 
 

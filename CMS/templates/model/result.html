@@ -1,4 +1,3 @@
-
 <thead>
     <tr>
         <th></th>
@@ -29,3 +28,29 @@
     </tr>
     {{/foreach}}
 </tbody>
+
+<script>
+            $(function () {
+                {{foreach from=$ModelData.fields.field item=rs}}
+                {{if $rs.type=="flist"}}
+                $(".result_{{$rs.key}}").each(function () {
+                    var str = $(this).text();
+                    var arr = str.split(",");
+                    var nstr = "";
+                    var isFirst = true;
+                    for (var i = 0; i < arr.length; i++) {
+                        if ($.trim(arr[i]) !="" ) {
+                            if (isFirst == false) {
+                                nstr = nstr + ",";
+                            }
+                            var id=Number(arr[i]);
+                            isFirst = false;
+                            nstr = nstr + flistarr{{$rs.key}}[id];
+                        }
+                    }
+                    $(this).text(nstr);
+                });
+                {{/if}}
+                {{/foreach}}
+            });
+</script>
