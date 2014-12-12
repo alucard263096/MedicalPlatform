@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
-  <name>治疗效果</name>
+  <name>效果与服务</name>
   <tablename>dr_tb_effect</tablename>
   <searchcondition>r_main.status&lt;&gt;'D'</searchcondition>
   <ismutillang>1</ismutillang>
@@ -19,12 +19,16 @@
           <name>疫苗专用</name>
           <value>Y</value>
         </option>
+        <option>
+          <name>医疗服务</name>
+          <value>M</value>
+        </option>
       </options>
       <search>1</search>
       <notnull>1</notnull>
     </field>
     <field>
-      <name>功效名称</name>
+      <name>名称</name>
       <key>name</key>
       <type>text</type>
       <ismutillang>1</ismutillang>
@@ -34,7 +38,7 @@
       <notnull>1</notnull>
     </field>
     <field>
-      <name>功效详情</name>
+      <name>详情</name>
       <key>description</key>
       <type>longtext</type>
       <ismutillang>1</ismutillang>

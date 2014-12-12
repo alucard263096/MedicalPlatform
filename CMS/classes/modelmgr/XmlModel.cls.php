@@ -76,7 +76,8 @@ class XmlModel
 
   public function GetSearchSql($request){
 	Global $CONFIG;
-
+	//echo "a";
+	//print_r($request);
 	$sql="select r_main.id";
 	$fields=$this->XmlData["fields"]["field"];
 	foreach ($fields as $value){
@@ -151,9 +152,7 @@ class XmlModel
 			}else if($value["type"]=="fkey"){
 
 				if($request[$value["key"]]!="0"){
-
 					$sql=$sql." and r_main.".$value["key"]."=".mysql_real_escape_string($request[$value["key"]])."";
-
 				}
 
 
@@ -215,7 +214,6 @@ class XmlModel
 
   }
   public function ShowGridResult($dbMgr,$smartyMgr,$request,$parenturl){
-	
 	$sql=$this->GetSearchSql($request);
 
 	$query = $dbMgr->query($sql);
@@ -231,10 +229,14 @@ class XmlModel
   }
 
   
-  public function Add($dbMgr,$smartyMgr){
+  public function Add($dbMgr,$smartyMgr,$request){
    $dataWithFKey=$this->loadFKeyValue($dbMgr,$this->XmlData);
-
 	$this->GetFListData($dbMgr,$smartyMgr);
+	
+
+	$smartyMgr->assign("ParentKey",$request["key"]);
+	$smartyMgr->assign("ParentId",$request["id"]);
+
     $smartyMgr->assign("ModelData",$dataWithFKey);
     $smartyMgr->assign("PageName",$this->PageName);
     $smartyMgr->assign("action","add");
@@ -257,7 +259,6 @@ class XmlModel
     $dataWithFKey=$this->loadFKeyValue($dbMgr,$XmlDataWithInfo);
 	
 	$this->GetFListData($dbMgr,$smartyMgr);
-
     $smartyMgr->assign("ModelData",$dataWithFKey);
     $smartyMgr->assign("PageName",$this->PageName);
     $smartyMgr->assign("id",$id);
@@ -405,6 +406,38 @@ class XmlModel
 	$query = $dbMgr->query($sql);
 	return "success";
   }
+
+  public function DefaultShow($smarty,$dbmgr,$action,$menuId,$request){
+	Global $SysUser;
+	  if($action==""){
+		$smarty->assign("MyMenuId",$menuId."_list");
+		$this->ShowList($dbmgr,$smarty);
+
+	  }else if($action=="search"){
+		$this->ShowSearchResult($dbmgr,$smarty,$request);
+	  }else if($action=="getgrid"){
+
+		$this->ShowGridResult($dbmgr,$smarty,$request,$request["parenturl"]);
+
+	  }else if($action=="add"){
+
+		$smarty->assign("MyMenuId",$menuId."_add");
+
+		$this->Add($dbmgr,$smarty,$request);
+
+	  }else if($action=="edit"){
+		$smarty->assign("MyMenuId",$menuId."_add");
+		$this->Edit($dbmgr,$smarty,$request["id"]);
+	  }else if($action=="save"){
+		$result=$this->Save($dbmgr,$request,$SysUser["id"]);
+		echo $result;
+	  }else if($action=="delete"){
+		$result=$this->Delete($dbmgr,$request["idlist"],$SysUser["id"]);
+		echo $result;
+	  }
+
+  }
+
 }
 
 ?>

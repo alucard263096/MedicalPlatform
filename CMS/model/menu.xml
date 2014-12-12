@@ -159,13 +159,13 @@
       <submenus>
         <submenu>
           <id>effect_list</id>
-          <name>治疗功效列表</name>
+          <name>效果与服务列表</name>
           <url>/BaseInfo/effect.php</url>
           <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>effect_add</id>
-          <name>治疗功效新增</name>
+          <name>效果与服务新增</name>
           <url>/BaseInfo/effect.php?action=add</url>
           <onlyadmin>1</onlyadmin>
         </submenu>
@@ -191,6 +191,36 @@
           <id>vaccine_add</id>
           <name>疫苗新增</name>
           <url>/BaseInfo/vaccine.php?action=add</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+      </submenus>
+    </mainmenu>
+    <mainmenu>
+      <module>doctor</module>
+      <name>医生管理</name>
+      <submenus>
+        <submenu>
+          <id>hospital_list</id>
+          <name>医院列表</name>
+          <url>/Doctor/hospital.php</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>hospital_add</id>
+          <name>医院新增</name>
+          <url>/Doctor/hospital.php?action=add</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>doctor_list</id>
+          <name>医生列表</name>
+          <url>/Doctor/doctor.php</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>doctor_add</id>
+          <name>医生列表</name>
+          <url>/Doctor/doctor.php?action=add</url>
           <onlyadmin>1</onlyadmin>
         </submenu>
       </submenus>
