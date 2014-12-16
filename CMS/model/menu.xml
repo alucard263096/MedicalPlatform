@@ -27,6 +27,16 @@
           <url>/Admin/user.php?action=add</url>
           <onlyadmin>1</onlyadmin>
         </submenu>
+        <submenu>
+          <id>doctoraccount_list</id>
+          <name>医生账号列表</name>
+          <url>/Admin/doctoraccount.php</url>
+        </submenu>
+        <submenu>
+          <id>doctoraccount_add</id>
+          <name>医生账号新增</name>
+          <url>/Admin/doctoraccount.php?action=add</url>
+        </submenu>
       </submenus>
     </mainmenu>
     <!--<mainmenu>
