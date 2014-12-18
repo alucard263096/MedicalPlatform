@@ -37,9 +37,9 @@
       <submenus>
         <submenu>
           <id>doctor_add</id>
-          <name>我的信息</name>
-          <name_zh-cn>我的信息</name_zh-cn>
-          <name_zh-hk>我的信息</name_zh-hk>
+          <name>我的资料</name>
+          <name_zh-cn>我的资料</name_zh-cn>
+          <name_zh-hk>我的资料</name_zh-hk>
           <name_en-us>Profile</name_en-us>
           <url>/Info/doctor.php</url>
           <onlyadmin>1</onlyadmin>
@@ -66,6 +66,11 @@
       <module>content</module>
       <name>预约管理</name>
       <submenus>
+        <submenu>
+          <id>no</id>
+          <name>暂无</name>
+          <url>#</url>
+        </submenu>
         <submenu>
           <id>no</id>
           <name>暂无</name>

@@ -77,7 +77,7 @@ return json_encode($item);
 function ResetNameWithLang($arr,$lang){
 	
 	if(isset($arr["name"])&&isset($arr["name_".$lang])){
-		$arr["name"]=$arr["name_".$lang]."aaa";
+		$arr["name"]=$arr["name_".$lang];
 	}
 
 	foreach ($arr as $key => $value){

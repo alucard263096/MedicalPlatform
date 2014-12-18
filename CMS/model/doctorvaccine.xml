@@ -37,12 +37,14 @@
       <key>once_price</key>
       <type>number</type>
       <notnull>1</notnull>
+      <displayinlist>1</displayinlist>
     </field>
     <field>
       <name>一次性付款收费</name>
       <key>total_price</key>
       <type>number</type>
       <notnull>1</notnull>
+      <displayinlist>1</displayinlist>
     </field>
     <field>
       <name>备注</name>

@@ -46,8 +46,7 @@ class XmlModel
 	$fields=$XmlDataEx["fields"]["field"];
 	$count=count($fields);
 	for($i=0;$i<$count;$i++){
-		if($fields[$i]["type"]=="fkey"
-		&&$fields[$i]["search"]=="1"){
+		if($fields[$i]["type"]=="fkey"){
 			$options=$this->GetFKeyData($dbMgr,$fields[$i]["displayfield"],$fields[$i]["tablename"],$fields[$i]["ntbname"],$fields[$i]["condition"],$fields[$i]["fmutillang"]);
 			$fields[$i]["options"]=$options;
 		}
@@ -156,7 +155,7 @@ class XmlModel
 
 			}else if($value["type"]=="fkey"){
 
-				if($request[$value["key"]]!="0"){
+				if($request[$value["key"]]!="0"&&$request[$value["key"]]!=""){
 					$sql=$sql." and r_main.".$value["key"]."=".mysql_real_escape_string($request[$value["key"]])."";
 				}
 

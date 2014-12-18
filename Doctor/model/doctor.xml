@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
-  <name>医生</name>
+  <name>我的资料</name>
+  <name_zh-cn>我的资料</name_zh-cn>
+  <name_zh-hk>我的资料</name_zh-hk>
+  <name_en-us>Profile</name_en-us>
   <tablename>dr_tb_doctor</tablename>
   <searchcondition>r_main.status&lt;&gt;'D'</searchcondition>
   <ismutillang>1</ismutillang>
   <fields>
     <field>
       <name>执业许可证号</name>
+      <name_zh-cn>执业许可证号</name_zh-cn>
+      <name_zh-hk>执业许可证号</name_zh-hk>
+      <name_en-us>Licence Number</name_en-us>
       <key>licence_code</key>
       <type>text</type>
       <displayinlist>1</displayinlist>
@@ -17,6 +23,9 @@
     </field>
     <field>
       <name>医生姓名</name>
+      <name_zh-cn>医生姓名</name_zh-cn>
+      <name_zh-hk>医生姓名</name_zh-hk>
+      <name_en-us>My Name</name_en-us>
       <key>name</key>
       <type>text</type>
       <ismutillang>1</ismutillang>
@@ -27,21 +36,36 @@
     </field>
     <field>
       <name>头像</name>
+      <name_zh-cn>头像</name_zh-cn>
+      <name_zh-hk>头像</name_zh-hk>
+      <name_en-us>My Photo</name_en-us>
       <key>photo</key>
       <type>upload</type>
       <uploadmodule>doctor_photo</uploadmodule>
     </field>
     <field>
       <name>性别</name>
+      <name_zh-cn>性别</name_zh-cn>
+      <name_zh-hk>性别</name_zh-hk>
+      <name_en-us>Sexual</name_en-us>
       <key>sexual</key>
       <type>select</type>
       <options>
         <option>
           <name>男性</name>
+          <name_zh-cn>男性</name_zh-cn>
+          <name_zh-hk>男性</name_zh-hk>
+          <name_en-us>Male</name_en-us>
           <value>M</value>
         </option>
         <option>
           <name>女性</name>
+          <name_zh-cn>女性</name_zh-cn>
+          <name_zh-hk>女性</name_zh-hk>
+          <name_en-us>Female</name_en-us>
+          <name_zh-cn>状态</name_zh-cn>
+          <name_zh-hk>状态</name_zh-hk>
+          <name_en-us>Status</name_en-us>
           <value>F</value>
         </option>
       </options>
@@ -50,6 +74,9 @@
     </field>
     <field>
       <name>医生介绍</name>
+      <name_zh-cn>医生介绍</name_zh-cn>
+      <name_zh-hk>医生介绍</name_zh-hk>
+      <name_en-us>My Summary</name_en-us>
       <key>summary</key>
       <type>longtext</type>
       <ismutillang>1</ismutillang>
@@ -57,6 +84,9 @@
     </field>
     <field>
       <name>专业资格</name>
+      <name_zh-cn>专业资格</name_zh-cn>
+      <name_zh-hk>专业资格</name_zh-hk>
+      <name_en-us>Professional Qualifications</name_en-us>
       <key>pro_title</key>
       <type>text</type>
       <ismutillang>1</ismutillang>
@@ -66,12 +96,18 @@
     </field>
     <field>
       <name>资格获得年份</name>
+      <name_zh-cn>资格获得年份</name_zh-cn>
+      <name_zh-hk>资格获得年份</name_zh-hk>
+      <name_en-us>Qualifications Years</name_en-us>
       <key>pro_year</key>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
       <name>可提供的医疗服务及手术</name>
+      <name_zh-cn>可提供的医疗服务及手术</name_zh-cn>
+      <name_zh-hk>可提供的医疗服务及手术</name_zh-hk>
+      <name_en-us>My Services</name_en-us>
       <key>effect_list_id</key>
       <type>flist</type>
       <displayfield>name</displayfield>
@@ -84,6 +120,9 @@
     </field>
     <field>
       <name>可使用的医院</name>
+      <name_zh-cn>可使用的医院</name_zh-cn>
+      <name_zh-hk>可使用的医院</name_zh-hk>
+      <name_en-us>Hospital</name_en-us>
       <key>hospital_list_id</key>
       <type>flist</type>
       <displayfield>name</displayfield>
@@ -95,30 +134,45 @@
     </field>
     <field>
       <name>执业年期</name>
+      <name_zh-cn>执业年期</name_zh-cn>
+      <name_zh-hk>执业年期</name_zh-hk>
+      <name_en-us>Practice Years</name_en-us>
       <key>exec_year</key>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
       <name>全科收费</name>
+      <name_zh-cn>全科收费</name_zh-cn>
+      <name_zh-hk>全科收费</name_zh-hk>
+      <name_en-us>General Price</name_en-us>
       <key>general_price</key>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
       <name>专科收费</name>
+      <name_zh-cn>专科收费</name_zh-cn>
+      <name_zh-hk>专科收费</name_zh-hk>
+      <name_en-us>Specialist Price</name_en-us>
       <key>specialist_price</key>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
       <name>预约费</name>
+      <name_zh-cn>预约费</name_zh-cn>
+      <name_zh-hk>预约费</name_zh-hk>
+      <name_en-us>Booking Fee</name_en-us>
       <key>book_fee</key>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
       <name>使用语言</name>
+      <name_zh-cn>使用语言</name_zh-cn>
+      <name_zh-hk>使用语言</name_zh-hk>
+      <name_en-us>Use Language</name_en-us>
       <key>use_lang_id</key>
       <type>flist</type>
       <displayfield>name</displayfield>
@@ -129,6 +183,9 @@
     </field>
     <field>
       <name>诊所名称</name>
+      <name_zh-cn>诊所名称</name_zh-cn>
+      <name_zh-hk>诊所名称</name_zh-hk>
+      <name_en-us>Office Name</name_en-us>
       <key>office_name</key>
       <type>text</type>
       <ismutillang>1</ismutillang>
@@ -139,6 +196,9 @@
     </field>
     <field>
       <name>诊所所在区域</name>
+      <name_zh-cn>诊所所在区域</name_zh-cn>
+      <name_zh-hk>诊所所在区域</name_zh-hk>
+      <name_en-us>Office District</name_en-us>
       <key>office_district</key>
       <type>text</type>
       <ismutillang>1</ismutillang>
@@ -146,6 +206,9 @@
     </field>
     <field>
       <name>诊所完整地址</name>
+      <name_zh-cn>诊所完整地址</name_zh-cn>
+      <name_zh-hk>诊所完整地址</name_zh-hk>
+      <name_en-us>Office Address</name_en-us>
       <key>office_address</key>
       <type>longtext</type>
       <ismutillang>1</ismutillang>
@@ -153,12 +216,18 @@
     </field>
     <field>
       <name>诊所地图坐标</name>
+      <name_zh-cn>诊所地图坐标</name_zh-cn>
+      <name_zh-hk>诊所地图坐标</name_zh-hk>
+      <name_en-us>Office Coordinate</name_en-us>
       <key>office_coordinate</key>
       <type>text</type>
       <notnull>1</notnull>
     </field>
     <field>
       <name>注册专科</name>
+      <name_zh-cn>注册专科</name_zh-cn>
+      <name_zh-hk>注册专科</name_zh-hk>
+      <name_en-us>Register Specialist</name_en-us>
       <key>reg_title</key>
       <type>text</type>
       <ismutillang>1</ismutillang>
@@ -166,6 +235,9 @@
     </field>
     <field>
       <name>是否全科</name>
+      <name_zh-cn>是否全科</name_zh-cn>
+      <name_zh-hk>是否全科</name_zh-hk>
+      <name_en-us>Is General</name_en-us>
       <key>is_general</key>
       <type>check</type>
       <displayinlist>1</displayinlist>
@@ -174,6 +246,9 @@
     </field>
     <field>
       <name>预约内容</name>
+      <name_zh-cn>预约内容</name_zh-cn>
+      <name_zh-hk>预约内容</name_zh-hk>
+      <name_en-us>Booking Description</name_en-us>
       <key>book_content</key>
       <type>longtext</type>
       <ismutillang>1</ismutillang>
@@ -181,6 +256,9 @@
     </field>
     <field>
       <name>可预约工作日</name>
+      <name_zh-cn>可预约工作日</name_zh-cn>
+      <name_zh-hk>可预约工作日</name_zh-hk>
+      <name_en-us>Booking Date</name_en-us>
       <key>meet_days</key>
       <type>flist</type>
       <displayfield>name</displayfield>
@@ -192,6 +270,9 @@
     </field>
     <field>
       <name>可预约时段</name>
+      <name_zh-cn>可预约时段</name_zh-cn>
+      <name_zh-hk>可预约时段</name_zh-hk>
+      <name_en-us>Booking Time</name_en-us>
       <key>meet_time</key>
       <type>flist</type>
       <displayfield>name</displayfield>
@@ -201,51 +282,16 @@
       <condition>1=1  </condition>
     </field>
     <field>
-      <name>备注</name>
-      <key>remarks</key>
-      <type>longtext</type>
-    </field>
-    <field>
-      <name>状态</name>
-      <key>status</key>
-      <type>select</type>
-      <displayinlist>1</displayinlist>
-      <options>
-        <option>
-          <name>启用</name>
-          <value>A</value>
-        </option>
-        <option>
-          <name>禁用</name>
-          <value>I</value>
-        </option>
-      </options>
-      <search>1</search>
-      <notnull>1</notnull>
-    </field>
-    <field>
       <name>可用疫苗</name>
+      <name_zh-cn>可用疫苗</name_zh-cn>
+      <name_zh-hk>可用疫苗</name_zh-hk>
+      <name_en-us>Use Vaccine</name_en-us>
       <key>doctorvaccinelist</key>
       <type>grid</type>
-      <api>Doctor/doctorvaccine.php?action=getgrid&amp;doctor_id=</api>
-      <newitemurl>Doctor/doctorvaccine.php?action=add&amp;key=doctor_id&amp;id=</newitemurl>
+      <api>Info/doctorvaccine.php?action=getgrid&amp;doctor_id=</api>
+      <newitemurl>Info/doctorvaccine.php?action=add&amp;key=doctor_id&amp;id=</newitemurl>
     </field>
   </fields>
-  <options>
-    <option>
-      <name>新增</name>
-      <type>function</type>
-      <function>addNew()</function>
-      <search>1</search>
-      <detail>1</detail>
-    </option>
-    <option>
-      <name>删除</name>
-      <type>function</type>
-      <function>btnDeleteInList()</function>
-      <search>1</search>
-    </option>
-  </options>
   <javascripts>
     <javascript>
       <filename>doctor.js</filename>

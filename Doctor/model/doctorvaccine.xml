@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
-  <name>医生疫苗</name>
+  <name>我的疫苗</name>
+  <name_zh-cn>我的疫苗</name_zh-cn>
+  <name_zh-hk>我的疫苗</name_zh-hk>
+  <name_en-us>My Vaccine</name_en-us>
   <tablename>dr_tb_doctor_vaccine</tablename>
   <searchcondition>r_main.status&lt;&gt;'D'</searchcondition>
   <fields>
@@ -9,9 +12,6 @@
       <key>doctor_id</key>
       <type>fkey</type>
       <displayfield>name</displayfield>
-      <displayinlist>1</displayinlist>
-      <gotodetail>1</gotodetail>
-      <search>1</search>
       <notnull>1</notnull>
       <fmutillang>1</fmutillang>
       <tablename>dr_tb_doctor</tablename>
@@ -20,6 +20,9 @@
     </field>
     <field>
       <name>疫苗</name>
+      <name_zh-cn>疫苗</name_zh-cn>
+      <name_zh-hk>疫苗</name_zh-hk>
+      <name_en-us>Vaccine</name_en-us>
       <key>vaccine_id</key>
       <type>fkey</type>
       <displayfield>name</displayfield>
@@ -34,33 +37,53 @@
     </field>
     <field>
       <name>单次接种疫苗收费</name>
+      <name_zh-cn>单次接种疫苗收费</name_zh-cn>
+      <name_zh-hk>单次接种疫苗收费</name_zh-hk>
+      <name_en-us>Once Injection Price</name_en-us>
       <key>once_price</key>
+      <displayinlist>1</displayinlist>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
       <name>一次性付款收费</name>
+      <name_zh-cn>一次性付款收费</name_zh-cn>
+      <name_zh-hk>一次性付款收费</name_zh-hk>
+      <name_en-us>Total Injection Price</name_en-us>
       <key>total_price</key>
+      <displayinlist>1</displayinlist>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
       <name>备注</name>
+      <name_zh-cn>备注</name_zh-cn>
+      <name_zh-hk>备注</name_zh-hk>
+      <name_en-us>Remarks</name_en-us>
       <key>remarks</key>
       <type>longtext</type>
     </field>
     <field>
       <name>状态</name>
+      <name_zh-cn>状态</name_zh-cn>
+      <name_zh-hk>状态</name_zh-hk>
+      <name_en-us>Status</name_en-us>
       <key>status</key>
       <type>select</type>
       <displayinlist>1</displayinlist>
       <options>
         <option>
           <name>启用</name>
+          <name_zh-cn>启用</name_zh-cn>
+          <name_zh-hk>启用</name_zh-hk>
+          <name_en-us>Active</name_en-us>
           <value>A</value>
         </option>
         <option>
           <name>禁用</name>
+          <name_zh-cn>禁用</name_zh-cn>
+          <name_zh-hk>禁用</name_zh-hk>
+          <name_en-us>Inactive</name_en-us>
           <value>I</value>
         </option>
       </options>
@@ -71,6 +94,9 @@
   <options>
     <option>
       <name>新增</name>
+      <name_zh-cn>新增</name_zh-cn>
+      <name_zh-hk>新增</name_zh-hk>
+      <name_en-us>New</name_en-us>
       <type>function</type>
       <function>addNew()</function>
       <search>1</search>
@@ -78,6 +104,9 @@
     </option>
     <option>
       <name>删除</name>
+      <name_zh-cn>删除</name_zh-cn>
+      <name_zh-hk>删除</name_zh-hk>
+      <name_en-us>Delete</name_en-us>
       <type>function</type>
       <function>btnDeleteInList()</function>
       <search>1</search>
@@ -85,7 +114,7 @@
   </options>
   <javascripts>
     <javascript>
-      <filename>doctor.js</filename>
+      <filename>doctorvaccine.js</filename>
       <detail>1</detail>
     </javascript>
     <javascript>
