@@ -29,6 +29,7 @@ CREATE TABLE `dr_tb_vaccine` (
   `code` varchar(45) NOT NULL COMMENT '疫苗编号',
   `effect_id` int(11) NOT NULL COMMENT '功效',
   `injection_count` int(11) NOT NULL COMMENT '注射次数',
+  `is_index` varchar(1) NOT NULL DEFAULT 'N',
   `used_group_id` varchar(1000) NOT NULL COMMENT '适用人群',
   `is_hk_project` varchar(1) NOT NULL COMMENT '是否为香港计划内疫苗',
   `is_china_project` varchar(1) NOT NULL COMMENT '是否为中国计划内疫苗',
@@ -53,4 +54,4 @@ CREATE TABLE `dr_tb_vaccine` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-11 21:24:37
+-- Dump completed on 2014-12-19 14:16:01

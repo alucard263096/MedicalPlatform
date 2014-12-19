@@ -26,6 +26,14 @@
       <notnull>1</notnull>
     </field>
     <field>
+      <name>首页显示</name>
+      <key>is_index</key>
+      <type>check</type>
+      <displayinlist>1</displayinlist>
+      <yvalue>是</yvalue>
+      <nvalue>否</nvalue>
+    </field>
+    <field>
       <name>治疗效果</name>
       <key>effect_id</key>
       <type>fkey</type>
