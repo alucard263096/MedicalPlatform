@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
   <name>疫苗</name>
+  <name_zh-cn>疫苗</name_zh-cn>
+  <name_zh-hk>疫苗</name_zh-hk>
+  <name_en-us>Vaccine</name_en-us>
   <tablename>dr_tb_vaccine</tablename>
   <searchcondition>r_main.status&lt;&gt;'D'</searchcondition>
   <ismutillang>1</ismutillang>
   <fields>
     <field>
       <name>疫苗编号</name>
+      <name_zh-cn>疫苗编号</name_zh-cn>
+      <name_zh-hk>疫苗编号</name_zh-hk>
+      <name_en-us>Vaccine Number</name_en-us>
       <key>code</key>
       <type>text</type>
       <displayinlist>1</displayinlist>
@@ -17,6 +23,9 @@
     </field>
     <field>
       <name>疫苗名称</name>
+      <name_zh-cn>疫苗名称</name_zh-cn>
+      <name_zh-hk>疫苗名称</name_zh-hk>
+      <name_en-us>Vaccine Name</name_en-us>
       <key>name</key>
       <type>text</type>
       <ismutillang>1</ismutillang>
@@ -27,6 +36,9 @@
     </field>
     <field>
       <name>首页显示</name>
+      <name_zh-cn>首页显示</name_zh-cn>
+      <name_zh-hk>首页显示</name_zh-hk>
+      <name_en-us>Display In Index</name_en-us>
       <key>is_index</key>
       <type>check</type>
       <displayinlist>1</displayinlist>
@@ -35,12 +47,18 @@
     </field>
     <field>
       <name>显示图片</name>
+      <name_zh-cn>显示图片</name_zh-cn>
+      <name_zh-hk>显示图片</name_zh-hk>
+      <name_en-us>Image</name_en-us>
       <key>image</key>
       <type>upload</type>
       <uploadmodule>vaccine</uploadmodule>
     </field>
     <field>
       <name>治疗效果</name>
+      <name_zh-cn>治疗效果</name_zh-cn>
+      <name_zh-hk>治疗效果</name_zh-hk>
+      <name_en-us>Effect</name_en-us>
       <key>effect_id</key>
       <type>fkey</type>
       <displayfield>name</displayfield>
@@ -55,12 +73,18 @@
     </field>
     <field>
       <name>接种次数</name>
+      <name_zh-cn>接种次数</name_zh-cn>
+      <name_zh-hk>接种次数</name_zh-hk>
+      <name_en-us>Injection Count</name_en-us>
       <key>injection_count</key>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
       <name>接种时间</name>
+      <name_zh-cn>接种时间</name_zh-cn>
+      <name_zh-hk>接种时间</name_zh-hk>
+      <name_en-us>Injection Time</name_en-us>
       <key>injection_time</key>
       <type>longtext</type>
       <ismutillang>1</ismutillang>
@@ -68,6 +92,9 @@
     </field>
     <field>
       <name>接种季节</name>
+      <name_zh-cn>接种季节</name_zh-cn>
+      <name_zh-hk>接种季节</name_zh-hk>
+      <name_en-us>Injection Season</name_en-us>
       <key>injection_season</key>
       <type>longtext</type>
       <ismutillang>1</ismutillang>
@@ -75,6 +102,9 @@
     </field>
     <field>
       <name>适用人群</name>
+      <name_zh-cn>适用人群</name_zh-cn>
+      <name_zh-hk>适用人群</name_zh-hk>
+      <name_en-us>User Group</name_en-us>
       <key>used_group_id</key>
       <type>flist</type>
       <displayfield>name</displayfield>
@@ -87,6 +117,9 @@
     </field>
     <field>
       <name>香港计划内</name>
+      <name_zh-cn>香港计划内</name_zh-cn>
+      <name_zh-hk>香港计划内</name_zh-hk>
+      <name_en-us>Is Hongkong Plan</name_en-us>
       <key>is_hk_project</key>
       <type>check</type>
       <displayinlist>1</displayinlist>
@@ -95,6 +128,9 @@
     </field>
     <field>
       <name>中国计划内</name>
+      <name_zh-cn>中国计划内</name_zh-cn>
+      <name_zh-hk>中国计划内</name_zh-hk>
+      <name_en-us>Is Chinese Plan</name_en-us>
       <key>is_china_project</key>
       <type>check</type>
       <displayinlist>1</displayinlist>
@@ -103,6 +139,9 @@
     </field>
     <field>
       <name>疫苗详细介绍</name>
+      <name_zh-cn>疫苗详细介绍</name_zh-cn>
+      <name_zh-hk>疫苗详细介绍</name_zh-hk>
+      <name_en-us>Vaccine Desciption</name_en-us>
       <key>description</key>
       <type>longtext</type>
       <ismutillang>1</ismutillang>
@@ -110,6 +149,9 @@
     </field>
     <field>
       <name>接种注意事项</name>
+      <name_zh-cn>接种注意事项</name_zh-cn>
+      <name_zh-hk>接种注意事项</name_zh-hk>
+      <name_en-us>Injection Caution</name_en-us>
       <key>caution</key>
       <type>longtext</type>
       <ismutillang>1</ismutillang>
@@ -117,6 +159,9 @@
     </field>
     <field>
       <name>可能产生的不良反应</name>
+      <name_zh-cn>可能产生的不良反应</name_zh-cn>
+      <name_zh-hk>可能产生的不良反应</name_zh-hk>
+      <name_en-us>Bad Effect</name_en-us>
       <key>bad_effect</key>
       <type>longtext</type>
       <ismutillang>1</ismutillang>
@@ -124,6 +169,9 @@
     </field>
     <field>
       <name>产生不良反应的解决方法</name>
+      <name_zh-cn>产生不良反应的解决方法</name_zh-cn>
+      <name_zh-hk>产生不良反应的解决方法</name_zh-hk>
+      <name_en-us>Solutions</name_en-us>
       <key>bad_effect_resolve</key>
       <type>longtext</type>
       <ismutillang>1</ismutillang>
@@ -131,38 +179,59 @@
     </field>
     <field>
       <name>疫苗接种标准价格</name>
+      <name_zh-cn>疫苗接种标准价格</name_zh-cn>
+      <name_zh-hk>疫苗接种标准价格</name_zh-hk>
+      <name_en-us>Standard Price</name_en-us>
       <key>standard_price</key>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
       <name>折扣</name>
+      <name_zh-cn>折扣</name_zh-cn>
+      <name_zh-hk>折扣</name_zh-hk>
+      <name_en-us>Discount</name_en-us>
       <key>discount</key>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
-      <name>详细信息</name>
+      <name>页面详细介绍</name>
+      <name_zh-cn>页面详细介绍</name_zh-cn>
+      <name_zh-hk>页面详细介绍</name_zh-hk>
+      <name_en-us>Html Description</name_en-us>
       <key>context</key>
       <type>html</type>
     </field>
     <field>
       <name>备注</name>
+      <name_zh-cn>备注</name_zh-cn>
+      <name_zh-hk>备注</name_zh-hk>
+      <name_en-us>Remarks</name_en-us>
       <key>remarks</key>
       <type>longtext</type>
     </field>
     <field>
       <name>状态</name>
+      <name_zh-cn>状态</name_zh-cn>
+      <name_zh-hk>状态</name_zh-hk>
+      <name_en-us>Status</name_en-us>
       <key>status</key>
       <type>select</type>
       <displayinlist>1</displayinlist>
       <options>
         <option>
           <name>启用</name>
+          <name_zh-cn>启用</name_zh-cn>
+          <name_zh-hk>启用</name_zh-hk>
+          <name_en-us>Active</name_en-us>
           <value>A</value>
         </option>
         <option>
           <name>禁用</name>
+          <name_zh-cn>禁用</name_zh-cn>
+          <name_zh-hk>禁用</name_zh-hk>
+          <name_en-us>Inactive</name_en-us>
           <value>I</value>
         </option>
       </options>
@@ -170,19 +239,12 @@
       <notnull>1</notnull>
     </field>
   </fields>
-  <options>
-    <option>
-      <name>新增</name>
-      <type>function</type>
-      <function>addNew()</function>
-      <search>1</search>
+  <javascripts>
+    <javascript>
+      <filename>vaccine.js</filename>
       <detail>1</detail>
-    </option>
-    <option>
-      <name>删除</name>
-      <type>function</type>
-      <function>btnDeleteInList()</function>
-      <search>1</search>
-    </option>
-  </options>
+    </javascript>
+    <javascript>
+    </javascript>
+  </javascripts>
 </root>
