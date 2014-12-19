@@ -1,16 +1,16 @@
 <?php
 
 #[Root]
-$CONFIG['rootpath']		= '/MedicalPlatform/Doctor';  
+$CONFIG['rootpath']		= '/MedicalPlatform/UI';  
 //$CONFIG['charset']		= 'utf-8'; 
 $CONFIG['Title']             = 'MedicalPlatform';
 $CONFIG['URL']="http://localhost/MedicalPlatform/Doctor";
 $CONFIG['lang']="zh-cn";//en-us
 $CONFIG["frontendurl"]="http://localhost/MedicalPlatform/";
-$CONFIG["SessionName"]="FooterCMS";
+$CONFIG["SessionName"]="FooterCMSUI";
 $CONFIG["SupportMultiLanguage"]=true;
 
-$CONFIG['smarty']['rootpath']		= '/MedicalPlatform/Doctor'; 
+$CONFIG['smarty']['rootpath']		= '/MedicalPlatform/UI'; 
 $CONFIG['solution_configuration']='debug';
 $CONFIG['server']		= 'windows';   //windows or linux
 
