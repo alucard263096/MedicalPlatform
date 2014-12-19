@@ -34,6 +34,9 @@
     <mainmenu>
       <module>info</module>
       <name>资料管理</name>
+      <name_zh-cn>资料管理</name_zh-cn>
+      <name_zh-hk>资料管理</name_zh-hk>
+      <name_en-us>Information</name_en-us>
       <submenus>
         <submenu>
           <id>doctor_add</id>
