@@ -138,7 +138,7 @@
       <nvalue>否</nvalue>
     </field>
     <field>
-      <name>疫苗详细介绍</name>
+      <name>疫苗详细介绍（HK$）</name>
       <name_zh-cn>疫苗详细介绍</name_zh-cn>
       <name_zh-hk>疫苗详细介绍</name_zh-hk>
       <name_en-us>Vaccine Desciption</name_en-us>
@@ -178,19 +178,19 @@
       <notnull>1</notnull>
     </field>
     <field>
-      <name>疫苗接种标准价格</name>
-      <name_zh-cn>疫苗接种标准价格</name_zh-cn>
-      <name_zh-hk>疫苗接种标准价格</name_zh-hk>
-      <name_en-us>Standard Price</name_en-us>
+      <name>疫苗接种标准价格（HK$）</name>
+      <name_zh-cn>疫苗接种标准价格（HK$）</name_zh-cn>
+      <name_zh-hk>疫苗接种标准价格（HK$）</name_zh-hk>
+      <name_en-us>Standard Price（HK$）</name_en-us>
       <key>standard_price</key>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
-      <name>折扣</name>
-      <name_zh-cn>折扣</name_zh-cn>
-      <name_zh-hk>折扣</name_zh-hk>
-      <name_en-us>Discount</name_en-us>
+      <name>折扣（%）</name>
+      <name_zh-cn>折扣（%）</name_zh-cn>
+      <name_zh-hk>折扣（%）</name_zh-hk>
+      <name_en-us>Discount（%）</name_en-us>
       <key>discount</key>
       <type>number</type>
       <notnull>1</notnull>

@@ -29,36 +29,30 @@ CREATE TABLE `dr_tb_doctor` (
   `licence_code` varchar(45) NOT NULL COMMENT '执业许可证号',
   `photo` varchar(200) NOT NULL COMMENT '头像',
   `sexual` varchar(1) NOT NULL COMMENT '性别',
-  `pro_year` int(11) NOT NULL COMMENT '专业资格获得年份',
   `exec_year` int(11) NOT NULL COMMENT '执业年期',
   `effect_list_id` varchar(1000) NOT NULL COMMENT '可提供的医疗服务及手术',
   `hospital_list_id` varchar(1000) NOT NULL COMMENT '可使用的医院',
   `general_price` decimal(10,3) NOT NULL COMMENT '全科收费',
   `specialist_price` decimal(10,3) NOT NULL COMMENT '专科收费',
   `use_lang_id` varchar(1000) NOT NULL COMMENT '语言',
-  `office_coordinate` varchar(45) NOT NULL COMMENT '诊所地图',
   `is_general` varchar(1) NOT NULL COMMENT '是否为全科医生',
-  `meet_days` varchar(100) NOT NULL COMMENT '预约日期',
-  `meet_time` varchar(200) NOT NULL COMMENT '预约时间',
-  `book_fee` decimal(10,3) NOT NULL COMMENT '预约费',
   `remarks` varchar(1000) NOT NULL,
   `status` varchar(1) NOT NULL,
   `created_date` datetime NOT NULL,
   `created_user` int(11) NOT NULL,
   `updated_date` datetime NOT NULL,
   `updated_user` int(11) NOT NULL,
+  `meet_day1` varchar(200) DEFAULT NULL COMMENT '周一预约时间段',
+  `meet_day2` varchar(200) DEFAULT NULL COMMENT '周二预约时间段',
+  `meet_day3` varchar(200) DEFAULT NULL COMMENT '周三预约时间段',
+  `meet_day4` varchar(200) DEFAULT NULL COMMENT '周四预约时间段',
+  `meet_day5` varchar(200) DEFAULT NULL COMMENT '周五预约时间段',
+  `meet_day6` varchar(200) DEFAULT NULL COMMENT '周六预约时间段',
+  `meet_day7` varchar(200) DEFAULT NULL COMMENT '周日预约时间段',
+  `office_list_id` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生';
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dr_tb_doctor`
---
-
-LOCK TABLES `dr_tb_doctor` WRITE;
-/*!40000 ALTER TABLE `dr_tb_doctor` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dr_tb_doctor` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -69,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-13  0:27:36
+-- Dump completed on 2014-12-22  0:54:38

@@ -222,6 +222,18 @@
           <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
+          <id>office_list</id>
+          <name>诊所列表</name>
+          <url>/Doctor/office.php</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>office_add</id>
+          <name>诊所新增</name>
+          <url>/Doctor/office.php?action=add</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
           <id>doctor_list</id>
           <name>医生列表</name>
           <url>/Doctor/doctor.php</url>

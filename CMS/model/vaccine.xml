@@ -130,13 +130,13 @@
       <notnull>1</notnull>
     </field>
     <field>
-      <name>疫苗接种标准价格</name>
+      <name>疫苗接种标准价格（HK$）</name>
       <key>standard_price</key>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
-      <name>折扣</name>
+      <name>折扣（%）</name>
       <key>discount</key>
       <type>number</type>
       <notnull>1</notnull>

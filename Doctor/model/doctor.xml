@@ -95,15 +95,6 @@
       <notnull>1</notnull>
     </field>
     <field>
-      <name>资格获得年份</name>
-      <name_zh-cn>资格获得年份</name_zh-cn>
-      <name_zh-hk>资格获得年份</name_zh-hk>
-      <name_en-us>Qualifications Years</name_en-us>
-      <key>pro_year</key>
-      <type>number</type>
-      <notnull>1</notnull>
-    </field>
-    <field>
       <name>可提供的医疗服务及手术</name>
       <name_zh-cn>可提供的医疗服务及手术</name_zh-cn>
       <name_zh-hk>可提供的医疗服务及手术</name_zh-hk>
@@ -122,7 +113,7 @@
       <name>可使用的医院</name>
       <name_zh-cn>可使用的医院</name_zh-cn>
       <name_zh-hk>可使用的医院</name_zh-hk>
-      <name_en-us>Hospital</name_en-us>
+      <name_en-us>Hospitals</name_en-us>
       <key>hospital_list_id</key>
       <type>flist</type>
       <displayfield>name</displayfield>
@@ -133,38 +124,43 @@
       <condition>r_hospital_list.status='A'  </condition>
     </field>
     <field>
-      <name>执业年期</name>
-      <name_zh-cn>执业年期</name_zh-cn>
-      <name_zh-hk>执业年期</name_zh-hk>
-      <name_en-us>Practice Years</name_en-us>
+      <name>可使用的诊所</name>
+      <name_zh-cn>可使用的诊所</name_zh-cn>
+      <name_zh-hk>可使用的诊所</name_zh-hk>
+      <name_en-us>Offices</name_en-us>
+      <key>office_list_id</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <fmutillang>1</fmutillang>
+      <notnull>1</notnull>
+      <tablename>dr_tb_office</tablename>
+      <ntbname>r_office_list</ntbname>
+      <condition>r_office_list.status='A'  </condition>
+    </field>
+    <field>
+      <name>执业开始年份</name>
+      <name_zh-cn>执业开始年份</name_zh-cn>
+      <name_zh-hk>执业开始年份</name_zh-hk>
+      <name_en-us>Practice Start Year</name_en-us>
       <key>exec_year</key>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
-      <name>全科收费</name>
-      <name_zh-cn>全科收费</name_zh-cn>
-      <name_zh-hk>全科收费</name_zh-hk>
-      <name_en-us>General Price</name_en-us>
+      <name>全科收费（HK$）</name>
+      <name_zh-cn>全科收费（HK$）</name_zh-cn>
+      <name_zh-hk>全科收费（HK$）</name_zh-hk>
+      <name_en-us>General Price（HK$）</name_en-us>
       <key>general_price</key>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
-      <name>专科收费</name>
-      <name_zh-cn>专科收费</name_zh-cn>
-      <name_zh-hk>专科收费</name_zh-hk>
-      <name_en-us>Specialist Price</name_en-us>
+      <name>专科收费（HK$）</name>
+      <name_zh-cn>专科收费（HK$）</name_zh-cn>
+      <name_zh-hk>专科收费（HK$）</name_zh-hk>
+      <name_en-us>Specialist Price（HK$）</name_en-us>
       <key>specialist_price</key>
-      <type>number</type>
-      <notnull>1</notnull>
-    </field>
-    <field>
-      <name>预约费</name>
-      <name_zh-cn>预约费</name_zh-cn>
-      <name_zh-hk>预约费</name_zh-hk>
-      <name_en-us>Booking Fee</name_en-us>
-      <key>book_fee</key>
       <type>number</type>
       <notnull>1</notnull>
     </field>
@@ -180,48 +176,6 @@
       <tablename>dr_tb_lang</tablename>
       <ntbname>r_lang_list</ntbname>
       <condition>1=1  </condition>
-    </field>
-    <field>
-      <name>诊所名称</name>
-      <name_zh-cn>诊所名称</name_zh-cn>
-      <name_zh-hk>诊所名称</name_zh-hk>
-      <name_en-us>Office Name</name_en-us>
-      <key>office_name</key>
-      <type>text</type>
-      <ismutillang>1</ismutillang>
-      <displayinlist>1</displayinlist>
-      <gotodetail>1</gotodetail>
-      <search>1</search>
-      <notnull>1</notnull>
-    </field>
-    <field>
-      <name>诊所所在区域</name>
-      <name_zh-cn>诊所所在区域</name_zh-cn>
-      <name_zh-hk>诊所所在区域</name_zh-hk>
-      <name_en-us>Office District</name_en-us>
-      <key>office_district</key>
-      <type>text</type>
-      <ismutillang>1</ismutillang>
-      <notnull>1</notnull>
-    </field>
-    <field>
-      <name>诊所完整地址</name>
-      <name_zh-cn>诊所完整地址</name_zh-cn>
-      <name_zh-hk>诊所完整地址</name_zh-hk>
-      <name_en-us>Office Address</name_en-us>
-      <key>office_address</key>
-      <type>longtext</type>
-      <ismutillang>1</ismutillang>
-      <notnull>1</notnull>
-    </field>
-    <field>
-      <name>诊所地图坐标</name>
-      <name_zh-cn>诊所地图坐标</name_zh-cn>
-      <name_zh-hk>诊所地图坐标</name_zh-hk>
-      <name_en-us>Office Coordinate</name_en-us>
-      <key>office_coordinate</key>
-      <type>text</type>
-      <notnull>1</notnull>
     </field>
     <field>
       <name>注册专科</name>
@@ -255,49 +209,88 @@
       <notnull>1</notnull>
     </field>
     <field>
-      <name>可预约工作日</name>
-      <name_zh-cn>可预约工作日</name_zh-cn>
-      <name_zh-hk>可预约工作日</name_zh-hk>
-      <name_en-us>Booking Date</name_en-us>
-      <key>meet_days</key>
+      <name>周一预约时间段</name>
+      <name_zh-cn>周一预约时间段</name_zh-cn>
+      <name_zh-hk>周一预约时间段</name_zh-hk>
+      <name_en-us>Mondays Booking Time</name_en-us>
+      <key>meet_day1</key>
       <type>flist</type>
       <displayfield>name</displayfield>
-      <notnull>1</notnull>
-      <tablename>dr_tb_weekday</tablename>
-      <ntbname>r_weekday_list</ntbname>
-      <condition>1=1  </condition>
-      <fmutillang>1</fmutillang>
-    </field>
-    <field>
-      <name>可预约时段</name>
-      <name_zh-cn>可预约时段</name_zh-cn>
-      <name_zh-hk>可预约时段</name_zh-hk>
-      <name_en-us>Booking Time</name_en-us>
-      <key>meet_time</key>
-      <type>flist</type>
-      <displayfield>name</displayfield>
-      <notnull>1</notnull>
       <tablename>dr_tb_time</tablename>
-      <ntbname>r_time_list</ntbname>
+      <ntbname>r_time_list1</ntbname>
       <condition>1=1  </condition>
     </field>
     <field>
-      <name>可用疫苗</name>
-      <name_zh-cn>可用疫苗</name_zh-cn>
-      <name_zh-hk>可用疫苗</name_zh-hk>
-      <name_en-us>Use Vaccine</name_en-us>
-      <key>doctorvaccinelist</key>
-      <type>grid</type>
-      <api>Info/doctorvaccine.php?action=getgrid&amp;doctor_id=</api>
-      <newitemurl>Info/doctorvaccine.php?action=add&amp;key=doctor_id&amp;id=</newitemurl>
+      <name>周二预约时间段</name>
+      <name_zh-cn>周二预约时间段</name_zh-cn>
+      <name_zh-hk>周二预约时间段</name_zh-hk>
+      <name_en-us>Tuesdays Booking Time</name_en-us>
+      <key>meet_day2</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_time</tablename>
+      <ntbname>r_time_list2</ntbname>
+      <condition>1=1  </condition>
+    </field>
+    <field>
+      <name>周三预约时间段</name>
+      <name_zh-cn>周三预约时间段</name_zh-cn>
+      <name_zh-hk>周三预约时间段</name_zh-hk>
+      <name_en-us>Wednesdays Booking Time</name_en-us>
+      <key>meet_day3</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_time</tablename>
+      <ntbname>r_time_list3</ntbname>
+      <condition>1=1  </condition>
+    </field>
+    <field>
+      <name>周四预约时间段</name>
+      <name_zh-cn>周五预约时间段</name_zh-cn>
+      <name_zh-hk>周五预约时间段</name_zh-hk>
+      <name_en-us>Thursdays Booking Time</name_en-us>
+      <key>meet_day4</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_time</tablename>
+      <ntbname>r_time_list4</ntbname>
+      <condition>1=1  </condition>
+    </field>
+    <field>
+      <name>周五预约时间段</name>
+      <name_zh-cn>周五预约时间段</name_zh-cn>
+      <name_zh-hk>周五预约时间段</name_zh-hk>
+      <name_en-us>Fridays Booking Time</name_en-us>
+      <key>meet_day5</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_time</tablename>
+      <ntbname>r_time_list5</ntbname>
+      <condition>1=1  </condition>
+    </field>
+    <field>
+      <name>周六预约时间段</name>
+      <name_zh-cn>周六预约时间段</name_zh-cn>
+      <name_zh-hk>周六预约时间段</name_zh-hk>
+      <name_en-us>Saturdays Booking Time</name_en-us>
+      <key>meet_day6</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_time</tablename>
+      <ntbname>r_time_list6</ntbname>
+      <condition>1=1  </condition>
+    </field>
+    <field>
+      <name>周日预约时间段</name>
+      <name_zh-cn>周日预约时间段</name_zh-cn>
+      <name_zh-hk>周日预约时间段</name_zh-hk>
+      <name_en-us>Sundays Booking Time</name_en-us>
+      <key>meet_day7</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_time</tablename>
+      <ntbname>r_time_list7</ntbname>
+      <condition>1=1  </condition>
     </field>
   </fields>
-  <javascripts>
-    <javascript>
-      <filename>doctor.js</filename>
-      <detail>1</detail>
-    </javascript>
-    <javascript>
-    </javascript>
-  </javascripts>
 </root>

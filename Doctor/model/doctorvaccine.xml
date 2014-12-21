@@ -36,20 +36,20 @@
       <condition>r_vaccine.status='A' </condition>
     </field>
     <field>
-      <name>单次接种疫苗收费</name>
-      <name_zh-cn>单次接种疫苗收费</name_zh-cn>
-      <name_zh-hk>单次接种疫苗收费</name_zh-hk>
-      <name_en-us>Once Injection Price</name_en-us>
+      <name>单次接种疫苗收费（HK$）</name>
+      <name_zh-cn>单次接种疫苗收费（HK$）</name_zh-cn>
+      <name_zh-hk>单次接种疫苗收费（HK$）</name_zh-hk>
+      <name_en-us>Once Injection Price（HK$）</name_en-us>
       <key>once_price</key>
       <displayinlist>1</displayinlist>
       <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
-      <name>一次性付款收费</name>
-      <name_zh-cn>一次性付款收费</name_zh-cn>
-      <name_zh-hk>一次性付款收费</name_zh-hk>
-      <name_en-us>Total Injection Price</name_en-us>
+      <name>一次性付款收费（HK$）</name>
+      <name_zh-cn>一次性付款收费（HK$）</name_zh-cn>
+      <name_zh-hk>一次性付款收费（HK$）</name_zh-hk>
+      <name_en-us>Total Injection Price（HK$）</name_en-us>
       <key>total_price</key>
       <displayinlist>1</displayinlist>
       <type>number</type>
