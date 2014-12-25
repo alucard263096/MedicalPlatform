@@ -35,24 +35,11 @@
       <notnull>1</notnull>
     </field>
     <field>
-      <name>首页显示</name>
-      <name_zh-cn>首页显示</name_zh-cn>
-      <name_zh-hk>首页显示</name_zh-hk>
-      <name_en-us>Display In Index</name_en-us>
-      <key>is_index</key>
-      <type>check</type>
-      <displayinlist>1</displayinlist>
-      <yvalue>是</yvalue>
-      <nvalue>否</nvalue>
-    </field>
-    <field>
-      <name>显示图片</name>
-      <name_zh-cn>显示图片</name_zh-cn>
-      <name_zh-hk>显示图片</name_zh-hk>
-      <name_en-us>Image</name_en-us>
-      <key>image</key>
-      <type>upload</type>
-      <uploadmodule>vaccine</uploadmodule>
+      <name>疫苗简述</name>
+      <key>summary</key>
+      <type>longtext</type>
+      <ismutillang>1</ismutillang>
+      <notnull>1</notnull>
     </field>
     <field>
       <name>治疗效果</name>
@@ -194,22 +181,6 @@
       <key>discount</key>
       <type>number</type>
       <notnull>1</notnull>
-    </field>
-    <field>
-      <name>页面详细介绍</name>
-      <name_zh-cn>页面详细介绍</name_zh-cn>
-      <name_zh-hk>页面详细介绍</name_zh-hk>
-      <name_en-us>Html Description</name_en-us>
-      <key>context</key>
-      <type>html</type>
-    </field>
-    <field>
-      <name>备注</name>
-      <name_zh-cn>备注</name_zh-cn>
-      <name_zh-hk>备注</name_zh-hk>
-      <name_en-us>Remarks</name_en-us>
-      <key>remarks</key>
-      <type>longtext</type>
     </field>
     <field>
       <name>状态</name>

@@ -28,6 +28,7 @@ CREATE TABLE `dr_tb_vaccine_lang` (
   `oid` int(11) NOT NULL,
   `lang` varchar(45) NOT NULL,
   `name` varchar(45) NOT NULL COMMENT '疫苗名称',
+  `summary` varchar(1000) NOT NULL COMMENT '疫苗简述',
   `injection_time` varchar(300) NOT NULL COMMENT '接种时间',
   `injection_season` varchar(300) NOT NULL COMMENT '适用季节',
   `description` varchar(1000) NOT NULL COMMENT '疫苗详细介绍',

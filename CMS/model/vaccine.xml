@@ -26,6 +26,13 @@
       <notnull>1</notnull>
     </field>
     <field>
+      <name>疫苗简述</name>
+      <key>summary</key>
+      <type>longtext</type>
+      <ismutillang>1</ismutillang>
+      <notnull>1</notnull>
+    </field>
+    <field>
       <name>显示顺序</name>
       <key>seq</key>
       <type>number</type>
