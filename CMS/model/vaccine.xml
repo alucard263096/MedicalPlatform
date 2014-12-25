@@ -26,6 +26,14 @@
       <notnull>1</notnull>
     </field>
     <field>
+      <name>显示顺序</name>
+      <key>seq</key>
+      <type>number</type>
+      <displayinlist>1</displayinlist>
+      <notnull>1</notnull>
+      <disableindetail>0</disableindetail>
+    </field>
+    <field>
       <name>首页显示</name>
       <key>is_index</key>
       <type>check</type>

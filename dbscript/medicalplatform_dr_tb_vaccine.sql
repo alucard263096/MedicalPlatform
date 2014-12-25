@@ -30,6 +30,7 @@ CREATE TABLE `dr_tb_vaccine` (
   `effect_id` int(11) NOT NULL COMMENT '功效',
   `image` varchar(145) NOT NULL,
   `injection_count` int(11) NOT NULL COMMENT '注射次数',
+  `seq` varchar(10) NOT NULL DEFAULT 0,
   `is_index` varchar(1) NOT NULL DEFAULT 'N',
   `used_group_id` varchar(1000) NOT NULL COMMENT '适用人群',
   `is_hk_project` varchar(1) NOT NULL COMMENT '是否为香港计划内疫苗',
