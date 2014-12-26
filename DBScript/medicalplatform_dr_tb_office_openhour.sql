@@ -18,36 +18,32 @@ USE `medicalplatform`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dr_tb_doctor_vaccine`
+-- Table structure for table `dr_tb_office_openhour`
 --
 
-DROP TABLE IF EXISTS `dr_tb_doctor_vaccine`;
+DROP TABLE IF EXISTS `dr_tb_office_openhour`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dr_tb_doctor_vaccine` (
+CREATE TABLE `dr_tb_office_openhour` (
   `id` int(11) NOT NULL,
   `doctor_id` int(11) NOT NULL COMMENT '医生',
-  `vaccine_id` int(11) NOT NULL COMMENT '疫苗',
-  `once_price` decimal(10,3) NOT NULL COMMENT '单次接种疫苗收费',
-  `total_price` decimal(10,3) NOT NULL COMMENT '一次性付款收费',
+  `office_id` int(11) NOT NULL COMMENT '诊所',
+  `meet_day1` varchar(200) NOT NULL COMMENT '周一开放时间',
+  `meet_day2` varchar(200) NOT NULL COMMENT '周二开放时间',
+  `meet_day3` varchar(200) NOT NULL COMMENT '周三开放时间',
+  `meet_day4` varchar(200) NOT NULL COMMENT '周四开放时间',
+  `meet_day5` varchar(200) NOT NULL COMMENT '周五开放时间',
+  `meet_day6` varchar(200) NOT NULL COMMENT '周六开放时间',
+  `meet_day7` varchar(200) NOT NULL COMMENT '周日开放时间',
   `remarks` varchar(1000) NOT NULL,
   `status` varchar(1) NOT NULL,
-  `created_date` datetime NOT NULL,
   `created_user` int(11) NOT NULL,
-  `updated_date` datetime NOT NULL,
+  `created_date` datetime NOT NULL,
   `updated_user` int(11) NOT NULL,
+  `updated_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生的疫苗';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生诊所工作时间';
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dr_tb_doctor_vaccine`
---
-
-LOCK TABLES `dr_tb_doctor_vaccine` WRITE;
-/*!40000 ALTER TABLE `dr_tb_doctor_vaccine` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dr_tb_doctor_vaccine` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -58,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-13  0:27:35
+-- Dump completed on 2014-12-26 14:34:35

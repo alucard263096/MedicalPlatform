@@ -257,6 +257,18 @@
           <url>/Doctor/doctorvaccine.php?action=add</url>
           <onlyadmin>1</onlyadmin>
         </submenu>
+        <submenu>
+          <id>officeopenhour_list</id>
+          <name>诊所开放时间列表</name>
+          <url>/Doctor/officeopenhour.php</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>officeopenhour_add</id>
+          <name>诊所开放时间新增</name>
+          <url>/Doctor/officeopenhour.php?action=add</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
       </submenus>
     </mainmenu>
   </mainmenus>

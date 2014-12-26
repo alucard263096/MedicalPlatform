@@ -3,7 +3,7 @@
 
 class XmlModel
 {
-  private $XmlData;
+  public $XmlData;
   private $PageName;
 
   public function __construct($name,$pagename){

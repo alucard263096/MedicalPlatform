@@ -42,14 +42,6 @@ CREATE TABLE `dr_tb_doctor` (
   `created_user` int(11) NOT NULL,
   `updated_date` datetime NOT NULL,
   `updated_user` int(11) NOT NULL,
-  `meet_day1` varchar(200) DEFAULT NULL COMMENT '周一预约时间段',
-  `meet_day2` varchar(200) DEFAULT NULL COMMENT '周二预约时间段',
-  `meet_day3` varchar(200) DEFAULT NULL COMMENT '周三预约时间段',
-  `meet_day4` varchar(200) DEFAULT NULL COMMENT '周四预约时间段',
-  `meet_day5` varchar(200) DEFAULT NULL COMMENT '周五预约时间段',
-  `meet_day6` varchar(200) DEFAULT NULL COMMENT '周六预约时间段',
-  `meet_day7` varchar(200) DEFAULT NULL COMMENT '周日预约时间段',
-  `office_list_id` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -63,4 +55,4 @@ CREATE TABLE `dr_tb_doctor` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-22  0:54:38
+-- Dump completed on 2014-12-26 14:34:35

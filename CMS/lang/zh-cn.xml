@@ -84,5 +84,6 @@
   </vaccine>
   <doctor>
     <codehasbeenused>该执业许可证号已经被其它医生使用</codehasbeenused>
+    <duplicatedoctoroffice>诊所和医生已经被其它数据使用</duplicatedoctoroffice>
   </doctor>
 </root>

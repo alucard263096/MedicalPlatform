@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <name>诊所开放时间</name>
+  <tablename>dr_tb_office_openhour</tablename>
+  <searchcondition>r_main.status&lt;&gt;'D'</searchcondition>
+  <fields>
+    <field>
+      <name>周一预约时间段</name>
+      <key>meet_day1</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_time</tablename>
+      <ntbname>r_time_list1</ntbname>
+      <condition>1=1  </condition>
+    </field>
+    <field>
+      <name>周二预约时间段</name>
+      <key>meet_day2</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_time</tablename>
+      <ntbname>r_time_list2</ntbname>
+      <condition>1=1  </condition>
+    </field>
+    <field>
+      <name>周三预约时间段</name>
+      <key>meet_day3</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_time</tablename>
+      <ntbname>r_time_list3</ntbname>
+      <condition>1=1  </condition>
+    </field>
+    <field>
+      <name>周四预约时间段</name>
+      <key>meet_day4</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_time</tablename>
+      <ntbname>r_time_list4</ntbname>
+      <condition>1=1  </condition>
+    </field>
+    <field>
+      <name>周五预约时间段</name>
+      <key>meet_day5</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_time</tablename>
+      <ntbname>r_time_list5</ntbname>
+      <condition>1=1  </condition>
+    </field>
+    <field>
+      <name>周六预约时间段</name>
+      <key>meet_day6</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_time</tablename>
+      <ntbname>r_time_list6</ntbname>
+      <condition>1=1  </condition>
+    </field>
+    <field>
+      <name>周日预约时间段</name>
+      <key>meet_day7</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_time</tablename>
+      <ntbname>r_time_list7</ntbname>
+      <condition>1=1  </condition>
+    </field>
+  </fields>
+  <javascripts>
+    <javascript>
+      <filename>common.js</filename>
+      <detail>1</detail>
+    </javascript>
+    <javascript>
+    </javascript>
+  </javascripts>
+</root>

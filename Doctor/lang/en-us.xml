@@ -79,4 +79,8 @@
   <general>
     <keyduplicate>Uni Key has been used</keyduplicate>
   </general>
+  <reserver>
+    <openhour>Open Hour</openhour>
+    <openhour1>Open Hour</openhour1>
+  </reserver>
 </root>

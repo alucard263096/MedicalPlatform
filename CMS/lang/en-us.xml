@@ -84,5 +84,6 @@
   </vaccine>
   <doctor>
     <codehasbeenused>The doctor Licence Code has been used</codehasbeenused>
+    <duplicatedoctoroffice>Those office and doctor have been used</duplicatedoctoroffice>
   </doctor>
 </root>

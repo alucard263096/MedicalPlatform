@@ -79,4 +79,8 @@
   <general>
     <keyduplicate>唯一键已经被使用</keyduplicate>
   </general>
+  <reserver>
+    <openhour>开放时间</openhour>
+    <openhour1>Open Hour</openhour1>
+  </reserver>
 </root>

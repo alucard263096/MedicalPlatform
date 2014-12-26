@@ -30,6 +30,30 @@ $MenuArray=json_decode(json_encode((array) simplexml_load_string($str)), true);
  if($CONFIG["SupportMultiLanguage"]==true){
 		$MenuArray=ResetNameWithLang($MenuArray,$SysLangCode);
 	  }
+	
+	
+  require ROOT.'/classes/datamgr/officeopenhour.cls.php';
+  $result=$officeOpenHourMgr->getOfficeOpenHourList($SysUser["doctor_id"]);
+	$sum=count($result);
+	for($i=0;$i<$sum;$i++){
+		//mainmenus.mainmenu
+		for($j=0;$j<count($MenuArray["mainmenus"]["mainmenu"]);$j++){
+
+			if($MenuArray["mainmenus"]["mainmenu"][$j]["module"]=="reserver"){
+
+					$arr=Array();
+					$arr["id"]="officeopenhour_".$result[$i]["id"]."_add";
+					$arr["name"]=$result[$i]["office_name"].$SysLang["reserver"]["openhour"];
+					$arr["url"]="/Reserve/officeopenhour.php?id=".base64_encode($result[$i]["id"]);
+
+					$MenuArray["mainmenus"]["mainmenu"][$j]["submenus"]["submenu"][]=$arr;
+			}
+
+		}
+	}
+
+
+
 $_SESSION[SESSIONNAME]["SystemMenu"]=$MenuArray;
 }
 

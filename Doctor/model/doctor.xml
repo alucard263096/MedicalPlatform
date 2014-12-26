@@ -124,20 +124,6 @@
       <condition>r_hospital_list.status='A'  </condition>
     </field>
     <field>
-      <name>可使用的诊所</name>
-      <name_zh-cn>可使用的诊所</name_zh-cn>
-      <name_zh-hk>可使用的诊所</name_zh-hk>
-      <name_en-us>Offices</name_en-us>
-      <key>office_list_id</key>
-      <type>flist</type>
-      <displayfield>name</displayfield>
-      <fmutillang>1</fmutillang>
-      <notnull>1</notnull>
-      <tablename>dr_tb_office</tablename>
-      <ntbname>r_office_list</ntbname>
-      <condition>r_office_list.status='A'  </condition>
-    </field>
-    <field>
       <name>执业开始年份</name>
       <name_zh-cn>执业开始年份</name_zh-cn>
       <name_zh-hk>执业开始年份</name_zh-hk>
@@ -208,89 +194,13 @@
       <ismutillang>1</ismutillang>
       <notnull>1</notnull>
     </field>
-    <field>
-      <name>周一预约时间段</name>
-      <name_zh-cn>周一预约时间段</name_zh-cn>
-      <name_zh-hk>周一预约时间段</name_zh-hk>
-      <name_en-us>Mondays Booking Time</name_en-us>
-      <key>meet_day1</key>
-      <type>flist</type>
-      <displayfield>name</displayfield>
-      <tablename>dr_tb_time</tablename>
-      <ntbname>r_time_list1</ntbname>
-      <condition>1=1  </condition>
-    </field>
-    <field>
-      <name>周二预约时间段</name>
-      <name_zh-cn>周二预约时间段</name_zh-cn>
-      <name_zh-hk>周二预约时间段</name_zh-hk>
-      <name_en-us>Tuesdays Booking Time</name_en-us>
-      <key>meet_day2</key>
-      <type>flist</type>
-      <displayfield>name</displayfield>
-      <tablename>dr_tb_time</tablename>
-      <ntbname>r_time_list2</ntbname>
-      <condition>1=1  </condition>
-    </field>
-    <field>
-      <name>周三预约时间段</name>
-      <name_zh-cn>周三预约时间段</name_zh-cn>
-      <name_zh-hk>周三预约时间段</name_zh-hk>
-      <name_en-us>Wednesdays Booking Time</name_en-us>
-      <key>meet_day3</key>
-      <type>flist</type>
-      <displayfield>name</displayfield>
-      <tablename>dr_tb_time</tablename>
-      <ntbname>r_time_list3</ntbname>
-      <condition>1=1  </condition>
-    </field>
-    <field>
-      <name>周四预约时间段</name>
-      <name_zh-cn>周五预约时间段</name_zh-cn>
-      <name_zh-hk>周五预约时间段</name_zh-hk>
-      <name_en-us>Thursdays Booking Time</name_en-us>
-      <key>meet_day4</key>
-      <type>flist</type>
-      <displayfield>name</displayfield>
-      <tablename>dr_tb_time</tablename>
-      <ntbname>r_time_list4</ntbname>
-      <condition>1=1  </condition>
-    </field>
-    <field>
-      <name>周五预约时间段</name>
-      <name_zh-cn>周五预约时间段</name_zh-cn>
-      <name_zh-hk>周五预约时间段</name_zh-hk>
-      <name_en-us>Fridays Booking Time</name_en-us>
-      <key>meet_day5</key>
-      <type>flist</type>
-      <displayfield>name</displayfield>
-      <tablename>dr_tb_time</tablename>
-      <ntbname>r_time_list5</ntbname>
-      <condition>1=1  </condition>
-    </field>
-    <field>
-      <name>周六预约时间段</name>
-      <name_zh-cn>周六预约时间段</name_zh-cn>
-      <name_zh-hk>周六预约时间段</name_zh-hk>
-      <name_en-us>Saturdays Booking Time</name_en-us>
-      <key>meet_day6</key>
-      <type>flist</type>
-      <displayfield>name</displayfield>
-      <tablename>dr_tb_time</tablename>
-      <ntbname>r_time_list6</ntbname>
-      <condition>1=1  </condition>
-    </field>
-    <field>
-      <name>周日预约时间段</name>
-      <name_zh-cn>周日预约时间段</name_zh-cn>
-      <name_zh-hk>周日预约时间段</name_zh-hk>
-      <name_en-us>Sundays Booking Time</name_en-us>
-      <key>meet_day7</key>
-      <type>flist</type>
-      <displayfield>name</displayfield>
-      <tablename>dr_tb_time</tablename>
-      <ntbname>r_time_list7</ntbname>
-      <condition>1=1  </condition>
-    </field>
   </fields>
+  <javascripts>
+    <javascript>
+      <filename>common.js</filename>
+      <detail>1</detail>
+    </javascript>
+    <javascript>
+    </javascript>
+  </javascripts>
 </root>
