@@ -1,0 +1,22 @@
+<nav class="bar bar-tab">
+    <a class="tab-item {{if $Module==""}}active{{/if}}" href="{{$rootpath}}/index.php">
+        <span class="icon icon-home"></span>
+        <span class="tab-label">{{$SysLang.website.home}}</span>
+    </a>
+    <a class="tab-item {{if $Module=="vaccine"}}active{{/if}}" href="{{$rootpath}}/vaccine/index.php">
+        <span class="icon icon-person"></span>
+        <span class="tab-label">{{$SysLang.website.vaccine}}</span>
+    </a>
+    <a class="tab-item {{if $Module=="query"}}active{{/if}}" href="#">
+        <span class="icon icon-star-filled"></span>
+        <span class="tab-label">{{$SysLang.website.query}}</span>
+    </a>
+    <a class="tab-item {{if $Module=="search"}}active{{/if}}" href="#">
+        <span class="icon icon-search"></span>
+        <span class="tab-label">{{$SysLang.website.search}}</span>
+    </a>
+    <a class="tab-item {{if $Module=="member"}}active{{/if}}" href="#settingsModal">
+        <span class="icon icon-gear"></span>
+        <span class="tab-label">{{$SysLang.website.member}}</span>
+    </a>
+</nav>

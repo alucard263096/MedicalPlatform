@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{$SysLang.website.title}}</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="shortcut icon" href="{{$rootpath}}/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{$rootpath}}/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{$rootpath}}/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" href="{{$rootpath}}/img/apple-touch-icon-57x57.png" />
+
+
+    <link rel="stylesheet" media="screen" href="{{$rootpath}}/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="{{$rootpath}}/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="{{$rootpath}}/themes/mobile/css/ratchet.min.css">
+    <link rel="stylesheet" href="{{$rootpath}}/themes/mobile/css/app.css">
+    <script src="{{$rootpath}}/themes/mobile/js/ratchet.min.js"></script>
+
+    <script src="{{$rootpath}}/js/jquery-2.0.3.min.js"></script>
+
+
+
+</head>
+<body>
+    <header class="bar bar-nav">
+        {{if $backurl!=""}}<a class="icon icon-left pull-left" href="{{$backurl}}"></a>{{/if}}
+        <h1 class="title">{{$Title}}</h1>        
+        {{if $RightButton=="VaccineList"}}
+        <a class="btn btn-link btn-nav pull-right">
+            {{$SysLang.vaccine.Filter}}
+        </a>
+        {{elseif $RightButton=="VaccineDoctorShow"}}
+        <a class="btn btn-link btn-nav pull-right">
+            {{$SysLang.vaccine.selectdoctor}}
+        </a>
+        {{else}}
+        <a class="btn btn-link btn-nav pull-right">
+            {{$SysLang.member.signin}}
+            <span class="icon icon-compose"></span>
+        </a>
+        {{/if}}
+    </header>

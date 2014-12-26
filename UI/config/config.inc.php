@@ -5,6 +5,7 @@ $CONFIG['rootpath']		= '/MedicalPlatform/UI';
 //$CONFIG['charset']		= 'utf-8'; 
 $CONFIG['Title']             = 'MedicalPlatform';
 $CONFIG['URL']="http://localhost/MedicalPlatform/UI";
+$CONFIG['Domain']="www.helpfooter.com";
 $CONFIG['lang']="zh-cn";//en-us
 $CONFIG["frontendurl"]="http://localhost/MedicalPlatform/";
 $CONFIG["SessionName"]="FooterCMSUI";
@@ -24,9 +25,6 @@ $CONFIG['smarty']['cache_lifetime']=3600; //second,-1 is always on
 #[log]
 $CONFIG['logsavedir'] 		= 'logs/';	
 $CONFIG['error_handler'] ="E_ALL";
-
-
-
 
 #[Database]
 $CONFIG['database']['provider']	= 'mysql';  //mssql,sqlsrv

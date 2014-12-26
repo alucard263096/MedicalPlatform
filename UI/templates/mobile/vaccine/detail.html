@@ -1,0 +1,45 @@
+{{include  file="$smarty_root/mobile/header.html" }}
+
+    
+
+    <div class="content">
+            <img src="{{$uploadpath}}/vaccine/{{$info.image}}" alt="{{$info.name}}" width="100%" height="300">
+
+        <div class="content-padded">
+            <h4>{{$SysLang.vaccine.introduce}}: </h4>
+            <p>
+                {{$info.description}}
+            </p>
+            <hr />
+            <h4>{{$SysLang.vaccine.effect}}: </h4>
+            <p>
+                {{$info.effectname}}<br />
+                {{$info.effectdescription}}
+            </p>
+            <hr />
+            <h4>{{$SysLang.vaccine.injectioncount}}: {{$info.injection_count}}</h4>
+            <h4>{{$SysLang.vaccine.injectiontime}}: {{$info.injection_time}}</h4>
+            <h4>{{$SysLang.vaccine.injectionseason}}: {{$info.injection_season}}</h4>
+            <h4>{{$SysLang.vaccine.usergroup}}:  {{$info.usergroup}}</h4>
+            <hr />
+            <h4>{{$SysLang.vaccine.hongkongplan}}: {{$info.is_hk_project}}</h4>
+            <h4>{{$SysLang.vaccine.chinaplan}}: {{$info.is_china_project}}</h4>
+            <hr />
+            <h4>{{$SysLang.vaccine.caution}}: </h4>
+            <p>
+                {{$info.caution}}
+            </p>
+            <h4>{{$SysLang.vaccine.badeffect}}: </h4>
+            <p>
+                {{$info.bad_effect}}
+            </p>
+            <h4>{{$SysLang.vaccine.badeffectsolve}}: </h4>
+            <p>
+                {{$info.bad_effect_resolve}}
+            </p>
+            <span style="height:30px;">
+                <br /><br /><br /><br />
+            </span>
+        </div>
+    </div><!-- /.content -->
+    {{include  file="$smarty_root/mobile/footer.html" }}

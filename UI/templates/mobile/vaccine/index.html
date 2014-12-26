@@ -1,0 +1,44 @@
+{{include  file="$smarty_root/mobile/header.html" }}
+
+    <div class="bar bar-standard bar-header-secondary">
+        <form>
+            <input type="search" placeholder="Search">
+        </form>
+    </div>
+
+    <div class="content">
+
+        <div class="slider">
+            <div class="slide-group">
+                <div class="slide">
+                    <img src="{{$rootpath}}/themes/mobile/img/argo.png" alt="Argo" width="640" height="300">
+                </div>
+                <div class="slide">
+                    <img src="{{$rootpath}}/themes/mobile/img/skyfall.png" alt="Skyfall" width="640" height="300">
+                </div>
+                <div class="slide">
+                    <img src="{{$rootpath}}/themes/mobile/img/ralph.png" alt="Wreck-It Ralph" width="640" height="300">
+                </div>
+            </div>
+        </div>
+
+        <ul class="table-view">
+            <!--<li class="table-view-cell table-view-divider">
+            </li>-->
+            {{foreach from=$VaccineList item=rs}}
+            <li class="table-view-cell media">
+                <a class="navigate-right" href="detail.php?id={{$rs.id}}" data-transition="slide-in">
+                    <img class="media-object pull-left" src="{{$uploadpath}}/vaccine/{{$rs.image}}" width="64px" alt="Placeholder image for Argo's poster">
+                    <div class="media-body">
+                        {{$rs.name}}
+                        <p>{{$rs.summary}}</p>
+                    </div>
+                </a>
+            </li>
+            {{/foreach}}
+            <li style="height:30px;">
+            </li>
+        </ul>
+    </div><!-- /.content -->
+
+{{include  file="$smarty_root/mobile/footer.html" }}

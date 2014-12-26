@@ -158,7 +158,7 @@
     </field>
     <field>
       <name>详细信息</name>
-      <key>context</key>
+      <key>content</key>
       <type>html</type>
     </field>
     <field>

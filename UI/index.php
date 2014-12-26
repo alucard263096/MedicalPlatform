@@ -7,7 +7,7 @@
  */
   require 'include/common.inc.php';
 
-  
-  $smarty->display(ROOT.'/templates/index.html');
+  $smarty->assign("Title",$SysLang["website"]["title"]);
+  $smarty->display(ROOT.'/templates/mobile/index.html');
   
 ?>

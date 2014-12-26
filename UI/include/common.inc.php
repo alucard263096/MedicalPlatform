@@ -62,10 +62,12 @@ include ROOT.'/classes/mgr/'.$CONFIG['database']['provider'].'.cls.php';
 
 include ROOT.'/classes/mgr/smarty.cls.php';
 
-include ROOT.'/classes/modelmgr/XmlModel.cls.php';
+//include ROOT.'/classes/modelmgr/XmlModel.cls.php';
 
 include ROOT.'/include/lang.inc.php';
 
+include ROOT.'/include/website.inc.php';
 
+include ROOT.'/include/init.inc.php';
 
 ?>
