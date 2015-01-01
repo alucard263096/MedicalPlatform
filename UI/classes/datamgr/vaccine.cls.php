@@ -79,6 +79,15 @@ where o.status='A' and o.id in ( $ids )";
 		$result = $this->dbmgr->fetch_array_all($query); 
 		return $result;
 
+	}
+
+	public function getVaccineDoctor($id){
+		
+		$id=mysql_real_escape_string($id);
+		$sql="select * from dr_tb_doctor_vaccine where id=$id ";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+		return $result;
 
 	}
 

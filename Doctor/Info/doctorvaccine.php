@@ -12,6 +12,8 @@
 	}
   }else if($action=="edit"){
 
+  }else if($action=="search"){
+	$_REQUEST["doctor_id"]=$SysUser["doctor_id"];
   }else{
 	$_REQUEST["key"]="doctor_id";
 	$_REQUEST["id"]=$SysUser["doctor_id"];

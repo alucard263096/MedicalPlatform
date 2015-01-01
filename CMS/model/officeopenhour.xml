@@ -33,6 +33,15 @@
       <condition>r_office.status='A' </condition>
     </field>
     <field>
+      <name>周日预约时间段</name>
+      <key>meet_day0</key>
+      <type>flist</type>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_time</tablename>
+      <ntbname>r_time_list0</ntbname>
+      <condition>1=1  </condition>
+    </field>
+    <field>
       <name>周一预约时间段</name>
       <key>meet_day1</key>
       <type>flist</type>
@@ -84,15 +93,6 @@
       <displayfield>name</displayfield>
       <tablename>dr_tb_time</tablename>
       <ntbname>r_time_list6</ntbname>
-      <condition>1=1  </condition>
-    </field>
-    <field>
-      <name>周日预约时间段</name>
-      <key>meet_day7</key>
-      <type>flist</type>
-      <displayfield>name</displayfield>
-      <tablename>dr_tb_time</tablename>
-      <ntbname>r_time_list7</ntbname>
       <condition>1=1  </condition>
     </field>
     <field>

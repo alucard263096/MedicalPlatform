@@ -12,17 +12,13 @@
     <link rel="apple-touch-icon" sizes="72x72" href="{{$rootpath}}/img/apple-touch-icon-72x72.png" />
     <link rel="apple-touch-icon" href="{{$rootpath}}/img/apple-touch-icon-57x57.png" />
 
-
-    <link rel="stylesheet" media="screen" href="{{$rootpath}}/css/bootstrap.min.css">
-    <link rel="stylesheet" media="screen" href="{{$rootpath}}/css/bootstrap-theme.min.css">
-
     <link rel="stylesheet" href="{{$rootpath}}/themes/mobile/css/ratchet.min.css">
     <link rel="stylesheet" href="{{$rootpath}}/themes/mobile/css/app.css">
-    <script src="{{$rootpath}}/themes/mobile/js/ratchet.min.js"></script>
+    <script src="{{$rootpath}}/themes/mobile/js/ratchet.js"></script>
 
     <script src="{{$rootpath}}/js/jquery-2.0.3.min.js"></script>
 
-
+    <script src="{{$rootpath}}/themes/mobile/js/util.js"></script>
 
 </head>
 <body>
@@ -34,13 +30,15 @@
             {{$SysLang.vaccine.Filter}}
         </a>
         {{elseif $RightButton=="VaccineDoctorShow"}}
-        <a class="btn btn-link btn-nav pull-right">
+        <a class="btn btn-link btn-nav pull-right" href="#doctor_list">
             {{$SysLang.vaccine.selectdoctor}}
         </a>
         {{else}}
-        <a class="btn btn-link btn-nav pull-right">
+        {{if $HasLogin!="1"}}
+        <a class="btn btn-link btn-nav pull-right" href="#memberLogin" id="btnLoginTop">
             {{$SysLang.member.signin}}
             <span class="icon icon-compose"></span>
         </a>
+        {{/if}}
         {{/if}}
     </header>

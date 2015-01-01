@@ -1,0 +1,35 @@
+{{include  file="$smarty_root/mobile/header.html" }}
+
+
+
+<div class="content">
+    <form class="input-group">
+        <div class="input-row">
+            <label>{{$SysLang.website.vaccine}}</label>
+            <a style="line-height:2; ">{{$info.vaccine_name}}</a>
+        </div>
+        <div class="input-row">
+            <label>{{$SysLang.vaccine.doctor}}</label>
+            <a style="line-height:2; ">{{$info.doctor_name}}</a>
+        </div>
+        <div class="input-row">
+            <label>{{$SysLang.vaccine.office}}</label>
+            <a style="line-height:2; ">{{$info.office_name}}</a>
+        </div>
+        <div class="input-row">
+            <label>{{$SysLang.vaccine.officeaddress}}</label>
+            <a style="line-height:2; ">{{$info.office_address}}</a>
+        </div>
+        <div class="input-row">
+            <label>{{$SysLang.common.status}}</label>
+            <a style="line-height:2; ">{{if $info.status=="P"}}{{$SysLang.member.padding}}{{else}}{{$SysLang.member.finish}}{{/if}}</a>
+        </div>
+        <div class="input-row" style="text-align:center;height:260px;">
+            <img width="250px" src="{{$qrcode}}" />
+        </div>
+    </form>
+</div>
+    
+</div><!-- /.content -->
+
+{{include  file="$smarty_root/mobile/footer.html" }}

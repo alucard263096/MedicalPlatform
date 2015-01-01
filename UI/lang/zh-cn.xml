@@ -16,6 +16,12 @@
     <sortby>排序</sortby>
     <yes>是</yes>
     <no>否</no>
+    <select>请选择</select>
+    <order>确认预约</order>
+    <price>价格</price>
+    <hkdollor>港币</hkdollor>
+    <norecord>暂无记录</norecord>
+    <status>状态</status>
   </common>
   <vaccine>
     <recommand>推荐</recommand>
@@ -33,8 +39,40 @@
     <caution>接种注意事项</caution>
     <badeffect>可能产生的不良反应</badeffect>
     <badeffectsolve>产生不良反应的解决方法</badeffectsolve>
+    <approvebookinginfo>确认预约信息</approvebookinginfo>
+    <office>诊所</office>
+    <selectoffice>选择诊所</selectoffice>
+    <orderdate>预约日期</orderdate>
+    <ordertime>预约时段</ordertime>
+    <officeaddress>诊所地址</officeaddress>
+    <doctor>医生</doctor>
+    <pleaseselectoffice>请选择诊所</pleaseselectoffice>
+    <pleaseselectdate>请选择预约日期</pleaseselectdate>
+      <pleaseselectttime>请选择预约时段</pleaseselectttime>
+    <pleaseselectdatetime>请选择预约时间</pleaseselectdatetime>
+    <orderdatetimeused>该预约时间段已经被其它人使用</orderdatetimeused>
   </vaccine>
   <member>
+    <pleasesignin>请先注册或登录</pleasesignin>
     <signin>登录</signin>
+    <signup>注册</signup>
+    <emailormobile>邮箱或手机号码</emailormobile>
+    <password>密码</password>
+    <loginfail>用户名或密码无效</loginfail>
+    <email>邮箱地址</email>
+    <mobile>手机号码</mobile>
+    <name>真实姓名</name>
+    <duplicmobile>该手机号码已经被注册</duplicmobile>
+    <duplicemail>该邮箱地址已经被注册</duplicemail>
+    <regfail>注册失败</regfail>
+    <duplicname>该手机号码或邮箱地址已经被注册</duplicname>
+    <pleaseinputemailmobile>请至少输入手机号码或邮箱地址</pleaseinputemailmobile>
+    <pleaseinputname>请输入姓名</pleaseinputname>
+    <vaccineappointment>疫苗预约</vaccineappointment>
+    <quit>退出</quit>
+    <padding>等待问诊</padding>
+    <finish>已完成</finish>
+    <appointmentdetail>预约详情</appointmentdetail>
+    <expired>已过期</expired>
   </member>
 </root>

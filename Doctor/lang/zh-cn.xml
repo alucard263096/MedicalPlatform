@@ -48,6 +48,7 @@
     <madeby>开发者</madeby>
     <detail>详情</detail>
     <source>来源</source>
+    <status>状态</status>
   </common>
   <user>
     <loginnameduplicate>用户名已经被使用</loginnameduplicate>
@@ -83,4 +84,18 @@
     <openhour>开放时间</openhour>
     <openhour1>Open Hour</openhour1>
   </reserver>
+  <validate>
+    <appointmentapprove>预约确认</appointmentapprove>
+    <orderno>订单编号</orderno>
+    <clientname>客户姓名</clientname>
+    <vaccine>疫苗</vaccine>
+    <price>预约价格(HK$)</price>
+    <order_datetime>预约时间</order_datetime>
+    <approve>使用</approve>
+    <padding>等待中</padding>
+    <finish>已完成</finish>
+    <ordernonotnull>订单编号不能为空</ordernonotnull>
+    <nodata>找不到数据</nodata>
+    <confirmcontent>确认信息</confirmcontent>
+  </validate>
 </root>

@@ -3,7 +3,7 @@
         <span class="icon icon-home"></span>
         <span class="tab-label">{{$SysLang.website.home}}</span>
     </a>
-    <a class="tab-item {{if $Module=="vaccine"}}active{{/if}}" href="{{$rootpath}}/vaccine/index.php">
+    <a class="tab-item {{if $Module=="vaccine"}}active{{/if}}" data-ignore="push" href="{{$rootpath}}/vaccine/index.php">
         <span class="icon icon-person"></span>
         <span class="tab-label">{{$SysLang.website.vaccine}}</span>
     </a>
@@ -15,7 +15,7 @@
         <span class="icon icon-search"></span>
         <span class="tab-label">{{$SysLang.website.search}}</span>
     </a>
-    <a class="tab-item {{if $Module=="member"}}active{{/if}}" href="#settingsModal">
+    <a id="menuMember" class="tab-item {{if $Module=="member" }}active{{/if}}"  data-ignore="push" href="{{if $HasLogin=="1"}}{{$rootpath}}/member/index.php{{else}}#memberLogin{{/if}}">
         <span class="icon icon-gear"></span>
         <span class="tab-label">{{$SysLang.website.member}}</span>
     </a>

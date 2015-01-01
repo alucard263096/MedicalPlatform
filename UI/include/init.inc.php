@@ -9,5 +9,11 @@ if(!isset($_SESSION[SESSIONNAME]["Welcome"]))
 	exit();
 }
 
+if(isset($_SESSION[SESSIONNAME]["Member"])){
+	$MemberInfo=$_SESSION[SESSIONNAME]["Member"];
+	$smarty->assign("HasLogin","1");
+	$smarty->assign("MemberInfo",$MemberInfo);
+}
+
 
 ?>

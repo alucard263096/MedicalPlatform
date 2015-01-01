@@ -17,11 +17,8 @@
                         <div class="collapse navbar-collapse main-navbar-collapse">
                             <ul class="nav navbar-nav">
                                 {{foreach from=$SystemMenu.mainmenus.mainmenu item=rs}}
-                                {{if $rs.module==$MyModule}}
-                                <li class="active"><a href="#">{{$rs.name}}</a></li>
-                                {{else}}
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-hover="dropdown">{{$rs.name}} <b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle {{if $rs.module==$MyModule}}active{{/if}}" data-hover="dropdown">{{$rs.name}} <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         {{foreach from=$rs.submenus.submenu item=sub}}
                                         {{if $sub.onlyadmin!=1||$SysUser.is_admin=="Y"}}
@@ -30,7 +27,6 @@
                                         {{/foreach}}
                                     </ul>
                                 </li>
-                                {{/if}}
                                 {{/foreach}}
                             </ul>
                         </div><!-- /.navbar-collapse -->

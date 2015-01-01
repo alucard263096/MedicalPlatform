@@ -1,0 +1,276 @@
+<!-- Doctor detail modal -->
+<style>
+    .ui-datepicker-trigger{
+        padding-top:8px;
+    }
+</style>
+<div id="doctor_detail" class="modal">
+    <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#doctor_detail"></a>
+        <h1 class="title">{{$SysLang.vaccine.approvebookinginfo}}</h1>
+    </header>
+    <div class="content">
+        <div class="input-row" >
+            <label>{{$SysLang.vaccine.doctor}}</label>
+            <a style="line-height:2; ">{{$doctor.name}}</a>
+        </div>
+        <div class="input-row">
+            <label>{{$SysLang.website.vaccine}}</label>
+            <a style="line-height:2; ">{{$vaccine.name}}</a>
+        </div>
+        {{if $office_count>1}}
+        <div class="input-row">
+            <label>{{$SysLang.vaccine.selectoffice}}</label>
+            <a href="#office_list" style="line-height:2; " id="officename">{{$SysLang.common.select}}</a>
+            <input type="hidden" id="dt_office_id" />
+        </div>
+        <div class="input-row" id="officeaddress">
+            <label>{{$SysLang.vaccine.officeaddress}}</label>
+            <a style="line-height:2; "></a>
+        </div>
+        {{else}}
+        {{foreach from=$office_list item=rs }}
+        <div class="input-row">
+            <label>{{$SysLang.vaccine.selectoffice}}</label>
+            <a  style="line-height:2; " >{{$rs.name}}</a>
+            <input type="hidden" id="dt_office_id" value="{{$rs.office_id}}" />
+        </div>
+        <div class="input-row " >
+            <label>{{$SysLang.vaccine.officeaddress}}</label>
+            <a style="line-height:2; ">{{$rs.address}}</a>
+        </div>
+        {{/foreach}}
+        {{/if}}
+        <div class="input-row">
+            <label>{{$SysLang.vaccine.orderdate}}</label>
+            <input style="width: 200px;" type="text" id="dr_date" disabled="disabled" >
+        </div>
+        <div class="input-row">
+            <label>{{$SysLang.vaccine.ordertime}}</label>
+            <select id="dr_time" style="width: 200px; padding-top: 6px;  border: 0px; background-color: #fff; font-size:17px;" >
+            </select>
+        </div>
+        <div class="input-row">
+            <label>{{$SysLang.member.email}}</label>
+            <input id="dr_email" type="email" placeholder="{{$SysLang.member.email}}" value="{{$member.email}}">
+        </div>
+        <div class="input-row">
+            <label>{{$SysLang.member.mobile}}</label>
+            <input id="dr_mobile" type="tel" placeholder="{{$SysLang.member.mobile}}" value="{{$member.mobile}}">
+        </div>
+        <div class="input-row">
+            <label>{{$SysLang.member.name}}</label>
+            <input id="dr_name" type="text" placeholder="{{$SysLang.member.name}}" value="{{$member.name}}">
+        </div>
+        <div class="input-row" style="color:red;">
+            <label>{{$SysLang.common.price}}</label> 
+            <a style="line-height:2; ">{{$SysLang.common.hkdollor}}{{$vaccineST.once_price}}</a>
+        </div>
+        <p style="color:red;" id="bookingtips"></p>
+        <div class="content-padded">
+            <button class="btn btn-primary btn-block" id="btnOrder" >{{$SysLang.common.order}}</button>
+        </div>
+    </div>
+</div><!-- /.modal -->
+{{if $office_count>1}}
+<!-- Office List modal -->
+<div id="office_list" class="modal">
+    <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#office_list"></a>
+        <h1 class="title">{{$SysLang.vaccine.selectoffice}}</h1>
+        <a class="icon icon-check pull-left" id="btnOfficeSelect" ></a>
+    </header>
+
+    <div class="content">
+        <ul class="table-view " style="margin-top:0px;">
+            {{foreach from=$office_list item=rs }}
+            <li class="table-view-cell media " office_id="{{$rs.office_id}}" office_name="{{$rs.name}}" office_address="{{$rs.address}}">
+                <a>
+                    <div class="media-body">
+                        {{$rs.name}}
+                        <p>{{$rs.address}}</p>
+                    </div>
+                </a>
+            </li>
+            {{/foreach}}
+        </ul>
+    </div>
+</div><!-- btn-primary /.modal -->
+{{/if}}
+<script>
+    function CheckOepnHourDay(date){
+        var day = date.getDay()
+        var office_id=$("#dt_office_id").val();
+        {{foreach from=$office_list item=rs }}
+        if(office_id=={{$rs.office_id}}){
+            {{if $rs.meet_day1!=""}}
+            if(day==1){
+                return [true,""];
+            }
+            {{/if}}
+
+            {{if $rs.meet_day2!=""}}
+            if(day==2){
+                return [true,""];
+            }
+            {{/if}}
+
+            {{if $rs.meet_day3!=""}}
+            if(day==3){
+                return [true,""];
+            }
+            {{/if}}
+
+                        {{if $rs.meet_day4!=""}}
+                        if(day==4){
+                            return [true,""];
+                        }
+                        {{/if}}
+                            {{if $rs.meet_day5!=""}}
+                            if(day==5){
+                                return [true,""];
+                            }
+                            {{/if}}
+                                {{if $rs.meet_day6!=""}}
+                                if(day==6){
+                                    return [true,""];
+                                }
+                                {{/if}}
+                                    {{if $rs.meet_day0!=""}}
+                                    if(day==0){
+                                        return [true,""];
+                                    }
+                                    {{/if}}
+        }
+                                        {{/foreach}}
+                                            return [false,""];
+                                        }
+
+     function initdrtime(dateText, inst) { 
+         var doctor_id={{$doctor.id}};
+         var office_id=$("#dt_office_id").val();
+         var order_date=dateText;
+
+         var json={"doctor_id":doctor_id,"office_id":office_id,"order_date":order_date};
+         
+         $("#dr_time").load("{{$rootpath}}/order/gettime.php",json,function(data){
+             //alert(data);
+         });
+     } 
+
+
+    $(document).ready(function () {
+        $("#officeaddress").hide();
+        dateselect=$("#dr_date").datepicker({
+            inline: true,
+            altField: "#dateselect",
+            beforeShowDay: CheckOepnHourDay,
+            minDate: +1,
+            maxDate: "+1M",
+            buttonImage: "{{$rootpath}}/css/images/calendar.gif",
+            buttonImageOnly: true,
+            showOn: "button",
+            dateFormat:"yy-mm-dd",
+            onSelect: initdrtime
+        });
+
+
+        $("#office_list li").click(function () {
+            $("#office_list li").removeClass("btn-primary");
+            $(this).addClass("btn-primary");
+        });
+
+        $("#btnOfficeSelect").click(function () {
+            if ($("#office_list li.btn-primary").length == 0) {
+
+                alert("{{$SysLang.vaccine.pleaseselectoffice}}");
+
+            } else {
+                var selectedOffice = $("#office_list li.btn-primary").first();
+                var office_id = selectedOffice.attr("office_id");
+                var office_name = selectedOffice.attr("office_name");
+                var office_address = selectedOffice.attr("office_address");
+                //alert(selectedOffice.attr("office_address"));
+                $("#dt_office_id").val(office_id);
+                $("#officename").text(office_name);
+                $("#officeaddress").show();
+                $("#officeaddress a").text(office_address);
+
+                $("#office_list").removeClass("active");
+                $("#dr_date").val("");
+                $("#dr_time").html("<option value=''>{{$SysLang.common.select}}</option>");;
+                $("#dr_time").val("");
+                
+            }
+
+        });
+        //$member_id,$name,$mobile,$email,
+	//$order_date,$order_time,$vaccine_id,$doctor_id,$office_id,$price
+        //$snapshot
+        $("#btnOrder").click(function(){
+            
+            var member_id="{{$member.id}}";
+            var name=$("#dr_name").val();
+            var mobile=$("#dr_mobile").val();
+            var email=$("#dr_email").val();
+            var order_date=$("#dr_date").val();
+            var order_time=$("#dr_time").val();
+            var vaccine_id="{{$vaccine.id}}";
+            var doctor_id="{{$doctor.id}}";
+            var office_id=$("#dt_office_id").val();
+            var doctor_vaccine_id="{{$id}}";
+            var snapshot=$("#doctor_detail").text();
+            
+
+            if(office_id==""){
+                $("#bookingtips").text("{{$SysLang.vaccine.pleaseselectoffice}}");
+                return;
+            }
+            
+            if(order_date==""||order_time==""){
+                $("#bookingtips").text("{{$SysLang.vaccine.pleaseselectdatetime}}");
+                return;
+            }
+            
+            if(mobile==""&&email==""){
+                $("#bookingtips").text("{{$SysLang.member.pleaseinputname}}");
+                return;
+            }
+            
+            
+            if(name==""){
+                $("#bookingtips").text("{{$SysLang.member.pleaseinputname}}");
+                return;
+            }
+            $("#btnOrder").prop("disabled", "disabled");
+            var json={
+                "member_id":member_id,
+                "name":name,
+                "mobile":mobile,
+                "email":email,
+                "order_date":order_date,
+                "order_time":order_time,
+                "vaccine_id":vaccine_id,
+                "doctor_id":doctor_id,
+                "office_id":office_id,
+                "doctor_vaccine_id":doctor_vaccine_id,
+                "snapshot":snapshot
+            }
+            $.post("{{$rootpath}}/order/quickvcorder.php",json,function(data){
+                
+                if(data.substring(0,7)=="SUCCESS"){
+                    id=data.substring(7,data.length);
+                    window.location.href="{{$rootpath}}/member/vaccineap.php?id="+id;
+                }else if(data=="USED"){
+                    $("#bookingtips").text("{{$SysLang.vaccine.orderdatetimeused}}");
+                }else if(data=="WITHOUTLOGIN"){
+                    $("#bookingtips").text("{{$SysLang.member.pleasesignin}}");
+                }else{
+                    alert(data);
+                }
+                $("#btnOrder").prop("disabled", "");
+            });
+        });
+
+    });
+</script>

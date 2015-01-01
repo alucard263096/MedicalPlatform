@@ -1,41 +1,103 @@
 <!-- Settings modal -->
-<div id="settingsModal" class="modal">
+<div id="memberLogin" class="modal">
     <header class="bar bar-nav">
-        <a class="icon icon-close pull-right" href="#settingsModal"></a>
-        <h1 class="title">Settings</h1>
+        <a class="icon icon-close pull-right" href="#memberLogin"></a>
+        <h1 class="title" id="memberloginform">{{$SysLang.member.pleasesignin}}</h1>
     </header>
 
     <div class="content">
-        <form class="input-group">
-            <input type="text" placeholder="Full name">
-            <input type="email" placeholder="Email">
-            <input type="text" placeholder="Username">
-        </form>
-
-        <h5 class="content-padded">App settings</h5>
-
-        <ul class="table-view">
-            <li class="table-view-cell media">
-                <span class="media-object pull-left icon icon-sound"></span>
-                <div class="media-body">
-                    Enable sounds
+        <div class="segmented-control">
+            <a class="control-item active" href="#item1mobile">
+                {{$SysLang.member.signin}}
+            </a>
+            <a class="control-item" href="#item2mobile">                
+                {{$SysLang.member.signup}}
+            </a>
+        </div>
+        <div class="card" style="border:0px;">
+            <div id="item1mobile" class="control-content active "  >
+                <input type="text" id="qlLoginName" placeholder="{{$SysLang.member.emailormobile}}">
+                <input type="password" id="qlPassword" placeholder="{{$SysLang.member.password}}">
+                <div class="content-padded">
+                    <button class="btn btn-positive btn-block" id="btnQuickLogin">{{$SysLang.member.signin}}</button>
                 </div>
-                <div class="toggle">
-                    <div class="toggle-handle"></div>
+                <p style="color:red;" id="signintips"></p>
+            </div>
+            <div id="item2mobile" class="control-content">
+                <input type="tel" id="qrMobile"  placeholder="{{$SysLang.member.mobile}}">
+                <input type="email" id="qrEmail" placeholder="{{$SysLang.member.email}}">
+                <input type="password" id="qrPassword" placeholder="{{$SysLang.member.password}}">
+                <input type="text" id="qrName" placeholder="{{$SysLang.member.name}}">
+                <div class="content-padded">
+                    <button class="btn btn-primary btn-block" id="btnQuickReg">{{$SysLang.member.signup}}</button>
                 </div>
-            </li>
-            <li class="table-view-cell media">
-                <span class="media-object pull-left icon icon-person"></span>
-                <div class="media-body">
-                    Parental controls
-                </div>
-                <div class="toggle">
-                    <div class="toggle-handle"></div>
-                </div>
-            </li>
-        </ul>
-        <div class="content-padded">
-            <button class="btn btn-positive btn-block">Save settings</button>
+                <p style="color:red;" id="signuptips"></p>
+            </div>
         </div>
     </div>
 </div><!-- /.modal -->
+<script>
+    $(document).ready(function () {
+
+        $("#btnQuickLogin").click(function () {
+
+            var loginname = $("#qlLoginName").val();
+            var password = $("#qlPassword").val();
+
+            var json = { "loginname": loginname, "password": password };
+
+            $.post("{{$rootpath}}/member/quicklogin.php", json, function (data) {
+                if (data == "SUCCESS") {
+                    $("#memberLogin").removeClass("active");
+                    $("#btnLoginTop").hide();
+                    $("#menuMember").attr("href", "{{$rootpath}}/member/index.php");
+                } else {
+                    $("#signintips").text("{{$SysLang.member.loginfail}}");
+                }
+            });
+
+        });
+
+        $("#btnQuickReg").click(function () {
+            var mobile = $("#qrMobile").val();
+            var email = $("#qrEmail").val();
+            var password = $("#qrPassword").val();
+            var name = $("#qrName").val();
+
+            if (mobile == "" && email == "") {
+                $("#signuptips").text("{{$SysLang.member.pleaseinputemailmobile}}");
+                return;
+            }
+            if (name == "" ) {
+                $("#signuptips").text("{{$SysLang.member.pleaseinputname}}");
+                return;
+            }
+            $("#btnQuickReg").prop("disabled", "disabled");
+
+            //alert(name);
+
+            var json = {
+                "mobile": mobile,
+                "email": email,
+                "password": password,
+                "name": name
+            };
+
+            $.post("{{$rootpath}}/member/quickreg.php", json, function (data) {
+                if (data == "SUCCESS") {
+                    $("#memberLogin").removeClass("active");
+                    $("#btnLoginTop").hide();
+                    $("#menuMember").attr("href", "{{$rootpath}}/member/index.php");
+                } else if (data == "DUPLIC") {
+                    $("#signuptips").text("{{$SysLang.member.duplicname}}");
+                }  else{
+                    $("#signuptips").text("{{$SysLang.member.regfail}}");
+                }
+                $("#btnQuickReg").prop("disabled", "");
+            });
+
+        });
+
+    });
+
+</script>

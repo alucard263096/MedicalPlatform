@@ -34,7 +34,7 @@ CREATE TABLE `dr_tb_office_openhour` (
   `meet_day4` varchar(200) NOT NULL COMMENT '周四开放时间',
   `meet_day5` varchar(200) NOT NULL COMMENT '周五开放时间',
   `meet_day6` varchar(200) NOT NULL COMMENT '周六开放时间',
-  `meet_day7` varchar(200) NOT NULL COMMENT '周日开放时间',
+  `meet_day0` varchar(200) NOT NULL COMMENT '周日开放时间',
   `remarks` varchar(1000) NOT NULL,
   `status` varchar(1) NOT NULL,
   `created_user` int(11) NOT NULL,

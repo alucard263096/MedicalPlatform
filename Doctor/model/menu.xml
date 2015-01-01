@@ -24,6 +24,14 @@
           <name_en-us>Dashboard</name_en-us>
           <url>/Admin/dashboard.php</url>
         </submenu>
+        <submenu>
+          <id>quit</id>
+          <name>退出</name>
+          <name_zh-cn>退出</name_zh-cn>
+          <name_zh-hk>退出</name_zh-hk>
+          <name_en-us>Logout</name_en-us>
+          <url>/logout.php</url>
+        </submenu>
         <!--<submenu>
           <id>dashboard</id>
           <name>Dashboard</name>
@@ -71,12 +79,31 @@
       <submenus>
         <submenu>
           <id>no</id>
-          <name>暂无</name>
+          <name>Comming Soon</name>
           <url>#</url>
         </submenu>
         <submenu>
           <id>no</id>
-          <name>暂无</name>
+          <name>Comming Soon</name>
+          <url>#</url>
+        </submenu>
+      </submenus>
+    </mainmenu>
+    <mainmenu>
+      <module>interaction</module>
+      <name>互动</name>
+      <submenus>
+        <submenu>
+          <id>vaccineapponitment</id>
+          <name>疫苗预约验证</name>
+          <name_zh-cn>疫苗预约验证</name_zh-cn>
+          <name_zh-hk>疫苗预约验证</name_zh-hk>
+          <name_en-us>Vaccine Appointment</name_en-us>
+          <url>/Interaction/qrcodereader.php</url>
+        </submenu>
+        <submenu>
+          <id>no</id>
+          <name>Comming Soon</name>
           <url>#</url>
         </submenu>
       </submenus>

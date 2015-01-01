@@ -8,6 +8,7 @@ $CONFIG['URL']="http://localhost/MedicalPlatform/UI";
 $CONFIG['Domain']="www.helpfooter.com";
 $CONFIG['lang']="zh-cn";//en-us
 $CONFIG["frontendurl"]="http://localhost/MedicalPlatform/";
+$CONFIG["doctorurl"]="http://192.168.1.104/MedicalPlatform/Doctor";
 $CONFIG["SessionName"]="FooterCMSUI";
 $CONFIG["SupportMultiLanguage"]=true;
 
@@ -48,5 +49,9 @@ $CONFIG['fileupload']['try_interval']		= "1";//second
 #[Excel]
 $CONFIG['excel']['version']	= "Excel2007";//2003:Excel5,2007:Excel2007
 
+#[QRCODE]
+$CONFIG['qr_code']['level']="M";
+$CONFIG['qr_code']['size']="5";
+$CONFIG['qr_code']['folder']="qrcode";
 
 ?>

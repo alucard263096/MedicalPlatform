@@ -1,0 +1,28 @@
+{{include  file="$smarty_root/mobile/header.html" }}
+
+<div class="content">
+    <ul class="table-view" style="margin-top:0px;">
+        <li class="table-view-cell media">
+            <a class="navigate-right" href="{{$rootpath}}/member/vaccineapls.php">
+                <span class="media-object pull-left icon icon-list"></span>
+                <div class="media-body">
+                    {{$SysLang.member.vaccineappointment}}
+                </div>
+            </a>
+        </li>
+    </ul>
+    <div class="content-padded">
+        <button class="btn btn-negative btn-block" id="btnQuit">{{$SysLang.member.quit}}</button>
+    </div>
+</div>
+<script>
+
+    $(document).ready(function () {
+        $("#btnQuit").click(function () {
+            window.location.href = "{{$rootpath}}/member/logout.php";
+        });
+    });
+
+</script>
+
+{{include  file="$smarty_root/mobile/footer.html" }}

@@ -1,0 +1,66 @@
+{{include  file="$smarty_root/mobile/header.html" }}
+
+
+
+<div class="content">
+    <div class="segmented-control">
+        <a class="control-item active" href="#item1mobile">
+            {{$SysLang.member.padding}}
+        </a>
+        <a class="control-item" href="#item2mobile">
+            {{$SysLang.member.finish}}
+        </a>
+    </div>
+    <div class="card" style="border:0px;">
+        <div id="item1mobile" class="control-content active ">
+            {{if $listn_count>0}}
+            <ul>
+                {{foreach from=$listn item=rs}}
+                <li class="table-view-cell media">
+                    <a class="navigate-right" href="{{$rootpath}}/member/vaccineap.php?id={{$rs.id}}">
+                        <div class="media-body">
+                            {{$rs.order_no}}
+                            <p>
+                                {{$rs.vaccine_name}}
+                                <br />{{$rs.doctor_name}}
+                                <br />{{$rs.office_name}} {{$rs.office_address}}
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                {{/foreach}}
+            </ul>
+            {{else}}
+            {{$SysLang.common.norecord}}
+            {{/if}}
+        </div>
+        <div id="item2mobile" class="control-content">
+            {{if $listp_count>0}}
+            <ul>
+                {{foreach from=$listp item=rs}}
+                <li class="table-view-cell media">
+                    <a class="navigate-right" href="{{$rootpath}}/member/vaccineap.php?id={{$rs.id}}">
+                        <div class="media-body">
+                            {{$rs.order_no}}
+                            <p>
+                                {{$rs.vaccine_name}}
+                                <br />{{$rs.doctor_name}}
+                                <br />{{$rs.office_name}} {{$rs.office_address}}
+                                <br />{{if $rs.status='F'}}{{$SysLang.member.finish}}{{else}}{{$SysLang.member.expired}}{{/if}}
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                {{/foreach}}
+            </ul>
+            {{else}}
+            {{$SysLang.common.norecord}}
+            {{/if}}
+        </div>
+    </div>
+    <br />
+</div>
+    
+</div><!-- /.content -->
+
+{{include  file="$smarty_root/mobile/footer.html" }}

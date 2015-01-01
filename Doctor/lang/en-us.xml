@@ -48,6 +48,7 @@
     <madeby>made by</madeby>
     <detail>Details</detail>
     <source>Source</source>
+    <status>Status</status>
   </common>
   <user>
     <loginnameduplicate>Login name has been used</loginnameduplicate>
@@ -83,4 +84,18 @@
     <openhour>Open Hour</openhour>
     <openhour1>Open Hour</openhour1>
   </reserver>
+  <validate>
+    <appointmentapprove>Appointment Approvement</appointmentapprove>
+    <orderno>Order No.</orderno>
+    <clientname>Client Name</clientname>
+    <vaccine>Vaccine</vaccine>
+    <price>Appointment Price(HK$)</price>
+    <order_datetime>Appointment Date</order_datetime>
+    <approve>Approve</approve>
+    <padding>Padding</padding>
+    <finish>Finish</finish>
+    <ordernonotnull>Order No. can not be null</ordernonotnull>
+    <nodata>Can not find data</nodata>
+    <confirmcontent>Confirm Content</confirmcontent>
+  </validate>
 </root>

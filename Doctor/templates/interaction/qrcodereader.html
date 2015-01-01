@@ -1,0 +1,110 @@
+{{include  file="$smarty_root/header.html" }}
+
+                <!-- content -->
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="page-header bootstrap-admin-content-title">
+                                <h1>{{$SysLang.validate.appointmentapprove}}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="qrcodereader.php" method="post" id="spform">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="text-muted bootstrap-admin-box-title">{{$SysLang.validate.confirmcontent}}</div>
+                                    </div>
+                                    <div class="bootstrap-admin-panel-content">
+                                        <div class="row form-horizontal">
+                                            <div class="form-group col-md-12">
+                                                <label class="col-md-4 control-label">{{$SysLang.validate.orderno}}</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="order_no" id="content_order_no" value="{{$order_no}}" class="form-control" />
+                                                </div>
+                                            </div>
+                                            {{if $info!=""}}
+                                            <div class="form-group col-md-12">
+                                                <label class="col-md-4 control-label">{{$SysLang.validate.clientname}}</label>
+                                                <div class="col-md-6">
+                                                    {{$info.name}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label class="col-md-4 control-label">{{$SysLang.validate.vaccine}}</label>
+                                                <div class="col-md-6">
+                                                    {{$info.vaccine_name}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label class="col-md-4 control-label">{{$SysLang.validate.price}}</label>
+                                                <div class="col-md-6">
+                                                    {{$info.price}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label class="col-md-4 control-label">{{$SysLang.validate.order_datetime}}</label>
+                                                <div class="col-md-6">
+                                                    {{$info.order_date}} {{$info.order_rtime}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label class="col-md-4 control-label">{{$SysLang.common.status}}</label>
+                                                <div class="col-md-6">
+                                                    {{if $info.status=="P"}}
+                                                    {{$SysLang.validate.padding}}
+                                                    {{else}}
+                                                    {{$SysLang.validate.finish}}
+                                                    {{/if}}
+                                                </div>
+                                            </div>
+                                            {{/if}}
+                                        </div>
+                                        <hr />
+                                        <div class="text-center">
+                                            <button class="btn btn-primary" id="btnSearch"><i class="glyphicon glyphicon-pencil  glyphicon-white"></i> {{$SysLang.model.search}}</button>
+                                            {{if $info.status=="P"}}
+                                            <input type="hidden" name="action" id="qt_action" value="" />
+                                            <input type="hidden" name="id" value="{{$info.id}}" />
+                                            <button class="btn btn-success" id="btnApprove"><i class="glyphicon glyphicon-saved  glyphicon-white"></i> {{$SysLang.validate.approve}}</button>
+                                            {{/if}}
+                                            <!--<button class="btn btn-success" id="btnClose"><i class="glyphicon glyphicon-remove  glyphicon-white"></i> {{$SysLang.common.close}}</button>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+<script>
+
+    $(document).ready(function () {
+        {{if $result=="nodata"}}
+        errorDialog("{{$SysLang.validate.nodata}}");
+        {{/if}}
+        $("#btnSearch").click(function () {
+            var order_no = $("#content_order_no").val();
+            if (order_no == "") {
+                errorDialog("{{$SysLang.validate.ordernonotnull}}");
+                return;
+            }
+            $("#spform").submit();
+        });
+        $("#btnApprove").click(function () {
+            $("#qt_action").val("approve");
+            $("#spform").submit();
+        });
+        $("#btnClose").click(function(){
+            window.opener=null;
+            window.open('','_self');
+            window.close();
+        });
+
+    });
+
+
+</script>
+
+ {{include  file="$smarty_root/footer.html" }}

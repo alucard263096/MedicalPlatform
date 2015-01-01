@@ -1,0 +1,45 @@
+<!-- Doctor List modal -->
+<div id="doctor_list" class="modal">
+    <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#doctor_list"></a>
+        <h1 class="title">{{$SysLang.vaccine.selectdoctor}}</h1>
+        <a class="btn btn-link btn-nav pull-left">默认排序</a>
+    </header>
+    <div class="content">
+        <ul class="table-view" style="margin-top:0px;">
+            {{foreach from=$doctor_list item=rs }}
+            <li class="table-view-cell media">
+                <a class="navigate-right" onclick="loadBookingInfo({{$rs.id}})">
+                    <img class="media-object pull-left" width="76px" src="{{$uploadpath}}/doctor_photo/{{$rs.photo}}">
+                    <div class="media-body">
+                        {{$rs.doctorname}}
+                        <p>{{$rs.doctorsummary}}</p>
+                        <p>{{$SysLang.common.hkdollor}}{{$rs.once_price}}</p>
+                    </div>
+                </a>
+            </li>
+            {{/foreach}}
+        </ul>
+    </div>
+</div><!-- /.modal -->
+
+<script>
+
+    function loadBookingInfo(id){
+        var json={"id":id};
+        $.post("{{$rootpath}}/vaccine/binfo.php",json,function(data){
+            //alert(data);
+            if(data=="WITHOUTLOGIN"){
+                PopMemberLogin();
+            }else{
+                $("#doctor_detail").remove();
+                $("#office_list").remove();
+                $("body").append(data);
+                $("#doctor_detail").addClass("active");
+            }
+        });
+    }
+    //loadBookingInfo(4);
+    //$("#doctor_list").addClass("active");
+
+</script>

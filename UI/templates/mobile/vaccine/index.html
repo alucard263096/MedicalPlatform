@@ -27,7 +27,7 @@
             </li>-->
             {{foreach from=$VaccineList item=rs}}
             <li class="table-view-cell media">
-                <a class="navigate-right" href="detail.php?id={{$rs.id}}" data-transition="slide-in">
+                <a class="navigate-right" data-ignore="push" href="detail.php?id={{$rs.id}}" data-transition="slide-in">
                     <img class="media-object pull-left" src="{{$uploadpath}}/vaccine/{{$rs.image}}" width="64px" alt="Placeholder image for Argo's poster">
                     <div class="media-body">
                         {{$rs.name}}

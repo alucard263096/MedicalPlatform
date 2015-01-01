@@ -17,6 +17,7 @@
       <tablename>dr_tb_doctor</tablename>
       <ntbname>r_doctor</ntbname>
       <condition>r_doctor.status='A' </condition>
+      <disableindetail>1</disableindetail>
     </field>
     <field>
       <name>疫苗</name>
@@ -31,6 +32,7 @@
       <tablename>dr_tb_vaccine</tablename>
       <ntbname>r_vaccine</ntbname>
       <condition>r_vaccine.status='A' </condition>
+      <disableindetail>1</disableindetail>
     </field>
     <field>
       <name>单次接种疫苗收费（HK$）</name>
