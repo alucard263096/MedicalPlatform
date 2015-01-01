@@ -77,7 +77,7 @@ where o.office_id=$office_id and o.doctor_id=$doctor_id and order_date='$order_d
 	public function checkBookingUsed($office_id,$doctor_id,$order_date,$order_time){
 		
 		$sql="select 1 from dr_tb_member_vaccine_order
-		where office_id=$office_id and doctor_id=$doctor_id and order_date='$order_date' and order_time=$order_time ";
+		where office_id=$office_id and doctor_id=$doctor_id and order_date='$order_date' and order_time=$order_time and status='P'";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
 
