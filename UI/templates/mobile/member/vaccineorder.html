@@ -24,12 +24,11 @@
             <label>{{$SysLang.common.status}}</label>
             <a style="line-height:2; ">{{if $info.status=="P"}}{{$SysLang.member.padding}}{{else}}{{$SysLang.member.finish}}{{/if}}</a>
         </div>
-        <div class="input-row" style="text-align:center;height:260px;">
+        <div class="input-row" style="text-align:center;height:300px;">
             <img width="250px" src="{{$qrcode}}" />
         </div>
     </form>
 </div>
     
-</div><!-- /.content -->
 
 {{include  file="$smarty_root/mobile/footer.html" }}
