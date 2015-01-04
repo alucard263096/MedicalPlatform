@@ -18,24 +18,28 @@ USE `medicalplatform`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dr_tb_doctor_lang`
+-- Table structure for table `dr_tb_time`
 --
 
-DROP TABLE IF EXISTS `dr_tb_doctor_lang`;
+DROP TABLE IF EXISTS `dr_tb_time`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dr_tb_doctor_lang` (
-  `oid` int(11) NOT NULL,
-  `lang` varchar(45) NOT NULL,
-  `name` varchar(145) NOT NULL COMMENT '医生姓名',
-  `summary` varchar(1000) NOT NULL COMMENT '个人简介',
-  `post_process` varchar(1000) NOT NULL COMMENT '任职历程',
-  `pro_title` varchar(1000) NOT NULL COMMENT '获得的专业资格',
-  `reg_title` varchar(1000) NOT NULL COMMENT '注册专科',
-  `book_content` varchar(1000) NOT NULL COMMENT '预约内容',
-  PRIMARY KEY (`oid`,`lang`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生多语言';
+CREATE TABLE `dr_tb_time` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='期段';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dr_tb_time`
+--
+
+LOCK TABLES `dr_tb_time` WRITE;
+/*!40000 ALTER TABLE `dr_tb_time` DISABLE KEYS */;
+INSERT INTO `dr_tb_time` VALUES (1,'8:00-8:30'),(2,'8:30-9:00'),(3,'9:00-9:30'),(4,'9:30-10:00'),(5,'10:00-10:30'),(6,'10:30-11:00'),(7,'11:00-11:30'),(8,'11:30-12:00'),(9,'12:00-12:30'),(10,'12:30-13:00'),(11,'13:00-13:30'),(12,'13:30-14:00'),(13,'14:00-14:30'),(14,'14:30-15:00'),(15,'15:00-15:30'),(16,'15:30-16:00'),(17,'16:00-16:30'),(18,'16:30-17:00'),(19,'17:00-17:30'),(20,'17:30-18:00'),(21,'18:00-18:30'),(22,'18:30-19:00'),(23,'19:00-19:30'),(24,'19:30-20:00'),(25,'20:00-20:30'),(26,'20:30-21:00');
+/*!40000 ALTER TABLE `dr_tb_time` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -46,4 +50,4 @@ CREATE TABLE `dr_tb_doctor_lang` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-22  0:54:38
+-- Dump completed on 2015-01-04 22:15:27

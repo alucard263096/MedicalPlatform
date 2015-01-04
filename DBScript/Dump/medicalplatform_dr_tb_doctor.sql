@@ -18,24 +18,43 @@ USE `medicalplatform`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dr_tb_doctor_lang`
+-- Table structure for table `dr_tb_doctor`
 --
 
-DROP TABLE IF EXISTS `dr_tb_doctor_lang`;
+DROP TABLE IF EXISTS `dr_tb_doctor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dr_tb_doctor_lang` (
-  `oid` int(11) NOT NULL,
-  `lang` varchar(45) NOT NULL,
-  `name` varchar(145) NOT NULL COMMENT '医生姓名',
-  `summary` varchar(1000) NOT NULL COMMENT '个人简介',
-  `post_process` varchar(1000) NOT NULL COMMENT '任职历程',
-  `pro_title` varchar(1000) NOT NULL COMMENT '获得的专业资格',
-  `reg_title` varchar(1000) NOT NULL COMMENT '注册专科',
-  `book_content` varchar(1000) NOT NULL COMMENT '预约内容',
-  PRIMARY KEY (`oid`,`lang`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生多语言';
+CREATE TABLE `dr_tb_doctor` (
+  `id` int(11) NOT NULL,
+  `licence_code` varchar(45) NOT NULL COMMENT '执业许可证号',
+  `photo` varchar(200) NOT NULL COMMENT '头像',
+  `sexual` varchar(1) NOT NULL COMMENT '性别',
+  `exec_year` int(11) NOT NULL COMMENT '执业年期',
+  `effect_list_id` varchar(1000) NOT NULL COMMENT '可提供的医疗服务及手术',
+  `hospital_list_id` varchar(1000) NOT NULL COMMENT '可使用的医院',
+  `general_price` decimal(10,3) NOT NULL COMMENT '全科收费',
+  `specialist_price` decimal(10,3) NOT NULL COMMENT '专科收费',
+  `use_lang_id` varchar(1000) NOT NULL COMMENT '语言',
+  `is_general` varchar(1) NOT NULL COMMENT '是否为全科医生',
+  `remarks` varchar(1000) NOT NULL,
+  `status` varchar(1) NOT NULL,
+  `created_date` datetime NOT NULL,
+  `created_user` int(11) NOT NULL,
+  `updated_date` datetime NOT NULL,
+  `updated_user` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dr_tb_doctor`
+--
+
+LOCK TABLES `dr_tb_doctor` WRITE;
+/*!40000 ALTER TABLE `dr_tb_doctor` DISABLE KEYS */;
+INSERT INTO `dr_tb_doctor` VALUES (1,'aaaa','14121614011Chrysanthemum.jpg','M',1,'2','1',1.000,1.000,'1','N','','A','2014-12-16 22:22:18',1,'2014-12-22 00:39:08',1);
+/*!40000 ALTER TABLE `dr_tb_doctor` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -46,4 +65,4 @@ CREATE TABLE `dr_tb_doctor_lang` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-22  0:54:38
+-- Dump completed on 2015-01-04 22:15:23

@@ -18,24 +18,38 @@ USE `medicalplatform`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dr_tb_doctor_lang`
+-- Table structure for table `dr_tb_doctor_account`
 --
 
-DROP TABLE IF EXISTS `dr_tb_doctor_lang`;
+DROP TABLE IF EXISTS `dr_tb_doctor_account`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dr_tb_doctor_lang` (
-  `oid` int(11) NOT NULL,
-  `lang` varchar(45) NOT NULL,
-  `name` varchar(145) NOT NULL COMMENT '医生姓名',
-  `summary` varchar(1000) NOT NULL COMMENT '个人简介',
-  `post_process` varchar(1000) NOT NULL COMMENT '任职历程',
-  `pro_title` varchar(1000) NOT NULL COMMENT '获得的专业资格',
-  `reg_title` varchar(1000) NOT NULL COMMENT '注册专科',
-  `book_content` varchar(1000) NOT NULL COMMENT '预约内容',
-  PRIMARY KEY (`oid`,`lang`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生多语言';
+CREATE TABLE `dr_tb_doctor_account` (
+  `id` int(11) NOT NULL,
+  `doctor_id` int(11) NOT NULL COMMENT '绑定医生',
+  `login_id` varchar(45) NOT NULL COMMENT '登录账号',
+  `password` varchar(45) NOT NULL COMMENT '密码',
+  `accessright` varchar(45) NOT NULL COMMENT '权限，D医生，N护士',
+  `email` varchar(45) NOT NULL COMMENT '邮箱',
+  `remarks` varchar(300) NOT NULL,
+  `status` varchar(1) NOT NULL,
+  `created_date` datetime NOT NULL,
+  `created_user` int(11) NOT NULL,
+  `updated_date` datetime NOT NULL,
+  `updated_user` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生登录账号管理';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dr_tb_doctor_account`
+--
+
+LOCK TABLES `dr_tb_doctor_account` WRITE;
+/*!40000 ALTER TABLE `dr_tb_doctor_account` DISABLE KEYS */;
+INSERT INTO `dr_tb_doctor_account` VALUES (1,1,'aaa','0b4e7a0e5fe84ad35fb5f95b9ceeac79','D','aaa','','A','2014-12-16 22:25:35',1,'2014-12-16 22:25:35',1),(2,1,'aaaa','47bce5c74f589f4867dbd57e9ca9f808','D','aaa','','A','2014-12-16 22:26:00',1,'2014-12-16 22:26:00',1),(3,1,'aaaaa','74b87337454200d4d33f80c4663dc5e5','N','aa','','A','2014-12-16 22:26:13',1,'2014-12-16 22:26:13',1),(4,1,'test_1','4e70ffa82fbe886e3c4ac00ac374c29b','D','aaa','','A','2014-12-18 21:30:14',1,'2014-12-18 21:32:09',1);
+/*!40000 ALTER TABLE `dr_tb_doctor_account` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -46,4 +60,4 @@ CREATE TABLE `dr_tb_doctor_lang` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-22  0:54:38
+-- Dump completed on 2015-01-04 22:15:25

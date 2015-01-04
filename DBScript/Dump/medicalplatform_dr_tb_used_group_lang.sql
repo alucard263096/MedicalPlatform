@@ -18,24 +18,30 @@ USE `medicalplatform`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dr_tb_doctor_lang`
+-- Table structure for table `dr_tb_used_group_lang`
 --
 
-DROP TABLE IF EXISTS `dr_tb_doctor_lang`;
+DROP TABLE IF EXISTS `dr_tb_used_group_lang`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dr_tb_doctor_lang` (
+CREATE TABLE `dr_tb_used_group_lang` (
   `oid` int(11) NOT NULL,
   `lang` varchar(45) NOT NULL,
-  `name` varchar(145) NOT NULL COMMENT '医生姓名',
-  `summary` varchar(1000) NOT NULL COMMENT '个人简介',
-  `post_process` varchar(1000) NOT NULL COMMENT '任职历程',
-  `pro_title` varchar(1000) NOT NULL COMMENT '获得的专业资格',
-  `reg_title` varchar(1000) NOT NULL COMMENT '注册专科',
-  `book_content` varchar(1000) NOT NULL COMMENT '预约内容',
+  `name` varchar(45) NOT NULL COMMENT '适用人群名称',
+  `description` varchar(1000) NOT NULL COMMENT '适用人群描述',
   PRIMARY KEY (`oid`,`lang`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生多语言';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='使用人群多语言';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dr_tb_used_group_lang`
+--
+
+LOCK TABLES `dr_tb_used_group_lang` WRITE;
+/*!40000 ALTER TABLE `dr_tb_used_group_lang` DISABLE KEYS */;
+INSERT INTO `dr_tb_used_group_lang` VALUES (1,'en-us','women only','you fu ke ji bing de funv'),(1,'zh-cn','妇女专用','有妇科疾病的妇女'),(1,'zh-hk','妇女专用','有妇科疾病的妇女'),(2,'en-us','Man Only','an bing zhuangyong'),(2,'zh-cn','男性专用','有暗病的男人专用'),(2,'zh-hk','男性专用','有暗病的男人专用'),(3,'en-us','Baby Only','Baby Only'),(3,'zh-cn','婴儿专用','婴儿专用'),(3,'zh-hk','婴儿专用','婴儿专用');
+/*!40000 ALTER TABLE `dr_tb_used_group_lang` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -46,4 +52,4 @@ CREATE TABLE `dr_tb_doctor_lang` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-22  0:54:38
+-- Dump completed on 2015-01-04 22:15:25

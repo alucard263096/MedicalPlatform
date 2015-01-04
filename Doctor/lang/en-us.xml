@@ -32,6 +32,7 @@
     <updateotherlang>Updte other language</updateotherlang>
 </model>
   <common>
+    <title>Doctor Site</title>
     <login>Login</login>
     <loginname>Login Name</loginname>
     <password>Password</password>

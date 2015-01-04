@@ -83,6 +83,16 @@
       <notnull>1</notnull>
     </field>
     <field>
+      <name>任职历程</name>
+      <name_zh-cn>任职历程</name_zh-cn>
+      <name_zh-hk>任职历程</name_zh-hk>
+      <name_en-us>Position Process</name_en-us>
+      <key>post_process</key>
+      <type>longtext</type>
+      <ismutillang>1</ismutillang>
+      <notnull>1</notnull>
+    </field>
+    <field>
       <name>专业资格</name>
       <name_zh-cn>专业资格</name_zh-cn>
       <name_zh-hk>专业资格</name_zh-hk>

@@ -32,6 +32,7 @@
     <updateotherlang>更新其它语言</updateotherlang>
   </model>
   <common>
+    <title>港医汇医生平台</title>
     <login>登录</login>
     <loginname>用户名</loginname>
     <password>密码</password>

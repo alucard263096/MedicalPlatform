@@ -18,24 +18,30 @@ USE `medicalplatform`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dr_tb_doctor_lang`
+-- Table structure for table `dr_tb_effect_lang`
 --
 
-DROP TABLE IF EXISTS `dr_tb_doctor_lang`;
+DROP TABLE IF EXISTS `dr_tb_effect_lang`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dr_tb_doctor_lang` (
+CREATE TABLE `dr_tb_effect_lang` (
   `oid` int(11) NOT NULL,
   `lang` varchar(45) NOT NULL,
-  `name` varchar(145) NOT NULL COMMENT '医生姓名',
-  `summary` varchar(1000) NOT NULL COMMENT '个人简介',
-  `post_process` varchar(1000) NOT NULL COMMENT '任职历程',
-  `pro_title` varchar(1000) NOT NULL COMMENT '获得的专业资格',
-  `reg_title` varchar(1000) NOT NULL COMMENT '注册专科',
-  `book_content` varchar(1000) NOT NULL COMMENT '预约内容',
+  `name` varchar(45) NOT NULL COMMENT '功效名称',
+  `description` varchar(1000) NOT NULL COMMENT '功效详细描述',
   PRIMARY KEY (`oid`,`lang`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生多语言';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='治疗功效多语言';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dr_tb_effect_lang`
+--
+
+LOCK TABLES `dr_tb_effect_lang` WRITE;
+/*!40000 ALTER TABLE `dr_tb_effect_lang` DISABLE KEYS */;
+INSERT INTO `dr_tb_effect_lang` VALUES (1,'en-us','three union','unknown'),(1,'zh-cn','三联','不知道'),(1,'zh-hk','三联','不知道'),(2,'en-us','xiaoermabi','xiaoermabi1'),(2,'zh-cn','小儿麻痹','小儿麻痹'),(2,'zh-hk','小儿麻痹','小二麻痹');
+/*!40000 ALTER TABLE `dr_tb_effect_lang` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -46,4 +52,4 @@ CREATE TABLE `dr_tb_doctor_lang` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-22  0:54:38
+-- Dump completed on 2015-01-04 22:15:25

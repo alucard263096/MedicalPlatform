@@ -55,6 +55,13 @@
       <notnull>1</notnull>
     </field>
     <field>
+      <name>任职历程</name>
+      <key>post_process</key>
+      <type>longtext</type>
+      <ismutillang>1</ismutillang>
+      <notnull>1</notnull>
+    </field>
+    <field>
       <name>专业资格</name>
       <key>pro_title</key>
       <type>longtext</type>
