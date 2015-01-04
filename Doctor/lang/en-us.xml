@@ -81,10 +81,10 @@
   <general>
     <keyduplicate>Uni Key has been used</keyduplicate>
   </general>
-  <reserver>
+  <info>
     <openhour>Open Hour</openhour>
     <openhour1>Open Hour</openhour1>
-  </reserver>
+  </info>
   <validate>
     <appointmentapprove>Appointment Approvement</appointmentapprove>
     <orderno>Order No.</orderno>
@@ -99,4 +99,8 @@
     <nodata>Can not find data</nodata>
     <confirmcontent>Confirm Content</confirmcontent>
   </validate>
+  <appointment>
+    <agenda>Agenda</agenda>
+    <agenda1>日程</agenda1>
+  </appointment>
 </root>

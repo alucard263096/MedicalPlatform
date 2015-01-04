@@ -32,19 +32,30 @@ $MenuArray=json_decode(json_encode((array) simplexml_load_string($str)), true);
 	  }
 	
 	
-  require ROOT.'/classes/datamgr/officeopenhour.cls.php';
-  $result=$officeOpenHourMgr->getOfficeOpenHourList($SysUser["doctor_id"]);
+  require ROOT.'/classes/datamgr/office.cls.php';
+  $result=$officeMgr->getOfficeOpenHourList($SysUser["doctor_id"]);
 	$sum=count($result);
 	for($i=0;$i<$sum;$i++){
 		//mainmenus.mainmenu
 		for($j=0;$j<count($MenuArray["mainmenus"]["mainmenu"]);$j++){
 
-			if($MenuArray["mainmenus"]["mainmenu"][$j]["module"]=="reserver"){
+			if($MenuArray["mainmenus"]["mainmenu"][$j]["module"]=="info"){
 
 					$arr=Array();
 					$arr["id"]="officeopenhour_".$result[$i]["id"]."_add";
-					$arr["name"]=$result[$i]["office_name"].$SysLang["reserver"]["openhour"];
-					$arr["url"]="/Reserve/officeopenhour.php?id=".base64_encode($result[$i]["id"]);
+					$arr["name"]=$result[$i]["office_name"].$SysLang["info"]["openhour"];
+					$arr["url"]="/Info/officeopenhour.php?id=".base64_encode($result[$i]["id"]);
+
+					$MenuArray["mainmenus"]["mainmenu"][$j]["submenus"]["submenu"][]=$arr;
+			}
+
+			
+			if($MenuArray["mainmenus"]["mainmenu"][$j]["module"]=="appointment"){
+
+					$arr=Array();
+					$arr["id"]="agenda_".$result[$i]["id"];
+					$arr["name"]=$result[$i]["office_name"].$SysLang["appointment"]["agenda"];
+					$arr["url"]="/Appointment/agenda.php?id=".base64_encode($result[$i]["id"]);
 
 					$MenuArray["mainmenus"]["mainmenu"][$j]["submenus"]["submenu"][]=$arr;
 			}

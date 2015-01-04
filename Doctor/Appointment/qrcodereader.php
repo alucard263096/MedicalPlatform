@@ -4,7 +4,7 @@
   require ROOT.'/classes/datamgr/order.cls.php';
   
 
-  $smarty->assign("MyModule","interaction");
+  $smarty->assign("MyModule","appointment");
   $smarty->assign("MyMenuId","vaccineapponitment");
 
   //print_r($_REQUEST);
@@ -34,7 +34,7 @@
 	}
   }
   
-    $smarty->display(ROOT.'/templates/interaction/qrcodereader.html');
+    $smarty->display(ROOT.'/templates/appointment/qrcodereader.html');
 
 
 ?>

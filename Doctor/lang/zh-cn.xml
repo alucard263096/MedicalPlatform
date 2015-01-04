@@ -81,10 +81,10 @@
   <general>
     <keyduplicate>唯一键已经被使用</keyduplicate>
   </general>
-  <reserver>
+  <info>
     <openhour>开放时间</openhour>
     <openhour1>Open Hour</openhour1>
-  </reserver>
+  </info>
   <validate>
     <appointmentapprove>预约确认</appointmentapprove>
     <orderno>订单编号</orderno>
@@ -99,4 +99,8 @@
     <nodata>找不到数据</nodata>
     <confirmcontent>确认信息</confirmcontent>
   </validate>
+  <appointment>
+    <agenda>日程</agenda>
+    <agenda1>日程</agenda1>
+  </appointment>
 </root>

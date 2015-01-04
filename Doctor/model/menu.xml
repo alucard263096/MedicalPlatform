@@ -74,7 +74,7 @@
       </submenus>
     </mainmenu>
     <mainmenu>
-      <module>reserver</module>
+      <module>appointment</module>
       <name>预约管理</name>
       <submenus>
         <submenu>
@@ -83,28 +83,12 @@
           <url>#</url>
         </submenu>
         <submenu>
-          <id>no</id>
-          <name>Comming Soon</name>
-          <url>#</url>
-        </submenu>
-      </submenus>
-    </mainmenu>
-    <mainmenu>
-      <module>interaction</module>
-      <name>互动</name>
-      <submenus>
-        <submenu>
           <id>vaccineapponitment</id>
           <name>疫苗预约验证</name>
           <name_zh-cn>疫苗预约验证</name_zh-cn>
           <name_zh-hk>疫苗预约验证</name_zh-hk>
           <name_en-us>Vaccine Appointment</name_en-us>
-          <url>/Interaction/qrcodereader.php</url>
-        </submenu>
-        <submenu>
-          <id>no</id>
-          <name>Comming Soon</name>
-          <url>#</url>
+          <url>/Appointment/qrcodereader.php</url>
         </submenu>
       </submenus>
     </mainmenu>

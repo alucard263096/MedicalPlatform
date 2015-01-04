@@ -16,7 +16,7 @@
   
   
   $smarty->assign("Title",$info["order_no"]);
-  $url=$CONFIG["doctorurl"]."/Interaction/qrcodereader.php?key=vcorder&guid=".$info["guid"];
+  $url=$CONFIG["doctorurl"]."/Appointment/qrcodereader.php?key=vcorder&guid=".$info["guid"];
   $qrfile=GenQRCode($url);
   //print_r($info);
   $smarty->assign("qrcode",$qrfile);
