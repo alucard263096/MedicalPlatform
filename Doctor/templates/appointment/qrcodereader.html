@@ -54,8 +54,10 @@
                                                 <div class="col-md-6">
                                                     {{if $info.status=="P"}}
                                                     {{$SysLang.validate.padding}}
-                                                    {{else}}
-                                                    {{$SysLang.validate.finish}}
+                                                    {{elseif $info.status=='F'}}
+                                                    {{$SysLang.validate.finish}}                                                    
+                                                    {{elseif $info.status=='C'}}
+                                                    {{$SysLang.validate.cancel}}
                                                     {{/if}}
                                                 </div>
                                             </div>

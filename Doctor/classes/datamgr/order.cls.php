@@ -75,6 +75,18 @@ where main.guid='$guid' and main.doctor_id=$doctor_id";
 		where id=$id and doctor_id=$doctor_id ";
 		$query = $this->dbmgr->query($sql);
 	}
+	
+	public function cancelVaccineAppointment($id){
+		Global $SysUser;
+		
+		$user_id=$SysUser["id"];
+		$doctor_id=$SysUser["doctor_id"];
+		$id=mysql_real_escape_string($id);
+
+		$sql="update dr_tb_member_vaccine_order set updated_user=$user_id,updated_date=now(),status='C'
+		where id=$id and doctor_id=$doctor_id ";
+		$query = $this->dbmgr->query($sql);
+	}
  }
  
  $orderMgr=OrderMgr::getInstance();

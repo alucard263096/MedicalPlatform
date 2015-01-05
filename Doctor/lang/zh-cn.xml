@@ -95,12 +95,14 @@
     <approve>使用</approve>
     <padding>等待中</padding>
     <finish>已完成</finish>
+    <cancel>已取消</cancel>
     <ordernonotnull>订单编号不能为空</ordernonotnull>
     <nodata>找不到数据</nodata>
     <confirmcontent>确认信息</confirmcontent>
   </validate>
   <appointment>
     <agenda>日程</agenda>
-    <agenda1>日程</agenda1>
+    <detail>预约详情</detail>
+    <cancel>取消预约</cancel>
   </appointment>
 </root>

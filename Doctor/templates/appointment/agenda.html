@@ -12,10 +12,49 @@
         <div id='calendar'></div>
     </div>
 </div>
+
+
+<div id="cancel_box" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="cancel_boxtitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="cancel_boxtitle" class="modal-title">{{$SysLang.appointment.detail}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    {{$SysLang.validate.orderno}}: <span id="cb_order_no"></span>
+                </div>
+                <div class="col-md-12">
+                    {{$SysLang.validate.vaccine}}: <span id="cb_vaccine_name"></span>
+                </div>
+                <div class="col-md-12">
+                    {{$SysLang.validate.clientname}}: <span id="cb_clientname"></span>
+                </div>
+                <div class="col-md-12">
+                    {{$SysLang.validate.price}}: <span id="cb_price"></span>
+                </div>
+                <div class="col-md-12">
+                    {{$SysLang.validate.order_datetime}}: <span id="cb_order_time"></span>
+                </div>
+                <div class="col-md-12">
+                    {{$SysLang.common.status}}: <span id="cb_status"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" id="cb_order_id" />
+                <button type="button" id="cancel_boxBtnCancel" class="btn btn-success">{{$SysLang.appointment.cancel}}</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{$SysLang.common.close}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script>
 
     $(document).ready(function () {
-
+        
 
         $('#calendar').fullCalendar({
             header: {
@@ -23,76 +62,71 @@
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
             },
-            defaultDate: '2014-11-12',
-            editable: true,
             eventLimit: true, // allow "more" link when too many events
+            eventClick: function(calEvent, jsEvent, view) {
+                $("#cb_order_no").text(calEvent.order_no);
+                $("#cb_vaccine_name").text(calEvent.vaccine_name);
+                $("#cb_clientname").text(calEvent.clientname);
+                $("#cb_price").text(calEvent.price);
+                $("#cb_order_time").text(calEvent.order_time);
+                $("#cb_status").text(calEvent.status);
+                $("#cb_order_id").val(calEvent.id);
+
+                var obj=$(this);
+
+                if(calEvent.statuscode!="P"){
+                    $("#cancel_boxBtnCancel").hide();
+                }else{
+                    $("#cancel_boxBtnCancel").show();
+                }
+                $("#cancel_boxBtnCancel").unbind("click").click(function () {
+                    var json={
+                        action:"cancel",
+                        order_id:calEvent.id
+                    }
+                    $.post("{{$rootpath}}/Appointment/agenda.php",json,function(data){
+                        alert(data);
+                        if(data=="SUCCESS"){
+                            obj.css('border-color', '#C75F15');
+                            obj.css('background-color', '#C75F15');
+                            calEvent.status="{{$SysLang.validate.cancel}}";
+                            calEvent.statuscode="C";
+                            $("#cancel_box").modal("hide");
+                        }else{
+                            alert("System Error");
+                        }
+                    });
+                    
+                });
+                $("#cancel_box").modal("show");
+
+            },
             events: [
 				{
 				    title: 'All Day Event',
-				    start: '2014-11-01'
-				},
-				{
-				    title: 'Long Event',
-				    start: '2014-11-07',
-				    end: '2014-11-10'
-				},
-				{
-				    id: 999,
-				    title: 'Repeating Event',
-				    start: '2014-11-09T16:00:00'
-				},
-				{
-				    id: 999,
-				    title: 'Repeating Event',
-				    start: '2014-11-16T16:00:00'
-				},
-				{
-				    title: 'Conference',
-				    start: '2014-11-11',
-				    end: '2014-11-13'
-				},
-				{
-				    title: 'Meeting',
-				    start: '2014-11-12T10:30:00',
-				    end: '2014-11-12T12:30:00'
-				},
-				{
-				    title: 'Lunch',
-				    start: '2014-11-12T12:00:00'
-				},
-				{
-				    title: 'Meeting',
-				    start: '2014-11-12T14:30:00'
-				},
-				{
-				    title: 'Happy Hour',
-				    start: '2014-11-12T17:30:00'
-				},
-				{
-				    title: 'Dinner',
-				    start: '2014-11-12T20:00:00'
-				},
-				{
-				    title: 'Birthday Party',
-				    start: '2014-11-13T07:00:00'
-				},
-				{
-				    title: 'Click for Google',
-				    url: 'http://google.com/',
-				    start: '2014-11-28'
+				    start: '2050-11-01'
 				}
+            {{foreach from=$eventlist item=rs}}
+            ,
+				{
+				    title: '{{$rs.vaccine_name}}',
+				    start: '{{$rs.order_date}}T{{$rs.start_time}}',
+				    end: '{{$rs.order_date}}T{{$rs.end_time}}',
+				    vaccine_name:"{{$rs.vaccine_name}}",
+				    order_time:"{{$rs.order_date}} {{$rs.order_rtime}}",
+				    order_no:"{{$rs.order_no}}",
+				    clientname:"{{$rs.name}}",
+				    price:"{{$rs.price}}",
+				    status:"{{if $rs.status=='P'}}{{$SysLang.validate.padding}}{{elseif $rs.status=='F'}}{{$SysLang.validate.finish}}{{elseif $rs.status=='C'}}{{$SysLang.validate.cancel}}{{/if}}",
+                    statuscode:"{{$rs.status}}",
+				    id:"{{$rs.id}}"
+				    {{if $rs.status=='F'}},color: '#257e4a'{{elseif $rs.status=='C'}},color: '#C75F15'{{/if}}
+				}
+            {{/foreach}}
             ]
         });
 
-        $(".fc-prev-button").click(function () {
-            events = [{
-                title: 'Birthday Party',
-                start: '2014-11-13T07:00:00'
-            }];
-            $('#calendar').fullCalendar('removeEventSource', events);
-            $('#calendar').fullCalendar('addEventSource', events);
-            $('#calendar').fullCalendar('refetchEvents');
-        });
+       
 
     });
 

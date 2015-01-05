@@ -95,12 +95,14 @@
     <approve>Approve</approve>
     <padding>Padding</padding>
     <finish>Finish</finish>
+    <cancel>Cancelled</cancel>
     <ordernonotnull>Order No. can not be null</ordernonotnull>
     <nodata>Can not find data</nodata>
     <confirmcontent>Confirm Content</confirmcontent>
   </validate>
   <appointment>
     <agenda>Agenda</agenda>
-    <agenda1>日程</agenda1>
+    <detail>Appontment Details</detail>
+    <cancel>Cancel Appointment</cancel>
   </appointment>
 </root>
