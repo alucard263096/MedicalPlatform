@@ -47,37 +47,31 @@
           <id>effect_list</id>
           <name>效果与服务列表</name>
           <url>/BaseInfo/effect.php</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>effect_add</id>
           <name>效果与服务新增</name>
           <url>/BaseInfo/effect.php?action=add</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>usedgroup_list</id>
           <name>适用人群列表</name>
           <url>/BaseInfo/usedgroup.php</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>usedgroup_add</id>
           <name>适用人群新增</name>
           <url>/BaseInfo/usedgroup.php?action=add</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>vaccine_list</id>
           <name>疫苗列表</name>
           <url>/BaseInfo/vaccine.php</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>vaccine_add</id>
           <name>疫苗新增</name>
           <url>/BaseInfo/vaccine.php?action=add</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
       </submenus>
     </mainmenu>
@@ -89,61 +83,51 @@
           <id>hospital_list</id>
           <name>医院列表</name>
           <url>/Doctor/hospital.php</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>hospital_add</id>
           <name>医院新增</name>
           <url>/Doctor/hospital.php?action=add</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>office_list</id>
           <name>诊所列表</name>
           <url>/Doctor/office.php</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>office_add</id>
           <name>诊所新增</name>
           <url>/Doctor/office.php?action=add</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>doctor_list</id>
           <name>医生列表</name>
           <url>/Doctor/doctor.php</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>doctor_add</id>
           <name>医生新增</name>
           <url>/Doctor/doctor.php?action=add</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>doctorvaccine_list</id>
           <name>医生疫苗列表</name>
           <url>/Doctor/doctorvaccine.php</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>doctorvaccine_add</id>
           <name>医生疫苗新增</name>
           <url>/Doctor/doctorvaccine.php?action=add</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>officeopenhour_list</id>
           <name>诊所开放时间列表</name>
           <url>/Doctor/officeopenhour.php</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>officeopenhour_add</id>
           <name>诊所开放时间新增</name>
           <url>/Doctor/officeopenhour.php?action=add</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
       </submenus>
     </mainmenu>
@@ -160,7 +144,6 @@
           <id>#</id>
           <name>Coming Soon</name>
           <url>#</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
       </submenus>
     </mainmenu>
@@ -172,13 +155,11 @@
           <id>requirement_list</id>
           <name>需求列表</name>
           <url>/Other/requirement.php</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
         <submenu>
           <id>requirement_add</id>
           <name>需求新增</name>
           <url>/Other/requirement.php?action=add</url>
-          <onlyadmin>1</onlyadmin>
         </submenu>
       </submenus>
     </mainmenu>

@@ -19,7 +19,7 @@
                             <a href="#" class="dropdown-toggle {{if $rs.module==$MyModule}}active{{/if}}" data-hover="dropdown">{{$rs.name}} <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 {{foreach from=$rs.submenus.submenu item=sub}}
-                                {{if $sub.onlyadmin!=1||$SysUser.is_admin=="Y"}}
+                                {{if $sub.onlyadmin!=1 or $SysUser.is_admin=="Y"}}
                                 <li><a href="{{$rootpath}}{{$sub.url}}">{{$sub.name}}</a></li>
                                 {{/if}}
                                 {{/foreach}}
