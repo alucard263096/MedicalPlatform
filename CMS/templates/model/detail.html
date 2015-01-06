@@ -61,11 +61,11 @@
                                             <div class="col-md-10">                                                
                                                 {{if $rs.ismutillang=="1"}}
                                                 {{foreach from=$SysLangConfig.langs.lang item=rslang}}
-                                                <input type="{{if $rslang.code==$SysLangCode}}text{{else}}hidden{{/if}}" {{if $action!="add" and $rs.disableindetail=="1" }}disabled="disabled" {{/if}} class="form-control" value="{{foreach from=$rs.value item=rsval}}{{if $rslang.code==$rsval.code}}{{$rsval.value}}{{/if}}{{/foreach}}" id="content_{{$rs.key}}_{{$rslang.code}}" {{if $rs.notnull=="1" }} placeholder="{{$SysLang.model.required}}" {{/if}} />
+                                                <textarea rows="5" {{if $action!="add" and $rs.disableindetail=="1" }}disabled="disabled" {{/if}} class="form-control {{if $rslang.code!=$SysLangCode}}hide{{/if}}"  id="content_{{$rs.key}}_{{$rslang.code}}" {{if $rs.notnull=="1" }} placeholder="{{$SysLang.model.required}}" {{/if}} >{{foreach from=$rs.value item=rsval}}{{if $rslang.code==$rsval.code}}{{$rsval.value}}{{/if}}{{/foreach}}</textarea>
                                                 {{/foreach}}
                                                 <button {{if $action!="add" and $rs.disableindetail=="1" }}disabled="disabled" {{/if}} onclick="displayMutilLangPop('{{$rs.name}}','{{$rs.key}}')" class="btn btn-xs btn-link">{{$SysLang.model.updateotherlang}}</button>
                                                 {{else}}
-                                                <input type="text" class="form-control" {{if $action!="add" and $rs.disableindetail=="1"}}disabled="disabled"{{/if}} id="content_{{$rs.key}}" value="{{$rs.value}}" {{if $rs.notnull=="1" }} placeholder="{{$SysLang.model.required}}" {{/if}} />
+                                                <textarea rows="5" class="form-control" {{if $action!="add" and $rs.disableindetail=="1" }}disabled="disabled" {{/if}} id="content_{{$rs.key}}"  {{if $rs.notnull=="1" }} placeholder="{{$SysLang.model.required}}" {{/if}} >{{$rs.value}}</textarea>
                                                 {{/if}}
                                             </div>
                                         </div>                                            
@@ -139,7 +139,7 @@
                                                 <select {{if $action!="add" and $rs.disableindetail=="1"}}disabled="disabled"{{/if}}  id="content_{{$rs.key}}" class="form-control selectize-select">
                                                     <option value="no-value">--{{$SysLang.model.select}}--</option>
                                                     {{foreach from=$rs.options.option item=rsoption}}
-                                                    <option {{if $rs.value==$rsoption.value}}selected{{/if}} value="{{$rsoption.value}}">{{$rsoption.name}}</option>
+                                                <option {{if $rs.value==$rsoption.value or ($action=="add" and $rsoption.default=='1' )}}selected{{/if}} value="{{$rsoption.value}}">{{$rsoption.name}}</option>
                                                     {{/foreach}}
                                                 </select>
                                             </div>

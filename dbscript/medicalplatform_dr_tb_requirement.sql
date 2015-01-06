@@ -18,35 +18,32 @@ USE `medicalplatform`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dr_tb_member_vaccine_order`
+-- Table structure for table `dr_tb_requirement`
 --
 
-DROP TABLE IF EXISTS `dr_tb_member_vaccine_order`;
+DROP TABLE IF EXISTS `dr_tb_requirement`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dr_tb_member_vaccine_order` (
+CREATE TABLE `dr_tb_requirement` (
   `id` int(11) NOT NULL,
-  `order_no` varchar(45) NOT NULL,
-  `guid` varchar(45) NOT NULL,
-  `member_id` int(11) NOT NULL COMMENT '会员ID',
-  `name` varchar(100) NOT NULL COMMENT '预约人名称',
-  `mobile` varchar(100) NOT NULL COMMENT '预约人手机号码',
-  `email` varchar(100) NOT NULL COMMENT '预约人邮箱',
-  `order_date` date NOT NULL COMMENT '预约日期',
-  `order_time` int(11) NOT NULL COMMENT '预约时间',
-  `vaccine_id` int(11) NOT NULL COMMENT '疫苗ID',
-  `doctor_id` int(11) NOT NULL COMMENT '医生ID',
-  `office_id` int(11) NOT NULL COMMENT '诊所ID',
-  `price` decimal(10,2) NOT NULL COMMENT '价格',
-  `status` varchar(1) NOT NULL COMMENT '状态\nP-等待处理\nF-完成预约',
-  `created_time` datetime NOT NULL COMMENT '创建时间',
-  `snapshot` varchar(3000) NOT NULL COMMENT '快照',
-  `updated_user` int(11) DEFAULT NULL,
-  `updated_date` datetime DEFAULT NULL,
-  `h_status` varchar(1) NOT NULL DEFAULT 'P',
-  `h_comment` varchar(45) DEFAULT '',
+  `submit_user` int(11) NOT NULL COMMENT '提交人',
+  `title` varchar(250) NOT NULL COMMENT '需求标题',
+  `type` varchar(1) NOT NULL COMMENT '需求类型',
+  `description` varchar(1000) NOT NULL COMMENT '需求描述',
+  `attachment_1` varchar(250) NOT NULL COMMENT '附件1',
+  `attachment_2` varchar(250) NOT NULL COMMENT '附件2',
+  `attachment_3` varchar(250) NOT NULL COMMENT '附件3',
+  `handling_comment` varchar(1000) NOT NULL COMMENT '处理意见',
+  `handling_type` varchar(1) NOT NULL COMMENT '处理类型',
+  `handling_user` varchar(45) NOT NULL COMMENT '处理人',
+  `review_type` varchar(1) NOT NULL COMMENT '审阅类型',
+  `review_comment` varchar(45) NOT NULL COMMENT '审阅评论',
+  `created_user` int(11) NOT NULL,
+  `created_date` datetime NOT NULL,
+  `updated_user` int(11) NOT NULL,
+  `updated_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='会员疫苗预约';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='需求申请';
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

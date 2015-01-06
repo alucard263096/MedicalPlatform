@@ -22,6 +22,11 @@
                                 <li>
                                     <a href="#">Reminders <i class="glyphicon glyphicon-bell"></i></a>
                                 </li>-->
+                                {{if $SysReminder>0}}
+                                <li>
+                                    <a href="{{$rootpath}}/Admin/dashboard.php">Reminders ({{$SysReminder}})<i class="glyphicon glyphicon-bell"></i></a>
+                                </li>
+                                {{/if}}
                                 <li>
                                     <a href="#">{{$SysLang.common.welcome}} {{$SysUser.user_name}} <i class="glyphicon glyphicon-user"></i></a>
                                 </li>

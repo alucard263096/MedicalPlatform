@@ -85,7 +85,7 @@
                         order_id:calEvent.id
                     }
                     $.post("{{$rootpath}}/Appointment/agenda.php",json,function(data){
-                        alert(data);
+                        //alert(data);
                         if(data=="SUCCESS"){
                             obj.css('border-color', '#C75F15');
                             obj.css('background-color', '#C75F15');

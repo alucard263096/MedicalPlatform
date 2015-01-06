@@ -116,9 +116,9 @@ where o.office_id=$office_id and o.doctor_id=$doctor_id and order_date='$order_d
 		$order_no=$this->genOrderNo("VC");
 
 		$sql="INSERT INTO `dr_tb_member_vaccine_order`
-(`id`,`order_no`,`guid`,`member_id`,`name`,`mobile`,`email`,`order_date`,`order_time`,`vaccine_id`,`doctor_id`,`office_id`,`price`,`status`,`created_time`,`snapshot`)
+(`id`,`order_no`,`guid`,`member_id`,`name`,`mobile`,`email`,`order_date`,`order_time`,`vaccine_id`,`doctor_id`,`office_id`,`price`,`status`,`created_time`,`snapshot`,h_status )
 VALUES
-($id,'$order_no','$guid',$member_id,'$name','$mobile','$email','$order_date',$order_time,$vaccine_id,$doctor_id,$office_id,$price,'P',now(),'$snapshot');
+($id,'$order_no','$guid',$member_id,'$name','$mobile','$email','$order_date',$order_time,$vaccine_id,$doctor_id,$office_id,$price,'P',now(),'$snapshot','P');
  ";
 		$query = $this->dbmgr->query($sql);
 

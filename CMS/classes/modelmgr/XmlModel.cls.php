@@ -41,8 +41,7 @@ class XmlModel
 	$fields=$XmlDataEx["fields"]["field"];
 	$count=count($fields);
 	for($i=0;$i<$count;$i++){
-		if($fields[$i]["type"]=="fkey"
-		&&$fields[$i]["search"]=="1"){
+		if($fields[$i]["type"]=="fkey"){
 			$options=$this->GetFKeyData($dbMgr,$fields[$i]["displayfield"],$fields[$i]["tablename"],$fields[$i]["ntbname"],$fields[$i]["condition"],$fields[$i]["fmutillang"]);
 			$fields[$i]["options"]=$options;
 		}
