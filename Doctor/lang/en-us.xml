@@ -105,4 +105,8 @@
     <detail>Appontment Details</detail>
     <cancel>Cancel Appointment</cancel>
   </appointment>
+  <doctor>
+    <d></d>
+    <addvaccineduplicate>The selected vaccine has been added</addvaccineduplicate>
+  </doctor>
 </root>

@@ -105,4 +105,8 @@
     <detail>预约详情</detail>
     <cancel>取消预约</cancel>
   </appointment>
+  <doctor>
+    <d></d>
+    <addvaccineduplicate>该疫苗已经被这个医生定义了价格</addvaccineduplicate>
+  </doctor>
 </root>

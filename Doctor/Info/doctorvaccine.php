@@ -1,8 +1,9 @@
 <?php
   require '../include/common.inc.php';
   include ROOT.'/include/init.inc.php';
+  require ROOT.'/classes/modelmgr/DoctorVaccineXmlModel.cls.php';
   $action=$_REQUEST["action"];
-  $model=new XmlModel("doctorvaccine","doctorvaccine.php");
+  $model=new DoctorVaccineXmlModel("doctorvaccine.php");
   
   $smarty->assign("MyModule","info");
 
