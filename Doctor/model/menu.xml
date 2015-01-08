@@ -78,16 +78,19 @@
       <name>预约管理</name>
       <submenus>
         <submenu>
-          <id>no</id>
-          <name>Comming Soon</name>
-          <url>#</url>
+          <id>appointment_list</id>
+          <name>预约列表</name>
+          <name_zh-cn>预约列表</name_zh-cn>
+          <name_zh-hk>预约列表</name_zh-hk>
+          <name_en-us>Vaccine Appointment</name_en-us>
+          <url>/Appointment/appointment.php</url>
         </submenu>
         <submenu>
           <id>vaccineapponitment</id>
           <name>疫苗预约验证</name>
           <name_zh-cn>疫苗预约验证</name_zh-cn>
           <name_zh-hk>疫苗预约验证</name_zh-hk>
-          <name_en-us>Vaccine Appointment</name_en-us>
+          <name_en-us>Vaccine Appointment Validate</name_en-us>
           <url>/Appointment/qrcodereader.php</url>
         </submenu>
       </submenus>
