@@ -124,6 +124,7 @@
       </options>
       <search>1</search>
       <notnull>1</notnull>
+      <disableindetail>1</disableindetail>
     </field>
     <field>
       <name>申请日期</name>

@@ -29,7 +29,7 @@ $str = fread($fp,filesize($path));
 $MenuArray=json_decode(json_encode((array) simplexml_load_string($str)), true);
 $_SESSION[SESSIONNAME]["SystemMenu"]=$MenuArray;
 }
-
+//print_r($MenuArray);
 if($smarty!=null){
 	$smarty->assign("SystemMenu",$MenuArray);
 	$smarty->assign("SysUser",$SysUser);
