@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>港医汇</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="shortcut icon" href="/MedicalPlatform/UIDEMO/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-57x57.png" />
+
+    <link rel="stylesheet" href="/MedicalPlatform/UIDEMO/themes/mobile/css/ratchet.css">
+    <link rel="stylesheet" href="/MedicalPlatform/UIDEMO/themes/mobile/css/app.css">
+    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/ratchet.js"></script>
+
+    <script src="/MedicalPlatform/UIDEMO/js/jquery-2.0.3.min.js"></script>
+
+    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/util.js"></script>
+
+</head>
+<body>
+    <header class="bar bar-nav">
+        <h1 class="title">疫苗列表</h1>
+        <a class="btn btn-link btn-nav pull-right">
+            筛选
+        </a>
+    </header>
+
+    <div class="bar bar-standard bar-header-secondary">
+        <form>
+            <input type="search" placeholder="Search">
+        </form>
+    </div>
+
+    <div class="content">
+
+        <div class="slider">
+            <div class="slide-group">
+                <div class="slide">
+                    <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/argo.png" alt="Argo" width="640" height="300">
+                </div>
+                <div class="slide">
+                    <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/skyfall.png" alt="Skyfall" width="640" height="300">
+                </div>
+                <div class="slide">
+                    <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/ralph.png" alt="Wreck-It Ralph" width="640" height="300">
+                </div>
+            </div>
+        </div>
+
+        <ul class="table-view">
+            <!--<li class="table-view-cell table-view-divider">
+            </li>-->
+            <li class="table-view-cell media">
+                <a class="navigate-right" data-ignore="push" href="detail.html?id=1" data-transition="slide-in">
+                    <img class="media-object pull-left" src="/MedicalPlatform/UIDEMO/../upload/vaccine/14122515019Chrysanthemum.jpg" width="64px" alt="Placeholder image for Argo's poster">
+                    <div class="media-body">
+                        脊灰疫苗
+                        <p>介个也好解决，针对三种主流服务器，我们都可以在服务器端配置http equiv规则：apache服务器，确保 mod_headers 和 mod_setenvif 是available的，然后在httpd.conf「新版Apache的配置文件是 apache2.conf」或者在.htaccess中加入以下规则：</p>
+                    </div>
+                </a>
+            </li>
+            <li class="table-view-cell media">
+                <a class="navigate-right" data-ignore="push" href="detail.html?id=2" data-transition="slide-in">
+                    <img class="media-object pull-left" src="/MedicalPlatform/UIDEMO/../upload/vaccine/14122515005Desert.jpg" width="64px" alt="Placeholder image for Argo's poster">
+                    <div class="media-body">
+                        子宫疫苗
+                        <p>Title bars are full width and docked to the top of the viewport.</p>
+                    </div>
+                </a>
+            </li>
+            <li style="height:30px;">
+            </li>
+        </ul>
+    </div><!-- /.content -->
+
+
+
+    <nav class="bar bar-tab">
+        <a class="tab-item " href="/MedicalPlatform/UIDEMO/index.html">
+            <span class="icon icon-home"></span>
+            <span class="tab-label">首页</span>
+        </a>
+        <a class="tab-item active" data-ignore="push" href="/MedicalPlatform/UIDEMO/vaccine/index.html">
+            <span class="icon icon-person"></span>
+            <span class="tab-label">疫苗</span>
+        </a>
+        <a class="tab-item " href="#">
+            <span class="icon icon-star-filled"></span>
+            <span class="tab-label">咨询</span>
+        </a>
+        <a class="tab-item " href="#">
+            <span class="icon icon-search"></span>
+            <span class="tab-label">搜索</span>
+        </a>
+        <a id="menuMember" class="tab-item " data-ignore="push" href="#memberLogin">
+            <span class="icon icon-gear"></span>
+            <span class="tab-label">会员</span>
+        </a>
+    </nav>
+    <!-- Settings modal -->
+    <div id="memberLogin" class="modal">
+        <header class="bar bar-nav">
+            <a class="icon icon-close pull-right" href="#memberLogin"></a>
+            <h1 class="title" id="memberloginform">请先注册或登录</h1>
+        </header>
+
+        <div class="content">
+            <div class="segmented-control">
+                <a class="control-item active" href="#item1mobile">
+                    登录
+                </a>
+                <a class="control-item" href="#item2mobile">
+                    注册
+                </a>
+            </div>
+            <div class="card" style="border:0px;">
+                <div id="item1mobile" class="control-content active ">
+                    <input type="text" id="qlLoginName" placeholder="邮箱或手机号码">
+                    <input type="password" id="qlPassword" placeholder="密码">
+                    <div class="content-padded">
+                        <button class="btn btn-positive btn-block" id="btnQuickLogin">登录</button>
+                    </div>
+                    <p style="color:red;" id="signintips"></p>
+                </div>
+                <div id="item2mobile" class="control-content">
+                    <input type="tel" id="qrMobile" placeholder="手机号码">
+                    <input type="email" id="qrEmail" placeholder="邮箱地址">
+                    <input type="password" id="qrPassword" placeholder="密码">
+                    <input type="text" id="qrName" placeholder="真实姓名">
+                    <div class="content-padded">
+                        <button class="btn btn-primary btn-block" id="btnQuickReg">注册</button>
+                    </div>
+                    <p style="color:red;" id="signuptips"></p>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.modal -->
+    <script>
+    $(document).ready(function () {
+
+        $("#btnQuickLogin").click(function () {
+
+            var loginname = $("#qlLoginName").val();
+            var password = $("#qlPassword").val();
+
+            var json = { "loginname": loginname, "password": password };
+
+            $.post("/MedicalPlatform/UIDEMO/member/quicklogin.html", json, function (data) {
+                if (data == "SUCCESS") {
+                    $("#memberLogin").removeClass("active");
+                    $("#btnLoginTop").hide();
+                    $("#menuMember").attr("href", "/MedicalPlatform/UIDEMO/member/index.html");
+                } else {
+                    $("#signintips").text("用户名或密码无效");
+                }
+            });
+
+        });
+
+        $("#btnQuickReg").click(function () {
+            var mobile = $("#qrMobile").val();
+            var email = $("#qrEmail").val();
+            var password = $("#qrPassword").val();
+            var name = $("#qrName").val();
+
+            if (mobile == "" && email == "") {
+                $("#signuptips").text("请至少输入手机号码或邮箱地址");
+                return;
+            }
+            if (name == "" ) {
+                $("#signuptips").text("请输入姓名");
+                return;
+            }
+            $("#btnQuickReg").prop("disabled", "disabled");
+
+            //alert(name);
+
+            var json = {
+                "mobile": mobile,
+                "email": email,
+                "password": password,
+                "name": name
+            };
+
+            $.post("/MedicalPlatform/UIDEMO/member/quickreg.html", json, function (data) {
+                if (data == "SUCCESS") {
+                    $("#memberLogin").removeClass("active");
+                    $("#btnLoginTop").hide();
+                    $("#menuMember").attr("href", "/MedicalPlatform/UIDEMO/member/index.html");
+                } else if (data == "DUPLIC") {
+                    $("#signuptips").text("该手机号码或邮箱地址已经被注册");
+                }  else{
+                    $("#signuptips").text("注册失败");
+                }
+                $("#btnQuickReg").prop("disabled", "");
+            });
+
+        });
+
+    });
+
+    </script>
+
+    <div id="popover" class="popover">
+        <p></p>
+    </div>
+
+    <script>
+    $(document).ready(function () {
+        //PopTips("aa");
+        //$("#memberLogin").addClass("active");
+    });
+    </script>
+
+</body>
+</html>

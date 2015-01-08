@@ -8,20 +8,20 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MedicalPlatform", "http://l
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_63313"
-		Debug.AspNetCompiler.PhysicalPath = "D:\Apache2.4\htdocs\MedicalPlatform\"
+		Debug.AspNetCompiler.PhysicalPath = "..\MedicalPlatform\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63313\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_63313"
-		Release.AspNetCompiler.PhysicalPath = "D:\Apache2.4\htdocs\MedicalPlatform\"
+		Release.AspNetCompiler.PhysicalPath = "..\MedicalPlatform\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63313\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "D:\Apache2.4\htdocs\MedicalPlatform\"
+		SlnRelativePath = "..\MedicalPlatform\"
 	EndProjectSection
 EndProject
 Global
