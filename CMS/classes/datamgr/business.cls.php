@@ -28,16 +28,17 @@
 		$sum=0;
 		
 		$sql="
-		select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P'
+		select count(1) count,'dr_tb_member_vaccine_order' name from dr_tb_member_vaccine_order where status='C' and h_status='P'
 union
-select count(1) from dr_tb_requirement where handling_user=$user_id and handling_type='P'
+select count(1) count,'dr_tb_requirement' name from dr_tb_requirement where handling_user=$user_id and handling_type='P'
 union
-select count(1) from dr_tb_requirement where submit_user=$user_id and handling_type<>'P'  and review_type='P'   ";
+select count(1) count,'dr_tb_requirement' name from dr_tb_requirement where submit_user=$user_id and handling_type<>'P'  and review_type='P'   ";
+
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
-		
+		//print_r($result);
 		for($i=0;$i<count($result);$i++){
-			$sum=$sum+$result[$i][0];
+			$sum=$sum+$result[$i]["count"];
 		}
 
 		return $sum;

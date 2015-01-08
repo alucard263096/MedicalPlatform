@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MedicalPlatform", "http://localhost:63313", "{E75C0F2B-A46A-4C64-B8A4-A5A0EA7AC98E}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_63313"
+		Debug.AspNetCompiler.PhysicalPath = "D:\Apache2.4\htdocs\MedicalPlatform\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63313\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_63313"
+		Release.AspNetCompiler.PhysicalPath = "D:\Apache2.4\htdocs\MedicalPlatform\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63313\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "D:\Apache2.4\htdocs\MedicalPlatform\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E75C0F2B-A46A-4C64-B8A4-A5A0EA7AC98E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E75C0F2B-A46A-4C64-B8A4-A5A0EA7AC98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
