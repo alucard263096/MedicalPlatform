@@ -43,6 +43,7 @@ CREATE TABLE `dr_tb_hospital` (
 
 LOCK TABLES `dr_tb_hospital` WRITE;
 /*!40000 ALTER TABLE `dr_tb_hospital` DISABLE KEYS */;
+INSERT INTO `dr_tb_hospital` VALUES (1,'aaa','aa','A','2014-12-16 22:20:53',1,'2014-12-16 22:20:53',1);
 /*!40000 ALTER TABLE `dr_tb_hospital` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-13  0:27:35
+-- Dump completed on 2015-01-11 22:54:19

@@ -18,42 +18,28 @@ USE `medicalplatform`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dr_tb_doctor`
+-- Table structure for table `dr_tb_block`
 --
 
-DROP TABLE IF EXISTS `dr_tb_doctor`;
+DROP TABLE IF EXISTS `dr_tb_block`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dr_tb_doctor` (
+CREATE TABLE `dr_tb_block` (
   `id` int(11) NOT NULL,
-  `licence_code` varchar(45) NOT NULL COMMENT '执业许可证号',
-  `photo` varchar(200) NOT NULL COMMENT '头像',
-  `sexual` varchar(1) NOT NULL COMMENT '性别',
-  `exec_year` int(11) NOT NULL COMMENT '执业年期',
-  `hospital_list_id` varchar(1000) NOT NULL COMMENT '可使用的医院',
-  `general_price` decimal(10,3) NOT NULL COMMENT '全科收费',
-  `specialist_id` int(11) NOT NULL,
-  `specialist_price` decimal(10,3) NOT NULL COMMENT '专科收费',
-  `use_lang_id` varchar(1000) NOT NULL COMMENT '语言',
-  `is_general` varchar(1) NOT NULL COMMENT '是否为全科医生',
-  `remarks` varchar(1000) NOT NULL,
-  `status` varchar(1) NOT NULL,
-  `created_date` datetime NOT NULL,
-  `created_user` int(11) NOT NULL,
-  `updated_date` datetime NOT NULL,
-  `updated_user` int(11) NOT NULL,
+  `district_id` int(11) NOT NULL,
+  `remarks` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='区域';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `dr_tb_doctor`
+-- Dumping data for table `dr_tb_block`
 --
 
-LOCK TABLES `dr_tb_doctor` WRITE;
-/*!40000 ALTER TABLE `dr_tb_doctor` DISABLE KEYS */;
-INSERT INTO `dr_tb_doctor` VALUES (1,'aaaa','14121614011Chrysanthemum.jpg','M',1,'1',1.000,2,1.000,'1','N','','A','2014-12-16 22:22:18',1,'2015-01-11 01:34:07',1);
-/*!40000 ALTER TABLE `dr_tb_doctor` ENABLE KEYS */;
+LOCK TABLES `dr_tb_block` WRITE;
+/*!40000 ALTER TABLE `dr_tb_block` DISABLE KEYS */;
+INSERT INTO `dr_tb_block` VALUES (1,1,''),(2,1,''),(3,1,''),(4,1,''),(5,1,''),(6,1,''),(7,1,''),(8,1,''),(9,1,''),(10,1,''),(11,1,''),(12,1,''),(13,1,''),(14,1,''),(15,1,''),(16,1,''),(17,1,''),(18,1,''),(19,1,''),(20,1,''),(21,1,''),(22,1,''),(23,1,''),(24,1,''),(25,1,''),(26,1,''),(27,2,''),(28,2,''),(29,2,''),(30,2,''),(31,2,''),(32,2,''),(33,2,''),(34,2,''),(35,2,''),(36,2,''),(37,2,''),(38,2,''),(39,2,''),(40,2,''),(41,2,''),(42,2,''),(43,2,''),(44,2,''),(45,2,''),(46,2,''),(47,2,''),(48,2,''),(49,2,''),(50,3,''),(51,3,''),(52,3,''),(53,3,''),(54,3,''),(55,3,''),(56,3,''),(57,3,''),(58,3,''),(59,3,''),(60,3,''),(61,3,''),(62,3,''),(63,3,''),(64,3,''),(65,3,''),(66,4,''),(67,4,''),(68,4,'');
+/*!40000 ALTER TABLE `dr_tb_block` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -65,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-01-11 22:54:20
+-- Dump completed on 2015-01-11 22:54:21

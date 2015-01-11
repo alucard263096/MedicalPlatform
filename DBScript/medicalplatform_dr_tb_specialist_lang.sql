@@ -18,42 +18,28 @@ USE `medicalplatform`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dr_tb_doctor`
+-- Table structure for table `dr_tb_specialist_lang`
 --
 
-DROP TABLE IF EXISTS `dr_tb_doctor`;
+DROP TABLE IF EXISTS `dr_tb_specialist_lang`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dr_tb_doctor` (
-  `id` int(11) NOT NULL,
-  `licence_code` varchar(45) NOT NULL COMMENT '执业许可证号',
-  `photo` varchar(200) NOT NULL COMMENT '头像',
-  `sexual` varchar(1) NOT NULL COMMENT '性别',
-  `exec_year` int(11) NOT NULL COMMENT '执业年期',
-  `hospital_list_id` varchar(1000) NOT NULL COMMENT '可使用的医院',
-  `general_price` decimal(10,3) NOT NULL COMMENT '全科收费',
-  `specialist_id` int(11) NOT NULL,
-  `specialist_price` decimal(10,3) NOT NULL COMMENT '专科收费',
-  `use_lang_id` varchar(1000) NOT NULL COMMENT '语言',
-  `is_general` varchar(1) NOT NULL COMMENT '是否为全科医生',
-  `remarks` varchar(1000) NOT NULL,
-  `status` varchar(1) NOT NULL,
-  `created_date` datetime NOT NULL,
-  `created_user` int(11) NOT NULL,
-  `updated_date` datetime NOT NULL,
-  `updated_user` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生';
+CREATE TABLE `dr_tb_specialist_lang` (
+  `oid` int(11) NOT NULL,
+  `lang` varchar(45) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`oid`,`lang`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生专科语言';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `dr_tb_doctor`
+-- Dumping data for table `dr_tb_specialist_lang`
 --
 
-LOCK TABLES `dr_tb_doctor` WRITE;
-/*!40000 ALTER TABLE `dr_tb_doctor` DISABLE KEYS */;
-INSERT INTO `dr_tb_doctor` VALUES (1,'aaaa','14121614011Chrysanthemum.jpg','M',1,'1',1.000,2,1.000,'1','N','','A','2014-12-16 22:22:18',1,'2015-01-11 01:34:07',1);
-/*!40000 ALTER TABLE `dr_tb_doctor` ENABLE KEYS */;
+LOCK TABLES `dr_tb_specialist_lang` WRITE;
+/*!40000 ALTER TABLE `dr_tb_specialist_lang` DISABLE KEYS */;
+INSERT INTO `dr_tb_specialist_lang` VALUES (1,'en-us','小儿科'),(1,'zh-cn','小儿科'),(1,'zh-hk','小儿科'),(2,'en-us','脑残科'),(2,'zh-cn','脑残科'),(2,'zh-hk','脑残科');
+/*!40000 ALTER TABLE `dr_tb_specialist_lang` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

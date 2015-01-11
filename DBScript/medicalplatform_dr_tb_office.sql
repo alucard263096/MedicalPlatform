@@ -33,6 +33,8 @@ CREATE TABLE `dr_tb_office` (
   `created_user` int(11) NOT NULL,
   `updated_date` datetime NOT NULL,
   `updated_user` int(11) NOT NULL,
+  `block_id` int(11) NOT NULL,
+  `hot_district_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='诊所';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -43,6 +45,7 @@ CREATE TABLE `dr_tb_office` (
 
 LOCK TABLES `dr_tb_office` WRITE;
 /*!40000 ALTER TABLE `dr_tb_office` DISABLE KEYS */;
+INSERT INTO `dr_tb_office` VALUES (1,'116.387021,40.039448','','A','2014-12-22 00:38:51',1,'2015-01-11 00:59:44',1,1,0),(2,'116.366899,39.966493','aaaa','A','2014-12-29 16:14:19',1,'2014-12-29 16:14:19',1,0,0);
 /*!40000 ALTER TABLE `dr_tb_office` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-13  0:27:35
+-- Dump completed on 2015-01-11 22:54:20

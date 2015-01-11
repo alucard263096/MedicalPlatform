@@ -40,6 +40,7 @@ CREATE TABLE `dr_tb_hospital_lang` (
 
 LOCK TABLES `dr_tb_hospital_lang` WRITE;
 /*!40000 ALTER TABLE `dr_tb_hospital_lang` DISABLE KEYS */;
+INSERT INTO `dr_tb_hospital_lang` VALUES (1,'en-us','aaa','aaa','aaa'),(1,'zh-cn','aaa','aaa','aaa'),(1,'zh-hk','aaa','aaa','aaa');
 /*!40000 ALTER TABLE `dr_tb_hospital_lang` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-13  0:27:35
+-- Dump completed on 2015-01-11 22:54:19
