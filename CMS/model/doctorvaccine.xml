@@ -35,15 +35,15 @@
       <disableindetail>1</disableindetail>
     </field>
     <field>
-      <name>单次接种疫苗收费（HK$）</name>
-      <key>once_price</key>
+      <name>标准价格（HK$）</name>
+      <key>price</key>
       <type>number</type>
       <notnull>1</notnull>
       <displayinlist>1</displayinlist>
     </field>
     <field>
-      <name>一次性付款收费（HK$）</name>
-      <key>total_price</key>
+      <name>网上价格（HK$）</name>
+      <key>web_price</key>
       <type>number</type>
       <notnull>1</notnull>
       <displayinlist>1</displayinlist>

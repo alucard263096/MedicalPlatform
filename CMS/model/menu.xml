@@ -73,6 +73,16 @@
           <name>疫苗新增</name>
           <url>/BaseInfo/vaccine.php?action=add</url>
         </submenu>
+        <submenu>
+          <id>specialist_list</id>
+          <name>专科列表</name>
+          <url>/BaseInfo/specialist.php</url>
+        </submenu>
+        <submenu>
+          <id>specialist_add</id>
+          <name>专科新增</name>
+          <url>/BaseInfo/specialist.php?action=add</url>
+        </submenu>
       </submenus>
     </mainmenu>
     <mainmenu>
@@ -118,6 +128,11 @@
           <id>doctorvaccine_add</id>
           <name>医生疫苗新增</name>
           <url>/Doctor/doctorvaccine.php?action=add</url>
+        </submenu>
+        <submenu>
+          <id>doctor_service</id>
+          <name>医生服务管理</name>
+          <url>/Doctor/service.php</url>
         </submenu>
         <submenu>
           <id>officeopenhour_list</id>
