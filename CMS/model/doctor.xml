@@ -183,4 +183,12 @@
       <search>1</search>
     </option>
   </options>
+  <javascripts>
+    <javascript>
+      <filename>doctor.js</filename>
+      <detail>1</detail>
+    </javascript>
+    <javascript>
+    </javascript>
+  </javascripts>
 </root>

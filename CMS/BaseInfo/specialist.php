@@ -4,7 +4,7 @@
   $action=$_REQUEST["action"];
   $model=new XmlModel("specialist","specialist.php");
   
-	$smarty->assign("MyModule","baseinfo");
+  $smarty->assign("MyModule","baseinfo");
   
   
   $model->DefaultShow($smarty,$dbmgr,$action,"specialist",$_REQUEST);
