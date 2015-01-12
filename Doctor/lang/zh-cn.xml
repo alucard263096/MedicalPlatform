@@ -109,4 +109,11 @@
     <d></d>
     <addvaccineduplicate>该疫苗已经被这个医生定义了价格</addvaccineduplicate>
   </doctor>
+  <service>
+    <myservice>我的服务</myservice>
+    <serviceinfo>服务内容</serviceinfo>
+    <service>服务</service>
+    <price>价格</price>
+    <webprice>网上价格</webprice>
+  </service>
 </root>

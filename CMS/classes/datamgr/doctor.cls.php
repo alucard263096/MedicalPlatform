@@ -43,7 +43,6 @@ order by a.licence_code,b.name
 
 	public function getSpecialistDoctorServiceEffectId($doctor_id){
 	
-	Global $SysLangCode;	
 	
 		$doctor_id=mysql_real_escape_string($doctor_id);
 	$sql="
@@ -66,20 +65,19 @@ where  a.id=$doctor_id
 
 	public  function getSpecialistDoctorService($doctor_id){
 			
-	Global $SysLangCode;
 	
 		$effect_list=$this->getSpecialistDoctorServiceEffectId($doctor_id);
 		
 		$sql="
-select e.id effect_id,el.name effect_name,ifnull(s.doctor_id,'0'),s.price,s.web_price from dr_tb_effect e
-left join dr_tb_effect_lang el on e.id=el.oid and el.lang='$SysLangCode'
+select e.id effect_id,el.name effect_name,ifnull(s.doctor_id,'0') doctor_id,s.price,s.web_price from dr_tb_effect e
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='zh-cn'
 left join dr_tb_doctor_service s on e.id=s.effect_id and s.doctor_id=$doctor_id
 where e.status='A' and e.id in ($effect_list)
 order by el.name
 		  ";
 
 		$query = $this->dbmgr->query($sql);
-		$result = $this->dbmgr->fetch_array($query); 
+		$result = $this->dbmgr->fetch_array_all($query); 
 		return $result;
 	}
 
@@ -101,11 +99,12 @@ order by el.name
 			$effect_id=$value;
 			$effect_id=mysql_real_escape_string($effect_id);
 			
+			$selected=$request["effect_".$effect_id."_select"];
 			$price=$request["effect_".$effect_id."_price"];
 			$web_price=$request["effect_".$effect_id."_web_price"];
 			
-			$price=mysql_real_escape_string($doctor_id);
-			$web_price=mysql_real_escape_string($doctor_id);
+			$price=mysql_real_escape_string($price);
+			$web_price=mysql_real_escape_string($web_price);
 
 			if($selected=="Y"){
 				
