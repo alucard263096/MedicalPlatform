@@ -115,7 +115,6 @@
       <type>fkey</type>
       <fmutillang>1</fmutillang>
       <displayfield>name</displayfield>
-      <notnull>1</notnull>
       <tablename>dr_tb_specialist</tablename>
       <ntbname>r_specialist</ntbname>
       <condition>r_specialist.status='A' </condition>

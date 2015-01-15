@@ -2,27 +2,26 @@
 <thead>
     <tr>
         <th>#</th>
-        <th>∑˛ŒÒ</th>
-        <th>±Í◊ºº€£®HK$£©</th>
-        <th>Õ¯…œº€∏Ò£®HK$£©</th>
+        <th>ÊúçÂä°</th>
+        <th>Ê†áÂáÜ‰ª∑ÔºàHK$Ôºâ</th>
+        <th>ÁΩë‰∏ä‰ª∑Ê†ºÔºàHK$Ôºâ</th>
     </tr>
 </thead>
 <tbody>
     {{foreach from=$result item=row}}
     <tr>
-        {{foreach from=$row item=col key=key}}
-            {{if $key!="id"}}
-            {{foreach from=$ModelData.fields.field item=rs}}
-                {{if $key==$rs.key && $rs.displayinlist=="1"}}
-                    {{if $rs.gotodetail=="1"}}
-                    <td class="result_{{$rs.key}}"><a href="{{$PageName}}?action=edit&id={{$row.id}}&parenturl={{$parenturl}}">{{$col}}</a></td>
-                    {{else}}
-                    <td class="result_{{$rs.key}}">{{$col}}</td>
-                    {{/if}}
-                {{/if}}
-            {{/foreach}}
-            {{/if}}
-        {{/foreach}}
+        <td>
+        <input type="checkbox" class="effectcb" oid="{{$row.effect_id}}" {{if $row.doctor_id>0}}checked=checked{{/if}} />
+        </td>
+        <td>
+            <label class="control-label">{{$row.effect_name}}</label>
+        </td>
+        <td>
+            <input type="number" value="{{$row.price}}" class="form-control" id="effect_{{$row.effect_id}}_price" />
+        </td>
+        <td>
+            <input type="number" value="{{$row.web_price}}" class="form-control" id="effect_{{$row.effect_id}}_web_price" />
+        </td>
     </tr>
     {{/foreach}}
 </tbody>

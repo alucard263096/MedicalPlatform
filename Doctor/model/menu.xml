@@ -71,6 +71,14 @@
           <name_en-us>Vaccine New</name_en-us>
           <url>/Info/doctorvaccine.php?action=add</url>
         </submenu>
+        <submenu>
+          <id>doctor_service</id>
+          <name>我的服务</name>
+          <name_zh-cn>我的服务</name_zh-cn>
+          <name_zh-hk>我的服务</name_zh-hk>
+          <name_en-us>My Service</name_en-us>
+          <url>/Info/service.php</url>
+        </submenu>
       </submenus>
     </mainmenu>
     <mainmenu>
