@@ -18,30 +18,32 @@ USE `medicalplatform`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dr_tb_banner`
+-- Table structure for table `dr_tb_doctor_promoted`
 --
 
-DROP TABLE IF EXISTS `dr_tb_banner`;
+DROP TABLE IF EXISTS `dr_tb_doctor_promoted`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dr_tb_banner` (
+CREATE TABLE `dr_tb_doctor_promoted` (
   `id` int(11) NOT NULL,
-  `code` varchar(45) NOT NULL COMMENT '代码',
-  `title_sc` varchar(500) NOT NULL COMMENT '标题',
-  `title_tc` varchar(500) NOT NULL,
-  `title_en` varchar(500) NOT NULL,
-  `link` varchar(500) NOT NULL COMMENT '超链接',
-  `pic_sc` varchar(500) NOT NULL COMMENT '图片',
-  `pic_tc` varchar(45) DEFAULT NULL,
-  `pic_en` varchar(45) DEFAULT NULL,
-  `remarks` varchar(500) NOT NULL COMMENT '说明',
+  `doctor_list` varchar(1000) NOT NULL,
   `created_date` datetime NOT NULL,
   `created_user` int(11) NOT NULL,
   `updated_date` datetime NOT NULL,
   `updated_user` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='广告管理';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='推广医生	';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dr_tb_doctor_promoted`
+--
+
+LOCK TABLES `dr_tb_doctor_promoted` WRITE;
+/*!40000 ALTER TABLE `dr_tb_doctor_promoted` DISABLE KEYS */;
+INSERT INTO `dr_tb_doctor_promoted` VALUES (1,'','2015-01-16 16:46:07',1,'2015-01-16 16:46:07',1);
+/*!40000 ALTER TABLE `dr_tb_doctor_promoted` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -52,4 +54,4 @@ CREATE TABLE `dr_tb_banner` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-01-16 16:24:32
+-- Dump completed on 2015-01-16 16:46:30

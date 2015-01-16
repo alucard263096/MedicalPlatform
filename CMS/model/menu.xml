@@ -65,6 +65,16 @@
           <url>/Website/general.php?action=add</url>
           <onlyadmin>1</onlyadmin>
         </submenu>
+        <submenu>
+          <id>doctorpromoted</id>
+          <name>推荐医生管理</name>
+          <url>/Website/doctorpromoted.php</url>
+        </submenu>
+        <submenu>
+          <id>vaccinepromoted</id>
+          <name>推荐疫苗管理</name>
+          <url>/Website/vaccinepromoted.php</url>
+        </submenu>
       </submenus>
     </mainmenu>
     <mainmenu>

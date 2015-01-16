@@ -8,6 +8,7 @@ class GeneralTextXmlModel extends XmlModel{
 
 	public function Save($dbMgr,$request,$sysuser){
 	Global $SysLang; 
+
 		if($request["primary_id"]==""){
 			$code=$request["code"];
 			$code=mysql_real_escape_string($code);

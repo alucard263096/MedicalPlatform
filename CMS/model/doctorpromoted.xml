@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <name>推荐医生</name>
+  <tablename>dr_tb_doctor_promoted</tablename>
+  <searchcondition>r_main.status&lt;&gt;'D'</searchcondition>
+  <fields>
+    <field>
+      <name>医生</name>
+      <key>doctor_list</key>
+      <type>flist</type>
+      <fmutillang>1</fmutillang>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_doctor</tablename>
+      <ntbname>r_doctor_list</ntbname>
+      <condition>r_doctor_list.status='A'  </condition>
+    </field>
+  </fields>
+</root>

@@ -42,7 +42,19 @@
       <notnull>1</notnull>
     </field>
     <field>
-      <name>广告图</name>
+      <name>广告图（简体）</name>
+      <key>pic</key>
+      <type>upload</type>
+      <uploadmodule>banner</uploadmodule>
+    </field>
+    <field>
+      <name>广告图（繁体）</name>
+      <key>pic</key>
+      <type>upload</type>
+      <uploadmodule>banner</uploadmodule>
+    </field>
+    <field>
+      <name>广告图（English）</name>
       <key>pic</key>
       <type>upload</type>
       <uploadmodule>banner</uploadmodule>

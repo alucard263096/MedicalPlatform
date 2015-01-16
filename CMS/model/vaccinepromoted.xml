@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <name>推荐疫苗</name>
+  <tablename>dr_tb_vaccine_promoted</tablename>
+  <searchcondition>r_main.status&lt;&gt;'D'</searchcondition>
+  <fields>
+    <field>
+      <name>疫苗</name>
+      <key>vaccine_list</key>
+      <type>flist</type>
+      <fmutillang>1</fmutillang>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_vaccine</tablename>
+      <ntbname>r_vaccine_list</ntbname>
+      <condition>r_vaccine_list.status='A'  </condition>
+    </field>
+  </fields>
+</root>

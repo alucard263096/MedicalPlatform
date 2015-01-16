@@ -23,6 +23,37 @@
 		
 	}
 
+	
+
+	public getPromotedVaccineList(){
+		Global $SysLangCode;
+
+		if(isset($_SESSION[SESSIONNAME]["vaccine"][$SysLangCode]["promotedlist"])){
+			return $_SESSION[SESSIONNAME]["vaccine"][$SysLangCode]["promotedlist"];
+		}else{
+		$sql="select vaccine_list from dr_tb_vaccine_promoted where id=1";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+		$vaccine_list=$result["vaccine_list"];
+
+		if($doctor_list!=""){
+			$sql="select o.*,ol.*,ov.booking_count from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='$SysLangCode'
+	left join dr_tb_vaccine_value ov on d.id=dv.vaccine
+	where o.id in ($vaccine_list) and o.status='A'
+	order by booking_count
+	limit 0,4 ";
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array_all($query); 
+		}else{
+			$result=Array();
+		}
+
+			$_SESSION[SESSIONNAME]["vaccine"][$SysLangCode]["promotedlist"]=$result;
+			return $result;
+		}
+	}
+
 	public function getVaccineList(){
 		Global $SysLangCode;
 		$sql="select * from dr_tb_vaccine o

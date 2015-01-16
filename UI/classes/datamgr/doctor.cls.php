@@ -23,6 +23,35 @@
 		
 	}
 
+	public getPromotedDoctorList(){
+		Global $SysLangCode;
+
+		if(isset($_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["promotedlist"])){
+			return $_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["promotedlist"];
+		}else{
+		$sql="select doctor_list from dr_tb_doctor_promoted where id=1";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+		$doctor_list=$result["doctor_list"];
+
+		if($doctor_list!=""){
+			$sql="select d.*,dl.*,dv.totle_score from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+	where d.id in ($doctor_list) and d.status='A'
+	order by totle_score
+	limit 0,4 ";
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array_all($query); 
+		}else{
+			$result=Array();
+		}
+
+			$_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["promotedlist"]=$result;
+			return $result;
+		}
+	}
+
 	public function getVaccineDoctorList($vaccineid){
 		Global $SysLangCode;
 
