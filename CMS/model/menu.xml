@@ -40,6 +40,34 @@
       </submenus>
     </mainmenu>
     <mainmenu>
+      <module>website</module>
+      <name>网站管理</name>
+      <submenus>
+        <submenu>
+          <id>banner_list</id>
+          <name>广告列表</name>
+          <url>/Website/banner.php</url>
+        </submenu>
+        <submenu>
+          <id>banner_add</id>
+          <name>广告新增</name>
+          <url>/Website/banner.php?action=add</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>general_list</id>
+          <name>文字列表</name>
+          <url>/Website/general.php</url>
+        </submenu>
+        <submenu>
+          <id>general_add</id>
+          <name>文字新增</name>
+          <url>/Website/general.php?action=add</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+      </submenus>
+    </mainmenu>
+    <mainmenu>
       <module>baseinfo</module>
       <name>基础数据管理</name>
       <submenus>
