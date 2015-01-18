@@ -18,34 +18,29 @@ USE `medicalplatform`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dr_tb_vaccine`
+-- Table structure for table `dr_tb_subway_lang`
 --
 
-DROP TABLE IF EXISTS `dr_tb_vaccine`;
+DROP TABLE IF EXISTS `dr_tb_subway_lang`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dr_tb_vaccine` (
-  `id` int(11) NOT NULL COMMENT '主键',
-  `code` varchar(45) NOT NULL COMMENT '疫苗编号',
-  `effect_id` int(11) NOT NULL COMMENT '功效',
-  `image` varchar(145) NOT NULL,
-  `injection_count` int(11) NOT NULL COMMENT '注射次数',
-  `seq` varchar(10) NOT NULL DEFAULT 0,
-  `used_group_id` varchar(1000) NOT NULL COMMENT '适用人群',
-  `is_hk_project` varchar(1) NOT NULL COMMENT '是否为香港计划内疫苗',
-  `is_china_project` varchar(1) NOT NULL COMMENT '是否为中国计划内疫苗',
-  `standard_price` decimal(10,3) NOT NULL COMMENT '疫苗接种标准价格',
-  `discount` int(11) NOT NULL COMMENT '折扣',
-  `content` text NOT NULL,
-  `remarks` varchar(500) NOT NULL COMMENT '备注',
-  `status` varchar(1) NOT NULL COMMENT '状态A,I,D',
-  `created_date` datetime NOT NULL,
-  `created_user` int(11) NOT NULL,
-  `updated_date` datetime NOT NULL,
-  `updated_user` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='疫苗';
+CREATE TABLE `dr_tb_subway_lang` (
+  `oid` int(11) NOT NULL,
+  `lang` varchar(45) NOT NULL,
+  `name` varchar(145) NOT NULL,
+  PRIMARY KEY (`oid`,`lang`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dr_tb_subway_lang`
+--
+
+LOCK TABLES `dr_tb_subway_lang` WRITE;
+/*!40000 ALTER TABLE `dr_tb_subway_lang` DISABLE KEYS */;
+INSERT INTO `dr_tb_subway_lang` VALUES (1,'en_us','East Rail Line'),(1,'zh-cn','东铁线'),(1,'zh-hk','東鐵線'),(2,'en_us','Kwun Tong Line'),(2,'zh-cn','观塘线'),(2,'zh-hk','觀塘線'),(3,'en_us','Island Line'),(3,'zh-cn','港岛线'),(3,'zh-hk','港島線'),(4,'en_us','Tsuen Wan Line'),(4,'zh-cn','荃湾线'),(4,'zh-hk','荃灣線'),(5,'en_us','Tseung Kwan O Line'),(5,'zh-cn','将军澳线'),(5,'zh-hk','將軍澳線'),(6,'en_us','Ma On Shan Line'),(6,'zh-cn','马鞍山线'),(6,'zh-hk','馬鞍山線'),(7,'en_us','West Rail Line'),(7,'zh-cn','西铁线'),(7,'zh-hk','西鐵線'),(8,'en_us','Tung Chung Line'),(8,'zh-cn','东涌线'),(8,'zh-hk','東湧線'),(9,'en_us','Airport Express'),(9,'zh-cn','机场快线'),(9,'zh-hk','機場快線');
+/*!40000 ALTER TABLE `dr_tb_subway_lang` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -56,4 +51,4 @@ CREATE TABLE `dr_tb_vaccine` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-19 21:18:15
+-- Dump completed on 2015-01-16 23:50:19

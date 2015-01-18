@@ -41,14 +41,6 @@
       <disableindetail>0</disableindetail>
     </field>
     <field>
-      <name>首页显示</name>
-      <key>is_index</key>
-      <type>check</type>
-      <displayinlist>1</displayinlist>
-      <yvalue>是</yvalue>
-      <nvalue>否</nvalue>
-    </field>
-    <field>
       <name>显示图片</name>
       <key>image</key>
       <type>upload</type>

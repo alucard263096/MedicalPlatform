@@ -102,6 +102,26 @@
           <url>/BaseInfo/usedgroup.php?action=add</url>
         </submenu>
         <submenu>
+          <id>vaccine_category_list</id>
+          <name>疫苗一级分类列表</name>
+          <url>/BaseInfo/vaccinecategory.php</url>
+        </submenu>
+        <submenu>
+          <id>vaccine_category_add</id>
+          <name>疫苗一级分类新增</name>
+          <url>/BaseInfo/vaccinecategory.php?action=add</url>
+        </submenu>
+        <submenu>
+          <id>vaccine_category_sub_list</id>
+          <name>疫苗二级分类列表</name>
+          <url>/BaseInfo/vaccinecategorysub.php</url>
+        </submenu>
+        <submenu>
+          <id>vaccine_category_sub_add</id>
+          <name>疫苗二级分类新增</name>
+          <url>/BaseInfo/vaccinecategorysub.php?action=add</url>
+        </submenu>
+        <submenu>
           <id>vaccine_list</id>
           <name>疫苗列表</name>
           <url>/BaseInfo/vaccine.php</url>

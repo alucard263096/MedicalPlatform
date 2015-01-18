@@ -44,6 +44,34 @@
       <condition>1=1 </condition>
     </field>
     <field>
+      <name>地铁站1</name>
+      <key>station1_id</key>
+      <type>fkey</type>
+      <displayfield>fullname</displayfield>
+      <displayinlist>1</displayinlist>
+      <gotodetail>1</gotodetail>
+      <search>1</search>
+      <notnull>1</notnull>
+      <fmutillang>1</fmutillang>
+      <tablename>dr_v_subway_station</tablename>
+      <ntbname>r_subway_station1</ntbname>
+      <condition>1=1 </condition>
+    </field>
+    <field>
+      <name>地铁站2</name>
+      <key>station2_id</key>
+      <type>fkey</type>
+      <displayfield>fullname</displayfield>
+      <displayinlist>1</displayinlist>
+      <gotodetail>1</gotodetail>
+      <search>1</search>
+      <notnull>1</notnull>
+      <fmutillang>1</fmutillang>
+      <tablename>dr_v_subway_station</tablename>
+      <ntbname>r_subway_station2</ntbname>
+      <condition>1=1 </condition>
+    </field>
+    <field>
       <name>诊所地址</name>
       <key>address</key>
       <type>longtext</type>
