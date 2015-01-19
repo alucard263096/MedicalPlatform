@@ -62,7 +62,6 @@
 			$categoryresult[$i]["sub"]=$sublist;
 		}
 		
-
 			$_SESSION[SESSIONNAME]["vaccine"][$SysLangCode]["category"]=$categoryresult;
 			return $categoryresult;
 		}
@@ -100,7 +99,8 @@ left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='$SysLangCode'
 
 	public function getVaccineList(){
 		Global $SysLangCode;
-		$sql="select o.*,ol.*,ov.booking_count from dr_tb_vaccine o
+		$sql="select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group from dr_tb_vaccine o
 left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='$SysLangCode'
 inner join dr_tb_docto_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
 inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'

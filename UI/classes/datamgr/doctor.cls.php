@@ -57,12 +57,14 @@
 
 		$vaccineid=mysql_real_escape_string($vaccineid);
 
-		$sql="select dv.*,dl.name doctorname,d.photo,dl.summary doctorsummary from dr_tb_doctor_vaccine dv 
+		$sql="select  from dr_tb_doctor_vaccine dv 
 inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
 left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
+inner join tb_doctor_office 
 where dv.status='A' and dv.vaccine_id=$vaccineid ";
 		$query = $this->dbmgr->query($sql);
-		$result = $this->dbmgr->fetch_array_all($query); 
+		$result = $this->dbmgr->fetch_array_all($query);
+
 		return $result;
 
 	}
