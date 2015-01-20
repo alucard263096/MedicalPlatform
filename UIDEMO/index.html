@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="/MedicalPlatform/UIDEMO/themes/mobile/css/jquery.mobile-1.4.5.css" />
     <link href="/MedicalPlatform/UIDEMO/themes/mobile/css/slides.css" rel="stylesheet" />
 
+    <link href="/MedicalPlatform/UIDEMO/themes/mobile/css/lexCss/index.css" rel="stylesheet" />
+
     <script src="/MedicalPlatform/UIDEMO/js/jquery-2.0.3.min.js"></script>
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/jquery.mobile-1.4.5.js"></script>
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/jquery.slides.min.js"></script>
@@ -24,7 +26,9 @@
             $("#homeSlides").slidesjs({
                 navigation: false
             });
+
         });
+        $('.ui-link').removeClass('ui-link');
     </script>
 </head>
 <body>
@@ -34,33 +38,58 @@
         </div>
 
         <div data-role="content">
-            <div id="homeSlides" style="overflow: hidden; display: block;">
-                <img src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_1.jpeg">
-                <img src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_2.jpeg">
-                <img src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_3.jpeg">
-                <img src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_4.jpeg">
-            </div>
-               
-            <div data-role="navbar" style="margin-top: 10px;">
-                <ul>
-                    <li><a href="#" data-icon="heart">找疫苗</a></li>
-                    <li><a href="#" data-icon="search">看医生</a></li>
-                    <li><a href="#" data-icon="user">会员</a></li>
-                </ul>
-            </div>  
+                        <div id="homeSlides" style="overflow: hidden; display: block;">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_1.jpeg">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_2.jpeg">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_3.jpeg">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_4.jpeg">
+                            </div>
 
-            <div style="margin-top: 10px; width: 100%;padding: 10px;">
-                <div style="float: left; width: 45%;margin-left: 10px;">
+            <div style="width: 100%; padding: 10px; float: left;">
+                <div style="width: 100%; margin: 0px auto;">
+                    <div style="width: 27%; text-align: center; float: left; padding: 2%;">
+                        <a href="#">
+                            <div>
+                                <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/icon_1.png">
+                            </div>
+                            <div style="font-size: 0.6em;">找疫苗</div>
+                        </a>
+                    </div>
+                    <div style="width: 27%; text-align: center; float: left; padding: 2%;">
+                        <a href="#">
+                            <div>
+                                <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/icon_2.png">
+                            </div>
+                            <div style="font-size: 0.6em;">看医生</div>
+                        </a>
+                    </div>
+                    <div style="width: 27%; text-align: center; float: left; padding: 2%;">
+                        <a href="#">
+                            <div>
+                                <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/icon_3.png">
+                            </div>
+                            <div style="font-size: 0.6em;">会员</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="width: 100%; background-color: gray; height: 15px; background-color: rgba(0,0,0,0.2); margin-top: 10px;float: left;">
+                <div style="font-size: 0.6em; color: black; float: left; margin-left: 20px; font-weight: bold;">找疫苗</div>
+                <div style="font-size: 0.6em; float: right; margin-right: 20px; font-weight: bold;">更多  ></div>
+            </div>
+            <div style="width: 100%; padding: 10px; float: left;">
+                <div style="float: left; width: 45%; margin-left: 10px;">
                     <a href="#">
                         <div>
-                            <img style="width: 100%; height: auto;right: 20px;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_5.png" />
+                            <img style="width: 100%; height: auto; right: 20px;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_5.png" />
                         </div>
                     </a>
                 </div>
 
-                <div style="float: left; width: 48%; right: 10px;border-left:0px solid gainsboro;margin-left: 10px;">
-                    <div style="min-height: 80px;border-bottom:0px solid gainsboro;width: 100%;">
-                        <a href="#" style="margin-left:10%;float: left">
+                <div style="float: left; width: 48%; right: 10px; border-left: 0px solid gainsboro; margin-left: 10px;">
+                    <div style="min-height: 80px; border-bottom: 0px solid gainsboro; width: 100%;">
+                        <a href="#" style="margin-left: 10%; float: left;">
                             <div>
                                 <span style="color: black; font-size: 0.6em;">HPV子宫颈癌2合1疫苗</span>
                             </div>
@@ -75,8 +104,8 @@
                             </div>
                         </a>
                     </div>
-                    <div style="min-height: 80px;width: 100%;">
-                        <a href="#" style="margin-left:10%;float: left">
+                    <div style="min-height: 80px; width: 100%;">
+                        <a href="#" style="margin-left: 10%; float: left">
                             <div>
                                 <span style="color: black; font-size: 0.6em;">HPV子宫颈癌2合1疫苗</span>
                             </div>
@@ -94,7 +123,53 @@
                 </div>
             </div>
 
+            <div style="width: 100%; background-color: gray; height: 15px; background-color: rgba(0,0,0,0.2); float: left;">
+                <div style="font-size: 0.6em; color: black; float: left; margin-left: 20px; font-weight: bold;">看医生</div>
+                <div style="font-size: 0.6em; float: right; margin-right: 20px; font-weight: bold;">更多  ></div>
+            </div>
+            <div style="width: 100%; padding: 10px; float: left;">
+                <div style="width: 100%; margin: 0px auto;">
+                    <div style="width: 20%; text-align: center; float: left; padding: 2%;">
+                        <a href="#">
+                            <div>
+                                <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/doctor/doctor_1.jpeg">
+                            </div>
+                            <div style="font-size: 0.6em;">陈医生</div>
+                            <div style="font-size: 0.6em; color: gray;">全科</div>
+                        </a>
+                    </div>
+                    <div style="width: 20%; text-align: center; float: left; padding: 2%;">
+                        <a href="#">
+                            <div>
+                                <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/doctor/doctor_1.jpeg">
+                            </div>
+                            <div style="font-size: 0.6em;">陈医生</div>
+                            <div style="font-size: 0.6em; color: gray;">全科</div>
+                        </a>
+                    </div>
+                    <div style="width: 20%; text-align: center; float: left; padding: 2%;">
+                        <a href="#">
+                            <div>
+                                <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/doctor/doctor_1.jpeg">
+                            </div>
+                            <div style="font-size: 0.6em;">陈医生</div>
+                            <div style="font-size: 0.6em; color: gray;">全科</div>
+                        </a>
+                    </div>
+                    <div style="width: 20%; text-align: center; float: left; padding: 2%;">
+                        <a href="#">
+                            <div>
+                                <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/doctor/doctor_1.jpeg">
+                            </div>
+                            <div style="font-size: 0.6em;">陈医生</div>
+                            <div style="font-size: 0.6em; color: gray;">全科</div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
 
         <div data-role="footer" data-position="fixed" data-fullscreen="true" data-theme="a">
             <div data-role="navbar">
