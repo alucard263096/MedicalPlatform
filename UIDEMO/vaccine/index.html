@@ -19,13 +19,16 @@
     <script src="/MedicalPlatform/UIDEMO/js/jquery-2.0.3.min.js"></script>
 
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/util.js"></script>
-
+    <style type="text/css">
+        .bar {
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <header class="bar bar-nav">
         <h1 class="title">疫苗列表</h1>
-        <a class="btn btn-link btn-nav pull-right">
-            筛选
+        <a class="btn btn-link btn-nav pull-right">筛选
         </a>
     </header>
 
@@ -33,10 +36,72 @@
         <form>
             <input type="search" placeholder="Search">
         </form>
+
+        <nav class=" segmented-control" style="top: 0;">
+            <a class="control-item" href="#myPopover">疫苗
+            <span class="icon icon-caret"></span>
+            </a>
+
+            <a class="control-item" href="#myPopover">全区
+                <span class="icon icon-caret"></span>
+            </a>
+            <a class="control-item" href="#myPopover">筛选
+                <span class="icon icon-caret"></span>
+            </a>
+
+            <a class="control-item" href="#myPopover">综合排序
+                    <span class="icon icon-caret"></span>
+            </a>
+        </nav>
+
+<!--        <nav class="bar bar-tab">
+            <a class="tab-item " href="#myPopover">
+                <span class="icon icon-home"></span>
+                <span class="tab-label">首页</span>
+            </a>
+            <a class="tab-item active" data-ignore="push" href="#myPopover">
+                <span class="icon icon-person"></span>
+                <span class="tab-label">疫苗</span>
+            </a>
+            <a class="tab-item " href="#myPopover">
+                <span class="icon icon-star-filled"></span>
+                <span class="tab-label">咨询</span>
+            </a>
+            <a class="tab-item " href="#myPopover">
+                <span class="icon icon-search"></span>
+                <span class="tab-label">搜索</span>
+            </a>
+        </nav>-->
+    </div>
+
+
+    <div id="myPopover" class="popover">
+        <!--        <header class="bar bar-nav">
+            <h1 class="title">Popover title</h1>
+        </header>-->
+        <ul class="table-view">
+            <li class="table-view-cell">
+                <a class="navigate-right">
+                    <span class="badge">14</span>
+                    全部分类
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="navigate-right">
+                    <span class="badge">4</span>
+                    疫苗
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="navigate-right">
+                    <span class="badge">10</span>
+                    医生咨询
+                </a>
+            </li>
+        </ul>
     </div>
 
     <div class="content">
-
         <div class="slider">
             <div class="slide-group">
                 <div class="slide">
@@ -72,10 +137,10 @@
                     </div>
                 </a>
             </li>
-            <li style="height:30px;">
-            </li>
+            <li style="height: 30px;"></li>
         </ul>
-    </div><!-- /.content -->
+    </div>
+    <!-- /.content -->
 
 
 
@@ -110,21 +175,19 @@
 
         <div class="content">
             <div class="segmented-control">
-                <a class="control-item active" href="#item1mobile">
-                    登录
+                <a class="control-item active" href="#item1mobile">登录
                 </a>
-                <a class="control-item" href="#item2mobile">
-                    注册
+                <a class="control-item" href="#item2mobile">注册
                 </a>
             </div>
-            <div class="card" style="border:0px;">
+            <div class="card" style="border: 0px;">
                 <div id="item1mobile" class="control-content active ">
                     <input type="text" id="qlLoginName" placeholder="邮箱或手机号码">
                     <input type="password" id="qlPassword" placeholder="密码">
                     <div class="content-padded">
                         <button class="btn btn-positive btn-block" id="btnQuickLogin">登录</button>
                     </div>
-                    <p style="color:red;" id="signintips"></p>
+                    <p style="color: red;" id="signintips"></p>
                 </div>
                 <div id="item2mobile" class="control-content">
                     <input type="tel" id="qrMobile" placeholder="手机号码">
@@ -134,74 +197,75 @@
                     <div class="content-padded">
                         <button class="btn btn-primary btn-block" id="btnQuickReg">注册</button>
                     </div>
-                    <p style="color:red;" id="signuptips"></p>
+                    <p style="color: red;" id="signuptips"></p>
                 </div>
             </div>
         </div>
-    </div><!-- /.modal -->
+    </div>
+    <!-- /.modal -->
     <script>
-    $(document).ready(function () {
+        $(document).ready(function () {
 
-        $("#btnQuickLogin").click(function () {
+            $("#btnQuickLogin").click(function () {
 
-            var loginname = $("#qlLoginName").val();
-            var password = $("#qlPassword").val();
+                var loginname = $("#qlLoginName").val();
+                var password = $("#qlPassword").val();
 
-            var json = { "loginname": loginname, "password": password };
+                var json = { "loginname": loginname, "password": password };
 
-            $.post("/MedicalPlatform/UIDEMO/member/quicklogin.html", json, function (data) {
-                if (data == "SUCCESS") {
-                    $("#memberLogin").removeClass("active");
-                    $("#btnLoginTop").hide();
-                    $("#menuMember").attr("href", "/MedicalPlatform/UIDEMO/member/index.html");
-                } else {
-                    $("#signintips").text("用户名或密码无效");
+                $.post("/MedicalPlatform/UIDEMO/member/quicklogin.html", json, function (data) {
+                    if (data == "SUCCESS") {
+                        $("#memberLogin").removeClass("active");
+                        $("#btnLoginTop").hide();
+                        $("#menuMember").attr("href", "/MedicalPlatform/UIDEMO/member/index.html");
+                    } else {
+                        $("#signintips").text("用户名或密码无效");
+                    }
+                });
+
+            });
+
+            $("#btnQuickReg").click(function () {
+                var mobile = $("#qrMobile").val();
+                var email = $("#qrEmail").val();
+                var password = $("#qrPassword").val();
+                var name = $("#qrName").val();
+
+                if (mobile == "" && email == "") {
+                    $("#signuptips").text("请至少输入手机号码或邮箱地址");
+                    return;
                 }
+                if (name == "") {
+                    $("#signuptips").text("请输入姓名");
+                    return;
+                }
+                $("#btnQuickReg").prop("disabled", "disabled");
+
+                //alert(name);
+
+                var json = {
+                    "mobile": mobile,
+                    "email": email,
+                    "password": password,
+                    "name": name
+                };
+
+                $.post("/MedicalPlatform/UIDEMO/member/quickreg.html", json, function (data) {
+                    if (data == "SUCCESS") {
+                        $("#memberLogin").removeClass("active");
+                        $("#btnLoginTop").hide();
+                        $("#menuMember").attr("href", "/MedicalPlatform/UIDEMO/member/index.html");
+                    } else if (data == "DUPLIC") {
+                        $("#signuptips").text("该手机号码或邮箱地址已经被注册");
+                    } else {
+                        $("#signuptips").text("注册失败");
+                    }
+                    $("#btnQuickReg").prop("disabled", "");
+                });
+
             });
 
         });
-
-        $("#btnQuickReg").click(function () {
-            var mobile = $("#qrMobile").val();
-            var email = $("#qrEmail").val();
-            var password = $("#qrPassword").val();
-            var name = $("#qrName").val();
-
-            if (mobile == "" && email == "") {
-                $("#signuptips").text("请至少输入手机号码或邮箱地址");
-                return;
-            }
-            if (name == "" ) {
-                $("#signuptips").text("请输入姓名");
-                return;
-            }
-            $("#btnQuickReg").prop("disabled", "disabled");
-
-            //alert(name);
-
-            var json = {
-                "mobile": mobile,
-                "email": email,
-                "password": password,
-                "name": name
-            };
-
-            $.post("/MedicalPlatform/UIDEMO/member/quickreg.html", json, function (data) {
-                if (data == "SUCCESS") {
-                    $("#memberLogin").removeClass("active");
-                    $("#btnLoginTop").hide();
-                    $("#menuMember").attr("href", "/MedicalPlatform/UIDEMO/member/index.html");
-                } else if (data == "DUPLIC") {
-                    $("#signuptips").text("该手机号码或邮箱地址已经被注册");
-                }  else{
-                    $("#signuptips").text("注册失败");
-                }
-                $("#btnQuickReg").prop("disabled", "");
-            });
-
-        });
-
-    });
 
     </script>
 
@@ -210,10 +274,10 @@
     </div>
 
     <script>
-    $(document).ready(function () {
-        //PopTips("aa");
-        //$("#memberLogin").addClass("active");
-    });
+        $(document).ready(function () {
+            //PopTips("aa");
+            //$("#memberLogin").addClass("active");
+        });
     </script>
 
 </body>
