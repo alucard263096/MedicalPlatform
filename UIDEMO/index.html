@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
-    <title>∏€“Ωª„</title>
+    <title>Ê∏ØÂåªÊ±áÈ¶ñÈ°µ</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -10,171 +10,179 @@
     <link rel="shortcut icon" href="/MedicalPlatform/UIDEMO/img/favicon.ico" />
     <link rel="apple-touch-icon" sizes="114x114" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-57x57.png" />
 
-    <link rel="stylesheet" href="/MedicalPlatform/UIDEMO/themes/mobile/css/ratchet.css">
-    <link rel="stylesheet" href="/MedicalPlatform/UIDEMO/themes/mobile/css/app.css">
-    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/ratchet.js"></script>
+    <link rel="apple-touch-icon" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-57x57.png" />
+    <link rel="stylesheet" href="/MedicalPlatform/UIDEMO/themes/mobile/css/jquery.mobile-1.4.5.css" />
+    <link href="/MedicalPlatform/UIDEMO/themes/mobile/css/slides.css" rel="stylesheet" />
+
+    <link href="/MedicalPlatform/UIDEMO/themes/mobile/css/lexCss/index.css" rel="stylesheet" />
 
     <script src="/MedicalPlatform/UIDEMO/js/jquery-2.0.3.min.js"></script>
+    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/jquery.mobile-1.4.5.js"></script>
+    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/jquery.slides.min.js"></script>
 
-    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/util.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#homeSlides").slidesjs({
+                navigation: false
+            });
 
+        });
+        $('.ui-link').removeClass('ui-link');
+    </script>
 </head>
 <body>
-    <header class="bar bar-nav">
-        <h1 class="title">∏€“Ωª„</h1>
-        <a class="btn btn-link btn-nav pull-right" href="#memberLogin" id="btnLoginTop">
-            µ«¬º
-            <span class="icon icon-compose"></span>
-        </a>
-    </header>
+    <div data-role="page">
+        <div data-role="header" data-position="fixed" data-fullscreen="true" data-theme="a">
+            <h1>Ê∏ØÂåªÊ±á</h1>
+        </div>
 
-    <div class="content">
-        <img src="/MedicalPlatform/UIDEMO/img/indexa.jpg" width="100%" />
-        <br />
-        <br />
-        <br />
-    </div>
+        <div data-role="content">
+                        <div id="homeSlides" style="overflow: hidden; display: block;">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_1.jpeg">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_2.jpeg">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_3.jpeg">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_4.jpeg">
+                            </div>
 
-
-
-    <nav class="bar bar-tab">
-        <a class="tab-item active" href="/MedicalPlatform/UIDEMO/index.html">
-            <span class="icon icon-home"></span>
-            <span class="tab-label"> ◊“≥</span>
-        </a>
-        <a class="tab-item " data-ignore="push" href="/MedicalPlatform/UIDEMO/vaccine/index.html">
-            <span class="icon icon-person"></span>
-            <span class="tab-label">“ﬂ√Á</span>
-        </a>
-        <a class="tab-item " href="#">
-            <span class="icon icon-star-filled"></span>
-            <span class="tab-label">◊…—Ø</span>
-        </a>
-        <a class="tab-item " href="#">
-            <span class="icon icon-search"></span>
-            <span class="tab-label">À—À˜</span>
-        </a>
-        <a id="menuMember" class="tab-item " data-ignore="push" href="#memberLogin">
-            <span class="icon icon-gear"></span>
-            <span class="tab-label">ª·‘±</span>
-        </a>
-    </nav>
-    <!-- Settings modal -->
-    <div id="memberLogin" class="modal">
-        <header class="bar bar-nav">
-            <a class="icon icon-close pull-right" href="#memberLogin"></a>
-            <h1 class="title" id="memberloginform">«Îœ»◊¢≤·ªÚµ«¬º</h1>
-        </header>
-
-        <div class="content">
-            <div class="segmented-control">
-                <a class="control-item active" href="#item1mobile">
-                    µ«¬º
-                </a>
-                <a class="control-item" href="#item2mobile">
-                    ◊¢≤·
-                </a>
+            <div style="width: 100%; padding: 10px; float: left;">
+                <div style="width: 100%; margin: 0px auto;">
+                    <div style="width: 27%; text-align: center; float: left; padding: 2%;">
+                        <a href="#">
+                            <div>
+                                <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/icon_1.png">
+                            </div>
+                            <div style="font-size: 0.6em;">ÊâæÁñ´Ëãó</div>
+                        </a>
+                    </div>
+                    <div style="width: 27%; text-align: center; float: left; padding: 2%;">
+                        <a href="#">
+                            <div>
+                                <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/icon_2.png">
+                            </div>
+                            <div style="font-size: 0.6em;">ÁúãÂåªÁîü</div>
+                        </a>
+                    </div>
+                    <div style="width: 27%; text-align: center; float: left; padding: 2%;">
+                        <a href="#">
+                            <div>
+                                <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/icon_3.png">
+                            </div>
+                            <div style="font-size: 0.6em;">‰ºöÂëò</div>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="card" style="border:0px;">
-                <div id="item1mobile" class="control-content active ">
-                    <input type="text" id="qlLoginName" placeholder="” œ‰ªÚ ÷ª˙∫≈¬Î">
-                    <input type="password" id="qlPassword" placeholder="√‹¬Î">
-                    <div class="content-padded">
-                        <button class="btn btn-positive btn-block" id="btnQuickLogin">µ«¬º</button>
-                    </div>
-                    <p style="color:red;" id="signintips"></p>
+
+            <div style="width: 100%; background-color: gray; height: 15px; background-color: rgba(0,0,0,0.2); margin-top: 10px;float: left;">
+                <div style="font-size: 0.6em; color: black; float: left; margin-left: 20px; font-weight: bold;">ÊâæÁñ´Ëãó</div>
+                <div style="font-size: 0.6em; float: right; margin-right: 20px; font-weight: bold;">Êõ¥Â§ö  ></div>
+            </div>
+            <div style="width: 100%; padding: 10px; float: left;">
+                <div style="float: left; width: 45%; margin-left: 10px;">
+                    <a href="#">
+                        <div>
+                            <img style="width: 100%; height: auto; right: 20px;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/index_5.png" />
+                        </div>
+                    </a>
                 </div>
-                <div id="item2mobile" class="control-content">
-                    <input type="tel" id="qrMobile" placeholder=" ÷ª˙∫≈¬Î">
-                    <input type="email" id="qrEmail" placeholder="” œ‰µÿ÷∑">
-                    <input type="password" id="qrPassword" placeholder="√‹¬Î">
-                    <input type="text" id="qrName" placeholder="’Ê µ–’√˚">
-                    <div class="content-padded">
-                        <button class="btn btn-primary btn-block" id="btnQuickReg">◊¢≤·</button>
+
+                <div style="float: left; width: 48%; right: 10px; border-left: 0px solid gainsboro; margin-left: 10px;">
+                    <div style="min-height: 80px; border-bottom: 0px solid gainsboro; width: 100%;">
+                        <a href="#" style="margin-left: 10%; float: left;">
+                            <div>
+                                <span style="color: black; font-size: 0.6em;">HPVÂ≠êÂÆ´È¢àÁôå2Âêà1Áñ´Ëãó</span>
+                            </div>
+                            <div>
+                                <div style="float: left;">
+                                    <span style="font-size: 0.5em; font-weight: normal;">[È¢ÑÈò≤ÂÆ´È¢àÁôå]</span><br>
+                                    <span style="font-size: 0.5em; font-weight: normal;">ÂÖçË¥πÈ¢ÑÁ∫¶</span>
+                                </div>
+                                <div style="float: left;">
+                                    <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/listview1.png">
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <p style="color:red;" id="signuptips"></p>
+                    <div style="min-height: 80px; width: 100%;">
+                        <a href="#" style="margin-left: 10%; float: left">
+                            <div>
+                                <span style="color: black; font-size: 0.6em;">HPVÂ≠êÂÆ´È¢àÁôå2Âêà1Áñ´Ëãó</span>
+                            </div>
+                            <div>
+                                <div style="float: left;">
+                                    <span style="font-size: 0.5em; font-weight: normal;">[È¢ÑÈò≤ÂÆ´È¢àÁôå]</span><br>
+                                    <span style="font-size: 0.5em; font-weight: normal;">ÂÖçË¥πÈ¢ÑÁ∫¶</span>
+                                </div>
+                                <div style="float: left;">
+                                    <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/listview2.png">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+            </div>
+
+            <div style="width: 100%; background-color: gray; height: 15px; background-color: rgba(0,0,0,0.2); float: left;">
+                <div style="font-size: 0.6em; color: black; float: left; margin-left: 20px; font-weight: bold;">ÁúãÂåªÁîü</div>
+                <div style="font-size: 0.6em; float: right; margin-right: 20px; font-weight: bold;">Êõ¥Â§ö  ></div>
+            </div>
+            <div style="width: 100%; padding: 10px; float: left;">
+                <div style="width: 100%; margin: 0px auto;">
+                    <div style="width: 20%; text-align: center; float: left; padding: 2%;">
+                        <a href="#">
+                            <div>
+                                <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/doctor/doctor_1.jpeg">
+                            </div>
+                            <div style="font-size: 0.6em;">ÈôàÂåªÁîü</div>
+                            <div style="font-size: 0.6em; color: gray;">ÂÖ®Áßë</div>
+                        </a>
+                    </div>
+                    <div style="width: 20%; text-align: center; float: left; padding: 2%;">
+                        <a href="#">
+                            <div>
+                                <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/doctor/doctor_1.jpeg">
+                            </div>
+                            <div style="font-size: 0.6em;">ÈôàÂåªÁîü</div>
+                            <div style="font-size: 0.6em; color: gray;">ÂÖ®Áßë</div>
+                        </a>
+                    </div>
+                    <div style="width: 20%; text-align: center; float: left; padding: 2%;">
+                        <a href="#">
+                            <div>
+                                <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/doctor/doctor_1.jpeg">
+                            </div>
+                            <div style="font-size: 0.6em;">ÈôàÂåªÁîü</div>
+                            <div style="font-size: 0.6em; color: gray;">ÂÖ®Áßë</div>
+                        </a>
+                    </div>
+                    <div style="width: 20%; text-align: center; float: left; padding: 2%;">
+                        <a href="#">
+                            <div>
+                                <img style="width: 70%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/css/images/doctor/doctor_1.jpeg">
+                            </div>
+                            <div style="font-size: 0.6em;">ÈôàÂåªÁîü</div>
+                            <div style="font-size: 0.6em; color: gray;">ÂÖ®Áßë</div>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div><!-- /.modal -->
-    <script>
-    $(document).ready(function () {
 
-        $("#btnQuickLogin").click(function () {
 
-            var loginname = $("#qlLoginName").val();
-            var password = $("#qlPassword").val();
+        <div data-role="footer" data-position="fixed" data-fullscreen="true" data-theme="a">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="home">È¶ñÈ°µ</a></li>
+                    <li><a href="#" data-icon="heart">Áñ´Ëãó</a></li>
+                    <li><a href="#" data-icon="star">Âí®ËØ¢</a></li>
+                    <li><a href="#" data-icon="search">ÊêúÁ¥¢</a></li>
+                    <li><a href="#" data-icon="user">‰ºöÂëò</a></li>
+                </ul>
+            </div>
+        </div>
 
-            var json = { "loginname": loginname, "password": password };
-
-            $.post("/MedicalPlatform/UIDEMO/member/quicklogin.html", json, function (data) {
-                if (data == "SUCCESS") {
-                    $("#memberLogin").removeClass("active");
-                    $("#btnLoginTop").hide();
-                    $("#menuMember").attr("href", "/MedicalPlatform/UIDEMO/member/index.html");
-                } else {
-                    $("#signintips").text("”√ªß√˚ªÚ√‹¬ÎŒﬁ–ß");
-                }
-            });
-
-        });
-
-        $("#btnQuickReg").click(function () {
-            var mobile = $("#qrMobile").val();
-            var email = $("#qrEmail").val();
-            var password = $("#qrPassword").val();
-            var name = $("#qrName").val();
-
-            if (mobile == "" && email == "") {
-                $("#signuptips").text("«Î÷¡…Ÿ ‰»Î ÷ª˙∫≈¬ÎªÚ” œ‰µÿ÷∑");
-                return;
-            }
-            if (name == "" ) {
-                $("#signuptips").text("«Î ‰»Î–’√˚");
-                return;
-            }
-            $("#btnQuickReg").prop("disabled", "disabled");
-
-            //alert(name);
-
-            var json = {
-                "mobile": mobile,
-                "email": email,
-                "password": password,
-                "name": name
-            };
-
-            $.post("/MedicalPlatform/UIDEMO/member/quickreg.html", json, function (data) {
-                if (data == "SUCCESS") {
-                    $("#memberLogin").removeClass("active");
-                    $("#btnLoginTop").hide();
-                    $("#menuMember").attr("href", "/MedicalPlatform/UIDEMO/member/index.html");
-                } else if (data == "DUPLIC") {
-                    $("#signuptips").text("∏√ ÷ª˙∫≈¬ÎªÚ” œ‰µÿ÷∑“—æ≠±ª◊¢≤·");
-                }  else{
-                    $("#signuptips").text("◊¢≤· ß∞‹");
-                }
-                $("#btnQuickReg").prop("disabled", "");
-            });
-
-        });
-
-    });
-
-    </script>
-
-    <div id="popover" class="popover">
-        <p></p>
     </div>
-
-    <script>
-    $(document).ready(function () {
-        //PopTips("aa");
-        //$("#memberLogin").addClass("active");
-    });
-    </script>
-
 </body>
 </html>
