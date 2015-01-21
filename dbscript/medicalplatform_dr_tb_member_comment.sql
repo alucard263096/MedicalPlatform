@@ -18,22 +18,25 @@ USE `medicalplatform`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dr_tb_doctor_value`
+-- Table structure for table `dr_tb_member_comment`
 --
 
-DROP TABLE IF EXISTS `dr_tb_doctor_value`;
+DROP TABLE IF EXISTS `dr_tb_member_comment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dr_tb_doctor_value` (
+CREATE TABLE `dr_tb_member_comment` (
   `id` int(11) NOT NULL,
-  `doctor_id` int(11) NOT NULL,
+  `member_id` int(11) DEFAULT NULL,
+  `vaccine_id` int(11) DEFAULT NULL,
+  `office_id` int(11) DEFAULT NULL,
+  `doctor_id` int(11) DEFAULT NULL,
+  `comment_date` datetime DEFAULT NULL,
+  `comment` text,
   `service_level` decimal(2,1) DEFAULT NULL,
   `pro_level` decimal(2,1) DEFAULT NULL,
   `facility_level` decimal(2,1) DEFAULT NULL,
-  `comment_count` int(11) DEFAULT NULL,
-  `booking_count` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生价值';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户评论';
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
