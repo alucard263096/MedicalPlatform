@@ -1,0 +1,25 @@
+﻿body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.ui-page-theme-a a, html .ui-bar-a a, html .ui-body-a a, html body .ui-group-theme-a a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.sprite_1 {
+    background: url('/MedicalPlatform/UIDEMO/themes/mobile/css/images/icons.png') no-repeat -408px -430px;
+    width: 149px;
+    height: 115px;
+    zoom: 0.29;
+    -moz-transform: scale(0.29);
+    -moz-transform-origin: 0 0;
+}
+
+.sprite_2 {
+    background: url('/MedicalPlatform/UIDEMO/themes/mobile/css/images/icons.png') no-repeat 36.485% 9.109%;
+    width: 277px;
+    height: 276px;
+    -moz-transform: scale(0.29);
+    -moz-transform-origin: 0 0;
+}
