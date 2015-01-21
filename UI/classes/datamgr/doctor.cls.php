@@ -95,7 +95,7 @@ where dv.status='A' and dv.vaccine_id=$vaccineid ";
 	
 		$doctor_list=mysql_real_escape_string($doctor_list);
 
-		$sql="select  oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour 
+		$sql="select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour 
 		from dr_tb_office_openhour oo
 inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
 left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='$SysLangCode' 
