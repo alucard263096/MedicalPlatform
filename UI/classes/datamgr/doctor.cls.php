@@ -52,6 +52,8 @@
 		}
 	}
 
+	
+
 	public function getVaccineDoctorList($vaccineid){
 		Global $SysLangCode;
 
@@ -68,10 +70,8 @@ where dv.status='A' and dv.vaccine_id=$vaccineid ";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query);
 
-		$doctor_list="0";
-		foreach ($result as $key=>$value){
-			$doctor_list.=",".$value["doctor_id"];
-		}
+
+		$doctor_list=getListIdStr($result,"doctor_id");
 
 		$office_list=$this->getOfficeListByDoctor($doctor_list);
 		$count=count($result);
@@ -88,6 +88,13 @@ where dv.status='A' and dv.vaccine_id=$vaccineid ";
 		}
 
 		return $result;
+	}
+
+	public function getDistrictListByDoctor($doctor_list){
+		Global $SysLangCode;
+
+		$sql="";
+
 	}
 
 	public function getOfficeListByDoctor($doctor_list){

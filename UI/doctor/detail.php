@@ -6,12 +6,12 @@
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
   require '../include/common.inc.php';
-  require 'inc.php';
-  require ROOT.'/classes/datamgr/vaccine.cls.php';
+  require ROOT.'/classes/datamgr/doctor.cls.php';
 
-  $vaccine=$vaccineMgr->getVaccine($_REQUEST["id"]);
 
-  $smarty->assign("info",$vaccine);
+  $doctor_list=$doctorMgr->getVaccineDoctorList($_REQUEST["vacccine_id"]);
+
+  $smarty->assign("doctor_list",$doctor_list);
 
   $smarty->display(ROOT.'/templates/mobile/vaccine/detail.html');
 
