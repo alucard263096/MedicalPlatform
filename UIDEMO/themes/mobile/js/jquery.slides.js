@@ -217,7 +217,7 @@
       this.options.height = height;
       return $(".slidesjs-control, .slidesjs-container", $element).css({
         width: width,
-        height: height
+        height: height * 0.59
       });
     };
     Plugin.prototype.next = function(effect) {
