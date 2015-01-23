@@ -1,0 +1,27 @@
+
+<thead>
+    <tr>
+        <th>#</th>
+        <th>服务</th>
+        <th>标准价（HK$）</th>
+        <th>网上价格（HK$）</th>
+    </tr>
+</thead>
+<tbody>
+    {{foreach from=$result item=row}}
+    <tr>
+        <td>
+        <input type="checkbox" class="effectcb" oid="{{$row.effect_id}}" {{if $row.doctor_id>0}}checked=checked{{/if}} />
+        </td>
+        <td>
+            <label class="control-label">{{$row.effect_name}}</label>
+        </td>
+        <td>
+            <input type="number" value="{{$row.price}}" class="form-control" id="effect_{{$row.effect_id}}_price" />
+        </td>
+        <td>
+            <input type="number" value="{{$row.web_price}}" class="form-control" id="effect_{{$row.effect_id}}_web_price" />
+        </td>
+    </tr>
+    {{/foreach}}
+</tbody>

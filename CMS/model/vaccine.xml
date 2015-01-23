@@ -41,14 +41,6 @@
       <disableindetail>0</disableindetail>
     </field>
     <field>
-      <name>首页显示</name>
-      <key>is_index</key>
-      <type>check</type>
-      <displayinlist>1</displayinlist>
-      <yvalue>是</yvalue>
-      <nvalue>否</nvalue>
-    </field>
-    <field>
       <name>显示图片</name>
       <key>image</key>
       <type>upload</type>
@@ -56,8 +48,8 @@
     </field>
     <field>
       <name>治疗效果</name>
-      <key>effect_id</key>
-      <type>fkey</type>
+      <key>effect_list</key>
+      <type>flist</type>
       <displayfield>name</displayfield>
       <displayinlist>1</displayinlist>
       <gotodetail>1</gotodetail>
@@ -69,9 +61,17 @@
       <condition>r_effect.status='A' and ( r_effect.type='A' or r_effect.type='Y' )</condition>
     </field>
     <field>
+      <name>治疗效果文本</name>
+      <key>effect</key>
+      <type>longtext</type>
+      <ismutillang>1</ismutillang>
+      <notnull>1</notnull>
+    </field>
+    <field>
       <name>接种次数</name>
-      <key>injection_count</key>
-      <type>number</type>
+      <key>injection_time</key>
+      <type>longtext</type>
+      <ismutillang>1</ismutillang>
       <notnull>1</notnull>
     </field>
     <field>
@@ -99,6 +99,13 @@
       <tablename>dr_tb_used_group</tablename>
       <ntbname>r_used_group</ntbname>
       <condition>r_used_group.status='A' and ( r_used_group.type='A' or r_used_group.type='Y' )</condition>
+    </field>
+    <field>
+      <name>适用人群文本</name>
+      <key>used_group</key>
+      <type>longtext</type>
+      <ismutillang>1</ismutillang>
+      <notnull>1</notnull>
     </field>
     <field>
       <name>香港计划内</name>

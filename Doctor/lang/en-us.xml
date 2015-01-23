@@ -109,4 +109,11 @@
     <d></d>
     <addvaccineduplicate>The selected vaccine has been added</addvaccineduplicate>
   </doctor>
+  <service>
+    <myservice>My Service</myservice>
+    <serviceinfo>Service Item</serviceinfo>
+    <service>Service</service>
+    <price>Price</price>
+    <webprice>Website Price</webprice>
+  </service>
 </root>

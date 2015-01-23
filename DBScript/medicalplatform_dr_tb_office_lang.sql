@@ -41,6 +41,7 @@ CREATE TABLE `dr_tb_office_lang` (
 
 LOCK TABLES `dr_tb_office_lang` WRITE;
 /*!40000 ALTER TABLE `dr_tb_office_lang` DISABLE KEYS */;
+INSERT INTO `dr_tb_office_lang` VALUES (1,'en-us','dd','ee','www','edds\ndkdljmdl\ndjlkd'),(1,'zh-cn','ddd','eee','wwww','rrfffsddd'),(1,'zh-hk','dd','ee','www','didijd\ndijfof\nrjfdoi'),(2,'en-us','aaa','aaa','aaa','aaa'),(2,'zh-cn','aaa','aaa','aaa','aaa'),(2,'zh-hk','aaa','aaa','aaa','aaa');
 /*!40000 ALTER TABLE `dr_tb_office_lang` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-13  0:27:35
+-- Dump completed on 2015-01-11 22:54:21

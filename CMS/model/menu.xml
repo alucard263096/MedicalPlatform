@@ -40,6 +40,44 @@
       </submenus>
     </mainmenu>
     <mainmenu>
+      <module>website</module>
+      <name>网站管理</name>
+      <submenus>
+        <submenu>
+          <id>banner_list</id>
+          <name>广告列表</name>
+          <url>/Website/banner.php</url>
+        </submenu>
+        <submenu>
+          <id>banner_add</id>
+          <name>广告新增</name>
+          <url>/Website/banner.php?action=add</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>general_list</id>
+          <name>文字列表</name>
+          <url>/Website/general.php</url>
+        </submenu>
+        <submenu>
+          <id>general_add</id>
+          <name>文字新增</name>
+          <url>/Website/general.php?action=add</url>
+          <onlyadmin>1</onlyadmin>
+        </submenu>
+        <submenu>
+          <id>doctorpromoted</id>
+          <name>推荐医生管理</name>
+          <url>/Website/doctorpromoted.php</url>
+        </submenu>
+        <submenu>
+          <id>vaccinepromoted</id>
+          <name>推荐疫苗管理</name>
+          <url>/Website/vaccinepromoted.php</url>
+        </submenu>
+      </submenus>
+    </mainmenu>
+    <mainmenu>
       <module>baseinfo</module>
       <name>基础数据管理</name>
       <submenus>
@@ -64,6 +102,26 @@
           <url>/BaseInfo/usedgroup.php?action=add</url>
         </submenu>
         <submenu>
+          <id>vaccine_category_list</id>
+          <name>疫苗一级分类列表</name>
+          <url>/BaseInfo/vaccinecategory.php</url>
+        </submenu>
+        <submenu>
+          <id>vaccine_category_add</id>
+          <name>疫苗一级分类新增</name>
+          <url>/BaseInfo/vaccinecategory.php?action=add</url>
+        </submenu>
+        <submenu>
+          <id>vaccine_category_sub_list</id>
+          <name>疫苗二级分类列表</name>
+          <url>/BaseInfo/vaccinecategorysub.php</url>
+        </submenu>
+        <submenu>
+          <id>vaccine_category_sub_add</id>
+          <name>疫苗二级分类新增</name>
+          <url>/BaseInfo/vaccinecategorysub.php?action=add</url>
+        </submenu>
+        <submenu>
           <id>vaccine_list</id>
           <name>疫苗列表</name>
           <url>/BaseInfo/vaccine.php</url>
@@ -72,6 +130,16 @@
           <id>vaccine_add</id>
           <name>疫苗新增</name>
           <url>/BaseInfo/vaccine.php?action=add</url>
+        </submenu>
+        <submenu>
+          <id>specialist_list</id>
+          <name>专科列表</name>
+          <url>/BaseInfo/specialist.php</url>
+        </submenu>
+        <submenu>
+          <id>specialist_add</id>
+          <name>专科新增</name>
+          <url>/BaseInfo/specialist.php?action=add</url>
         </submenu>
       </submenus>
     </mainmenu>
@@ -118,6 +186,11 @@
           <id>doctorvaccine_add</id>
           <name>医生疫苗新增</name>
           <url>/Doctor/doctorvaccine.php?action=add</url>
+        </submenu>
+        <submenu>
+          <id>doctor_service</id>
+          <name>医生服务管理</name>
+          <url>/Doctor/service.php</url>
         </submenu>
         <submenu>
           <id>officeopenhour_list</id>

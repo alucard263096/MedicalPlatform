@@ -105,21 +105,6 @@
       <notnull>1</notnull>
     </field>
     <field>
-      <name>可提供的医疗服务及手术</name>
-      <name_zh-cn>可提供的医疗服务及手术</name_zh-cn>
-      <name_zh-hk>可提供的医疗服务及手术</name_zh-hk>
-      <name_en-us>My Services</name_en-us>
-      <key>effect_list_id</key>
-      <type>flist</type>
-      <displayfield>name</displayfield>
-      <displayinlist>1</displayinlist>
-      <fmutillang>1</fmutillang>
-      <notnull>1</notnull>
-      <tablename>dr_tb_effect</tablename>
-      <ntbname>r_effect_list</ntbname>
-      <condition>r_effect_list.status='A' and (r_effect_list.type='A' or r_effect_list.type='M') </condition>
-    </field>
-    <field>
       <name>可使用的医院</name>
       <name_zh-cn>可使用的医院</name_zh-cn>
       <name_zh-hk>可使用的医院</name_zh-hk>
@@ -177,11 +162,17 @@
       <name>注册专科</name>
       <name_zh-cn>注册专科</name_zh-cn>
       <name_zh-hk>注册专科</name_zh-hk>
-      <name_en-us>Register Specialist</name_en-us>
-      <key>reg_title</key>
-      <type>text</type>
-      <ismutillang>1</ismutillang>
-      <notnull>1</notnull>
+      <name_en-us>Specialist</name_en-us>
+      <key>specialist_id</key>
+      <type>fkey</type>
+      <fmutillang>1</fmutillang>
+      <displayfield>name</displayfield>
+      <tablename>dr_tb_specialist</tablename>
+      <ntbname>r_specialist</ntbname>
+      <condition>r_specialist.status='A' </condition>
+      <search>1</search>
+      <displayinlist>1</displayinlist>
+      <disableindetail>1</disableindetail>
     </field>
     <field>
       <name>是否全科</name>

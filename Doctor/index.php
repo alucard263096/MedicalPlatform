@@ -18,7 +18,7 @@
 	}else{
 		$smarty->assign("password",$_REQUEST["password"]);
 	}
-	require ROOT.'/classes/datamgr/doctor.cls.php';
+	require ROOT.'/classes/datamgr/user.cls.php';
 	$login_id=$_REQUEST["login_id"];
 	$password=$_REQUEST["password"];
 	$userRows=$userMgr->getUserByName($login_id);

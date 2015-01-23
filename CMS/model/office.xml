@@ -30,6 +30,48 @@
       <notnull>1</notnull>
     </field>
     <field>
+      <name>片区</name>
+      <key>block_id</key>
+      <type>fkey</type>
+      <displayfield>fullname</displayfield>
+      <displayinlist>1</displayinlist>
+      <gotodetail>1</gotodetail>
+      <search>1</search>
+      <notnull>1</notnull>
+      <fmutillang>1</fmutillang>
+      <tablename>dr_v_district_block</tablename>
+      <ntbname>r_district_block</ntbname>
+      <condition>1=1 </condition>
+    </field>
+    <field>
+      <name>地铁站1</name>
+      <key>station1_id</key>
+      <type>fkey</type>
+      <displayfield>fullname</displayfield>
+      <displayinlist>1</displayinlist>
+      <gotodetail>1</gotodetail>
+      <search>1</search>
+      <notnull>1</notnull>
+      <fmutillang>1</fmutillang>
+      <tablename>dr_v_subway_station</tablename>
+      <ntbname>r_subway_station1</ntbname>
+      <condition>1=1 </condition>
+    </field>
+    <field>
+      <name>地铁站2</name>
+      <key>station2_id</key>
+      <type>fkey</type>
+      <displayfield>fullname</displayfield>
+      <displayinlist>1</displayinlist>
+      <gotodetail>1</gotodetail>
+      <search>1</search>
+      <notnull>1</notnull>
+      <fmutillang>1</fmutillang>
+      <tablename>dr_v_subway_station</tablename>
+      <ntbname>r_subway_station2</ntbname>
+      <condition>1=1 </condition>
+    </field>
+    <field>
       <name>诊所地址</name>
       <key>address</key>
       <type>longtext</type>
@@ -41,6 +83,19 @@
       <key>coordinate</key>
       <type>text</type>
       <notnull>1</notnull>
+    </field>
+    <field>
+      <name>所属热门商区</name>
+      <key>hot_district_id</key>
+      <type>fkey</type>
+      <displayfield>name</displayfield>
+      <displayinlist>1</displayinlist>
+      <gotodetail>1</gotodetail>
+      <search>1</search>
+      <fmutillang>1</fmutillang>
+      <tablename>dr_tb_hot_district</tablename>
+      <ntbname>r_hot_district</ntbname>
+      <condition>1=1 </condition>
     </field>
     <field>
       <name>备注</name>

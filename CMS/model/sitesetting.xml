@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
   <name>网站设置</name>
-  <tablename>tb_website_base</tablename>
+  <tablename>dr_tb_website_setting</tablename>
   <nolist>1</nolist>
   <fields>
     <field>
       <name>网站名称</name>
-      <key>website_name</key>
+      <key>name</key>
       <type>text</type>
     </field>
     <field>

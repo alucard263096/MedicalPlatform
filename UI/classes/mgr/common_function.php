@@ -113,5 +113,27 @@ function ResetNameWithLang($arr,$lang){
             '';
     return $guid;
   }
+  
+function getLangEx(){
+Global $SysLangCode;
+		$ex="sc";
+		if($SysLangCode=="zh-cn"){
+			$ex="sc";	
+		}elseif($SysLangCode=="zh-hk") {
+			$ex="tc";
+		}elseif($SysLangCode=="en-us") {
+			$ex="en";
+		}
+
+		return $ex;
+}
+
+function getListIdStr($arr,$key){
+	$list="0";
+		foreach ($arr as $value){
+			$list.=",".$value[$key];
+		}
+	return $list;
+}
 
 ?>

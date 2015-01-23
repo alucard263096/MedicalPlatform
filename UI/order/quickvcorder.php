@@ -40,7 +40,7 @@
 	exit();
   }
   $id=$orderMgr->createVaccineOrder($member_id,$name,$mobile,$email,
-	$order_date,$order_time,$vaccine_id,$doctor_id,$office_id,$info["once_price"],
+	$order_date,$order_time,$vaccine_id,$doctor_id,$office_id,$info["web_price"],
 	$snapshot,$doctor_vaccine_id);
 
 	echo "SUCCESS".$id;

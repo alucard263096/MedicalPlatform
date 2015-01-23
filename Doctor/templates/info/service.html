@@ -1,0 +1,95 @@
+{{include  file="$smarty_root/header.html" }}
+
+                <!-- content -->
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="page-header bootstrap-admin-content-title">
+                                <h1>{{$SysLang.service.myservice}}</h1>    
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="text-muted bootstrap-admin-box-title">{{$SysLang.service.serviceinfo}}</div>
+                                </div>
+                                <div class="bootstrap-admin-panel-content">
+                                    <div class="row form-horizontal">
+                                        <div class="form-group col-md-12">
+                                                <table class="datatable table table-striped table-bordered" id="searchResult">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>{{$SysLang.service.service}}</th>
+                                                            <th>{{$SysLang.service.price}}（HK$）</th>
+                                                            <th>{{$SysLang.service.web_price}}（HK$）</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {{foreach from=$result item=row}}
+                                                        <tr>
+                                                            <td>
+                                                                <input type="checkbox" class="effectcb" oid="{{$row.effect_id}}" {{if $row.doctor_id>0}}checked=checked{{/if}} />
+                                                            </td>
+                                                            <td>
+                                                                <label class="control-label">{{$row.effect_name}}</label>
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" value="{{$row.price}}" class="form-control" id="effect_{{$row.effect_id}}_price" />
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" value="{{$row.web_price}}" class="form-control" id="effect_{{$row.effect_id}}_web_price" />
+                                                            </td>
+                                                        </tr>
+                                                        {{/foreach}}
+                                                    </tbody>
+                                                </table>
+                                        </div>                            
+                                    </div>
+                                    <hr />
+                                    <div class="text-center">
+                                        <button class="btn btn-primary" id="btnSave"><i class="glyphicon glyphicon-pencil  glyphicon-white"></i> {{$SysLang.model.save}}</button>
+                                    </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<script>
+    $(document).ready(function () {
+       
+
+        $("#btnSave").click(function () {
+            
+            $("#btnSave").prop("disabled","disabled");
+
+            var json = {
+                "action": "save"
+            }
+            $(".effectcb").each(function () {
+                if($(this).prop("checked")){
+                    var id = $(this).attr("oid");
+                    json["effect_" + id + "_select"] = "Y";
+                    json["effect_" + id + "_price"] = $("#effect_" + id + "_price").val();
+                    json["effect_" + id + "_web_price"] = $("#effect_" + id + "_web_price").val();
+                }
+            });
+
+            $.post("service.php", json, function (data) {
+                if (data == "SUCCESS") {
+                    infoDialog("{{$SysLang.model.savesuccess}}");
+                } else {
+                    alert(data);
+                }
+                $("#btnSave").prop("disabled", "");
+            });
+
+        });
+    });
+</script>
+
+ {{include  file="$smarty_root/footer.html" }}

@@ -8,16 +8,18 @@ class GeneralTextXmlModel extends XmlModel{
 
 	public function Save($dbMgr,$request,$sysuser){
 	Global $SysLang; 
+
 		if($request["primary_id"]==""){
-			$key=$request["key"];
-			$loginname=mysql_real_escape_string($key);
-			$sql="select * from tb_general where `key`='$key' ";
+			$code=$request["code"];
+			$code=mysql_real_escape_string($code);
+			$sql="select * from dr_tb_general where code='$code' ";
 			$query = $dbMgr->query($sql);
 			$userRows = $dbMgr->fetch_array_all($query); 
 			if(count($userRows)>0){
-				return $SysLang["general"]["keyduplicate"];
+				return "此文字代码已经被使用";
 			}
 		}
+
 		return parent::Save($dbMgr,$request,$sysuser);
 
 	}

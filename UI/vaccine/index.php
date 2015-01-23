@@ -9,11 +9,11 @@
   require 'inc.php';
   require ROOT.'/classes/datamgr/vaccine.cls.php';
 
-  $smarty->assign("Title",$SysLang["vaccine"]["vaccinelist"]);
   $vaccineList=$vaccineMgr->getVaccineList();
-  
   $smarty->assign("VaccineList",$vaccineList);
-  $smarty->assign("RightButton","VaccineList");
+
+  $vaccineCategory=$vaccineMgr->getVaccineCategory();
+  $smarty->assign("VaccineCategory",$vaccineCategory);
 
   $smarty->display(ROOT.'/templates/mobile/vaccine/index.html');
 

@@ -23,30 +23,90 @@
 		
 	}
 
+	public getPromotedDoctorList(){
+		Global $SysLangCode;
+
+		if(isset($_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["promotedlist"])){
+			return $_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["promotedlist"];
+		}else{
+		$sql="select doctor_list from dr_tb_doctor_promoted where id=1";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+		$doctor_list=$result["doctor_list"];
+
+		if($doctor_list!=""){
+			$sql="select d.*,dl.*,dv.totle_score from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+	where d.id in ($doctor_list) and d.status='A'
+	order by totle_score
+	limit 0,4 ";
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array_all($query); 
+		}else{
+			$result=Array();
+		}
+
+			$_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["promotedlist"]=$result;
+			return $result;
+		}
+	}
+
+	
+
 	public function getVaccineDoctorList($vaccineid){
 		Global $SysLangCode;
 
 		$vaccineid=mysql_real_escape_string($vaccineid);
 
-		$sql="select dv.*,dl.name doctorname,d.photo,dl.summary doctorsummary from dr_tb_doctor_vaccine dv 
+		$sql="select top 100 dv.doctor_id,dl.name doctor_name,d.is_general,d.spcialist_id,sl.name specialist
+		,dv.price,dv.net_price
+		 from dr_tb_doctor_vaccine dv 
 inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
 left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
+inner join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='$SysLangCode'
 where dv.status='A' and dv.vaccine_id=$vaccineid ";
 		$query = $this->dbmgr->query($sql);
-		$result = $this->dbmgr->fetch_array_all($query); 
+		$result = $this->dbmgr->fetch_array_all($query);
+
+
+		$doctor_list=getListIdStr($result,"doctor_id");
+
+		$office_list=$this->getOfficeListByDoctor($doctor_list);
+		$count=count($result);
+		for($i=0;$i<$count;$i++){
+			$arr=Array();
+			foreach ($office_list as $key=>$value){
+				if($value["doctor_id"]==$result[$i]["doctor_id"]){
+					$arr[]=$value;
+				}
+			}
+			$result[$i]["office_list"]=$arr;
+			$result[$i]["office_count"]=count($arr);
+			unset($arr);
+		}
+
 		return $result;
+	}
+
+	public function getDistrictListByDoctor($doctor_list){
+		Global $SysLangCode;
+
+		$sql="";
 
 	}
 
-	public function getOfficeListByDoctor($doctor_id){
+	public function getOfficeListByDoctor($doctor_list){
 		Global $SysLangCode;
 	
-		$doctor_id=mysql_real_escape_string($doctor_id);
+		$doctor_list=mysql_real_escape_string($doctor_list);
 
-		$sql="select  oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour from dr_tb_office_openhour oo
+		$sql="select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour 
+		from dr_tb_office_openhour oo
 inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
 left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='$SysLangCode' 
-where oo.status='A' and oo.doctor_id=$doctor_id ";
+where oo.status='A' and oo.doctor_id in ($doctor_list) ";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
 
