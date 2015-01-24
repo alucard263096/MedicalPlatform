@@ -1,5 +1,12 @@
-﻿body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+﻿/*@import url('/MedicalPlatform/UIDEMO/themes/mobile/fonts/SourceHanSansCN-ExtraLight.otf');*/
+@font-face {
+    /* font-properties */
+    font-family: SourceHanSansCN-ExtraLight;
+    src:url("/MedicalPlatform/UIDEMO/themes/mobile/fonts/SourceHanSansCN-ExtraLight.otf")
+}
+
+body {
+font-family:SourceHanSansCN-ExtraLight;
 }
 
 .ui-page-theme-a a, html .ui-bar-a a, html .ui-body-a a, html body .ui-group-theme-a a {
@@ -22,4 +29,9 @@
     height: 276px;
     -moz-transform: scale(0.29);
     -moz-transform-origin: 0 0;
+}
+
+.myhome {
+    background: url('/MedicalPlatform/UIDEMO/themes/mobile/css/images/未标题-1-06.png') no-repeat;
+
 }

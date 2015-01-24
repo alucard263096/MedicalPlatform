@@ -1,10 +1,12 @@
-﻿.slidesjs-pagination {
+﻿
+
+.slidesjs-pagination {
     margin: 6px 0 0;
     list-style: none;
     position: absolute;
-    top: 85px;
+    top: 7%;
     right: 10px;
-    z-index: 9999;
+    z-index: 9998;
 }
 
 .slidesjs-pagination li {
