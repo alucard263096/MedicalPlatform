@@ -1,6 +1,4 @@
-﻿
-
-.slidesjs-pagination {
+﻿.slidesjs-pagination {
     margin: 6px 0 0;
     list-style: none;
     position: absolute;
@@ -19,7 +17,7 @@
     width: 13px;
     height: 0;
     padding-top: 13px;
-    background-image: url(images/pagination.png);
+    background-image: url(/MedicalPlatform/UIDEMO/themes/mobile/img/icons/pagination.png);
     background-position: 0 0;
     float: left;
     overflow: hidden;
