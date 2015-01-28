@@ -55,23 +55,23 @@ body {
     margin-left: 4%;
 }
 
-#childVaccine, #childDoctor, #childUser {
+.childNar {
     width: 27%;
     text-align: center;
     float: left;
     padding: 2%;
 }
 
-#childVaccineIcon {
+.childNarIcon {
     padding: 0;
 }
 
-    #childVaccineIcon img, #childDoctorIcon img, #childUserIcon img {
-        width: 70%;
-        height: auto;
-    }
+.childNarImg {
+    width: 70%;
+    height: auto;
+}
 
-#childVaccineText, #childDoctorText, #childUserText {
+.childNarText {
     font-size: 0.6em;
     color: #989897;
     margin-top: -5px;
@@ -260,4 +260,43 @@ body {
     background: url('/MedicalPlatform/UIDEMO/themes/mobile/css/images/未标题-1-06.png') no-repeat;
 }*/
 
-/*index css  end*******************************************************************************************************/
+/*home page index css  end*******************************************************************************************************/
+
+
+/*vaccine index css  begin*******************************************************************************************************/
+.vaccineChild {
+    width: 20%;
+}
+
+ .vaccineNar {
+     margin-left: 0;
+ }
+
+.vaccineList {
+    float: left;
+    padding: 0;
+    width: 100%;
+}
+
+.ui-listview > .ui-li-has-thumb > .ui-btn {
+    border: 0;
+    background: none;
+    /*margin-right: 3%;*/
+}
+
+.ui-shadow {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.vaccineContent {
+    width: 94%;margin-left: 6%;
+} 
+
+.ui-content .ui-listview-inset, .ui-panel-inner > .ui-listview-inset {
+    margin-top: 2%;
+    margin-right: 4%;
+}
+
+
+
+/*vaccine index css  end*******************************************************************************************************/

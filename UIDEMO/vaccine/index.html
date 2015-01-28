@@ -18,6 +18,37 @@
     <script src="/MedicalPlatform/UIDEMO/js/jquery-2.0.3.min.js"></script>
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/jquery.mobile-1.4.5.js"></script>
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/common.js"></script>
+    <!--<script src="https://rawgithub.com/arschmitz/jquery-mobile-nestedlists/master/jquery.mobile.nestedlists.js"></script>-->
+    <script type="text/javascript">
+    $(function () {
+        $("#menu").css("display", "none");
+    });
+
+    var count = 0;
+    function openMenu(id) {
+        if (id.length<=0) {
+            return;
+        }
+
+
+        if (count % 2 == 0) {
+            $("#menu > div").each(function() {
+                $(this).css("display", "none");
+            });
+
+            $("#" + id).css("display", "block");
+            $("#main").css("display", "block");
+            $("#menu").css("display", "block");
+            count++;
+        } else {
+            $("#menu > div").each(function () {
+                $(this).css("display", "none");
+            });
+            count++;
+        }
+
+    }
+    </script>
 </head>
 <body>
     <div data-role="page">
@@ -30,128 +61,124 @@
 
         <div id="content" data-role="content">
             <div id="child_narvigation">
-                <div id="child_nar">
-                    <div id="childVaccine">
-                        <a href="#">
-                            <div id="childVaccineIcon">
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_vaccine.png">
+                <div id="child_nar vaccineNar">
+                    <div class="childNar vaccineChild">
+                        <a href="#" onclick="openMenu('food')">
+                            <div class="childNarIcon">
+                                <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccinechild.png">
                             </div>
-                            <div id="childVaccineText">找疫苗</div>
+                            <div class="childNarText">儿童</div>
                         </a>
                     </div>
-                    <div id="childDoctor">
+                    <div class="childNar vaccineChild">
                         <a href="#">
-                            <div id="childDoctorIcon">
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_doctor.png">
+                            <div class="childNarIcon">
+                                <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccineman.png">
                             </div>
-                            <div id="childDoctorText">看医生</div>
+                            <div class="childNarText">男性</div>
                         </a>
                     </div>
-                    <div id="childUser">
+                    <div class="childNar vaccineChild">
                         <a href="#">
-                            <div id="childUserIcon">
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_user.png">
+                            <div class="childNarIcon">
+                                <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccinewoman.png">
                             </div>
-                            <div id="childUserText">会员</div>
+                            <div class="childNarText">女性</div>
+                        </a>
+                    </div>
+                    <div class="childNar vaccineChild">
+                        <a href="#">
+                            <div class="childNarIcon">
+                                <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccineoldman.png">
+                            </div>
+                            <div class="childNarText">老人</div>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="searchMore">
-                <div class="searchMoreText1">找疫苗</div>
-                <div class="searchMoreText2">更多  ></div>
-            </div>
-            <div id="vaccineDisplay">
-                <div id="vaccineDisplayRight">
-                    <a href="#">
-                        <div>
-                            <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/index_5.png" />
+            <div class="vaccineList">
+                <div id="menu" style="width: 100%; float: left;" >
+                    <div id="main" style="width: 50%; float: left;">
+                        <div onclick="openMenu('food');">
+                            <p>美食</p>
                         </div>
-                    </a>
+                        <div onclick="openMenu('sale');">
+                            <p>团购</p>
+                        </div>
+                        <div onclick="openMenu('sport');">
+                            <p>健身</p>
+                        </div>
+                    </div>
+                    <div id="food" style="width: 50%; float: left;">
+                        <br/><a href="#">烧烤</a><br/>
+                        <br/><a href="#">快餐</a><br/>
+                        <a href="#">饮料</a><br/>
+                    </div>
+                    <div id="sale" style="width: 50%; float: left;">
+                        <br/><a href="#">药店</a><br/>
+                        <br/><a href="#">办公</a><br/>
+                       <a href="#">眼镜</a><br/>
+                    </div>
+                    <div id="sport" style="width: 50%; float: left;">
+                       <br/> <a href="#">冰棒球</a><br/>
+                      <br/>  <a href="#">网球</a><br/>
+                       <a href="#">高尔夫</a><br/>
+                    </div>
                 </div>
 
-                <div id="vaccineDisplayLeft">
-                    <div id="vaccineDisplayLeft1">
-                        <a href="#">
-                            <div id="leftTitle1">
-                                <span>HPV子宫颈癌2合1疫苗</span>
-                            </div>
-                            <div class="displayDetail">
-                                <div class="displayDetailLeft">
-                                    <span class="displayDetailLeft1">[预防宫颈癌]</span><br>
-                                    <span class="displayDetailLeft2">免费预约</span>
-                                </div>
-                                <div class="displayDetailRight">
-                                    <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview1.png">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="vaccineDisplayLeft2">
-                        <a href="#">
-                            <div id="leftTitle2">
-                                <span>HPV子宫颈癌2合1疫苗-美国进口</span>
-                            </div>
-                            <div class="displayDetail">
-                                <div class="displayDetailLeft">
-                                    <span class="displayDetailLeft1">[预防宫颈癌]</span><br>
-                                    <span class="displayDetailLeft2">免费预约</span>
-                                </div>
-                                <div class="displayDetailRight">
-                                    <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview2.png">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+
             </div>
+
 
             <div class="searchMore">
-                <div class="searchMoreText1">看医生</div>
+                <div class="searchMoreText1" style="margin-left: 6%;">猜你在找</div>
                 <div class="searchMoreText2">更多  ></div>
             </div>
-            <div id="doctorDispaly">
-                <div id="doctorDispalyContent">
-                    <div class="doctorDisplayDetail">
-                        <a href="#">
-                            <div>
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/doctor_1.jpeg">
-                            </div>
-                            <div class="doctorDisplayDetail1">火医生</div>
-                            <div class="doctorDisplayDetail2">全科</div>
-                        </a>
-                    </div>
-                    <div class="doctorDisplayDetail">
-                        <a href="#">
-                            <div>
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/doctor_3.jpeg">
-                            </div>
-                            <div class="doctorDisplayDetail1">陈医生</div>
-                            <div class="doctorDisplayDetail2">全科</div>
-                        </a>
-                    </div>
-                    <div class="doctorDisplayDetail">
-                        <a href="#">
-                            <div>
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/doctor_1.jpeg">
-                            </div>
-                            <div class="doctorDisplayDetail1">李医生</div>
-                            <div class="doctorDisplayDetail2">全科</div>
-                        </a>
-                    </div>
-                    <div class="doctorDisplayDetail">
-                        <a href="#">
-                            <div>
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/doctor_2.jpeg">
-                            </div>
-                            <div class="doctorDisplayDetail1">冰医生</div>
-                            <div class="doctorDisplayDetail2">全科</div>
-                        </a>
-                    </div>
+            <div class="vaccineList">
+                <div class="vaccineContent">
+                    <ul id="vaccineListUl" data-role="listview" data-inset="true">
+                        <li>
+                            <a href="#">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview3.png" />
+                                <h2>test title 1</h2>
+                                <p>test description</p>
+                            </a>
+                        </li>
+                        <li style="border: 0;">
+                            <a href="#">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview4.png" />
+                                <h2>test title 1</h2>
+                                <p>test description</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview5.png" />
+                                <h2>test title 1</h2>
+                                <p>test description</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview3.png" />
+                                <h2>test title 1</h2>
+                                <p>test description</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview4.png" />
+                                <h2>test title 1</h2>
+                                <p>test description</p>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
+
             </div>
         </div>
+        
 
         <div id="footer" data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a">
             <div data-role="navbar">

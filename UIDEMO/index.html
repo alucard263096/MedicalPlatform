@@ -21,6 +21,34 @@
 
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/jquery.slides.js"></script>
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/common.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#home-slides").slidesjs({
+                navigation: false,
+                //play: {
+                //    interval: 5000,
+                //    auto: true
+                //},
+                //effect: {
+                //    slide: {
+                //        speed: 500
+                //    },
+                //    fade: {
+                //        speed: 300,
+                //        crossfade: true
+                //    }
+                //}
+            });
+
+            //setVaccineRecommendHeight("vaccineRecommend_1", "right_1");
+            //setVaccineRecommendHeight("vaccineRecommend_1", "left_1");
+            //setVaccineRecommendHeight("vaccineRecommend_2", "right_2");
+            //setVaccineRecommendHeight("vaccineRecommend_2", "left_2");
+        });
+    </script>
+
+
 </head>
 <body>
     <div data-role="page">
@@ -41,28 +69,28 @@
 
             <div id="child_narvigation">
                 <div id="child_nar">
-                    <div id="childVaccine">
+                    <div class="childNar">
                         <a href="#">
-                            <div id="childVaccineIcon">
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_vaccine.png">
+                            <div class="childNarIcon">
+                                <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_vaccine.png">
                             </div>
-                            <div id="childVaccineText">找疫苗</div>
+                            <div class="childNarText">找疫苗</div>
                         </a>
                     </div>
-                    <div id="childDoctor">
+                    <div class="childNar">
                         <a href="#">
-                            <div id="childDoctorIcon">
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_doctor.png">
+                            <div class="childNarIcon">
+                                <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_doctor.png">
                             </div>
-                            <div id="childDoctorText">看医生</div>
+                            <div class="childNarText">看医生</div>
                         </a>
                     </div>
-                    <div id="childUser">
+                    <div class="childNar">
                         <a href="#">
-                            <div id="childUserIcon">
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_user.png">
+                            <div class="childNarIcon">
+                                <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_user.png">
                             </div>
-                            <div id="childUserText">会员</div>
+                            <div class="childNarText">会员</div>
                         </a>
                     </div>
                 </div>
