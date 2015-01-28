@@ -20,34 +20,64 @@
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/common.js"></script>
     <!--<script src="https://rawgithub.com/arschmitz/jquery-mobile-nestedlists/master/jquery.mobile.nestedlists.js"></script>-->
     <script type="text/javascript">
-    $(function () {
-        $("#menu").css("display", "none");
-    });
-
-    var count = 0;
-    function openMenu(id) {
-        if (id.length<=0) {
-            return;
-        }
-
-
-        if (count % 2 == 0) {
-            $("#menu > div").each(function() {
-                $(this).css("display", "none");
-            });
-
-            $("#" + id).css("display", "block");
-            $("#main").css("display", "block");
-            $("#menu").css("display", "block");
-            count++;
-        } else {
+        $(function () {
+            $("#menuPanel").css("display", "none");
+            $("#cover").css("display", "none");
             $("#menu > div").each(function () {
-                $(this).css("display", "none");
-            });
-            count++;
+                $(this).css("display", "none")});
+        });
+
+        var count = 0;
+
+
+        function openMenu(id,myself) {
+            if (id.length <= 0) {
+                return;
+            }
+
+            //if (count % 2 == 0) {
+                $("#menu > div").each(function () {
+                    $(this).css("display", "none");
+                });
+                
+
+                $("#main > div").each(function () {
+                    $(this).css("background", "none");
+                });
+
+
+                $("#" + id).css("display", "block"); 
+                $(myself).css("background", "white");
+                $("#main").css("display", "block");
+                $("#menuPanel").css("margin-top", getMenuHeight() + "px");
+                $("#cover").css("margin-top", getMenuHeight() + "px");
+                $("#cover").css("display", "block");
+                $("#menu").css("display", "block");
+                count++;
+            //} else {
+            //    $("#menu > div").each(function () {
+            //        $(this).css("display", "none");
+            //    }
+                //);
+                count++;
+            //}
+
         }
 
-    }
+        function clickMenu(id) {
+            if ($("#menuPanel").css("display") == "block") {
+                $("#menuPanel").css("display", "none");
+                $("#cover").css("display", "none");
+            } else {
+                $("#menuPanel").css("display", "block");
+                openMenu(id);
+            }
+
+        }
+
+        function getMenuHeight() {
+            return $("#child_narvigation").height() - 30;
+        }
     </script>
 </head>
 <body>
@@ -63,7 +93,7 @@
             <div id="child_narvigation">
                 <div id="child_nar vaccineNar">
                     <div class="childNar vaccineChild">
-                        <a href="#" onclick="openMenu('food')">
+                        <a href="#" onclick="clickMenu('food')">
                             <div class="childNarIcon">
                                 <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccinechild.png">
                             </div>
@@ -97,33 +127,41 @@
                 </div>
             </div>
 
-            <div class="vaccineList">
-                <div id="menu" style="width: 100%; float: left;" >
-                    <div id="main" style="width: 50%; float: left;">
-                        <div onclick="openMenu('food');">
+            <div id="cover" onclick="clickMenu()" style="background:gray;width:100%;height:100%;z-index:9998;position:absolute;opacity:0.5;"></div> 
+
+            <div id="menuPanel" class="vaccineList vaccineMenus" style="background:white;z-index:9999;">
+                <div id="menu" style="width: 100%; float: left;">
+                    <div id="main" style="width: 50%; float: left;background:gray;opacity:0.1;">
+                        <div onclick="openMenu('food',this);" style="">
                             <p>美食</p>
                         </div>
-                        <div onclick="openMenu('sale');">
+                        <div onclick="openMenu('sale',this);">
                             <p>团购</p>
                         </div>
-                        <div onclick="openMenu('sport');">
+                        <div onclick="openMenu('sport',this);">
                             <p>健身</p>
                         </div>
                     </div>
-                    <div id="food" style="width: 50%; float: left;">
-                        <br/><a href="#">烧烤</a><br/>
-                        <br/><a href="#">快餐</a><br/>
-                        <a href="#">饮料</a><br/>
+                    <div id="food" style="width: 50%; float: left;background:white;">
+                        <br />
+                        <a href="#">烧烤</a><br />
+                        <br />
+                        <a href="#">快餐</a><br />
+                        <a href="#">饮料</a><br />
                     </div>
-                    <div id="sale" style="width: 50%; float: left;">
-                        <br/><a href="#">药店</a><br/>
-                        <br/><a href="#">办公</a><br/>
-                       <a href="#">眼镜</a><br/>
+                    <div id="sale" style="width: 50%; float: left;background:white;">
+                        <br />
+                        <a href="#">药店</a><br />
+                        <br />
+                        <a href="#">办公</a><br />
+                        <a href="#">眼镜</a><br />
                     </div>
-                    <div id="sport" style="width: 50%; float: left;">
-                       <br/> <a href="#">冰棒球</a><br/>
-                      <br/>  <a href="#">网球</a><br/>
-                       <a href="#">高尔夫</a><br/>
+                    <div id="sport" style="width: 50%; float: left;background:white;">
+                        <br />
+                        <a href="#">冰棒球</a><br />
+                        <br />
+                        <a href="#">网球</a><br />
+                        <a href="#">高尔夫</a><br />
                     </div>
                 </div>
 
@@ -178,7 +216,7 @@
 
             </div>
         </div>
-        
+
 
         <div id="footer" data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a">
             <div data-role="navbar">
