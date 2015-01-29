@@ -297,6 +297,8 @@ body {
     margin-right: 4%;
 }
 
-
+.vaccineMenus {
+    position:absolute;
+}
 
 /*vaccine index css  end*******************************************************************************************************/
