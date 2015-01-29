@@ -301,4 +301,13 @@ body {
     position:absolute;
 }
 
+.menuMainText {
+    line-height: 45px;
+    margin-left: 8%;
+}
+
+.menuSubText {
+    display: block;
+    /*margin-left: 4%;*/
+}
 /*vaccine index css  end*******************************************************************************************************/
