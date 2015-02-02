@@ -44,9 +44,7 @@
                 return;
             }
 
-            $("#menu > div").each(function () {
-                $(this).css("display", "none");
-            });
+            closeMenu();
 
             $("#" + getMainMenuName(id) + " > div").each(function () {
                 $(this).css("background", "none");
@@ -71,28 +69,70 @@
             return prevName + "Menu";
         }
 
+        function closeMenu() {
+            $("#cover").css("display", "none");
+            $("#menu > div").each(function () {
+                $(this).css("display", "none");
+            });
+        }
 
-        function clickMenu(id) {
+
+        var topMenu;
+        function clickMenu(id,myself) {
             if (($("#menuPanel").css("display") == "block" && isSameMenu(id)) || "undefined" == typeof (id) || id.length <= 0) {
                 $("#menuPanel").css("display", "none");
                 $("#cover").css("display", "none");
             } else {
                 $("#menuPanel").css("display", "block");
-
+                topMenu = myself;
                 openSubMenu(getFirstSubMenuName(id));
                 initFirstClickMenu(id);
             }
         }
 
-        function clickSingleMenu(id) {
+        function setMenuValue(myself) {
+            $($(topMenu), 'div').first().html("<div class='childNarText'>"+$(myself).text()+"</div>");
+            //$($(topMenu), 'div').first().css("class", "childNarText");
+            closeMenu();
+        }
+
+        function setSingleMenuValue(myself) {
+            $($(topMenu), 'span').first().html("<div class='childNarText'>" + $(myself).text() + "</div>");
+            //$($(topMenu), 'div').first().css("class", "childNarText");
+            closeMenu();
+        }
+
+        function clickSingleMenu(id,myself) {
             if (($("#menuPanel").css("display") == "block" && isSameMenu(id)) || "undefined" == typeof (id) || id.length <= 0) {
                 $("#menuPanel").css("display", "none");
                 $("#cover").css("display", "none");
             } else {
                 $("#menuPanel").css("display", "block");
-
+                topMenu = myself;
                 //openSubMenu(getFirstSubMenuName(id));
                 //initFirstClickMenu(id);
+
+
+              
+                if (id.length <= 0) {
+                    return;
+                }
+
+                $("#menu > div").each(function () {
+                    $(this).css("display", "none");
+                });
+
+                $("#" +id+ " > div").each(function () {
+                    $(this).css("background", "none");
+                });
+
+                $("#" + id).css("display", "block");
+                $("#" + id).css("background", "white");
+                //$("#" + getMainMenuName(id)).css("display", "block");
+                $("#menuPanel").css("margin-top", getMenuMarginTopHeight() + "px");
+                $("#cover").css("margin-top", getMenuMarginTopHeight() + "px");
+                $("#cover").css("display", "block");
+                $("#menu").css("display", "block");
             }
         }
 
@@ -140,7 +180,7 @@
             <div id="child_narvigation" style="margin-top: 10px;">
                 <div id="child_nar vaccineNar">
                     <div class="childNar vaccineChild" style="width: 30%; padding: 1%;">
-                        <a href="#" onclick="clickMenu('childVaccineMenu')">
+                        <a href="#" onclick="clickMenu('childVaccineMenu',this)">
                             <!--                            <div class="childNarIcon">
                                 <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccinechild.png">
                             </div>-->
@@ -148,7 +188,7 @@
                         </a>
                     </div>
                     <div class="childNar vaccineChild" style="width: 30%; padding: 1%;">
-                        <a href="#" onclick="clickMenu('manVaccineMenu')">
+                        <a href="#" onclick="clickMenu('manVaccineMenu',this)">
                             <!--                            <div class="childNarIcon">
                                 <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccineman.png">
                             </div>-->
@@ -156,7 +196,7 @@
                         </a>
                     </div>
                     <div class="childNar vaccineChild" style="width: 30%; padding: 1%;">
-                        <a href="#" onclick="clickSingleMenu('womanVaccineMenu')">
+                        <a href="#" onclick="clickSingleMenu('womanVaccineMenu',this)">
                             <!--                            <div class="childNarIcon">
                                 <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccinewoman.png">
                             </div>-->
@@ -197,7 +237,7 @@
                         </div>
                     </div>
 
-                    <div id="manVaccineMenu" style="width: 50%; float: left; background: #F0F0F0;">
+                    <div id="manVaccineMenu" style="width: 50%; float: left;  background: #F0F0F0; height: 250px; OVERFLOW-X: hidden;">
                         <div onclick="openSubMenu('manVaccineSubMenu_1',this);" style="">
                             <span class="menuMainText">妇科</span>
                         </div>
@@ -224,53 +264,53 @@
                         </div>
                     </div>
 
-                    <div id="womanVaccineMenu" style="width: 50%; float: left; background: #F0F0F0;">
-                        <div onclick="openSubMenu('womanVaccineSubMenu_1',this);" style="">
+                    <div id="womanVaccineMenu" style="width: 50%; float: left;  background: #F0F0F0; height: 250px; OVERFLOW-X: hidden;">
+                        <div  onclick="setSingleMenuValue(this)" style="">
                             <span class="menuMainText">智能排序</span>
                         </div>
-                        <div onclick="openSubMenu('womanVaccineSubMenu_2',this);">
+                        <div  onclick="setSingleMenuValue(this)">
                             <span class="menuMainText">三甲医院</span>
                         </div>
-                        <div onclick="openSubMenu('womanVaccineSubMenu_3',this);">
+                        <div  onclick="setSingleMenuValue(this)">
                             <span class="menuMainText">评价最高</span>
                         </div>
                     </div>
 
                     <div id="childVaccineSubMenu_1" style="width: 50%; float: left; background: white;">
-                        <a class="menuMainText menuSubText" href="#">妇科sub</a>
-                        <a class="menuMainText menuSubText" href="#">妇科sub</a>
-                        <a class="menuMainText menuSubText" href="#">妇科sub</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">妇科sub</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">妇科sub</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">妇科sub</a>
                     </div>
                     <div id="childVaccineSubMenu_2" style="width: 50%; float: left; background: white;">
-                        <a class="menuMainText menuSubText" href="#">男科sub</a>
-                        <a class="menuMainText menuSubText" href="#">男科sub</a>
-                        <a class="menuMainText menuSubText" href="#">男科sub</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">男科sub</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">男科sub</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">男科sub</a>
                     </div>
                     <div id="childVaccineSubMenu_3" style="width: 50%; float: left; background: white;">
-                        <a class="menuMainText menuSubText" href="#">新生儿</a>
-                        <a class="menuMainText menuSubText" href="#">咳嗽发热</a>
-                        <a class="menuMainText menuSubText" href="#">小二肠胃</a>
-                        <a class="menuMainText menuSubText" href="#">小儿皮肤</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">新生儿</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">咳嗽发热</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">小二肠胃</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">小儿皮肤</a>
                     </div>
 
                     <div id="manVaccineSubMenu_1" style="width: 50%; float: left; background: white;">
-                        <a class="menuMainText menuSubText" href="#">妇科sub</a>
-                        <a class="menuMainText menuSubText" href="#">妇科sub</a>
-                        <a class="menuMainText menuSubText" href="#">妇科sub</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">妇科sub</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">妇科sub</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">妇科sub</a>
                     </div>
                     <div id="manVaccineSubMenu_2" style="width: 50%; float: left; background: white;">
-                        <a class="menuMainText menuSubText" href="#">男科sub</a>
-                        <a class="menuMainText menuSubText" href="#">男科sub</a>
-                        <a class="menuMainText menuSubText" href="#">男科sub</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">男科sub</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">男科sub</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">男科sub</a>
                     </div>
                     <div id="manVaccineSubMenu_3" style="width: 50%; float: left; background: white;">
-                        <a class="menuMainText menuSubText" href="#">新生儿</a>
-                        <a class="menuMainText menuSubText" href="#">咳嗽发热</a>
-                        <a class="menuMainText menuSubText" href="#">小二肠胃</a>
-                        <a class="menuMainText menuSubText" href="#">小儿皮肤</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">新生儿</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">咳嗽发热</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">小二肠胃</a>
+                        <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">小儿皮肤</a>
                     </div>
 
-                    <div id="womanVaccineSubMenu_1" style="width: 50%; float: left; background: white;">
+<!--                    <div id="womanVaccineSubMenu_1" style="width: 50%; float: left; background: white;">
                         <a class="menuMainText menuSubText" href="#">外科sub</a>
                         <a class="menuMainText menuSubText" href="#">外科sub</a>
                         <a class="menuMainText menuSubText" href="#">外科sub</a>
@@ -284,7 +324,7 @@
                         <a class="menuMainText menuSubText" href="#">女sub3</a>
                         <a class="menuMainText menuSubText" href="#">游泳</a>
                         <a class="menuMainText menuSubText" href="#">羽毛球</a>
-                    </div>
+                    </div>-->
 
                 </div>
 
