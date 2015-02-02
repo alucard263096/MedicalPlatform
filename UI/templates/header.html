@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>港医汇首页</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="shortcut icon" href="{{$rootpath}}/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{$rootpath}}/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{$rootpath}}/img/apple-touch-icon-72x72.png" />
+
+    <link rel="apple-touch-icon" href="{{$rootpath}}/img/apple-touch-icon-57x57.png" />
+    <link rel="stylesheet" href="{{$rootpath}}/themes/mobile/css/jquery.mobile-1.4.5.css" />
+    <link href="{{$rootpath}}/themes/mobile/css/slides.css" rel="stylesheet" />
+
+    <link href="{{$rootpath}}/themes/mobile/css/main.css" rel="stylesheet" />
+    <script src="{{$rootpath}}/js/jquery-2.0.3.min.js"></script>
+    <script src="{{$rootpath}}/themes/mobile/js/jquery.mobile-1.4.5.js"></script>
+
+    <script src="{{$rootpath}}/themes/mobile/js/jquery.slides.js"></script>
+    <script src="{{$rootpath}}/themes/mobile/js/common.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#home-slides").slidesjs({
+                navigation: false,
+                //play: {
+                //    interval: 5000,
+                //    auto: true
+                //},
+                //effect: {
+                //    slide: {
+                //        speed: 500
+                //    },
+                //    fade: {
+                //        speed: 300,
+                //        crossfade: true
+                //    }
+                //}
+            });
+
+            //setVaccineRecommendHeight("vaccineRecommend_1", "right_1");
+            //setVaccineRecommendHeight("vaccineRecommend_1", "left_1");
+            //setVaccineRecommendHeight("vaccineRecommend_2", "right_2");
+            //setVaccineRecommendHeight("vaccineRecommend_2", "left_2");
+        });
+    </script>
+
+
+</head>
+<body>
+    <div data-role="page">
+        {{include  file="$smarty_root/bar.html" }}
+
+        <div id="content" data-role="content">

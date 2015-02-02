@@ -1,0 +1,112 @@
+{{include  file="$smarty_root/header.html" }}
+
+    <div id="home-slides">
+        {{foreach from=$topbanner item=rs}}
+        <a {{if $rs.link!=""}}href="{{$rs.link}}"{{/if}}>
+            <img src="{{$uploadpath}}/banner/{{$rs.pic}}">
+        </a>
+        {{/foreach}}
+    </div>
+    <div id="child_narvigation">
+        <div id="child_nar">
+            <div class="childNar">
+                <a href="{{$rootpath}}/vaccine">
+                    <div class="childNarIcon">
+                        <img class="childNarImg" src="{{$rootpath}}/themes/mobile/img/icons/index_vaccine.png">
+                    </div>
+                    <div class="childNarText">找疫苗</div>
+                </a>
+            </div>
+            <div class="childNar">
+                <a href="{{$rootpath}}/doctor">
+                    <div class="childNarIcon">
+                        <img class="childNarImg" src="{{$rootpath}}/themes/mobile/img/icons/index_doctor.png">
+                    </div>
+                    <div class="childNarText">看医生</div>
+                </a>
+            </div>
+            <div class="childNar">
+                <a href="{{$rootpath}}/member">
+                    <div class="childNarIcon">
+                        <img class="childNarImg" src="{{$rootpath}}/themes/mobile/img/icons/index_user.png">
+                    </div>
+                    <div class="childNarText">会员</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="searchMore">
+        <div class="searchMoreText1"><a href="{{$rootpath}}/vaccine">找疫苗</a></div>
+        <div class="searchMoreText2"><a href="{{$rootpath}}/vaccine">更多  ></a></div>
+    </div>
+    <div id="vaccineDisplay">
+        <div id="vaccineDisplayRight">
+            <a {{if $promotedbanner.link!="" }}href="{{$promotedbanner.link}}"{{/if}}>
+                <div>
+                    <img src="{{$uploadpath}}/banner/{{$promotedbanner.pic}}" />
+                </div>
+            </a>
+        </div>
+
+        <div id="vaccineDisplayLeft">
+            <div id="vaccineDisplayLeft1">
+                <a href="{{$rootpath}}/vaccine/detail.php?id={{$promotedvaccine1.vaccine_id}}">
+                    <div id="leftTitle1">
+                        <span>{{$promotedvaccine1.vaccine_name}}</span>
+                    </div>
+                    <div class="displayDetail">
+                        <div class="displayDetailLeft">
+                            <span class="displayDetailLeft1">[{{$promotedvaccine1.effect}}]</span><br>
+                            <span class="displayDetailLeft2">免费预约</span>
+                        </div>
+                        <div class="displayDetailRight">
+                            <img src="{{$uploadpath}}/vaccine/{{$promotedvaccine1.image}}">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="vaccineDisplayLeft2">
+                <a href="{{$rootpath}}/vaccine/detail.php?id={{$promotedvaccine2.vaccine_id}}">
+                    <div id="leftTitle2">
+                        <span>HPV子宫颈癌2合1疫苗-美国进口</span>
+                    </div>
+                    <div class="displayDetail">
+                        <div class="displayDetailLeft">
+                            <span class="displayDetailLeft1">[{{$promotedvaccine2.effect}}]</span><br>
+                            <span class="displayDetailLeft2">免费预约</span>
+                        </div>
+                        <div class="displayDetailRight">
+                            <img src="{{$uploadpath}}/vaccine/{{$promotedvaccine2.image}}">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="searchMore">
+        <div class="searchMoreText1"><a href="{{$rootpath}}/doctor">看医生</a></div>
+        <div class="searchMoreText2"><a href="{{$rootpath}}/doctor">更多  ></a></div>
+    </div>
+    <div id="doctorDispaly">
+        <div id="doctorDispalyContent">
+            {{foreach from=$promoteddoctorlist item=rs}}
+            <div class="doctorDisplayDetail">
+                <a href="{{$rootpath}}/doctor/detail.php?id={{$rs.id}}">
+                    <div>
+                        <img src="{{$uploadpath}}/doctor_photo/{{$rs.photo}}">
+                    </div>
+                    <div class="doctorDisplayDetail1">{{$rs.name}}</div>
+                    {{if $rs.is_general=='Y'}}
+                    <div class="doctorDisplayDetail2">全科</div>
+                    {{else}}
+                    <div class="doctorDisplayDetail2">{{$rs.specialist_id_str}}</div>
+                    {{/if}}
+                </a>
+            </div>
+            {{/foreach}}
+        </div>
+    </div>
+
+{{include  file="$smarty_root/footer.html" }}

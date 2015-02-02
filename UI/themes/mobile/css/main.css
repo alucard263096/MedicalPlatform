@@ -1,0 +1,695 @@
+﻿/*@import url('/MedicalPlatform/UIDEMO/themes/mobile/fonts/SourceHanSansCN-ExtraLight.otf');*/
+@font-face {
+    /* font-properties */
+    font-family: SourceHanSansCN-ExtraLight;
+    src: url("/MedicalPlatform/UIDEMO/themes/mobile/fonts/SourceHanSansCN-ExtraLight.otf");
+}
+
+body {
+    font-family: SourceHanSansCN-ExtraLight;
+}
+
+/*home index css  begin*******************************************************************************************************/
+.ui-page-theme-a a, html .ui-bar-a a, html .ui-body-a a, html body .ui-group-theme-a a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#header {
+    background-color: #44A5D3;
+    border: 0;
+    z-index: 9999;
+}
+
+    #header h1 {
+        color: #E0ECF5;
+        font-weight: normal;
+    }
+
+        #header h1 div {
+            color: #F4F9FB;
+        }
+
+    #header img {
+        width: 60px;
+        height: 60px;
+        left: 84%;
+        overflow: hidden;
+        position: absolute;
+        top: -8px;
+    }
+
+#content {
+    padding: 0;
+}
+
+#child_narvigation {
+    width: 100%;
+    float: left;
+    margin-top: -8px;
+}
+
+#child_nar {
+    width: 100%;
+    margin: 0px auto;
+    margin-left: 4%;
+}
+
+.childNar {
+    width: 27%;
+    text-align: center;
+    float: left;
+    padding: 2%;
+}
+
+.childNarIcon {
+    padding: 0;
+}
+
+.childNarImg {
+    width: 70%;
+    height: auto;
+}
+
+.childNarText {
+    font-size: 0.6em;
+    color: #989897;
+    margin-top: -5px;
+}
+
+.searchMore {
+    width: 100%;
+    background-color: #DBDBDC;
+    height: 25px;
+    float: left;
+}
+
+.searchMoreText1 {
+    font-size: 0.9em;
+    color: #636262;
+    float: left;
+    margin-left: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.searchMoreText2 {
+    font-size: 0.7em;
+    color: #636262;
+    float: right;
+    margin-right: 6%;
+    font-weight: bold;
+    margin-top: 7px;
+}
+
+#vaccineDisplay {
+    width: 100%;
+    padding: 10px;
+    float: left;
+    padding-bottom: 0;
+}
+
+#vaccineDisplayRight {
+    float: left;
+    width: 45%;
+    margin-left: 10px;
+}
+
+    #vaccineDisplayRight img {
+        width: 100%;
+        height: auto;
+        right: 20px;
+    }
+
+#vaccineDisplayLeft {
+    float: left;
+    width: 48%;
+    right: 10px;
+    border-left: 0px solid gainsboro;
+    margin-left: 10px;
+}
+
+#vaccineDisplayLeft1 {
+    min-height: 80px;
+    border-bottom: 0px solid gainsboro;
+    width: 100%;
+}
+
+    #vaccineDisplayLeft1 a {
+        margin-left: 10%;
+        float: left;
+        width: 80%;
+    }
+
+#leftTitle, #leftTitle2 {
+    width: 100%;
+}
+
+    #leftTitle1 span, #leftTitle2 span {
+        color: #585453;
+        font-size: 0.6em;
+        display: block;
+        overflow: hidden;
+        height: 13px;
+    }
+
+.displayDetail {
+    float: left;
+    width: 100%;
+    margin-top: 3px;
+}
+
+.displayDetailLeft {
+    float: left;
+    width: 40%;
+}
+
+.displayDetailLeft1 {
+    font-size: 0.5em;
+    font-weight: normal;
+    color: #8E8E8E;
+    display: block;
+}
+
+.displayDetailLeft2 {
+    font-size: 0.5em;
+    font-weight: normal;
+    color: #EE7F48;
+    display: block;
+}
+
+.displayDetailRight {
+    float: left;
+    width: 60%;
+}
+
+#vaccineDisplayLeft1 img, #vaccineDisplayLeft2 img {
+    width: 70%;
+    height: auto;
+    margin-right: 10%;
+    float: right;
+}
+
+#vaccineDisplayLeft2 {
+    min-height: 80px;
+    width: 100%;
+}
+
+    #vaccineDisplayLeft2 a {
+        margin-left: 10%;
+        float: left;
+        width: 80%;
+    }
+
+#doctorDispaly {
+    width: 100%;
+    padding: 5px;
+    float: left;
+}
+
+#doctorDispalyContent {
+    width: 100%;
+    margin: 0px auto;
+    float: left;
+}
+
+    #doctorDispalyContent img {
+        width: 70%;
+        height: auto;
+    }
+
+.doctorDisplayDetail {
+    width: 20.3%;
+    text-align: center;
+    float: left;
+    padding: 2%;
+}
+
+.doctorDisplayDetail1 {
+    font-size: 0.6em;
+    color: #676463;
+}
+
+.doctorDisplayDetail2 {
+    font-size: 0.6em;
+    color: #9D9D9D;
+}
+
+#footer ul li a {
+    border: 0px;
+}
+
+/*.sprite_1 {
+    background: url('/MedicalPlatform/UIDEMO/themes/mobile/css/images/icons.png') no-repeat -408px -430px;
+    width: 149px;
+    height: 115px;
+    zoom: 0.29;
+    -moz-transform: scale(0.29);
+    -moz-transform-origin: 0 0;
+}
+
+.sprite_2 {
+    background: url('/MedicalPlatform/UIDEMO/themes/mobile/css/images/icons.png') no-repeat 36.485% 9.109%;
+    width: 277px;
+    height: 276px;
+    -moz-transform: scale(0.29);
+    -moz-transform-origin: 0 0;
+}
+
+.myhome {
+    background: url('/MedicalPlatform/UIDEMO/themes/mobile/css/images/未标题-1-06.png') no-repeat;
+}*/
+
+/*home page index css  end*******************************************************************************************************/
+
+
+/*vaccine index css  begin*******************************************************************************************************/
+.vaccineChild {
+    width: 20%;
+}
+
+.vaccineNar {
+    margin-left: 0;
+}
+
+.vaccineList {
+    float: left;
+    padding: 0;
+    width: 100%;
+}
+
+.ui-listview > .ui-li-has-thumb > .ui-btn {
+    border: 0;
+    background: none;
+    /*margin-right: 3%;*/
+}
+
+.ui-shadow {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.vaccineContent {
+    width: 94%;
+    margin-left: 6%;
+}
+
+.ui-content .ui-listview-inset, .ui-panel-inner > .ui-listview-inset {
+    margin-top: 2%;
+    margin-right: 4%;
+}
+
+.vaccineMenus {
+    position: absolute;
+    background: white;
+    z-index: 9999;
+}
+
+.menuMainText {
+    line-height: 45px;
+    margin-left: 8%;
+}
+
+.menuSubText {
+    display: block;
+    /*margin-left: 4%;*/
+}
+
+#cover {
+    background: gray;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    position: absolute;
+    opacity: 0.5;
+}
+
+#menu {
+    width: 100%;
+    float: left;
+}
+
+.childMainMenu {
+    width: 50%;
+    float: left;
+    background: #F0F0F0;
+    height: 250px;
+    OVERFLOW-X: hidden;
+}
+
+.childSubMenu {
+    width: 50%;
+    float: left;
+    background: white;
+}
+
+.searchMoreText1_vaccine {
+    margin-left: 6%;
+}
+
+.vaccineDetails {
+    border: 0;
+    float: left;
+    width: 100%;
+    margin-top: 4%;
+}
+
+.vaccineDetailsImg {
+    border: 0;
+    float: left;
+    width: 25%;
+}
+
+    .vaccineDetailsImg img {
+        width: 100%;
+        height: auto;
+    }
+
+.vaccineDetailsText {
+    border: 0;
+    float: left;
+    width: 42%;
+    line-height: 18px;
+    margin-left: 5%;
+}
+
+.vaccineDetailsText1 {
+    font-size: 0.9em;
+    color: #403C3B;
+    font-weight: bold;
+}
+
+.vaccineDetailsText2 {
+    font-size: 0.7em;
+    color: #616060;
+    margin-top: 1%;
+}
+
+.vaccineDetailsText3 {
+    font-size: 0.7em;
+    color: #9A9A9A;
+}
+
+.vaccineDetailsText4 {
+    font-size: 0.5em;
+    color: #616060;
+}
+
+.vaccineDetailsText5 {
+    color: #42A4D3;
+    font-size: 0.7em;
+}
+
+.vaccineNum {
+    border: 0;
+    float: left;
+    width: 18%;
+    margin-left: 10%;
+}
+
+.vaccineNumUp {
+    border: 0;
+    margin-top: 20%;
+}
+
+    .vaccineNumUp img {
+        width: 30%;
+        height: auto;
+        float: right;
+        margin-right: 20%;
+    }
+
+.vaccineNumDown {
+    font-size: 0.5em;
+    color: #8e8e8e;
+    margin-top: 50%;
+    float: right;
+    margin-right: 20%;
+}
+/*vaccine index css  end*******************************************************************************************************/
+
+
+
+/*vaccine details begin********************************************************************************************************/
+.divCenter {
+    /* Firefox */
+    display: -moz-box;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+    /* Safari, Chrome, and Opera */
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    /* W3C */
+    display: box;
+    box-pack: center;
+    box-align: center;
+}
+
+.textContainer {
+    width: 100%;
+}
+
+.divCenterTextContent {
+    width: 33%;
+}
+
+.divCenterTextContent_text1 {
+    font-size: 0.6em;
+    
+}
+
+.divCenterTextContent_text2 {
+    font-size: 0.9em;
+    color: #44A5D3;
+}
+
+.divCenterTextContent2 {
+    width: 33%;
+}
+
+#freeBook {
+    border-radius: 7px;
+    height: 33px;
+    width: 100px;
+    padding: 3px;
+    background-color: #44A5D3;
+}
+
+    #freeBook span {
+        color: white;
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+
+.introduceContent {
+    width: 100%;
+}
+
+.introduceContentTitle {
+    border-top: 1px solid #E3E3E4;
+    border-bottom: 1px solid #E3E3E4;
+    width: 100%;
+    padding: 10px;
+}
+
+    .introduceContentTitle span {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+.introduceContentDetial {
+    width: 100%;
+    border-bottom: 1px solid #E3E3E4;
+    padding: 20px;
+}
+
+.introduceContentDetialTitle {
+    width: 100%;
+    float: left;
+    padding: 5px;
+}
+
+    .introduceContentDetialTitle img {
+        width: 50px;
+        float: left;
+        margin-left: -20px;
+        margin-top: -16px;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    .introduceContentDetialTitle span {
+        width: 100%;
+        margin-left: 18px;
+        font-size: 0.9em;
+    }
+
+.introduceContentDetialText {
+    margin-right: 10%;
+    font-size: 0.7em;
+}
+
+.introduceContentBorder {
+    border-bottom: 1px solid #E3E3E4;
+    padding: 20px;
+}
+
+.searchMoreText1DetailsImg {
+    width: 50px;
+    float: left;
+    margin-left: -20px;
+    margin-top: -16px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.searchMoreText1DetailsSpan {
+    width: 100%;
+    margin-left: 18px;
+    font-size: 0.9em;
+}
+
+.searchMoreText2DetailsImg {
+height: 10px; float: left; margin-left: -15px; overflow: hidden; position: absolute;
+}
+
+.vaccubeWay {
+    width: 100%; margin-left: 35px;
+}
+
+.vaccubeWayContent {
+    width: 100%; padding: 10px; font-size: 0.7em; line-height: 20px;
+}
+
+.vaccubeWayContentText1 {
+width: 50%; float: left;}
+
+.vaccubeWayContentText2 {
+width: 30%; float: left; margin-left: 20%;}
+
+
+.searchMoreMargin {
+    margin-top: 10px;
+}
+
+.vaccineNotice {
+    width: 90%; padding: 20px; font-size: 0.7em; margin-top: 40px;
+}
+/*vaccine details end********************************************************************************************************/
+
+
+/*start begin*/
+.star_bg {
+    width: 120px;
+    height: 20px;
+    background: url('/MedicalPlatform/UIDEMO/themes/mobile/img/star.png') repeat-x;
+    position: relative;
+    overflow: hidden;
+}
+
+.star {
+    height: 100%;
+    width: 24px;
+    line-height: 6em;
+    position: absolute;
+    z-index: 3;
+}
+
+    .star:hover {
+        background: url('/MedicalPlatform/UIDEMO/themes/mobile/img/star.png') repeat-x 0 -20px!important;
+        left: 0;
+        z-index: 2;
+    }
+
+.star_1 {
+    left: 0;
+}
+
+.star_2 {
+    left: 24px;
+}
+
+.star_3 {
+    left: 48px;
+}
+
+.star_4 {
+    left: 72px;
+}
+
+.star_5 {
+    left: 96px;
+}
+
+.star_1:hover {
+    width: 24px;
+}
+
+.star_2:hover {
+    width: 48px;
+}
+
+.star_3:hover {
+    width: 72px;
+}
+
+.star_4:hover {
+    width: 96px;
+}
+
+.star_5:hover {
+    width: 120px;
+}
+
+label {
+    display: block;
+    _display: inline;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* 单选按钮 */
+.score {
+    position: absolute;
+    clip: rect(0 0 0 0);
+}
+
+    .score:checked + .star {
+        background: url('/MedicalPlatform/UIDEMO/themes/mobile/img/star.png') repeat-x 0 -20px;
+        left: 0;
+        z-index: 1;
+    }
+
+.score_1:checked ~ .star_1 {
+    width: 24px;
+}
+
+.score_2:checked ~ .star_2 {
+    width: 48px;
+}
+
+.score_3:checked ~ .star_3 {
+    width: 72px;
+}
+
+.score_4:checked ~ .star_4 {
+    width: 96px;
+}
+
+.score_5:checked ~ .star_5 {
+    width: 120px;
+}
+
+.star_bg:hover .star {
+    background-image: none;
+}
+
+/* for IE6-IE8 JS 交互 */
+.star_checked {
+    background: url('/MedicalPlatform/UIDEMO/themes/mobile/img/star.png') repeat-x 0 -20px;
+    left: 0;
+    z-index: 1;
+}
+/*start end*/
+

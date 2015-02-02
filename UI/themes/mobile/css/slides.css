@@ -1,0 +1,33 @@
+﻿.slidesjs-pagination {
+    margin: 6px 0 0;
+    list-style: none;
+    position: absolute;
+    top: 7%;
+    right: 10px;
+    z-index: 9998;
+}
+
+.slidesjs-pagination li {
+    float: left;
+    margin: 0 1px;
+}
+
+.slidesjs-pagination li a {
+    display: block;
+    width: 13px;
+    height: 0;
+    padding-top: 13px;
+    background-image: url(/MedicalPlatform/UIDEMO/themes/mobile/img/icons/pagination.png);
+    background-position: 0 0;
+    float: left;
+    overflow: hidden;
+}
+
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+    background-position: 0 -13px;
+}
+
+.slidesjs-pagination li a:hover {
+    background-position: 0 -26px;
+}
