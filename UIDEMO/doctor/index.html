@@ -14,15 +14,21 @@
     <link rel="apple-touch-icon" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-57x57.png" />
     <link rel="stylesheet" href="/MedicalPlatform/UIDEMO/themes/mobile/css/jquery.mobile-1.4.5.css" />
     <link href="/MedicalPlatform/UIDEMO/themes/mobile/css/main.css" rel="stylesheet" />
+    <link href="/MedicalPlatform/UIDEMO/plugin/raty/jquery.raty.css" rel="stylesheet" />
 
     <script src="/MedicalPlatform/UIDEMO/js/jquery-2.0.3.min.js"></script>
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/jquery.mobile-1.4.5.js"></script>
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/common.js"></script>
+    <script src="/MedicalPlatform/UIDEMO/plugin/raty/jquery.raty.js"></script>
     <!--<script src="https://rawgithub.com/arschmitz/jquery-mobile-nestedlists/master/jquery.mobile.nestedlists.js"></script>-->
     <script type="text/javascript">
         $(function () {
             initMenu();
             setVaccineDetailHeight("vaccineDetails", "vaccineNum");
+            //$("#homelink").click(function (e) {  e.preventDefault(); });
+            $('.divraty').each(function () {
+                $(this).raty();
+            });
         });
 
         function initMenu() {
@@ -72,8 +78,21 @@
                 $("#cover").css("display", "none");
             } else {
                 $("#menuPanel").css("display", "block");
+
                 openSubMenu(getFirstSubMenuName(id));
                 initFirstClickMenu(id);
+            }
+        }
+
+        function clickSingleMenu(id) {
+            if (($("#menuPanel").css("display") == "block" && isSameMenu(id)) || "undefined" == typeof (id) || id.length <= 0) {
+                $("#menuPanel").css("display", "none");
+                $("#cover").css("display", "none");
+            } else {
+                $("#menuPanel").css("display", "block");
+
+                //openSubMenu(getFirstSubMenuName(id));
+                //initFirstClickMenu(id);
             }
         }
 
@@ -97,7 +116,16 @@
             var heightValue = $("#" + parentId).height();
             $("#" + childId).height(heightValue);
         }
+
     </script>
+    <!--    <style type="text/css">
+        *:not(input):not(textarea) {
+            -webkit-user-select: none; /* disable selection/Copy of UIWebView */
+            -webkit-touch-callout: none;
+        } /* disable the IOS popup when long-press on a link */
+
+
+    </style>-->
 </head>
 <body>
     <div data-role="page">
@@ -116,7 +144,7 @@
                             <!--                            <div class="childNarIcon">
                                 <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccinechild.png">
                             </div>-->
-                            <div class="childNarText">全区</div>
+                            <div class="childNarText">医生专长</div>
                         </a>
                     </div>
                     <div class="childNar vaccineChild" style="width: 30%; padding: 1%;">
@@ -124,11 +152,11 @@
                             <!--                            <div class="childNarIcon">
                                 <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccineman.png">
                             </div>-->
-                            <div class="childNarText">筛选</div>
+                            <div class="childNarText">选择科室</div>
                         </a>
                     </div>
                     <div class="childNar vaccineChild" style="width: 30%; padding: 1%;">
-                        <a href="#" onclick="clickMenu('womanVaccineMenu')">
+                        <a href="#" onclick="clickSingleMenu('womanVaccineMenu')">
                             <!--                            <div class="childNarIcon">
                                 <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccinewoman.png">
                             </div>-->
@@ -144,96 +172,113 @@
                 <div id="menu" style="width: 100%; float: left;">
                     <div id="childVaccineMenu" style="width: 50%; float: left; background: #F0F0F0; height: 250px; OVERFLOW-X: hidden;">
                         <div onclick="openSubMenu('childVaccineSubMenu_1',this);">
-                            <span class="menuMainText">儿童1</span>
+                            <span class="menuMainText">妇科</span>
                         </div>
                         <div onclick="openSubMenu('childVaccineSubMenu_2',this);">
-                            <span class="menuMainText">儿童2</span>
+                            <span class="menuMainText">男科</span>
                         </div>
                         <div onclick="openSubMenu('childVaccineSubMenu_3',this);">
-                            <span class="menuMainText">儿童3</span>
+                            <span class="menuMainText">儿科</span>
                         </div>
                         <div onclick="openSubMenu('childVaccineSubMenu_3',this);">
-                            <span class="menuMainText">儿童3</span>
+                            <span class="menuMainText">骨科</span>
                         </div>
                         <div onclick="openSubMenu('childVaccineSubMenu_3',this);">
-                            <span class="menuMainText">儿童3</span>
+                            <span class="menuMainText">眼科</span>
                         </div>
                         <div onclick="openSubMenu('childVaccineSubMenu_3',this);">
-                            <span class="menuMainText">儿童3</span>
+                            <span class="menuMainText">内科</span>
                         </div>
                         <div onclick="openSubMenu('childVaccineSubMenu_3',this);">
-                            <span class="menuMainText">儿童3</span>
+                            <span class="menuMainText">外科</span>
                         </div>
                         <div onclick="openSubMenu('childVaccineSubMenu_3',this);">
-                            <span class="menuMainText">儿童3</span>
+                            <span class="menuMainText">耳鼻咽喉科</span>
                         </div>
                     </div>
 
                     <div id="manVaccineMenu" style="width: 50%; float: left; background: #F0F0F0;">
                         <div onclick="openSubMenu('manVaccineSubMenu_1',this);" style="">
-                            <span class="menuMainText">男1</span>
+                            <span class="menuMainText">妇科</span>
                         </div>
                         <div onclick="openSubMenu('manVaccineSubMenu_2',this);">
-                            <span class="menuMainText">男2</span>
+                            <span class="menuMainText">男科</span>
                         </div>
                         <div onclick="openSubMenu('manVaccineSubMenu_3',this);">
-                            <span class="menuMainText">男3</span>
+                            <span class="menuMainText">儿科</span>
+                        </div>
+                        <div onclick="openSubMenu('manVaccineSubMenu_3',this);">
+                            <span class="menuMainText">骨科</span>
+                        </div>
+                        <div onclick="openSubMenu('manVaccineSubMenu_3',this);">
+                            <span class="menuMainText">眼科</span>
+                        </div>
+                        <div onclick="openSubMenu('manVaccineSubMenu_3',this);">
+                            <span class="menuMainText">内科</span>
+                        </div>
+                        <div onclick="openSubMenu('manVaccineSubMenu_3',this);">
+                            <span class="menuMainText">外科</span>
+                        </div>
+                        <div onclick="openSubMenu('manVaccineSubMenu_3',this);">
+                            <span class="menuMainText">耳鼻咽喉科</span>
                         </div>
                     </div>
 
                     <div id="womanVaccineMenu" style="width: 50%; float: left; background: #F0F0F0;">
                         <div onclick="openSubMenu('womanVaccineSubMenu_1',this);" style="">
-                            <span class="menuMainText">女1</span>
+                            <span class="menuMainText">智能排序</span>
                         </div>
                         <div onclick="openSubMenu('womanVaccineSubMenu_2',this);">
-                            <span class="menuMainText">女2</span>
+                            <span class="menuMainText">三甲医院</span>
                         </div>
                         <div onclick="openSubMenu('womanVaccineSubMenu_3',this);">
-                            <span class="menuMainText">女3</span>
+                            <span class="menuMainText">评价最高</span>
                         </div>
                     </div>
 
                     <div id="childVaccineSubMenu_1" style="width: 50%; float: left; background: white;">
-                        <a class="menuMainText menuSubText" href="#">儿童sub1</a>
-                        <a class="menuMainText menuSubText" href="#">快餐</a>
-                        <a class="menuMainText menuSubText" href="#">饮料</a>
+                        <a class="menuMainText menuSubText" href="#">妇科sub</a>
+                        <a class="menuMainText menuSubText" href="#">妇科sub</a>
+                        <a class="menuMainText menuSubText" href="#">妇科sub</a>
                     </div>
                     <div id="childVaccineSubMenu_2" style="width: 50%; float: left; background: white;">
-                        <a class="menuMainText menuSubText" href="#">儿童sub2</a>
-                        <a class="menuMainText menuSubText" href="#">厨房</a>
-                        <a class="menuMainText menuSubText" href="#">日用</a>
+                        <a class="menuMainText menuSubText" href="#">男科sub</a>
+                        <a class="menuMainText menuSubText" href="#">男科sub</a>
+                        <a class="menuMainText menuSubText" href="#">男科sub</a>
                     </div>
                     <div id="childVaccineSubMenu_3" style="width: 50%; float: left; background: white;">
-                        <a class="menuMainText menuSubText" href="#">儿童sub3</a>
-                        <a class="menuMainText menuSubText" href="#">游泳</a>
-                        <a class="menuMainText menuSubText" href="#">羽毛球</a>
+                        <a class="menuMainText menuSubText" href="#">新生儿</a>
+                        <a class="menuMainText menuSubText" href="#">咳嗽发热</a>
+                        <a class="menuMainText menuSubText" href="#">小二肠胃</a>
+                        <a class="menuMainText menuSubText" href="#">小儿皮肤</a>
                     </div>
 
                     <div id="manVaccineSubMenu_1" style="width: 50%; float: left; background: white;">
-                        <a class="menuMainText menuSubText" href="#">男sub1</a>
-                        <a class="menuMainText menuSubText" href="#">快餐</a>
-                        <a class="menuMainText menuSubText" href="#">饮料</a>
+                        <a class="menuMainText menuSubText" href="#">妇科sub</a>
+                        <a class="menuMainText menuSubText" href="#">妇科sub</a>
+                        <a class="menuMainText menuSubText" href="#">妇科sub</a>
                     </div>
                     <div id="manVaccineSubMenu_2" style="width: 50%; float: left; background: white;">
-                        <a class="menuMainText menuSubText" href="#">男sub2</a>
-                        <a class="menuMainText menuSubText" href="#">厨房</a>
-                        <a class="menuMainText menuSubText" href="#">日用</a>
+                        <a class="menuMainText menuSubText" href="#">男科sub</a>
+                        <a class="menuMainText menuSubText" href="#">男科sub</a>
+                        <a class="menuMainText menuSubText" href="#">男科sub</a>
                     </div>
                     <div id="manVaccineSubMenu_3" style="width: 50%; float: left; background: white;">
-                        <a class="menuMainText menuSubText" href="#">男sub3</a>
-                        <a class="menuMainText menuSubText" href="#">游泳</a>
-                        <a class="menuMainText menuSubText" href="#">羽毛球</a>
+                        <a class="menuMainText menuSubText" href="#">新生儿</a>
+                        <a class="menuMainText menuSubText" href="#">咳嗽发热</a>
+                        <a class="menuMainText menuSubText" href="#">小二肠胃</a>
+                        <a class="menuMainText menuSubText" href="#">小儿皮肤</a>
                     </div>
 
                     <div id="womanVaccineSubMenu_1" style="width: 50%; float: left; background: white;">
-                        <a class="menuMainText menuSubText" href="#">女sub1</a>
-                        <a class="menuMainText menuSubText" href="#">快餐</a>
-                        <a class="menuMainText menuSubText" href="#">饮料</a>
+                        <a class="menuMainText menuSubText" href="#">外科sub</a>
+                        <a class="menuMainText menuSubText" href="#">外科sub</a>
+                        <a class="menuMainText menuSubText" href="#">外科sub</a>
                     </div>
                     <div id="womanVaccineSubMenu_2" style="width: 50%; float: left; background: white;">
-                        <a class="menuMainText menuSubText" href="#">女sub2</a>
-                        <a class="menuMainText menuSubText" href="#">厨房</a>
-                        <a class="menuMainText menuSubText" href="#">日用</a>
+                        <a class="menuMainText menuSubText" href="#">耳鼻咽喉科sub</a>
+                        <a class="menuMainText menuSubText" href="#">耳鼻咽喉科sub</a>
+                        <a class="menuMainText menuSubText" href="#">耳鼻咽喉科sub</a>
                     </div>
                     <div id="womanVaccineSubMenu_3" style="width: 50%; float: left; background: white;">
                         <a class="menuMainText menuSubText" href="#">女sub3</a>
@@ -247,116 +292,206 @@
 
             <div class="vaccineList">
                 <div class="vaccineContent">
-                    <div id="vaccineDetails" style="border: 0; float: left; width: 100%; margin-top: 4%;">
+                    <div id="vaccineDetails" style="border: 0; float: left; width: 100%; margin-top: 4%; border-bottom: 1px solid #E7E7E8;">
                         <div style="border: 0; float: left; width: 25%;">
                             <div>
                                 <img style="width: 100%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/doc_1.png" />
                             </div>
-                            <div style="font-size: 0.6em; color: #616060;">
+                            <div style="font-size: 0.6em; color: #E95616;" class="divCenter">
                                 <span>总和评价: 4.8</span>
                             </div>
-                            <div style="font-size: 0.5em; color: #9A9A9A;">
+                            <div style="font-size: 0.5em; /*color: #9A9A9A; */" class="divCenter">
                                 <span>医术:4.5 服务5</span>
                             </div>
                         </div>
                         <div style="border: 0; float: left; width: 70%; line-height: 18px; margin-left: 5%;">
-                            <div style="font-size: 0.9em; color: #403C3B;">
-                                <div>
+                            <div style="font-size: 0.9em; color: #403C3B; float: left; width: 100%;">
+                                <div style="float: left; width: 45%">
                                     <span style="font-weight: bold;">冰医生</span>
-                                    <span style="">全科</span>
+                                    <span style="margin-left: 10px;">全科</span>
                                 </div>
-                                <div id="starBg" class="star_bg" data-role="none">
+                                <div id="divraty" class="divraty" style="float: left; width: 50%;"></div>
+                                <!--                                <div id="starBg" class="star_bg" data-role="none">
                                     <input type="radio" id="starScore1" class="score score_1" value="1" name="score" data-role="none">
-                                    <a href="#starScore1" class="star star_1" title="差">
-                                        <label for="starScore1">差</label></a>
-                                    <input type="radio" id="starScore2" class="score score_2" value="2" name="score">
-                                    <a href="#starScore2" class="star star_2" title="较差">
-                                        <label for="starScore2">较差</label></a>
-                                    <input type="radio" id="starScore3" class="score score_3" value="3" name="score">
-                                    <a href="#starScore3" class="star star_3" title="普通">
-                                        <label for="starScore3">普通</label></a>
-                                    <input type="radio" id="starScore4" class="score score_4" value="4" name="score">
-                                    <a href="#starScore4" class="star star_4" title="较好">
-                                        <label for="starScore4">较好</label></a>
-                                    <input type="radio" id="starScore5" class="score score_5" value="5" name="score">
-                                    <a href="#starScore5" class="star star_5" title="好">
-                                        <label for="starScore5">好</label></a>
+                                    <a href="#starScore1" class="star star_1" title="差" data-role="none">
+                                        <label for="starScore1" data-role="none">差</label></a>
+                                    <input type="radio" id="starScore2" class="score score_2" value="2" name="score" data-role="none">
+                                    <a id="homelink" href="#starScore2" class="star star_2" title="较差" data-role="none">
+                                        <label for="starScore2" data-role="none">较差</label></a>
+                                    <input type="radio" id="starScore3" class="score score_3" value="3" name="score" data-role="none">
+                                    <a href="#starScore3" class="star star_3" title="普通" data-role="none">
+                                        <label for="starScore3" data-role="none">普通</label></a>
+                                    <input type="radio" id="starScore4" class="score score_4" value="4" name="score" data-role="none">
+                                    <a href="#starScore4" class="star star_4" title="较好" data-role="none">
+                                        <label for="starScore4" data-role="none">较好</label></a>
+                                    <input type="radio" id="starScore5" class="score score_5" value="5" name="score" data-role="none">
+                                    <a href="#starScore5" class="star star_5" title="好" data-role="none">
+                                        <label for="starScore5" data-role="none">好</label></a>
+                                </div>-->
+                            </div>
+                            <div style="font-size: 0.7em; /*color: #9A9A9A; */ margin-top: 3%; width: 100%; float: left;">
+                                <div style="float: left;">
+                                    <img style="float: left; margin-left: -20px; margin-top: -18px; overflow: hidden; position: absolute; width: 50px;"
+                                        src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/location.png" />
+                                </div>
+                                <div style="float: left; margin-left: 15px; width: 100%;">
+                                    <div style="float: left; width: 70%;">
+                                        <span style="float: left;">香港岛数码港</span>
+                                    </div>
+                                    <div style="float: left; width: 20%; margin-left: 10%;">
+                                        <!--<span style="float:left;">></span>-->
+                                        <img style="width: 30%; height: auto; float: left;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+
+                                    </div>
                                 </div>
                             </div>
-                            <div style="font-size: 0.7em; color: #9A9A9A; margin-top: 3%;">
-                                <span>香港岛数码港</span>
+                            <div style="font-size: 0.7em; /*color: #9A9A9A; */ margin-top: 3%; float: left; width: 100%;">
+                                <div style="float: left; width: 40%;">
+                                    <img style="float: left; margin-left: -20px; margin-top: -18px; overflow: hidden; position: absolute; width: 50px;"
+                                        src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/location.png" />
+                                </div>
+                                <div style="float: left; margin-left: 15px; width: 100%;">
+                                    <div style="float: left; width: 70%;">
+                                        <span style="float: left;">香港岛数码港</span>
+                                    </div>
+                                    <div style="float: left; width: 20%; margin-left: 10%;">
+                                        <!--<span style="float:left;">></span>-->
+                                        <img style="width: 30%; height: auto; float: left;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                                    </div>
+                                </div>
                             </div>
-                            <div style="font-size: 0.7em; color: #9A9A9A;">
-                                <span>香港岛铜锣湾</span>
-                            </div>
-                            <div style="font-size: 0.6em;">
-                                <span style="border-bottom: 1px solid #9A9A9A;">擅长肾脏病以及血液净化治疗</span><br>
-                                <span style="font-size: 0.5em;">图文咨询:15元</span>
-                                <span style="font-size: 0.5em;">电话咨询:15元</span>
+                            <div style="width: 100%;">
+                                <span style="font-size: 0.6em; /*color: #9A9A9A; */">擅长肾脏病以及血液净化治疗</span><br>
+                                <div style="border-top: 1px solid #E7E7E8; /*color: #9A9A9A; */ margin-top: 5px;">
+                                    <span style="font-size: 0.5em;">图文咨询:15元</span>
+                                    <span style="font-size: 0.5em;">电话咨询:15元</span>
+                                </div>
+
                             </div>
                         </div>
                     </div>
 
-                    <div id="Div1" style="border: 0; float: left; width: 100%;">
-                        <a href="details.html">
-                            <div style="border: 0; float: left; width: 25%;">
+                    <div id="Div1" style="border: 0; float: left; width: 100%; margin-top: 4%; border-bottom: 1px solid #E7E7E8;">
+                        <div style="border: 0; float: left; width: 25%;">
+                            <div>
                                 <img style="width: 100%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/doc_2.png" />
                             </div>
-                            <div style="border: 0; float: left; width: 42%; line-height: 18px; margin-left: 5%;">
-                                <div style="font-size: 0.9em; color: #403C3B; font-weight: bold;">
-                                    <span>2合一疫苗</span>
-                                </div>
-                                <div style="font-size: 0.7em; color: #616060; margin-top: 1%;">
-                                    <span>[预防]</span>
-                                </div>
-                                <div style="font-size: 0.7em; color: #9A9A9A;">
-                                    <span>20岁以上</span>
-                                </div>
-                                <div style="font-size: 0.7em; color: #616060;">
-                                    <span style="font-size: 0.6em">参考价:</span> <span style="color: #42A4D3;">3600~3800</span>
-                                </div>
+                            <div style="font-size: 0.6em; color: #E95616;" class="divCenter">
+                                <span>总和评价: 4.8</span>
                             </div>
-                            <div id="Div2" style="border: 0; float: left; width: 18%; margin-left: 10%;">
-                                <div style="border: 0; margin-top: 20%;">
-                                    <img style="width: 30%; height: auto; float: right; margin-right: 20%;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
-                                </div>
-                                <div style="font-size: 0.5em; color: #8e8e8e; margin-top: 50%; float: right; margin-right: 20%;">
-                                    <span>已预约: 276</span>
-                                </div>
+                            <div style="font-size: 0.5em; /*color: #9A9A9A; */" class="divCenter">
+                                <span>医术:4.5 服务5</span>
                             </div>
-                        </a>
+                        </div>
+                        <div style="border: 0; float: left; width: 70%; line-height: 18px; margin-left: 5%;">
+                            <div style="font-size: 0.9em; color: #403C3B; float: left; width: 100%;">
+                                <div style="float: left; width: 45%">
+                                    <span style="font-weight: bold;">冰医生</span>
+                                    <span style="margin-left: 10px;">全科</span>
+                                </div>
+                                <div class="divraty" style="float: left; width: 50%;"></div>
+                            </div>
+                            <div style="font-size: 0.7em; /*color: #9A9A9A; */ margin-top: 3%; width: 100%; float: left;">
+                                <div style="float: left;">
+                                    <img style="float: left; margin-left: -20px; margin-top: -18px; overflow: hidden; position: absolute; width: 50px;"
+                                        src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/location.png" />
+                                </div>
+                                <div style="float: left; margin-left: 15px; width: 100%;">
+                                    <div style="float: left; width: 70%;">
+                                        <span style="float: left;">香港岛数码港</span>
+                                    </div>
+                                    <div style="float: left; width: 20%; margin-left: 10%;">
+                                        <!--<span style="float:left;">></span>-->
+                                        <img style="width: 30%; height: auto; float: left;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
 
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="font-size: 0.7em; /*color: #9A9A9A; */ margin-top: 3%; float: left; width: 100%;">
+                                <div style="float: left; width: 40%;">
+                                    <img style="float: left; margin-left: -20px; margin-top: -18px; overflow: hidden; position: absolute; width: 50px;"
+                                        src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/location.png" />
+                                </div>
+                                <div style="float: left; margin-left: 15px; width: 100%;">
+                                    <div style="float: left; width: 70%;">
+                                        <span style="float: left;">香港岛数码港</span>
+                                    </div>
+                                    <div style="float: left; width: 20%; margin-left: 10%;">
+                                        <!--<span style="float:left;">></span>-->
+                                        <img style="width: 30%; height: auto; float: left;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 100%;">
+                                <span style="font-size: 0.6em; /*color: #9A9A9A; */">擅长肾脏病以及血液净化治疗</span><br>
+                                <div style="border-top: 1px solid #E7E7E8; /*color: #9A9A9A; */ margin-top: 5px;">
+                                    <span style="font-size: 0.5em;">图文咨询:15元</span>
+                                    <span style="font-size: 0.5em;">电话咨询:15元</span>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-
-                    <div id="Div3" style="border: 0; float: left; width: 100%;">
-                        <a href="details.html">
-                            <div style="border: 0; float: left; width: 25%;">
+                    <div id="Div3" style="border: 0; float: left; width: 100%; margin-top: 4%; border-bottom: 1px solid #E7E7E8;">
+                        <div style="border: 0; float: left; width: 25%;">
+                            <div>
                                 <img style="width: 100%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/doc_3.png" />
                             </div>
-                            <div style="border: 0; float: left; width: 42%; line-height: 18px; margin-left: 5%;">
-                                <div style="font-size: 0.9em; color: #403C3B; font-weight: bold;">
-                                    <span>2合一疫苗</span>
-                                </div>
-                                <div style="font-size: 0.7em; color: #616060; margin-top: 1%;">
-                                    <span>[预防]</span>
-                                </div>
-                                <div style="font-size: 0.7em; color: #9A9A9A;">
-                                    <span>20岁以上</span>
-                                </div>
-                                <div style="font-size: 0.7em; color: #616060;">
-                                    <span style="font-size: 0.6em">参考价:</span> <span style="color: #42A4D3;">3600~3800</span>
-                                </div>
+                            <div style="font-size: 0.6em; color: #E95616;" class="divCenter">
+                                <span>总和评价: 4.8</span>
                             </div>
-                            <div id="Div4" style="border: 0; float: left; width: 18%; margin-left: 10%;">
-                                <div style="border: 0; margin-top: 20%;">
-                                    <img style="width: 30%; height: auto; float: right; margin-right: 20%;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
-                                </div>
-                                <div style="font-size: 0.5em; color: #8e8e8e; margin-top: 50%; float: right; margin-right: 20%;">
-                                    <span>已预约: 276</span>
-                                </div>
+                            <div style="font-size: 0.5em; /*color: #9A9A9A; */" class="divCenter">
+                                <span>医术:4.5 服务5</span>
                             </div>
-                        </a>
+                        </div>
+                        <div style="border: 0; float: left; width: 70%; line-height: 18px; margin-left: 5%;">
+                            <div style="font-size: 0.9em; color: #403C3B; float: left; width: 100%;">
+                                <div style="float: left; width: 45%">
+                                    <span style="font-weight: bold;">冰医生</span>
+                                    <span style="margin-left: 10px;">全科</span>
+                                </div>
+                                <div class="divraty" style="float: left; width: 50%;"></div>
+                            </div>
+                            <div style="font-size: 0.7em; /*color: #9A9A9A; */ margin-top: 3%; width: 100%; float: left;">
+                                <div style="float: left;">
+                                    <img style="float: left; margin-left: -20px; margin-top: -18px; overflow: hidden; position: absolute; width: 50px;"
+                                        src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/location.png" />
+                                </div>
+                                <div style="float: left; margin-left: 15px; width: 100%;">
+                                    <div style="float: left; width: 70%;">
+                                        <span style="float: left;">香港岛数码港</span>
+                                    </div>
+                                    <div style="float: left; width: 20%; margin-left: 10%;">
+                                        <!--<span style="float:left;">></span>-->
+                                        <img style="width: 30%; height: auto; float: left;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
 
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="font-size: 0.7em; /*color: #9A9A9A; */ margin-top: 3%; float: left; width: 100%;">
+                                <div style="float: left; width: 40%;">
+                                    <img style="float: left; margin-left: -20px; margin-top: -18px; overflow: hidden; position: absolute; width: 50px;"
+                                        src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/location.png" />
+                                </div>
+                                <div style="float: left; margin-left: 15px; width: 100%;">
+                                    <div style="float: left; width: 70%;">
+                                        <span style="float: left;">香港岛数码港</span>
+                                    </div>
+                                    <div style="float: left; width: 20%; margin-left: 10%;">
+                                        <!--<span style="float:left;">></span>-->
+                                        <img style="width: 30%; height: auto; float: left;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 100%;">
+                                <span style="font-size: 0.6em; /*color: #9A9A9A; */">擅长肾脏病以及血液净化治疗</span><br>
+                                <div style="border-top: 1px solid #E7E7E8; /*color: #9A9A9A; */ margin-top: 5px;">
+                                    <span style="font-size: 0.5em;">图文咨询:15元</span>
+                                    <span style="font-size: 0.5em;">电话咨询:15元</span>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
 
