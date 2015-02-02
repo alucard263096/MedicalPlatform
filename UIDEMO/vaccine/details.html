@@ -21,22 +21,8 @@
 
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/jquery.slides.js"></script>
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/common.js"></script>
+    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/vaccine_detail.js"></script>
 
-    <script type="text/javascript">
-        $(function () {
-            $("#home-slides").slidesjs({
-                navigation: false,
-            });
-        });
-
-        function displayDetails(id) {
-            if ($("#" + id).css("display") == "none" || "undefined" == typeof (id) || id.length <= 0) {
-                $("#" + id).css("display", "block");
-            } else {
-                $("#" + id).css("display", "none");
-            }
-        }
-    </script>
 
 </head>
 <body>
@@ -45,7 +31,7 @@
             <h1>
                 <div>疫苗详情</div>
             </h1>
-           <!-- <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_comment.png">-->
+            <!-- <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_comment.png">-->
         </div>
 
         <div id="content" data-role="content">
@@ -56,49 +42,60 @@
                 <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/index_6.png">
             </div>
 
-            <div class="divCenter" style="width: 100%">
-                <div style="width: 33%;" class="divCenter">
-                    <span style="font-size: 0.6em;">参考价: </span>
-                    <span style="font-size: 0.9em; color: #44A5D3;">3600</span>
+            <div class="divCenter textContainer" style="">
+                <div style="" class="divCenterTextContent">
+                    <span style="" class="divCenterTextContent_text1">参考价: </span>
+                    <span style="" class="divCenterTextContent_text2">3600</span>
                 </div>
-                <div style="width: 33%;" class="divCenter">
-                    <span style="font-size: 0.6em;">标准价: 4000</span>
+                <div style="" class="divCenter divCenterTextContent">
+                    <span style="" class="divCenterTextContent_text1">标准价: 4000</span>
                 </div>
-                <div style="width: 33%;" class="divCenter">
-                    <button class="ui-btn ui-btn-inline" style="border-radius: 7px; height: 33px; width: 100px; padding: 3px; background-color: #44A5D3;">
-                        <span style="color: white; font-size: 0.9em; font-weight: normal;">免费预约</span>
+                <div style="" class="divCenter divCenterTextContent">
+                    <button class="ui-btn ui-btn-inline " style="" id="freeBook">
+                        <span style="">免费预约</span>
                     </button>
                 </div>
             </div>
 
-            <div style="width: 100%;">
-                <div style="border-top: 1px solid #E3E3E4; border-bottom: 1px solid #E3E3E4; width: 100%; padding: 10px;" class="divCenter">
-                    <span style="font-size: 1em; font-weight: bold;">HPV2合一疫苗之美国进口</span>
+            <div style="" class="introduceContent">
+                <div style="" class="divCenter introduceContentTitle">
+                    <span style="">HPV2合一疫苗之美国进口</span>
                 </div>
-                <div style="width: 100%; border-bottom: 1px solid #E3E3E4; padding: 20px;">
-                    <div style="width: 100%; float: left; padding: 5px;">
-                        <img style="width: 50px; float: left; margin-left: -20px; margin-top: -16px; overflow: hidden; position: absolute;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_introduce.png" />
-                        <span style="width: 100%; margin-left: 18px; font-size: 0.9em;">介绍</span>
+                <div style="" class="introduceContentDetial">
+                    <div style="" class="introduceContentDetialTitle">
+                        <img style="" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_introduce.png" />
+                        <span style="">介绍</span>
                     </div>
-                    <div style="margin-right: 10%;">
-                        <span style="font-size: 0.7em;">文件哦金卡是爱好咖啡机啊卡机和卡机和阿斯兰饭卡上交换空间奥赛康家居法萨芬爱生活爱好asfasf时候    
+                    <div style="" class="introduceContentDetialText">
+                        <span style="">文件哦金卡是爱好咖啡机啊卡机和卡机和阿斯兰饭卡上交换空间奥赛康家居法萨芬爱生活爱好asfasf时候    
                         </span>
                     </div>
                 </div>
             </div>
 
-            <div style="width: 100%; border-bottom: 1px solid #E3E3E4; padding: 20px;">
-                <div style="width: 100%; float: left; padding: 5px;">
-                    <img style="width: 50px; float: left; margin-left: -20px; margin-top: -16px; overflow: hidden; position: absolute;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_effect.png" />
-                    <span style="width: 100%; margin-left: 18px; font-size: 0.9em;">功效</span>
+            <div style="" class="introduceContent introduceContentBorder">
+                <div class="introduceContentDetialTitle">
+                    <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_effect.png" />
+                    <span>功效</span>
                 </div>
-                <div style="margin-right: 10%;">
-                    <span style="font-size: 0.7em;">文件哦金卡是爱好咖啡机啊卡机和卡机和阿斯兰饭卡上交换空间奥赛康家居法萨芬爱生活爱好asfasf时候    
+                <div class="introduceContentDetialText">
+                    <span>文件哦金卡是爱好咖啡机啊卡机和卡机和阿斯兰饭卡上交换空间奥赛康家居法萨芬爱生活爱好asfasf时候    
                     </span>
                 </div>
             </div>
 
-            <div style="width: 100%; border-bottom: 1px solid #E3E3E4; padding: 20px;">
+            <div class="introduceContent introduceContentBorder">
+                <div class="introduceContentDetialTitle">
+                    <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_people.png" />
+                    <span>适用人群</span>
+                </div>
+                <div class="introduceContentDetialText">
+                    <span>文件哦金卡是爱好咖啡机啊卡机和卡机和阿斯兰饭卡上交换空间奥赛康家居法萨芬爱生活爱好asfasf时候    
+                    </span>
+                </div>
+            </div>
+
+<!--                        <div style="width: 100%; border-bottom: 1px solid #E3E3E4; padding: 20px;">
                 <div style="width: 100%; float: left; padding: 5px;">
                     <img style="width: 50px; float: left; margin-left: -20px; margin-top: -16px; overflow: hidden; position: absolute;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_people.png" />
                     <span style="width: 100%; margin-left: 18px; font-size: 0.9em;">适用人群</span>
@@ -107,55 +104,55 @@
                     <span style="font-size: 0.7em;">文件哦金卡是爱好咖啡机啊卡机和卡机和阿斯兰饭卡上交换空间奥赛康家居法萨芬爱生活爱好asfasf时候    
                     </span>
                 </div>
-            </div>
+            </div>-->
         </div>
 
         <div class="searchMore" onclick="displayDetails('vaccine_way');">
             <div class="searchMoreText1">
-                <img style="width: 50px; float: left; margin-left: -20px; margin-top: -16px; overflow: hidden; position: absolute;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_way.png" />
-                <span style="width: 100%; margin-left: 18px; font-size: 0.9em;">接种方式</span>
+                <img class="searchMoreText1DetailsImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_way.png" />
+                <span style="" class="searchMoreText1DetailsSpan">接种方式</span>
             </div>
             <div class="searchMoreText2">
-                <img style="height: 10px; float: left; margin-left: -15px; overflow: hidden; position: absolute;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_display_arrow.png" />
+                <img style="" class="searchMoreText2DetailsImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_display_arrow.png" />
             </div>
         </div>
-        <div id="vaccine_way" style="width: 100%; margin-left: 35px;">
-            <div style="width: 100%; padding: 10px; font-size: 0.7em; line-height: 20px;">
-                <div style="width: 50%; float: left;">
+        <div id="vaccine_way" style="" class="vaccubeWay">
+            <div style="" class="vaccubeWayContent">
+                <div style="" class="vaccubeWayContentText1">
                     接种时间
                 </div>
-                <div style="width: 30%; float: left; margin-left: 20%;">
+                <div style="" class="vaccubeWayContentText2">
                     上午
                 </div>
             </div>
-            <div style="width: 100%; padding: 10px; font-size: 0.7em; line-height: 20px;">
-                <div style="width: 50%; float: left;">
+            <div style="" class="vaccubeWayContent">
+                <div style="" class="vaccubeWayContentText1">
                     接种时间
                 </div>
-                <div style="width: 30%; float: left; margin-left: 20%;">
+                <div style="" class="vaccubeWayContentText2">
                     上午
                 </div>
             </div>
-            <div style="width: 100%; padding: 10px; font-size: 0.7em; line-height: 20px;">
-                <div style="width: 50%; float: left;">
+            <div style="" class="vaccubeWayContent">
+                <div style="" class="vaccubeWayContentText1">
                     接种时间
                 </div>
-                <div style="width: 30%; float: left; margin-left: 20%;">
+                <div style="" class="vaccubeWayContentText2">
                     上午
                 </div>
             </div>
         </div>
 
-        <div class="searchMore" onclick="displayDetails('vaccine_notice');" style="margin-top: 10px;">
+        <div class="searchMore searchMoreMargin" onclick="displayDetails('vaccine_notice');" style="">
             <div class="searchMoreText1">
-                <img style="width: 50px; float: left; margin-left: -20px; margin-top: -16px; overflow: hidden; position: absolute;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_notice.png" />
-                <span style="width: 100%; margin-left: 18px; font-size: 0.9em;">注意事项</span>
+                <img class="searchMoreText1DetailsImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_notice.png" />
+                <span class="searchMoreText1DetailsSpan">注意事项</span>
             </div>
             <div class="searchMoreText2">
-                <img style="height: 10px; float: left; margin-left: -15px; overflow: hidden; position: absolute;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_display_arrow.png" />
+                <img class="searchMoreText2DetailsImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_display_arrow.png" />
             </div>
         </div>
-        <div id="vaccine_notice" style="width: 90%; padding: 20px; font-size: 0.7em; margin-top: 40px;">
+        <div id="vaccine_notice" style=" " class="vaccineNotice">
             <p>十岁以上儿童。十岁以上儿童。十岁以上儿童。十岁以上儿童。十岁以上儿童。十岁以上儿童。十岁以上儿童。</p>
             <p>十岁以上儿童。十岁以上儿童。十岁以上儿童。十岁以上儿童。十岁以上儿童。十岁以上儿童。十岁以上儿童。</p>
             <p>十岁以上儿童。十岁以上儿童。十岁以上儿童。十岁以上儿童。十岁以上儿童。十岁以上儿童。十岁以上儿童。</p>
