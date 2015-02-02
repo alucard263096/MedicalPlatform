@@ -69,7 +69,7 @@
     </field>
     <field>
       <name>接种次数</name>
-      <key>injection_time</key>
+      <key>injection_count</key>
       <type>longtext</type>
       <ismutillang>1</ismutillang>
       <notnull>1</notnull>
