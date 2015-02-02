@@ -78,7 +78,7 @@
 
 
         var topMenu;
-        function clickMenu(id,myself) {
+        function clickMenu(id, myself) {
             if (($("#menuPanel").css("display") == "block" && isSameMenu(id)) || "undefined" == typeof (id) || id.length <= 0) {
                 $("#menuPanel").css("display", "none");
                 $("#cover").css("display", "none");
@@ -91,7 +91,7 @@
         }
 
         function setMenuValue(myself) {
-            $($(topMenu), 'div').first().html("<div class='childNarText'>"+$(myself).text()+"</div>");
+            $($(topMenu), 'div').first().html("<div class='childNarText'>" + $(myself).text() + "</div>");
             //$($(topMenu), 'div').first().css("class", "childNarText");
             closeMenu();
         }
@@ -102,7 +102,7 @@
             closeMenu();
         }
 
-        function clickSingleMenu(id,myself) {
+        function clickSingleMenu(id, myself) {
             if (($("#menuPanel").css("display") == "block" && isSameMenu(id)) || "undefined" == typeof (id) || id.length <= 0) {
                 $("#menuPanel").css("display", "none");
                 $("#cover").css("display", "none");
@@ -113,7 +113,7 @@
                 //initFirstClickMenu(id);
 
 
-              
+
                 if (id.length <= 0) {
                     return;
                 }
@@ -122,7 +122,7 @@
                     $(this).css("display", "none");
                 });
 
-                $("#" +id+ " > div").each(function () {
+                $("#" + id + " > div").each(function () {
                     $(this).css("background", "none");
                 });
 
@@ -211,33 +211,91 @@
             <div id="menuPanel" class="vaccineList vaccineMenus" style="background: white; z-index: 9999;">
                 <div id="menu" style="width: 100%; float: left;">
                     <div id="childVaccineMenu" style="width: 50%; float: left; background: #F0F0F0; height: 250px; OVERFLOW-X: hidden;">
-                        <div onclick="openSubMenu('childVaccineSubMenu_1',this);">
-                            <span class="menuMainText">妇科</span>
+                        <div onclick="openSubMenu('childVaccineSubMenu_1',this);" style="float: left; width: 100%;" id="test">
+                            <div style="float: left; position: relative;">
+                                <img style="float: left; margin-left: 0px; margin-top: 6px; overflow: hidden; position: absolute; width: 30px;"
+                                    src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/gynecology.png" />
+                            </div>
+                            <div style="float: left; margin-left: 20px; width: 50%;">
+                                <span class="menuMainText">妇科</span>
+                            </div>
+                            <div style="float: left; margin-left: 0px; width: 30%;">
+                                <span class="menuMainText" style="font-size:0.5em;background-color:#C8C9C9;border-radius:20%;">250</span>
+                            </div>
                         </div>
-                        <div onclick="openSubMenu('childVaccineSubMenu_2',this);">
-                            <span class="menuMainText">男科</span>
+
+                        <div onclick="openSubMenu('childVaccineSubMenu_2',this);" style="float: left; width: 100%;" id="Div2">
+                            <div style="float: left; position: relative;">
+                                <img style="float: left; margin-left: 0px; margin-top: 6px; overflow: hidden; position: absolute; width: 30px;"
+                                    src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/andrology.png" />
+                            </div>
+                            <div style="float: left; margin-left: 15px; width: 100%;">
+                                <span class="menuMainText">男科</span>
+                            </div>
                         </div>
-                        <div onclick="openSubMenu('childVaccineSubMenu_3',this);">
-                            <span class="menuMainText">儿科</span>
+
+                        <div onclick="openSubMenu('childVaccineSubMenu_3',this);" style="float: left; width: 100%;" id="Div4">
+                            <div style="float: left; position: relative;">
+                                <img style="float: left; margin-left: 0px; margin-top: 6px; overflow: hidden; position: absolute; width: 30px;"
+                                    src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/pediatrics.png" />
+                            </div>
+                            <div style="float: left; margin-left: 15px; width: 100%;">
+                                <span class="menuMainText">儿科</span>
+                            </div>
                         </div>
-                        <div onclick="openSubMenu('childVaccineSubMenu_3',this);">
-                            <span class="menuMainText">骨科</span>
+
+                        <div onclick="openSubMenu('childVaccineSubMenu_3',this);" style="float: left; width: 100%;" id="Div5">
+                            <div style="float: left; position: relative;">
+                                <img style="float: left; margin-left: 0px; margin-top: 6px; overflow: hidden; position: absolute; width: 30px;"
+                                    src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/orthopedics.png" />
+                            </div>
+                            <div style="float: left; margin-left: 15px; width: 100%;">
+                                <span class="menuMainText">骨科</span>
+                            </div>
                         </div>
-                        <div onclick="openSubMenu('childVaccineSubMenu_3',this);">
-                            <span class="menuMainText">眼科</span>
+
+                        <div onclick="openSubMenu('childVaccineSubMenu_1',this);" style="float: left; width: 100%;" id="Div6">
+                            <div style="float: left; position: relative;">
+                                <img style="float: left; margin-left: 0px; margin-top: 6px; overflow: hidden; position: absolute; width: 30px;"
+                                    src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/ophthalmology.png" />
+                            </div>
+                            <div style="float: left; margin-left: 15px; width: 100%;">
+                                <span class="menuMainText">眼科</span>
+                            </div>
                         </div>
-                        <div onclick="openSubMenu('childVaccineSubMenu_3',this);">
-                            <span class="menuMainText">内科</span>
+
+                        <div onclick="openSubMenu('childVaccineSubMenu_1',this);" style="float: left; width: 100%;" id="Div7">
+                            <div style="float: left; position: relative;">
+                                <img style="float: left; margin-left: 0px; margin-top: 6px; overflow: hidden; position: absolute; width: 30px;"
+                                    src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/internal_medicine.png" />
+                            </div>
+                            <div style="float: left; margin-left: 15px; width: 100%;">
+                                <span class="menuMainText">内科</span>
+                            </div>
                         </div>
-                        <div onclick="openSubMenu('childVaccineSubMenu_3',this);">
-                            <span class="menuMainText">外科</span>
+
+                        <div onclick="openSubMenu('childVaccineSubMenu_1',this);" style="float: left; width: 100%;" id="Div8">
+                            <div style="float: left; position: relative;">
+                                <img style="float: left; margin-left: 0px; margin-top: 6px; overflow: hidden; position: absolute; width: 30px;"
+                                    src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/surgery.png" />
+                            </div>
+                            <div style="float: left; margin-left: 15px; width: 100%;">
+                                <span class="menuMainText">外科</span>
+                            </div>
                         </div>
-                        <div onclick="openSubMenu('childVaccineSubMenu_3',this);">
-                            <span class="menuMainText">耳鼻咽喉科</span>
+
+                        <div onclick="openSubMenu('childVaccineSubMenu_1',this);" style="float: left; width: 100%;" id="Div9">
+                            <div style="float: left; position: relative;">
+                                <img style="float: left; margin-left: 0px; margin-top: 6px; overflow: hidden; position: absolute; width: 30px;"
+                                    src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/ent_dept.png" />
+                            </div>
+                            <div style="float: left; margin-left: 15px; width: 100%;">
+                                <span class="menuMainText">耳鼻咽喉科</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div id="manVaccineMenu" style="width: 50%; float: left;  background: #F0F0F0; height: 250px; OVERFLOW-X: hidden;">
+                    <div id="manVaccineMenu" style="width: 50%; float: left; background: #F0F0F0; height: 250px; OVERFLOW-X: hidden;">
                         <div onclick="openSubMenu('manVaccineSubMenu_1',this);" style="">
                             <span class="menuMainText">妇科</span>
                         </div>
@@ -264,14 +322,14 @@
                         </div>
                     </div>
 
-                    <div id="womanVaccineMenu" style="width: 50%; float: left;  background: #F0F0F0; height: 250px; OVERFLOW-X: hidden;">
-                        <div  onclick="setSingleMenuValue(this)" style="">
+                    <div id="womanVaccineMenu" style="width: 50%; float: left; background: #F0F0F0; height: 250px; OVERFLOW-X: hidden;">
+                        <div onclick="setSingleMenuValue(this)" style="">
                             <span class="menuMainText">智能排序</span>
                         </div>
-                        <div  onclick="setSingleMenuValue(this)">
+                        <div onclick="setSingleMenuValue(this)">
                             <span class="menuMainText">三甲医院</span>
                         </div>
-                        <div  onclick="setSingleMenuValue(this)">
+                        <div onclick="setSingleMenuValue(this)">
                             <span class="menuMainText">评价最高</span>
                         </div>
                     </div>
@@ -310,7 +368,7 @@
                         <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">小儿皮肤</a>
                     </div>
 
-<!--                    <div id="womanVaccineSubMenu_1" style="width: 50%; float: left; background: white;">
+                    <!--                    <div id="womanVaccineSubMenu_1" style="width: 50%; float: left; background: white;">
                         <a class="menuMainText menuSubText" href="#">外科sub</a>
                         <a class="menuMainText menuSubText" href="#">外科sub</a>
                         <a class="menuMainText menuSubText" href="#">外科sub</a>
