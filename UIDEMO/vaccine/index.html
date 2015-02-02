@@ -19,85 +19,7 @@
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/jquery.mobile-1.4.5.js"></script>
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/common.js"></script>
     <!--<script src="https://rawgithub.com/arschmitz/jquery-mobile-nestedlists/master/jquery.mobile.nestedlists.js"></script>-->
-    <script type="text/javascript">
-        $(function () {
-            initMenu();
-            setVaccineDetailHeight("vaccineDetails", "vaccineNum");
-        });
-
-        function initMenu() {
-            $("#menuPanel").css("display", "none");
-            $("#cover").css("display", "none");
-            $("#menu > div").each(function () {
-                $(this).css("display", "none");
-            });
-        }
-
-        function openSubMenu(id, myself) {
-            if (id.length <= 0) {
-                return;
-            }
-
-            $("#menu > div").each(function () {
-                $(this).css("display", "none");
-            });
-
-            $("#" + getMainMenuName(id) + " > div").each(function () {
-                $(this).css("background", "none");
-            });
-
-            $("#" + id).css("display", "block");
-            $(myself).css("background", "white");
-            $("#" + getMainMenuName(id)).css("display", "block");
-            $("#menuPanel").css("margin-top", getMenuMarginTopHeight() + "px");
-            $("#cover").css("margin-top", getMenuMarginTopHeight() + "px");
-            $("#cover").css("display", "block");
-            $("#menu").css("display", "block");
-        }
-
-        function getFirstSubMenuName(id) {
-            var prevName = id.slice(0, id.length - 4);
-            return prevName + "SubMenu_1";
-        }
-
-        function getMainMenuName(id) {
-            var prevName = id.slice(0, id.length - 9);
-            return prevName + "Menu";
-        }
-
-
-        function clickMenu(id) {
-            if (($("#menuPanel").css("display") == "block" && isSameMenu(id)) || "undefined" == typeof (id) || id.length <= 0) {
-                $("#menuPanel").css("display", "none");
-                $("#cover").css("display", "none");
-            } else {
-                $("#menuPanel").css("display", "block");
-                openSubMenu(getFirstSubMenuName(id));
-                initFirstClickMenu(id);
-            }
-        }
-
-        var clickMenuId;
-        function isSameMenu(id) {
-            if (clickMenuId == id) {
-                return true;
-            }
-            clickMenuId = id;
-        }
-
-        function initFirstClickMenu(id) {
-            $("#" + id + " div").first().css("background", "white");
-        }
-
-        function getMenuMarginTopHeight() {
-            return $("#child_narvigation").height() - 8;
-        }
-
-        function setVaccineDetailHeight(parentId, childId) {
-            var heightValue = $("#" + parentId).height();
-            $("#" + childId).height(heightValue);
-        }
-    </script>
+    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/vaccine.js"></script>
 </head>
 <body>
     <div data-role="page">
@@ -146,11 +68,11 @@
                 </div>
             </div>
 
-            <div id="cover" onclick="clickMenu()" style="background: gray; width: 100%; height: 100%; z-index: 9998; position: absolute; opacity: 0.5;"></div>
+            <div id="cover" onclick="clickMenu()" ></div>
 
-            <div id="menuPanel" class="vaccineList vaccineMenus" style="background: white; z-index: 9999;">
-                <div id="menu" style="width: 100%; float: left;">
-                    <div id="childVaccineMenu" style="width: 50%; float: left; background: #F0F0F0; height: 250px; OVERFLOW-X: hidden;">
+            <div id="menuPanel" class="vaccineList vaccineMenus" >
+                <div id="menu" >
+                    <div id="childVaccineMenu"  class="childMainMenu">
                         <div onclick="openSubMenu('childVaccineSubMenu_1',this);">
                             <span class="menuMainText">儿童1</span>
                         </div>
@@ -177,8 +99,8 @@
                         </div>
                     </div>
 
-                    <div id="manVaccineMenu" style="width: 50%; float: left; background: #F0F0F0;">
-                        <div onclick="openSubMenu('manVaccineSubMenu_1',this);" style="">
+                    <div id="manVaccineMenu"  class="childMainMenu">
+                        <div onclick="openSubMenu('manVaccineSubMenu_1',this);" >
                             <span class="menuMainText">男1</span>
                         </div>
                         <div onclick="openSubMenu('manVaccineSubMenu_2',this);">
@@ -189,8 +111,8 @@
                         </div>
                     </div>
 
-                    <div id="womanVaccineMenu" style="width: 50%; float: left; background: #F0F0F0;">
-                        <div onclick="openSubMenu('womanVaccineSubMenu_1',this);" style="">
+                    <div id="womanVaccineMenu"  class="childMainMenu">
+                        <div onclick="openSubMenu('womanVaccineSubMenu_1',this);" >
                             <span class="menuMainText">女1</span>
                         </div>
                         <div onclick="openSubMenu('womanVaccineSubMenu_2',this);">
@@ -201,8 +123,8 @@
                         </div>
                     </div>
 
-                    <div id="oldManVaccineMenu" style="width: 50%; float: left; background: #F0F0F0;">
-                        <div onclick="openSubMenu('oldManVaccineSubMenu_1',this);" style="">
+                    <div id="oldManVaccineMenu" class="childMainMenu">
+                        <div onclick="openSubMenu('oldManVaccineSubMenu_1',this);" >
                             <span class="menuMainText">老1</span>
                         </div>
                         <div onclick="openSubMenu('oldManVaccineSubMenu_2',this);">
@@ -213,65 +135,65 @@
                         </div>
                     </div>
 
-                    <div id="childVaccineSubMenu_1" style="width: 50%; float: left; background: white;">
+                    <div id="childVaccineSubMenu_1"  class="childSubMenu">
                         <a class="menuMainText menuSubText" href="#">儿童sub1</a>
                         <a class="menuMainText menuSubText" href="#">快餐</a>
                         <a class="menuMainText menuSubText" href="#">饮料</a>
                     </div>
-                    <div id="childVaccineSubMenu_2" style="width: 50%; float: left; background: white;">
+                    <div id="childVaccineSubMenu_2" class="childSubMenu">
                         <a class="menuMainText menuSubText" href="#">儿童sub2</a>
                         <a class="menuMainText menuSubText" href="#">厨房</a>
                         <a class="menuMainText menuSubText" href="#">日用</a>
                     </div>
-                    <div id="childVaccineSubMenu_3" style="width: 50%; float: left; background: white;">
+                    <div id="childVaccineSubMenu_3" class="childSubMenu">
                         <a class="menuMainText menuSubText" href="#">儿童sub3</a>
                         <a class="menuMainText menuSubText" href="#">游泳</a>
                         <a class="menuMainText menuSubText" href="#">羽毛球</a>
                     </div>
 
-                    <div id="manVaccineSubMenu_1" style="width: 50%; float: left; background: white;">
+                    <div id="manVaccineSubMenu_1" class="childSubMenu">
                         <a class="menuMainText menuSubText" href="#">男sub1</a>
                         <a class="menuMainText menuSubText" href="#">快餐</a>
                         <a class="menuMainText menuSubText" href="#">饮料</a>
                     </div>
-                    <div id="manVaccineSubMenu_2" style="width: 50%; float: left; background: white;">
+                    <div id="manVaccineSubMenu_2" class="childSubMenu">
                         <a class="menuMainText menuSubText" href="#">男sub2</a>
                         <a class="menuMainText menuSubText" href="#">厨房</a>
                         <a class="menuMainText menuSubText" href="#">日用</a>
                     </div>
-                    <div id="manVaccineSubMenu_3" style="width: 50%; float: left; background: white;">
+                    <div id="manVaccineSubMenu_3" class="childSubMenu">
                         <a class="menuMainText menuSubText" href="#">男sub3</a>
                         <a class="menuMainText menuSubText" href="#">游泳</a>
                         <a class="menuMainText menuSubText" href="#">羽毛球</a>
                     </div>
 
-                    <div id="womanVaccineSubMenu_1" style="width: 50%; float: left; background: white;">
+                    <div id="womanVaccineSubMenu_1" class="childSubMenu">
                         <a class="menuMainText menuSubText" href="#">女sub1</a>
                         <a class="menuMainText menuSubText" href="#">快餐</a>
                         <a class="menuMainText menuSubText" href="#">饮料</a>
                     </div>
-                    <div id="womanVaccineSubMenu_2" style="width: 50%; float: left; background: white;">
+                    <div id="womanVaccineSubMenu_2" class="childSubMenu">
                         <a class="menuMainText menuSubText" href="#">女sub2</a>
                         <a class="menuMainText menuSubText" href="#">厨房</a>
                         <a class="menuMainText menuSubText" href="#">日用</a>
                     </div>
-                    <div id="womanVaccineSubMenu_3" style="width: 50%; float: left; background: white;">
+                    <div id="womanVaccineSubMenu_3" class="childSubMenu">
                         <a class="menuMainText menuSubText" href="#">女sub3</a>
                         <a class="menuMainText menuSubText" href="#">游泳</a>
                         <a class="menuMainText menuSubText" href="#">羽毛球</a>
                     </div>
 
-                    <div id="oldManVaccineSubMenu_1" style="width: 50%; float: left; background: white;">
+                    <div id="oldManVaccineSubMenu_1" class="childSubMenu">
                         <a class="menuMainText menuSubText" href="#">老sub1</a>
                         <a class="menuMainText menuSubText" href="#">快餐</a>
                         <a class="menuMainText menuSubText" href="#">饮料</a>
                     </div>
-                    <div id="oldManVaccineSubMenu_2" style="width: 50%; float: left; background: white;">
+                    <div id="oldManVaccineSubMenu_2" class="childSubMenu">
                         <a class="menuMainText menuSubText" href="#">老sub2</a>
                         <a class="menuMainText menuSubText" href="#">厨房</a>
                         <a class="menuMainText menuSubText" href="#">日用</a>
                     </div>
-                    <div id="oldManVaccineSubMenu_3" style="width: 50%; float: left; background: white;">
+                    <div id="oldManVaccineSubMenu_3" class="childSubMenu">
                         <a class="menuMainText menuSubText" href="#">老sub3</a>
                         <a class="menuMainText menuSubText" href="#">游泳</a>
                         <a class="menuMainText menuSubText" href="#">羽毛球</a>
@@ -284,134 +206,103 @@
 
 
             <div class="searchMore">
-                <div class="searchMoreText1" style="margin-left: 6%;">猜你在找</div>
+                <div class="searchMoreText1 searchMoreText1_vaccine" >猜你在找</div>
                 <div class="searchMoreText2">更多  ></div>
             </div>
             <div class="vaccineList">
                 <div class="vaccineContent">
-                    <div id="vaccineDetails" style="border: 0; float: left; width: 100%;margin-top: 4%;">
-                        <div style="border: 0; float: left; width: 25%;">
-                            <img style="width: 100%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview3.png" />
-                        </div>
-                        <div style="border: 0; float: left; width: 42%; line-height: 18px; margin-left: 5%;">
-                            <div style="font-size: 0.9em; color: #403C3B; font-weight: bold;">
-                                <span>2合一疫苗</span>
+                    <div id="vaccineDetails"  class="vaccineDetails">
+                        <a href="details.html">
+                            <div  class="vaccineDetailsImg">
+                                <img  src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview3.png" />
                             </div>
-                            <div style="font-size: 0.7em; color: #616060; margin-top: 1%;">
-                                <span>[预防]</span>
+                            <div  class="vaccineDetailsText">
+                                <div  class="vaccineDetailsText1">
+                                    <span>2合一疫苗</span>
+                                </div>
+                                <div  class="vaccineDetailsText2">
+                                    <span>[预防]</span>
+                                </div>
+                                <div  class="vaccineDetailsText3">
+                                    <span>20岁以上</span>
+                                </div>
+                                <div >
+                                    <span  class="vaccineDetailsText4">参考价:</span>
+                                    <span  class="vaccineDetailsText5">3600~3800</span>
+                                </div>
                             </div>
-                            <div style="font-size: 0.7em; color: #9A9A9A;">
-                                <span>20岁以上</span>
+                            <div id="vaccineNum"  class="vaccineNum">
+                                <div  class="vaccineNumUp">
+                                    <img  src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                                </div>
+                                <div  class="vaccineNumDown">
+                                    <span>已预约: 276</span>
+                                </div>
                             </div>
-                            <div style="font-size: 0.7em; color: #616060;">
-                                <span style="font-size: 0.6em">参考价:</span> <span style="color: #42A4D3;">3600~3800</span>
-                            </div>
-                        </div>
-                        <div id="vaccineNum" style="border: 0; float: left; width: 18%;margin-left: 10%;">
-                            <div style="border: 0; margin-top: 20%;">
-                                <img style="width: 30%; height: auto; float: right; margin-right: 20%;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
-                            </div>
-                            <div style="font-size: 0.5em; color: #8e8e8e; margin-top: 50%; float: right; margin-right: 20%;">
-                                <span>已预约: 276</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
 
-                    <div id="Div1" style="border: 0; float: left; width: 100%;">
-                        <div style="border: 0; float: left; width: 25%;">
-                            <img style="width: 100%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview4.png" />
-                        </div>
-                        <div style="border: 0; float: left; width: 42%; line-height: 18px; margin-left: 5%;">
-                            <div style="font-size: 0.9em; color: #403C3B; font-weight: bold;">
-                                <span>2合一疫苗</span>
+                    <div id="Div1"  class="vaccineDetails">
+                        <a href="details.html">
+                            <div  class="vaccineDetailsImg">
+                                <img  src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview4.png" />
                             </div>
-                            <div style="font-size: 0.7em; color: #616060; margin-top: 1%;">
-                                <span>[预防]</span>
+                            <div  class="vaccineDetailsText">
+                                <div  class="vaccineDetailsText1">
+                                    <span>2合一疫苗</span>
+                                </div>
+                                <div  class="vaccineDetailsText2">
+                                    <span>[预防]</span>
+                                </div>
+                                <div  class="vaccineDetailsText3">
+                                    <span>20岁以上</span>
+                                </div>
+                                <div >
+                                    <span  class="vaccineDetailsText4">参考价:</span>
+                                    <span  class="vaccineDetailsText5">3600~3800</span>
+                                </div>
                             </div>
-                            <div style="font-size: 0.7em; color: #9A9A9A;">
-                                <span>20岁以上</span>
+                            <div id="Div2"  class="vaccineNum">
+                                <div  class="vaccineNumUp">
+                                    <img  src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                                </div>
+                                <div  class="vaccineNumDown">
+                                    <span>已预约: 276</span>
+                                </div>
                             </div>
-                            <div style="font-size: 0.7em; color: #616060;">
-                                <span style="font-size: 0.6em">参考价:</span> <span style="color: #42A4D3;">3600~3800</span>
-                            </div>
-                        </div>
-                        <div id="Div2" style="border: 0; float: left; width: 18%;margin-left: 10%;">
-                            <div style="border: 0; margin-top: 20%;">
-                                <img style="width: 30%; height: auto; float: right; margin-right: 20%;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
-                            </div>
-                            <div style="font-size: 0.5em; color: #8e8e8e; margin-top: 50%; float: right; margin-right: 20%;">
-                                <span>已预约: 276</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
 
-                    <div id="Div3" style="border: 0; float: left; width: 100%;">
-                        <div style="border: 0; float: left; width: 25%;">
-                            <img style="width: 100%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview5.png" />
-                        </div>
-                        <div style="border: 0; float: left; width: 42%; line-height: 18px; margin-left: 5%;">
-                            <div style="font-size: 0.9em; color: #403C3B; font-weight: bold;">
-                                <span>2合一疫苗</span>
+                    <div id="Div3"  class="vaccineDetails">
+                        <a href="details.html">
+                            <div  class="vaccineDetailsImg">
+                                <img  src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview5.png" />
                             </div>
-                            <div style="font-size: 0.7em; color: #616060; margin-top: 1%;">
-                                <span>[预防]</span>
+                            <div  class="vaccineDetailsText">
+                                <div  class="vaccineDetailsText1">
+                                    <span>2合一疫苗</span>
+                                </div>
+                                <div  class="vaccineDetailsText2">
+                                    <span>[预防]</span>
+                                </div>
+                                <div  class="vaccineDetailsText3">
+                                    <span>20岁以上</span>
+                                </div>
+                                <div >
+                                    <span  class="vaccineDetailsText4">参考价:</span>
+                                    <span  class="vaccineDetailsText5">3600~3800</span>
+                                </div>
                             </div>
-                            <div style="font-size: 0.7em; color: #9A9A9A;">
-                                <span>20岁以上</span>
+                            <div id="Div4"  class="vaccineNum">
+                                <div  class="vaccineNumUp">
+                                    <img  src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                                </div>
+                                <div  class="vaccineNumDown">
+                                    <span>已预约: 276</span>
+                                </div>
                             </div>
-                            <div style="font-size: 0.7em; color: #616060;">
-                                <span style="font-size: 0.6em">参考价:</span> <span style="color: #42A4D3;">3600~3800</span>
-                            </div>
-                        </div>
-                        <div id="Div4" style="border: 0; float: left; width: 18%;margin-left: 10%;">
-                            <div style="border: 0; margin-top: 20%;">
-                                <img style="width: 30%; height: auto; float: right; margin-right: 20%;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
-                            </div>
-                            <div style="font-size: 0.5em; color: #8e8e8e; margin-top: 50%; float: right; margin-right: 20%;">
-                                <span>已预约: 276</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-
-                    <!--                    <ul id="vaccineListUl" data-role="listview" data-inset="true">
-                        <li>
-                            <a href="#">
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview3.png" />
-                                <div>test description</div>
-                                <div>test description</div>
-                                <div>test description</div>
-                                <div>test description</div>
-                            </a>
-                        </li>
-                        <li style="border: 0;">
-                            <a href="#">
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview4.png" />
-                                <h2>test title 1</h2>
-                                <p>test description</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview5.png" />
-                                <h2>test title 1</h2>
-                                <p>test description</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview3.png" />
-                                <h2>test title 1</h2>
-                                <p>test description</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview4.png" />
-                                <h2>test title 1</h2>
-                                <p>test description</p>
-                            </a>
-                        </li>
-                    </ul>-->
                 </div>
 
             </div>
