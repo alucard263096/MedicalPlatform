@@ -165,21 +165,10 @@
       <notnull>1</notnull>
     </field>
     <field>
-      <name>疫苗接种标准价格（HK$）</name>
-      <name_zh-cn>疫苗接种标准价格（HK$）</name_zh-cn>
-      <name_zh-hk>疫苗接种标准价格（HK$）</name_zh-hk>
-      <name_en-us>Standard Price（HK$）</name_en-us>
-      <key>standard_price</key>
-      <type>number</type>
-      <notnull>1</notnull>
-    </field>
-    <field>
-      <name>折扣（%）</name>
-      <name_zh-cn>折扣（%）</name_zh-cn>
-      <name_zh-hk>折扣（%）</name_zh-hk>
-      <name_en-us>Discount（%）</name_en-us>
-      <key>discount</key>
-      <type>number</type>
+      <name>参考价格</name>
+      <key>ref_price</key>
+      <ismutillang>1</ismutillang>
+      <type>longtext</type>
       <notnull>1</notnull>
     </field>
     <field>

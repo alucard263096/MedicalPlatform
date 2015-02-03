@@ -31,9 +31,9 @@
 			return $_SESSION[SESSIONNAME]["vaccine"][$SysLangCode]["category"];
 		}else{
 
-		$sql="select vc.id,vc.seq,vcl.name from 
+		$sql="select vc.id,vc.seq,vcl.name,vc.category from 
 		dr_tb_vaccine_category vc
-		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='$SysLangCode'
 		where vc.status='A' 
 		order by vc.seq";
 		$query = $this->dbmgr->query($sql);
@@ -50,6 +50,13 @@
 
 		$vccount=count($categoryresult);
 
+		
+		$array=array();
+		$array["category_c"]=array();
+		$array["category_m"]=array();
+		$array["category_f"]=array();
+		$array["category_e"]=array();
+
 		for($i=0;$i<$vccount;$i++){
 			$sublist=Array();
 			$count=0;
@@ -62,10 +69,20 @@
 			}
 			$categoryresult[$i]["count"]=$count;
 			$categoryresult[$i]["sub"]=$sublist;
+
+			if($categoryresult[$i]["category"]=="C"){
+				$array["category_c"][]=$categoryresult[$i];
+			}else if($categoryresult[$i]["category"]=="M"){
+				$array["category_m"][]=$categoryresult[$i];
+			}else if($categoryresult[$i]["category"]=="F"){
+				$array["category_f"][]=$categoryresult[$i];
+			}else if($categoryresult[$i]["category"]=="E"){
+				$array["category_e"][]=$categoryresult[$i];
+			}
 		}
-		
-			$_SESSION[SESSIONNAME]["vaccine"][$SysLangCode]["category"]=$categoryresult;
-			return $categoryresult;
+
+			$_SESSION[SESSIONNAME]["vaccine"][$SysLangCode]["category"]=$array;
+			return $array;
 		}
 
 	}
@@ -101,8 +118,8 @@ left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='$SysLangCode'
 
 	public function getVaccineList(){
 		Global $SysLangCode;
-		$sql="select o.id vaccine_id, 
-		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		$sql="select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
 		from dr_tb_vaccine o
 left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='$SysLangCode'
 inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'

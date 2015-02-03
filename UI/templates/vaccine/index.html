@@ -1,0 +1,115 @@
+{{include  file="$smarty_root/header.html" }}
+
+<script src="{{$rootpath}}/themes/mobile/js/vaccine.js"></script>
+    
+<div id="child_narvigation">
+    <div id="child_nar vaccineNar">
+        <div class="childNar vaccineChild">
+            <a href="#" onclick="clickMenu('category_cMenu')">
+                <div class="childNarIcon">
+                    <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccinechild.png">
+                </div>
+                <div class="childNarText">儿童</div>
+            </a>
+        </div>
+        <div class="childNar vaccineChild">
+            <a href="#" onclick="clickMenu('category_mMenu')">
+                <div class="childNarIcon">
+                    <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccineman.png">
+                </div>
+                <div class="childNarText">男性</div>
+            </a>
+        </div>
+        <div class="childNar vaccineChild">
+            <a href="#" onclick="clickMenu('category_fMenu')">
+                <div class="childNarIcon">
+                    <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccinewoman.png">
+                </div>
+                <div class="childNarText">女性</div>
+            </a>
+        </div>
+        <div class="childNar vaccineChild">
+            <a href="#" onclick="clickMenu('category_eMenu')">
+                <div class="childNarIcon">
+                    <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccineoldman.png">
+                </div>
+                <div class="childNarText">老人</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="cover" onclick="clickMenu()"></div>
+
+<div id="menuPanel" class="vaccineList vaccineMenus">
+    <div id="menu">
+        {{foreach from=$VaccineCategory item=rs key=k}}
+        <div id="{{$k}}Menu" class="childMainMenu">
+            {{foreach from=$rs item=rscategory}}
+            <div onclick="openSubMenu('{{$k}}_sub_{{$rscategory.id}}',this);">
+                <span class="menuMainText">{{$rscategory.name}}</span>
+            </div>
+            {{/foreach}}
+        </div>
+        {{/foreach}}
+
+        {{foreach from=$VaccineCategory item=rs key=k}}
+            {{foreach from=$rs item=rscategory}}
+            <div id="{{$k}}_sub_{{$rscategory.id}}" class="childSubMenu">
+                <a class="menuMainText menuSubText" idlist="all"  href="#">全部</a>
+                {{foreach from=$rscategory.sub item=rssub}}
+                <a class="menuMainText menuSubText" idlist="{{$rssub.vaccine_list}}" href="#">{{$rssub.name}}</a>
+                {{/foreach}}
+            </div>
+            {{/foreach}}
+        {{/foreach}}
+    </div>
+
+
+</div>
+
+
+<div class="searchMore">
+    <div class="searchMoreText1 searchMoreText1_vaccine">猜你在找</div>
+</div>
+<div class="vaccineList">
+    <div class="vaccineContent">
+        {{foreach from=$VaccineList item=rs}}
+        <div  class="vaccineDetails">
+            <a href="{{$rootpath}}/vaccine/detail.php?id={{$rs.id}}">
+                <div class="vaccineDetailsImg">
+                    <img src="{{$uploadpath}}/vaccine/{{$rs.image}}" />
+                </div>
+                <div class="vaccineDetailsText">
+                    <div class="vaccineDetailsText1">
+                        <span>{{$rs.name}}</span>
+                    </div>
+                    <div class="vaccineDetailsText2">
+                        <span>[{{$rs.effect}}]</span>
+                    </div>
+                    <div class="vaccineDetailsText3">
+                        <span>{{$rs.used_group}}</span>
+                    </div>
+                    <div>
+                        <span class="vaccineDetailsText4">参考价:</span>
+                        <span class="vaccineDetailsText5">{{$rs.ref_price}}</span>
+                    </div>
+                </div>
+                <div id="vaccineNum" class="vaccineNum">
+                    <div class="vaccineNumUp">
+                        <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                    </div>
+                    <div class="vaccineNumDown">
+                        <span>已预约: {{$rs.booking_count}}</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/foreach}}
+        
+
+    </div>
+
+</div>
+
+{{include  file="$smarty_root/footer.html" }}

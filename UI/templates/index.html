@@ -10,7 +10,7 @@
     <div id="child_narvigation">
         <div id="child_nar">
             <div class="childNar">
-                <a href="{{$rootpath}}/vaccine">
+                <a href="{{$rootpath}}/vaccine/index.php">
                     <div class="childNarIcon">
                         <img class="childNarImg" src="{{$rootpath}}/themes/mobile/img/icons/index_vaccine.png">
                     </div>
@@ -53,7 +53,7 @@
             <div id="vaccineDisplayLeft1">
                 <a href="{{$rootpath}}/vaccine/detail.php?id={{$promotedvaccine1.vaccine_id}}">
                     <div id="leftTitle1">
-                        <span>{{$promotedvaccine1.vaccine_name}}</span>
+                        <span>{{$promotedvaccine1.name}}</span>
                     </div>
                     <div class="displayDetail">
                         <div class="displayDetailLeft">
@@ -69,7 +69,7 @@
             <div id="vaccineDisplayLeft2">
                 <a href="{{$rootpath}}/vaccine/detail.php?id={{$promotedvaccine2.vaccine_id}}">
                     <div id="leftTitle2">
-                        <span>HPV子宫颈癌2合1疫苗-美国进口</span>
+                        <span>{{$promotedvaccine2.name}}</span>
                     </div>
                     <div class="displayDetail">
                         <div class="displayDetailLeft">
