@@ -88,7 +88,7 @@ body {
     font-size: 0.9em;
     color: #636262;
     float: left;
-    margin-left: 20px;
+    margin-left: 25px;
     font-weight: bold;
     margin-top: 5px;
 }
@@ -480,6 +480,7 @@ body {
         font-weight: normal;
     }
 
+
 .introduceContent {
     width: 100%;
 }
@@ -716,4 +717,34 @@ label {
     padding: 3px;
     width: 45px;
 }
+
+#freeBookDoctor {
+    border-radius: 5px;
+    height: 20px;
+    width: 65px;
+    padding: 3px;
+    background-color: #E95414;
+    border:0;
+}
+
+    #freeBookDoctor span {
+        color: white;
+        font-size: 1em;
+        font-weight: normal;
+    }
+
+    #freeBookDoctorVaccine1,#freeBookDoctorVaccine2,#freeBookDoctorVaccine3,#freeBookDoctorVaccine4,#freeBookDoctorVaccine5 {
+    border-radius: 5px;
+    height: 17px;
+    width: 43px;
+    padding: 3px;
+    background-color: #44A5D3;
+    border:0;
+}
+
+    #freeBookDoctorVaccine1 span,#freeBookDoctorVaccine2 span,#freeBookDoctorVaccine3 span,#freeBookDoctorVaccine4 span,#freeBookDoctorVaccine5 span {
+        color: white;
+        font-size: 0.8em;
+        font-weight: normal;
+    }
 /*doctor details end*/
