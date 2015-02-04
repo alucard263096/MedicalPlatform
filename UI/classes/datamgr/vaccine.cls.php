@@ -118,7 +118,7 @@ left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='$SysLangCode'
 
 	public function getVaccineList(){
 		Global $SysLangCode;
-		$sql="select o.id , 
+		$sql="select distinct o.id , 
 		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
 		from dr_tb_vaccine o
 left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='$SysLangCode'

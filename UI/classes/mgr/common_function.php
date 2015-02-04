@@ -136,4 +136,14 @@ function getListIdStr($arr,$key){
 	return $list;
 }
 
+function encodeLongText($str){
+	$arr=explode("\n",$str);
+	$ret="";
+	foreach ($arr as $value){
+			$ret.="<p> $value </p>";
+	}
+
+	return $ret;
+}
+
 ?>

@@ -10,7 +10,7 @@
   require ROOT.'/classes/datamgr/vaccine.cls.php';
 
   $vaccineList=$vaccineMgr->getVaccineList();
-  print_r($vaccineList);
+  //print_r($vaccineList);
   $smarty->assign("VaccineList",$vaccineList);
 
   $vaccineCategory=$vaccineMgr->getVaccineCategory();

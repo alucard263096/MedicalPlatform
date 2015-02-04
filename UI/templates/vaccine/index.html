@@ -56,9 +56,9 @@
         {{foreach from=$VaccineCategory item=rs key=k}}
             {{foreach from=$rs item=rscategory}}
             <div id="{{$k}}_sub_{{$rscategory.id}}" class="childSubMenu">
-                <a class="menuMainText menuSubText" idlist="all"  href="#">全部</a>
+                <a class="menuMainText menuSubText btnSubCategory" idlist="all"  href="#">全部</a>
                 {{foreach from=$rscategory.sub item=rssub}}
-                <a class="menuMainText menuSubText" idlist="{{$rssub.vaccine_list}}" href="#">{{$rssub.name}}</a>
+                <a class="menuMainText menuSubText btnSubCategory" idlist="{{$rssub.vaccine_list}}" href="#">{{$rssub.name}}</a>
                 {{/foreach}}
             </div>
             {{/foreach}}
@@ -75,7 +75,7 @@
 <div class="vaccineList">
     <div class="vaccineContent">
         {{foreach from=$VaccineList item=rs}}
-        <div  class="vaccineDetails">
+        <div class="vaccineDetails" vaccine_id="{{$rs.id}}">
             <a href="{{$rootpath}}/vaccine/detail.php?id={{$rs.id}}">
                 <div class="vaccineDetailsImg">
                     <img src="{{$uploadpath}}/vaccine/{{$rs.image}}" />
@@ -106,10 +106,43 @@
             </a>
         </div>
         {{/foreach}}
-        
-
     </div>
 
 </div>
+
+<script>
+    $(document).ready(function () {
+        $(".btnSubCategory").click(function () {
+            var subcat = $(this).attr("idlist");
+            var subcatids = new Array();
+            if (subcat == "all") {
+                var parentid = $(this).parent().attr("id");
+                $("#" + parentid+" a").each(function () {
+                    var idlist = $(this).attr("idlist");
+                    if (idlist != "all" && idlist != "") {
+                        var ids = idlist.split(",");
+                        subcatids=subcatids.concat(ids);
+                    }
+                });
+            } else {
+                var ids = subcat.split(",");
+                subcatids = subcatids.concat(ids);
+            }
+
+            $(".vaccineDetails").each(function () {
+
+                var vaccine_id = $(this).attr("vaccine_id");
+                if (subcatids.indexOf(vaccine_id) >= 0) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+            
+            $("#menuPanel").css("display", "none");
+            $("#cover").css("display", "none");
+        });
+    });
+</script>
 
 {{include  file="$smarty_root/footer.html" }}
