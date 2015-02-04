@@ -30,7 +30,13 @@
             initSelect("cliniContent");
             initSelect("timeContent");
             initDatepicker();
+
+
         });
+
+        function comfireOrder() {
+            $('#comfireOrder').popup('open');
+        }
 
         function initSelect(id) {
             $("#" + id + " a").removeClass("ui-btn-icon-right");
@@ -68,7 +74,7 @@
 
         <div id="content" data-role="content">
             <div id="cover" onclick="clickMenu()"></div>
-            <div style="background-color: #DBDBDC; width: 100%; height: 30px; color: #e95414;" class="divCenter">
+            <div style="background-color: #DBDBDC; width: 100%; height: 40px; color: #e95414;" class="divCenter">
                 <span style="font-weight: bold;">参考价:3600</span>
                 <span>| HPV子宫癌2合1疫苗</span>
             </div>
@@ -233,15 +239,19 @@
                 </div>
             </div>
 
-            <div style="float: left; width: 100%;margin-top:10px;">
-                <div  style="padding:5%">
-                    <button class=" " id="freeOrder" data-role="none">
-                   <!--     <div >-->
-                            <span style="">确认预约</span>
-                   <!--     </div>-->
+            <div style="float: left; width: 100%; margin-top: 10px;">
+                <div style="padding: 5%">
+                    <button class=" " id="freeOrder" data-role="none" onclick="comfireOrder();">
+                        <!--     <div >-->
+                        <span style="">确认预约</span>
+                        <!--     </div>-->
                     </button>
                 </div>
 
+            </div>
+
+            <div data-role="popup" id="comfireOrder" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="width: 300px; height: 300px;">
+               
             </div>
         </div>
 
