@@ -724,7 +724,7 @@ label {
     width: 65px;
     padding: 3px;
     background-color: #E95414;
-    border:0;
+    border: 0;
 }
 
     #freeBookDoctor span {
@@ -733,18 +733,64 @@ label {
         font-weight: normal;
     }
 
-    #freeBookDoctorVaccine1,#freeBookDoctorVaccine2,#freeBookDoctorVaccine3,#freeBookDoctorVaccine4,#freeBookDoctorVaccine5 {
+#freeBookDoctorVaccine1, #freeBookDoctorVaccine2, #freeBookDoctorVaccine3, #freeBookDoctorVaccine4, #freeBookDoctorVaccine5 {
     border-radius: 5px;
     height: 17px;
     width: 43px;
     padding: 3px;
     background-color: #44A5D3;
-    border:0;
+    border: 0;
 }
 
-    #freeBookDoctorVaccine1 span,#freeBookDoctorVaccine2 span,#freeBookDoctorVaccine3 span,#freeBookDoctorVaccine4 span,#freeBookDoctorVaccine5 span {
+    #freeBookDoctorVaccine1 span, #freeBookDoctorVaccine2 span, #freeBookDoctorVaccine3 span, #freeBookDoctorVaccine4 span, #freeBookDoctorVaccine5 span {
         color: white;
         font-size: 0.8em;
         font-weight: normal;
     }
+
+
 /*doctor details end*/
+
+
+/*order begin*/
+#freeBookOrder1, #freeBookOrder2, #freeBookOrder3 {
+    border-radius: 5px;
+    height: 22px;
+    width: 50px;
+    padding: 3px;
+    background-color: #44A5D3;
+    border: 0;
+}
+
+    #freeBookOrder1 span, #freeBookOrder2 span, #freeBookOrder3 span {
+        color: white;
+        font-size: 0.7em;
+        font-weight: normal;
+    }
+
+#pickClinic {
+    font-size: 0.7em;
+}
+
+#cliniContent a {
+
+     font-size: 0.7em;
+}
+
+
+
+#freeOrder {
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    padding: 3px;
+    background-color: #44A5D3;
+    border: 0;
+}
+
+    #freeOrder span {
+        color: white;
+        font-size: 1.4em;
+        font-weight: normal;
+    }
+/*order end*/

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>确认预约</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="shortcut icon" href="/MedicalPlatform/UIDEMO/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-72x72.png" />
+
+    <link rel="apple-touch-icon" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-57x57.png" />
+    <link rel="stylesheet" href="/MedicalPlatform/UIDEMO/themes/mobile/css/jquery.mobile-1.4.5.css" />
+    <link href="/MedicalPlatform/UIDEMO/themes/mobile/css/main.css" rel="stylesheet" />
+    <!--<link rel="stylesheet" href="//jquery.mobile.datepicker.css" />-->
+    <link href="/MedicalPlatform/UIDEMO/plugin/datepicker/jquery.mobile.datepicker.css" rel="stylesheet" />
+    <link href="/MedicalPlatform/UIDEMO/plugin/datepicker/jquery.mobile.datepicker.theme.css" rel="stylesheet" />
+
+    <script src="/MedicalPlatform/UIDEMO/js/jquery-2.0.3.min.js"></script>
+    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/jquery.mobile-1.4.5.js"></script>
+    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/common.js"></script>
+
+    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/vaccine.js"></script>
+    <script src="/MedicalPlatform/UIDEMO/plugin/datepicker/datepicker.js"></script>
+    <script src="/MedicalPlatform/UIDEMO/plugin/datepicker/jquery.mobile.datepicker.js"></script>
+    <script>
+        $(function () {
+            initSelect("cliniContent");
+            initSelect("timeContent");
+            initDatepicker();
+        });
+
+        function initSelect(id) {
+            $("#" + id + " a").removeClass("ui-btn-icon-right");
+            $("#" + id + " a").css("height", "22px");
+            $("#" + id + " a").css("padding", "0");
+
+            $("#" + id + " .ui-select").css("margin-top", "0px");
+            $("#" + id + " .ui-select").css("margin-bottom", "0px");
+            $("#" + id + " .ui-select span").css("margin-top", "5px");
+            $("#" + id + " .ui-select span").css("font-size", "0.8em");
+            $("#" + id + " .ui-select span").css("font-size", "0.8em");
+            $("#" + id + " .ui-select span").css("font-weight", "normal");
+        }
+
+        function initDatepicker() {
+            $("#datepicker .ui-input-text").css("height", "22px");
+            $("#datepicker .ui-input-text").css("margin", "0");
+            $("#datepicker .ui-input-text").css("padding", "0");
+            $("#datepicker input").css("height", "22px");
+            $("#datepicker input").css("font-size", "0.7em");
+            $("#datepicker input").css("text-align", "center");
+        }
+
+
+    </script>
+</head>
+<body>
+    <div data-role="page">
+        <div id="header" data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+            <h1>
+                <div>确认预约</div>
+            </h1>
+            <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_comment.png">
+        </div>
+
+        <div id="content" data-role="content">
+            <div id="cover" onclick="clickMenu()"></div>
+            <div style="background-color: #DBDBDC; width: 100%; height: 30px; color: #e95414;" class="divCenter">
+                <span style="font-weight: bold;">参考价:3600</span>
+                <span>| HPV子宫癌2合1疫苗</span>
+            </div>
+
+            <div class="vaccineList">
+                <div class="vaccineContent">
+                    <div id="vaccineDetails" class="vaccineDetails">
+                        <a href="details.html">
+                            <div class="vaccineDetailsImg" style="width: 20%;">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview3.png" />
+                            </div>
+                            <div class="vaccineDetailsText" style="width: 55%;">
+                                <div class="vaccineDetailsText1" style="font-size: 0.7em;">
+                                    <span>HPV子宫癌2合1疫苗</span>
+                                </div>
+                                <div class="vaccineDetailsText2" style="margin-top: 2%; font-size: 0.6em;">
+                                    <span>[预防宫颈癌]</span>
+                                </div>
+                                <div class="vaccineDetailsText3" style="margin-top: 2%; font-size: 0.6em;">
+                                    <span>20岁以上年轻女性</span>
+                                </div>
+                            </div>
+                            <div id="vaccineNum" class="vaccineNum" style="margin-left: 0;">
+                                <div class="vaccineNumUp" style="margin-top: 40%;">
+                                    <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div style="border-bottom: 1px solid #D0ECFA; margin-left: -20px; height: 1px; float: left; width: 130%;"></div>
+                    <div id="Div1" class="vaccineDetails">
+                        <a href="details.html">
+                            <div class="vaccineDetailsImg" style="width: 20%;">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/doc_2.png" />
+                            </div>
+                            <div class="vaccineDetailsText" style="width: 55%;">
+                                <div style="font-size: 0.7em;">
+                                    <span style="font-weight: bold;">冰医生</span>
+                                    <span style="margin-left: 10px;">全科</span>
+                                </div>
+                                <div class="vaccineDetailsText2" style="margin-top: 2%; font-size: 0.6em;">
+                                    <span>三甲医院副主任医师</span>
+                                </div>
+                                <div class="vaccineDetailsText3" style="margin-top: 2%; font-size: 0.6em;">
+                                    <span>仁济医院中银医疗中心中医门诊部</span>
+                                </div>
+                            </div>
+                            <div id="Div2" class="vaccineNum" style="margin-left: 0;">
+                                <div class="vaccineNumUp" style="margin-top: 40%;">
+                                    <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div style="border-bottom: 1px solid #D0ECFA; margin-left: -20px; height: 1px; float: left; width: 130%;"></div>
+                </div>
+            </div>
+
+            <div style="width: 100%; float: left; margin-top: 10px; margin-left: 5%;">
+                <div style="float: left; width: 20%;">
+                    <button class=" " id="freeBookOrder1" data-role="none">
+                        <div style="margin-top: -4px">
+                            <span style="">选择诊所</span>
+                        </div>
+                    </button>
+                </div>
+                <div style="float: left; width: 55%;" id="cliniContent">
+                    <select name="clinic" id="clinicpicker" data-native-menu="false" class="ui-btn-icon-none">
+                        <option value="0">新康专科医疗中心</option>
+                        <option value="1">中环上路第三医院</option>
+                    </select>
+                </div>
+                <div style="float: left; width: 25%;">
+                    <div style="float: left; margin-left: -10px; margin-top: -15px;">
+                        <img style="float: left; width: 50px; height: auto;"
+                            src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/location.png" />
+                    </div>
+                    <div style="float: left; margin-left: -13px; margin-top: 3px;">
+                        <img style="width: 16px; float: left; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                    </div>
+                </div>
+            </div>
+
+            <div style="width: 100%; float: left; margin-left: 5%;">
+                <div style="float: left; width: 20%;">
+                    <button class=" " id="freeBookOrder2" data-role="none">
+                        <div style="margin-top: -4px">
+                            <span style="">预约日期</span>
+                        </div>
+                    </button>
+                </div>
+                <div style="float: left; width: 55%;" id="datepicker">
+                    <input data-role="date" type="text" />
+                </div>
+                <div style="float: left; width: 25%;">
+                </div>
+            </div>
+
+            <div style="width: 100%; float: left; margin-top: 10px; margin-left: 5%;">
+                <div style="float: left; width: 20%;">
+                    <button class=" " id="freeBookOrder3" data-role="none">
+                        <div style="margin-top: -4px">
+                            <span style="">预约时段</span>
+                        </div>
+                    </button>
+                </div>
+                <div style="float: left; width: 55%;" id="timeContent">
+                    <select name="time" id="timepicker" data-native-menu="false" class="ui-btn-icon-none">
+                        <option value="0">12:00-13:00</option>
+                        <option value="1">13:00-14:00</option>
+                    </select>
+                </div>
+                <div style="float: left; width: 25%;">
+                </div>
+            </div>
+
+            <div class="searchMore" style="margin-top: 10px;">
+                <div class="searchMoreText1" style="margin-top: 3px; margin-left: 5%;">
+                    <span style="font-size: 0.9em;">个人信息</span>
+                </div>
+            </div>
+            <div style="margin-left: 5%; margin-top: 10px; font-size: 0.8em;">
+                <div style="float: left; width: 100%; margin-top: 10px;">
+                    <div style="width: 25%; float: left;">邮箱地址</div>
+                    <div style="width: 40%; float: left;">david@qq.com</div>
+                    <div style="width: 25%; float: left;">修改绑定></div>
+                </div>
+                <div style="border-bottom: 1px solid #e3e3e4; margin-left: -20px; height: 1px; float: left; width: 130%; margin-top: 5px;"></div>
+
+                <div style="float: left; width: 100%; margin-top: 10px;">
+                    <div style="width: 25%; float: left;">手机号码</div>
+                    <div style="width: 40%; float: left;">186****4654</div>
+                    <div style="width: 25%; float: left;">修改绑定></div>
+                </div>
+                <div style="border-bottom: 1px solid #e3e3e4; margin-left: -20px; height: 1px; float: left; width: 130%; margin-top: 5px;"></div>
+
+                <div style="float: left; width: 100%; margin-top: 10px;">
+                    <div style="width: 25%; float: left;">真实姓名</div>
+                    <div style="width: 65%; float: left;">小明</div>
+                </div>
+                <div style="border-bottom: 1px solid #e3e3e4; margin-left: -20px; height: 1px; float: left; width: 130%; margin-top: 5px;"></div>
+            </div>
+
+            <div style="margin-left: 5%; margin-top: 10px; font-size: 0.7em">
+                <div style="float: left; width: 100%; margin-top: 10px;">
+                    <div style="float: left; width: 40%; margin-left: 25px;">
+                        <div style="float: left; margin-top: -2px; width: 20px; text-align: right;">
+                            <img style="" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/order_notification.png" />
+                        </div>
+                        <div style="float: left; width: 90px; text-align: right;">
+                            <span style="">香港诊所实地支付</span>
+                        </div>
+                    </div>
+                    <div style="float: left; width: 40%;">
+                        <div style="float: left; margin-top: -2px; width: 20px; text-align: right;">
+                            <img style="" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/order_notification.png" />
+                        </div>
+                        <div style="float: left; width: 90px; text-align: right;">
+                            <span style="">香港诊所实地支付</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="float: left; width: 100%;margin-top:10px;">
+                <div  style="padding:5%">
+                    <button class=" " id="freeOrder" data-role="none">
+                   <!--     <div >-->
+                            <span style="">确认预约</span>
+                   <!--     </div>-->
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="footer" data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#" data-icon="home">首页</a>
+                    </li>
+                    <li><a href="#" data-icon="heart">疫苗</a></li>
+                    <li><a href="#" data-icon="star">咨询</a></li>
+                    <li><a href="#" data-icon="user">会员</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
