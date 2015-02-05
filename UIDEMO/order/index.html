@@ -25,17 +25,22 @@
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/vaccine.js"></script>
     <script src="/MedicalPlatform/UIDEMO/plugin/datepicker/datepicker.js"></script>
     <script src="/MedicalPlatform/UIDEMO/plugin/datepicker/jquery.mobile.datepicker.js"></script>
+    <script src="/MedicalPlatform/UIDEMO/plugin/qrcode/jquery.qrcode.js"></script>
     <script>
         $(function () {
             initSelect("cliniContent");
             initSelect("timeContent");
             initDatepicker();
-
-
+            generateQrcode("orderQrcode", "http://helpfooter.com/CMS/Doctor/hospital.php?action=edit&id=2");
         });
+
+        function  generateQrcode(containerId,qrcodeContent) {
+            $("#" + containerId).qrcode(qrcodeContent);
+        }
 
         function comfireOrder() {
             $('#comfireOrder').popup('open');
+            generateQrcode("orderQrcode", "http://helpfooter.com/CMS/Doctor/hospital.php?action=edit&id=2");
         }
 
         function initSelect(id) {
@@ -249,9 +254,9 @@
                 </div>
 
             </div>
-
+             <div id="orderQrcode"></div>
             <div data-role="popup" id="comfireOrder" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="width: 300px; height: 300px;">
-               
+              
             </div>
         </div>
 
