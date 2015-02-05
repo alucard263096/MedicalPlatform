@@ -773,8 +773,7 @@ label {
 }
 
 #cliniContent a {
-
-     font-size: 0.7em;
+    font-size: 0.7em;
 }
 
 
@@ -793,4 +792,35 @@ label {
         font-size: 1.4em;
         font-weight: normal;
     }
+
+#lookLook {
+    border-radius: 5px;
+    height: 22px;
+    width: 70px;
+    padding: 3px;
+    background-color: #009FE8;
+    border: 0;
+}
+
+    #lookLook span {
+        color: white;
+        font-size: 0.5em;
+        font-weight: normal;
+    }
+
+#checkOrder {
+    border-radius: 5px;
+    height: 22px;
+    width: 70px;
+    padding: 3px;
+    background-color: #009FE8;
+    border: 0;
+}
+
+    #checkOrder span {
+        color: white;
+        font-size: 0.5em;
+        font-weight: normal;
+    }
+
 /*order end*/
