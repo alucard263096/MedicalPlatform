@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>医生详情</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="shortcut icon" href="/MedicalPlatform/UIDEMO/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-72x72.png" />
+
+    <link rel="apple-touch-icon" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-57x57.png" />
+    <link rel="stylesheet" href="/MedicalPlatform/UIDEMO/themes/mobile/css/jquery.mobile-1.4.5.css" />
+    <link href="/MedicalPlatform/UIDEMO/plugin/raty/jquery.raty.css" rel="stylesheet" />
+
+    <link href="/MedicalPlatform/UIDEMO/themes/mobile/css/main.css" rel="stylesheet" />
+    <script src="/MedicalPlatform/UIDEMO/js/jquery-2.0.3.min.js"></script>
+    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/jquery.mobile-1.4.5.js"></script>
+
+    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/common.js"></script>
+    <!--    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/vaccine_detail.js"></script>-->
+    <script src="/MedicalPlatform/UIDEMO/plugin/raty/jquery.raty.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.divraty').each(function () {
+                $(this).raty();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page">
+        <div id="header" data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+            <h1>
+                <div>医生详情</div>
+            </h1>
+            <!-- <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_comment.png">-->
+        </div>
+
+        <div id="content" data-role="content">
+
+            <div id="Div1" style="border: 0; float: left; width: 100%; margin-top: 4%; border-bottom: 1px solid #E7E7E8;">
+                <div style="border: 0; float: left; width: 23%; margin-left: 20px;">
+                    <div style="">
+                        <img style="width: 80%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/doc_2.png" />
+                    </div>
+                    <div style="margin-top: -10px; width: 100%;" class="divCenter">
+                        <button class="ui-btn ui-btn-inline" style="" id="btnFocus">
+                            <div style="float: left; margin-top: -6px; margin-left: 3px;">
+                                <span>+</span>
+                            </div>
+                            <div style="float: left; margin-top: -6px; margin-left: 2px;">
+                                <span style="font-size: 0.6em;">关注</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div style="border: 0; float: left; width: 60%; line-height: 18px;">
+                    <div style="font-size: 0.9em; color: #403C3B; float: left; width: 100%;">
+                        <div style="float: left; width: 70%;">
+                            <span style="font-weight: bold;">冰医生</span>
+                            <span style="margin-left: 10px;">全科</span>
+                        </div>
+                        <div style="float: left; width: 30%;">
+                            <div style="float: right;">
+                                <button class=" " style="" id="freeBookDoctor" data-role="none">
+                                    <div style="margin-top: -2px;">
+                                        <span style="">免费预约</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="font-size: 0.7em; margin-top: 3%; width: 100%; float: left;">
+                        <div style="float: left; width: 100%;">
+                            <div style="float: left; width: 70%;">
+                                <span style="float: left;">三甲医院副主任医师</span>
+                            </div>
+                            <div style="float: left; width: 30%;">
+                                <span style="float: right; color: #e95414;">27人已预约</span>
+                            </div>
+                        </div>
+                        <div style="float: left; clear: both; width: 100%;">
+                            <span style="float: left;">仁济医院中银医疗中心中医门诊部</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 0.5em; margin-top: 3%; width: 100%; float: left;">
+                        <span style="float: left;">开放时间: 周一(13:00-18:00) 周二至周五(10:00-18:00)</span>
+                    </div>
+                </div>
+            </div>
+            <!--  <div class="divraty" style="float: left; width: 50%;"></div>-->
+
+            <div style="" class="introduceContent">
+                <div style="" class="introduceContentDetial">
+                    <div style="" class="introduceContentDetialTitle">
+                        <img style="" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_introduce.png" />
+                        <span style="">介绍</span>
+                    </div>
+                    <div style="" class="introduceContentDetialText">
+                        <span style="">香港中医药管理委员会认可注册中中医师 注册编号(005298) 香港注册中医学会永久会员
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: -20px;" class="introduceContent introduceContentBorder">
+                <div class="introduceContentDetialTitle">
+                    <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_introduce.png" />
+                    <span>资质</span>
+                </div>
+                <div class="introduceContentDetialText">
+                    <span>香港中医药管理委员会认可注册中中医师 注册编号(005298) 香港注册中医学会永久会员 
+                    </span>
+                </div>
+            </div>
+
+            <div class="searchMore" onclick="displayDetails('vaccine_way');">
+                <!--                <div class="searchMoreText1" style="margin-top: 4px;">
+                    <img class="searchMoreText1DetailsImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_way.png" />
+                    <span style="" class="searchMoreText1DetailsSpan">接种方式</span>
+                </div>
+                <div class="searchMoreText2">
+                    <img style="" class="searchMoreText2DetailsImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_display_arrow.png" />
+                </div>-->
+            </div>
+            <div id="vaccine_way" style="font-size: 0.7em; margin-left: 20px;">
+                <div style="float: left; width: 100%;">
+                    <div style="width: 20%; float: left; margin-top: 10px;">
+                        推荐指数
+                    </div>
+                    <div style="width: 40%; float: left; margin-top: 8px;">
+                        <div class="divraty" style="float: left;"></div>
+                    </div>
+                    <div style="width: 30%; float: left; margin-top: 10px; margin-left: 10%;">
+                        <div></div>
+                        <div>
+                            高于同行5.7%
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px solid #e3e3e4; margin-left: -20px; height: 1px; float: left; width: 130%;"></div>
+                </div>
+                <div style="float: left; width: 100%;">
+                    <div style="width: 20%; float: left; margin-top: 10px;">
+                        服务态度
+                    </div>
+                    <div style="width: 40%; float: left; margin-top: 8px;">
+                        <div class="divraty" style="float: left;"></div>
+                    </div>
+                    <div style="width: 30%; float: left; margin-top: 10px; margin-left: 10%;">
+                        <div></div>
+                        <div>
+                            高于同行5.7%
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px solid #e3e3e4; margin-left: -20px; height: 1px; float: left; width: 130%;"></div>
+                </div>
+                <div style="float: left; width: 100%;">
+                    <div style="width: 20%; float: left; margin-top: 10px;">
+                        医术水平
+                    </div>
+                    <div style="width: 40%; float: left; margin-top: 8px;">
+                        <div class="divraty" style="float: left;"></div>
+                    </div>
+                    <div style="width: 30%; float: left; margin-top: 10px; margin-left: 10%;">
+                        <div></div>
+                        <div>
+                            高于同行5.7%
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px solid #e3e3e4; margin-left: -20px; height: 1px; float: left; width: 130%;"></div>
+                </div>
+            </div>
+
+            <div class="searchMore searchMoreMargin" onclick="displayDetails('vaccine_notice');" style="">
+                <!--<div class="searchMoreText1">
+                    <img class="searchMoreText1DetailsImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_notice.png" />
+                    <span class="searchMoreText1DetailsSpan">注意事项</span>
+                </div>
+                <div class="searchMoreText2">
+                    <img class="searchMoreText2DetailsImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_display_arrow.png" />
+                </div>-->
+            </div>
+            <div id="vaccine_notice" style="" class="vaccineNotice">
+                <div style="" class="introduceContentDetialTitle">
+                    <img style="" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_introduce.png" />
+                    <span style="">诊所服务</span>
+                </div>
+            </div>
+
+            <div class="searchMore searchMoreMargin" onclick="displayDetails('vaccine_notice');" style="">
+                <div class="searchMoreText1" style="margin-top: 3px;">
+                    <img class="searchMoreText1DetailsImg" style="display: none;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_notice.png" />
+                    <span class="searchMoreText1DetailsSpan">疫苗选择</span>
+                </div>
+                <div class="searchMoreText2">
+                    <img class="searchMoreText2DetailsImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_display_arrow.png" />
+                </div>
+            </div>
+
+            <div style="float: left; width: 100%; font-size: 0.7em; padding: 20px;">
+                <div style="width: 33%; float: left; margin-top: -10px;">
+                    2合1疫苗
+                </div>
+                <div style="width: 38%; float: left; margin-top: -10px;">
+                    <span style="color: #44A5D3;">参考价: 3600元</span>
+                </div>
+                <div style="width: 23%; float: left; margin-top: -10px; margin-left: 5%;">
+                    <div style="float: left;">
+                        <button class=" " style="" id="freeBookDoctorVaccine1" data-role="none">
+                            <div style="margin-top: -2px;">
+                                <span style="">免费预约</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div style="border-bottom: 1px solid #e3e3e4; margin-left: -20px; height: 1px; float: left; width: 130%;"></div>
+            </div>
+
+            <div style="float: left; width: 100%; font-size: 0.7em; padding: 20px; margin-top: -20px;">
+                <div style="width: 33%; float: left; margin-top: -10px;">
+                    2合1疫苗
+                </div>
+                <div style="width: 38%; float: left; margin-top: -10px;">
+                    <span style="color: #44A5D3;">参考价: 3600元</span>
+                </div>
+                <div style="width: 23%; float: left; margin-top: -10px; margin-left: 5%;">
+                    <div style="float: left;">
+                        <button class=" " style="" id="freeBookDoctorVaccine2" data-role="none">
+                            <div style="margin-top: -2px;">
+                                <span style="">免费预约</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div style="border-bottom: 1px solid #e3e3e4; margin-left: -20px; height: 1px; float: left; width: 130%;"></div>
+            </div>
+
+
+
+            <div class="searchMore searchMoreMargin" onclick="displayDetails('vaccine_notice');" style="margin-top: -20px;">
+                <div class="searchMoreText1" style="margin-top: 3px;">
+                    <img class="searchMoreText1DetailsImg" style="display: none;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_notice.png" />
+                    <span class="searchMoreText1DetailsSpan">诊断治疗</span>
+                </div>
+                <div class="searchMoreText2">
+                    <img class="searchMoreText2DetailsImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_display_arrow.png" />
+                </div>
+            </div>
+
+            <div style="float: left; width: 100%; font-size: 0.7em; padding: 20px;">
+                <div style="width: 33%; float: left; margin-top: -10px;">
+                    普通科
+                </div>
+                <div style="width: 38%; float: left; margin-top: -10px;">
+                    <span style="color: #44A5D3;">参考价: 3600元</span>
+                </div>
+                <div style="width: 23%; float: left; margin-top: -10px; margin-left: 5%;">
+                    <div style="float: left;">
+                        <button class=" " style="" id="freeBookDoctorVaccine3" data-role="none">
+                            <div style="margin-top: -2px;">
+                                <span style="">免费预约</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div style="border-bottom: 1px solid #e3e3e4; margin-left: -20px; height: 1px; float: left; width: 130%;"></div>
+            </div>
+
+            <div style="float: left; width: 100%; font-size: 0.7em; padding: 20px; margin-top: -20px;">
+                <div style="width: 33%; float: left; margin-top: -10px;">
+                    全科
+                </div>
+                <div style="width: 38%; float: left; margin-top: -10px;">
+                    <span style="color: #44A5D3;">参考价: 3600元</span>
+                </div>
+                <div style="width: 23%; float: left; margin-top: -10px; margin-left: 5%;">
+                    <div style="float: left;">
+                        <button class=" " style="" id="freeBookDoctorVaccine4" data-role="none">
+                            <div style="margin-top: -2px;">
+                                <span style="">免费预约</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div style="border-bottom: 1px solid #e3e3e4; margin-left: -20px; height: 1px; float: left; width: 130%;"></div>
+            </div>
+
+            <div style="float: left; width: 100%; font-size: 0.7em; padding: 20px; margin-top: -20px;">
+                <div style="width: 33%; float: left; margin-top: -10px;">
+                    B超
+                </div>
+                <div style="width: 38%; float: left; margin-top: -10px;">
+                    <span style="color: #44A5D3;">参考价: 3600元</span>
+                </div>
+                <div style="width: 23%; float: left; margin-top: -10px; margin-left: 5%;">
+                    <div style="float: left;">
+                        <button class=" " style="" id="freeBookDoctorVaccine5" data-role="none">
+                            <div style="margin-top: -2px;">
+                                <span style="">免费预约</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div style="border-bottom: 1px solid #e3e3e4; margin-left: -20px; height: 1px; float: left; width: 130%;"></div>
+            </div>
+
+
+            <div id="Div2" style="" class="vaccineNotice">
+                <div style="margin-top: -20px;    border-bottom: 1px solid #e3e3e4;" class="introduceContentDetialTitle">
+                    <img style="" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_introduce.png" />
+                    <span style="">用户评价</span>
+                </div>
+            </div>
+            <div style="font-size: 0.7em;margin-left:20px;">
+                <div style="width:100%;float: none;margin-top:10px;">
+                    <span>130******9 评价</span>
+                </div>
+                <div style="width:100%;float: left;margin-top:2px;">
+                    <div class="divraty" style="float: none; "></div>
+                </div>
+                <div style="width:100%;float: none;margin-top:2px;">
+                    <span>问题: 图文资讯</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer" data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a">
+        <div data-role="navbar">
+            <ul>
+                <li>
+                    <a href="#" data-icon="home">首页</a>
+                </li>
+                <li><a href="/MedicalPlatform/UIDEMO/vaccine/" data-icon="heart">疫苗</a></li>
+                <li><a href="#" data-icon="star">咨询</a></li>
+                <li><a href="#" data-icon="user">会员</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+</body>
+</html>
