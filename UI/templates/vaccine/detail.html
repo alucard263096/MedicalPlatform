@@ -18,7 +18,7 @@
         <span style="" class="divCenterTextContent_text1">标准价: {{$info.standard_price}}</span>
     </div>
     <div style="" class="divCenter divCenterTextContent">
-        <button class="ui-btn ui-btn-inline " style="" id="freeBook">
+        <button class="ui-btn ui-btn-inline " style="" id="freeBook" >
             <span style="">免费预约</span>
         </button>
     </div>
@@ -118,5 +118,13 @@
     <h3>产生不良反应的解决方法</h3>
     {{$info.bad_effect_resolve}}
 </div>
+<script>
+    $(document).ready(function () {
+        $("#freeBook").click(function () {
 
+            window.location.href = "{{$rootpath}}/doctor/vaccinedoctor.php?action=vaccine&id={{$info.id}}";
+
+        });
+    });
+</script>
 {{include  file="$smarty_root/footer.html" }}

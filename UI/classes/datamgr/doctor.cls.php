@@ -63,14 +63,17 @@
 
 			$vaccineid=mysql_real_escape_string($vaccineid);
 
-			$sql="select distinct dv.doctor_id,dl.name doctor_name,d.is_general,d.specialist,sl.name specialist
-		,dv.price,dv.web_price,dvv.total_score
+			$sql="select distinct dv.doctor_id,dl.name doctor_name,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
 		 from dr_tb_doctor_vaccine dv 
 inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
 left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
-inner join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='$SysLangCode'
 where dv.status='A' and dv.vaccine_id=$vaccineid 
-order by dvv.total_score";
+order by totle_score";
 			$query = $this->dbmgr->query($sql);
 			$result = $this->dbmgr->fetch_array_all($query);
 
@@ -96,7 +99,7 @@ order by dvv.total_score";
 	}
 
 	public function getDistrictCondition($doctor_list){
-		Global $SysLangCode;
+		Global $SysLangCode,$CONFIG;
 
 		if($CONFIG['solution_configuration']!="debug"&&isset($_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["doctorlistcondition_$doctor_list"])){
 			return $_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["doctorlistcondition_$doctor_list"];
@@ -125,14 +128,13 @@ order by dvv.total_score";
 inner join dr_tb_block b on dc.id=b.district_id
 inner join dr_tb_office o on b.id=o.block_id
 inner join dr_tb_office_openhour oo on o.id=oo.office_id
-left join dr_tb_district_lang dcl on d.id=dl.oid and dl.lang='$SysLangCode'
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='$SysLangCode'
 where oo.doctor_id in ($doctor_list)";
 
 			$query = $this->dbmgr->query($sql);
 			$result = $this->dbmgr->fetch_array_all($query);
 
-			$district_list=getListIdStr($result,"dictrict_id");
-			$block_list=$this->getBlockListByDistrict($district_list);
+			$block_list=$this->getBlockListByDistrict($doctor_list);
 			$count=count($result);
 
 			for($i=0;$i<$count;$i++){
@@ -149,7 +151,7 @@ where oo.doctor_id in ($doctor_list)";
 	}
 
 
-	public function getBlockListByDistrict($district_list){
+	public function getBlockListByDistrict($doctor_list){
 		Global $SysLangCode;
 
 			$sql="select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
@@ -187,14 +189,13 @@ where oo.status='A' and oo.doctor_id in ($doctor_list) ";
 inner join dr_tb_subway_station b on dc.id=b.subway_id
 inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
 inner join dr_tb_office_openhour oo on o.id=oo.office_id
-left join dr_tb_subway_lang dcl on d.id=dl.oid and dl.lang='$SysLangCode'
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='$SysLangCode'
 where oo.doctor_id in ($doctor_list)";
 
 			$query = $this->dbmgr->query($sql);
 			$result = $this->dbmgr->fetch_array_all($query);
 
-			$subway_list=getListIdStr($result,"subway_id");
-			$station_list=$this->getStationListBySubway($subway_list);
+			$station_list=$this->getStationListBySubway($doctor_list);
 			$count=count($result);
 
 			for($i=0;$i<$count;$i++){
@@ -211,11 +212,11 @@ where oo.doctor_id in ($doctor_list)";
 	}
 
 
-	public function getStationListBySubway($subway_list){
+	public function getStationListBySubway($doctor_list){
 		Global $SysLangCode;
 
 			$sql="select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
-inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
 inner join dr_tb_office_openhour oo on o.id=oo.office_id
 left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='$SysLangCode'
 		where oo.doctor_id in ($doctor_list)";
@@ -233,7 +234,7 @@ left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='$SysLangCode
 
 		$sql="select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour 
 		from dr_tb_office_openhour oo
-inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
 left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='$SysLangCode' 
 where oo.status='A' and oo.doctor_id in ($doctor_list) ";
 		$query = $this->dbmgr->query($sql);
@@ -241,14 +242,40 @@ where oo.status='A' and oo.doctor_id in ($doctor_list) ";
 
 		return $result;
 	}
+
+	public function getStandardDoctorValue(){
+	Global $SysLangCode,$CONFIG;
+
+		if($CONFIG['solution_configuration']!="debug"&&isset($_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["standard_doctor_value"])){
+			return $_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["standard_doctor_value"];
+		}else{
+			
+			
+				$sql="select ifnull(avg(service_level),4) service_level,
+		ifnull(avg(pro_level),4) pro_level,
+		ifnull(avg(facility_level),4) facility_level,
+		ifnull(avg(totle_score),4) totle_score from dr_tb_doctor_value";
+
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+
+			$_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["standard_doctor_valuet"]=$result;
+			return $result;
+		}
+
+	}
 	
 	public function getDoctor($doctor_id){
 		Global $SysLangCode;
 	
 		$doctor_id=mysql_real_escape_string($doctor_id);
 
-		$sql="select * from dr_tb_doctor d
+		$sql="select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score from dr_tb_doctor d
 left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='$SysLangCode'
 where d.id=$doctor_id ";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array($query); 
