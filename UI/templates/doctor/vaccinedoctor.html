@@ -1,4 +1,162 @@
 {{include  file="$smarty_root/header.html" }}
 
+<script src="{{$rootpath}}/themes/mobile/js/menu.js"></script>
+<script src="{{$rootpath}}/plugin/raty/jquery.raty.js"></script>
+
+<div id="child_narvigation" style="margin-top: 10px;">
+    <div id="child_nar vaccineNar">
+        <div class="childNar vaccineChild" style="width: 45%; ">
+            <a href="#" onclick="clickMenu('districtMenu',this)">
+                <div class="childNarText">全区</div>
+            </a>
+        </div>
+        <!--<div class="childNar vaccineChild" style="width: 30%; padding: 1%;">
+            <a href="#" onclick="clickMenu('manVaccineMenu',this)">
+                <div class="childNarText">筛选</div>
+            </a>
+        </div>-->
+        <div class="childNar vaccineChild" style="width: 45%; ">
+            <a href="#" onclick="clickSingleMenu('womanVaccineMenu',this)">
+                <div class="childNarText">综合排序</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="cover" onclick="clickMenu()" style="background: gray; width: 100%; height: 100%; z-index: 9998; position: absolute; opacity: 0.5;"></div>
+
+<div id="menuPanel" class="vaccineList vaccineMenus" style="background: white; z-index: 9999;">
+    <div id="menu" style="width: 100%; float: left;">
+        <div id="districtMenu" style="width: 50%; float: left; background: #F0F0F0; height: 250px; OVERFLOW-X: hidden;">
+            <div onclick="openSubMenu('hotdistrictlist', 'districtMenu', this);" style="float: left; width: 100%;" ref_id="hotdistrictlist">
+                <div>
+                    <span class="menuMainText">热门商区</span>
+                </div>
+            </div>
+            <div onclick="openSubMenu('subwaylist', 'districtMenu', this);" style="float: left; width: 100%;" ref_id="subwaylist">
+                <div>
+                    <span class="menuMainText">地铁沿线</span>
+                </div>
+            </div>
+            {{foreach from=$district_condition.district item=rs}}
+            <div onclick="openSubMenu('district_{{$rs.district_id}}', 'districtMenu', this);" style="float: left; width: 100%;" ref_id="district_{{$rs.district_id}}">
+                <div>
+                    <span class="menuMainText">{{$rs.name}}</span>
+                </div>
+            </div>
+            {{/foreach}}
+        </div>
+
+        <div id="womanVaccineMenu" style="width: 100%; float: left; background: #F0F0F0; height: 250px; OVERFLOW-X: hidden;">
+            <div  style="">
+                <span class="menuMainText">智能排序</span>
+            </div>
+            <div >
+                <span class="menuMainText">价格优先</span>
+            </div>
+            <div >
+                <span class="menuMainText">评价最高</span>
+            </div>
+        </div>
+        <div id="hotdistrictlist" style="width: 50%; float: left; background: white;height: 250px; OVERFLOW-X: hidden;">
+            <a class="menuMainText menuSubText" href="#">全部商区</a>
+            {{foreach from=$district_condition.hotdistrict item=rs}}
+            <a class="menuMainText menuSubText" href="#">{{$rs.name}}</a>
+            {{/foreach}}
+        </div>
+
+        <div id="subwaylist" style="width: 50%; float: left; background: white;height: 250px; OVERFLOW-X: hidden;">
+            {{foreach from=$district_condition.subway item=rs}}
+            <a class="menuMainText menuSubText" href="#" onclick="openNextMenu(this)">{{$rs.name}}</a>
+            <div style="margin-left: 10px;display: none">
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">{{$rs.name}}沿线</a>
+                {{foreach from=$rs.station_list item=rss}}
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">{{$rss.name}}</a>
+                {{/foreach}}
+            </div>
+            {{/foreach}}
+        </div>
+        {{foreach from=$district_condition.district item=rs}}
+        <div id="district_{{$rs.district_id}}" style="width: 50%; float: left; background: white;height: 250px; OVERFLOW-X: hidden;">
+            <a class="menuMainText menuSubText" href="#">{{$rs.name}}全区</a>
+            {{foreach from=$rs.block_list item=rss}}
+            <a class="menuMainText menuSubText" href="#">{{$rss.name}}</a>
+            {{/foreach}}
+        </div>
+        {{/foreach}}
+
+    </div>
+
+</div>
+
+<div class="vaccineList">
+    <div class="vaccineContent">
+        {{foreach from=$doctorlist item=rs}}
+
+        <div style="border: 0; float: left; width: 100%; margin-top: 4%; border-bottom: 1px solid #E7E7E8;padding-bottom:10px;">
+            <div style="border: 0; float: left; width: 25%;">
+                <div>
+                    <img style="width: 100%; height: auto;" src="{{$uploadpath}}/doctor_photo/{{$rs.photo}}" />
+                </div>
+                <div style="font-size: 0.6em; color: #E95616;" class="divCenter">
+                    <span>总和评价: {{$rs.totle_score}}</span>
+                </div>
+                <div style="font-size: 0.5em; /*color: #9A9A9A; */" class="divCenter">
+                    <span>医术:{{$rs.pro_level}} 服务{{$rs.service_level}}</span>
+                </div>
+            </div>
+            <div style="border: 0; float: left; width: 70%; line-height: 18px; margin-left: 5%;">
+                <div style="font-size: 0.9em; color: #403C3B; float: left; width: 100%;">
+                    <div style="float: left; width: 45%">
+                        <span style="font-weight: bold;">{{$rs.name}}</span>
+                        <span style="margin-left: 10px;">{{if $rs.is_general=='Y'}}全科{{else}}{{$rs.specialist}}{{/if}}</span>
+                    </div>
+                    <div class="divraty" style="float: left; width: 50%;" score="{{$rs.totle_score}}"></div>
+                </div>
+                {{foreach from=$rs.office_list item=ors}}
+                <div style="font-size: 0.7em; /*color: #9A9A9A; */ margin-top: 3%; width: 100%; float: left;">
+                    <div style="float: left;">
+                            <img style="float: left; margin-left: -20px; margin-top: -18px; overflow: hidden; position: absolute; width: 50px;"
+                                            src="{{$rootpath}}/themes/mobile/img/icons/location.png" />
+                    </div>
+                    <div style="float: left; margin-left: 15px; width: 100%;">
+                        <div style="float: left; width: 70%;">
+                            <span style="float: left;">{{$ors.address}}</span>
+                        </div>
+                        <div style="float: left; width: 20%; margin-left: 10%;">
+                            <img style="width: 30%; height: auto; float: left;" src="{{$rootpath}}/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                        </div>
+                    </div>
+                </div>
+                {{/foreach}}
+                <div style="width: 100%;">
+                    <div style="float: left; width: 70%; margin-top: 9px;">
+                        <button class=" " id="bookOnline1" data-role="none">
+                            <div style="margin-top: -4px">
+                                <span style="">预约{{$rs.web_price}}</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div style="float: left; width: 30%; margin-top: 13px;">
+                        <span style="float: left; font-size: 0.7em;">标准价:{{$rs.price}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/foreach}}
+    </div>
+
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('.divraty').each(function () {
+            var score = $(this).attr("score");
+            $(this).raty({ readOnly: true, score: score });
+        });
+    });
+
+    
+
+</script>
 
 {{include  file="$smarty_root/footer.html" }}

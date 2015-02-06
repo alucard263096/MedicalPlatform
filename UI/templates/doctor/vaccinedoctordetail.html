@@ -1,3 +1,519 @@
 {{include  file="$smarty_root/header.html" }}
 
+<div id="child_narvigation" style="margin-top: 10px;">
+    <div id="child_nar vaccineNar">
+        <div class="childNar vaccineChild" style="width: 30%; padding: 1%;">
+            <a href="#" onclick="clickMenu('childVaccineMenu',this)">
+                <div class="childNarText">全区</div>
+            </a>
+        </div>
+        <div class="childNar vaccineChild" style="width: 30%; padding: 1%;">
+            <a href="#" onclick="clickMenu('manVaccineMenu',this)">
+                <div class="childNarText">筛选</div>
+            </a>
+        </div>
+        <div class="childNar vaccineChild" style="width: 30%; padding: 1%;">
+            <a href="#" onclick="clickSingleMenu('womanVaccineMenu',this)">
+                <div class="childNarText">综合排序</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="cover" onclick="clickMenu()" style="background: gray; width: 100%; height: 100%; z-index: 9998; position: absolute; opacity: 0.5;"></div>
+
+<div id="menuPanel" class="vaccineList vaccineMenus" style="background: white; z-index: 9999;">
+    <div id="menu" style="width: 100%; float: left;">
+        <div id="childVaccineMenu" style="width: 50%; float: left; background: #F0F0F0; height: 250px; OVERFLOW-X: hidden;">
+            <div onclick="openSubMenu('childVaccineSubMenu_1',this);" style="float: left; width: 100%;" id="test">
+                <div>
+                    <span class="menuMainText">南山</span>
+                </div>
+            </div>
+
+            <div onclick="openSubMenu('childVaccineSubMenu_2',this);" style="float: left; width: 100%;" id="Div2">
+                <div>
+                    <span class="menuMainText">宝安</span>
+                </div>
+            </div>
+
+            <div onclick="openSubMenu('childVaccineSubMenu_3',this);" style="float: left; width: 100%;" id="Div4">
+                <div>
+                    <span class="menuMainText">罗湖</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="manVaccineMenu" style="width: 50%; float: left; background: #F0F0F0; height: 250px; OVERFLOW-X: hidden;">
+            <div onclick="openSubMenu('manVaccineSubMenu_1',this);" style="">
+                <span class="menuMainText">妇科</span>
+            </div>
+            <div onclick="openSubMenu('manVaccineSubMenu_2',this);">
+                <span class="menuMainText">男科</span>
+            </div>
+            <div onclick="openSubMenu('manVaccineSubMenu_3',this);">
+                <span class="menuMainText">儿科</span>
+            </div>
+            <div onclick="openSubMenu('manVaccineSubMenu_3',this);">
+                <span class="menuMainText">骨科</span>
+            </div>
+            <div onclick="openSubMenu('manVaccineSubMenu_3',this);">
+                <span class="menuMainText">眼科</span>
+            </div>
+            <div onclick="openSubMenu('manVaccineSubMenu_3',this);">
+                <span class="menuMainText">内科</span>
+            </div>
+            <div onclick="openSubMenu('manVaccineSubMenu_3',this);">
+                <span class="menuMainText">外科</span>
+            </div>
+            <div onclick="openSubMenu('manVaccineSubMenu_3',this);">
+                <span class="menuMainText">耳鼻咽喉科</span>
+            </div>
+        </div>
+
+        <div id="womanVaccineMenu" style="width: 50%; float: left; background: #F0F0F0; height: 250px; OVERFLOW-X: hidden;">
+            <div onclick="setSingleMenuValue(this)" style="">
+                <span class="menuMainText">智能排序</span>
+            </div>
+            <div onclick="setSingleMenuValue(this)">
+                <span class="menuMainText">三甲医院</span>
+            </div>
+            <div onclick="setSingleMenuValue(this)">
+                <span class="menuMainText">评价最高</span>
+            </div>
+        </div>
+
+        <div id="childVaccineSubMenu_1" style="width: 50%; float: left; background: white;height: 250px; OVERFLOW-X: hidden;">
+            <a class="menuMainText menuSubText" href="#" onclick="openNextMenu(this)">蔡屋围1</a>
+
+            <div style="margin-left: 10px;display: none">
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">1号</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">2号</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">3号</a>
+            </div>
+
+            <a class="menuMainText menuSubText" href="#" onclick="openNextMenu(this)">蔡屋围2</a>
+            <div style="margin-left: 10px;display: none">
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">11号</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">22号</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">33号</a>
+            </div>
+
+            <a class="menuMainText menuSubText" href="#" onclick="openNextMenu(this)">蔡屋围3</a>
+            <div style="margin-left: 10px;display: none">
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">111号</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">222号</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">333号</a>
+            </div>
+
+        </div>
+        <div id="childVaccineSubMenu_2" style="width: 50%; float: left; background: white;height: 250px; OVERFLOW-X: hidden;">
+            <a class="menuMainText menuSubText" href="#" onclick="openNextMenu(this)">蔡屋围4</a>
+            <div style="margin-left: 10px;display: none">
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">1号</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">2号</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">3号</a>
+            </div>
+
+            <a class="menuMainText menuSubText" href="#" onclick="openNextMenu(this)">蔡屋围5</a>
+            <div style="margin-left: 10px;display: none">
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">11号</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">22号</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">33号</a>
+            </div>
+            <a class="menuMainText menuSubText" href="#" onclick="openNextMenu(this)">蔡屋围6</a>
+            <div style="margin-left: 10px;display: none">
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">111号</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">222号</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">333号</a>
+            </div>
+        </div>
+        <div id="childVaccineSubMenu_3" style="width: 50%; float: left; background: white;height: 250px; OVERFLOW-X: hidden;">
+            <a class="menuMainText menuSubText" href="#" onclick="openNextMenu(this)">蔡屋围7</a>
+            <div style="margin-left: 10px;display: none">
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">87号</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">69</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">36</a>
+            </div>
+            <a class="menuMainText menuSubText" href="#" onclick="openNextMenu(this)">蔡屋围7</a>
+            <div style="margin-left: 10px;display: none">
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">sd</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">982号</a>
+                <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">69号</a>
+            </div>
+        </div>
+
+        <div id="manVaccineSubMenu_1" style="width: 50%; float: left; background: white;">
+            <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">妇科sub</a>
+            <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">妇科sub</a>
+            <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">妇科sub</a>
+        </div>
+        <div id="manVaccineSubMenu_2" style="width: 50%; float: left; background: white;">
+            <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">男科sub</a>
+            <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">男科sub</a>
+            <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">男科sub</a>
+        </div>
+        <div id="manVaccineSubMenu_3" style="width: 50%; float: left; background: white;">
+            <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">新生儿</a>
+            <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">咳嗽发热</a>
+            <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">小二肠胃</a>
+            <a class="menuMainText menuSubText" href="#" onclick="setMenuValue(this)">小儿皮肤</a>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="vaccineList">
+    <div class="vaccineContent">
+        <div id="vaccineDetails" style="border: 0; float: left; width: 100%; margin-top: 4%; border-bottom: 1px solid #E7E7E8;">
+            <div style="border: 0; float: left; width: 25%;">
+                <div>
+                    <img style="width: 100%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/doc_1.png" />
+                </div>
+                <div style="font-size: 0.6em; color: #E95616;" class="divCenter">
+                    <span>总和评价: 4.8</span>
+                </div>
+                <div style="font-size: 0.5em; /*color: #9A9A9A; */" class="divCenter">
+                    <span>医术:4.5 服务5</span>
+                </div>
+            </div>
+            <div style="border: 0; float: left; width: 70%; line-height: 18px; margin-left: 5%;">
+                <div style="font-size: 0.9em; color: #403C3B; float: left; width: 100%;">
+                    <div style="float: left; width: 45%">
+                        <span style="font-weight: bold;">冰医生</span>
+                        <span style="margin-left: 10px;">全科</span>
+                    </div>
+                    <div id="divraty" class="divraty" style="float: left; width: 50%;"></div>
+                </div>
+                <div style="font-size: 0.7em; /*color: #9A9A9A; */ margin-top: 3%; width: 100%; float: left;">
+                    <div style="float: left;">
+                        <img style="float: left; margin-left: -20px; margin-top: -18px; overflow: hidden; position: absolute; width: 50px;"
+                             src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/location.png" />
+                    </div>
+                    <div style="float: left; margin-left: 15px; width: 100%;">
+                        <div style="float: left; width: 70%;">
+                            <span style="float: left;">香港岛数码港</span>
+                        </div>
+                        <div style="float: left; width: 20%; margin-left: 10%;">
+                            <img style="width: 30%; height: auto; float: left;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                        </div>
+                    </div>
+                </div>
+                <div style="font-size: 0.7em; /*color: #9A9A9A; */ margin-top: 3%; float: left; width: 100%;">
+                    <div style="float: left; width: 40%;">
+                        <img style="float: left; margin-left: -20px; margin-top: -18px; overflow: hidden; position: absolute; width: 50px;"
+                             src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/location.png" />
+                    </div>
+                    <div style="float: left; margin-left: 15px; width: 100%;">
+                        <div style="float: left; width: 70%;">
+                            <span style="float: left;">香港岛数码港</span>
+                        </div>
+                        <div style="float: left; width: 20%; margin-left: 10%;">
+                            <!--<span style="float:left;">></span>-->
+                            <img style="width: 30%; height: auto; float: left;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 100%;">
+                    <div style="float: left; width: 60%; margin-top: 9px;">
+                        <button class=" " id="bookOnline1" data-role="none">
+                            <div style="margin-top: -4px">
+                                <span style="">网上预约3600</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div style="float: left; width: 40%; margin-top: 13px;">
+                        <span style="float: left; font-size: 0.7em;">标准价:4000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Div1" style="border: 0; float: left; width: 100%; margin-top: 4%; border-bottom: 1px solid #E7E7E8;">
+            <div style="border: 0; float: left; width: 25%;">
+                <div>
+                    <img style="width: 100%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/doc_2.png" />
+                </div>
+                <div style="font-size: 0.6em; color: #E95616;" class="divCenter">
+                    <span>总和评价: 4.8</span>
+                </div>
+                <div style="font-size: 0.5em; /*color: #9A9A9A; */" class="divCenter">
+                    <span>医术:4.5 服务5</span>
+                </div>
+            </div>
+            <div style="border: 0; float: left; width: 70%; line-height: 18px; margin-left: 5%;">
+                <div style="font-size: 0.9em; color: #403C3B; float: left; width: 100%;">
+                    <div style="float: left; width: 45%">
+                        <span style="font-weight: bold;">冰医生</span>
+                        <span style="margin-left: 10px;">全科</span>
+                    </div>
+                    <div class="divraty" style="float: left; width: 50%;"></div>
+                </div>
+                <div style="font-size: 0.7em; /*color: #9A9A9A; */ margin-top: 3%; width: 100%; float: left;">
+                    <div style="float: left;">
+                        <img style="float: left; margin-left: -20px; margin-top: -18px; overflow: hidden; position: absolute; width: 50px;"
+                             src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/location.png" />
+                    </div>
+                    <div style="float: left; margin-left: 15px; width: 100%;">
+                        <div style="float: left; width: 70%;">
+                            <span style="float: left;">香港岛数码港</span>
+                        </div>
+                        <div style="float: left; width: 20%; margin-left: 10%;">
+                            <!--<span style="float:left;">></span>-->
+                            <img style="width: 30%; height: auto; float: left;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+
+                        </div>
+                    </div>
+                </div>
+                <div style="font-size: 0.7em; /*color: #9A9A9A; */ margin-top: 3%; float: left; width: 100%;">
+                    <div style="float: left; width: 40%;">
+                        <img style="float: left; margin-left: -20px; margin-top: -18px; overflow: hidden; position: absolute; width: 50px;"
+                             src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/location.png" />
+                    </div>
+                    <div style="float: left; margin-left: 15px; width: 100%;">
+                        <div style="float: left; width: 70%;">
+                            <span style="float: left;">香港岛数码港</span>
+                        </div>
+                        <div style="float: left; width: 20%; margin-left: 10%;">
+                            <!--<span style="float:left;">></span>-->
+                            <img style="width: 30%; height: auto; float: left;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 100%;">
+                    <div style="float: left; width: 60%; margin-top: 9px;">
+                        <button class=" " id="bookOnline2" data-role="none">
+                            <div style="margin-top: -4px">
+                                <span style="">网上预约3600</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div style="float: left; width: 40%; margin-top: 13px;">
+                        <span style="float: left; font-size: 0.7em;">标准价:4000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Div3" style="border: 0; float: left; width: 100%; margin-top: 4%; border-bottom: 1px solid #E7E7E8;">
+            <div style="border: 0; float: left; width: 25%;">
+                <div>
+                    <img style="width: 100%; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/doc_3.png" />
+                </div>
+                <div style="font-size: 0.6em; color: #E95616;" class="divCenter">
+                    <span>总和评价: 4.8</span>
+                </div>
+                <div style="font-size: 0.5em; /*color: #9A9A9A; */" class="divCenter">
+                    <span>医术:4.5 服务5</span>
+                </div>
+            </div>
+            <div style="border: 0; float: left; width: 70%; line-height: 18px; margin-left: 5%;">
+                <div style="font-size: 0.9em; color: #403C3B; float: left; width: 100%;">
+                    <div style="float: left; width: 45%">
+                        <span style="font-weight: bold;">冰医生</span>
+                        <span style="margin-left: 10px;">全科</span>
+                    </div>
+                    <div class="divraty" style="float: left; width: 50%;"></div>
+                </div>
+                <div style="font-size: 0.7em; /*color: #9A9A9A; */ margin-top: 3%; width: 100%; float: left;">
+                    <div style="float: left;">
+                        <img style="float: left; margin-left: -20px; margin-top: -18px; overflow: hidden; position: absolute; width: 50px;"
+                             src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/location.png" />
+                    </div>
+                    <div style="float: left; margin-left: 15px; width: 100%;">
+                        <div style="float: left; width: 70%;">
+                            <span style="float: left;">香港岛数码港</span>
+                        </div>
+                        <div style="float: left; width: 20%; margin-left: 10%;">
+                            <!--<span style="float:left;">></span>-->
+                            <img style="width: 30%; height: auto; float: left;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+
+                        </div>
+                    </div>
+                </div>
+                <div style="font-size: 0.7em; /*color: #9A9A9A; */ margin-top: 3%; float: left; width: 100%;">
+                    <div style="float: left; width: 40%;">
+                        <img style="float: left; margin-left: -20px; margin-top: -18px; overflow: hidden; position: absolute; width: 50px;"
+                             src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/location.png" />
+                    </div>
+                    <div style="float: left; margin-left: 15px; width: 100%;">
+                        <div style="float: left; width: 70%;">
+                            <span style="float: left;">香港岛数码港</span>
+                        </div>
+                        <div style="float: left; width: 20%; margin-left: 10%;">
+                            <!--<span style="float:left;">></span>-->
+                            <img style="width: 30%; height: auto; float: left;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 100%;">
+                    <div style="float: left; width: 60%; margin-top: 9px;">
+                        <button class=" " id="bookOnline3" data-role="none">
+                            <div style="margin-top: -4px">
+                                <span style="">网上预约3600</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div style="float: left; width: 40%; margin-top: 13px;">
+                        <span style="float: left; font-size: 0.7em;">标准价:4000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    $(function () {
+        initMenu();
+        setVaccineDetailHeight("vaccineDetails", "vaccineNum");
+        $('.divraty').each(function () {
+            $(this).raty();
+        });
+    });
+
+    function initMenu() {
+        $("#menuPanel").css("display", "none");
+        $("#cover").css("display", "none");
+        $("#menu > div").each(function () {
+            $(this).css("display", "none");
+        });
+    }
+
+
+    var isSameNextMenu;
+    function openNextMenu(myself) {
+        if (isSameNextMenu != myself) {
+            closeNextMenu(myself);
+        }
+
+        var nextMenu = $(myself).next();
+        if (nextMenu.css("display") == "none") {
+            nextMenu.show(1000);
+        } else {
+            nextMenu.hide(1000);
+        }
+        isSameNextMenu = myself;
+    }
+
+    function closeNextMenu(ctr) {
+        var brothers = $(ctr).siblings('div');
+        brothers.each(function () {
+            $(this).hide(1000);
+        });
+    }
+
+    function openSubMenu(id, myself) {
+        if (id.length <= 0) {
+            return;
+        }
+
+        closeMenu();
+
+        $("#" + getMainMenuName(id) + " > div").each(function () {
+            $(this).css("background", "none");
+        });
+
+        $("#" + id).css("display", "block");
+        $(myself).css("background", "white");
+        $("#" + getMainMenuName(id)).css("display", "block");
+        $("#menuPanel").css("margin-top", getMenuMarginTopHeight() + "px");
+        $("#cover").css("margin-top", getMenuMarginTopHeight() + "px");
+        $("#cover").css("display", "block");
+        $("#menu").css("display", "block");
+    }
+
+    function getFirstSubMenuName(id) {
+        var prevName = id.slice(0, id.length - 4);
+        return prevName + "SubMenu_1";
+    }
+
+    function getMainMenuName(id) {
+        var prevName = id.slice(0, id.length - 9);
+        return prevName + "Menu";
+    }
+
+    function closeMenu() {
+        $("#cover").css("display", "none");
+        $("#menu > div").each(function () {
+            $(this).css("display", "none");
+        });
+    }
+
+
+    var topMenu;
+    function clickMenu(id, myself) {
+        if (($("#menuPanel").css("display") == "block" && isSameMenu(id)) || "undefined" == typeof (id) || id.length <= 0) {
+            $("#menuPanel").css("display", "none");
+            $("#cover").css("display", "none");
+        } else {
+            $("#menuPanel").css("display", "block");
+            topMenu = myself;
+            openSubMenu(getFirstSubMenuName(id));
+            initFirstClickMenu(id);
+        }
+    }
+
+    function setMenuValue(myself) {
+        $($(topMenu), 'div').first().html("<div class='childNarText'>" + $(myself).text() + "</div>");
+        closeMenu();
+    }
+
+    function setSingleMenuValue(myself) {
+        $($(topMenu), 'span').first().html("<div class='childNarText'>" + $(myself).text() + "</div>");
+        closeMenu();
+    }
+
+    function clickSingleMenu(id, myself) {
+        if (($("#menuPanel").css("display") == "block" && isSameMenu(id)) || "undefined" == typeof (id) || id.length <= 0) {
+            $("#menuPanel").css("display", "none");
+            $("#cover").css("display", "none");
+        } else {
+            $("#menuPanel").css("display", "block");
+            topMenu = myself;
+
+            if (id.length <= 0) {
+                return;
+            }
+
+            $("#menu > div").each(function () {
+                $(this).css("display", "none");
+            });
+
+            $("#" + id + " > div").each(function () {
+                $(this).css("background", "none");
+            });
+
+            $("#" + id).css("display", "block");
+            $("#" + id).css("background", "white");
+            $("#menuPanel").css("margin-top", getMenuMarginTopHeight() + "px");
+            $("#cover").css("margin-top", getMenuMarginTopHeight() + "px");
+            $("#cover").css("display", "block");
+            $("#menu").css("display", "block");
+        }
+    }
+
+    var clickMenuId;
+    function isSameMenu(id) {
+        if (clickMenuId == id) {
+            return true;
+        }
+        clickMenuId = id;
+    }
+
+    function initFirstClickMenu(id) {
+        $("#" + id + " div").first().css("background", "white");
+    }
+
+    function getMenuMarginTopHeight() {
+        return $("#child_narvigation").height() + 10;
+    }
+
+    function setVaccineDetailHeight(parentId, childId) {
+        var heightValue = $("#" + parentId).height();
+        $("#" + childId).height(heightValue);
+    }
+
+</script>
+
 {{include  file="$smarty_root/footer.html" }}

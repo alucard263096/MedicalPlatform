@@ -63,7 +63,7 @@
 
 			$vaccineid=mysql_real_escape_string($vaccineid);
 
-			$sql="select distinct dv.doctor_id,dl.name doctor_name,d.is_general,sl.name specialist
+			$sql="select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
 		,dv.price,dv.web_price,
 		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
 		, ifnull(dvv.totle_score,4) totle_score
@@ -200,12 +200,12 @@ where oo.doctor_id in ($doctor_list)";
 
 			for($i=0;$i<$count;$i++){
 				$arr=Array();
-				foreach ($block_list as $key=>$value){
+				foreach ($station_list as $key=>$value){
 					if($value["subway_id"]==$result[$i]["subway_id"]){
 						$arr[]=$value;
 					}
 				}
-				$result[$i]["block_list"]=$arr;
+				$result[$i]["station_list"]=$arr;
 				unset($arr);
 			}
 			return $result;
@@ -220,7 +220,7 @@ inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
 inner join dr_tb_office_openhour oo on o.id=oo.office_id
 left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='$SysLangCode'
 		where oo.doctor_id in ($doctor_list)";
-
+		//echo $sql;
 			$query = $this->dbmgr->query($sql);
 			$result = $this->dbmgr->fetch_array_all($query);
 
@@ -232,7 +232,8 @@ left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='$SysLangCode
 	
 		$doctor_list=mysql_real_escape_string($doctor_list);
 
-		$sql="select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour 
+		$sql="select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,\",\",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,\",\",1))+2,length(coordinate))  y
 		from dr_tb_office_openhour oo
 inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
 left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='$SysLangCode' 
