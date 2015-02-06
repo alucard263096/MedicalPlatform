@@ -8,16 +8,14 @@
   require '../include/common.inc.php';
   require ROOT.'/classes/datamgr/doctor.cls.php';
 
+  $vaccine_id=$_REQUEST["id"];
 
-  $vaccineList=$vaccineMgr->getVaccineList();
-  $smarty->assign("VaccineList",$vaccineList);
+  $drlist=$doctorMgr->getVaccineDoctorList($vaccine_id);
+  $doctor_list=getListIdStr($result,"doctor_id");
 
-  
-  $vaccineCategory=$vaccineMgr->getVaccineCategory();
-  $smarty->assign("VaccineCategory",$vaccineCategory);
+  $districtCondition=$doctorMgr->getDistrictCondition($doctor_list);
 
-  $smarty->assign("RightButton","VaccineList");
 
-  $smarty->display(ROOT.'/templates/mobile/vaccine/index.html');
+  $smarty->display(ROOT.'/templates/doctor/vaccinedoctor.html');
 
 ?>
