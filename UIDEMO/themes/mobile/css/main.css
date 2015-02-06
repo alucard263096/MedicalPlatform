@@ -824,3 +824,21 @@ label {
     }
 
 /*order end*/
+
+/*pick_doctor begin*/
+
+#bookOnline1,#bookOnline2,#bookOnline3 {
+    border-radius: 5px;
+    height: 23px;
+    width: 65%;
+    padding: 3px;
+    background-color: #44A5D3;
+    border: 0;
+}
+
+    #bookOnline1 span,#bookOnline2 span,#bookOnline3 span {
+        color: white;
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+/*pick_doctor end*/
