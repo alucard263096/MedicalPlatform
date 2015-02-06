@@ -842,3 +842,40 @@ label {
         font-weight: normal;
     }
 /*pick_doctor end*/
+
+/*question begin*/
+#sexManButton,#sexWomanButton {
+    border-radius: 5px;
+    height: 28px;
+    width: 80%;
+    padding: 3px;
+    background-color: #C8C9C9;
+    border: 0;
+}
+
+#sexManButton:hover,#sexWomanButton:hover {
+    background-color: #44A5D3;
+}
+
+    #sexManButton span,#sexWomanButton span {
+        color: white;
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+
+#submitQuestion {
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    padding: 3px;
+    background-color: #e95414;
+    border: 0;
+}
+
+    #submitQuestion span {
+        color: white;
+        font-size: 1.4em;
+        font-weight: normal;
+    }
+    
+/*question end*/
