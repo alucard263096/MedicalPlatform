@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>咨询</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="shortcut icon" href="/MedicalPlatform/UIDEMO/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-72x72.png" />
+
+    <link rel="apple-touch-icon" href="/MedicalPlatform/UIDEMO/img/apple-touch-icon-57x57.png" />
+    <link rel="stylesheet" href="/MedicalPlatform/UIDEMO/themes/mobile/css/jquery.mobile-1.4.5.css" />
+    <link href="/MedicalPlatform/UIDEMO/themes/mobile/css/main.css" rel="stylesheet" />
+
+    <script src="/MedicalPlatform/UIDEMO/js/jquery-2.0.3.min.js"></script>
+    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/jquery.mobile-1.4.5.js"></script>
+
+    <script>
+        $(function () {
+            initAge();
+        });
+
+        function initAge() {
+            $("#age div").css("margin", "0");
+        }
+    </script>
+</head>
+<body>
+    <div data-role="page">
+        <div id="header" data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+            <h1>
+                <div>咨询</div>
+            </h1>
+            <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_comment.png">
+        </div>
+
+        <div id="content" data-role="content">
+            <div data-role="fieldcontain" style="padding: 15px; border: 0;">
+                <textarea style="font-size: 1em;" name="addinfo" id="info" placeholder="请详细描述你的健康问题，疾病症状等信息。请尽量上传化验单及患病部位照片。"></textarea>
+            </div>
+
+            <div style="float: left; width: 100%; padding: 15px; margin-top: -25px;">
+                <div style="float: left; width: 30%;">
+                    <button id="sexManButton" data-role="none">
+                        <span style="">男性</span>
+                    </button>
+                </div>
+                <div style="float: left; width: 30%;">
+                    <button id="sexWomanButton" data-role="none">
+                        <span style="">女性</span>
+                    </button>
+                </div>
+                <div style="float: left; width: 30%;" id="age">
+                    <input type="text" placeholder="年龄" style="width: 80%; height: 20px; font-size: 0.8em;" />
+                </div>
+            </div>
+            <div style="float: left; width: 100%; padding: 15px; margin-top: -25px;">
+                <div style="float: right; font-size: 0.7em; margin-right: 12%; color: gray;">
+                    匿名提问
+                </div>
+                <div style="float: right; margin-top: -5px;">
+                    <input data-role="none" type="checkbox" />
+                </div>
+            </div>
+
+            <div style="margin-top: -10px; border-bottom: 1px solid #e3e3e4; margin-left: -20px; height: 1px; float: left; width: 130%;"></div>
+            <div style="font-size: 0.8em; margin-left: 15px; color: #e95414;">
+                提示:上传疾病照片(只有解答问题的医生可见)
+            </div>
+
+            <div style="float: left; width: 100%; padding: 15px;">
+                <div style="float: left; width: 30%; margin-left: 5%;">
+                    <img style="width: 70%; float: left; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/upload_pic.png" />
+                </div>
+                <div style="float: left; width: 30%;">
+                    <img style="width: 70%; float: left; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/upload_pic.png" />
+                </div>
+                <div style="float: left; width: 30%;">
+                    <img style="width: 70%; float: left; height: auto;" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/upload_pic.png" />
+                </div>
+            </div>
+
+            <div style="float: left; width: 100%; margin-top: 0px;">
+                <div style="padding: 5%">
+                    <button class=" " id="submitQuestion" data-role="none" >
+                        <span style="">提交问题</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="footer" data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#" data-icon="home">首页</a>
+                    </li>
+                    <li><a href="#" data-icon="heart">疫苗</a></li>
+                    <li><a href="#" data-icon="star">咨询</a></li>
+                    <li><a href="#" data-icon="user">会员</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

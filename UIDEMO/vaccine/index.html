@@ -18,16 +18,29 @@
     <script src="/MedicalPlatform/UIDEMO/js/jquery-2.0.3.min.js"></script>
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/jquery.mobile-1.4.5.js"></script>
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/common.js"></script>
-    <!--<script src="https://rawgithub.com/arschmitz/jquery-mobile-nestedlists/master/jquery.mobile.nestedlists.js"></script>-->
+    <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/search.js"></script>
     <script src="/MedicalPlatform/UIDEMO/themes/mobile/js/vaccine.js"></script>
 </head>
 <body>
     <div data-role="page">
-        <div id="header" data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+        <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
             <h1>
                 <div>疫苗</div>
             </h1>
-            <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/index_comment.png">
+            <a data-role="none" style="margin-left: 90%; margin-top: -8px;" onclick="starSearch();">
+                <img class="searchIcon" src="data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2214px%22%20height%3D%2214px%22%20viewBox%3D%220%200%2014%2014%22%20style%3D%22enable-background%3Anew%200%200%2014%2014%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20d%3D%22M10.171%2C8.766c0.617-0.888%2C0.979-1.964%2C0.979-3.126c0-3.037-2.463-5.5-5.5-5.5s-5.5%2C2.463-5.5%2C5.5s2.463%2C5.5%2C5.5%2C5.5%20c1.152%2C0%2C2.223-0.355%2C3.104-0.962l3.684%2C3.683l1.414-1.414L10.171%2C8.766z%20M5.649%2C9.14c-1.933%2C0-3.5-1.567-3.5-3.5%20c0-1.933%2C1.567-3.5%2C3.5-3.5c1.933%2C0%2C3.5%2C1.567%2C3.5%2C3.5C9.149%2C7.572%2C7.582%2C9.14%2C5.649%2C9.14z%22%2F%3E%3C%2Fsvg%3E">
+            </a>
+        </div>
+
+        <div data-role="popup" id="popupSearch" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="width: 0; height: 0; border: 0;">
+            <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+                <input type="search" name="search" id="search" placeholder="通过医院名、医生名、疾病搜索">
+                <button class=" " id="cancelSearch" data-role="none" onclick="closeSearch();">
+                    <div>
+                        <span style="">取消</span>
+                    </div>
+                </button>
+            </div>
         </div>
 
         <div id="content" data-role="content">
@@ -68,11 +81,11 @@
                 </div>
             </div>
 
-            <div id="cover" onclick="clickMenu()" ></div>
+            <div id="cover" onclick="clickMenu()"></div>
 
-            <div id="menuPanel" class="vaccineList vaccineMenus" >
-                <div id="menu" >
-                    <div id="childVaccineMenu"  class="childMainMenu">
+            <div id="menuPanel" class="vaccineList vaccineMenus">
+                <div id="menu">
+                    <div id="childVaccineMenu" class="childMainMenu">
                         <div onclick="openSubMenu('childVaccineSubMenu_1',this);">
                             <span class="menuMainText">儿童1</span>
                         </div>
@@ -99,8 +112,8 @@
                         </div>
                     </div>
 
-                    <div id="manVaccineMenu"  class="childMainMenu">
-                        <div onclick="openSubMenu('manVaccineSubMenu_1',this);" >
+                    <div id="manVaccineMenu" class="childMainMenu">
+                        <div onclick="openSubMenu('manVaccineSubMenu_1',this);">
                             <span class="menuMainText">男1</span>
                         </div>
                         <div onclick="openSubMenu('manVaccineSubMenu_2',this);">
@@ -111,8 +124,8 @@
                         </div>
                     </div>
 
-                    <div id="womanVaccineMenu"  class="childMainMenu">
-                        <div onclick="openSubMenu('womanVaccineSubMenu_1',this);" >
+                    <div id="womanVaccineMenu" class="childMainMenu">
+                        <div onclick="openSubMenu('womanVaccineSubMenu_1',this);">
                             <span class="menuMainText">女1</span>
                         </div>
                         <div onclick="openSubMenu('womanVaccineSubMenu_2',this);">
@@ -124,7 +137,7 @@
                     </div>
 
                     <div id="oldManVaccineMenu" class="childMainMenu">
-                        <div onclick="openSubMenu('oldManVaccineSubMenu_1',this);" >
+                        <div onclick="openSubMenu('oldManVaccineSubMenu_1',this);">
                             <span class="menuMainText">老1</span>
                         </div>
                         <div onclick="openSubMenu('oldManVaccineSubMenu_2',this);">
@@ -135,7 +148,7 @@
                         </div>
                     </div>
 
-                    <div id="childVaccineSubMenu_1"  class="childSubMenu">
+                    <div id="childVaccineSubMenu_1" class="childSubMenu">
                         <a class="menuMainText menuSubText" href="#">儿童sub1</a>
                         <a class="menuMainText menuSubText" href="#">快餐</a>
                         <a class="menuMainText menuSubText" href="#">饮料</a>
@@ -206,98 +219,98 @@
 
 
             <div class="searchMore">
-                <div class="searchMoreText1 searchMoreText1_vaccine" >猜你在找</div>
+                <div class="searchMoreText1 searchMoreText1_vaccine">猜你在找</div>
                 <div class="searchMoreText2">更多  ></div>
             </div>
             <div class="vaccineList">
                 <div class="vaccineContent">
-                    <div id="vaccineDetails"  class="vaccineDetails">
+                    <div id="vaccineDetails" class="vaccineDetails">
                         <a href="details.html">
-                            <div  class="vaccineDetailsImg">
-                                <img  src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview3.png" />
+                            <div class="vaccineDetailsImg">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview3.png" />
                             </div>
-                            <div  class="vaccineDetailsText">
-                                <div  class="vaccineDetailsText1">
+                            <div class="vaccineDetailsText">
+                                <div class="vaccineDetailsText1">
                                     <span>2合一疫苗</span>
                                 </div>
-                                <div  class="vaccineDetailsText2">
+                                <div class="vaccineDetailsText2">
                                     <span>[预防]</span>
                                 </div>
-                                <div  class="vaccineDetailsText3">
+                                <div class="vaccineDetailsText3">
                                     <span>20岁以上</span>
                                 </div>
-                                <div >
-                                    <span  class="vaccineDetailsText4">参考价:</span>
-                                    <span  class="vaccineDetailsText5">3600~3800</span>
+                                <div>
+                                    <span class="vaccineDetailsText4">参考价:</span>
+                                    <span class="vaccineDetailsText5">3600~3800</span>
                                 </div>
                             </div>
-                            <div id="vaccineNum"  class="vaccineNum">
-                                <div  class="vaccineNumUp">
-                                    <img  src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                            <div id="vaccineNum" class="vaccineNum">
+                                <div class="vaccineNumUp">
+                                    <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
                                 </div>
-                                <div  class="vaccineNumDown">
+                                <div class="vaccineNumDown">
                                     <span>已预约: 276</span>
                                 </div>
                             </div>
                         </a>
                     </div>
 
-                    <div id="Div1"  class="vaccineDetails">
+                    <div id="Div1" class="vaccineDetails">
                         <a href="details.html">
-                            <div  class="vaccineDetailsImg">
-                                <img  src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview4.png" />
+                            <div class="vaccineDetailsImg">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview4.png" />
                             </div>
-                            <div  class="vaccineDetailsText">
-                                <div  class="vaccineDetailsText1">
+                            <div class="vaccineDetailsText">
+                                <div class="vaccineDetailsText1">
                                     <span>2合一疫苗</span>
                                 </div>
-                                <div  class="vaccineDetailsText2">
+                                <div class="vaccineDetailsText2">
                                     <span>[预防]</span>
                                 </div>
-                                <div  class="vaccineDetailsText3">
+                                <div class="vaccineDetailsText3">
                                     <span>20岁以上</span>
                                 </div>
-                                <div >
-                                    <span  class="vaccineDetailsText4">参考价:</span>
-                                    <span  class="vaccineDetailsText5">3600~3800</span>
+                                <div>
+                                    <span class="vaccineDetailsText4">参考价:</span>
+                                    <span class="vaccineDetailsText5">3600~3800</span>
                                 </div>
                             </div>
-                            <div id="Div2"  class="vaccineNum">
-                                <div  class="vaccineNumUp">
-                                    <img  src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                            <div id="Div2" class="vaccineNum">
+                                <div class="vaccineNumUp">
+                                    <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
                                 </div>
-                                <div  class="vaccineNumDown">
+                                <div class="vaccineNumDown">
                                     <span>已预约: 276</span>
                                 </div>
                             </div>
                         </a>
                     </div>
 
-                    <div id="Div3"  class="vaccineDetails">
+                    <div id="Div3" class="vaccineDetails">
                         <a href="details.html">
-                            <div  class="vaccineDetailsImg">
-                                <img  src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview5.png" />
+                            <div class="vaccineDetailsImg">
+                                <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/temp/listview5.png" />
                             </div>
-                            <div  class="vaccineDetailsText">
-                                <div  class="vaccineDetailsText1">
+                            <div class="vaccineDetailsText">
+                                <div class="vaccineDetailsText1">
                                     <span>2合一疫苗</span>
                                 </div>
-                                <div  class="vaccineDetailsText2">
+                                <div class="vaccineDetailsText2">
                                     <span>[预防]</span>
                                 </div>
-                                <div  class="vaccineDetailsText3">
+                                <div class="vaccineDetailsText3">
                                     <span>20岁以上</span>
                                 </div>
-                                <div >
-                                    <span  class="vaccineDetailsText4">参考价:</span>
-                                    <span  class="vaccineDetailsText5">3600~3800</span>
+                                <div>
+                                    <span class="vaccineDetailsText4">参考价:</span>
+                                    <span class="vaccineDetailsText5">3600~3800</span>
                                 </div>
                             </div>
-                            <div id="Div4"  class="vaccineNum">
-                                <div  class="vaccineNumUp">
-                                    <img  src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
+                            <div id="Div4" class="vaccineNum">
+                                <div class="vaccineNumUp">
+                                    <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
                                 </div>
-                                <div  class="vaccineNumDown">
+                                <div class="vaccineNumDown">
                                     <span>已预约: 276</span>
                                 </div>
                             </div>

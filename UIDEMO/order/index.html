@@ -38,8 +38,8 @@
             $("#" + containerId + " canvas").remove();
             $("#" + containerId).qrcode(
                 {
-                    width: 120,
-                    height: 120,
+                    width: 160,
+                    height: 160,
                     correctLevel: 0,
                     text: qrcodeContent
                 });
@@ -71,6 +71,7 @@
             $("#datepicker input").css("height", "22px");
             $("#datepicker input").css("font-size", "0.7em");
             $("#datepicker input").css("text-align", "center");
+            $("#datepicker input").attr('readonly', 'readonly');
         }
 
 
@@ -172,7 +173,7 @@
             </div>
 
             <div style="width: 100%; float: left; margin-left: 5%;">
-                <div style="float: left; width: 20%;">
+                <div style="float: left; width: 20%;" >
                     <button class=" " id="freeBookOrder2" data-role="none">
                         <div style="margin-top: -4px">
                             <span style="">预约日期</span>
@@ -263,11 +264,11 @@
 
             </div>
 
-            <div data-role="popup" id="comfireOrder" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="width: 250px; height: 250px;border:0;">
+            <div data-role="popup" id="comfireOrder" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15" style="width: 290px; height: 290px;border:0;">
                 <div style="background-color: #009FE8; height: 40px; width: 100%;">
                     <span style="color: white; font-size: 1em; padding: 10px; margin-left: 10px; display: block;">预约成功</span>
                 </div>
-                <div style="float: left; width: 100%; font-size: 0.4em; padding: 5px;">
+                <div style="float: left; width: 100%; font-size: 0.5em; padding: 5px;">
                     <div style="float: left; width: 19%">
                         <div class="divCenter" style="width: 100%; color: #009FE8;">时间</div>
                         <div style="width: 100%; margin-top: 3px;">
@@ -291,7 +292,7 @@
                 <div id="orderQrcode" class="divCenter" style="width: 100%;">
                 </div>
                 <div style="margin-top: 10px;">
-                    <div style="margin-left: 15%; float: left; width: 40%;">
+                    <div style="margin-left: 18%; float: left; width: 40%;">
                         <button class=" " id="checkOrder" data-role="none">
                             <div style="margin-top: -6px">
                                 <span style="">查看我的订单</span>
