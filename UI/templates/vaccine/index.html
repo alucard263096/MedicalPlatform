@@ -46,7 +46,7 @@
         {{foreach from=$VaccineCategory item=rs key=k}}
         <div id="{{$k}}Menu" class="childMainMenu">
             {{foreach from=$rs item=rscategory}}
-            <div onclick="openSubMenu('{{$k}}_sub_{{$rscategory.id}}',this);">
+            <div onclick="openSubMenu('{{$k}}_sub_{{$rscategory.id}}', '{{$k}}Menu', this);" ref_id="{{$k}}_sub_{{$rscategory.id}}">
                 <span class="menuMainText">{{$rscategory.name}}</span>
             </div>
             {{/foreach}}

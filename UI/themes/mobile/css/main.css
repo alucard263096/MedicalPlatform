@@ -842,3 +842,7 @@ label {
         font-weight: normal;
     }
 /*pick_doctor end*/
+
+.hide{
+    display:none;
+}

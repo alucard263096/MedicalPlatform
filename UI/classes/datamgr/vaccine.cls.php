@@ -39,7 +39,7 @@
 		$query = $this->dbmgr->query($sql);
 		$categoryresult = $this->dbmgr->fetch_array_all($query); 
 
-		$sql="select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		$sql="select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list,vcs.category_id from 
 		dr_tb_vaccine_category_sub vcs
 		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='$SysLangCode'
 		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
@@ -62,10 +62,12 @@
 			$count=0;
 			$vcscount=count($subresult);
 			for($j=0;$j<$vcscount;$j++){
-				$subcount=count(explode(",",$subresult[$j]["vaccine_list"]));
-				$subresult[$j]["count"]=$subcount;
-				$count+=$subcount;
-				$sublist[]=$subresult[$j];
+				if($categoryresult[$i]["id"]==$subresult[$j]["category_id"]){
+					$subcount=count(explode(",",$subresult[$j]["vaccine_list"]));
+					$subresult[$j]["count"]=$subcount;
+					$count+=$subcount;
+					$sublist[]=$subresult[$j];
+				}
 			}
 			$categoryresult[$i]["count"]=$count;
 			$categoryresult[$i]["sub"]=$sublist;

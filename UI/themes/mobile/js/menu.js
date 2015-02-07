@@ -10,13 +10,6 @@ function initMenu() {
         $(this).css("display", "none");
     });
 }
-function initMenu() {
-    $("#menuPanel").css("display", "none");
-    $("#cover").css("display", "none");
-    $("#menu > div").each(function () {
-        $(this).css("display", "none");
-    });
-}
 
 
 var isSameNextMenu;
