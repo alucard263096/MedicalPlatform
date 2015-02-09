@@ -25,7 +25,6 @@
   $promotedvaccinelist=$vaccineMgr->getPromotedVaccineList();
   $smarty->assign("promotedvaccine1",$promotedvaccinelist[0]);
   $smarty->assign("promotedvaccine2",$promotedvaccinelist[1]);
-
   $smarty->display(ROOT.'/templates/index.html');
   
 ?>

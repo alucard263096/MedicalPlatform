@@ -1,10 +1,13 @@
 {{include  file="$smarty_root/header.html" }}
-<script src="{{$rootpath}}/themes/js/jquery.slides.js"></script>
+{{include  file="$smarty_root/bar.html" }}
+<div role="main" class="ui-content" style="padding:0;">
+    <script src="{{$rootpath}}/themes/js/jquery.slides.js"></script>
 
     <style>
-        .slidesjs-navigation{
-            display:none;
+        .slidesjs-navigation {
+            display: none;
         }
+
         .slidesjs-pagination-item {
             display: none;
         }
@@ -49,13 +52,13 @@
     </div>
 
     <br />
-    
-        <div class="row" style="background: #DBDBDC; padding-left: 10px; padding-right: 10px; ">
-            <div class="col-xs-12">
-                <div class="col-xs-6"><a href="{{$rootpath}}/vaccine"><h5>找疫苗</h5></a></div>
-                <div class="col-xs-6 text-right"><a href="{{$rootpath}}/vaccine"><h5>更多  ></h5></a></div>
-            </div>
+
+    <div class="row" style="background: #DBDBDC; padding-left: 10px; padding-right: 10px; ">
+        <div class="col-xs-12">
+            <div class="col-xs-6"><a href="{{$rootpath}}/vaccine/"><h5>找疫苗</h5></a></div>
+            <div class="col-xs-6 text-right"><a href="{{$rootpath}}/vaccine/"><h5>更多  ></h5></a></div>
         </div>
+    </div>
 
     <br />
 
@@ -68,7 +71,7 @@
             </div>
             <div class="col-xs-7" style="padding-left:10px;">
                 <div class="row" style="padding-bottom:3px;">
-                    <a href="{{$rootpath}}/vaccine/detail.php?id={{$promotedvaccine1.vaccine_id}}">
+                    <a href="{{$rootpath}}/vaccine/detail.php?id={{$promotedvaccine1.id}}">
                         <div class="col-xs-12">{{$promotedvaccine1.name}}</div>
                         <div class="col-xs-12">
                             <div class="col-xs-7">
@@ -82,7 +85,7 @@
                     </a>
                 </div>
                 <div class="row" style="padding-bottom:3px;">
-                    <a href="{{$rootpath}}/vaccine/detail.php?id={{$promotedvaccine2.vaccine_id}}">
+                    <a href="{{$rootpath}}/vaccine/detail.php?id={{$promotedvaccine2.id}}">
                         <div class="col-xs-12">{{$promotedvaccine2.name}}</div>
                         <div class="col-xs-12">
                             <div class="col-xs-7">
@@ -99,35 +102,36 @@
         </div>
     </div>
 
-<br />
+    <br />
 
-<div class="row" style="background: #DBDBDC; padding-left: 10px; padding-right: 10px; ">
-    <div class="col-xs-12">
-        <div class="col-xs-6"><a href="{{$rootpath}}/doctor"><h5>找医生</h5></a></div>
-        <div class="col-xs-6 text-right"><a href="{{$rootpath}}/doctor"><h5>更多  ></h5></a></div>
-    </div>
-</div>
-
-<br />
-
-
-<div class="row ">
-    <div class="col-xs-12">
-        {{foreach from=$promoteddoctorlist item=rs}}
-        <div class="col-xs-3">
-            <a href="{{$rootpath}}/doctor/detail.php?id={{$rs.id}}">
-                <div><img class="img-responsive" src="{{$uploadpath}}/doctor_photo/{{$rs.photo}}"></div>
-                <div class="text-center small">{{$rs.name}}</div>
-                <div class="text-center small" style="color: #8D8D8D">
-                    {{if $rs.is_general=='Y'}}全科
-                    {{else}}{{$rs.specialist_id_str}}
-                    {{/if}}
-                </div>
-            </a>
+    <div class="row" style="background: #DBDBDC; padding-left: 10px; padding-right: 10px; ">
+        <div class="col-xs-12">
+            <div class="col-xs-6"><a href="{{$rootpath}}/doctor"><h5>找医生</h5></a></div>
+            <div class="col-xs-6 text-right"><a href="{{$rootpath}}/doctor"><h5>更多  ></h5></a></div>
         </div>
-        {{/foreach}}
     </div>
+
+    <br />
+
+
+    <div class="row ">
+        <div class="col-xs-12">
+            {{foreach from=$promoteddoctorlist item=rs}}
+            <div class="col-xs-3">
+                <a href="{{$rootpath}}/doctor/detail.php?id={{$rs.id}}">
+                    <div><img class="img-responsive" src="{{$uploadpath}}/doctor_photo/{{$rs.photo}}"></div>
+                    <div class="text-center small">{{$rs.name}}</div>
+                    <div class="text-center small" style="color: #8D8D8D">
+                        {{if $rs.is_general=='Y'}}全科
+                        {{else}}{{$rs.specialist_id_str}}
+                        {{/if}}
+                    </div>
+                </a>
+            </div>
+            {{/foreach}}
+        </div>
+    </div>
+    <br />
 </div>
-<br />
 
     {{include  file="$smarty_root/footer.html" }}

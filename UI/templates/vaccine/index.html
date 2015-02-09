@@ -1,148 +1,131 @@
 {{include  file="$smarty_root/header.html" }}
-
-<script src="{{$rootpath}}/themes/mobile/js/menu.js"></script>
-    
-<div id="child_narvigation">
-    <div id="child_nar vaccineNar">
-        <div class="childNar vaccineChild">
-            <a href="#" onclick="clickMenu('category_cMenu')">
-                <div class="childNarIcon">
-                    <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccinechild.png">
-                </div>
-                <div class="childNarText">儿童</div>
-            </a>
-        </div>
-        <div class="childNar vaccineChild">
-            <a href="#" onclick="clickMenu('category_mMenu')">
-                <div class="childNarIcon">
-                    <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccineman.png">
-                </div>
-                <div class="childNarText">男性</div>
-            </a>
-        </div>
-        <div class="childNar vaccineChild">
-            <a href="#" onclick="clickMenu('category_fMenu')">
-                <div class="childNarIcon">
-                    <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccinewoman.png">
-                </div>
-                <div class="childNarText">女性</div>
-            </a>
-        </div>
-        <div class="childNar vaccineChild">
-            <a href="#" onclick="clickMenu('category_eMenu')">
-                <div class="childNarIcon">
-                    <img class="childNarImg" src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccineoldman.png">
-                </div>
-                <div class="childNarText">老人</div>
-            </a>
+{{include  file="$smarty_root/bar.html" }}
+<div role="main" class="ui-content" style="padding:0;">
+    <div class="row ">
+        <div class="col-xs-12">
+            <div class="col-xs-3">
+                <a href="{{$rootpath/vaccine}}">
+                    <div><img class="img-responsive" src="{{$rootpath}}/themes/img/icons/vaccinechild.png"></div>
+                    <div class="text-center">儿童</div>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="{{$rootpath/doctor}}">
+                    <div><img class="img-responsive" src="{{$rootpath}}/themes/img/icons/vaccineman.png"></div>
+                    <div class="text-center">男性</div>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="{{$rootpath/member}}">
+                    <div><img class="img-responsive" src="{{$rootpath}}/themes/img/icons/vaccinewoman.png"></div>
+                    <div class="text-center">女性</div>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="{{$rootpath/member}}">
+                    <div><img class="img-responsive" src="{{$rootpath}}/themes/img/icons/vaccineoldman.png"></div>
+                    <div class="text-center">老人</div>
+                </a>
+            </div>
         </div>
     </div>
-</div>
-
-<div id="cover" onclick="clickMenu()"></div>
-
-<div id="menuPanel" class="vaccineList vaccineMenus">
-    <div id="menu">
-        {{foreach from=$VaccineCategory item=rs key=k}}
-        <div id="{{$k}}Menu" class="childMainMenu">
-            {{foreach from=$rs item=rscategory}}
-            <div onclick="openSubMenu('{{$k}}_sub_{{$rscategory.id}}', '{{$k}}Menu', this);" ref_id="{{$k}}_sub_{{$rscategory.id}}">
-                <span class="menuMainText">{{$rscategory.name}}</span>
+    <div id="menuPanel" class="vaccineList vaccineMenus" style="display:none;">
+        <div id="menu">
+            {{foreach from=$VaccineCategory item=rs key=k}}
+            <div id="{{$k}}Menu" class="childMainMenu">
+                {{foreach from=$rs item=rscategory}}
+                <div onclick="openSubMenu('{{$k}}_sub_{{$rscategory.id}}', '{{$k}}Menu', this);" ref_id="{{$k}}_sub_{{$rscategory.id}}">
+                    <span class="menuMainText">{{$rscategory.name}}</span>
+                </div>
+                {{/foreach}}
             </div>
             {{/foreach}}
-        </div>
-        {{/foreach}}
 
-        {{foreach from=$VaccineCategory item=rs key=k}}
+            {{foreach from=$VaccineCategory item=rs key=k}}
             {{foreach from=$rs item=rscategory}}
             <div id="{{$k}}_sub_{{$rscategory.id}}" class="childSubMenu">
-                <a class="menuMainText menuSubText btnSubCategory" idlist="all"  href="#">全部</a>
+                <a class="menuMainText menuSubText btnSubCategory" idlist="all" href="#">全部</a>
                 {{foreach from=$rscategory.sub item=rssub}}
                 <a class="menuMainText menuSubText btnSubCategory" idlist="{{$rssub.vaccine_list}}" href="#">{{$rssub.name}}</a>
                 {{/foreach}}
             </div>
             {{/foreach}}
-        {{/foreach}}
+            {{/foreach}}
+        </div>
     </div>
-
-
-</div>
-
-
-<div class="searchMore">
-    <div class="searchMoreText1 searchMoreText1_vaccine">猜你在找</div>
-</div>
-<div class="vaccineList">
-    <div class="vaccineContent">
-        {{foreach from=$VaccineList item=rs}}
-        <div class="vaccineDetails" vaccine_id="{{$rs.id}}">
+    <br />
+    <div class="row" style="background: #DBDBDC; padding-left: 10px; padding-right: 10px; ">
+        <div class="col-xs-12">
+            <div class="col-xs-6"><a href="{{$rootpath}}/vaccine"><h5>猜你在找</h5></a></div>
+        </div>
+    </div>
+    <div class="row xsmall">&nbsp;</div>
+    <div class="row" style="padding-left: 20px; ">
+        <ul data-role="listview" >
+            {{foreach from=$VaccineList item=rs}}
+            <li style="padding-bottom:10px;" data-icon="custom">
             <a href="{{$rootpath}}/vaccine/detail.php?id={{$rs.id}}">
-                <div class="vaccineDetailsImg">
-                    <img src="{{$uploadpath}}/vaccine/{{$rs.image}}" />
+                <div class="col-xs-4">
+                    <img class="img-responsive" src="{{$uploadpath}}/vaccine/{{$rs.image}}" />
                 </div>
-                <div class="vaccineDetailsText">
-                    <div class="vaccineDetailsText1">
-                        <span>{{$rs.name}}</span>
-                    </div>
-                    <div class="vaccineDetailsText2">
-                        <span>[{{$rs.effect}}]</span>
-                    </div>
-                    <div class="vaccineDetailsText3">
-                        <span>{{$rs.used_group}}</span>
-                    </div>
-                    <div>
-                        <span class="vaccineDetailsText4">参考价:</span>
-                        <span class="vaccineDetailsText5">{{$rs.ref_price}}</span>
-                    </div>
-                </div>
-                <div id="vaccineNum" class="vaccineNum">
-                    <div class="vaccineNumUp">
-                        <img src="/MedicalPlatform/UIDEMO/themes/mobile/img/icons/vaccine_right_arrows.png" />
-                    </div>
-                    <div class="vaccineNumDown">
-                        <span>已预约: {{$rs.booking_count}}</span>
+                <div class="col-xs-8" style="padding-left:10px;">
+                    <div class="col-xs-12">
+                        <div class="row" style="padding-bottom:5px;">{{$rs.name}}</div>
+                        <div class="row xsmall">
+                            <div class="col-xs-10">
+                                <div class="row" style="padding-bottom:5px;">[{{$rs.effect}}]</div>
+                                <div class="row" style="padding-bottom:5px;">{{$rs.used_group}}</div>
+                            </div>
+                            <div class="col-xs-2 text-right" style="padding:0;font-size:30px;margin-top:-20px;">
+                                >
+                            </div>
+                        </div>
+                        <div class="row xsmall" style="padding-bottom:5px;">
+                            <div class="col-xs-6" style="padding:0;">参考价：<span style="color: #42A4D3;font-size:17px;">{{$rs.ref_price}}</span></div>
+                            <div class="col-xs-6 text-right" style="padding:0;">已预约: {{$rs.booking_count}}</div>
+                        </div>
                     </div>
                 </div>
             </a>
-        </div>
-        {{/foreach}}
+            </li>
+            {{/foreach}}
+        </ul>
     </div>
 
+    
 </div>
+    <script>
+        $(document).ready(function () {
+            $(".btnSubCategory").click(function () {
+                var subcat = $(this).attr("idlist");
+                var subcatids = new Array();
+                if (subcat == "all") {
+                    var parentid = $(this).parent().attr("id");
+                    $("#" + parentid + " a").each(function () {
+                        var idlist = $(this).attr("idlist");
+                        if (idlist != "all" && idlist != "") {
+                            var ids = idlist.split(",");
+                            subcatids = subcatids.concat(ids);
+                        }
+                    });
+                } else {
+                    var ids = subcat.split(",");
+                    subcatids = subcatids.concat(ids);
+                }
 
-<script>
-    $(document).ready(function () {
-        $(".btnSubCategory").click(function () {
-            var subcat = $(this).attr("idlist");
-            var subcatids = new Array();
-            if (subcat == "all") {
-                var parentid = $(this).parent().attr("id");
-                $("#" + parentid+" a").each(function () {
-                    var idlist = $(this).attr("idlist");
-                    if (idlist != "all" && idlist != "") {
-                        var ids = idlist.split(",");
-                        subcatids=subcatids.concat(ids);
+                $(".vaccineDetails").each(function () {
+
+                    var vaccine_id = $(this).attr("vaccine_id");
+                    if (subcatids.indexOf(vaccine_id) >= 0) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
                     }
                 });
-            } else {
-                var ids = subcat.split(",");
-                subcatids = subcatids.concat(ids);
-            }
 
-            $(".vaccineDetails").each(function () {
-
-                var vaccine_id = $(this).attr("vaccine_id");
-                if (subcatids.indexOf(vaccine_id) >= 0) {
-                    $(this).show();
-                } else {
-                    $(this).hide();
-                }
+                $("#menuPanel").css("display", "none");
+                $("#cover").css("display", "none");
             });
-            
-            $("#menuPanel").css("display", "none");
-            $("#cover").css("display", "none");
         });
-    });
-</script>
-
-{{include  file="$smarty_root/footer.html" }}
+    </script>
+    {{include  file="$smarty_root/footer.html" }}
