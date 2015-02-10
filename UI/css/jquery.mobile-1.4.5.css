@@ -3604,7 +3604,7 @@ fieldset.ui-controlgroup {
 .ui-listview > .ui-li-static.ui-last-child,
 .ui-listview > .ui-li-divider.ui-last-child,
 .ui-listview > li.ui-last-child > a.ui-btn {
-	border-bottom-width: 1px;
+	border-bottom-width: 0px;
 }
 .ui-collapsible-content > .ui-listview:not(.ui-listview-inset) > li.ui-first-child,
 .ui-collapsible-content > .ui-listview:not(.ui-listview-inset) > li.ui-first-child > a.ui-btn {

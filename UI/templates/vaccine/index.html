@@ -60,10 +60,11 @@
         </div>
     </div>
     <div class="row xsmall">&nbsp;</div>
-    <div class="row" >
+
+
         <ul data-role="listview" data-filter="true" data-input="#filterTable-input" >
             {{foreach from=$VaccineList item=rs}}
-            <li style="padding-bottom:10px;" data-icon="false">
+            <li  data-icon="false">
             <a href="{{$rootpath}}/vaccine/detail.php?id={{$rs.id}}">
                 <div class="col-xs-4">
                     <img class="img-responsive" src="{{$uploadpath}}/vaccine/{{$rs.image}}" />
@@ -90,8 +91,7 @@
             </li>
             {{/foreach}}
         </ul>
-    </div>
-
+    <br />
     
 </div>
     <script>

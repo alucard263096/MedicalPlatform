@@ -16,7 +16,7 @@
         <div id="home-slides" class="col-xs-12">
             {{foreach from=$topbanner item=rs}}
             <a {{if $rs.link!="" }}href="{{$rs.link}}" {{/if}}>
-            <img src="{{$uploadpath}}/banner/{{$rs.pic}}">
+            <img class="img-responsive" src="{{$uploadpath}}/banner/{{$rs.pic}}">
             </a>
             {{/foreach}}
         </div>
