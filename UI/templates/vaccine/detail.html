@@ -2,7 +2,7 @@
 {{include  file="$smarty_root/bar.html" }}
 
 
-<div role="content" class="ui-content" style="padding:0;">
+<div role="main" class="ui-content" style="padding:0;">
     <script src="{{$rootpath}}/themes/js/jquery.slides.js"></script>
 
     <style>
@@ -34,9 +34,9 @@
     <div class="col-xs-12 xsmall" style="padding-top:0px;">
         <div class="col-xs-9" style="padding:0px;margin-top:15px;">参考价：<span style="color: #42A4D3;font-size:17px;">{{$info.ref_price}}</span>
             &nbsp;&nbsp;&nbsp;&nbsp;标准价：{{$info.standard_price}}</div>
-        <div class="col-xs-3" style="padding:0px;"><a href="#" data-role="button" style="background-color: #42A4D3;color:snow;font-weight:lighter;">预约</a></div>
+        <div class="col-xs-3" style="padding:0px;"><a href="{{$rootpath}}/doctor/index.php?action=vaccine&id={{$info.id}}" data-role="button" style="background-color: #42A4D3;color:snow;font-weight:lighter;">预约</a></div>
     </div>
-    <hr style="margin-bottom:0px;border-color: #42A4D3;border-style:solid ;" />
+    <hr style="margin-bottom:0px;border-color: #42A4D3;border-width:thick;" />
 
     <div class="col-xs-12">
         <h3>{{$info.name}}</h3>
@@ -92,11 +92,11 @@
         </h6>
         <div class="xsmall">
             <p>
-                <div class="row">
+                <div class="row" style="padding-bottom:5px;">
                     <div class="col-xs-8">接种时间</div>
                     <div class="col-xs-4">{{$info.injection_time}}</div>
                 </div>
-                <div class="row">
+                <div class="row" style="padding-bottom:5px;">
                     <div class="col-xs-8">接种季节</div>
                     <div class="col-xs-4">{{$info.injection_season}}</div>
                 </div>
