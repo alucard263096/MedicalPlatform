@@ -14,9 +14,15 @@
   $action=$_REQUEST["action"];
 
   $info=$doctorMgr->getDoctor($doctor_id);
+  $info["pro_title"]=encodeRowText($info["pro_title"]);
+  $info["summary"]=encodeLongText($info["summary"]);
+  $info["post_process"]=encodeLongText($info["post_process"]);
+
   $standard=$doctorMgr->getStandardDoctorValue();
   
   $smarty->assign("info",$info);
+
+
   $smarty->assign("standard",$standard);
 
   if($action=="vaccine"){
@@ -26,6 +32,5 @@
 	$smarty->assign("doctor_id",$doctor_id);
 
 	$smarty->display(ROOT.'/templates/doctor/vaccinedoctordetail.html');
-		
   }
 ?>

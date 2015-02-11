@@ -146,4 +146,13 @@ function encodeLongText($str){
 	return $ret;
 }
 
+function encodeRowText($str){
+	$arr=explode("\n",$str);
+	$ret="";
+	foreach ($arr as $value){
+			$ret.="$value<br />";
+	}
+
+	return $ret;
+}
 ?>

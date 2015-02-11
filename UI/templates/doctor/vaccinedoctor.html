@@ -83,22 +83,71 @@
             {{/foreach}}
         </div>
     </div>
+
+
+    <script src="{{$rootpath}}/plugin/raty/jquery.raty.js"></script>
+    <link rel="stylesheet" href="{{$rootpath}}/plugin/raty/jquery.raty.css" />
+
     <ul data-role="listview" data-filter="true" data-input="#filterTable-input">
         {{foreach from=$doctorlist item=rs}}
-        <li data-icon="false">
+        <li data-icon="false" style="border-bottom-width:1px">
             <div class="col-xs-4">
                 <div class="row">
                     <img class="img-responsive" src="{{$rootpath}}/themes/img/icons/vaccinechild.png">
                 </div>
+                <div class="col-xs-12 xsmall yellowfont">
+                    总和评价: {{$rs.totle_score}}
+                </div>
+                <div class="col-xs-12 text-center xxsmall" style="padding-top:5px;">
+                    医术:{{$rs.pro_level}} 服务{{$rs.service_level}}
+                </div>
             </div>
-            <div class="col-xs-4">
-
-            </div>
-            <div class="col-xs-4">
-
+            <div class="col-xs-8">
+                <div class="row">
+                    <div class="col-xs-6" style="padding:0px;">
+                        <div class="col-xs-8"><h3>{{$rs.doctor_name}}</h3></div>
+                        <div class="col-xs-4 grayfont" style="font-size:80%;margin-top:6px;">{{if $rs.is_general=='Y'}}全科{{else}}{{$rs.specialist}}{{/if}}</div>
+                    </div>
+                    <div class="col-xs-6 text-right" style="padding-left:0px;margin-top:3px;">
+                        <div class="divraty" score="{{$rs.totle_score}}"></div>
+                    </div>
+                </div>
+                <div class="row" style="padding:10px;min-height:80px;">
+                    {{foreach from=$rs.office_list item=ors}}
+                    <div class="row small" style="padding-bottom:5px;">
+                        <div class="col-xs-2"><img class="img-responsive" src="{{$rootpath}}/themes/img/icons/location.png" /></div>
+                        <div class="col-xs-8" style="padding:0px;margin-top:3px;">{{$ors.address}}</div>
+                        <div class="col-xs-1">></div>
+                    </div>
+                    {{/foreach}}
+                </div>
+                <div class="row" >
+                    <div class="col-xs-6" style="padding:0px;">
+                        <a href="{{$rootpath}}/doctor/detail.php?action=vaccine&id={{$rs.doctor_id}}&vid={{$vaccine_id}}" data-role="button" style="padding:5px;background-color: #42A4D3;color:snow;font-weight:lighter;">预约{{$rs.web_price}}</a>
+                    </div>
+                    <div class="col-xs-6 small grayfont text-right" style="margin-top:13px;">
+                        标准价:{{$rs.price}}
+                    </div>
+                </div>
             </div>
         </li>
         {{/foreach}}
     </ul>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.divraty').each(function () {
+                var score = $(this).attr("score");
+                $(this).raty({
+                    readOnly: true,
+                    space:false,
+                    score: score
+                });
+            });
+        });
+    </script>
+
+    <br />
 </div>    
 {{include  file="$smarty_root/footer.html" }}

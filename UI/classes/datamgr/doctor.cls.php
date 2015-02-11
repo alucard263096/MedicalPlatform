@@ -273,7 +273,7 @@ where oo.status='A' and oo.doctor_id in ($doctor_list) ";
 
 		$sql="select d.*,dl.*,sl.name specialist,
 		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
-		, ifnull(dvv.totle_score,4) totle_score from dr_tb_doctor d
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count from dr_tb_doctor d
 left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
 left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
 left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='$SysLangCode'
@@ -283,9 +283,6 @@ where d.id=$doctor_id ";
 
 		return $result;
 	}
-	
-	
-
 	
 
  }
