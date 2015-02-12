@@ -18,8 +18,6 @@
   $info["summary"]=encodeLongText($info["summary"]);
   $info["post_process"]=encodeLongText($info["post_process"]);
 
-  
-
   $standard=$doctorMgr->getStandardDoctorValue();
 
   if($info["totle_score"]>$standard["totle_score"]){

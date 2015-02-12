@@ -6,12 +6,7 @@
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
   require '../include/common.inc.php';
-  require 'inc.php';
 
-  //unset($_SESSION[SESSIONNAME]["Member"]);
-  
-  $smarty->assign("Title",$SysLang["website"]["member"]);
-
-  $smarty->display(ROOT.'/templates/member/index.html');
+  $smarty->display(ROOT.'/templates/member/reg.html');
 
 ?>
