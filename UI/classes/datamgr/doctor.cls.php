@@ -251,11 +251,10 @@ where oo.status='A' and oo.doctor_id in ($doctor_list) ";
 			return $_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["standard_doctor_value"];
 		}else{
 			
-			
-				$sql="select ifnull(avg(service_level),4) service_level,
-		ifnull(avg(pro_level),4) pro_level,
-		ifnull(avg(facility_level),4) facility_level,
-		ifnull(avg(totle_score),4) totle_score from dr_tb_doctor_value";
+				$sql="select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value";
 
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array($query); 

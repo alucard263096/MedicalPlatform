@@ -18,10 +18,52 @@
   $info["summary"]=encodeLongText($info["summary"]);
   $info["post_process"]=encodeLongText($info["post_process"]);
 
+  
+
   $standard=$doctorMgr->getStandardDoctorValue();
+
+  if($info["totle_score"]>$standard["totle_score"]){
+	$info["cp_totle_score"]=round(($info["totle_score"]*1.0/$standard["totle_score"])-1,2);
+	$info["cp_totle_score_t"]="up";
+  }else if($info["totle_score"]<$standard["totle_score"]){
+	$info["cp_totle_score"]=round(1-($info["totle_score"]*1.0/$standard["totle_score"]),2);
+	$info["cp_totle_score_t"]="down";
+  }else{
+	$info["cp_totle_score"]=0;
+  }
+
+  if($info["service_level"]>$standard["service_level"]){
+	$info["cp_service_level"]=round(($info["service_level"]*1.0/$standard["service_level"])-1,2);
+	$info["cp_service_level_t"]="up";
+  }else if($info["service_level"]<$standard["service_level"]){
+	$info["cp_service_level"]=round(1-($info["service_level"]*1.0/$standard["service_level"]),2);
+	$info["cp_service_level_t"]="down";
+  }else{
+	$info["cp_service_level"]=0;
+  }
+
+  if($info["pro_level"]>$standard["pro_level"]){
+	$info["cp_pro_level"]=round(($info["pro_level"]*1.0/$standard["pro_level"])-1,2);
+	$info["cp_pro_level_t"]="up";
+  }else if($info["pro_level"]<$standard["pro_level"]){
+	$info["cp_pro_level"]=round(1-($info["pro_level"]*1.0/$standard["pro_level"]),2);
+	$info["cp_pro_level_t"]="down";
+  }else{
+	$info["cp_pro_level"]=0;
+  }
+
+  if($info["facility_level"]>$standard["facility_level"]){
+	$info["cp_facility_level"]=round(($info["facility_level"]*1.0/$standard["facility_level"])-1,2);
+	$info["cp_facility_level_t"]="up";
+  }else if($info["facility_level"]<$standard["facility_level"]){
+	$info["cp_facility_level"]=round(1-($info["facility_level"]*1.0/$standard["facility_level"]),2);
+	$info["cp_facility_level_t"]="down";
+  }else{
+	$info["cp_facility_level"]=0;
+  }
+  //print_r($info);
   
   $smarty->assign("info",$info);
-
 
   $smarty->assign("standard",$standard);
 
