@@ -30,7 +30,7 @@
 		$mobile=mysql_real_escape_string($mobile);
 
 		$sql="select * from dr_tb_member
-where status='A' and ( email='$email' or mobile='$mobile' )";
+where status='A' and (  mobile='$mobile' )";//email='$email' or
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
 		return $result;

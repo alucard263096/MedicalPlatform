@@ -10,7 +10,7 @@
   require ROOT.'/classes/datamgr/vaccine.cls.php';
 
   if(!isset($_SESSION[SESSIONNAME]["Member"])){
-	$_SESSION[SESSIONNAME]["login_require_url"]=base64_encode($_SERVER["REQUEST_URI"]);
+	$_SESSION[SESSIONNAME]["login_require_url"]=$_SERVER["REQUEST_URI"];
 	header("location:../member/login.php");
 	exit();
   }

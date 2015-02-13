@@ -9,6 +9,22 @@
         </ul>
     </div><!-- /navbar -->
 </div><!-- /footer -->
+
+
+
+<div id="popuptips" data-role="popup" data-overlay-theme="a" class="ui-content">
+    <p></p>
+</div>
+
+<script>
+    function PopupTips(tips) {
+        $("#popuptips p").text(tips);
+
+        $("#popuptips").popup("open");
+    }
+</script>
+
     </div><!-- /page -->
+
 </body>
 </html>
