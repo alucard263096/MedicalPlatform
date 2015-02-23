@@ -4,9 +4,9 @@
 $CONFIG['rootpath']		= '/CMS';  
 //$CONFIG['charset']		= 'utf-8'; 
 $CONFIG['Title']             = '医汇通';
-$CONFIG['URL']="http://www.helpfooter.com/CMS";
+$CONFIG['URL']="http://www.myhkdoc.com/CMS";
 $CONFIG['lang']="zh-cn";//en-us
-$CONFIG["frontendurl"]="http://www.helpfooter.com/Promotion";
+$CONFIG["frontendurl"]="http://www.myhkdoc.com/Promotion";
 $CONFIG["SessionName"]="FooterCMS";
 
 $CONFIG['smarty']['rootpath']		= '/CMS'; 

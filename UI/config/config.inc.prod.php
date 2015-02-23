@@ -1,16 +1,16 @@
 <?php
 
 #[Root]
-$CONFIG['rootpath']		= '/MedicalPlatform/UI';  
+$CONFIG['rootpath']		= '';  
 //$CONFIG['charset']		= 'utf-8'; 
 $CONFIG['Title']             = 'MedicalPlatform';
-$CONFIG['URL']="http://localhost/MedicalPlatform/UI";
+$CONFIG['URL']="http://www.myhkdoc.com";
 $CONFIG['Domain']="www.myhkdoc.com";
 $CONFIG['lang']="zh-cn";//en-us
 $CONFIG["SessionName"]="FooterCMSUI";
 $CONFIG["SupportMultiLanguage"]=true;
 
-$CONFIG['smarty']['rootpath']		= '/MedicalPlatform/UI'; 
+$CONFIG['smarty']['rootpath']		= ''; 
 $CONFIG['solution_configuration']='debug';
 $CONFIG['server']		= 'windows';   //windows or linux
 
