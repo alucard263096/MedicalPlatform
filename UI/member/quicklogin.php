@@ -14,7 +14,7 @@
   $action=$_REQUEST["action"];
 
   if(count($memberlist)==0){
-	echo "NOMENBER";
+	echo "NOMEMBER";
   }else{
 	if($action=="psw"){
 	$password=$_REQUEST["password"];
