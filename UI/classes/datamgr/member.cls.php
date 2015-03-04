@@ -46,7 +46,7 @@ where status='A' and (  mobile='$mobile' )";//email='$email' or
 		$mobile=mysql_real_escape_string($mobile);
 		$password=mysql_real_escape_string($password);
 		$name=mysql_real_escape_string($name);
-
+		//logger_mgr::logDebug("a $password b");
 		$password=md5($password);
 
 		$sql="select ifnull(max(id),0)+1 from dr_tb_member";

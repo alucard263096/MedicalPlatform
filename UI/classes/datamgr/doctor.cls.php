@@ -98,6 +98,40 @@ order by totle_score";
 		}
 	}
 
+	
+
+	public function getVaccineDoctor($vaccineid,$doctorid){
+		Global $SysLangCode,$CONFIG;
+		
+			$vaccineid=mysql_real_escape_string($vaccineid);
+			$doctorid=mysql_real_escape_string($doctorid);
+
+			$sql="select distinct  dv.web_price,
+			vl.name vaccine_name,vl.effect vaccine_effect,vl.used_group vaccine_used_group,v.image vaccine_image,
+			dl.name doctor_name,d.is_general doctor_is_general,dl.pro_title doctor_pro_title,d.photo doctor_photo,sl.name doctor_specialist
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
+inner join dr_tb_vaccine v on dv.vaccine_id=v.id and v.status='A'
+left join dr_tb_vaccine_lang vl on v.id=vl.oid and vl.lang='$SysLangCode'
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='$SysLangCode'
+where dv.status='A' and dv.vaccine_id=$vaccineid and dv.doctor_id=$doctorid ";
+
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array($query);
+
+			$office_list=$this->getOfficeListByDoctor($doctorid);
+
+				$arr=Array();
+				foreach ($office_list as $key=>$value){
+					$arr[]=$value;
+				}
+				$result["office_list"]=$arr;
+				$result["office_count"]=count($arr);
+
+			return $result;
+	}
+
 	public function getDistrictCondition($doctor_list){
 		Global $SysLangCode,$CONFIG;
 

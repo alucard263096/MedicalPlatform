@@ -36,7 +36,7 @@
         参考价：<span style="color: #42A4D3;font-size:17px;">{{$info.ref_price}}</span>
             &nbsp;&nbsp;&nbsp;&nbsp;标准价：{{$info.standard_price}}</div>
         <div class="col-xs-3" style="padding:0px;">
-            <a href="{{$rootpath}}/doctor/index.php?action=vaccine&id={{$info.id}}" data-role="button" style="background-color: #42A4D3;color:snow;font-weight:lighter;">预约</a>
+            <a href="{{$rootpath}}/doctor/index.php?action=vaccine&id={{$info.id}}" data-role="button" style="background-color: #42A4D3;color:snow;">预约</a>
         </div>
     </div>
     <hr style="margin-bottom:0px;border-color: #42A4D3;" />
@@ -136,6 +136,6 @@
 </div>
 
 
-
+{{include  file="$smarty_root/navbar.html" }}
 
     {{include  file="$smarty_root/footer.html" }}

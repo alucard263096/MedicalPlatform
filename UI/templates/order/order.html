@@ -1,0 +1,112 @@
+{{include  file="$smarty_root/header.html" }}
+
+<div role="main" class="ui-content" style="padding:0;">
+    <div class="col-xs-12 text-center" style="background-color:#DBDBDC">
+        <h4 class="yellowfont">
+            <span><strong>参考价：{{$info.web_price}}</strong></span>
+            <span>&nbsp;|&nbsp;</span>
+            <span class="bsmall">{{$info.vaccine_name}}</span>
+        </h4>
+    </div>    
+    <div class="col-xs-12" style="padding:15px;">
+        <div class="col-xs-4">
+            <img class="img-responsive" src="{{$uploadpath}}/vaccine/{{$info.vaccine_image}}" />
+        </div>
+        <div class="col-xs-8">
+            <div >{{$info.vaccine_name}}</div>
+            <div class="xsmall grayfont" style="padding-top:6px;">[{{$info.vaccine_effect}}]</div>
+            <div class="xsmall grayfont" style="padding-top:6px;">{{$info.vaccine_used_group}}</div>
+        </div>
+    </div>  
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12" style="padding:15px;">
+        <div class="col-xs-4">
+            <img class="img-responsive" src="{{$uploadpath}}/doctor_photo/{{$info.doctor_photo}}">
+        </div>
+        <div class="col-xs-8">
+            <div class="col-xs-12" style="padding-left:0px;">
+                <div class="col-xs-6" style="padding-left:0px;">{{$info.doctor_name}}</div>
+                <div class="col-xs-6 grayfont lighter" style="font-size:80%;">{{if $info.doctor_is_general=='Y'}}全科{{else}}{{$info.doctor_specialist}}{{/if}}</div>
+            </div>
+            <div class="bsmall grayfont" style="padding-top:6px;">{{$info.doctor_pro_title}}</div>
+        </div>
+    </div>
+    <hr style="margin-bottom:0px;" />
+    
+    <div class="col-xs-12" style="padding-top:5px; padding-left:15px;padding-right:15px;">
+
+        <div class="col-xs-12" >
+            <div class="col-xs-3" style="padding:0px;">
+                <a data-role="button" style="padding:5px;background-color: #42A4D3;color:snow;font-size:14px;font-weight:lighter;">选择诊所</a>
+            </div>
+            <div class="col-xs-8" >
+                <input type="hidden" id="office_id" value="0" />
+                <input type="hidden" id="office_address" value="" />
+                <input type="text" maxlength="20" id="office_name" readonly="readonly" value="" style="border:1px solid #42A4D3;min-height:0px;height:27px;padding:0px;text-align:center;" placeholder="" />
+            </div>
+            <script>
+                var office_list=Array();
+                var i=0;
+                {{foreach from=$info.office_list item=rs}}
+                var office_{{$rs.id}}={
+                "office_id":"{{$rs.id}}",
+                "office_name":"{{$rs.name}}",
+                "office_address":"{{$rs.address}}"};
+                office_list[i++]=office_{{$rs.id}};
+                {{/foreach}}
+                $(document).ready(function () {
+                    //alert(office_list[0].office_name);
+                    $("#office_id").val(office_list[0].office_id);
+                    $("#office_address").val(office_list[0].office_name);
+                    $("#office_name").val(office_list[0].office_address);
+
+                });
+            </script>
+        </div>
+        <div class="col-xs-12" >
+            <div class="col-xs-3" style="padding:0px;">
+                <a data-role="button" style="padding:5px;background-color: #42A4D3;color:snow;font-size:14px;font-weight:lighter;">预约日期</a>
+            </div>
+            <div class="col-xs-8" >
+                <input type="text" maxlength="20" readonly="readonly" value="请点击选择" style="border:1px solid #42A4D3;min-height:0px;height:27px;padding:0px;text-align:center;" placeholder="点击选择"  />
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-xs-3" style="padding:0px;">
+                <a data-role="button"style="padding:5px;background-color: #42A4D3;color:snow;font-size:14px;font-weight:lighter;">预约时间</a>
+            </div>
+            <div class="col-xs-8">
+                <input type="text" maxlength="20" readonly="readonly" value="请点击选择" style="border:1px solid #42A4D3;min-height:0px;height:27px;padding:0px;text-align:center;" placeholder="点击选择" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 " style="background-color:#DBDBDC">
+        <div class="col-xs-12 " ><h5 class="bsmall grayfont">个人信息</h5></div>
+    </div>    
+    <div class="col-xs-12 bsmall " style="padding-top:10px;">
+        <div class="col-xs-4 grayfont">手机号码</div>
+        <div class="col-xs-8 " style="padding-left:0px;"><input data-role='none' type="tel" maxlength="11" style="border:0px;background-color:#F9F9F9" value="{{$member.mobile}}" /></div>
+    </div>
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12 bsmall " style="padding-top:10px;">
+        <div class="col-xs-4 grayfont">真实姓名</div>
+        <div class="col-xs-8 " style="padding-left:0px;"><input data-role='none' style="border:0px;background-color:#F9F9F9" value="" /></div>
+    </div> 
+    <hr style="margin-bottom:0px;" />
+
+    
+    <div class="col-xs-12" style="padding:15px;">
+        <div class="col-xs-6 xsmall text-center bluefont" >香港诊所实地支付</div>
+        <div class="col-xs-6 xsmall text-center bluefont">具体价格以当日汇率结算</div>
+    </div>
+
+
+    <div class="col-xs-12" >
+        <div class="col-xs-12">
+            <a href="#"  data-role="button" style="background-color:#42A4D3;color:snow; font-weight:lighter;">确认预约</a>
+        </div>
+    </div>
+</div>
+
+    {{include  file="$smarty_root/footer.html" }}
