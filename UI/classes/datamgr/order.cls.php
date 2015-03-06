@@ -132,7 +132,7 @@ where o.office_id=$office_id and o.doctor_id=$doctor_id and order_date='$order_d
 VALUES
 ($id,'$order_no','$guid',$member_id,'$name','$mobile','$email','$order_date',$order_time,$vaccine_id,$doctor_id,$office_id,$price,'P',now(),'$snapshot','P');
  ";
-		//$query = $this->dbmgr->query($sql);
+		$query = $this->dbmgr->query($sql);
 
 		
 		$this->dbmgr->commit_trans();
