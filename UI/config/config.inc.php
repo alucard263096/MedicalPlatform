@@ -8,7 +8,7 @@ $CONFIG['URL']="http://localhost/MedicalPlatform/UI";
 $CONFIG['Domain']="www.helpfooter.com";
 $CONFIG['lang']="zh-cn";//en-us
 $CONFIG["frontendurl"]="http://localhost/MedicalPlatform/";
-$CONFIG["doctorurl"]="http://192.168.1.104/MedicalPlatform/Doctor";
+$CONFIG["doctorurl"]="http://192.168.1.104/MedicalPlatform/DoctorCMS";
 $CONFIG["SessionName"]="FooterCMSUI";
 $CONFIG["SupportMultiLanguage"]=true;
 

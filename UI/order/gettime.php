@@ -16,7 +16,7 @@
 
   $smarty->assign("timelist",$timelist);
   
-  $smarty->display(ROOT.'/templates/mobile/order/gettime.html');
+  $smarty->display(ROOT.'/templates/order/gettime.html');
   
 
 

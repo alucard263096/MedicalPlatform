@@ -88,7 +88,27 @@ function ResetNameWithLang($arr,$lang){
 	return $arr;
 
 }
+function getSimpleGuid(){
+	$size=4;
+	$length=4;
 
+	$code="";
+
+	$maxnumber=1;
+	for($i=0;$i<$length;$i++){
+		$maxnumber=$maxnumber*10;
+	}
+
+	for($i=0;$i<$size;$i++){
+		 $tmp=sprintf("%0".$length."s",rand(0,$maxnumber));
+		 if($code!=""){
+		 $code.="-";
+		 }
+		 $code.=$tmp;
+	}
+	return $code;
+
+}
  function guid($namespace = '') {     
     static $guid = '';
     $uid = uniqid("", true);

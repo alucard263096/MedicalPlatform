@@ -101,12 +101,24 @@ where o.office_id=$office_id and o.doctor_id=$doctor_id and order_date='$order_d
 		$office_id=mysql_real_escape_string($office_id);
 		$price=mysql_real_escape_string($price);
 		$snapshot=mysql_real_escape_string($snapshot);
+		
+		
 
 		$this->dbmgr->begin_trans();
 
+		while(true){
+			$guid=getSimpleGuid();
+			$sql="select 1 from dr_tb_member_vaccine_order where guid='$guid' and h_status='P' ";
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array_all($query); 
+			if(count($result)==0){
+				break;
+			}
+		}
+
 
 		$password=md5($password);
-		$guid=guid();
+		//$guid=guid();
 
 		$sql="select ifnull(max(id),0)+1 from dr_tb_member_vaccine_order";
 		$query = $this->dbmgr->query($sql);
@@ -120,12 +132,13 @@ where o.office_id=$office_id and o.doctor_id=$doctor_id and order_date='$order_d
 VALUES
 ($id,'$order_no','$guid',$member_id,'$name','$mobile','$email','$order_date',$order_time,$vaccine_id,$doctor_id,$office_id,$price,'P',now(),'$snapshot','P');
  ";
-		$query = $this->dbmgr->query($sql);
+		//$query = $this->dbmgr->query($sql);
 
 		
 		$this->dbmgr->commit_trans();
-
-		return $id;
+		$arr["id"]=$id;
+		$arr["guid"]=$guid;
+		return $arr;
 
 	}
 
