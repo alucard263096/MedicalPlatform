@@ -199,6 +199,27 @@ where main.member_id=$member_id and main.id=$id";
 
 		return $result;
 	}
+
+	public function getVaccineAppointmentForCheck($member_id,$doctor_id,$vaccine_id){
+	
+		Global $SysLangCode;
+		$sql="select a.order_no,a.price, o.name office_name,a.guid,a.order_date,t.name order_time,a.name clientname,a.mobile clientmobile 
+		from dr_tb_member_vaccine_order a
+inner join dr_tb_office_lang o on a.office_id=o.oid and o.lang='$SysLangCode'
+inner join dr_tb_time t on a.order_time=t.id
+where a.member_id=$member_id
+and a.doctor_id=$doctor_id
+and a.vaccine_id=$vaccine_id
+and a.status='P'
+order by created_time desc";
+
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+
+
+
+		return $result;
+	}
  }
  
  $orderMgr=OrderMgr::getInstance();

@@ -27,9 +27,11 @@
 		}
 	}else if($action=="verifycode"){
 		$verifycode=$_REQUEST["verifycode"];
+		$member=$memberlist[0];
 		if($verifycode=="123456"){
 			echo "SUCCESS";
 			$_SESSION[SESSIONNAME]["Member"]=$member;
+			
 		}else{
 			echo "VCINCORRECT";
 		}

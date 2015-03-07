@@ -41,7 +41,7 @@
             $("#btnLogin").addClass("ui-state-disabled");
 
             $.post("{{$rootpath}}/member/quicklogin.php", json, function (data) {
-
+                alert(data);
                 if (data == "NOMEMBER") {
                     PopupTips("此手机号码未注册，请先注册");
                 } else if (data == "VCINCORRECT") {

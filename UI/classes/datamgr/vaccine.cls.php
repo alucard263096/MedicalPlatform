@@ -163,7 +163,20 @@ where o.status='A' and o.id in ( $ids )";
 		return $result;
 
 	}
+	
 
+	public function getVaccineDoctorPrice($doctor_id,$vaccine_id){
+		
+		$doctor_id=mysql_real_escape_string($doctor_id);
+		$vaccine_id=mysql_real_escape_string($vaccine_id);
+
+		$sql="select id,web_price from dr_tb_doctor_vaccine
+where doctor_id=$doctor_id and vaccine_id=$vaccine_id and status='A'";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+		return $result;
+
+	}
  }
  
  $vaccineMgr=VaccineMgr::getInstance();

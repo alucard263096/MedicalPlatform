@@ -9,6 +9,7 @@
   require ROOT.'/classes/datamgr/order.cls.php';
   require ROOT.'/classes/datamgr/doctor.cls.php';
   require ROOT.'/classes/datamgr/vaccine.cls.php';
+  require ROOT."/classes/mgr/qrcode.cls.php";
 
   if(!isset($_SESSION[SESSIONNAME]["Member"])){
 	$_SESSION[SESSIONNAME]["login_require_url"]=$_SERVER["REQUEST_URI"];
@@ -30,6 +31,16 @@
 	$smarty->assign("member",$member);
 	$smarty->assign("doctor_id",$doctor_id);
 	$smarty->assign("vaccine_id",$vaccine_id);
+
+	$orderinfo=$orderMgr->getVaccineAppointmentForCheck($member["id"],$doctor_id,$vaccine_id);
+	$haveorder=$orderinfo["order_no"]==""?"0":"1";
+	$url=$CONFIG["doctorurl"]."/Appointment/qrcodereader.php?key=vcorder&guid=".$ordeinfo["guid"];
+	$qrfile=GenQRCode($url);
+	$orderinfo["qrcode"]=$qrfile;
+	$smarty->assign("orderinfo",$orderinfo);
+	$smarty->assign("haveorder",$haveorder);
+
+
 	$smarty->display(ROOT.'/templates/order/order.html');
   }
 ?>

@@ -3,10 +3,10 @@
 <link rel="stylesheet" href="{{$rootpath}}/css/jquery-ui.css">
 <script src="{{$rootpath}}/js/jquery-ui.js"></script>
 
-<div role="main" class="ui-content" style="padding:0;" id="order_detail">
+<div role="main" class="ui-content" style="padding:0;" >
     <div class="col-xs-12 text-center" style="background-color:#DBDBDC">
-        <h4 class="yellowfont">
-            <span><strong>参考价：{{$info.web_price}}</strong></span>
+        <h4 class="yellowfont snapshot">
+            <span><strong>参考价：{{if $haveorder=="1"}}{{$orderinfo.price}}{{else}}{{$info.web_price}}{{/if}}</strong></span>
             <span>&nbsp;|&nbsp;</span>
             <span class="bsmall">{{$info.vaccine_name}}</span>
         </h4>
@@ -15,8 +15,8 @@
         <div class="col-xs-4">
             <img class="img-responsive" src="{{$uploadpath}}/vaccine/{{$info.vaccine_image}}" />
         </div>
-        <div class="col-xs-8">
-            <div >{{$info.vaccine_name}}</div>
+        <div class="col-xs-8  snapshot">
+            <div>{{$info.vaccine_name}}</div>
             <div class="xsmall grayfont" style="padding-top:6px;">[{{$info.vaccine_effect}}]</div>
             <div class="xsmall grayfont" style="padding-top:6px;">{{$info.vaccine_used_group}}</div>
         </div>
@@ -26,7 +26,7 @@
         <div class="col-xs-4">
             <img class="img-responsive" src="{{$uploadpath}}/doctor_photo/{{$info.doctor_photo}}">
         </div>
-        <div class="col-xs-8">
+        <div class="col-xs-8  snapshot">
             <div class="col-xs-12" style="padding-left:0px;">
                 <div class="col-xs-6" style="padding-left:0px;">{{$info.doctor_name}}</div>
                 <div class="col-xs-6 grayfont lighter" style="font-size:80%;">{{if $info.doctor_is_general=='Y'}}全科{{else}}{{$info.doctor_specialist}}{{/if}}</div>
@@ -59,10 +59,13 @@
                 {{/foreach}}
                 $(document).ready(function () {
                     //alert(office_list[0].office_name);
+                    {{if $haveorder=="1"}}
+                    $("#office_name").val("{{$orderinfo.office_name}}");
+                    {{else}}
                     $("#office_id").val(office_list[0].office_id);
                     $("#office_address").val(office_list[0].office_name);
                     $("#office_name").val(office_list[0].office_address);
-
+                    {{/if}}
                 });
             </script>
         </div>
@@ -71,7 +74,7 @@
                 <a data-role="button" style="padding:5px;background-color: #42A4D3;color:snow;font-size:14px;font-weight:lighter;">预约日期</a>
             </div>
             <div class="col-xs-8">
-                <input type="text" maxlength="20" readonly="readonly" id="order_date" value="请点击选择" style="border:1px solid #42A4D3;min-height:0px;height:27px;padding:0px;text-align:center;" placeholder="点击选择"  />
+                <input type="text" maxlength="20" readonly="readonly" id="order_date" value="{{if $haveorder=="1"}}{{$orderinfo.order_date}}{{else}}请点击选择{{/if}}" style="border:1px solid #42A4D3;min-height:0px;height:27px;padding:0px;text-align:center;" placeholder="点击选择"  />
             </div>
             <div class="col-xs-12 text-left" style="padding-left:0px;">
                 <div id="datepicker"></div>
@@ -136,11 +139,13 @@
          
          $("#order_time").load("{{$rootpath}}/order/gettime.php",json,function(data){
              $("#order_time").val($("#order_time:first").val());
-             $("#order_time-button .ui-selectmenu-text").text($("#order_time option:first").text());
+             $("#order_time").selectmenu('refresh');
+             refreshOrderTimeUI();
+             //$("#order_time-button .ui-selectmenu-text").text($("#order_time option:first").text());
 
          });
      } 
-                
+     {{if $haveorder=="0"}}   
                 //dateselect.hide("slow");
      $("#order_date").click(function(){
          if(dateselect==null){
@@ -159,6 +164,7 @@
          $('html,body').animate({scrollTop: scrollTop}, 800);
 
      });
+{{/if}}
             });
             </script>
         </div>
@@ -167,24 +173,31 @@
                 <a data-role="button"style="padding:5px;background-color: #42A4D3;color:snow;font-size:14px;font-weight:lighter;">预约时间</a>
             </div>
             <div class="col-xs-8">
-                <select  id="order_time" >
+                <select id="order_time">
+                    {{if $haveorder=="0"}}   
                     <option value="" selected="selected">请点击选择</option>
+                    {{else}}
+                    <option value="" selected="selected">{{$orderinfo.order_time}}</option>
+                    {{/if}}
                 </select>
             </div>
             <script>
+                function refreshOrderTimeUI(){
+                    var order_date_width=$("#order_date").width();
+                    if(order_date_width=="0"){
+                        order_date_width=200;
+                    }
+                    $("#order_time-button").css("width",order_date_width+2);
+                    $("#order_time-button").css("margin-top","6px");
+                    $("#order_time-button").css("border-color","#42A4D3");
+                    $("#order_time-button .ui-selectmenu-text").css("padding","2px");
+                    $("#order_time-button .ui-selectmenu-text").css("text-align","center");
+                    $("#order_time-button .ui-selectmenu-text").css("color","#333");
+                    $("#order_time-button .ui-selectmenu-text").css("font-weight","normal");
+                    $("#order_time-button .ui-selectmenu-text").css("font-size","16px");    
+            }
             $(document).ready(function(){
-                var order_date_width=$("#order_date").width();
-                if(order_date_width=="0"){
-                    order_date_width=200;
-                }
-                $("#order_time-button").css("width",order_date_width+2);
-                $("#order_time-button").css("margin-top","6px");
-                $("#order_time-button").css("border-color","#42A4D3");
-                $("#order_time-button .ui-selectmenu-text").css("padding","2px");
-                $("#order_time-button .ui-selectmenu-text").css("text-align","center");
-                $("#order_time-button .ui-selectmenu-text").css("color","#333");
-                $("#order_time-button .ui-selectmenu-text").css("font-weight","normal");
-                $("#order_time-button .ui-selectmenu-text").css("font-size","16px");
+                refreshOrderTimeUI();
             });
             </script>
         </div>
@@ -195,12 +208,14 @@
     </div>    
     <div class="col-xs-12 bsmall " style="padding-top:10px;">
         <div class="col-xs-4 grayfont">手机号码</div>
-        <div class="col-xs-8 " style="padding-left:0px;"><input id="clientmobile" data-role='none' type="tel" maxlength="11" style="border:0px;background-color:#F9F9F9" value="{{$member.mobile}}" /></div>
+        <div class="col-xs-8 " style="padding-left:0px;">
+            <input id="clientmobile" data-role='none' type="tel" maxlength="11" style="border:0px;background-color:#F9F9F9" value="{{if $haveorder=="1"}}{{$orderinfo.clientmobile}}{{else}}{{$member.mobile}}{{/if}}" />
+        </div>
     </div>
     <hr style="margin-bottom:0px;" />
     <div class="col-xs-12 bsmall " style="padding-top:10px;">
         <div class="col-xs-4 grayfont">真实姓名</div>
-        <div class="col-xs-8 " style="padding-left:0px;"><input id="clientname" data-role='none' style="border:0px;background-color:#F9F9F9" value="{{$member.name}}" /></div>
+        <div class="col-xs-8 " style="padding-left:0px;"><input id="clientname" data-role='none' style="border:0px;background-color:#F9F9F9" value="{{if $haveorder=="1"}}{{$orderinfo.clientname}}{{else}}{{$member.name}}{{/if}}" /></div>
     </div> 
     <hr style="margin-bottom:0px;" />
 
@@ -217,6 +232,7 @@
         </div>
     </div>
     <script>
+    {{if $haveorder=="0"}}
     booking_success=false;
     $(document).ready(function(){
         var bodywidth=$("body").width();
@@ -268,7 +284,8 @@
                 "vaccine_id":{{$vaccine_id}},
                 "doctor_id":{{$doctor_id}},
                 "office_id":office_id,
-                "snapshot":snapshot
+                "price":{{$info.web_price}},
+                "snapshot":""
             }
 
             $.post("{{$rootpath}}/order/quickvcorder.php",json,function(data){
@@ -284,10 +301,22 @@
 
                     $("#btnComplete").text("查看预约");
                     $("#orderCompletePopup").popup("open");
+
+                    $("#order_date").unbind( "click" );
+                    $("#order_time").attr("disabled","disabled");
+                    $("#order_time").selectmenu('refresh');
+                    refreshOrderTimeUI();
+
+                    
+                    $("#clientname").attr("disabled","disabled");
+                    $("#clientmobile").attr("disabled","disabled");
+
                     booking_success=true;
 
                 }else if(data=="USED"){
                     PopupTips("{{$SysLang.vaccine.orderdatetimeused}}");
+                }else if(data=="DUPLIC"){
+                    PopupTips("您已经预约该医生与该疫苗，请勿重复预约。");
                 }else if(data=="WITHOUTLOGIN"){
                     PopupTips("{{$SysLang.member.pleasesignin}}");
                 }else{
@@ -297,6 +326,14 @@
             });
         });
     });
+    {{else}}
+    $(document).ready(function(){
+        $("#btnComplete").text("查看预约");
+        $("#btnComplete").click(function(){
+                $("#orderCompletePopup").popup("open");
+        });
+    });
+    {{/if}}
     </script>
 </div>
 <div data-role="popup" id="orderCompletePopup" data-overlay-theme="a" data-theme="a" style="border:0px;">
@@ -307,11 +344,11 @@
         <p class="ui-title">请您于预约的指定日期前往改诊所完成预约。</p>
         <div class="row">
             <center>
-                <img id="imgqrcode" width="150px" height="150px" src="" />
+                <img id="imgqrcode" width="150px" height="150px" src="{{$orderinfo.qrcode}}" />
             </center>
         </div>
         <div class="row text-center" >
-            <h4  id="guidcode"></h4>
+            <h4  id="guidcode">{{$orderinfo.guid}}</h4>
         </div>
         <div class="row">
             <div class="col-xs-6">

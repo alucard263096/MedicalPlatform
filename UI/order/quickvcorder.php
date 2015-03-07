@@ -21,6 +21,7 @@
   $mobile=$_REQUEST["mobile"];
   $order_date=$_REQUEST["order_date"];
   $order_time=$_REQUEST["order_time"];
+  $price=$_REQUEST["price"];
   $vaccine_id=$_REQUEST["vaccine_id"];
   $doctor_id=$_REQUEST["doctor_id"];
   $office_id=$_REQUEST["office_id"];
@@ -31,17 +32,22 @@
 	echo "USED";
 	exit();
   }
+  
+	$orderinfo=$orderMgr->getVaccineAppointmentForCheck($member["id"],$doctor_id,$vaccine_id);
+	if($orderinfo["order_no"]!=""){
+		echo "DUPLIC";
+		exit();
+	}
 
 
-  //$info=$vaccineMgr->getVaccineDoctor($doctor_vaccine_id);
-  //if($info["doctor_id"]!=$doctor_id||$info["vaccine_id"]!=$vaccine_id){
-
-	//echo "HACK";
-	//exit();
-  //}
+  $info=$vaccineMgr->getVaccineDoctorPrice($doctor_id,$vaccine_id);
+  if($info["web_price"]!=$price){
+	echo "HACK";
+	exit();
+  }
   $arr=$orderMgr->createVaccineOrder($member_id,$name,$mobile,$email,
 	$order_date,$order_time,$vaccine_id,$doctor_id,$office_id,$info["web_price"],
-	$snapshot,$doctor_vaccine_id);
+	$snapshot,$info["id"]);
 
 	
   $url=$CONFIG["doctorurl"]."/Appointment/qrcodereader.php?key=vcorder&guid=".$arr["guid"];
