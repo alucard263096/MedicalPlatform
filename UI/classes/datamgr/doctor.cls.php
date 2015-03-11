@@ -306,7 +306,7 @@ where oo.status='A' and oo.doctor_id in ($doctor_list) ";
 
 		$sql="select d.*,dl.*,sl.name specialist,
 		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
-		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count from dr_tb_doctor d
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
 left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
 left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
 left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='$SysLangCode'
@@ -316,7 +316,62 @@ where d.id=$doctor_id ";
 
 		return $result;
 	}
+
 	
+	public function getDoctorService($doctor_id){
+		Global $SysLangCode;
+	
+		$doctor_id=mysql_real_escape_string($doctor_id);
+
+		$sql="select ds.*,el.name from dr_tb_doctor d
+inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
+inner join dr_tb_effect e on ds.effect_id=e.id
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='$SysLangCode'
+where e.status='A' ";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array_all($query); 
+
+		return $result;
+	}
+	
+	public function getDoctorList($doctor_id){
+		Global $SysLangCode,$CONFIG;
+		if($CONFIG['solution_configuration']!="debug"&&isset($_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["doctorlist"])){
+			return $_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["doctorlist"];
+		}else{
+	
+
+		$sql="select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from  dr_tb_doctor d 
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='$SysLangCode'
+where d.status='A'
+order by totle_score";
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array_all($query);
+
+			$doctor_list=getListIdStr($result,"doctor_id");
+
+			$office_list=$this->getOfficeListByDoctor($doctor_list);
+			$count=count($result);
+			for($i=0;$i<$count;$i++){
+				$arr=Array();
+				foreach ($office_list as $key=>$value){
+					if($value["doctor_id"]==$result[$i]["doctor_id"]){
+						$arr[]=$value;
+					}
+				}
+				$result[$i]["office_list"]=$arr;
+				$result[$i]["office_count"]=count($arr);
+				unset($arr);
+			}
+			$_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["doctorlist"]=$result;
+		return $result;
+		}
+	}
 
  }
  

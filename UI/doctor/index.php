@@ -21,6 +21,13 @@
 	$smarty->assign("district_condition",$districtCondition);
 	$smarty->display(ROOT.'/templates/doctor/vaccinedoctor.html');
   }else{
-	
+	$drlist=$doctorMgr->getDoctorList();
+	$smarty->assign("doctor_list",$drlist);
+
+	$doctor_list=getListIdStr($drlist,"doctor_id");
+	$districtCondition=$doctorMgr->getDistrictCondition($doctor_list);
+	$smarty->assign("district_condition",$districtCondition);
+
+	$smarty->display(ROOT.'/templates/doctor/index.html');
   }
 ?>

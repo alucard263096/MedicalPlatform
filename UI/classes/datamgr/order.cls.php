@@ -110,7 +110,7 @@ where o.office_id=$office_id and o.doctor_id=$doctor_id and order_date='$order_d
 			$guid=getSimpleGuid();
 			$sql="select 1 from dr_tb_member_vaccine_order where guid='$guid' and h_status='P' ";
 			$query = $this->dbmgr->query($sql);
-			$result = $this->dbmgr->fetch_array_all($query); 
+			$result = $this->dbmgr->fetch_array_all($query);
 			if(count($result)==0){
 				break;
 			}
@@ -134,12 +134,63 @@ VALUES
  ";
 		$query = $this->dbmgr->query($sql);
 
+		$this->updateDoctorBookingCount($doctor_id);
+		$this->updateVaccineBookingCount($vaccine_id);
+
 		
 		$this->dbmgr->commit_trans();
 		$arr["id"]=$id;
 		$arr["guid"]=$guid;
 		return $arr;
 
+	}
+
+	public function updateDoctorBookingCount($doctor_id){
+		
+		
+		$sql="select 1 from dr_tb_doctor_value
+where doctor_id=$doctor_id;
+";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array_all($query); 
+		if(count($result)>0){
+			$sql="update dr_tb_doctor_value set booking_count=ifnull(booking_count,233)+1 where doctor_id=$doctor_id";
+
+		}else{
+			$sql="select ifnull(max(id),0)+1 from dr_tb_doctor_value";
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array($query); 
+			$id=$result[0];
+			
+			$sql="insert into dr_tb_doctor_value (id,doctor_id,booking_count) values ($id,$doctor_id,234)";
+			
+		}
+		
+		$query = $this->dbmgr->query($sql);
+	}
+
+	
+	public function updateVaccineBookingCount($vaccine_id){
+		
+		
+		$sql="select 1 from dr_tb_vaccine_value
+where vaccine_id=$vaccine_id;
+";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array_all($query); 
+		if(count($result)>0){
+			$sql="update dr_tb_vaccine_value set booking_count=ifnull(booking_count,233)+1 where vaccine_id=$vaccine_id";
+
+		}else{
+			$sql="select ifnull(max(id),0)+1 from dr_tb_vaccine_value";
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array($query); 
+			$id=$result[0];
+			
+			$sql="insert into dr_tb_vaccine_value (id,vaccine_id,booking_count) values ($id,$vaccine_id,234)";
+		}
+		
+		$query = $this->dbmgr->query($sql);
 	}
 
 	public function getActiveVaccineAppointmentList($member_id){

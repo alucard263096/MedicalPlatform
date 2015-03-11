@@ -4,12 +4,23 @@
 <div id="popuptips" data-role="popup" data-overlay-theme="a" class="ui-content">
     <p></p>
 </div>
+<div id="popuploading" data-dismissible="false"  data-role="popup" data-overlay-theme="a" class="ui-content">
+    <img src="{{$rootpath}}/img/loading.gif" />
+    <p></p>
+</div>
 
 <script>
     function PopupTips(tips) {
         $("#popuptips p").text(tips);
 
         $("#popuptips").popup("open");
+    }
+    function PopupLoading(tips) {
+        $("#popuploading p").text(tips);
+        $("#popuploading").popup("open");
+    }
+    function CloseLoading() {
+        $("#popuploading").popup("close");
     }
 </script>
 

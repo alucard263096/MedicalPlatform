@@ -1,0 +1,96 @@
+{{include  file="$smarty_root/header.html" }}
+
+<script type="text/javascript" src="{{$rootpath}}/js/ajaxfileupload.js"></script>
+
+<div role="main" class="ui-content" style="padding:0px;">
+    <div class="col-xs-12">
+        <textarea style="min-height:250px;" maxlength="1000" cols="40" rows="8" name="textarea" id="description" placeholder="请详细描述您的健康问题，疾病症状等信息。请尽量上传化验单及患病部位的照片。"></textarea>
+    </div>
+    <div class="col-xs-12">
+        <div class="col-xs-9 text-right" style="padding-top:3px;">
+            <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                <input type="radio" name="radio-choice-b" id="r_male" value="m" checked="checked">
+                <label for="r_male">男性</label>
+                <input type="radio" name="radio-choice-b" id="r_female" value="f">
+                <label for="r_female">女性</label>
+            </fieldset>
+        </div>
+        <div class="col-xs-3 text-right">
+            <input id="clientmobile" type="number" maxlength="2" style="background-color:#F9F9F9" value="" placeholder="年龄" />
+        </div>
+    </div>
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12 text-center xsmall yellowfont" style="padding-top:10px;">
+        提示：上传疾病照片（只有该医生可见）
+    </div>
+    <div class="col-xs-12" style="padding-top:15px;">
+        <div class="col-xs-4 text-center">
+            <img id="img_1_d" src="{{$rootpath}}/themes/img/icons/upload_pic.png" class="img-responsive" />
+            <input id="img_1" data-role="none" name="img_1" onchange="upload('img_1')" type="file" style="width:1px;height:1px;" />
+            <input id="img_1_v"  type="hidden" />
+        </div>
+        <div class="col-xs-4 text-center">
+            <img id="img_2_d" src="{{$rootpath}}/themes/img/icons/upload_pic.png" class="img-responsive" />
+            <input id="img_2" data-role="none" name="img_2" onchange="upload('img_2')" type="file" style="width:1px;height:1px;" />
+            <input id="img_2_v" type="hidden" />
+        </div>
+        <div class="col-xs-4 text-center">
+            <img id="img_3_d" src="{{$rootpath}}/themes/img/icons/upload_pic.png" class="img-responsive" />
+            <input id="img_3" data-role="none" name="img_3" onchange="upload('img_3')" type="file" style="width:1px;height:1px;" />
+            <input id="img_3_v" type="hidden" />
+        </div>
+    </div>
+    <div class="col-xs-12" style="padding-top:15px;">
+        <a href="#" id="submit_question" data-role="button" style="color:snow; background-color:#E95414;">提交问题</a>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#img_1_d").click(function () {
+            $("#img_1").click();
+        });
+        $("#img_2_d").click(function () {
+            $("#img_2").click();
+        });
+        $("#img_3_d").click(function () {
+            $("#img_3").click();
+        });
+        $("#btnSubmit").click(function () {
+
+
+
+        });
+    });
+    function upload(key) {
+        PopupLoading("");
+        $.ajaxFileUpload
+		(
+			{
+			    "url": '{{$rootpath}}/fileupload.php?module=clientquery&field=' + key,
+			    "secureuri": false,
+			    "fileElementId":  key,
+			    "dataType": 'text',
+			    "success": function (data, status) {
+			        //alert(data);
+			        CloseLoading();
+			        if (data.substring(0, 7) == "success") {
+			            str = data.substring(7, data.length);
+			            $("#" + key+"_v").val(str.split('|~~|')[1]);
+			            $("#" + key+"_d").attr("src", "{{$uploadpath}}/clientquery/" + str.split('|~~|')[1]).show();
+
+			        } else {
+			            alert("{{$SysLang.model.uploaderror}}");
+			        }
+
+			    },
+			    "error": function (data, status, e) {
+			        CloseLoading();
+			        alert("{{$SysLang.model.uploaderror}}");
+			    }
+			}
+		);
+    }
+
+</script>
+
+{{include  file="$smarty_root/footer.html" }}

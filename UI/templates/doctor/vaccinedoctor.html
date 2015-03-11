@@ -87,8 +87,13 @@
 
     <script src="{{$rootpath}}/plugin/raty/jquery.raty.js"></script>
     <link rel="stylesheet" href="{{$rootpath}}/plugin/raty/jquery.raty.css" />
+    <style>
+        .divraty img{
+            width: 12px;
+        }
+    </style>
 
-    <ul data-role="listview" data-filter="true" data-input="#filterTable-input">
+    <ul id="doctor_list" data-role="listview" data-filter="true" data-input="#filterTable-input">
         {{foreach from=$doctorlist item=rs}}
         <li data-icon="false" style="border-bottom-width:1px">
             <div class="col-xs-4">
@@ -121,7 +126,7 @@
                     </div>
                     {{/foreach}}
                 </div>
-                <div class="row" >
+                <div class="row">
                     <div class="col-xs-6" style="padding:0px;">
                         <a href="{{$rootpath}}/doctor/detail.php?action=vaccine&id={{$rs.doctor_id}}&vid={{$vaccine_id}}" data-role="button" style="padding:5px;background-color: #42A4D3;color:snow;font-weight:lighter;">预约{{$rs.web_price}}</a>
                     </div>
@@ -145,6 +150,7 @@
                     score: score
                 });
             });
+            $("#doctor_list li:last").css("border-bottom-width", "0px");
         });
     </script>
 

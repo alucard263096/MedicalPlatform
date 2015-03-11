@@ -7,6 +7,7 @@
  */
   require '../include/common.inc.php';
   require ROOT.'/classes/datamgr/doctor.cls.php';
+  require ROOT.'/classes/datamgr/vaccine.cls.php';
   
   $doctor_id=$_REQUEST["id"];
   $office_id=$_REQUEST["oid"];
@@ -72,5 +73,15 @@
 	$smarty->assign("doctor_id",$doctor_id);
 
 	$smarty->display(ROOT.'/templates/doctor/vaccinedoctordetail.html');
+  }else{
+
+	$vaccine_list=$vaccineMgr->getVaccineListByDoctor($doctor_id);
+	$smarty->assign("vaccine_list",$vaccine_list);
+
+	$service_list=$doctorMgr->getDoctorService($doctor_id);
+	$smarty->assign("service_list",$service_list);
+
+	$smarty->assign("doctor_id",$doctor_id);
+	$smarty->display(ROOT.'/templates/doctor/detail.html');
   }
 ?>
