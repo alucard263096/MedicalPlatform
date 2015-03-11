@@ -16,6 +16,7 @@
   $action=$_REQUEST["action"];
   if($action=="submit"){
 
+
   }else{
   
 	  $doctor_id=$_REQUEST["id"];
