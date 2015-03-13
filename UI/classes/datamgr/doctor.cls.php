@@ -369,8 +369,80 @@ order by totle_score";
 				unset($arr);
 			}
 			$_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["doctorlist"]=$result;
-		return $result;
+
+			return $result;
+
 		}
+	}
+
+	public function GetQuestion($doctor_id,$member_id){
+		
+		$sql="select * from dr_tb_member_question where doctor_id=$doctor_id and member_id=$member_id and status='P' ";
+		
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query);
+
+		return $result;
+	}
+
+	public function SubmitAQuestion($doctor_id,$member_id,$member_name,$member_mobile,
+	$description,$is_male,$age,$img_1,$img_2,$img_3){
+	
+		$doctor_id=mysql_real_escape_string($doctor_id);
+		$member_id=mysql_real_escape_string($member_id);
+		$member_name=mysql_real_escape_string($member_name);
+		$member_mobile=mysql_real_escape_string($member_mobile);
+		$description=mysql_real_escape_string($description);
+		$is_male=mysql_real_escape_string($is_male);
+		$age=mysql_real_escape_string($age);
+		$img_1=mysql_real_escape_string($img_1);
+		$img_2=mysql_real_escape_string($img_2);
+		$img_3=mysql_real_escape_string($img_3);
+
+		$this->dbmgr->begin_trans();
+		
+		$sql="select ifnull(max(id),0)+1 from dr_tb_member_question";
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array($query); 
+			$id=$result[0];
+
+		$sql="
+		insert into dr_tb_member_question (id,doctor_id,member_id,member_name,member_mobile,description,is_male,age,img_1,img_2,img_3,status,submit_date)
+		values ($id,$doctor_id,$member_id,'$member_name','$member_mobile','$description','$is_male','$age','$img_1','$img_2','$img_3','P',now());
+		";
+		
+		$query = $this->dbmgr->query($sql);
+		
+		if($doctor_id>0){
+			$this->updateDoctorQueryCount($doctor_id);
+		}
+		
+		$this->dbmgr->commit_trans();
+	}
+
+	
+	public function updateDoctorQueryCount($doctor_id){
+		
+		
+		$sql="select 1 from dr_tb_doctor_value
+where doctor_id=$doctor_id;
+";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array_all($query); 
+		if(count($result)>0){
+			$sql="update dr_tb_doctor_value set query_count=ifnull(query_count,177)+1 where doctor_id=$doctor_id";
+
+		}else{
+			$sql="select ifnull(max(id),0)+1 from dr_tb_doctor_value";
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array($query); 
+			$id=$result[0];
+			
+			$sql="insert into dr_tb_doctor_value (id,doctor_id,query_count) values ($id,$doctor_id,178)";
+			
+		}
+		
+		$query = $this->dbmgr->query($sql);
 	}
 
  }

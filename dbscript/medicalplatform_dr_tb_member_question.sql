@@ -38,6 +38,9 @@ CREATE TABLE `dr_tb_member_question` (
   `remarks` varchar(1000) DEFAULT NULL,
   `updated_date` datetime DEFAULT NULL,
   `updated_user` int(11) DEFAULT NULL,
+  `submit_date` datetime DEFAULT NULL,
+  `member_name` varchar(45) DEFAULT NULL,
+  `member_mobile` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -51,4 +54,4 @@ CREATE TABLE `dr_tb_member_question` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-11 17:27:45
+-- Dump completed on 2015-03-13 17:35:25

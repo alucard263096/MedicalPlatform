@@ -102,33 +102,11 @@
         </div>
     </div>
 
-    <br />
+    <hr style="margin-bottom:0px;" />
 
-    <div class="row" style="background: #DBDBDC; padding-left: 10px; padding-right: 10px; ">
+    <div class="col-xs-12">
         <div class="col-xs-12">
-            <div class="col-xs-6"><a href="{{$rootpath}}/doctor"><h5>找医生</h5></a></div>
-            <div class="col-xs-6 text-right"><a href="{{$rootpath}}/doctor"><h5>更多  ></h5></a></div>
-        </div>
-    </div>
-
-    <br />
-
-
-    <div class="row ">
-        <div class="col-xs-12">
-            {{foreach from=$promoteddoctorlist item=rs}}
-            <div class="col-xs-3">
-                <a href="{{$rootpath}}/doctor/detail.php?id={{$rs.id}}">
-                    <div><img class="img-responsive" src="{{$uploadpath}}/doctor_photo/{{$rs.photo}}"></div>
-                    <div class="text-center xsmall">{{$rs.name}}</div>
-                    <div class="text-center xsmall" style="color: #8D8D8D">
-                        {{if $rs.is_general=='Y'}}全科
-                        {{else}}{{$rs.specialist_id_str}}
-                        {{/if}}
-                    </div>
-                </a>
-            </div>
-            {{/foreach}}
+            <a href="{{$rootpath}}/doctor/query.php" data-role="button" style="color:snow; background-color:#42A4D3;">我要提问</a>
         </div>
     </div>
     <br />

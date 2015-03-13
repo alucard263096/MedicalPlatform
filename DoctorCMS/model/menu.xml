@@ -83,7 +83,7 @@
     </mainmenu>
     <mainmenu>
       <module>appointment</module>
-      <name>预约管理</name>
+      <name>日常管理</name>
       <submenus>
         <submenu>
           <id>appointment_list</id>
@@ -100,6 +100,14 @@
           <name_zh-hk>疫苗预约验证</name_zh-hk>
           <name_en-us>Vaccine Appointment Validate</name_en-us>
           <url>/Appointment/qrcodereader.php</url>
+        </submenu>
+        <submenu>
+          <id>doctorquery</id>
+          <name>客户问题</name>
+          <name_zh-cn>客户问题</name_zh-cn>
+          <name_zh-hk>客户问题</name_zh-hk>
+          <name_en-us>Client Question</name_en-us>
+          <url>/Appointment/doctorquery.php</url>
         </submenu>
       </submenus>
     </mainmenu>
