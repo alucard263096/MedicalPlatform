@@ -86,6 +86,13 @@
 
 
     <script src="{{$rootpath}}/plugin/raty/jquery.raty.js"></script>
+    <script>
+        $.fn.raty.defaults.cancelOff = "{{$rootpath}}/plugin/raty/images/cancel-off.png";
+        $.fn.raty.defaults.cancelOn = "{{$rootpath}}/plugin/raty/images/cancel-on.png";
+        $.fn.raty.defaults.starHalf = "{{$rootpath}}/plugin/raty/images/star-half.png";
+        $.fn.raty.defaults.starOff = "{{$rootpath}}/plugin/raty/images/star-off.png";
+        $.fn.raty.defaults.starOn = "{{$rootpath}}/plugin/raty/images/star-on.png";
+    </script>
     <link rel="stylesheet" href="{{$rootpath}}/plugin/raty/jquery.raty.css" />
     <style>
         .divraty img{
