@@ -65,6 +65,18 @@ where status='A' and (  mobile='$mobile' )";//email='$email' or
 
 	}
 
+	public function getMemberInfo($member_id){
+		
+		$member_id=mysql_real_escape_string($member_id);
+
+		$sql="select * from dr_tb_member_info where member_id=$member_id ";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+
+		return $result;
+
+	}
+
  }
  
  $memberMgr=MemberMgr::getInstance();

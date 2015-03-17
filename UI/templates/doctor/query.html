@@ -1,6 +1,5 @@
 {{include  file="$smarty_root/header.html" }}
 
-<script type="text/javascript" src="{{$rootpath}}/js/ajaxfileupload.js"></script>
 
 <div role="main" class="ui-content" style="padding:0px;">
     <div class="col-xs-12">
@@ -25,18 +24,18 @@
     </div>
     <div class="col-xs-12" style="padding-top:15px;">
         <div class="col-xs-4 text-center">
-            <img id="img_1_d" src="{{if $info.img_1==""}}{{$rootpath}}/themes/img/icons/upload_pic.png{{else}}{{$uploadpath}}/clientquery/{{$info.img_1}}{{/if}}" class="img-responsive" />
-            <input id="img_1" data-role="none" name="img_1" onchange="upload('img_1')" type="file" style="width:1px;height:1px;" />
+            <img id="img_1_d" src="{{if $info.img_1==""}}{{$rootpath}}/themes/img/icons/upload_pic.png{{else}}{{$uploadpath}}/clientquery/{{$info.img_1}}{{/if}}" class="img-responsive upload_img" />
+            <input id="img_1" data-role="none" name="img_1" onchange="upload('img_1','clientquery')" type="file" style="width:1px;height:1px;" />
             <input id="img_1_v" type="hidden" value="{{$info.img_1}}" />
         </div>
         <div class="col-xs-4 text-center">
-            <img id="img_2_d" src="{{if $info.img_2==""}}{{$rootpath}}/themes/img/icons/upload_pic.png{{else}}{{$uploadpath}}/clientquery/{{$info.img_2}}{{/if}}" class="img-responsive" />
-            <input id="img_2" data-role="none" name="img_2" onchange="upload('img_2')" type="file" style="width:1px;height:1px;" />
+            <img id="img_2_d" src="{{if $info.img_2==""}}{{$rootpath}}/themes/img/icons/upload_pic.png{{else}}{{$uploadpath}}/clientquery/{{$info.img_2}}{{/if}}" class="img-responsive upload_img" />
+            <input id="img_2" data-role="none" name="img_2" onchange="upload('img_2','clientquery')" type="file" style="width:1px;height:1px;" />
             <input id="img_2_v" type="hidden" value="{{$info.img_2}}" />
         </div>
         <div class="col-xs-4 text-center">
-            <img id="img_3_d" src="{{if $info.img_3==""}}{{$rootpath}}/themes/img/icons/upload_pic.png{{else}}{{$uploadpath}}/clientquery/{{$info.img_3}}{{/if}}" class="img-responsive" />
-            <input id="img_3" data-role="none" name="img_3" onchange="upload('img_3')" type="file" style="width:1px;height:1px;" />
+            <img id="img_3_d" src="{{if $info.img_3==""}}{{$rootpath}}/themes/img/icons/upload_pic.png{{else}}{{$uploadpath}}/clientquery/{{$info.img_3}}{{/if}}" class="img-responsive upload_img" />
+            <input id="img_3" data-role="none" name="img_3" onchange="upload('img_3','clientquery')" type="file" style="width:1px;height:1px;" />
             <input id="img_3_v" type="hidden" value="{{$info.img_3}}" />
         </div>
     </div>
@@ -46,15 +45,6 @@
 </div>
 <script>
     $(document).ready(function () {
-        $("#img_1_d").click(function () {
-            $("#img_1").click();
-        });
-        $("#img_2_d").click(function () {
-            $("#img_2").click();
-        });
-        $("#img_3_d").click(function () {
-            $("#img_3").click();
-        });
         $("#btnSubmit").click(function () {
 
             var description = $("#description").val();
@@ -95,35 +85,6 @@
         });
         
     });
-    function upload(key) {
-        PopupLoading("");
-        $.ajaxFileUpload
-		(
-			{
-			    "url": '{{$rootpath}}/fileupload.php?module=clientquery&field=' + key,
-			    "secureuri": false,
-			    "fileElementId":  key,
-			    "dataType": 'text',
-			    "success": function (data, status) {
-			        //alert(data);
-			        CloseLoading();
-			        if (data.substring(0, 7) == "success") {
-			            str = data.substring(7, data.length);
-			            $("#" + key+"_v").val(str.split('|~~|')[1]);
-			            $("#" + key+"_d").attr("src", "{{$uploadpath}}/clientquery/" + str.split('|~~|')[1]).show();
-
-			        } else {
-			            alert("{{$SysLang.model.uploaderror}}");
-			        }
-
-			    },
-			    "error": function (data, status, e) {
-			        CloseLoading();
-			        alert("{{$SysLang.model.uploaderror}}");
-			    }
-			}
-		);
-    }
 
 </script>
 

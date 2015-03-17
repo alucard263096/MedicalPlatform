@@ -20,7 +20,7 @@
 	echo "HASREG";
   }else{
 	
-	$retreg=$memberMgr->addMember($email,$mobile,$password,$mobile);
+	$retreg=$memberMgr->addMember($email,$mobile,$password,'');
 	if($retreg==true){
 		$memberlist=$memberMgr->getMemberByEmailMobile("no-email",$mobile);
 		if(count($memberlist)==1){

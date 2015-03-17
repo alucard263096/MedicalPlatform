@@ -1,0 +1,60 @@
+{{include  file="$smarty_root/header.html" }}
+<div role="main" class="ui-content" style="padding:0;">
+    <div id="st_1" style="height:100%;">
+        <div class="col-xs-12 text-center">
+            <br />
+            <img src="{{$rootpath}}/img/logowithname.png">
+        </div>
+        <div class="col-xs-12 text-center lighter" style="padding-top:15px;">
+            完善个人资料
+        </div>
+        <div class="col-xs-12 text-center xsmall" style="padding-top:15px;">
+            只对医生可见
+        </div>
+        <style>
+            
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    text-align:center;
+    font-size:20px;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    text-align:center;
+    font-size:20px;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    text-align:center;
+    font-size:20px;
+}
+        </style>
+        <div class="col-xs-12 text-center lighter" style="padding-top:15px;">
+            <div class="col-xs-12">
+                <input id="clientname" data-role='none' style="text-align:center; font-size:20px; padding:10px; border-top-width:0px;border-left-width:0px;border-right-width:0px;background-color:#F9F9F9" value="{{$member.name}}" placeholder="我的真实姓名" />
+            </div>
+        </div>
+        <div class="col-xs-12 text-center" style="padding-top:30px;">
+            <img id="photo_d" class="upload_img img-responsive" src="{{if $info.photo==""}}{{$rootpath}}/themes/img/icons/upload_pic.png{{else}}{{$uploadpath}}/clientphoto/{{$info.photo}}{{/if}}" />
+            <input id="photo" data-role="none" name="photo" onchange="upload('photo','clientphoto')" type="file" style="width:1px;height:1px;" />
+            <input id="photo_v" type="hidden" value="{{$info.photo}}" />
+        </div>
+        <div class="col-xs-12 text-center lighter" style="padding-top:15px;">
+            <a href="#" id="btn_next_1"  data-role="button" style="color:snow; background-color:#42A4D3;">继续</a>
+        </div> 
+        <div class="col-xs-12 text-center lighter" style="padding-top:15px;">
+            <div style="width:48px; margin-left:auto;margin-right:auto;">
+                <div id="st_1_d" class="littelO active"></div>
+                <div id="st_2_d" class="littelO"></div>
+                <div id="st_3_d" class="littelO"></div>
+                <div id="st_4_d" class="littelO"></div>
+            </div>
+        </div>
+        <div class="col-xs-12 text-center lighter" style="padding-top:15px;">
+            <a href="#" class="ui-btn ui-btn-inline ui-icon-delete xsmall grayfont" style="border:1px solid #abc;color:#ccc;">跳过</a>
+        </div> 
+    </div>
+</div>
+{{include  file="$smarty_root/footer.html" }}
