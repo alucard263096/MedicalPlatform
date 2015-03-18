@@ -3889,7 +3889,7 @@ input.ui-slider-input {
 	border-width: 1px;
 	border-style: solid;
 	height: 15px;
-	margin: 0 15px 0 68px;
+	margin: 0 15px 0 15px;
 	top: 6px;
 }
 .ui-slider-track.ui-mini {

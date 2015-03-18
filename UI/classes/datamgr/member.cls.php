@@ -77,6 +77,32 @@ where status='A' and (  mobile='$mobile' )";//email='$email' or
 
 	}
 
+	public function updateMemberInfo($member_id,$field,$value){
+	
+		$member_id=mysql_real_escape_string($member_id);
+		$field=mysql_real_escape_string($field);
+		$value=mysql_real_escape_string($value);
+
+		if($field=="name"){
+			$sql="update dr_tb_member set name='$value' where id=$member_id ";
+			$query = $this->dbmgr->query($sql);
+		}else{
+
+			$sql="select 1 from dr_tb_member_info where member_id=$member_id ";
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array_all($query); 
+			if(count($result)>0){
+				$sql="update dr_tb_member_info set `$field`='$value' where member_id=$member_id ";
+			}else{
+				$sql="insert into dr_tb_member_info (member_id,`$field`) values ($member_id,'$value')";
+			}
+			
+			$query = $this->dbmgr->query($sql);
+		}
+
+
+	}
+
  }
  
  $memberMgr=MemberMgr::getInstance();

@@ -148,6 +148,7 @@ Global $SysLangCode;
 		return $ex;
 }
 
+
 function getListIdStr($arr,$key){
 	$list="0";
 		foreach ($arr as $value){
