@@ -59,7 +59,11 @@
 			            str = data.substring(7, data.length);
 			            $("#" + key + "_v").val(str.split('|~~|')[1]);
 			            $("#" + key + "_d").attr("src", "{{$uploadpath}}/" + module + "/" + str.split('|~~|')[1]).show();
-
+			            try{
+			                if (typeof (eval("uploadSuccessCallBack")) == "function") {
+			                    uploadSuccessCallBack(key, module, str.split('|~~|')[1]);
+			                }
+			            }catch(e){}
 			        } else {
 			            alert("{{$SysLang.model.uploaderror}}");
 			        }
