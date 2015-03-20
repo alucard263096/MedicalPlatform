@@ -1,29 +1,76 @@
 {{include  file="$smarty_root/header.html" }}
-{{include  file="$smarty_root/bar.html" }}
+{{include  file="$smarty_root/member/bookinglistbar.html" }}
+
+
 <div role="main" class="ui-content" style="padding:0;">
-    <div data-role="tabs" id="tabs">
-        <div data-role="navbar">
-            <ul>
-                <li><a href="#one" data-ajax="false">one</a></li>
-                <li><a href="#two" data-ajax="false">two</a></li>
-                <li><a href="ajax-content-ignore.html" data-ajax="false">three</a></li>
-            </ul>
-        </div>
-        <div id="one" class="ui-body-d ui-content">
-            <h1>First tab contents</h1>
-        </div>
-        <div id="two">
-            <ul data-role="listview" data-inset="true">
-                <li><a href="#">Acura</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">BMW</a></li>
-                <li><a href="#">Cadillac</a></li>
-                <li><a href="#">Ferrari</a></li>
-            </ul>
-        </div>
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12 tabc" id="tab_1">
+        {{foreach from=$list item=rs}}
+        {{if $rs.status=="P" and $rs.passdate<=0 }}
+        <a href="{{$rootpath}}/member/booking.php?id={{$rs.id}}">
+            <div class="col-xs-12" style="padding-top:20px;padding-left:0px;padding-right:0px;">
+                <div class="col-xs-3" style="padding:0px;">
+                    <img src="{{$uploadpath}}/vaccine/{{$rs.vaccine_image}}" class="img-responsive" />
+                </div>
+                <div class="col-xs-9">
+                    <div class="col-xs-pull-12 lighter">{{$rs.vaccine_name}}</div>
+                    <div class="col-xs-6 bsmall" style="padding-top:2px;padding-left:0px;">{{$rs.office_name}}</div>
+                    <div class="col-xs-6 bsmall text-right" style="padding-top:2px;padding-right:0px;">{{$rs.order_date}}</div>
+                    <div class="col-xs-12 xsmall" style="padding-left:0px;padding-top:4px;">{{$rs.office_address}}</div>
+                </div>
+            </div>
+        </a>
+        {{/if}}
+        {{/foreach}}
     </div>
+    <div class="col-xs-12 tabc" id="tab_2" >
+        {{foreach from=$list item=rs}}
+        {{if $rs.status=="F" or $rs.passdate>0 }}
+        <a href="{{$rootpath}}/member/booking.php?id={{$rs.id}}">
+            <div class="col-xs-12" style="padding-top:20px;padding-left:0px;padding-right:0px;">
+                <div class="col-xs-3" style="padding:0px;">
+                    <img src="{{$uploadpath}}/vaccine/{{$rs.vaccine_image}}" class="img-responsive" />
+                </div>
+                <div class="col-xs-9">
+                    <div class="col-xs-pull-12 lighter">{{$rs.vaccine_name}}</div>
+                    <div class="col-xs-6 bsmall" style="padding-top:2px;padding-left:0px;">{{$rs.office_name}}</div>
+                    <div class="col-xs-6 bsmall text-right" style="padding-top:2px;padding-right:0px;">{{$rs.order_date}}</div>
+                    <div class="col-xs-12 xsmall" style="padding-left:0px;padding-top:4px;">{{$rs.office_address}}</div>
+                </div>
+            </div>
+        </a>
+            {{/if}}
+            {{/foreach}}
+</div>
+    <div class="col-xs-12 tabc" id="tab_3" >
+        {{foreach from=$list item=rs}}
+        <a href="{{$rootpath}}/member/booking.php?id={{$rs.id}}">
+            <div class="col-xs-12" style="padding-top:20px;padding-left:0px;padding-right:0px;">
+                <div class="col-xs-3" style="padding:0px;">
+                    <img src="{{$uploadpath}}/vaccine/{{$rs.vaccine_image}}" class="img-responsive" />
+                </div>
+                <div class="col-xs-9">
+                    <div class="col-xs-pull-12 lighter">{{$rs.vaccine_name}}</div>
+                    <div class="col-xs-6 bsmall" style="padding-top:2px;padding-left:0px;">{{$rs.office_name}}</div>
+                    <div class="col-xs-6 bsmall text-right" style="padding-top:2px;padding-right:0px;">{{$rs.order_date}}</div>
+                    <div class="col-xs-12 xsmall" style="padding-left:0px;padding-top:4px;">{{$rs.office_address}}</div>
+                </div>
+            </div>
+        </a>
+        {{/foreach}}
+</div>
 </div>
 <script>
+    $(document).ready(function () {
+        $(".mytab").click(function () {
+            $(".mytab").removeClass("active");
+            $(this).addClass("active");
+            var tabid = $(this).attr("tabid");
+            $(".tabc").hide();
+            $("#" + tabid).show();
+        });
+        $(".mytab").first().click();
+    });
     function uploadSuccessCallBack(key, module,value) {
         updateField("photo", value);
     }

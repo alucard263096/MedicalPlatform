@@ -1,0 +1,55 @@
+{{include  file="$smarty_root/header.html" }}
+<div role="main" class="ui-content" style="padding:0;">
+    <div class="col-xs-12 text-center xsmall" style="background-color:#DBDBDC;padding:10px;">
+       请使用该验证码到定点使用
+    </div>
+    <div class="col-xs-12 text-center" id="st_2_1" style="padding-top:15px;">
+        <div class="col-xs-12 text-center" id="st_2_1" style="border:1px solid #cccccc;border-radius:10px;-moz-border-radius: 10px;-webkit-border-radius: 10px">
+            <div class="row bluefont" style="font-weight:bold; font-size:70%; background-color:#CCE9F5;border-top-left-radius:10px;-moz-border-top-left-radius: 10px;-webkit-border-top-left-radius: 10px;border-top-right-radius:10px;-moz-border-top-right-radius: 10px;-webkit-border-top-right-radius: 10px;">
+                <div class="col-xs-3" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;" >
+                    <div style="border-right:1px solid #42A4D3;">
+                        <span class="xsmall">时间</span>
+                        <br />
+                        <span><strong>{{$info.order_date}}</strong></span>
+                        <br />
+                        <span><strong>{{$info.order_rtime}}</strong></span>
+                    </div>
+                </div>
+                <div class="col-xs-3" style=" padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;">
+                    <div style="border-right:1px solid #42A4D3;">
+                        <span class="xsmall">医生</span>
+                        <br />
+                        <span><strong>{{$info.doctor_name}}</strong></span>
+                    </div>
+                </div>
+                <div class="col-xs-3" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;">
+                    <div style="border-right:1px solid #42A4D3;">
+                        <span class="xsmall">疫苗</span>
+                        <br />
+                        <span><strong>{{$info.vaccine_name}}</strong></span>
+                    </div>
+                </div>
+                <div class="col-xs-3" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;">
+                    <div >
+                        <span class="xsmall">诊所</span>
+                        <br />
+                        <span><strong>{{$info.office_name}}</strong></span>
+                    </div>
+                </div>
+            </div>
+            <div  class="row text-center" style="margin-top:20px;margin-bottom:20px; border-bottom-left-radius:10px;-moz-border-bottom-left-radius: 10px;-webkit-border-bottom-left-radius: 10px;border-bottom-right-radius:10px;-moz-border-bottom-right-radius: 10px;-webkit-border-bottom-right-radius: 10px;">
+                <div class="col-xs-12">
+                    <img  width="80%" src="{{$info.qrcode}}" />
+                </div>
+                <div class="row text-center">
+                    <h4 id="guidcode">{{$info.guid}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 text-center" style="padding-top:20px;padding-bottom:20px;">
+        {{$info.office_address}}
+    </div>
+</div>
+{{include  file="$smarty_root/navbar.html" }}
+{{include  file="$smarty_root/footer.html" }}

@@ -14,27 +14,12 @@
 	$orderMgr->approveVaccineAppointment($id);
   }
 
-  $order_no=$_REQUEST["order_no"];
   $key=$_REQUEST["key"];
   $guid=$_REQUEST["guid"];
-  if(isset($_REQUEST["order_no"])||isset($_REQUEST["key"])){
-	  if($order_no!=""){
-		$info=$orderMgr->getVaccineAppointmentByOrderNo($order_no);
-	  }else{
-		$info=$orderMgr->getVaccineAppointmentByGuid($key,$guid);
-	  }
-  }
-  if(isset($info)){
-	if($info["id"]==""){
-		$smarty->assign("result","nodata");
-	}else{
-		$order_no=$info["order_no"];
-		$smarty->assign("order_no",$order_no);
-		$smarty->assign("info",$info);
-	}
-  }
   
-    $smarty->display(ROOT.'/templates/appointment/qrcodereader.html');
+  $info=$orderMgr->getVaccineAppointmentByGuid($key,$guid);
+  $smarty->assign("info",$info);
+  $smarty->display(ROOT.'/templates/appointment/qrcodereader.html');
 
 
 ?>

@@ -15,13 +15,12 @@
   $info=$orderMgr->getVaccineAppointment($_SESSION[SESSIONNAME]["Member"]["id"],$id);
   
   
-  $smarty->assign("Title",$info["order_no"]);
   $url=$CONFIG["doctorurl"]."/Appointment/qrcodereader.php?key=vcorder&guid=".$info["guid"];
   $qrfile=GenQRCode($url);
   //print_r($info);
-  $smarty->assign("qrcode",$qrfile);
+  //$smarty->assign("qrcode",$qrfile);
+  $info["qrcode"]=$qrfile;
   $smarty->assign("info",$info);
-  $smarty->assign("backurl","vaccineapls.php");
-  $smarty->display(ROOT.'/templates/mobile/member/vaccineorder.html');
+  $smarty->display(ROOT.'/templates/member/booking.html');
 
 ?>

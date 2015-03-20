@@ -13,7 +13,15 @@
 	 $smarty->display(ROOT.'/templates/member/login.html');
 	exit();
   }
+ require ROOT.'/classes/datamgr/order.cls.php';
+  require 'inc.php';
+
+  $list=$orderMgr->getVaccineAppointmentList($_SESSION[SESSIONNAME]["Member"]["id"]);
   
+
+  $smarty->assign("list",$list);
+  $smarty->assign("list_count",count($list));
+
 
   $smarty->display(ROOT.'/templates/member/bookinglist.html');
   

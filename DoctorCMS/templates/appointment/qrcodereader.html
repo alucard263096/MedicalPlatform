@@ -19,12 +19,18 @@
                                     <div class="bootstrap-admin-panel-content">
                                         <div class="row form-horizontal">
                                             <div class="form-group col-md-12">
-                                                <label class="col-md-4 control-label">{{$SysLang.validate.orderno}}</label>
+                                                <label class="col-md-4 control-label">验证码</label>
                                                 <div class="col-md-6">
-                                                    <input type="text" name="order_no" id="content_order_no" value="{{$order_no}}" class="form-control" />
+                                                    <input type="text" name="guid" id="content_guid" value="{{$info.guid}}" class="form-control" />
                                                 </div>
                                             </div>
                                             {{if $info!=""}}
+                                            <div class="form-group col-md-12">
+                                                <label class="col-md-4 control-label">{{$SysLang.validate.orderno}}</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" disabled="disabled" name="order_no" id="content_order_no" value="{{$info.order_no}}" class="form-control" />
+                                                </div>
+                                            </div>
                                             <div class="form-group col-md-12">
                                                 <label class="col-md-4 control-label">{{$SysLang.validate.clientname}}</label>
                                                 <div class="col-md-6">
@@ -87,8 +93,8 @@
         errorDialog("{{$SysLang.validate.nodata}}");
         {{/if}}
         $("#btnSearch").click(function () {
-            var order_no = $("#content_order_no").val();
-            if (order_no == "") {
+            var guid = $("#content_guid").val();
+            if (guid == "") {
                 errorDialog("{{$SysLang.validate.ordernonotnull}}");
                 return;
             }
