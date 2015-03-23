@@ -99,6 +99,10 @@
     <ordernonotnull>Order No. can not be null</ordernonotnull>
     <nodata>Can not find data</nodata>
     <confirmcontent>Confirm Content</confirmcontent>
+    <batchvalidation>Batch Validation</batchvalidation>
+    <batchvalidationdescription>You can use this function to upload a batch validation code file for saving time in rush hour.</batchvalidationdescription>
+    <downloadexample>Download Example</downloadexample>
+    <upload>Upload</upload>
   </validate>
   <appointment>
     <agenda>Agenda</agenda>

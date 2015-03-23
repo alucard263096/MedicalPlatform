@@ -109,6 +109,14 @@
           <name_en-us>Client Question</name_en-us>
           <url>/Appointment/doctorquery.php</url>
         </submenu>
+        <submenu>
+          <id>batchvalidation</id>
+          <name>批量验证</name>
+          <name_zh-cn>批量验证</name_zh-cn>
+          <name_zh-hk>批量验证</name_zh-hk>
+          <name_en-us>Batch Validation</name_en-us>
+          <url>/Appointment/batchvalidation.php</url>
+        </submenu>
       </submenus>
     </mainmenu>
   </mainmenus>

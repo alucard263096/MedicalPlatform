@@ -99,6 +99,10 @@
     <ordernonotnull>订单编号不能为空</ordernonotnull>
     <nodata>找不到数据</nodata>
     <confirmcontent>确认信息</confirmcontent>
+    <batchvalidation>批量验证</batchvalidation>
+    <batchvalidationdescription>此功能支持你一次过提交客户验证码，方便您的使用节约时间。</batchvalidationdescription>
+    <downloadexample>下载模板</downloadexample>
+    <upload>上传</upload>
   </validate>
   <appointment>
     <agenda>日程</agenda>

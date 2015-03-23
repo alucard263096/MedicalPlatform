@@ -1,0 +1,80 @@
+{{include  file="$smarty_root/header.html" }}
+
+                <!-- content -->
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="page-header bootstrap-admin-content-title">
+                                <h1>{{$SysLang.validate.batchvalidation}}</h1>
+                                <a href="{{$uploadpath}}/validation_excel/Example.xls" class="action">
+                                    <button class="btn btn-success"><i class="glyphicon glyphicon-download-alt"></i> {{$SysLang.validate.downloadexample}}</button>
+                                </a>
+                                <a href="#" id="btnupload" class="action">
+                                    <button class="btn btn-success"><i class="glyphicon glyphicon-upload"></i> {{$SysLang.validate.upload}}</button>
+                                </a>
+                                <input style="display:none;" name="file_upload" id="file_upload" onchange="afterupload('file_load', 'validation_excel')" type="file" />
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="text-muted bootstrap-admin-box-title">{{$SysLang.validate.confirmcontent}}</div>
+                                    </div>
+                                    <div class="bootstrap-admin-panel-content">
+                                        <div class="row form-horizontal">
+                                            <table class="table table-striped" id="validated_data">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>验证码</th>
+                                                        <th>Last Name</th>
+                                                        <th>Username</th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <hr />
+                                        <div class="text-center">
+                                            <button class="btn btn-success" id="btnApprove"><i class="glyphicon glyphicon-saved  glyphicon-white"></i> {{$SysLang.validate.approve}}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+<script>
+    $(document).ready(function () {
+        $("#btnupload").click(function () {
+            $("#file_upload").click();
+        });
+    });
+    function upload(key, module) {
+
+        $.ajaxFileUpload
+		(
+			{
+			    "url": '{{$rootpath}}/fileupload.php?module=' + module + "&field=file_" + key,
+			    "secureuri": false,
+			    "fileElementId": "file_" + key,
+			    "dataType": 'text',
+			    "success": function (data, status) {
+			        if (data.substring(0, 7) == "success") {
+			            str = data.substring(7, data.length);
+			            var json = { "filename": str };
+                        
+			        } else {
+			            errorDialog("{{$SysLang.model.uploaderror}}");
+			        }
+			    },
+			    "error": function (data, status, e) {
+			        errorDialog("{{$SysLang.model.uploaderror}}");
+			    }
+			}
+		);
+    }
+</script>
+
+ {{include  file="$smarty_root/footer.html" }}
