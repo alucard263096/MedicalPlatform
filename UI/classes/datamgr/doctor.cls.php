@@ -438,7 +438,7 @@ order by q.submit_date desc";
 		Global $SysLangCode;
 		$member_id=mysql_real_escape_string($member_id);
 		$question_id=mysql_real_escape_string($question_id);
-		$sql="select q.submit_date,q.description,d.photo doctor_photo,q.reply from dr_tb_member_question q
+		$sql="select q.doctor_id, q.submit_date,q.description,d.photo doctor_photo,q.reply from dr_tb_member_question q
 left join dr_tb_doctor d on q.doctor_id=d.id
 left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
 where q.member_id=$member_id and q.id=$question_id
