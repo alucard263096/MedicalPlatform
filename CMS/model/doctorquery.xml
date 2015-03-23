@@ -106,5 +106,11 @@
       <key>remarks</key>
       <type>longtext</type>
     </field>
+    <field>
+      <name>回复</name>
+      <key>reply</key>
+      <type>longtext</type>
+      <notnull>1</notnull>
+    </field>
   </fields>
 </root>

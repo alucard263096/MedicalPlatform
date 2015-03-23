@@ -420,6 +420,36 @@ order by totle_score";
 		$this->dbmgr->commit_trans();
 	}
 
+	public function getMemberQuestionList($member_id){
+
+		$member_id=mysql_real_escape_string($member_id);
+		$question_id=mysql_real_escape_string($question_id);
+		$sql="select q.id, q.doctor_id,q.description,q.submit_date,q.status from dr_tb_member_question q
+where q.member_id=$member_id 
+order by q.submit_date desc";
+
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array_all($query); 
+			return $result;
+
+	}
+
+	public function getMemberQuestion($member_id,$question_id){
+		Global $SysLangCode;
+		$member_id=mysql_real_escape_string($member_id);
+		$question_id=mysql_real_escape_string($question_id);
+		$sql="select q.submit_date,q.description,d.photo doctor_photo,q.reply from dr_tb_member_question q
+left join dr_tb_doctor d on q.doctor_id=d.id
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
+where q.member_id=$member_id and q.id=$question_id
+order by q.submit_date desc";
+
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array($query); 
+			return $result;
+
+	}
+
 	
 	public function updateDoctorQueryCount($doctor_id){
 		

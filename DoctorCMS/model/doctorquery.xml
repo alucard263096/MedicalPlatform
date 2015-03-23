@@ -169,6 +169,15 @@
       <key>remarks</key>
       <type>longtext</type>
     </field>
+    <field>
+      <name>回复</name>
+      <name_zh-cn>回复</name_zh-cn>
+      <name_zh-hk>回复</name_zh-hk>
+      <name_en-us>Reply</name_en-us>
+      <key>reply</key>
+      <type>longtext</type>
+      <notnull>1</notnull>
+    </field>
   </fields>
   <javascripts>
     <javascript>

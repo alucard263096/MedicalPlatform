@@ -1,0 +1,24 @@
+{{include  file="$smarty_root/header.html" }}
+{{include  file="$smarty_root/bar.html" }}
+<div role="main" class="ui-content" style="padding:0;">
+    {{foreach from=$list item=rs}}
+    <a href="{{$rootpath}}/member/question.php?id={{$rs.id}}">
+        <div class="col-xs-12" style="padding-top:15px;padding-bottom:15px;">
+            <div class="col-xs-8 bsmall">{{$rs.description}}</div>
+            <div class="col-xs-4 text-right">
+                {{if $rs.status=="P"}}
+                <span class="xsmall yellowfont">未回复</span>
+                {{else}}
+                <span class="xsmall bluefont">已回复</span>
+                {{/if}}
+            </div>
+            <div class="col-xs-12 text-left xxsmall">
+                {{$rs.submit_date}}
+            </div>
+        </div>
+    </a>
+    <hr style="margin-bottom:0px;" />
+    {{/foreach}}
+</div>
+{{include  file="$smarty_root/navbar.html" }}
+{{include  file="$smarty_root/footer.html" }}
