@@ -64,6 +64,46 @@ where status='A' and (  mobile='$mobile' )";//email='$email' or
 		return true;
 
 	}
+	
+	public function getMemberDoctorList($member_id){
+		Global $SysLangCode;
+		$member_id=mysql_real_escape_string($member_id);
+		$sql="select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,dl.advanced,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from  dr_tb_doctor d 
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='$SysLangCode'
+inner join dr_tb_member_doctor md on d.id=md.doctor_id
+where d.status='A' and md.member_id=$member_id
+order by totle_score";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array_all($query); 
+
+		return $result;
+
+	}
+	public function getMemberDoctor($member_id,$doctor_id){
+		
+		$member_id=mysql_real_escape_string($member_id);
+		$doctor_id=mysql_real_escape_string($doctor_id);
+
+		$sql="select * from dr_tb_member_doctor where member_id=$member_id and doctor_id=$doctor_id ";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array_all($query); 
+
+		return $result;
+	}
+	public function lookDoctor($member_id,$doctor_id){
+		if(count($this->getMemberDoctor($member_id,$doctor_id))==0){
+			$member_id=mysql_real_escape_string($member_id);
+			$doctor_id=mysql_real_escape_string($doctor_id);
+
+			$sql="insert into dr_tb_member_doctor (member_id,doctor_id) values ($member_id,$doctor_id) ";
+			$query = $this->dbmgr->query($sql); 
+		}
+	}
 
 	public function getMemberInfo($member_id){
 		

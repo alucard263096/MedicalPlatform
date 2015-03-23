@@ -8,6 +8,7 @@
   require '../include/common.inc.php';
   require ROOT.'/classes/datamgr/doctor.cls.php';
   require ROOT.'/classes/datamgr/vaccine.cls.php';
+  require ROOT.'/classes/datamgr/member.cls.php';
   
   $doctor_id=$_REQUEST["id"];
   $office_id=$_REQUEST["oid"];
@@ -62,7 +63,16 @@
   }
   //print_r($info);
   
+  if($_SESSION[SESSIONNAME]["Member"]["id"]==""){
+	$looked="N";
+  }else{
+	$looked=count($memberMgr->getMemberDoctor($_SESSION[SESSIONNAME]["Member"]["id"],$doctor_id))>0?"Y":"N";
+  }
+  $info["looked"]=$looked;
+  
   $smarty->assign("info",$info);
+
+
 
   $smarty->assign("standard",$standard);
 

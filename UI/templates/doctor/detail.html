@@ -10,7 +10,7 @@
             <div class="row xsmall ">
                 <div class="col-lg-3"></div>
                 <div class="col-lg-6">
-                    <a href="#" data-role="button" style="padding:3px;font-size:10px;"> <span class="yellowfont">+</span> 关注</a>
+                    <a href="#" id="btnLookDoctor" looked="{{$info.looked}}" data-role="button" style="padding:3px;font-size:10px;"> <span class="yellowfont">+</span> 关注</a>
                 </div>
                 <div class="col-lg-3"></div>
 
@@ -176,5 +176,6 @@
         });
     </script>
 </div>
+{{include  file="$smarty_root/doctor/lookdoctorjs.html" }}
 {{include  file="$smarty_root/navbar.html" }}
 {{include  file="$smarty_root/footer.html" }}

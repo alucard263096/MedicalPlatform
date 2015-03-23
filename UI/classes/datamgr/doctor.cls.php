@@ -334,7 +334,7 @@ where e.status='A' ";
 		return $result;
 	}
 	
-	public function getDoctorList($doctor_id){
+	public function getDoctorList(){
 		Global $SysLangCode,$CONFIG;
 		if($CONFIG['solution_configuration']!="debug"&&isset($_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["doctorlist"])){
 			return $_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["doctorlist"];

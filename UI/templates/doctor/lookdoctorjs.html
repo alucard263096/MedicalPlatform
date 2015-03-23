@@ -1,0 +1,21 @@
+<script>
+    $(document).ready(function () {
+        var looked = $("#btnLookDoctor").attr("looked");
+        if (looked == "Y") {
+            $("#btnLookDoctor").html("<span class='yellowfont'>已关注</span>");
+        } else {
+            $("#btnLookDoctor").click(function () {
+                var json={"doctor_id":{{$doctor_id}}}; 
+                $.post("{{$rootpath}}/doctor/look.php",json,function(data){
+                    if(data=="NONLOGIN"){
+                        PopupTips("请先进行登录后关注该医生");
+                    }else if(data=="SUCCESS"){
+                        $("#btnLookDoctor").html("<span class='yellowfont'>已关注</span>");
+                    }else{
+                        PopupTips("未知错误");
+                    }
+                });
+            });
+        }
+    });
+</script>
