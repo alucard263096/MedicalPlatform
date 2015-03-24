@@ -57,9 +57,27 @@ inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b
 inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='$SysLangCode') office on main.office_id=office.id
 inner join dr_tb_member m on main.member_id=m.id
 inner join dr_tb_time t on main.order_time=t.id
-where main.guid='$guid' and main.doctor_id=$doctor_id";
+where main.guid ='$guid' and main.doctor_id=$doctor_id";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array($query); 
+
+		return $result;
+	}
+	public function getVaccineAppointmentByGuidList($key,$guid){
+		Global $SysLangCode,$SysUser;
+
+		$doctor_id=$SysUser["doctor_id"];
+		$sql="select main.*,t.name order_rtime,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
+		TO_DAYS(NOW()) - TO_DAYS(main.order_date) expire_days
+		  from dr_tb_member_vaccine_order main
+inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='$SysLangCode') vaccine on main.vaccine_id=vaccine.id
+inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='$SysLangCode') doctor on main.doctor_id=doctor.id
+inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='$SysLangCode') office on main.office_id=office.id
+inner join dr_tb_member m on main.member_id=m.id
+inner join dr_tb_time t on main.order_time=t.id
+where main.guid in ($guid) and main.doctor_id=$doctor_id";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array_all($query); 
 
 		return $result;
 	}

@@ -18,7 +18,7 @@
   $guid=$_REQUEST["guid"];
   
   $info=$orderMgr->getVaccineAppointmentByGuid($key,$guid);
-  $smarty->assign("info",$info);
+  $smarty->assign("info","'".$info."'");
   $smarty->display(ROOT.'/templates/appointment/qrcodereader.html');
 
 

@@ -12,7 +12,7 @@
                                 <a href="#" id="btnupload" class="action">
                                     <button class="btn btn-success"><i class="glyphicon glyphicon-upload"></i> {{$SysLang.validate.upload}}</button>
                                 </a>
-                                <input style="display:none;" name="file_upload" id="file_upload" onchange="afterupload('file_load', 'validation_excel')" type="file" />
+                                <input style="display:none;" name="validation_excel" id="validation_excel" onchange="afterupload('{{$filemodule}}', 'validation_excel')" type="file" />
                             </div>
                         </div>
                     </div>
@@ -29,9 +29,11 @@
                                                     <tr>
                                                         <th>#</th>
                                                         <th>验证码</th>
-                                                        <th>Last Name</th>
-                                                        <th>Username</th>
-                                                        <th>Actions</th>
+                                                        <th>预约时间</th>
+                                                        <th>疫苗</th>
+                                                        <th>客户名称</th>
+                                                        <th>客户电话</th>
+                                                        <th>状态</th>
                                                     </tr>
                                                 </thead>
                                             </table>
@@ -48,22 +50,26 @@
 <script>
     $(document).ready(function () {
         $("#btnupload").click(function () {
-            $("#file_upload").click();
+            $("#validation_excel").click();
         });
     });
-    function upload(key, module) {
+    function afterupload(key, module) {
 
         $.ajaxFileUpload
 		(
 			{
-			    "url": '{{$rootpath}}/fileupload.php?module=' + module + "&field=file_" + key,
+			    "url": '{{$rootpath}}/fileupload.php?module=' + module + "&field=" + key,
 			    "secureuri": false,
-			    "fileElementId": "file_" + key,
+			    "fileElementId": "" + key,
 			    "dataType": 'text',
 			    "success": function (data, status) {
+			        alert(data);
 			        if (data.substring(0, 7) == "success") {
 			            str = data.substring(7, data.length);
-			            var json = { "filename": str };
+			            var json = {
+			                "action": "upload",
+			                "filename": str
+			            };
                         
 			        } else {
 			            errorDialog("{{$SysLang.model.uploaderror}}");
