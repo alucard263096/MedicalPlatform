@@ -81,6 +81,18 @@ where main.guid in ($guid) and main.doctor_id=$doctor_id";
 
 		return $result;
 	}
+	
+	public function approveVaccineAppointmentBatch($str){
+		$arr=explode(",",$str);
+		
+		$this->dbmgr->begin_trans();
+		foreach ($arr as $value) {
+			$this->approveVaccineAppointment($value);
+		}
+		
+		$this->dbmgr->commit_trans();
+		return "SUCCESS";
+	}
 
 	public function approveVaccineAppointment($id){
 		Global $SysUser;

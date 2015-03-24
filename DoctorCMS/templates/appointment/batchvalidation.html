@@ -41,6 +41,7 @@
                                         <hr />
                                         <div class="text-center">
                                             <button class="btn btn-success" id="btnApprove"><i class="glyphicon glyphicon-saved  glyphicon-white"></i> {{$SysLang.validate.approve}}</button>
+                                            <input id="nowfilename" value="" type="hidden" />
                                         </div>
                                     </div>
                                 </div>
@@ -51,6 +52,33 @@
     $(document).ready(function () {
         $("#btnupload").click(function () {
             $("#validation_excel").click();
+        });
+        $("#btnApprove").click(function () {
+            var str = "0";
+            $("#validated_data .waitforapprove").each(function () {
+                str += "," + $(this).val();
+            });
+
+            if (str == "0") {
+                warningDialog("{{$SysLang.validate.pleaseuploadfirst}}");
+                return;
+            }
+
+            var json = {
+                "action": "approve",
+                "val":str
+            };
+
+            $.post("{{$rootpath}}/Appointment/batchvalidation.php", json, function (data) {
+                if (data == "SUCCESS") {
+                    infoDialog("{{$SysLang.model.savesuccess}}");
+
+                    LoadUploadResult();
+                } else {
+                    errorDialog(data);
+                }
+            });
+
         });
     });
     function afterupload(key, module) {
@@ -63,13 +91,11 @@
 			    "fileElementId": "" + key,
 			    "dataType": 'text',
 			    "success": function (data, status) {
-			        alert(data);
+			        //alert(data);
 			        if (data.substring(0, 7) == "success") {
 			            str = data.substring(7, data.length);
-			            var json = {
-			                "action": "upload",
-			                "filename": str
-			            };
+			            $("#nowfilename").val(str.split('|~~|')[1]);
+			            LoadUploadResult();
                         
 			        } else {
 			            errorDialog("{{$SysLang.model.uploaderror}}");
@@ -80,6 +106,15 @@
 			    }
 			}
 		);
+    }
+    function LoadUploadResult() {
+        var json = {
+            "action": "upload",
+            "filename": str.split('|~~|')[1]
+        };
+        $("#validated_data").load("{{$rootpath}}/Appointment/batchvalidation.php", json, function (data) {
+            //alert(data);
+        });
     }
 </script>
 

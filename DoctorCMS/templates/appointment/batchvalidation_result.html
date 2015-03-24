@@ -1,0 +1,33 @@
+<thead>
+    <tr>
+        <th>#</th>
+        <th>验证码</th>
+        <th>预约时间</th>
+        <th>疫苗</th>
+        <th>客户名称</th>
+        <th>客户电话</th>
+        <th>状态</th>
+    </tr>
+</thead>
+<tbody>
+    {{foreach from=$result item=rs key=key}}
+    <tr style="color: {{if $rs.status==""}}red{{elseif $rs.status=="F"}}blue{{else}}black{{/if}}">
+        <td>{{$key}}</td>
+        <td>{{$rs.guid}}</td>
+        <td>{{$rs.order_date}} {{$rs.order_rtime}}</td>
+        <td>{{$rs.vaccine_name}}</td>
+        <td>{{$rs.name}}</td>
+        <td>{{$rs.mobile}}</td>
+        <td>
+            {{if $rs.status==""}}
+            {{$SysLang.validate.norecord}}
+            {{elseif $rs.status=="F" }}
+            {{$SysLang.validate.hasprocess}}
+            {{else}}
+            {{$SysLang.validate.pedding}}
+            <input type="hidden" class="waitforapprove" value="{{$rs.id}}" />
+            {{/if}}
+        </td>
+    </tr>
+    {{/foreach}}
+</tbody>

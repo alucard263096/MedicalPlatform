@@ -29,8 +29,14 @@
 			}
 		}
 	}
-	print_r($ret);
+  $smarty->assign("result",$ret);
 
+	$smarty->display(ROOT.'/templates/appointment/batchvalidation_result.html');
+
+  }elseif($action=="approve"){
+	$val=$_REQUEST["val"];
+	$result=$orderMgr->approveVaccineAppointmentBatch($val);
+	echo $result;
   }else{
 	$smarty->display(ROOT.'/templates/appointment/batchvalidation.html');
   }

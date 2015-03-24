@@ -103,6 +103,10 @@
     <batchvalidationdescription>此功能支持你一次过提交客户验证码，方便您的使用节约时间。</batchvalidationdescription>
     <downloadexample>下载模板</downloadexample>
     <upload>上传</upload>
+    <norecord>找不到记录</norecord>
+    <hasprocess>已处理</hasprocess>
+    <pedding>等待</pedding>
+    <pleaseuploadfirst>找不到等待处理的数据，请先上传</pleaseuploadfirst>
   </validate>
   <appointment>
     <agenda>日程</agenda>

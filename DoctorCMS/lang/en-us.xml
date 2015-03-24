@@ -103,6 +103,10 @@
     <batchvalidationdescription>You can use this function to upload a batch validation code file for saving time in rush hour.</batchvalidationdescription>
     <downloadexample>Download Example</downloadexample>
     <upload>Upload</upload>
+    <norecord>No record</norecord>
+    <hasprocess>Processed</hasprocess>
+    <pedding>Pedding</pedding>
+    <pleaseuploadfirst>Can not find pedding approve data,please upload file first</pleaseuploadfirst>
   </validate>
   <appointment>
     <agenda>Agenda</agenda>
