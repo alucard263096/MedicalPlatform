@@ -1,0 +1,265 @@
+{{include  file="$smarty_root/header.html" }}
+<div role="main" class="ui-content" style="padding:0;">
+    {{include  file="$smarty_root/member/header.html" }}
+    <div class="col-xs-12 text-center bsmall bluefont" style="padding-top:15px;">
+        请填写你的个人资料
+    </div>
+    <div class="col-xs-12 text-center bluefont" style="padding-top:5px;">
+        <center>
+            <style>
+                .rocc {
+                    width: 100px;
+                    color: snow;
+                    background-color: #8D8D8D;
+                    border: 3px solid #8D8D8D;
+                    -moz-border-radius: 3px; /* Gecko browsers */
+                    -webkit-border-radius: 3px; /* Webkit browsers */
+                    -ms-border-radius: 3px; /* Webkit browsers */
+                    border-radius: 3px; /* W3C syntax */
+                }
+            </style>
+            <div class="rocc xsmall">找到专属医生</div>
+        </center>
+    </div>
+    <div class="col-xs-12 text-center lighter" style="padding-top:15px;">
+        <div style="width:48px; margin-left:auto;margin-right:auto;">
+            <div id="st_1_d" class="ckc littelO active"></div>
+            <div id="st_2_d" class="ckc littelO"></div>
+            <div id="st_3_d" class="ckc littelO"></div>
+        </div>
+    </div>
+    <style>
+        .infovvbg{
+            background-color:#EEEEEE;
+        }
+    </style>
+    <div id="st_1" class="stsl col-xs-12" style="padding-top:15px;">
+        <div class="col-xs-12 infovvbg" style="padding:0px;" >
+            <div class="col-xs-12" style="padding-top:10px;padding-bottom:10px;"><b>基本条件</b></div>
+            <div class="col-xs-12" style="background:#E2DCD8;padding-top:5px;padding-bottom:5px;">
+                <div class="col-xs-6 text-left" style="padding-left:0px;">姓名</div>
+                <div class="col-xs-6 text-right" style="padding-right:0px;">
+                    <input class="updatebox" field="name" type="text" data-role='none' style="text-align:right; width:50%; border:0px; background-color:transparent" value="{{$member.name}}" placeholder="我的姓名" />
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </div>
+            </div>
+            <div class="col-xs-12" style="background:#E2DCD8;padding-top:5px;padding-bottom:5px;">
+                <div class="col-xs-6 text-left" style="padding-left:0px;">性别</div>
+                <div class="col-xs-6 text-right" style="padding-right:0px;">
+                    <select class="updatedrop" field="is_male" data-role='none' style="text-align:right;width:40px; border:0px; background-color:transparent" value="{{$member.name}}" >
+                        <option value="Y" {{if $info.is_male=="Y"}}selected=selected{{/if}}>男</option>
+                        <option value="N">女</option>
+                    </select>
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </div>
+            </div>
+            <div class="col-xs-12" style="background:#E2DCD8;padding-top:5px;padding-bottom:5px;">
+                <div class="col-xs-6 text-left" style="padding-left:0px;">居住地</div>
+                <div class="col-xs-6 text-right" style="padding-right:0px;">
+                    <input class="updatebox" field="location" type="text" data-role='none' style=" text-align:right; width:50%; border:0px; background-color:transparent" value="{{$info.location}}" placeholder="我的城市" />
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </div>
+            </div>
+            <div class="col-xs-12" style="background:#E2DCD8;padding-top:5px;padding-bottom:5px;">
+                <div class="col-xs-6 text-left" style="padding-left:0px;">生日</div>
+                <div class="col-xs-6 text-right" style="padding-right:0px;">
+                    <input class="updatebox" field="birth" type="text" data-role='none' style=" text-align:right; width:60%; border:0px; background-color:transparent" value="{{$info.birth}}" placeholder="我的生日" />
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </div>
+            </div>
+            <div class="col-xs-12" style="background:#E2DCD8;padding-top:5px;padding-bottom:5px;">
+                <div class="col-xs-6 text-left" style="padding-left:0px;">身高</div>
+                <div class="col-xs-6 text-right" style="padding-right:0px;">
+                    <input class="updatebox" field="height" maxlength="3" type="number" data-role='none' style=" text-align:right; width:50%; border:0px; background-color:transparent" value="{{$info.height}}" placeholder="我的身高(CM)" />
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </div>
+            </div>
+            <div class="col-xs-12" style="background:#E2DCD8;padding-top:5px;padding-bottom:5px;">
+                <div class="col-xs-6 text-left" style="padding-left:0px;">体重</div>
+                <div class="col-xs-6 text-right" style="padding-right:0px;">
+                    <input class="updatebox" field="weight" maxlength="3" type="number" data-role='none' style=" text-align:right; width:50%; border:0px; background-color:transparent" value="{{$info.weight}}" placeholder="我的体重(KG)" />
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .updatebtn.active{
+            background-color:#00A0E8;
+            color:snow;
+        }
+    </style>
+    <div id="st_2" class="stsl col-xs-12" style="padding-top:15px;">
+        <div class="col-xs-12 infovvbg" style="padding:0px;">
+            <div class="col-xs-12" style="padding-top:10px;padding-bottom:10px;"><b>健康史</b></div>
+            <div class="col-xs-12" style="background:#E2DCD8;padding-top:7px;padding-bottom:7px;">
+                <div class="col-xs-12 " style="padding-left:0px;">有无近亲在60岁之前因病去世？</div>
+                <div class="col-xs-6" >
+                    <button class=" updatebtn_has_new_die ui-btn ui-corner-all updatebtn {{if $info.has_new_die!="Y"}}active{{/if}}" field="has_new_die" value="N" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    没有</button>
+                </div>
+                <div class="col-xs-6" >
+                    <button class="updatebtn_has_new_die ui-btn ui-corner-all updatebtn {{if $info.has_new_die=="Y"}}active{{/if}}" field="has_new_die" value="Y" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    有</button>
+                </div>
+            </div>
+            <div class="col-xs-12" style="background:#E2DCD8;padding-top:7px;padding-bottom:7px;">
+                <div class="col-xs-12 " style="padding-left:0px;">在世的近亲有无重大疾病？</div>
+                <div class="col-xs-6" >
+                    <button class=" updatebtn_has_ill_relate ui-btn ui-corner-all updatebtn {{if $info.has_ill_relate!="Y"}}active{{/if}}" field="has_ill_relate" value="N" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    没有</button>
+                </div>
+                <div class="col-xs-6" >
+                    <button class="updatebtn_has_ill_relate ui-btn ui-corner-all updatebtn {{if $info.has_ill_relate=="Y"}}active{{/if}}" field="has_ill_relate" value="Y" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    有</button>
+                </div>
+            </div>
+            <div class="col-xs-12" style="background:#E2DCD8;padding-top:7px;padding-bottom:7px;">
+                <div class="col-xs-12 " style="padding-left:0px;">是否接种疫苗？</div>
+                <div class="col-xs-6" >
+                    <button class=" updatebtn_has_vaccine ui-btn ui-corner-all updatebtn {{if $info.has_vaccine!="Y"}}active{{/if}}" field="has_vaccine" value="N" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    没有</button>
+                </div>
+                <div class="col-xs-6" >
+                    <button class="updatebtn_has_vaccine ui-btn ui-corner-all updatebtn {{if $info.has_vaccine=="Y"}}active{{/if}}" field="has_vaccine" value="Y" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    有</button>
+                </div>
+            </div>
+            <div class="col-xs-12" style="background:#E2DCD8;padding-top:7px;padding-bottom:7px;">
+                <div class="col-xs-12 " style="padding-left:0px;">接受过治疗？</div>
+                <div class="col-xs-6" >
+                    <button class=" updatebtn_has_treat ui-btn ui-corner-all updatebtn {{if $info.has_treat!="Y"}}active{{/if}}" field="has_treat" value="N" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    没有</button>
+                </div>
+                <div class="col-xs-6" >
+                    <button class="updatebtn_has_treat ui-btn ui-corner-all updatebtn {{if $info.has_treat=="Y"}}active{{/if}}" field="has_treat" value="Y" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    有</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="st_3" class="stsl col-xs-12" style="padding-top:15px;">
+        <div class="col-xs-12 infovvbg" style="padding:0px;">
+            <div class="col-xs-12" style="padding-top:10px;padding-bottom:10px;"><b>身体状况</b></div>
+            <div class="col-xs-12" style="background:#E2DCD8;padding-top:7px;padding-bottom:7px;">
+                <div class="col-xs-12 " style="padding-left:0px;">吸烟频率？</div>
+                <div class="col-xs-4" >
+                    <button class="updatebtn_smoke ui-btn ui-corner-all updatebtn {{if $info.smoke!="2"&&$info.smoke!="3"}}active{{/if}}" field="smoke" value="0" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    从不</button>
+                </div>
+                <div class="col-xs-4" >
+                    <button class="updatebtn_smoke ui-btn ui-corner-all updatebtn {{if $info.smoke=="2"}}active{{/if}}" field="smoke" value="2" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    偶尔</button>
+                </div>
+                <div class="col-xs-4" >
+                    <button class="updatebtn_smoke ui-btn ui-corner-all updatebtn {{if $info.smoke=="3"}}active{{/if}}" field="smoke" value="3" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    常常</button>
+                </div>
+            </div>
+            <div class="col-xs-12" style="background:#E2DCD8;padding-top:7px;padding-bottom:7px;">
+                <div class="col-xs-12 " style="padding-left:0px;">喝酒频率？</div>
+                <div class="col-xs-4" >
+                    <button class="updatebtn_drink ui-btn ui-corner-all updatebtn {{if $info.drink!="2"&&$info.drink!="3"}}active{{/if}}" field="drink" value="0" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    从不</button>
+                </div>
+                <div class="col-xs-4" >
+                    <button class="updatebtn_drink ui-btn ui-corner-all updatebtn {{if $info.drink=="2"}}active{{/if}}" field="drink" value="2" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    偶尔</button>
+                </div>
+                <div class="col-xs-4" >
+                    <button class="updatebtn_drink ui-btn ui-corner-all updatebtn {{if $info.drink=="3"}}active{{/if}}" field="drink" value="3" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    常常</button>
+                </div>
+            </div>
+            <div class="col-xs-12" style="background:#E2DCD8;padding-top:7px;padding-bottom:7px;">
+                <div class="col-xs-12 " style="padding-left:0px;">是否有长期服用药物？</div>
+                <div class="col-xs-6" >
+                    <button class=" updatebtn_long_medicine ui-btn ui-corner-all updatebtn {{if $info.long_medicine!="Y"}}active{{/if}}" field="long_medicine" value="N" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    没有</button>
+                </div>
+                <div class="col-xs-6" >
+                    <button class="updatebtn_long_medicine ui-btn ui-corner-all updatebtn {{if $info.long_medicine=="Y"}}active{{/if}}" field="long_medicine" value="Y" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    有</button>
+                </div>
+            </div>
+            <div class="col-xs-12" style="background:#E2DCD8;padding-top:7px;padding-bottom:7px;">
+                <div class="col-xs-12 " style="padding-left:0px;">是否有药物过敏史？</div>
+                <div class="col-xs-6" >
+                    <button class=" updatebtn_allergy ui-btn ui-corner-all updatebtn {{if $info.allergy!="Y"}}active{{/if}}" field="allergy" value="N" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    没有</button>
+                </div>
+                <div class="col-xs-6" >
+                    <button class="updatebtn_allergy ui-btn ui-corner-all updatebtn {{if $info.allergy=="Y"}}active{{/if}}" field="allergy" value="Y" style="font-weight:lighter; ;padding-top:5px;padding-bottom:5px;">
+                    有</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12" style="padding:15px;">
+        <input id="st_step" value="1" type="hidden" />
+        <button id="st_next" class="ui-btn ui-btn-b">下一步</button>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".updatebox").blur(function () {
+                var field = $(this).attr("field");
+                var val = $(this).val();
+                updateField(field, val);
+            });
+            $(".updatedrop").change(function () {
+                var field = $(this).attr("field");
+                var val = $(this).val();
+                updateField(field, val);
+            });
+            $(".updatebtn").click(function () {
+                var field = $(this).attr("field");
+
+                $(".updatebtn_" + field).removeClass("active");
+                $(this).addClass("active");
+
+                var val = $(this).attr("value");
+                updateField(field, val);
+            });
+            $("#st_2").hide();
+            $("#st_3").hide();
+            $(".stsl").swiperight(function(){
+                var step = Number($("#st_step").val());
+                if (step == 3) {
+                    return;
+                } else {
+                    $("#st_step").val(++step);
+                }
+                refreshStep();
+            });
+            $(".stsl").swipeleft(function () {
+                var step = Number($("#st_step").val());
+                if (step == 1) {
+                    return;
+                } else {
+                    $("#st_step").val(--step);
+                }
+                refreshStep();
+            });
+            $("#st_next").click(function () {
+                var step = Number($("#st_step").val());
+                if (step == 3) {
+                    document.location.href="{{$rootpath}}/member/index.php";
+                } else {
+                    $("#st_step").val(++step);
+                }
+                refreshStep();
+            });
+        });
+        function refreshStep() {
+            var step = Number($("#st_step").val());
+            $(".ckc").removeClass("active");
+            $("#st_" + step + "_d").addClass("active");
+            $(".stsl").hide("fade");
+            $("#st_" + step).show("fade");
+        }
+    </script>
+
+</div>
+{{include  file="$smarty_root/member/member_common.html" }}
+{{include  file="$smarty_root/navbar.html" }}
+{{include  file="$smarty_root/footer.html" }}
