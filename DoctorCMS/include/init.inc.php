@@ -42,9 +42,9 @@ $MenuArray=json_decode(json_encode((array) simplexml_load_string($str)), true);
 			if($MenuArray["mainmenus"]["mainmenu"][$j]["module"]=="info"){
 
 					$arr=Array();
-					$arr["id"]="officeopenhour_".$result[$i]["id"]."_add";
+					$arr["id"]="officeopenhour_".$result[$i]["office_id"]."_add";
 					$arr["name"]=$result[$i]["office_name"].$SysLang["info"]["openhour"];
-					$arr["url"]="/Info/officeopenhour.php?id=".base64_encode($result[$i]["id"]);
+					$arr["url"]="/Info/officeopenhour.php?id=".base64_encode($result[$i]["office_id"]);
 
 					$MenuArray["mainmenus"]["mainmenu"][$j]["submenus"]["submenu"][]=$arr;
 			}
@@ -53,9 +53,9 @@ $MenuArray=json_decode(json_encode((array) simplexml_load_string($str)), true);
 			if($MenuArray["mainmenus"]["mainmenu"][$j]["module"]=="appointment"){
 
 					$arr=Array();
-					$arr["id"]="agenda_".$result[$i]["id"];
+					$arr["id"]="agenda_".$result[$i]["office_id"];
 					$arr["name"]=$result[$i]["office_name"].$SysLang["appointment"]["agenda"];
-					$arr["url"]="/Appointment/agenda.php?id=".base64_encode($result[$i]["id"]);
+					$arr["url"]="/Appointment/agenda.php?id=".base64_encode($result[$i]["office_id"]);
 
 					$MenuArray["mainmenus"]["mainmenu"][$j]["submenus"]["submenu"][]=$arr;
 			}
