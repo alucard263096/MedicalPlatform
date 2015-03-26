@@ -8,4 +8,3 @@
   $smarty->assign("MyModule","website");
   $model->DefaultShow($smarty,$dbmgr,$action,"general",$_REQUEST);
 ?>
-?>

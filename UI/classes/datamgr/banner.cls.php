@@ -79,6 +79,22 @@
 		//print_r($result);
 		return $result;
 	}
+
+	public function getGeneralText($code){
+		Global $SysLangCode;
+		//$codelist=mysql_real_escape_string($codelist);
+		$ex=getLangEx();
+
+		$sql="
+		select code, content_$ex content from dr_tb_general
+		where code='$code' 
+		 ";
+
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+		//print_r($result);
+		return $result["content"];
+	}
 	
  }
  
