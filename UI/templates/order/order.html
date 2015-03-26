@@ -52,7 +52,7 @@
                 var i=0;
                 {{foreach from=$info.office_list item=rs}}
                 var office_{{$rs.id}}={
-                "office_id":"{{$rs.id}}",
+                "office_id":"{{$rs.office_id}}",
                 "office_name":"{{$rs.name}}",
                 "office_address":"{{$rs.address}}"};
                 office_list[i++]=office_{{$rs.id}};
