@@ -1,7 +1,7 @@
 <?php
 
 #[Root]
-$CONFIG['rootpath']		= 'https://www.myhkdoc.com';  
+$CONFIG['rootpath']		= 'http://www.myhkdoc.com';  
 //$CONFIG['charset']		= 'utf-8'; 
 $CONFIG['Title']             = 'MedicalPlatform';
 $CONFIG['URL']="http://www.myhkdoc.com";
