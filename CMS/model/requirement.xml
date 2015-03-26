@@ -27,6 +27,10 @@
           <name>Bug</name>
           <value>B</value>
         </option>
+        <option>
+          <name>客户反馈</name>
+          <value>C</value>
+        </option>
       </options>
       <search>1</search>
       <notnull>1</notnull>

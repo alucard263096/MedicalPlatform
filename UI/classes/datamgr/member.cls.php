@@ -142,6 +142,58 @@ order by totle_score";
 
 
 	}
+	public function submitFeedback($name,$mobile,$description){
+
+	$sql="select ifnull(max(id),0)+1 from dr_tb_requirement";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+		$id=$result[0];
+
+		$description.=">>>>>>>$mobile,$name";
+
+		$description=mysql_real_escape_string($description);
+
+		$sql="
+		INSERT INTO `medicalplatform`.`dr_tb_requirement`
+(`id`,
+`submit_user`,
+`title`,
+`type`,
+`description`,
+`attachment_1`,
+`attachment_2`,
+`attachment_3`,
+`handling_comment`,
+`handling_type`,
+`handling_user`,
+`review_type`,
+`review_comment`,
+`created_user`,
+`created_date`,
+`updated_user`,
+`updated_date`)
+VALUES
+($id,
+3,
+'客户反馈',
+'C',
+'$description',
+'',
+'',
+'',
+'',
+'P',
+3,
+'P',
+'',
+2,
+now(),
+2,
+now())
+";
+
+			$query = $this->dbmgr->query($sql);
+	}
 
  }
  

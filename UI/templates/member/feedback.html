@@ -1,0 +1,42 @@
+{{include  file="$smarty_root/header.html" }}
+<div role="main" class="ui-content" style="padding:0px;">
+    <div class="col-xs-12">
+        <textarea style="min-height:250px;" maxlength="1000" cols="40" rows="8" name="textarea" id="description" placeholder="亲爱的用户，你好。欢迎来到意见反馈中心。如果您对我们的网页有任何优化意见或者建议，请在此留言，我们竭诚等候，谢谢。">{{$info.description}}</textarea>
+    </div>
+    <div class="col-xs-12" style="padding-top:15px;">
+        <a href="#" id="btnSubmit" data-role="button" style="color:snow; background-color:#E95414;">提交意见</a>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#btnSubmit").click(function () {
+
+            var description = $("#description").val();
+            if ($.trim(description) == "") {
+                PopupTips("请描述你需要反馈的问题。")
+                return;
+            }
+          
+
+            $("#btnSubmit").addClass("ui-state-disabled");
+            var json = {
+                "action": "submit",
+                "description": description
+            };
+            $.post("{{$rootpath}}/member/feedback.php", json, function (data) {
+                //alert(data);
+                if (data == "SUCCESS") {
+                    $("#btnSubmit").text("提交成功");
+                }else{
+                    PopupTips("未知错误");
+                    $("#btnSubmit").removeClass("ui-state-disabled");
+                }
+            });
+
+        });
+        
+    });
+
+</script>
+
+{{include  file="$smarty_root/footer.html" }}
