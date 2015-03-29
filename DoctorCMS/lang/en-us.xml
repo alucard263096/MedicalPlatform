@@ -92,7 +92,7 @@
     <vaccine>Vaccine</vaccine>
     <price>Appointment Price(HK$)</price>
     <order_datetime>Appointment Date</order_datetime>
-    <approve>Approve</approve>
+    <approve>Confirm Attandance</approve>
     <padding>Padding</padding>
     <finish>Finish</finish>
     <cancel>Cancelled</cancel>

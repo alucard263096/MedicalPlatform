@@ -220,7 +220,7 @@ order by main.order_date,main.order_time";
 		$member_id=mysql_real_escape_string($member_id);
 		$id=mysql_real_escape_string($id);
 		$sql="select main.*,t.name order_rtime,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
-		TO_DAYS(NOW()) - TO_DAYS(main.order_date) expire_days
+		TO_DAYS(NOW()) - TO_DAYS(main.order_date) passdate
 		  from dr_tb_member_vaccine_order main
 inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='$SysLangCode') vaccine on main.vaccine_id=vaccine.id
 inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='$SysLangCode') doctor on main.doctor_id=doctor.id

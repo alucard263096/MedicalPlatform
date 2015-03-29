@@ -184,6 +184,7 @@
                 $("#st_2_number").text("2");
                 $(".ckc").removeClass("active");
                 $("#st_2_d").addClass("active");
+                $("#st_2_skip").text("跳过");
             }
         }); 
         $("#st_2_skip").click(function () {
@@ -202,8 +203,10 @@
                 $("#st_2_number").text("1");
                 $(".ckc").removeClass("active");
                 $("#st_3_d").addClass("active");
+                $("#st_2_skip").text("完成");
             } else if (step == "3") {
                 $("#st_1_skip").click();
+
             }
         });
         $(".sex_c").click(function () {

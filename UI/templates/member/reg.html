@@ -72,10 +72,10 @@
         $("#btnStep1").click(function () {
             var mobile = $("#mobile_no").val();
             $("#btnStep1").addClass("ui-state-disabled");
-            var json={
-                "action":"reg",
-                "mobile":mobile
-            }
+            var json = {
+                "action": "reg",
+                "mobile": mobile
+            };
             $.post("{{$rootpath}}/member/verifycode.php", json, function (data) {
                 //alert("b"+data+"a");
                 if (data == "HASREG") {

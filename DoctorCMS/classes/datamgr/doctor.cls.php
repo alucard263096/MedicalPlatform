@@ -110,7 +110,7 @@ order by el.name
 				
 				$sql="
 				insert into dr_tb_doctor_service (`effect_id`,`doctor_id`,`price`,`web_price`,`updated_user`,`updated_date`)
-				values ($effect_id,$doctor_id,$price,$web_price,$sysUserId,now())";
+				values ($effect_id,$doctor_id,$price,0,$sysUserId,now())";
 				
 				$query = $this->dbmgr->query($sql);
 			}

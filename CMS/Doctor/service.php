@@ -22,6 +22,7 @@
 
   }else if($action=="save"){
 	//print_r($_REQUEST);
+	$_REQUEST["web_price"]=0;
 	$result=$doctorMgr->updatedDoctorService($_REQUEST,$SysUser["id"]);
 	echo $result;
   }

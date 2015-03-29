@@ -15,10 +15,20 @@
   $vaccine_id=$_REQUEST["vid"];
   $action=$_REQUEST["action"];
 
+  
+  if(!isset($_SESSION[SESSIONNAME]["Member"])){
+	$_SESSION[SESSIONNAME]["login_require_url"]=$_SERVER["REQUEST_URI"];
+	 $smarty->display(ROOT.'/templates/member/login.html');
+	exit();
+  }
+
   $info=$doctorMgr->getDoctor($doctor_id);
+  $info["use_lang_id"]=encodeLangText($info["use_lang_id"]);
   $info["pro_title"]=encodeRowText($info["pro_title"]);
   $info["summary"]=encodeLongText($info["summary"]);
   $info["post_process"]=encodeLongText($info["post_process"]);
+  $info["open_hour"]=encodeRowText($info["open_hour"]);
+  $info["advanced"]=encodeLongText($info["advanced"]);
 
   $standard=$doctorMgr->getStandardDoctorValue();
 
@@ -69,9 +79,11 @@
 	$looked=count($memberMgr->getMemberDoctor($_SESSION[SESSIONNAME]["Member"]["id"],$doctor_id))>0?"Y":"N";
   }
   $info["looked"]=$looked;
-  
   $smarty->assign("info",$info);
 
+  $office_list=$doctorMgr->getOfficeListByDoctor($doctor_id);
+  
+  $smarty->assign("office_list",$office_list);
 
 
   $smarty->assign("standard",$standard);

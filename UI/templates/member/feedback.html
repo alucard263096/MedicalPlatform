@@ -27,6 +27,7 @@
                 //alert(data);
                 if (data == "SUCCESS") {
                     $("#btnSubmit").text("提交成功");
+                    document.location.href = "{{$rootpath}}/member/index.php";
                 }else{
                     PopupTips("未知错误");
                     $("#btnSubmit").removeClass("ui-state-disabled");

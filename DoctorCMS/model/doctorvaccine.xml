@@ -39,20 +39,10 @@
       <disableindetail>1</disableindetail>
     </field>
     <field>
-      <name>标准价格（HK$）</name>
-      <name_zh-cn>标准价格（HK$）</name_zh-cn>
-      <name_zh-hk>标准价格（HK$）</name_zh-hk>
-      <name_en-us>Standard Price（HK$）</name_en-us>
-      <key>price</key>
-      <displayinlist>1</displayinlist>
-      <type>number</type>
-      <notnull>1</notnull>
-    </field>
-    <field>
-      <name>网上价格（HK$）</name>
-      <name_zh-cn>网上价格（HK$）</name_zh-cn>
-      <name_zh-hk>网上价格（HK$）</name_zh-hk>
-      <name_en-us>Website Price（HK$）</name_en-us>
+      <name>我的收费（HK$）</name>
+      <name_zh-cn>我的收费（HK$）</name_zh-cn>
+      <name_zh-hk>我的收费（HK$）</name_zh-hk>
+      <name_en-us>My Price（HK$）</name_en-us>
       <key>web_price</key>
       <displayinlist>1</displayinlist>
       <type>number</type>

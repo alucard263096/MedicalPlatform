@@ -25,7 +25,6 @@
                                                             <th>#</th>
                                                             <th>{{$SysLang.service.service}}</th>
                                                             <th>{{$SysLang.service.price}}（HK$）</th>
-                                                            <th>{{$SysLang.service.web_price}}（HK$）</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -39,9 +38,6 @@
                                                             </td>
                                                             <td>
                                                                 <input type="number" value="{{$row.price}}" class="form-control" id="effect_{{$row.effect_id}}_price" />
-                                                            </td>
-                                                            <td>
-                                                                <input type="number" value="{{$row.web_price}}" class="form-control" id="effect_{{$row.effect_id}}_web_price" />
                                                             </td>
                                                         </tr>
                                                         {{/foreach}}

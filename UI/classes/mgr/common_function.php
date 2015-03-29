@@ -157,23 +157,43 @@ function getListIdStr($arr,$key){
 	return $list;
 }
 
-function encodeLongText($str){
+function encodeLongText($str,$count=0){
 	$arr=explode("\n",$str);
 	$ret="";
+	$i=0;
 	foreach ($arr as $value){
-			$ret.="<p> $value </p>";
+		if($count>0&&$i>=$count){
+		break;
+		}
+		$ret.="<p> $value </p>";
+		$i++;
 	}
 
 	return $ret;
 }
 
-function encodeRowText($str){
+function encodeRowText($str,$count=0){
 	$arr=explode("\n",$str);
 	$ret="";
+	$i=0;
 	foreach ($arr as $value){
-			$ret.="$value<br />";
+		if($count>0&&$i>=$count){
+		break;
+		}
+		$ret.="$value<br />";
+		$i++;
 	}
 
 	return $ret;
 }
+
+function encodeLangText($str){
+	
+	$str=str_replace("1"," 普通话",$str);
+	$str=str_replace("2"," 广东话",$str);
+	$str=str_replace("3"," 英语",$str);
+
+	return $str;
+}
+
 ?>

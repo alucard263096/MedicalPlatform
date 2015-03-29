@@ -28,7 +28,7 @@
 		$sql="
 select a.id doctor_id, a.licence_code,b.name doctor_name,pl.name specialist_name from dr_tb_doctor a
 left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='zh-cn'
-inner join dr_tb_specialist p on  a.is_general='N' and a.specialist_id=p.id
+inner join dr_tb_specialist p on   a.specialist_id=p.id
 left join dr_tb_specialist_lang pl on p.id=pl.oid and pl.lang='zh-cn'
 where  a.status='A' and p.status='A'
 order by a.licence_code,b.name
@@ -47,7 +47,7 @@ order by a.licence_code,b.name
 		$doctor_id=mysql_real_escape_string($doctor_id);
 	$sql="
 select p.* from dr_tb_doctor a
-inner join dr_tb_specialist p on  a.is_general='N' and a.specialist_id=p.id
+inner join dr_tb_specialist p on   a.specialist_id=p.id
 where  a.id=$doctor_id
 		  ";
 
@@ -110,7 +110,7 @@ order by el.name
 				
 				$sql="
 				insert into dr_tb_doctor_service (`effect_id`,`doctor_id`,`price`,`web_price`,`updated_user`,`updated_date`)
-				values ($effect_id,$doctor_id,$price,$web_price,$sysUserId,now())";
+				values ($effect_id,$doctor_id,$price,0,$sysUserId,now())";
 				
 				$query = $this->dbmgr->query($sql);
 			}

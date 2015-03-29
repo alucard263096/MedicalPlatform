@@ -44,7 +44,7 @@
             <div class="col-xs-4">
                 <a href="{{$rootpath}}/member">
                     <div><img class="img-responsive" src="{{$rootpath}}/themes/img/icons/index_user.png"></div>
-                    <div class="text-center bsmall">服务</div>
+                    <div class="text-center bsmall">我的预约</div>
                 </a>
             </div>
         </div>
@@ -66,7 +66,7 @@
                         <div class="col-xs-12 bsmall" style="padding-bottom:5px;">{{$promotedvaccine1.name}}</div>
                         <div class="col-xs-12">
                             <div class="col-xs-7">
-                                <div class="row xsmall" style="height:40px;"><span style="color: #8D8D8D">[{{$promotedvaccine1.effect}}]</span></div>
+                                <div class="row xsmall" style="min-height:48px;"><span style="color: #8D8D8D">[{{$promotedvaccine1.effect}}]</span></div>
                                 <div class="row xsmall"><span style="color: #ED7945;">免费预约</span></div>
                             </div>
                             <div class="col-xs-5" style="padding:0px">
@@ -75,13 +75,13 @@
                         </div>
                     </a>
                 </div>
-                <div class="row" style="padding-bottom:5px;">
+                <div class="row" style="padding-top:5px; padding-bottom:5px;">
                     <a href="{{$rootpath}}/vaccine/detail.php?id={{$promotedvaccine2.id}}">
                         <div class="col-xs-12 bsmall" style="padding-bottom:5px;">{{$promotedvaccine2.name}}</div>
                         <div class="col-xs-12">
                             <div class="col-xs-7">
-                                <div class="row xsmall" style="height:40px;"><span style="color: #8D8D8D">[{{$promotedvaccine2.effect}}]</span></div>
-                                <div class="row xsmall"><span style="color: #ED7945;font-size:12px;">免费预约</span></div>
+                                <div class="row xsmall" style="min-height:48px;"><span style="color: #8D8D8D">[{{$promotedvaccine2.effect}}]</span></div>
+                                <div class="row xsmall"><span style="color: #ED7945;">免费预约</span></div>
                             </div>
                             <div class="col-xs-5" style="padding:0px">
                                 <img class="img-responsive" src="{{$uploadpath}}/vaccine/{{$promotedvaccine2.image}}" />
@@ -96,7 +96,7 @@
 
     <div class="col-xs-12">
         <div class="col-xs-12">
-            <a href="{{$rootpath}}/doctor/query.php" data-role="button" style="color:snow; background-color:#42A4D3;">我要提问</a>
+            <a href="{{$rootpath}}/doctor/query.php" data-role="button" style="color:snow; background-color:#42A4D3;">我要咨询</a>
         </div>
     </div>
     <br />

@@ -92,7 +92,7 @@
     <vaccine>疫苗</vaccine>
     <price>预约价格(HK$)</price>
     <order_datetime>预约时间</order_datetime>
-    <approve>使用</approve>
+    <approve>确认到诊</approve>
     <padding>等待中</padding>
     <finish>已完成</finish>
     <cancel>已取消</cancel>

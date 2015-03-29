@@ -98,7 +98,7 @@
       <name_zh-hk>专业资格</name_zh-hk>
       <name_en-us>Professional Qualifications</name_en-us>
       <key>pro_title</key>
-      <type>text</type>
+      <type>longtext</type>
       <ismutillang>1</ismutillang>
       <displayinlist>1</displayinlist>
       <search>1</search>
@@ -134,24 +134,6 @@
       <notnull>1</notnull>
     </field>
     <field>
-      <name>全科收费（HK$）</name>
-      <name_zh-cn>全科收费（HK$）</name_zh-cn>
-      <name_zh-hk>全科收费（HK$）</name_zh-hk>
-      <name_en-us>General Price（HK$）</name_en-us>
-      <key>general_price</key>
-      <type>number</type>
-      <notnull>1</notnull>
-    </field>
-    <field>
-      <name>专科收费（HK$）</name>
-      <name_zh-cn>专科收费（HK$）</name_zh-cn>
-      <name_zh-hk>专科收费（HK$）</name_zh-hk>
-      <name_en-us>Specialist Price（HK$）</name_en-us>
-      <key>specialist_price</key>
-      <type>number</type>
-      <notnull>1</notnull>
-    </field>
-    <field>
       <name>使用语言</name>
       <name_zh-cn>使用语言</name_zh-cn>
       <name_zh-hk>使用语言</name_zh-hk>
@@ -179,17 +161,6 @@
       <search>1</search>
       <displayinlist>1</displayinlist>
       <disableindetail>1</disableindetail>
-    </field>
-    <field>
-      <name>是否全科</name>
-      <name_zh-cn>是否全科</name_zh-cn>
-      <name_zh-hk>是否全科</name_zh-hk>
-      <name_en-us>Is General</name_en-us>
-      <key>is_general</key>
-      <type>check</type>
-      <displayinlist>1</displayinlist>
-      <yvalue>是</yvalue>
-      <nvalue>否</nvalue>
     </field>
     <field>
       <name>预约内容</name>

@@ -21,12 +21,20 @@
   if($action=="submit"){
   
 	$doctor_id=$_REQUEST["doctor_id"];
-
-	
-	$info=$doctorMgr->GetQuestion($doctor_id,$member_id);
-	if($info["id"]>0){
-		echo "DUPLIC";
-		exit;
+	//echo $doctor_id;
+	if($doctor_id==""||$doctor_id==0){
+		$info=$doctorMgr->GetQuestionList($doctor_id,$member_id);
+		//print_r($info);
+		if(count($info)>3){
+			echo "DUPLIC_3";
+			exit;
+		}
+	}else{
+		$info=$doctorMgr->GetQuestionList($doctor_id,$member_id);
+		if(count($info)>1){
+			echo "DUPLIC_1";
+			exit;
+		}
 	}
 
 	$description=$_REQUEST["description"];
@@ -36,10 +44,10 @@
 	$img_2=$_REQUEST["img_2"];
 	$img_3=$_REQUEST["img_3"];
 
-	$doctorMgr->SubmitAQuestion($doctor_id,$member_id,$member["name"],$member["mobile"],
+	$id=$doctorMgr->SubmitAQuestion($doctor_id,$member_id,$member["name"],$member["mobile"],
 	$description,$is_male,$age,$img_1,$img_2,$img_3);
 
-	echo "SUCCESS";
+	echo "SUCCESS_".$id;
 	exit;
   }else{
 		
@@ -47,8 +55,9 @@
 	  $doctor_id=$doctor_id==""?0:$doctor_id;
 
 	  $smarty->assign("doctor_id",$doctor_id==""?0:$doctor_id);
-	  $info=$doctorMgr->GetQuestion($doctor_id,$member_id);
-  
+	  if($doctor_id!=""&&$doctor_id==0){
+		$info=$doctorMgr->GetQuestion($doctor_id,$member_id);
+	  }
 	  $smarty->assign("info",$info);
 
 	  $smarty->display(ROOT.'/templates/doctor/query.html');

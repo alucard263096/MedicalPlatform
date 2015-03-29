@@ -106,7 +106,7 @@ order by totle_score";
 			$vaccineid=mysql_real_escape_string($vaccineid);
 			$doctorid=mysql_real_escape_string($doctorid);
 
-			$sql="select distinct  dv.web_price,
+			$sql="select distinct  dv.web_price,v.id vaccine_id,
 			vl.name vaccine_name,vl.effect vaccine_effect,vl.used_group vaccine_used_group,v.image vaccine_image,
 			dl.name doctor_name,d.is_general doctor_is_general,dl.pro_title doctor_pro_title,d.photo doctor_photo,sl.name doctor_specialist
 		 from dr_tb_doctor_vaccine dv 
@@ -268,9 +268,13 @@ left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='$SysLangCode
 
 		$sql="select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
 		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,\",\",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,\",\",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
 		from dr_tb_office_openhour oo
 inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
 left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='$SysLangCode' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='$SysLangCode' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='$SysLangCode' 
 where oo.status='A' and oo.doctor_id in ($doctor_list) ";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
@@ -323,11 +327,11 @@ where d.id=$doctor_id ";
 	
 		$doctor_id=mysql_real_escape_string($doctor_id);
 
-		$sql="select ds.*,el.name from dr_tb_doctor d
+		$sql="select ds.*,el.name,el.description effect_description from dr_tb_doctor d
 inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
 inner join dr_tb_effect e on ds.effect_id=e.id
 left join dr_tb_effect_lang el on e.id=el.oid and el.lang='$SysLangCode'
-where e.status='A' ";
+where e.status='A' and d.id=$doctor_id";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
 
@@ -341,7 +345,7 @@ where e.status='A' ";
 		}else{
 	
 
-		$sql="select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,
+		$sql="select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,
 		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
 		, ifnull(dvv.totle_score,4) totle_score
 		 from  dr_tb_doctor d 
@@ -373,6 +377,15 @@ order by totle_score";
 			return $result;
 
 		}
+	}
+	public function GetQuestionList($doctor_id,$member_id){
+		
+		$sql="select * from dr_tb_member_question where doctor_id=$doctor_id and member_id=$member_id and status='P' ";
+		
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array_all($query);
+
+		return $result;
 	}
 
 	public function GetQuestion($doctor_id,$member_id){
@@ -418,6 +431,7 @@ order by totle_score";
 		}
 		
 		$this->dbmgr->commit_trans();
+		return $id;
 	}
 
 	public function getMemberQuestionList($member_id){

@@ -10,9 +10,19 @@
 
   $vaccine_id=$_REQUEST["id"];
   $action=$_REQUEST["action"];
+  
+  if(!isset($_SESSION[SESSIONNAME]["Member"])){
+	$_SESSION[SESSIONNAME]["login_require_url"]=$_SERVER["REQUEST_URI"];
+	 $smarty->display(ROOT.'/templates/member/login.html');
+	exit();
+  }
 
   if($action=="vaccine"){
 	$drlist=$doctorMgr->getVaccineDoctorList($vaccine_id);
+	for($i=0;$i<count($drlist);$i++){
+		$drlist[$i]["advanced"]=encodeRowText($drlist[$i]["advanced"],2);
+		$drlist[$i]["pro_title"]=encodeRowText($drlist[$i]["pro_title"],2);
+	}
 	$doctor_list=getListIdStr($drlist,"doctor_id");
 	$districtCondition=$doctorMgr->getDistrictCondition($doctor_list);
 	//print_r($districtCondition);
@@ -22,6 +32,11 @@
 	$smarty->display(ROOT.'/templates/doctor/vaccinedoctor.html');
   }else{
 	$drlist=$doctorMgr->getDoctorList();
+	for($i=0;$i<count($drlist);$i++){
+		$drlist[$i]["advanced"]=encodeRowText($drlist[$i]["advanced"],2);
+		$drlist[$i]["pro_title"]=encodeRowText($drlist[$i]["pro_title"],2);
+	}
+
 	$smarty->assign("doctor_list",$drlist);
 
 	$doctor_list=getListIdStr($drlist,"doctor_id");

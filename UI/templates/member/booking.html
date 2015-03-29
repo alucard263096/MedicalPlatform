@@ -38,6 +38,9 @@
                 </div>
             </div>
             <div  class="row text-center" style="margin-top:20px;margin-bottom:20px; border-bottom-left-radius:10px;-moz-border-bottom-left-radius: 10px;-webkit-border-bottom-left-radius: 10px;border-bottom-right-radius:10px;-moz-border-bottom-right-radius: 10px;-webkit-border-bottom-right-radius: 10px;">
+                <div class="col-xs-12 text-center">
+                    {{$info.office_address}}
+                </div>
                 <div class="col-xs-12">
                     <img  width="80%" src="{{$info.qrcode}}" />
                 </div>
@@ -46,9 +49,11 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-xs-12 text-center" style="padding-top:20px;padding-bottom:20px;">
-        {{$info.office_address}}
+        {{if $info.status='P' and $info.passdate<1 }}
+        <div class="col-xs-12">
+            <a href="{{$rootpath}}/order/order.php?action=modify&id={{$info.id}}" data-role="button" style="color:snow; background-color:#42A4D3;">修改预约</a>
+        </div>
+        {{/if}}
     </div>
 </div>
 {{include  file="$smarty_root/navbar.html" }}

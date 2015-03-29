@@ -3,7 +3,7 @@
 
 <div role="main" class="ui-content" style="padding:0px;">
     <div class="col-xs-12">
-        <textarea style="min-height:250px;" maxlength="1000" cols="40" rows="8" name="textarea" id="description" placeholder="请详细描述您的健康问题，疾病症状等信息。请尽量上传化验单及患病部位的照片。">{{$info.description}}</textarea>
+        <textarea style="min-height:250px;" maxlength="1000" cols="40" rows="8" name="textarea" id="description" placeholder="仅限于本网站或与香港医疗有关的提问。对于健康或疾病问题，请您选择预约就诊。香港医生会给您更专业的解答与指导。">{{$info.description}}</textarea>
     </div>
     <div class="col-xs-12">
         <div class="col-xs-9 text-right" style="padding-top:3px;">
@@ -14,14 +14,11 @@
                 <label for="r_female">女性</label>
             </fieldset>
         </div>
-        <div class="col-xs-3 text-right">
+        <div class="col-xs-3 text-right" style="padding-left:0px;">
             <input id="age" type="number" maxlength="2" style="background-color:#F9F9F9" value="{{$info.age}}" placeholder="年龄" />
         </div>
     </div>
     <hr style="margin-bottom:0px;" />
-    <div class="col-xs-12 text-center xsmall yellowfont" style="padding-top:10px;">
-        提示：上传疾病照片（只有该医生可见）
-    </div>
     <div class="col-xs-12" style="padding-top:15px;">
         <div class="col-xs-4 text-center">
             <img id="img_1_d" src="{{if $info.img_1==""}}{{$rootpath}}/themes/img/icons/upload_pic.png{{else}}{{$uploadpath}}/clientquery/{{$info.img_1}}{{/if}}" class="img-responsive upload_img" />
@@ -71,11 +68,15 @@
             };
             $.post("{{$rootpath}}/doctor/query.php", json, function (data) {
                 //alert(data);
-                if(data=="DUPLIC"){
-                    PopupTips("您已经提交了问题，请耐心等待。");
+                if(data=="DUPLIC_3"){
+                    PopupTips("您已经提交了超过3个问题，请耐心等待。");
                     $("#btnSubmit").removeClass("ui-state-disabled");
-                }else if(data=="SUCCESS"){
+                }else if(data=="DUPLIC_1"){
+                    PopupTips("您已经提交了超过1个问题，请耐心等待。");
+                    $("#btnSubmit").removeClass("ui-state-disabled");
+                }else if(data.substring(0, 7) =="SUCCESS"){
                     $("#btnSubmit").text("提交成功");
+                    document.location.href="{{$rootpath}}/member/question.php?id="+data.split('_')[1];
                 }else{
                     PopupTips("未知错误");
                     $("#btnSubmit").removeClass("ui-state-disabled");

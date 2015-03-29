@@ -31,12 +31,12 @@
     </script>
 
     
-    <div class="col-xs-12 xsmall" style="padding-top:0px;">
+    <div class="col-xs-12 xsmall" style="padding-top:0px;padding-bottom:10px;">
         <div class="col-xs-9" style="padding:0px;margin-top:15px;">
-        参考价：<span style="color: #42A4D3;font-size:17px;">{{$info.ref_price}}</span>
-            &nbsp;&nbsp;&nbsp;&nbsp;标准价：{{$info.standard_price}}</div>
-        <div class="col-xs-3" style="padding:0px;">
-            <a href="{{$rootpath}}/doctor/index.php?action=vaccine&id={{$info.id}}" data-role="button" style="background-color: #42A4D3;color:snow;">预约</a>
+        市场参考价：<span style="color: #42A4D3;font-size:16px;"><strike>{{$info.ref_price}}</strike></span>
+        </div>
+        <div class="col-xs-3" style="padding-top:5px;padding-left:0px;padding-right:0px;">
+            <a href="{{$rootpath}}/doctor/index.php?action=vaccine&id={{$info.id}}" data-role="button" style="padding:5px;font-size:13px; background-color: #42A4D3;color:snow;">免费预约</a>
         </div>
     </div>
     <hr style="margin-bottom:0px;border-color: #42A4D3;" />
@@ -51,10 +51,8 @@
             <div class="col-xs-1"><img  width="20px" src="{{$rootpath}}/themes/img/icons/vaccine_introduce.png"></div>
             <div class="col-xs-10">简介</div>
         </div>
-        <div class="xsmall">
-            <p>
-                {{$info.summary}}
-            </p>
+        <div class="xsmall" style="margin-top:10px;">
+               {{$info.content}}
         </div>
     </div>
     <hr style="margin-bottom:0px;" />
@@ -90,22 +88,19 @@
         <h6>
             <div class="row" style="padding-top:10px;">
                 <div class="col-xs-1"><img width="20px" src="{{$rootpath}}/themes/img/icons/vaccine_way.png"></div>
-                <div class="col-xs-10">接种方式</div>
+                <div class="col-xs-10 lighter">接种方式</div>
             </div>
         </h6>
         <div class="xsmall">
             <p>
                 <div class="row" style="padding-bottom:5px;">
-                    <div class="col-xs-8">接种时间</div>
-                    <div class="col-xs-4">{{$info.injection_time}}</div>
+                    <div class="col-xs-6">接种时间</div>
+                    <div class="col-xs-6">{{$info.injection_time}}</div>
                 </div>
-                <div class="row" style="padding-bottom:5px;">
-                    <div class="col-xs-8">接种季节</div>
-                    <div class="col-xs-4">{{$info.injection_season}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-8">接种次数</div>
-                    <div class="col-xs-4">{{$info.injection_count}}</div>
+                <hr style="margin-bottom:0px;margin-top:0px;  border-top:1px  #eeeeee solid thick;" />
+                <div class="row" style="padding-top:5px;">
+                    <div class="col-xs-6">接种次数</div>
+                    <div class="col-xs-6">{{$info.injection_count}}</div>
                 </div>
             </p>
         </div>
@@ -114,11 +109,12 @@
         <h6>
             <div class="row" style="padding-top:10px;">
                 <div class="col-xs-1"><img width="20px" src="{{$rootpath}}/themes/img/icons/vaccine_notice.png"></div>
-                <div class="col-xs-10">注意事项</div>
+                <div class="col-xs-10 lighter">接种前提示</div>
             </div>
         </h6>
         <div class="xsmall">
             <p>
+                <h6>注意事项</h6>
                 {{$info.caution}}
                 <br />
                 <h6>可能产生的不良反应</h6>

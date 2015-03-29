@@ -9,6 +9,7 @@
   require ROOT.'/classes/datamgr/order.cls.php';
   require ROOT.'/classes/datamgr/doctor.cls.php';
   require ROOT.'/classes/datamgr/vaccine.cls.php';
+  require ROOT.'/classes/datamgr/banner.cls.php';
   require ROOT."/classes/mgr/qrcode.cls.php";
 
   if(!isset($_SESSION[SESSIONNAME]["Member"])){
@@ -23,6 +24,9 @@
 	
 	$doctor_id=$_REQUEST["did"];
 	$vaccine_id=$_REQUEST["vid"];
+
+	$caution=$bannerMgr->getGeneralText("order_caution");
+	$smarty->assign("caution",$caution);
 
 	$info=$doctorMgr->getVaccineDoctor($vaccine_id,$doctor_id);
 	$info["doctor_pro_title"]=encodeRowText($info["doctor_pro_title"]);

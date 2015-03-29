@@ -105,7 +105,7 @@
 left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='$SysLangCode'
 	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
 	where o.id in ($vaccine_list) and o.status='A'
-	order by booking_count
+	order by o.seq
 	limit 0,2 ";
 			$query = $this->dbmgr->query($sql);
 			$result = $this->dbmgr->fetch_array_all($query); 
@@ -126,9 +126,9 @@ left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='$SysLangCode'
 left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='$SysLangCode'
 inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
 inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
-left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
 where o.status='A' 
-order by ov.booking_count ";
+order by o.seq ";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
 		return $result;
@@ -144,9 +144,9 @@ order by ov.booking_count ";
 left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='$SysLangCode'
 inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
 inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
-left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
 where o.status='A' and dv.doctor_id=$doctor_id
-order by ov.booking_count ";
+order by o.seq ";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
 		return $result;
