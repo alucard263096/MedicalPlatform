@@ -89,6 +89,11 @@
     <appointmentapprove>预约确认</appointmentapprove>
     <orderno>订单编号</orderno>
     <clientname>客户姓名</clientname>
+    <mobile>手机号码</mobile>
+    <passport>证件</passport>
+    <passport_g>通行证</passport_g>
+    <passport_p>护照</passport_p>
+    <passport_q>其它</passport_q>
     <vaccine>疫苗</vaccine>
     <price>预约价格(HK$)</price>
     <order_datetime>预约时间</order_datetime>

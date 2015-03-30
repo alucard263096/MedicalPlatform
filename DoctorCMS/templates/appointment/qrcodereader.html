@@ -38,6 +38,25 @@
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12">
+                                                <label class="col-md-4 control-label">{{$SysLang.validate.mobile}}</label>
+                                                <div class="col-md-6">
+                                                    {{$info.mobile}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label class="col-md-4 control-label">{{$SysLang.validate.passport}}</label>
+                                                <div class="col-md-6">
+                                                    {{if $info.idport_type=="G"}}
+                                                    {{$SysLang.validate.passport_g}}
+                                                    {{elseif  $info.idport_type=="P"}}                                                    
+                                                    {{$SysLang.validate.passport_p}}
+                                                    {{else}}                                                    
+                                                    {{$SysLang.validate.passport_q}}
+                                                    {{/if}}
+                                                    {{$info.idport}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12">
                                                 <label class="col-md-4 control-label">{{$SysLang.validate.vaccine}}</label>
                                                 <div class="col-md-6">
                                                     {{$info.vaccine_name}}

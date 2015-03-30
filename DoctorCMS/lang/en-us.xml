@@ -89,6 +89,11 @@
     <appointmentapprove>Appointment Approvement</appointmentapprove>
     <orderno>Order No.</orderno>
     <clientname>Client Name</clientname>
+    <mobile>Mobile No</mobile>
+    <passport>Passport</passport>
+    <passport_g>Exit-Entry HK and Macau Passport</passport_g>
+    <passport_p>Passport</passport_p>
+    <passport_q>Other</passport_q>
     <vaccine>Vaccine</vaccine>
     <price>Appointment Price(HK$)</price>
     <order_datetime>Appointment Date</order_datetime>

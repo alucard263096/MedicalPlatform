@@ -19,6 +19,8 @@
   $member_id=$member["id"];
   $name=$_REQUEST["name"];
   $mobile=$_REQUEST["mobile"];
+  $idport_type=$_REQUEST["idport_type"];
+  $idport=$_REQUEST["idport"];
   $order_date=$_REQUEST["order_date"];
   $order_time=$_REQUEST["order_time"];
   $price=$_REQUEST["price"];
@@ -45,7 +47,7 @@
 	echo "HACK";
 	exit();
   }
-  $arr=$orderMgr->createVaccineOrder($member_id,$name,$mobile,$email,
+  $arr=$orderMgr->createVaccineOrder($member_id,$name,$mobile,$email,$idport_type,$idport,
 	$order_date,$order_time,$vaccine_id,$doctor_id,$office_id,$info["web_price"],
 	$snapshot,$info["id"]);
 

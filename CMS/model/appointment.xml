@@ -69,6 +69,7 @@
       <name>证件号码</name>
       <key>idport</key>
       <type>text</type>
+      <search>1</search>
       <displayinlist>1</displayinlist>
       <disableindetail>1</disableindetail>
     </field>

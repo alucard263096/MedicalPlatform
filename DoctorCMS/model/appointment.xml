@@ -52,6 +52,50 @@
       <disableindetail>1</disableindetail>
     </field>
     <field>
+      <name>证件类型</name>
+      <name_zh-cn>证件类型</name_zh-cn>
+      <name_zh-hk>证件类型</name_zh-hk>
+      <name_en-us>Passport Type</name_en-us>
+      <key>idport_type</key>
+      <type>select</type>
+      <options>
+        <option>
+          <name>港澳通行证</name>
+          <name_zh-cn>港澳通行证</name_zh-cn>
+          <name_zh-hk>港澳通行证</name_zh-hk>
+          <name_en-us>Exit-Entry HK and Macau Passport</name_en-us>
+          <value>G</value>
+        </option>
+        <option>
+          <name>护照</name>
+          <name_zh-cn>护照</name_zh-cn>
+          <name_zh-hk>护照</name_zh-hk>
+          <name_en-us>Passport</name_en-us>
+          <value>P</value>
+        </option>
+        <option>
+          <name>其它</name>
+          <name_zh-cn>其它</name_zh-cn>
+          <name_zh-hk>其它</name_zh-hk>
+          <name_en-us>Other</name_en-us>
+          <value>Q</value>
+        </option>
+      </options>
+      <displayinlist>1</displayinlist>
+      <disableindetail>1</disableindetail>
+    </field>
+    <field>
+      <name>证件号码</name>
+      <name_zh-cn>证件号码</name_zh-cn>
+      <name_zh-hk>证件号码</name_zh-hk>
+      <name_en-us>Passport No.</name_en-us>
+      <key>idport</key>
+      <type>text</type>
+      <search>1</search>
+      <displayinlist>1</displayinlist>
+      <disableindetail>1</disableindetail>
+    </field>
+    <field>
       <name>预约日期</name>
       <name_zh-cn>预约日期</name_zh-cn>
       <name_zh-hk>预约日期</name_zh-hk>
