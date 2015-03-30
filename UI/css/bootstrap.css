@@ -337,8 +337,8 @@ img {
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 1;
-  border-top: 1px solid #eee;
+  border-bottom:0px;
+  border-top: thin solid #eee;
 }
 .sr-only {
   position: absolute;
