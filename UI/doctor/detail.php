@@ -103,6 +103,10 @@
 	$service_list=$doctorMgr->getDoctorService($doctor_id);
 	$smarty->assign("service_list",$service_list);
 
+	
+	$hospital_list=$doctorMgr->getHospitalListByDoctor($doctor_id);
+	$smarty->assign("hospital_list",$hospital_list);
+
 	$smarty->assign("doctor_id",$doctor_id);
 	$smarty->display(ROOT.'/templates/doctor/detail.html');
   }

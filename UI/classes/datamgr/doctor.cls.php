@@ -281,6 +281,33 @@ where oo.status='A' and oo.doctor_id in ($doctor_list) ";
 
 		return $result;
 	}
+	
+	public function getHospitalListByDoctor($doctor_id){
+		Global $SysLangCode;
+		if($CONFIG['solution_configuration']!="debug"&&isset($_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["hospitallist_$doctor_id"])){
+			return $_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["hospitallist_$doctor_id"];
+		}else{
+			$doctor_id=mysql_real_escape_string($doctor_id);
+			$sql="select hospital_list_id from dr_tb_doctor where id=$doctor_id";
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array($query); 
+			$hospital_list_id=$result["hospital_list_id"];
+
+			if($hospital_list_id==""){
+				return Array();
+			}
+
+			$sql="select id,name,address from dr_tb_hospital h
+	left join dr_tb_hospital_lang hl on h.id=hl.oid and hl.lang='$SysLangCode' 
+    where h.status='A'
+    order by name";
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array_all($query);
+		
+			$_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["hospitallist_$doctor_id"]=$result;
+			return $result;
+		}
+	}
 
 	public function getStandardDoctorValue(){
 	Global $SysLangCode,$CONFIG;

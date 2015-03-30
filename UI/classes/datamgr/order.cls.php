@@ -85,7 +85,7 @@ where o.office_id=$office_id and o.doctor_id=$doctor_id and order_date='$order_d
 	}
 
 	
-	public function createVaccineOrder($member_id,$name,$mobile,$email,
+	public function createVaccineOrder($member_id,$name,$mobile,$email,$idport_type,$idport,
 	$order_date,$order_time,$vaccine_id,$doctor_id,$office_id,$price,
 	$snapshot,$doctor_vaccine_id){
 		
@@ -94,6 +94,8 @@ where o.office_id=$office_id and o.doctor_id=$doctor_id and order_date='$order_d
 		$name=mysql_real_escape_string($name);
 		$mobile=mysql_real_escape_string($mobile);
 		$email=mysql_real_escape_string($email);
+		$idport_type=mysql_real_escape_string($idport_type);
+		$idport=mysql_real_escape_string($idport);
 		$order_date=mysql_real_escape_string($order_date);
 		$order_time=mysql_real_escape_string($order_time);
 		$vaccine_id=mysql_real_escape_string($vaccine_id);
@@ -128,16 +130,15 @@ where o.office_id=$office_id and o.doctor_id=$doctor_id and order_date='$order_d
 		$order_no=$this->genOrderNo("VC");
 
 		$sql="INSERT INTO `dr_tb_member_vaccine_order`
-(`id`,`order_no`,`guid`,`member_id`,`name`,`mobile`,`email`,`order_date`,`order_time`,`vaccine_id`,`doctor_id`,`office_id`,`price`,`status`,`created_time`,`snapshot`,h_status )
+(`id`,`order_no`,`guid`,`member_id`,`name`,`mobile`,`email`,`idport_type`,`idport`,`order_date`,`order_time`,`vaccine_id`,`doctor_id`,`office_id`,`price`,`status`,`created_time`,`snapshot`,h_status )
 VALUES
-($id,'$order_no','$guid',$member_id,'$name','$mobile','$email','$order_date',$order_time,$vaccine_id,$doctor_id,$office_id,$price,'P',now(),'$snapshot','P');
+($id,'$order_no','$guid',$member_id,'$name','$mobile','$email','$idport_type','$idport','$order_date',$order_time,$vaccine_id,$doctor_id,$office_id,$price,'P',now(),'$snapshot','P');
  ";
 		$query = $this->dbmgr->query($sql);
 
 		$this->updateDoctorBookingCount($doctor_id);
 		$this->updateVaccineBookingCount($vaccine_id);
 
-		
 		$this->dbmgr->commit_trans();
 		$arr["id"]=$id;
 		$arr["guid"]=$guid;

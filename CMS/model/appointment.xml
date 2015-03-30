@@ -45,6 +45,34 @@
       <disableindetail>1</disableindetail>
     </field>
     <field>
+      <name>证件类型</name>
+      <key>idport_type</key>
+      <type>select</type>
+      <options>
+        <option>
+          <name>港澳通行证</name>
+          <value>G</value>
+        </option>
+        <option>
+          <name>护照</name>
+          <value>P</value>
+        </option>
+        <option>
+          <name>其它</name>
+          <value>Q</value>
+        </option>
+      </options>
+      <displayinlist>1</displayinlist>
+      <disableindetail>1</disableindetail>
+    </field>
+    <field>
+      <name>证件号码</name>
+      <key>idport</key>
+      <type>text</type>
+      <displayinlist>1</displayinlist>
+      <disableindetail>1</disableindetail>
+    </field>
+    <field>
       <name>预约时间</name>
       <key>order_time</key>
       <type>fkey</type>

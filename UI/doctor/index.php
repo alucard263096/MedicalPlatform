@@ -43,6 +43,7 @@
 	$districtCondition=$doctorMgr->getDistrictCondition($doctor_list);
 	$smarty->assign("district_condition",$districtCondition);
 
+
 	$smarty->display(ROOT.'/templates/doctor/index.html');
   }
 ?>
