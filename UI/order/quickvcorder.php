@@ -9,6 +9,7 @@
   require ROOT.'/classes/datamgr/order.cls.php';
   require ROOT.'/classes/datamgr/vaccine.cls.php';
   require ROOT."/classes/mgr/qrcode.cls.php";
+  require ROOT.'/classes/datamgr/sms.cls.php';
 
   if(!isset($_SESSION[SESSIONNAME]["Member"])){
 	
@@ -50,8 +51,10 @@
   $arr=$orderMgr->createVaccineOrder($member_id,$name,$mobile,$email,$idport_type,$idport,
 	$order_date,$order_time,$vaccine_id,$doctor_id,$office_id,$info["web_price"],
 	$snapshot,$info["id"]);
-
 	
+  $orderInfo=$orderMgr->getVaccineAppointment($member_id,$arr["id"]);
+  $smsMgr->SendVaccineOrderInfoMessage($orderInfo);
+
   $url=$CONFIG["doctorurl"]."/Appointment/qrcodereader.php?key=vcorder&guid=".$arr["guid"];
   $qrfile=GenQRCode($url);
 

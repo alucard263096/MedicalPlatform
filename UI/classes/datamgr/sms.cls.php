@@ -71,6 +71,17 @@ class SmsMgr
 		$templeteId=$CONFIG["sms"]["templeteid"]["login"];
 		$this->PerpareSendWithVerifyCode($mobile,"L",$templeteId);
 	}
+	public function SendVaccineOrderInfoMessage($orderInfo){
+		$mobile=$orderInfo["mobile"];
+		$vaccine=$orderInfo["vaccine_name"];
+		$order_datetime=$orderInfo["order_date"]." ".$orderInfo["order_rtime"];
+		$office=$orderInfo["office_address"];
+		$guid=$orderInfo["guid"];
+
+		$templeteId=$CONFIG["sms"]["templeteid"]["vaccine_order_info"];
+		$arr=Array($mobile,$order_datetime,$vaccine,$guid,$office);
+		$result=$this->Send($mobile,$arr,$templeteId);
+	}
 
 	private function PerpareSendWithVerifyCode($mobile,$type,$templeteId){
 		$lstrs=$this->getLastSent($mobile,$type);
@@ -83,7 +94,7 @@ class SmsMgr
 			$verifycode=$lstrs["code"];
 		}
 		$arr=Array($verifycode,$this->timeout);
-		$result=true;//$this->Send($mobile,$arr,$templeteId);
+		$result=$this->Send($mobile,$arr,$templeteId);
 		if($result){
 			
 			$mobile=mysql_real_escape_string($mobile);
@@ -127,6 +138,7 @@ class SmsMgr
 	 } 
 
 	private function Send($to,$arr,$templeteId){
+	return true;
 		$this->resetSDK();
 
 		$result = $this->rest->sendTemplateSMS($to,$arr,$templeteId);

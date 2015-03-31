@@ -65,6 +65,6 @@ $CONFIG["sms"]["timeout"]="30";//mins
 $CONFIG["sms"]["templeteid"]["reg"]="";
 $CONFIG["sms"]["templeteid"]["login"]="";
 $CONFIG["sms"]["templeteid"]["psw_modify"]="";
-$CONFIG["sms"]["templeteid"]["vaccine_order_finished"]="";
+$CONFIG["sms"]["templeteid"]["vaccine_order_info"]="";
 
 ?>
