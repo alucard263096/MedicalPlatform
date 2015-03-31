@@ -14,6 +14,16 @@
   $name=$_REQUEST["name"];
   $password=$_REQUEST["password"];
 
+  
+	$verify_code=$_REQUEST["verify_code"];
+	$type=$_REQUEST["type"];
+	$result=$smsMgr->getLastSent($mobile,$type);
+	if($verify_code==$result["code"]){
+		echo "VERCODEERROR";
+		exit;
+	}
+
+
   $memberlist=$memberMgr->getMemberByEmailMobile("no-email",$mobile);
   
   if(count($memberlist)>0){

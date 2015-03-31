@@ -61,5 +61,10 @@ $CONFIG["sms"]["AppId"]="8a48b5514bfd9130014c0c072c6c0a5e";
 $CONFIG["sms"]["ServerIP"]="sandboxapp.cloopen.com";
 $CONFIG["sms"]["ServerPort"]="8883";
 $CONFIG["sms"]["SoftVersion"]="2013-12-26";
+$CONFIG["sms"]["timeout"]="30";//mins
+$CONFIG["sms"]["templeteid"]["reg"]="";
+$CONFIG["sms"]["templeteid"]["login"]="";
+$CONFIG["sms"]["templeteid"]["psw_modify"]="";
+$CONFIG["sms"]["templeteid"]["vaccine_order_finished"]="";
 
 ?>
