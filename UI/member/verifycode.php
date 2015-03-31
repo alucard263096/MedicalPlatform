@@ -10,7 +10,11 @@
   require ROOT.'/classes/datamgr/sms.cls.php';
   
   $action=$_REQUEST["action"];
-  $mobile=$_REQUEST["mobile"];
+  if(isset($_REQUEST["mobile"])){
+	$mobile=$_REQUEST["mobile"];
+  }else{
+	$mobile=$_SESSION[SESSIONNAME]["Member"]["mobile"];
+  }
   
 	if(!preg_match("/^13[0-9]{1}[0-9]{8}$|15[0189]{1}[0-9]{8}$|189[0-9]{8}$/",$mobile)){    
 		echo "INVALIDMOBILE";
@@ -29,7 +33,7 @@
 	  }
 
   }
-  if($action=="login"){
+  else if($action=="login"){
 	  if(count($memberlist)==0){
 		echo "NOMEMBER";
 	  }else{
@@ -37,11 +41,17 @@
 		echo "SUCCESS";
 	  }
 
+  }else if($action=="pswmodify"){
+	
+	$smsMgr->SendPSWModifyVerifyCodeMessage($mobile);
+	echo "SUCCESS";
+
   }else if($action=="valid"){
-  
+	
 	$verify_code=$_REQUEST["verify_code"];
 	$type=$_REQUEST["type"];
 	$result=$smsMgr->getLastSent($mobile,$type);
+	//echo $verify_code."==".$result["code"];
 	if($verify_code==$result["code"]){
 		echo "SUCCESS";
 	}else{

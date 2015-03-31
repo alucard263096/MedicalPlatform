@@ -36,7 +36,11 @@ where status='A' and (  mobile='$mobile' )";//email='$email' or
 		return $result;
 
 	}
-	
+	public function changePassword($member_id,$password){
+		$password=md5($password);
+		$sql="update dr_tb_member set password='$password' where id=$member_id ";
+		$query = $this->dbmgr->query($sql);
+	}
 
 	public function addMember($email,$mobile,$password,$name){
 		

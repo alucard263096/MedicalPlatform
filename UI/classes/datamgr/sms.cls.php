@@ -66,11 +66,19 @@ class SmsMgr
 		$templeteId=$CONFIG["sms"]["templeteid"]["reg"];
 		$this->PerpareSendWithVerifyCode($mobile,"G",$templeteId);
 	}
+
 	public function SendLoginVerifyCodeMessage($mobile){
 		Global $CONFIG;
 		$templeteId=$CONFIG["sms"]["templeteid"]["login"];
 		$this->PerpareSendWithVerifyCode($mobile,"L",$templeteId);
 	}
+
+	public function SendPSWModifyVerifyCodeMessage($mobile){
+		Global $CONFIG;
+		$templeteId=$CONFIG["sms"]["templeteid"]["psw_modify"];
+		$this->PerpareSendWithVerifyCode($mobile,"M",$templeteId);
+	}
+
 	public function SendVaccineOrderInfoMessage($orderInfo){
 		$mobile=$orderInfo["mobile"];
 		$vaccine=$orderInfo["vaccine_name"];
