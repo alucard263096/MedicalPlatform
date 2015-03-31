@@ -8,6 +8,7 @@
   require '../include/common.inc.php';
   //require 'inc.php';
   require ROOT.'/classes/datamgr/member.cls.php';
+  require ROOT.'/classes/datamgr/sms.cls.php';
 
   $mobile=$_REQUEST["mobile"];
   $email=$_REQUEST["email"];
@@ -16,9 +17,8 @@
 
   
 	$verify_code=$_REQUEST["verify_code"];
-	$type=$_REQUEST["type"];
-	$result=$smsMgr->getLastSent($mobile,$type);
-	if($verify_code==$result["code"]){
+	$result=$smsMgr->getLastSent($mobile,"G");
+	if($verify_code!=$result["code"]){
 		echo "VERCODEERROR";
 		exit;
 	}

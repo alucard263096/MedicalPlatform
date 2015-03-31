@@ -66,6 +66,11 @@ class SmsMgr
 		$templeteId=$CONFIG["sms"]["templeteid"]["reg"];
 		$this->PerpareSendWithVerifyCode($mobile,"G",$templeteId);
 	}
+	public function SendLoginVerifyCodeMessage($mobile){
+		Global $CONFIG;
+		$templeteId=$CONFIG["sms"]["templeteid"]["login"];
+		$this->PerpareSendWithVerifyCode($mobile,"L",$templeteId);
+	}
 
 	private function PerpareSendWithVerifyCode($mobile,$type,$templeteId){
 		$lstrs=$this->getLastSent($mobile,$type);

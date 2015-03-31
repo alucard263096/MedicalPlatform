@@ -8,6 +8,7 @@
   require '../include/common.inc.php';
   //require 'inc.php';
   require ROOT.'/classes/datamgr/member.cls.php';
+  require ROOT.'/classes/datamgr/sms.cls.php';
   $loginname=$_REQUEST["mobile"];
   $memberlist=$memberMgr->getMemberByEmailMobile($loginname,$loginname);
 
@@ -28,7 +29,10 @@
 	}else if($action=="verifycode"){
 		$verifycode=$_REQUEST["verifycode"];
 		$member=$memberlist[0];
-		if($verifycode=="123456"){
+
+		$result=$smsMgr->getLastSent($mobile,"L");
+		
+		if($verify_code==$result["code"]){
 			echo "SUCCESS";
 			$_SESSION[SESSIONNAME]["Member"]=$member;
 			

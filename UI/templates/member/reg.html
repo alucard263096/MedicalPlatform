@@ -71,7 +71,7 @@
 
     function regetButton() {
         count++;
-        var reminder_second = 5-count;
+        var reminder_second = 60-count;
         if (reminder_second <= 0) {
             $("#reget_vercode").removeClass("ui-state-disabled");
             $("#reget_vercode").text("获取校验码");

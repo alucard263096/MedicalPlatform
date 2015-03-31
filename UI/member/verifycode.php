@@ -28,6 +28,15 @@
 		echo "SUCCESS";
 	  }
 
+  }
+  if($action=="login"){
+	  if(count($memberlist)==0){
+		echo "NOMEMBER";
+	  }else{
+		$smsMgr->SendLoginVerifyCodeMessage($mobile);
+		echo "SUCCESS";
+	  }
+
   }else if($action=="valid"){
   
 	$verify_code=$_REQUEST["verify_code"];

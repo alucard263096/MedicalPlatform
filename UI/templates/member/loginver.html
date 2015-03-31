@@ -9,6 +9,11 @@
     <div class="col-xs-12">
         <input type="number" maxlength="6" class="inp" id="verifycode" value="" style="border:thin solid #42A4D3" placeholder="验证码" />
     </div>
+    <div class="col-xs-7">
+    </div>
+    <div class="col-xs-5" style="">
+        <a href="#" id="reget_vercode" data-role="button" style="padding:2px;font-size:70%; background-color:#42A4D3;color:snow; font-weight:lighter;">获取校验码</a>
+    </div>
     <div class="col-xs-12">
         <a href="#" data-role="button" class="ui-state-disabled" id="btnLogin" style="background-color:#42A4D3;color:snow; font-weight:lighter;">登录</a>
     </div>
@@ -17,9 +22,50 @@
     </div>
 </div>
 <script>
+    var intervalid = 0;
+    var count = 0;
+    function resetRegetButton() {
+        intervalid = 0;
+        count = 0;
+        $("#reget_vercode").addClass("ui-state-disabled");
+        $("#reget_vercode").text("获取校验码（60）");
+        intervalid = setInterval("regetButton()", 1000);
+    }
 
+    function regetButton() {
+        count++;
+        var reminder_second = 60 - count;
+        if (reminder_second <= 0) {
+            $("#reget_vercode").removeClass("ui-state-disabled");
+            $("#reget_vercode").text("获取校验码");
+            clearInterval(intervalid);
+        } else {
+            $("#reget_vercode").text("获取校验码（" + reminder_second + "）");
+        }
+    }
+    function StepSendVerifyCode() {
+        var mobile = $("#mobile_no").val();
+        $("#reget_vercode").addClass("ui-state-disabled");
+        var json = {
+            "action": "login",
+            "mobile": mobile
+        };
+
+        $.post("{{$rootpath}}/member/verifycode.php", json, function (data) {
+            //alert("b"+data+"a");
+            if (data == "INVALIDMOBILE") {
+                PopupTips("您输入的手机号码不正确");
+            } else if (data == "NOMEMBER") {
+                PopupTips("此手机号码尚未注册，请先注册");
+            } else if (data == "SUCCESS") {
+                resetRegetButton();
+            } else {
+                PopupTips("未知错误");
+            }
+            $("#reget_vercode").removeClass("ui-state-disabled");
+        });
+    }
     $(document).ready(function () {
-
         $(".inp").keyup(function () {
             var mobile_no = $("#mobile_no").val();
             var verifycode = $("#verifycode").val();
@@ -28,6 +74,9 @@
             } else {
                 $("#btnLogin").addClass("ui-state-disabled");
             }
+        });
+        $("#reget_vercode").click(function () {
+            StepSendVerifyCode()
         });
         $("#btnLogin").click(function () {
             var mobile = $("#mobile_no").val();
