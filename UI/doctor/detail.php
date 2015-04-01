@@ -92,6 +92,7 @@
 	$smarty->assign("office_id",$office_id);
 	$smarty->assign("vaccine_id",$vaccine_id);
 	$smarty->assign("doctor_id",$doctor_id);
+	$smarty->assign("navbarmodule","vaccine");
 
 	$smarty->display(ROOT.'/templates/doctor/vaccinedoctordetail.html');
   }else{

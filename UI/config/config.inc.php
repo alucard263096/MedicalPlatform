@@ -67,4 +67,7 @@ $CONFIG["sms"]["templeteid"]["login"]="16093";
 $CONFIG["sms"]["templeteid"]["psw_modify"]="15982";
 $CONFIG["sms"]["templeteid"]["vaccine_order_info"]="15983";
 
+#[BAIDUMAP]
+$CONFIG["map"]["ak"]="nWM2HguMVHFCHcEBsNAaCnwd";
+
 ?>

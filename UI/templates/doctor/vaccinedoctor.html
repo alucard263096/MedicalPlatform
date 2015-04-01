@@ -124,10 +124,12 @@
                 </div>
                 <div class="col-xs-12 grayfont" style="padding-left:0px;padding-right:0px;min-height:38px;">
                     {{foreach from=$rs.office_list item=ors}}
-                    <div class="col-xs-12 xsmall" style="padding-left:0px;padding-right:0px;">
-                        <div class="col-xs-1" style="padding-left:0px;padding-right:0px;"><img style="width:8px;" src="{{$rootpath}}/themes/img/icons/location.png" /></div>
-                        <div class="col-xs-11" style="padding-left:0px;padding-right:0px;margin-top:2px;">诊所位置：{{$ors.district}}-{{$ors.block}}</div>
-                    </div>
+                    <a class="callofficemap" office_id="{{$ors.office_id}}" href="#">
+                        <div class="col-xs-12 xsmall " style="padding-left:0px;padding-right:0px;" office_id="{{$ors.office_id}}">
+                            <div class="col-xs-1" style="padding-left:0px;padding-right:0px;"><img style="width:8px;" src="{{$rootpath}}/themes/img/icons/location.png" /></div>
+                            <div class="col-xs-11" style="padding-left:0px;padding-right:0px;margin-top:2px;">诊所位置：{{$ors.district}}-{{$ors.block}}</div>
+                        </div>
+                    </a>
                     {{/foreach}}
                 </div>
                 <div class="col-xs-12" style="padding-left:0px;padding-right:0px;">
@@ -153,11 +155,12 @@
                 });
             });
             $("#doctor_list li:last").css("border-bottom-width", "0px");
+
         });
     </script>
 
 </div>    
-
+{{include  file="$smarty_root/doctor/doctor_common.html" }}
 
 {{include  file="$smarty_root/navbar.html" }}
 {{include  file="$smarty_root/footer.html" }}

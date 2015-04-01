@@ -21,8 +21,8 @@
             }
         }
     </style>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=nWM2HguMVHFCHcEBsNAaCnwd&v=1.0"></script>
-    <title>用城市名设置中心点</title>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak={{$ak}}&v=1.0"></script>
+    <title>{{$info.name}}</title>
 </head>
 <body>
     <div id="allmap"></div>
@@ -31,14 +31,17 @@
 <script type="text/javascript">
     // 百度地图API功能
     var map = new BMap.Map("allmap");
-    map.centerAndZoom(new BMap.Point(114.18279, 22.300068), 15);
-    map.addControl(new BMap.ZoomControl());  //添加地图缩放控件        
+    map.centerAndZoom(new BMap.Point({{$info.x}},{{$info.y}}), 15);
+    map.addControl(new BMap.ZoomControl());  //添加地图缩放控件
     map.addControl(new BMap.ScaleControl());
+  
+    // 创建标注对象并添加到地图     
+    //var myIcon = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/fox.gif", new BMap.Size(300,157));,{icon:myIcon}
 
-    var marker1 = new BMap.Marker(new BMap.Point(114.18269, 22.300028));
+    var marker1 = new BMap.Marker(new BMap.Point({{$info.x}},{{$info.y}}));
     map.addOverlay(marker1);
 
-    var infoWindow1 = new BMap.InfoWindow("<center><h4>九龙尖沙咀汉口道28号亚太中心403室</h4><button onclick='showhotel();'>显示附近酒店</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick='startguide();'>开始导航</button></center>");
+    var infoWindow1 = new BMap.InfoWindow("<center><h4>{{$info.address}}</h4><button onclick='showhotel();'>显示附近酒店</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick='startguide();'>开始导航</button></center>");
     marker1.addEventListener("click", function () { this.openInfoWindow(infoWindow1); });
 
     marker1.openInfoWindow(infoWindow1);

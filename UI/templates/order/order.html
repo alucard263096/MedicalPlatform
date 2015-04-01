@@ -56,11 +56,21 @@
             </div>
             <div class="col-xs-9" >
                 {{foreach from=$info.office_list item=rs}}
-                <p id="office_{{$rs.office_id}}" class="office_address xsmall">{{$rs.address}}</p>
+                <p id="office_{{$rs.office_id}}" class="office_address xsmall">
+                    <a class="callofficemap" office_id="{{$rs.office_id}}" href="#">
+                        <img style="width:8px;" src="{{$rootpath}}/themes/img/icons/location.png" />&nbsp;{{$rs.address}}
+                    </a>
+                </p>
                 {{/foreach}}
             </div>
             <script>
                 $(document).ready(function(){
+                
+                    $(".callofficemap").click(function () {
+                        var office_id = $(this).attr("office_id");
+                        var url = "{{$rootpath}}/doctor/officemap.php?id=" + office_id;
+                        window.open(url);
+                    });
 
                     $("#office_id").change(function(){
                         alert($("#office_id").val());

@@ -281,6 +281,25 @@ where oo.status='A' and oo.doctor_id in ($doctor_list) ";
 
 		return $result;
 	}
+	public function getOfficeDetail($office_id){
+		Global $SysLangCode;
+	
+		$office_id=mysql_real_escape_string($office_id);
+
+		$sql="select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,\",\",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,\",\",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='$SysLangCode' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='$SysLangCode' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='$SysLangCode' 
+where o.id=$office_id ";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+
+		return $result;
+	}
 	
 	public function getHospitalListByDoctor($doctor_id){
 		Global $SysLangCode;

@@ -24,6 +24,7 @@
 	$doctor_list=getListIdStr($drlist,"doctor_id");
 	$districtCondition=$doctorMgr->getDistrictCondition($doctor_list);
 	//print_r($districtCondition);
+	$smarty->assign("navbarmodule","vaccine");
 	$smarty->assign("vaccine_id",$vaccine_id);
 	$smarty->assign("doctorlist",$drlist);
 	$smarty->assign("district_condition",$districtCondition);

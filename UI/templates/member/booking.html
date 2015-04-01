@@ -39,10 +39,12 @@
             </div>
             <div  class="row text-center" style="margin-top:20px;margin-bottom:20px; border-bottom-left-radius:10px;-moz-border-bottom-left-radius: 10px;-webkit-border-bottom-left-radius: 10px;border-bottom-right-radius:10px;-moz-border-bottom-right-radius: 10px;-webkit-border-bottom-right-radius: 10px;">
                 <div class="col-xs-12 text-center">
-                    {{$info.office_address}}
+                    <a class="callofficemap" office_id="{{$info.office_id}}" href="#">
+                        <img style="width:11px;" src="{{$rootpath}}/themes/img/icons/location.png" />&nbsp;{{$info.office_address}}
+                    </a>
                 </div>
                 <div class="col-xs-12">
-                    <img  width="80%" src="{{$info.qrcode}}" />
+                    <img  width="70%" src="{{$info.qrcode}}" />
                 </div>
                 <div class="row text-center">
                     <h4 id="guidcode">{{$info.guid}}</h4>
@@ -56,5 +58,15 @@
         {{/if}}
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+
+        $(".callofficemap").click(function () {
+            var office_id = $(this).attr("office_id");
+            var url = "{{$rootpath}}/doctor/officemap.php?id=" + office_id;
+            window.open(url);
+        });
+    });
+</script>
 {{include  file="$smarty_root/navbar.html" }}
 {{include  file="$smarty_root/footer.html" }}

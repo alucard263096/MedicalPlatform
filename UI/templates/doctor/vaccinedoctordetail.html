@@ -81,9 +81,11 @@
         </div>
         <div class="xsmall">
             <p>
-            {{foreach from=$office_list item=rs}}
-            <h6>{{$rs.name}}</h6>
-            <p style="padding-bottom:10px;">地址：{{$rs.address}}</p>
+                {{foreach from=$office_list item=rs}}
+                <h6>{{$rs.name}}</h6>
+                <a class="callofficemap" office_id="{{$rs.office_id}}" href="#">
+            <p style="padding-bottom:10px;">地址：{{$rs.address}}&nbsp;<img style="width:8px;" src="{{$rootpath}}/themes/img/icons/location.png" /></p>
+            </a>
             {{/foreach}}
             </p>
             
@@ -183,6 +185,7 @@
         });
     </script>
 </div>
-{{include  file="$smarty_root/doctor/lookdoctorjs.html" }}
+
+{{include  file="$smarty_root/doctor/doctor_common.html" }}
 {{include  file="$smarty_root/navbar.html" }}
 {{include  file="$smarty_root/footer.html" }}

@@ -1,5 +1,13 @@
+
 <script>
     $(document).ready(function () {
+
+        $(".callofficemap").click(function () {
+            var office_id = $(this).attr("office_id");
+            var url = "{{$rootpath}}/doctor/officemap.php?id=" + office_id;
+            window.open(url);
+        });
+
         var looked = $("#btnLookDoctor").attr("looked");
         if (looked == "Y") {
             $("#btnLookDoctor").html("<span class='yellowfont'>已关注</span>");
@@ -17,5 +25,6 @@
                 });
             });
         }
+
     });
 </script>
