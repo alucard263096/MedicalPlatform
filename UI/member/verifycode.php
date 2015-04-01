@@ -24,6 +24,14 @@
   $memberlist=$memberMgr->getMemberByEmailMobile("noemail",$mobile);
 
   if($action=="reg"){
+  	require ROOT.'/classes/mgr/securimage.cls.php';
+	
+	$securimage = new Securimage();
+	if ($securimage->check($_REQUEST['security_code']) == false) 
+	{
+		echo "INVALIDSECURITYCODE";
+		exit;
+	}
 
 	  if(count($memberlist)>0){
 		echo "HASREG";
@@ -33,7 +41,15 @@
 	  }
 
   }
-  else if($action=="login"){
+  else if($action=="login"){	
+  require ROOT.'/classes/mgr/securimage.cls.php';
+	
+	$securimage = new Securimage();
+	if ($securimage->check($_REQUEST['security_code']) == false) 
+	{
+		echo "INVALIDSECURITYCODE";
+		exit;
+	}
 	  if(count($memberlist)==0){
 		echo "NOMEMBER";
 	  }else{
@@ -42,11 +58,22 @@
 	  }
 
   }else if($action=="pswmodify"){
+		require ROOT.'/classes/mgr/securimage.cls.php';
 	
+	$securimage = new Securimage();
+	if ($securimage->check($_REQUEST['security_code']) == false) 
+	{
+		echo "INVALIDSECURITYCODE";
+		exit;
+	}
+
 	$smsMgr->SendPSWModifyVerifyCodeMessage($mobile);
 	echo "SUCCESS";
 
   }else if($action=="valid"){
+
+	
+
 	
 	$verify_code=$_REQUEST["verify_code"];
 	if($verify_code==""){

@@ -14,6 +14,19 @@
     <div class="col-xs-5" style="">
         <a href="#" id="reget_vercode" data-role="button" style="padding:2px;font-size:70%; background-color:#42A4D3;color:snow; font-weight:lighter;">获取校验码</a>
     </div>
+    <div class="col-xs-6">
+        <img class="img-responsive" src="{{$rootpath}}/libs/securimage/securimage_show.php?sid={$sid}" id="securitycode" align="absmiddle" />
+    </div>
+    <div class="col-xs-6">
+        <input type="text" maxlength="6" class="inp" id="security_code" value="" style="border:thin solid #42A4D3" placeholder="图形验证码" />
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#securitycode").click(function () {
+                $("#securitycode").attr("src", '{{$rootpath}}/libs/securimage/securimage_show.php?sid=' + Math.random());
+            });
+        });
+    </script>
     <div class="col-xs-12">
         <a href="#" data-role="button" class="ui-state-disabled" id="btnLogin" style="background-color:#42A4D3;color:snow; font-weight:lighter;">登录</a>
     </div>
@@ -45,16 +58,20 @@
     }
     function StepSendVerifyCode() {
         var mobile = $("#mobile_no").val();
+        var security_code = $("#security_code").val();
         $("#reget_vercode").addClass("ui-state-disabled");
         var json = {
             "action": "login",
-            "mobile": mobile
+            "mobile": mobile,
+             "security_code": security_code
         };
 
         $.post("{{$rootpath}}/member/verifycode.php", json, function (data) {
             //alert("b"+data+"a");
             if (data == "INVALIDMOBILE") {
                 PopupTips("您输入的手机号码不正确");
+            } else if (data == "INVALIDSECURITYCODE") {
+                PopupTips("图形验证码输入错误");
             } else if (data == "NOMEMBER") {
                 PopupTips("此手机号码尚未注册，请先注册");
             } else if (data == "SUCCESS") {
@@ -70,7 +87,7 @@
         $(".inp").keyup(function () {
             var mobile_no = $("#mobile_no").val();
             var verify_code = $("#verify_code").val();
-            if (verifycode.length == 6 || mobile_no.length == 11) {
+            if (verify_code.length == 6 || mobile_no.length == 11) {
                 $("#btnLogin").removeClass("ui-state-disabled");
             } else {
                 $("#btnLogin").addClass("ui-state-disabled");
@@ -94,7 +111,7 @@
                 //alert(data);
                 if (data == "NOMEMBER") {
                     PopupTips("此手机号码未注册，请先注册");
-                } else if (data == "VCINCORRECT") {
+                }  else if (data == "VCINCORRECT") {
                     PopupTips("验证码不正确，请重新输入");
                 } else if (data == "SUCCESS") {
                     document.location.href = "{{$rootpath}}/member/loadlogin.php";
