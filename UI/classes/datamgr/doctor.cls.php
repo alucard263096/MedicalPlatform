@@ -40,7 +40,7 @@
 	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
     left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='$SysLangCode'
 	where d.id in ($doctor_list) and d.status='A'
-	order by totle_score
+	order by totle_score desc
 	limit 0,4 ";
 			$query = $this->dbmgr->query($sql);
 			$result = $this->dbmgr->fetch_array_all($query); 
@@ -73,7 +73,7 @@ left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
 left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
 left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='$SysLangCode'
 where dv.status='A' and dv.vaccine_id=$vaccineid 
-order by totle_score";
+order by totle_score desc";
 			$query = $this->dbmgr->query($sql);
 			$result = $this->dbmgr->fetch_array_all($query);
 
@@ -380,7 +380,7 @@ left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
 left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
 left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='$SysLangCode'
 where d.status='A'
-order by totle_score";
+order by totle_score desc";
 			$query = $this->dbmgr->query($sql);
 			$result = $this->dbmgr->fetch_array_all($query);
 

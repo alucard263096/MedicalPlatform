@@ -2,7 +2,7 @@
 
   require 'include/common.inc.php';
   require ROOT.'/classes/datamgr/sms.cls.php';
-  $arr["mobile"]="15920593055";
+  $arr["mobile"]="13751082562";
   $smsMgr->SendVaccineOrderInfoMessage($arr);
 
 ?>
