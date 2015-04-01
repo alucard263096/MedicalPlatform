@@ -8,6 +8,8 @@
   require '../include/common.inc.php';
   require 'common.inc.php';
 
+  $smarty->assign("mobile",$_COOKIE["loginedmobile"]);
+
   $smarty->display(ROOT.'/templates/member/login.html');
 
 ?>
