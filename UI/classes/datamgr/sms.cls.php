@@ -87,7 +87,7 @@ class SmsMgr
 		$guid=$orderInfo["guid"];
 
 		$templeteId=$CONFIG["sms"]["templeteid"]["vaccine_order_info"];
-		$arr=Array($mobile,$order_datetime,$vaccine,$guid,$office);
+		$arr=Array($order_datetime,$vaccine,$guid,$office);
 		$result=$this->Send($mobile,$arr,$templeteId);
 	}
 
