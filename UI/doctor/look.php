@@ -7,12 +7,8 @@
  */
   require '../include/common.inc.php';
   require ROOT.'/classes/datamgr/member.cls.php';
-
-  if(!isset($_SESSION[SESSIONNAME]["Member"])){
-	$_SESSION[SESSIONNAME]["login_require_url"]=$_SERVER["REQUEST_URI"];
-	 $smarty->display(ROOT.'/templates/member/login.html');
-	exit();
-  }
+  
+  require ROOT.'/include/login.inc.php';
   
   $member=$_SESSION[SESSIONNAME]["Member"];
   $member_id=$member["id"];

@@ -6,6 +6,7 @@
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
   require '../include/common.inc.php';
+  require 'common.inc.php';
 
   $smarty->display(ROOT.'/templates/member/login.html');
 

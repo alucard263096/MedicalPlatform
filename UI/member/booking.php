@@ -6,16 +6,13 @@
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
   require '../include/common.inc.php';
+  require 'common.inc.php';
   require ROOT.'/classes/datamgr/order.cls.php';
   require ROOT."/classes/mgr/qrcode.cls.php";
   require 'inc.php';
 
   
-  if(!isset($_SESSION[SESSIONNAME]["Member"])){
-	$_SESSION[SESSIONNAME]["login_require_url"]=$_SERVER["REQUEST_URI"];
-	 $smarty->display(ROOT.'/templates/member/login.html');
-	exit();
-  }
+  require ROOT.'/include/login.inc.php';
 
   $id=$_REQUEST["id"];
   

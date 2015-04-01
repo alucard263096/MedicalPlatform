@@ -22,6 +22,10 @@
   $promoteddoctorlist=$doctorMgr->getPromotedDoctorList();
   $smarty->assign("promoteddoctorlist",$promoteddoctorlist);
 
+  if(isset($smarty)){
+	$smarty->assign("navbarmodule","index");
+  }
+
   $promotedvaccinelist=$vaccineMgr->getPromotedVaccineList();
   $smarty->assign("promotedvaccine1",$promotedvaccinelist[0]);
   $smarty->assign("promotedvaccine2",$promotedvaccinelist[1]);

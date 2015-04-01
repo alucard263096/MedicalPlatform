@@ -447,8 +447,8 @@ order by totle_score";
 			$id=$result[0];
 
 		$sql="
-		insert into dr_tb_member_question (id,doctor_id,member_id,member_name,member_mobile,description,is_male,age,img_1,img_2,img_3,status,submit_date)
-		values ($id,$doctor_id,$member_id,'$member_name','$member_mobile','$description','$is_male','$age','$img_1','$img_2','$img_3','P',now());
+		insert into dr_tb_member_question (id,doctor_id,member_id,member_name,member_mobile,description,is_male,age,img_1,img_2,img_3,status,submit_date,`read`)
+		values ($id,$doctor_id,$member_id,'$member_name','$member_mobile','$description','$is_male','$age','$img_1','$img_2','$img_3','P',now(),'0');
 		";
 		
 		$query = $this->dbmgr->query($sql);

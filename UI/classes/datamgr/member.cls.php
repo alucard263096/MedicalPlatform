@@ -109,6 +109,27 @@ order by totle_score";
 		}
 	}
 
+	public function hasReply($member_id){
+		
+		$sql="select 1 from dr_tb_member_question
+where member_id=$member_id
+and reply<>'' 
+and `read`='0'
+limit 0,1";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array_all($query); 
+		return count($result)>0?"TRUE":"FALSE";
+	}
+	
+	public function readQuestion($questionid,$member_id){
+		
+		$questionid=mysql_real_escape_string($questionid);
+		$member_id=mysql_real_escape_string($member_id);
+
+		$sql="update dr_tb_member_question set `read`='1' where member_id=$member_id and id=$questionid ";
+		$query = $this->dbmgr->query($sql);
+	}
+
 	public function getMemberInfo($member_id){
 		
 		$member_id=mysql_real_escape_string($member_id);

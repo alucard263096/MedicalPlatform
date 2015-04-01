@@ -9,7 +9,11 @@
                 {{if $rs.status=="P"}}
                 <span class="xsmall yellowfont">未回复</span>
                 {{else}}
-                <span class="xsmall bluefont">已回复</span>
+                    {{if $rs.read=='1'}}
+                    <span class="xsmall yellowfont">已回复</span>
+                    {{else}}
+                    <span class="xsmall bluefont">已回复</span>
+                    {{/if}}
                 {{/if}}
             </div>
             <div class="col-xs-12 text-left xxsmall">

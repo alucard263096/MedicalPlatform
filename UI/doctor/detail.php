@@ -6,21 +6,20 @@
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
   require '../include/common.inc.php';
+  require 'common.inc.php';
   require ROOT.'/classes/datamgr/doctor.cls.php';
   require ROOT.'/classes/datamgr/vaccine.cls.php';
   require ROOT.'/classes/datamgr/member.cls.php';
   
+  require ROOT.'/include/login.inc.php';
+
+
   $doctor_id=$_REQUEST["id"];
   $office_id=$_REQUEST["oid"];
   $vaccine_id=$_REQUEST["vid"];
   $action=$_REQUEST["action"];
 
   
-  if(!isset($_SESSION[SESSIONNAME]["Member"])){
-	$_SESSION[SESSIONNAME]["login_require_url"]=$_SERVER["REQUEST_URI"];
-	 $smarty->display(ROOT.'/templates/member/login.html');
-	exit();
-  }
 
   $info=$doctorMgr->getDoctor($doctor_id);
   $info["use_lang_id"]=encodeLangText($info["use_lang_id"]);

@@ -4,13 +4,24 @@
     <title>一列固定宽度——</title>
     <style type="text/css">
         <!--
-        #layout {
-            border:  solid #A9C9E2 thin;
-        }
+#layout::after {
+  content: "";
+  background: url("img/logowithname.png") ;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-size:contain;
+  position: absolute;
+}
+      
         -->
     </style>
 </head>
 <body>
-    <div id="layout">hfhfg</div>
+    <div id="layout">hfhfg
+        <img src="img/logowithname.png" />
+    </div>
 </body>
 </html>
