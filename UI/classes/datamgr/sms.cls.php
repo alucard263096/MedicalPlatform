@@ -146,7 +146,7 @@ class SmsMgr
 	 } 
 
 	private function Send($to,$arr,$templeteId){
-	return true;
+	//return true;
 		$this->resetSDK();
 
 		$result = $this->rest->sendTemplateSMS($to,$arr,$templeteId);

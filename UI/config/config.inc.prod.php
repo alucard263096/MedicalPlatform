@@ -61,8 +61,8 @@ $CONFIG["sms"]["ServerIP"]="sandboxapp.cloopen.com";
 $CONFIG["sms"]["ServerPort"]="8883";
 $CONFIG["sms"]["SoftVersion"]="2013-12-26";
 $CONFIG["sms"]["timeout"]="30";//mins
-$CONFIG["sms"]["templeteid"]["reg"]="";
-$CONFIG["sms"]["templeteid"]["login"]="";
-$CONFIG["sms"]["templeteid"]["psw_modify"]="";
-$CONFIG["sms"]["templeteid"]["vaccine_order_info"]="";
+$CONFIG["sms"]["templeteid"]["reg"]="16094";
+$CONFIG["sms"]["templeteid"]["login"]="16093";
+$CONFIG["sms"]["templeteid"]["psw_modify"]="15982";
+$CONFIG["sms"]["templeteid"]["vaccine_order_info"]="15983";
 ?>
