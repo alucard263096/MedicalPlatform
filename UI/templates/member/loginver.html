@@ -7,7 +7,7 @@
             <input type="number" maxlength="11" class="inp" id="mobile_no" value="" style="border:thin solid #42A4D3" placeholder="手机号" />
     </div>
     <div class="col-xs-12">
-        <input type="number" maxlength="6" class="inp" id="verifycode" value="" style="border:thin solid #42A4D3" placeholder="验证码" />
+        <input type="number" maxlength="6" class="inp" id="verify_code" value="" style="border:thin solid #42A4D3" placeholder="验证码" />
     </div>
     <div class="col-xs-7">
     </div>
@@ -69,7 +69,7 @@
 
         $(".inp").keyup(function () {
             var mobile_no = $("#mobile_no").val();
-            var verifycode = $("#verifycode").val();
+            var verify_code = $("#verify_code").val();
             if (verifycode.length == 6 || mobile_no.length == 11) {
                 $("#btnLogin").removeClass("ui-state-disabled");
             } else {
@@ -81,12 +81,12 @@
         });
         $("#btnLogin").click(function () {
             var mobile = $("#mobile_no").val();
-            var verifycode = $("#verifycode").val();
+            var verify_code = $("#verify_code").val();
 
             var json = {
                 "action": "verifycode",
                 "mobile": mobile,
-                "verifycode": verifycode
+                "verify_code": verify_code
             };
             $("#btnLogin").addClass("ui-state-disabled");
 

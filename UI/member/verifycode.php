@@ -49,6 +49,10 @@
   }else if($action=="valid"){
 	
 	$verify_code=$_REQUEST["verify_code"];
+	if($verify_code==""){
+		echo "HACK";
+		exit;
+	}
 	$type=$_REQUEST["type"];
 	$result=$smsMgr->getLastSent($mobile,$type);
 	//echo $verify_code."==".$result["code"];
