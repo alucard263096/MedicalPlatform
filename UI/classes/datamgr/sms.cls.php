@@ -80,6 +80,7 @@ class SmsMgr
 	}
 
 	public function SendVaccineOrderInfoMessage($orderInfo){
+		Global $CONFIG;
 		$mobile=$orderInfo["mobile"];
 		$vaccine=$orderInfo["vaccine_name"];
 		$order_datetime=$orderInfo["order_date"]." ".$orderInfo["order_rtime"];
@@ -155,6 +156,7 @@ class SmsMgr
 			 $str= "error code :" . $result->statusCode . " ";
 			 $str.= "error msg :" . $result->statusMsg . " ";
 			 logger_mgr::logError("sms :$str");
+			 //echo $str;
 			 //TODO 添加错误处理逻辑
 			 return false;
 		 }else{
@@ -165,6 +167,7 @@ class SmsMgr
 			 $str.=  "smsMessageSid:".$smsmessage->smsMessageSid."";
 			 //TODO 添加成功处理逻辑
 			 logger_mgr::logDebug("sms :$str");
+			 //echo $str;
 			 return true;
 		 }
 		return false;

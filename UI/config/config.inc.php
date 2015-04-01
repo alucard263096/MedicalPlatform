@@ -57,7 +57,7 @@ $CONFIG['qr_code']['folder']="qrcode";
 #[SMS]
 $CONFIG["sms"]["AccountSid"]="aaf98f894bfd8efd014c0c06c970099e";
 $CONFIG["sms"]["AccountToken"]="cdcb39a689d242f2af537b5ea4a86f61";
-$CONFIG["sms"]["AppId"]="8a48b5514bfd9130014c0c072c6c0a5e";
+$CONFIG["sms"]["AppId"]="8a48b5514bfd9130014c0c0b28a90a66";
 $CONFIG["sms"]["ServerIP"]="sandboxapp.cloopen.com";
 $CONFIG["sms"]["ServerPort"]="8883";
 $CONFIG["sms"]["SoftVersion"]="2013-12-26";

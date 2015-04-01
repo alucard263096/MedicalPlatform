@@ -1,8 +1,8 @@
 <?php
 
   require 'include/common.inc.php';
-  require ROOT.'/classes/mgr/sms.cls.php';
-
-  $smsMgr->SendTest("15920593055");
+  require ROOT.'/classes/datamgr/sms.cls.php';
+  $arr["mobile"]="15920593055";
+  $smsMgr->SendVaccineOrderInfoMessage($arr);
 
 ?>
