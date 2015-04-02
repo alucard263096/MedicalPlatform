@@ -36,9 +36,9 @@
     map.addControl(new BMap.ScaleControl());
   
     // 创建标注对象并添加到地图     
-    //var myIcon = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/fox.gif", new BMap.Size(300,157));,{icon:myIcon}
+    var myIcon = new BMap.Icon("{{$rootpath}}/themes/img/icons/mysite.png", new BMap.Size(40,40));
 
-    var marker1 = new BMap.Marker(new BMap.Point({{$info.x}},{{$info.y}}));
+    var marker1 = new BMap.Marker(new BMap.Point({{$info.x}},{{$info.y}}),{icon:myIcon});
     map.addOverlay(marker1);
 
     var infoWindow1 = new BMap.InfoWindow("<center><h4>{{$info.address}}</h4><button onclick='showhotel();'>显示附近酒店</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick='startguide();'>开始导航</button></center>");
