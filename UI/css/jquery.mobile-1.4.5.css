@@ -858,8 +858,6 @@ label.ui-btn {
 .ui-btn-icon-top:after,
 .ui-btn-icon-bottom:after,
 .ui-btn-icon-notext:after {
-	background-color: 					#666 /*{global-icon-color}*/;
-	background-color: 					rgba(0,0,0,.3) /*{global-icon-disc}*/;
 	background-position: center center;
 	background-repeat: no-repeat;
 	-webkit-border-radius: 1em;
@@ -1063,8 +1061,6 @@ html body .ui-group-theme-a .ui-slider-track .ui-btn-active,
 html body div.ui-slider-track.ui-body-a .ui-btn-active {
 	background-color: 		#44A5D3 /*{a-active-background-color}*/;
 	border-color:	 		#44A5D3 /*{a-active-border}*/;
-	color: 					#fff /*{a-active-color}*/;
-	text-shadow: 0 /*{a-active-shadow-x}*/ 1px /*{a-active-shadow-y}*/ 0 /*{a-active-shadow-radius}*/ #005599 /*{a-active-shadow-color}*/;
 }
 /* Active radio button icon */
 .ui-page-theme-a .ui-radio-on:after,
