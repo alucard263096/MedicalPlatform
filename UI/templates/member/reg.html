@@ -112,7 +112,7 @@
                 PopupTips("图形验证码输入错误");
             } else if (data == "INVALIDMOBILE") {
                 PopupTips("您输入的手机号码不正确");
-            }else if (data == "SUCCESS") {
+            } else if (data == "SUCCESS") {
                 resetRegetButton();
                 SetStep(2);
             } else {
@@ -123,6 +123,13 @@
     }
 
     $(document).ready(function () {
+
+        try{
+            var mobile = getCookie("mobile");
+            $("#mobile_no").val(mobile);
+        }catch(e){
+
+        }
 
         SetStep(1);
         $("#btnStep1").addClass("ui-state-disabled");
@@ -204,6 +211,7 @@
                 if (data == "HASREG") {
                     PopupTips("此手机号码已经注册，请返回登录");
                 } else if (data == "SUCCESS") {
+                    setCookie("mobile", $("#mobile_no").val());
                     document.location.href = "{{$rootpath}}/member/loadlogin.php";
                 } else if (data == "VERCODEERROR") {
                     PopupTips("验证码已过期");

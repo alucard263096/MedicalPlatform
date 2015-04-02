@@ -84,6 +84,12 @@
     }
     $(document).ready(function () {
 
+        try {
+            var mobile = getCookie("mobile");
+            $("#mobile_no").val(mobile);
+        } catch (e) {
+
+        }
         $(".inp").keyup(function () {
             var mobile_no = $("#mobile_no").val();
             var verify_code = $("#verify_code").val();
@@ -114,6 +120,7 @@
                 }  else if (data == "VCINCORRECT") {
                     PopupTips("验证码不正确，请重新输入");
                 } else if (data == "SUCCESS") {
+                    setCookie("mobile", $("#mobile_no").val(), 300000);
                     document.location.href = "{{$rootpath}}/member/loadlogin.php";
                 } else {
                     PopupTips("未知错误");

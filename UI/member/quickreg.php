@@ -37,7 +37,6 @@
 		if(count($memberlist)==1){
 		$member=$memberlist[0];
 		$_SESSION[SESSIONNAME]["Member"]=$member;
-			setcookie("loginedmobile", $mobile);
 		echo "SUCCESS";
 	  }else{
 		echo "MOREMEMBER".count($memberlist);

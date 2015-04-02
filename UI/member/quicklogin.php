@@ -26,7 +26,6 @@
 		}else{
 			echo "SUCCESS";
 			$_SESSION[SESSIONNAME]["Member"]=$member;
-			setcookie("loginedmobile", $loginname);
 		}
 	}else if($action=="verifycode"){
 		$verifycode=$_REQUEST["verifycode"];
@@ -37,7 +36,6 @@
 		if($verify_code==$result["code"]){
 			echo "SUCCESS";
 			$_SESSION[SESSIONNAME]["Member"]=$member;
-			setcookie("loginedmobile", $loginname);
 		}else{
 			echo "VCINCORRECT";
 		}
