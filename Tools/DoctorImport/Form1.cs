@@ -37,7 +37,7 @@ namespace DoctorImport
                 string filepath = of.FileName;
                 DataTable exceldt = ReadExcel(filepath);
 
-                DBInstance mysqldb = new DBInstance(DBProvider.MySql, "Server=localhost;User Id=root;Password=root;Persist Security Info=True;Database=MedicalPlatform");
+                DBInstance mysqldb = new DBInstance(DBProvider.MySql, "Server=120.24.239.49;User Id=root;Password=root;Persist Security Info=True;Database=MedicalPlatform");
 
                 using (DbConnection conn = mysqldb.GetDbConnection())
                 {
