@@ -24,6 +24,7 @@ namespace DoctorImport
             lstLang.Add("zh-cn");
             lstLang.Add("zh-hk");
             lstLang.Add("en-us");
+            dictSpecialist = new Dictionary<string, int>();
         }
 
         
@@ -54,7 +55,7 @@ namespace DoctorImport
                         //}
                         foreach (DataRow item in exceldt.Rows)
                         {
-                            int specialist_id = getSpecialistId(mysqldb, tx, Convert.ToString(item["科室"]).Replace(" ", ""));
+                            int specialist_id = getSpecialistId(mysqldb, tx, StringConvert(Convert.ToString(item["科室"]).Replace(" ", ""), "2"));
                             string chinaname = Convert.ToString(item["中文名"]).Replace(" ", "");
                             string englishname = Convert.ToString(item["英文名"]).Replace(" ", "");
                             string licence_code = Convert.ToString(item["执业许可证号"]).Replace(" ","");
@@ -66,7 +67,8 @@ namespace DoctorImport
                             string post_process = Convert.ToString(item["任职历程"]).Replace(" ", "");
                             string pro_title = Convert.ToString(item["专业资格"]).Replace(" ", "");
 
-                            if (doctorDuplic(mysqldb,licence_code))
+                            if (doctorDuplic(mysqldb,licence_code)
+                                || string.IsNullOrEmpty(licence_code))
                             {
                                 continue;
                             }
@@ -270,6 +272,15 @@ now());
 
         private int getSpecialistId(DBInstance mysqldb, DbTransaction tx, string name)
         {
+
+            if (string.IsNullOrEmpty(name))
+            {
+                name = "普通科";
+            }
+            if (dictSpecialist.Keys.Contains(name))
+            {
+                return dictSpecialist[name];
+            }
             string sql = "select oid from dr_tb_specialist_lang where name=@name";
             List<DBParam> l = new List<DBParam>();
             l.Add(new DBParam("@name", DbType.String, name));
@@ -315,6 +326,7 @@ now(),
 (@id,@lang,@name)";
                     mysqldb.ExecuteNonQuery(tx, sql, l);
                 }
+                dictSpecialist.Add(name, id);
 
                 return id;
             }
@@ -396,5 +408,24 @@ now(),
         public int LastOfficeId { get; set; }
 
         public int LastOHId { get; set; }
+
+        public Dictionary<string, int> dictSpecialist { get; set; }
+
+        public string StringConvert(string x, string type)
+        {
+            String value = String.Empty;
+            switch (type)
+            {
+                case "1"://转繁体
+                    value = Microsoft.VisualBasic.Strings.StrConv(x, Microsoft.VisualBasic.VbStrConv.TraditionalChinese, 0);
+                    break;
+                case "2":
+                    value = Microsoft.VisualBasic.Strings.StrConv(x, Microsoft.VisualBasic.VbStrConv.SimplifiedChinese, 0);
+                    break;
+                default:
+                    break;
+            }
+            return value;
+        }
     }
 }
