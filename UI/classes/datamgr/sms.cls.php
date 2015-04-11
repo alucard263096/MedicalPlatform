@@ -58,6 +58,9 @@ class SmsMgr
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array($query); 
 		//print_r($result);
+		if($result["code"]==""){
+			$result["code"]="uncandocodecode";
+		}
 		return $result;
 	}
 
