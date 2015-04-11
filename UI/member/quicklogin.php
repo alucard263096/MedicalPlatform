@@ -28,11 +28,11 @@
 			$_SESSION[SESSIONNAME]["Member"]=$member;
 		}
 	}else if($action=="verifycode"){
-		$verifycode=$_REQUEST["verifycode"];
+		$verify_code=$_REQUEST["verify_code"];
 		$member=$memberlist[0];
 
-		$result=$smsMgr->getLastSent($mobile,"L");
-		
+		$result=$smsMgr->getLastSent($loginname,"L");
+		//echo $verify_code."==".$result["code"];
 		if($verify_code==$result["code"]){
 			echo "SUCCESS";
 			$_SESSION[SESSIONNAME]["Member"]=$member;

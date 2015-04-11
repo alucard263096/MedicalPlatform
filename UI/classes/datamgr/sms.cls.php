@@ -54,7 +54,7 @@ class SmsMgr
 		and ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60)<$timeout
 		order by lastsent_time desc
 		limit 0,1";
-
+		//echo $sql;
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array($query); 
 		//print_r($result);
