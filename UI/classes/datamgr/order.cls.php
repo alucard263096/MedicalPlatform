@@ -297,6 +297,7 @@ where a.member_id=$member_id
 and a.doctor_id=$doctor_id
 and a.vaccine_id=$vaccine_id
 and a.status='P'
+and TO_DAYS(NOW()) - TO_DAYS(a.order_date) <3
 order by created_time desc";
 
 		$query = $this->dbmgr->query($sql);
