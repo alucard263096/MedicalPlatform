@@ -83,31 +83,31 @@
       <name>列表图片</name>
       <key>image</key>
       <type>upload</type>
-      <uploadmodule>vaccine</uploadmodule>
+      <uploadmodule>gene</uploadmodule>
     </field>
     <field>
       <name>详情宣传图1</name>
       <key>image_1</key>
       <type>upload</type>
-      <uploadmodule>vaccine</uploadmodule>
+      <uploadmodule>gene</uploadmodule>
     </field>
     <field>
       <name>详情宣传图2</name>
       <key>image_2</key>
       <type>upload</type>
-      <uploadmodule>vaccine</uploadmodule>
+      <uploadmodule>gene</uploadmodule>
     </field>
     <field>
       <name>详情宣传图3</name>
       <key>image_3</key>
       <type>upload</type>
-      <uploadmodule>vaccine</uploadmodule>
+      <uploadmodule>gene</uploadmodule>
     </field>
     <field>
       <name>详情宣传图4</name>
       <key>image_4</key>
       <type>upload</type>
-      <uploadmodule>vaccine</uploadmodule>
+      <uploadmodule>gene</uploadmodule>
     </field>
     <field>
       <name>适用人群</name>
