@@ -49,16 +49,19 @@
       <name>检测目的</name>
       <key>propose</key>
       <type>longtext</type>
+      <ismutillang>1</ismutillang>
     </field>
     <field>
       <name>专业认可</name>
       <key>certification</key>
       <type>longtext</type>
+      <ismutillang>1</ismutillang>
     </field>
     <field>
       <name>检测好处</name>
       <key>advantage</key>
       <type>longtext</type>
+      <ismutillang>1</ismutillang>
     </field>
     <field>
       <name>检测内容</name>
@@ -69,6 +72,7 @@
       <name>检测流程</name>
       <key>process</key>
       <type>longtext</type>
+      <ismutillang>1</ismutillang>
     </field>
     <field>
       <name>常见问题</name>
@@ -127,8 +131,7 @@
     <field>
       <name>标准价格</name>
       <key>price</key>
-      <ismutillang>1</ismutillang>
-      <type>text</type>
+      <type>number</type>
       <notnull>1</notnull>
     </field>
     <field>
