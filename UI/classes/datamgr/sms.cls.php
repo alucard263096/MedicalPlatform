@@ -150,6 +150,10 @@ class SmsMgr
 	 } 
 
 	private function Send($to,$arr,$templeteId){
+	Global $CONFIG;
+	if($CONFIG['solution_configuration']=="debug"){
+	return true;
+	}
 	//return true;
 		$this->resetSDK();
 

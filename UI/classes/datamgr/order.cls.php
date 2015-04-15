@@ -119,7 +119,6 @@ where o.office_id=$office_id and o.doctor_id=$doctor_id and order_date='$order_d
 		}
 
 
-		$password=md5($password);
 		//$guid=guid();
 
 		$sql="select ifnull(max(id),0)+1 from dr_tb_member_vaccine_order";
@@ -138,6 +137,57 @@ VALUES
 
 		$this->updateDoctorBookingCount($doctor_id);
 		$this->updateVaccineBookingCount($vaccine_id);
+
+		$this->dbmgr->commit_trans();
+		$arr["id"]=$id;
+		$arr["guid"]=$guid;
+		return $arr;
+
+	}
+	public function updateVaccineOrder($member_id,$name,$mobile,$email,$idport_type,$idport,
+	$order_date,$order_time,$office_id,$price,
+	$snapshot,$doctor_vaccine_id,$id){
+		
+
+		$member_id=mysql_real_escape_string($member_id);
+		$name=mysql_real_escape_string($name);
+		$mobile=mysql_real_escape_string($mobile);
+		$email=mysql_real_escape_string($email);
+		$idport_type=mysql_real_escape_string($idport_type);
+		$idport=mysql_real_escape_string($idport);
+		$order_date=mysql_real_escape_string($order_date);
+		$order_time=mysql_real_escape_string($order_time);
+		$office_id=mysql_real_escape_string($office_id);
+		$price=mysql_real_escape_string($price);
+		$snapshot=mysql_real_escape_string($snapshot);
+		$id=mysql_real_escape_string($id);
+		
+		
+
+		$this->dbmgr->begin_trans();
+
+		$sql="select guid from dr_tb_member_vaccine_order where id=$id ";
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array($query);
+		$guid=$result["guid"];
+
+		//$guid=guid();
+
+		$sql="update `dr_tb_member_vaccine_order` set
+		`name`='$name',
+		`mobile`='$mobile',
+		`email`='$email',
+		`idport_type`='$idport_type',
+		`idport`='$idport',
+		`order_date`='$order_date',
+		`order_time`='$order_time',
+		`office_id`='$office_id',
+		`price`='$price',
+		`status`='P'
+		where id=$id and member_id=$member_id
+		 ";
+
+		$query = $this->dbmgr->query($sql);
 
 		$this->dbmgr->commit_trans();
 		$arr["id"]=$id;
@@ -238,7 +288,8 @@ where main.member_id=$member_id and main.id=$id";
 	public function getVaccineAppointmentForCheck($member_id,$doctor_id,$vaccine_id){
 	
 		Global $SysLangCode;
-		$sql="select a.order_no,a.price, o.name office_name,a.guid,a.order_date,t.name order_time,a.name clientname,a.mobile clientmobile 
+		$sql="select a.id, a.idport_type,a.idport, a.order_no,a.price, o.name office_name,a.guid,a.order_date,t.name order_time,a.name clientname,a.mobile clientmobile 
+		,TO_DAYS(NOW()) - TO_DAYS(a.order_date) passdate
 		from dr_tb_member_vaccine_order a
 inner join dr_tb_office_lang o on a.office_id=o.oid and o.lang='$SysLangCode'
 inner join dr_tb_time t on a.order_time=t.id
@@ -251,10 +302,21 @@ order by created_time desc";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array($query); 
 
-
-
 		return $result;
 	}
+
+	public function getOrderData($id){
+		$id=mysql_real_escape_string($id);
+		$sql="select *
+		,TO_DAYS(NOW()) - TO_DAYS(order_date) passdate
+		from dr_tb_member_vaccine_order 
+where id=$id ";
+
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+		return $result;
+	}
+
  }
  
  $orderMgr=OrderMgr::getInstance();

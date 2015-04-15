@@ -191,7 +191,7 @@
 
          });
      } 
-     {{if $haveorder=="0"}}   
+     {{if $haveorder=="0" || $modify=="1" }}   
                 //dateselect.hide("slow");
      $("#order_date").click(function(){
          if(dateselect==null){
@@ -275,13 +275,13 @@
         <div class="col-xs-4 grayfont" style="padding-left:0px;">证件类型</div>
         <div class="col-xs-8 " style="padding-left:0px;">
         <select id="idport_type" data-role='none' style="text-align:right; border:0px; background-color:transparent">
-            <option value="G">
+            <option value="G" {{if $orderinfo.idport_type=="G"}}selected=selected{{/if}}>
                 港澳通行证
             </option>
-            <option value="P">
+            <option value="P" {{if $orderinfo.idport_type=="P"}}selected=selected{{/if}}>
                 护照
             </option>
-            <option value="Q">
+            <option value="Q" {{if $orderinfo.idport_type=="Q"}}selected=selected{{/if}}>
                 其它
             </option>
         </select>
@@ -290,7 +290,7 @@
     <hr style="margin-bottom:0px;" />
     <div class="col-xs-12 bsmall " style="padding-top:10px;">
         <div class="col-xs-4 grayfont" style="margin-top:5px;padding-left:0px;">证件号码</div>
-        <div class="col-xs-8 " style="padding-left:0px;"><input id="idport" data-role='none' style="border:0px;background-color:#F9F9F9"  /></div>
+        <div class="col-xs-8 " style="padding-left:0px;"><input id="idport" data-role='none' style="border:0px;background-color:#F9F9F9" value="{{$orderinfo.idport}}" /></div>
     </div> 
     <hr style="margin-bottom:0px;" />
 
@@ -307,10 +307,12 @@
             <a href="#" id="btnComplete"  data-role="button" style="background-color:#42A4D3;color:snow; font-weight:lighter;">确认免费预约</a>
     </div>
     <script>
-    {{if $haveorder=="0"}}
+    {{if $haveorder=="0"||$modify=="1"}}
     booking_success=false;
     $(document).ready(function(){
-
+        {{if $modify=="1"}}
+        $("#btnComplete").text("提交修改预约");
+        {{/if}}
 
         var bodywidth=$("body").width();
         $("#orderCompletePopup").css("width",bodywidth*0.8);
@@ -346,7 +348,12 @@
             }
             var order_time=$("#order_time").val();
             if($.trim(order_time)==""){
+                
+                {{if $modify=="1"}}
+                PopupTips("请重新选择预约日期和时间。");
+                {{else}}
                 PopupTips("请选择您的预约时段。");
+                {{/if}}
                 return;
             }
             var idport_type=$("#idport_type").val();
@@ -357,9 +364,18 @@
             }
             
             var snapshot=$("#order_detail").text();
+
+            var action="submit";
+            var tag="";
+            {{if $modify=="1"}}
+                action="modify";
+                tag="{{$orderinfo.id}}";
+            {{/if}}
             
             $("#btnComplete").addClass("ui-state-disabled");
             var json={
+                "action":action,
+                "tag":tag,
                 "name":clientname,
                 "mobile":clientmobile,
                 "order_date":order_date,

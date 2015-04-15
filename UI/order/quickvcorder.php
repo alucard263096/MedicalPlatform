@@ -30,17 +30,21 @@
   $office_id=$_REQUEST["office_id"];
   $snapshot=$_REQUEST["snapshot"];
 
+  $action=$_REQUEST["action"];
+  $modify_id=$_REQUEST["tag"];
+
 
   if($orderMgr->checkBookingUsed($office_id,$doctor_id,$order_date,$order_time)){
 	echo "USED";
 	exit();
   }
-  
-	$orderinfo=$orderMgr->getVaccineAppointmentForCheck($member["id"],$doctor_id,$vaccine_id);
-	if($orderinfo["order_no"]!=""){
+  if($action!="modify"){
+	  $orderinfo=$orderMgr->getVaccineAppointmentForCheck($member["id"],$doctor_id,$vaccine_id);
+	  if($orderinfo["order_no"]!=""){
 		echo "DUPLIC";
 		exit();
-	}
+	  }
+  }
 
 
   $info=$vaccineMgr->getVaccineDoctorPrice($doctor_id,$vaccine_id);
@@ -48,9 +52,20 @@
 	echo "HACK";
 	exit();
   }
+  
+  if($action!="modify"){
+  
   $arr=$orderMgr->createVaccineOrder($member_id,$name,$mobile,$email,$idport_type,$idport,
 	$order_date,$order_time,$vaccine_id,$doctor_id,$office_id,$info["web_price"],
 	$snapshot,$info["id"]);
+
+  }else{
+  
+  $arr=$orderMgr->updateVaccineOrder($member_id,$name,$mobile,$email,$idport_type,$idport,
+	$order_date,$order_time,$office_id,$info["web_price"],
+	$snapshot,$info["id"],$modify_id);
+
+  }
 	
   $orderInfo=$orderMgr->getVaccineAppointment($member_id,$arr["id"]);
   $smsMgr->SendVaccineOrderInfoMessage($orderInfo);
@@ -58,6 +73,6 @@
   $url=$CONFIG["doctorurl"]."/Appointment/qrcodereader.php?key=vcorder&guid=".$arr["guid"];
   $qrfile=GenQRCode($url);
 
-	echo "SUCCESS".$arr["id"].",".$arr["guid"].",".$qrfile;
+  echo "SUCCESS".$arr["id"].",".$arr["guid"].",".$qrfile;
   
 ?>

@@ -22,6 +22,21 @@
 	$doctor_id=$_REQUEST["did"];
 	$vaccine_id=$_REQUEST["vid"];
 
+	
+	$type=$_REQUEST["type"];
+	if($type=="modify"){
+		$id=$_REQUEST["id"];
+		$order_base=$orderMgr->getOrderData($id);
+		if($order_base["id"]==""){
+			WindowRedirect("../index.php");
+		}
+		$doctor_id=$order_base["doctor_id"];
+		$vaccine_id=$order_base["vaccine_id"];
+		if($order_base["status"]=="P"&&$order_base["passdate"]<3){
+			$smarty->assign("modify","1");
+		}
+	}
+
 	$caution=$bannerMgr->getGeneralText("order_caution");
 	$smarty->assign("caution",$caution);
 
@@ -32,6 +47,8 @@
 	$smarty->assign("member",$member);
 	$smarty->assign("doctor_id",$doctor_id);
 	$smarty->assign("vaccine_id",$vaccine_id);
+
+	
 
 	$orderinfo=$orderMgr->getVaccineAppointmentForCheck($member["id"],$doctor_id,$vaccine_id);
 	$haveorder=$orderinfo["order_no"]==""?"0":"1";
