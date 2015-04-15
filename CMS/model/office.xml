@@ -79,6 +79,12 @@
       <notnull>1</notnull>
     </field>
     <field>
+      <name>诊所地址导航</name>
+      <key>addressnav</key>
+      <type>longtext</type>
+      <ismutillang>1</ismutillang>
+    </field>
+    <field>
       <name>地图坐标</name>
       <key>coordinate</key>
       <type>text</type>
