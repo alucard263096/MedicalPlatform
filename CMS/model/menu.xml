@@ -132,6 +132,16 @@
           <url>/BaseInfo/vaccine.php?action=add</url>
         </submenu>
         <submenu>
+          <id>gene_list</id>
+          <name>基因列表</name>
+          <url>/BaseInfo/gene.php</url>
+        </submenu>
+        <submenu>
+          <id>gene_add</id>
+          <name>基因新增</name>
+          <url>/BaseInfo/gene.php?action=add</url>
+        </submenu>
+        <submenu>
           <id>specialist_list</id>
           <name>专科列表</name>
           <url>/BaseInfo/specialist.php</url>
