@@ -16,7 +16,7 @@
 
   $doctor_id=$_REQUEST["id"];
   $office_id=$_REQUEST["oid"];
-  $vaccine_id=$_REQUEST["vid"];
+  $vid=$_REQUEST["vid"];
   $action=$_REQUEST["action"];
 
   
@@ -87,14 +87,16 @@
 
   $smarty->assign("standard",$standard);
 
-  if($action=="vaccine"){
+  if($action=="vaccine"
+  ||$action=="gene"){
 	
 	$smarty->assign("office_id",$office_id);
-	$smarty->assign("vaccine_id",$vaccine_id);
+	$smarty->assign("vid",$vid);
 	$smarty->assign("doctor_id",$doctor_id);
-	$smarty->assign("navbarmodule","vaccine");
+	$smarty->assign("act",$action);
+	$smarty->assign("navbarmodule",$action);
+	$smarty->display(ROOT.'/templates/doctor/spdoctordetail.html');
 
-	$smarty->display(ROOT.'/templates/doctor/vaccinedoctordetail.html');
   }else{
 
 	$vaccine_list=$vaccineMgr->getVaccineListByDoctor($doctor_id);

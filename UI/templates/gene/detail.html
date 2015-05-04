@@ -1,0 +1,146 @@
+{{include  file="$smarty_root/header.html" }}
+{{include  file="$smarty_root/bar.html" }}
+
+
+<div role="main" class="ui-content" style="padding:0;">
+    <script src="{{$rootpath}}/themes/js/jquery.slides.js"></script>
+
+    <style>
+        .slidesjs-navigation {
+            display: none;
+        }
+
+        .slidesjs-pagination-item {
+            display: none;
+        }
+    </style>
+    <div class="row">
+        <div id="home-slides" class="col-xs-12">
+            {{if $info.image_1!=""}}<img class="img-responsive" src="{{$uploadpath}}/gene/{{$info.image_1}}">{{/if}}
+            {{if $info.image_2!=""}}<img class="img-responsive" src="{{$uploadpath}}/gene/{{$info.image_2}}">{{/if}}
+            {{if $info.image_3!=""}}<img class="img-responsive" src="{{$uploadpath}}/gene/{{$info.image_3}}">{{/if}}
+            {{if $info.image_4!=""}}<img class="img-responsive" src="{{$uploadpath}}/gene/{{$info.image_4}}">{{/if}}
+        </div>
+    </div>
+    <script>
+
+        $(document).ready(function () {
+            $("#home-slides").slidesjs();
+        });
+
+    </script>
+
+    
+    <div class="col-xs-12 xsmall" style="padding-top:0px;padding-bottom:10px;">
+        <div class="col-xs-9" style="padding:0px;margin-top:15px;">
+        价格：<span style="color: #42A4D3;font-size:16px;">{{$info.price}}元</span>
+        </div>
+        <div class="col-xs-3" style="padding-top:5px;padding-left:0px;padding-right:0px;">
+            <a href="{{$rootpath}}/doctor/index.php?action=gene&id={{$info.id}}" data-role="button" style="padding:5px;font-size:13px; background-color: #42A4D3;color:snow;">立即检查</a>
+        </div>
+    </div>
+    <hr style="margin-bottom:0px;border:solid thin #42A4D3;" />
+
+    <div class="col-xs-12">
+        <h3>{{$info.name}}</h3>
+    </div>
+    <hr style="margin-bottom:0px;" />
+
+    <div class="col-xs-12">
+        <div class="row" style="padding-top:10px;">
+            <div class="col-xs-1"><img  width="20px" src="{{$rootpath}}/themes/img/icons/vaccine_introduce.png"></div>
+            <div class="col-xs-10">服务介绍</div>
+        </div>
+        <div class="xsmall" style="margin-top:10px;">
+               {{$info.service_introduce}}
+        </div>
+    </div>
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12">
+        <div class="row" style="padding-top:10px;">
+            <div class="col-xs-1"><img width="20px" src="{{$rootpath}}/themes/img/icons/vaccine_effect.png"></div>
+            <div class="col-xs-10">检测目的</div>
+        </div>
+        <div class="xsmall" style="margin-top:10px;">
+            <p>
+                {{$info.propose}}
+            </p>
+        </div>
+    </div>
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12">
+        <div class="row" style="padding-top:10px;">
+            <div class="col-xs-1"><img width="20px" src="{{$rootpath}}/themes/img/icons/vaccine_effect.png"></div>
+            <div class="col-xs-10">专业认可</div>
+        </div>
+        <div class="xsmall" style="margin-top:10px;">
+            <p>
+                {{$info.certification}}
+            </p>
+        </div>
+    </div>
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12">
+        <div class="row" style="padding-top:10px;">
+            <div class="col-xs-1"><img width="20px" src="{{$rootpath}}/themes/img/icons/vaccine_effect.png"></div>
+            <div class="col-xs-10">好处</div>
+        </div>
+        <div class="xsmall" style="margin-top:10px;">
+            <p>
+                {{$info.advantage}}
+            </p>
+        </div>
+    </div>
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12">
+        <div class="row" style="padding-top:10px;">
+            <div class="col-xs-1"><img width="20px" src="{{$rootpath}}/themes/img/icons/vaccine_effect.png"></div>
+            <div class="col-xs-10">检测内容</div>
+        </div>
+        <div class="xsmall" style="margin-top:10px;">
+                {{$info.items}}
+        </div>
+    </div>
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12">
+        <div class="row" style="padding-top:10px;">
+            <div class="col-xs-1"><img width="20px" src="{{$rootpath}}/themes/img/icons/vaccine_effect.png"></div>
+            <div class="col-xs-10">检测流程</div>
+        </div>
+        <div class="xsmall" style="margin-top:10px;">
+            <p>
+                {{$info.process}}
+            </p>
+        </div>
+    </div>
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12">
+        <div class="row" style="padding-top:10px;">
+            <div class="col-xs-1"><img width="20px" src="{{$rootpath}}/themes/img/icons/vaccine_effect.png"></div>
+            <div class="col-xs-10">常见问题</div>
+        </div>
+        <div class="xsmall" style="margin-top:10px;">
+                {{$info.question}}
+        </div>
+    </div>
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12">
+        <div class="row" style="padding-top:10px;">
+            <div class="col-xs-1"><img width="20px" src="{{$rootpath}}/themes/img/icons/vaccine_people.png"></div>
+            <div class="col-xs-10">适用人群</div>
+        </div>
+        <div class="xsmall" style="margin-top:10px;">
+            <p>
+                {{$info.used_group}}
+            </p>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+{{include  file="$smarty_root/navbar.html" }}
+
+    {{include  file="$smarty_root/footer.html" }}

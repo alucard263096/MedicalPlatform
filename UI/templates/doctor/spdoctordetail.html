@@ -26,7 +26,13 @@
         </div>
         <div class="col-xs-3 text-right" style="padding:0px;">
             <div class="col-xs-12" style="padding:0px;">
-                <a href="{{$rootpath}}/order/order.php?action=vaccine&did={{$info.id}}&vid={{$vaccine_id}}" data-role="button" style="padding:3px;color:snow; background-color:#E95414;font-size:14px;">免费预约</a>
+                <a href="{{$rootpath}}/order/order.php?action={{$act}}&did={{$info.id}}&vid={{$vid}}" data-role="button" style="padding:3px;color:snow; background-color:#E95414;font-size:14px;">
+                {{if $act=="vaccine"}}
+                    免费预约
+                    {{elseif $act=="gene"}}
+                    进入付款
+                    {{/if}}
+                </a>
             </div>
             <div class="col-xs-12 xsmall yellowfont" style="padding:0px;">
                 {{$info.booking_count}}人已预约

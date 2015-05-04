@@ -76,11 +76,18 @@
         });
 
         $("#btnSave").click(function () {
+
+            var doctor_id = $("#content_doctor_id").val();
+
+            if (doctor_id=="") {
+
+                infoDialog("请选择医生");
+                return;
+            }
             
             $("#content_doctor_id").prop("disabled","disabled");
             $("#btnSave").prop("disabled","disabled");
 
-            var doctor_id=$("#content_doctor_id").val();
             var json = {
                 "action": "save",
                 "doctor_id": doctor_id

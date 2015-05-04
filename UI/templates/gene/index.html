@@ -1,0 +1,35 @@
+{{include  file="$smarty_root/header.html" }}
+{{include  file="$smarty_root/bar.html" }}
+<div role="main" class="ui-content" style="padding:0;">
+    <div class="row" style="background: #DBDBDC;">
+        <div class="col-xs-12">
+            <div class="col-xs-6"><a href="{{$rootpath}}/gene"><h5>猜你在找</h5></a></div>
+        </div>
+    </div>
+    {{foreach from=$GeneList item=rs}}
+    <div class="col-xs-12" style="padding-top:5px;padding-bottom:3px;">
+        <a href="{{$rootpath}}/gene/detail.php?id={{$rs.id}}">
+            <div class="col-xs-3" style="padding-left:0px;padding-right:0px;">
+                <img class="img-responsive" src="{{$uploadpath}}/gene/{{$rs.image}}" />
+            </div>
+            <div class="col-xs-9" style="padding-left:0px;padding-right:0px;">
+                <div class="col-xs-12" style="padding-left:0px;padding-right:0px;">
+                    <div class="col-xs-12" style="padding-bottom:5px;font-size:80%;">{{$rs.name}}</div>
+                    <div class="col-xs-12 xsmall">
+                        <div class="col-xs-12" style="padding-left:0px;padding-right:0px; padding-bottom:5px;">{{$rs.summary}}</div>
+                        <div class="col-xs-12" style="padding-left:0px;padding-bottom:5px;">{{$rs.used_group}}</div>
+                    </div>
+                </div>
+                <div class="col-xs-12 xsmall" style="padding-bottom:5px;">
+                    <div class="col-xs-12 text-right" style="padding:0;">已预约: {{$rs.booking_count}}</div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <hr style="margin-bottom:0px;  " />
+   {{/foreach}}
+    
+</div>
+
+{{include  file="$smarty_root/navbar.html" }}
+    {{include  file="$smarty_root/footer.html" }}

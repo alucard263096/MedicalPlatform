@@ -7,7 +7,6 @@
   
   $smarty->assign("MyModule","doctor");
   
-  
   $model->DefaultShow($smarty,$dbmgr,$action,"officeopenhour",$_REQUEST);
 
 ?>

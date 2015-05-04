@@ -384,10 +384,10 @@ where e.status='A' and d.id=$doctor_id";
 		return $result;
 	}
 	
-	public function getDoctorList(){
+	public function getDoctorList($doctor_list=""){
 		Global $SysLangCode,$CONFIG;
-		if($CONFIG['solution_configuration']!="debug"&&isset($_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["doctorlist"])){
-			return $_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["doctorlist"];
+		if($CONFIG['solution_configuration']!="debug"&&isset($_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["doctorlist_".$doctor_list])){
+			return $_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["doctorlist_".$doctor_list];
 		}else{
 	
 
@@ -398,7 +398,13 @@ where e.status='A' and d.id=$doctor_id";
 left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
 left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
 left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='$SysLangCode'
-where d.status='A'
+where d.status='A'";
+		
+		if($doctor_list!=""){
+			$sql.=" and d.id in ( $doctor_list )";
+		}
+
+		$sql.="
 order by totle_score desc";
 			$query = $this->dbmgr->query($sql);
 			$result = $this->dbmgr->fetch_array_all($query);
@@ -418,7 +424,7 @@ order by totle_score desc";
 				$result[$i]["office_count"]=count($arr);
 				unset($arr);
 			}
-			$_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["doctorlist"]=$result;
+			$_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["doctorlist_".$doctor_list]=$result;
 
 			return $result;
 
@@ -533,6 +539,23 @@ where doctor_id=$doctor_id;
 		}
 		
 		$query = $this->dbmgr->query($sql);
+	}
+
+	public function getGeneDoctorList($gene_id){
+	
+		$gene_id=mysql_real_escape_string($gene_id);
+	$sql="select doctor_list from dr_tb_doctor_gene
+where gene_id=$gene_id
+and status='A'
+";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+		$doctor_list=$result["doctor_list"];
+		if($doctor_list==""){
+			$doctor_list="0";
+		}
+		return $this->getDoctorList($doctor_list);
+
 	}
 
  }
