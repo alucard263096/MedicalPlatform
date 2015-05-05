@@ -120,7 +120,10 @@
                                         </div>                                              
                                         {{elseif $rs.type=="flist"}}
                                         <div class="form-group col-md-12">
-                                            <label class="col-md-2 control-label">{{$rs.name}}</label>
+                                            <label class="col-md-2 control-label">
+                                                {{$rs.name}}
+                                                <input class="uniform_on multicheckbox flist_all" type="checkbox" ref="flist_{{$rs.key}}" />
+                                            </label>
                                             <div class="col-md-10">
                                                 {{foreach from=$FListArr item=flrs}}
                                                 {{if $rs.key==$flrs.key}}
@@ -200,6 +203,16 @@
             filebrowserUploadUrl : '{{$rootpath}}/vendors/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
             filebrowserImageUploadUrl : '{{$rootpath}}/vendors/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
             filebrowserFlashUploadUrl : '{{$rootpath}}/vendors/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+        });
+        $(".flist_all").change(function(){
+            var check=$(this).prop("checked");
+            var fck=$(this).attr("ref");
+            $("."+fck).prop("checked",check);
+            if(check){
+                $("."+fck).parent().addClass("checked");
+            }else{
+                $("."+fck).parent().removeClass("checked");
+            }
         });
         $('input[type="checkbox"],[type="radio"]').not('#create-switch').not('.multicheckbox').bootstrapSwitch();
         $('#btnSave').click(save);

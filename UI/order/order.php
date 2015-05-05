@@ -10,6 +10,7 @@
   require ROOT.'/classes/datamgr/order.cls.php';
   require ROOT.'/classes/datamgr/doctor.cls.php';
   require ROOT.'/classes/datamgr/vaccine.cls.php';
+  require ROOT.'/classes/datamgr/gene.cls.php';
   require ROOT.'/classes/datamgr/banner.cls.php';
   require ROOT."/classes/mgr/qrcode.cls.php";
   
@@ -60,5 +61,19 @@
 
 
 	$smarty->display(ROOT.'/templates/order/order.html');
+  }else if($action=="gene"){
+	$doctor_id=$_REQUEST["did"];
+	$gene_id=$_REQUEST["vid"];
+
+	$caution=$bannerMgr->getGeneralText("gene_order_caution");
+	$doctorInfo=$doctorMgr->getDoctor($doctor_id);
+	$geneInfo=$geneMgr->getGene($gene_id);
+	
+	$smarty->assign("doctor",$doctorInfo);
+	$smarty->assign("gene",$geneInfo);
+	$smarty->assign("caution",$caution);
+
+
+	$smarty->display(ROOT.'/templates/order/order_payment.html');
   }
 ?>
