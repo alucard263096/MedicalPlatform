@@ -1,0 +1,149 @@
+{{include  file="$smarty_root/header.html" }}
+
+<link rel="stylesheet" href="{{$rootpath}}/css/jquery-ui.css">
+<script src="{{$rootpath}}/js/jquery-ui.js"></script>
+
+<div role="main" class="ui-content" style="padding:0;" >
+    <div class="col-xs-12 text-center" style="background-color:#DBDBDC">
+        <h4 class="yellowfont snapshot">
+            <span><strong>收费：{{$gene.price}}元</strong></span>
+        </h4>
+    </div>    
+    <div class="col-xs-12" style="padding:15px;">
+        <a href="{{$rootpath}}/gene/detail.php?id={{$gene.id}}">
+            <div class="col-xs-4" style="padding-left:0px;padding-right:0px;">
+                <img width="80" src="{{$uploadpath}}/gene/{{$gene.image}}" />
+            </div>
+            <div class="col-xs-8  snapshot" style="padding-left:0px;padding-right:0px;">
+                <div>{{$gene.name}}</div>
+                <div class="xsmall grayfont" style="padding-top:6px;">[{{$gene.summary}}]</div>
+                <div class="xsmall grayfont" style="padding-top:6px;">{{$gene.used_group}}</div>
+            </div>
+        </a>
+    </div>  
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12" style="padding:15px;">
+        <a>
+            <div class="col-xs-4" style="padding-left:0px;padding-right:0px;">
+                <img class="MiddleODdivImg" src="{{$uploadpath}}/doctor_photo/{{$doctor.photo}}">
+            </div>
+            <div class="col-xs-8  snapshot" style="padding-left: 0px;padding-right:0px;">
+                <div class="col-xs-12" style="padding-left:0px;padding-right:0px;">
+                    <div class="col-xs-6" style="padding-left:0px;padding-right:0px;">{{$doctor.name}}</div>
+                    <div class="col-xs-6 grayfont lighter bsmall" style="margin-top:4px;">{{$doctor.specialist}}</div>
+                </div>
+                <div class="col-xs-12 grayfont xsmall" style="padding-left:0px;padding-right:0px;margin-top:10px;">{{$doctor.pro_title}}</div>
+            </div>
+        </a>
+    </div>
+    <hr style="margin-bottom:0px;" />
+    
+
+    <div class="col-xs-12 " style="background-color:#DBDBDC">
+        <h5 class="bsmall grayfont">个人信息</h5>
+    </div>    
+    <div class="col-xs-12 bsmall " style="padding-top:10px;">
+        <div class="col-xs-4 grayfont" style="margin-top:5px;padding-left:0px;">手机号码</div>
+        <div class="col-xs-8 " style="padding-left:0px;">
+            <input id="clientmobile" data-role='none' type="tel" maxlength="11" style="border:0px;background-color:#F9F9F9" value="{{$member.mobile}}" />
+        </div>
+    </div>
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12 bsmall " style="padding-top:10px;">
+        <div class="col-xs-4 grayfont" style="margin-top:5px; padding-left:0px;">收件人姓名</div>
+        <div class="col-xs-8 " style="padding-left:0px;"><input id="clientname" data-role='none' style="border:0px;background-color:#F9F9F9" value="{{$member.name}}" /></div>
+    </div> 
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12 bsmall " style="padding-top:10px;">
+        <div class="col-xs-4 grayfont" style="margin-top:5px; padding-left:0px;">收件人地址</div>
+        <div class="col-xs-8 " style="padding-left:0px;"><input id="clientaddress" data-role='none' style="width:100%; border:0px;background-color:#F9F9F9" value="" /></div>
+    </div>
+    <hr style="margin-bottom:0px;" />
+    <div class="col-xs-12 bsmall " style="padding-top:10px;">
+        <div class="col-xs-4 grayfont" style="margin-top:5px; padding-left:0px;">留言</div>
+        <div class="col-xs-8 " style="padding-left:0px;"><input id="clientremark" data-role='none' style="width:100%; border:0px;background-color:#F9F9F9" value="" /></div>
+    </div>
+    <hr style="margin-bottom:0px;" />
+
+
+    <div class="col-xs-12" style="padding:15px;">
+        <div class="col-xs-12 xsmall text-center" style="color:red;padding-left:0px;padding-right:0px;" >
+            <h5>注意事项</h5>
+            <p>{{$caution}}</p>
+        </div>
+    </div>
+
+    <div class="col-xs-12" style="padding-bottom:30px;">
+            <a href="#" id="btnComplete"  data-role="button" style="background-color:#42A4D3;color:snow; font-weight:lighter;">立即支付</a>
+    </div>
+    <script>
+    $(document).ready(function(){
+        var bodywidth=$("body").width();
+        $("#orderCompletePopup").css("width",bodywidth*0.8);
+        $("#btnComplete").click(function(){
+            var clientname=$("#clientname").val();
+            if($.trim(clientname)==""){
+                PopupTips("请输入您的真实姓名。");
+                return;
+            }
+            var clientmobile=$("#clientmobile").val();
+            if($.trim(clientmobile)==""){
+                PopupTips("请输入您的手机号码。");
+                return;
+            }
+            var clientaddress=$("#clientaddress").val();
+            if($.trim(clientaddress)==""){
+                PopupTips("请输入您的收件地址。");
+                return;
+            }
+            var clientremark=$("#clientremark").val();
+            
+           
+            
+            var snapshot=$("#order_detail").text();
+
+            var action="submit";
+            var tag="";
+            
+            $("#btnComplete").addClass("ui-state-disabled");
+            var json={
+                "action":action,
+                "tag":tag,
+                "name":clientname,
+                "mobile":clientmobile,
+                "address":clientaddress,
+                "remark":clientremark,
+                "gene_id":{{$gene.id}},
+                "doctor_id":{{$doctor.id}},
+                "price":{{$gene.price}},
+                "act":"gene",
+                "snapshot":""
+            }
+
+            $.post("{{$rootpath}}/order/quickgepayment.php",json,function(data){
+                
+                $("#btnComplete").addClass("ui-state-disabled");
+
+                if(data.substring(0,7)=="SUCCESS"){
+                    var retdata=data.substring(7,data.length);
+                    var retarr=retdata.split(",");
+                    var id=retarr[1];
+                 
+                    window.location.href="{{$rootpath}}/member/booking.php?id="+id;
+
+
+                }else if(data=="USED"){
+                    PopupTips("{{$SysLang.vaccine.orderdatetimeused}}");
+                }else if(data=="WITHOUTLOGIN"){
+                    PopupTips("{{$SysLang.member.pleasesignin}}");
+                }else{
+                    alert(data);
+                }
+                $("#btnComplete").removeClass("ui-state-disabled");
+            });
+        });
+    });
+    </script>
+</div>
+
+    {{include  file="$smarty_root/footer.html" }}

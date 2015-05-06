@@ -23,6 +23,58 @@
 		
 	}
 
+	public function createGeneOrder($member_id,$name,$mobile,$address,$remark
+	,$gene_id,$doctor_id,$price,
+	$snapshot){
+		
+		
+
+		$member_id=mysql_real_escape_string($member_id);
+		$name=mysql_real_escape_string($name);
+		$mobile=mysql_real_escape_string($mobile);
+		$address=mysql_real_escape_string($address);
+		$remark=mysql_real_escape_string($remark);
+		$gene_id=mysql_real_escape_string($gene_id);
+		$doctor_id=mysql_real_escape_string($doctor_id);
+		$price=mysql_real_escape_string($price);
+		$snapshot=mysql_real_escape_string($snapshot);
+		
+		
+
+		$this->dbmgr->begin_trans();
+
+
+		$sql="select ifnull(max(id),0)+1 from dr_tb_member_gene_order";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+		$id=$result[0];
+
+		$order_no=$this->genOrderNo("GN");
+
+		$sql="INSERT INTO `medicalplatform`.`dr_tb_member_gene_order`
+(`id`,`order_no`,
+`member_id`,`name`,`mobile`,`address`,`remark`,
+`gene_id`,`doctor_id`,`price`,
+`status`,
+`created_time`,`snapshot`,
+`payment`)
+values 
+($id,'$order_no',
+$member_id,'$name','$mobile','$address','$remark',
+$gene_id,$doctor_id,$price,
+'P',now(),'','N') ";
+		$query = $this->dbmgr->query($sql);
+
+		$this->updateDoctorBookingCount($doctor_id);
+		$this->updateGeneBookingCount($gene_id);
+
+		$this->dbmgr->commit_trans();
+		$arr["id"]=$id;
+		return $arr;
+
+
+	}
+
 	public function getBookingDateSelectedTime($office_id,$doctor_id,$order_date){
 
 		$office_id=mysql_real_escape_string($office_id);
@@ -239,6 +291,29 @@ where vaccine_id=$vaccine_id;
 			$id=$result[0];
 			
 			$sql="insert into dr_tb_vaccine_value (id,vaccine_id,booking_count) values ($id,$vaccine_id,234)";
+		}
+		
+		$query = $this->dbmgr->query($sql);
+	}
+	
+	public function updateGeneBookingCount($gene_id){
+		
+		
+		$sql="select 1 from dr_tb_gene_value
+where gene_id=$gene_id;
+";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array_all($query); 
+		if(count($result)>0){
+			$sql="update dr_tb_gete_value set booking_count=ifnull(booking_count,233)+1 where gene_id=$gene_id";
+
+		}else{
+			$sql="select ifnull(max(id),0)+1 from dr_tb_gene_value";
+			$query = $this->dbmgr->query($sql);
+			$result = $this->dbmgr->fetch_array($query); 
+			$id=$result[0];
+			
+			$sql="insert into dr_tb_gene_value (id,gene_id,booking_count) values ($id,$gene_id,234)";
 		}
 		
 		$query = $this->dbmgr->query($sql);

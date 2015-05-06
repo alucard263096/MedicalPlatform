@@ -18,6 +18,9 @@
 
   $action=$_REQUEST["action"];
 
+	$member=$_SESSION[SESSIONNAME]["Member"];
+	$smarty->assign("member",$member);
+
   if($action=="vaccine"){
 	
 	$doctor_id=$_REQUEST["did"];
@@ -44,8 +47,6 @@
 	$info=$doctorMgr->getVaccineDoctor($vaccine_id,$doctor_id);
 	$info["doctor_pro_title"]=encodeRowText($info["doctor_pro_title"]);
 	$smarty->assign("info",$info);
-	$member=$_SESSION[SESSIONNAME]["Member"];
-	$smarty->assign("member",$member);
 	$smarty->assign("doctor_id",$doctor_id);
 	$smarty->assign("vaccine_id",$vaccine_id);
 
