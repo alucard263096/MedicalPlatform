@@ -1,81 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <style type="text/css">
-        body, html, #allmap {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            margin: 0;
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+    <style>
+        
+
+        #chat .ui-icon {
+            background: url(http://localhost:8080/MedicalPlatform/UI/themes/img/icons/mysite.png) 50% 50% no-repeat;
+            background-size: 24px 22px;
         }
 
-        #golist {
-            display: none;
+        #email .ui-icon {
+            background: url(http://localhost:8080/MedicalPlatform/UI/themes/img/icons/mysite.png) 50% 50% no-repeat;
+            background-size: 24px 16px;
         }
 
-        @media (max-device-width: 780px) {
-            #golist {
-                display: block !important;
-            }
+        #login .ui-icon {
+            background: url(http://localhost:8080/MedicalPlatform/UI/themes/img/icons/mysite.png) 50% 50% no-repeat;
+            background-size: 12px 26px;
+        }
+
+        #beer .ui-icon {
+            background: url(http://localhost:8080/MedicalPlatform/UI/themes/img/icons/mysite.png) 50% 50% no-repeat;
+            background-size: 22px 27px;
+        }
+
+        #coffee .ui-icon {
+            background: url(http://localhost:8080/MedicalPlatform/UI/themes/img/icons/mysite.png) 50% 50% no-repeat;
+            background-size: 20px 24px;
+        }
+
+        #skull .ui-icon {
+            background: url(http://localhost:8080/MedicalPlatform/UI/themes/img/icons/mysite.png) 50% 50% no-repeat;
+            background-size: 22px 24px;
         }
     </style>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=nWM2HguMVHFCHcEBsNAaCnwd&v=1.0"></script>
-    <title>用城市名设置中心点</title>
 </head>
 <body>
-    <div id="allmap"></div>
+    <div data-role="page" style="max-height:90px; min-height:90px;">
+        <div data-role="content">
+            <div data-role="footer" class="nav-glyphish-example">
+                <div data-role="navbar" class="nav-glyphish-example" data-grid="d">
+                    <ul>
+                        <li><a href="#" id="chat" data-icon=" custom">Chat</a></li>
+                        <li><a href="#" id="email" data-icon="custom">Email</a></li>
+                        <li><a href="#" id="skull" data-icon="custom">Danger</a></li>
+                        <li><a href="#" id="beer" data-icon="custom">Beer</a></li>
+                        <li><a href="#" id="coffee" data-icon="custom">Coffee</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
-<script type="text/javascript">
-    // 百度地图API功能
-    var map = new BMap.Map("allmap");
-    map.centerAndZoom(new BMap.Point(114.18279, 22.300068), 15);
-    map.addControl(new BMap.ZoomControl());  //添加地图缩放控件        
-    map.addControl(new BMap.ScaleControl());
-
-    var marker1 = new BMap.Marker(new BMap.Point(114.18269, 22.300028));
-    map.addOverlay(marker1);
-
-    var infoWindow1 = new BMap.InfoWindow("<center><h4>九龙尖沙咀汉口道28号亚太中心403室</h4><button onclick='showhotel();'>显示附近酒店</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick='startguide();'>开始导航</button></center>");
-    marker1.addEventListener("click", function () { this.openInfoWindow(infoWindow1); });
-
-    marker1.openInfoWindow(infoWindow1);
-
-    function showhotel() {
-        var local = new BMap.LocalSearch(map, {
-            renderOptions: { map: map, autoViewport: true }
-        });
-        local.searchNearby("酒店", "{{$info.block}}");
-    }
-
-    function startguide() {
-
-        /*start|end：（必选）
-		{name:string,latlng:Lnglat}
-		opts:
-		mode：导航模式，固定为
-		BMAP_MODE_TRANSIT、BMAP_MODE_DRIVING、
-		BMAP_MODE_WALKING、BMAP_MODE_NAVIGATION
-		分别表示公交、驾车、步行和导航，（必选）
-		region：城市名或县名  当给定region时，认为起点和终点都在同一城市，除非单独给定起点或终点的城市
-		origin_region/destination_region：同上
-		*/
-        var start = {
-            name: "口岸"
-        }
-        var end = {
-            name: "{{$info.address}}"
-        }
-        var opts = {
-            mode: BMAP_MODE_TRANSIT,
-            region: "香港"
-        }
-        var ss = new BMap.RouteSearch();
-        ss.routeCall(start, end, opts);
-
-    }
-
-    //http://developer.baidu.com/map/jsdemo-mobile.htm#i4_1
-</script>
