@@ -7,17 +7,26 @@
     <div class="col-xs-12 tabc" id="tab_1">
         {{foreach from=$list item=rs}}
         {{if $rs.status=="P" and $rs.passdate<=0 }}
-        <a href="{{$rootpath}}/member/booking.php?id={{$rs.id}}">
+        <a href="{{$rootpath}}/member/booking.php?id={{$rs.id}}&act={{$rs.act}}">
             <div class="col-xs-12" style="padding-top:20px;padding-left:0px;padding-right:0px;">
                 <div class="col-xs-3" style="padding:0px;">
-                    <img src="{{$uploadpath}}/vaccine/{{$rs.vaccine_image}}" class="img-responsive" />
+                    <img src="{{$uploadpath}}/{{$rs.image_group}}/{{$rs.image}}" class="img-responsive" />
                 </div>
                 <div class="col-xs-9">
-                    <div class="col-xs-pull-12 lighter">{{$rs.vaccine_name}}</div>
-                    <div class="col-xs-6 bsmall" style="padding-top:2px;padding-left:0px;">{{$rs.doctor_name}} 医生</div>
+                    <div class="col-xs-pull-12 lighter">{{$rs.name}}</div>
+                    <div class="col-xs-6 bsmall" style="padding-top:2px;padding-left:0px;">{{$rs.doctor}} 医生</div>
                     <div class="col-xs-6 bsmall text-right" style="padding-top:2px;padding-right:0px;">{{$rs.order_date}}</div>
-                    <div class="col-xs-12 xsmall" style="padding-left:0px;padding-right:0px;padding-top:4px;">{{$rs.office_address}}</div>
+                    <div class="col-xs-12 xsmall" style="padding-left:0px;padding-right:0px;padding-top:4px;">{{$rs.message}}</div>
                 </div>
+                {{if $rs.act=="gn" }}
+                <div class="col-xs-12  text-right  bsmall">
+                    {{if $rs.payment=='N'}}
+                    <span class="yellowfont">未付款</span>
+                    {{else}}
+                    <span class="bluefont">已付款</span>
+                    {{/if}}
+                </div>
+                {{/if}}
             </div>
         </a>
         {{/if}}
@@ -26,16 +35,16 @@
     <div class="col-xs-12 tabc" id="tab_2" >
         {{foreach from=$list item=rs}}
         {{if $rs.status=="F" or $rs.passdate>0 }}
-        <a href="{{$rootpath}}/member/booking.php?id={{$rs.id}}">
+        <a href="{{$rootpath}}/member/booking.php?id={{$rs.id}}&act={{$rs.act}}">
             <div class="col-xs-12" style="padding-top:20px;padding-left:0px;padding-right:0px;">
                 <div class="col-xs-3" style="padding:0px;">
-                    <img src="{{$uploadpath}}/vaccine/{{$rs.vaccine_image}}" class="img-responsive" />
+                    <img src="{{$uploadpath}}/{{$rs.image_group}}/{{$rs.image}}" class="img-responsive" />
                 </div>
                 <div class="col-xs-9">
-                    <div class="col-xs-pull-12 lighter">{{$rs.vaccine_name}}</div>
-                    <div class="col-xs-6 bsmall" style="padding-top:2px;padding-left:0px;">{{$rs.doctor_name}} 医生</div>
+                    <div class="col-xs-pull-12 lighter">{{$rs.name}}</div>
+                    <div class="col-xs-6 bsmall" style="padding-top:2px;padding-left:0px;">{{$rs.doctor}} 医生</div>
                     <div class="col-xs-6 bsmall text-right" style="padding-top:2px;padding-right:0px;">{{$rs.order_date}}</div>
-                    <div class="col-xs-12 xsmall" style="padding-left:0px;padding-right:0px;padding-top:4px;">{{$rs.office_address}}</div>
+                    <div class="col-xs-12 xsmall" style="padding-left:0px;padding-right:0px;padding-top:4px;">{{$rs.message}}</div>
                 </div>
             </div>
         </a>
@@ -44,16 +53,16 @@
 </div>
     <div class="col-xs-12 tabc" id="tab_3" >
         {{foreach from=$list item=rs}}
-        <a href="{{$rootpath}}/member/booking.php?id={{$rs.id}}">
+        <a href="{{$rootpath}}/member/booking.php?id={{$rs.id}}&act={{$rs.act}}">
             <div class="col-xs-12" style="padding-top:20px;padding-left:0px;padding-right:0px;">
                 <div class="col-xs-3" style="padding:0px;">
-                    <img src="{{$uploadpath}}/vaccine/{{$rs.vaccine_image}}" class="img-responsive" />
+                    <img src="{{$uploadpath}}/{{$rs.image_group}}/{{$rs.image}}" class="img-responsive" />
                 </div>
                 <div class="col-xs-9">
-                    <div class="col-xs-pull-12 lighter">{{$rs.vaccine_name}}</div>
-                    <div class="col-xs-6 bsmall" style="padding-top:2px;padding-left:0px;">{{$rs.doctor_name}} 医生</div>
+                    <div class="col-xs-pull-12 lighter">{{$rs.name}}</div>
+                    <div class="col-xs-6 bsmall" style="padding-top:2px;padding-left:0px;">{{$rs.doctor}} 医生</div>
                     <div class="col-xs-6 bsmall text-right" style="padding-top:2px;padding-right:0px;">{{$rs.order_date}}</div>
-                    <div class="col-xs-12 xsmall" style="padding-left:0px;padding-right:0px;padding-top:4px;">{{$rs.office_address}}</div>
+                    <div class="col-xs-12 xsmall" style="padding-left:0px;padding-right:0px;padding-top:4px;">{{$rs.message}}</div>
                 </div>
             </div>
         </a>

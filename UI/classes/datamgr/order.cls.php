@@ -319,11 +319,14 @@ where gene_id=$gene_id;
 		$query = $this->dbmgr->query($sql);
 	}
 
-	public function getVaccineAppointmentList($member_id){
+	public function getAppointmentList($member_id){
 		Global $SysLangCode;
 
 		$member_id=mysql_real_escape_string($member_id);
-		$sql="select main.*,t.name order_rtime,doctor.name doctor_name,vaccine.image vaccine_image,vaccine.name vaccine_name,office.name office_name,office.address office_address,
+		$sql="select * from (";
+
+		$sql.="select main.id,'vc' act,'vaccine' image_group,vaccine.name,vaccine.image image,doctor.name doctor,office.address message,
+		main.order_date,main.status,main.created_time,'' payment,
 		(TO_DAYS(NOW()) - TO_DAYS(main.order_date)) passdate 
 		 from dr_tb_member_vaccine_order main
 inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='$SysLangCode') vaccine on main.vaccine_id=vaccine.id
@@ -331,14 +334,45 @@ inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b
 inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='$SysLangCode') office on main.office_id=office.id
 inner join dr_tb_member m on main.member_id=m.id
 inner join dr_tb_time t on main.order_time=t.id
-where main.member_id=$member_id 
-order by main.order_date,main.order_time";
+where main.member_id=$member_id ";
+
+		$sql.=" union ";
+
+		$sql.="select main.id,'gn' act,'gene' image_group,gene.name,gene.image image,doctor.name doctor,'' message,
+		'' order_date,main.status,main.created_time,main.payment,
+		0 passdate 
+		 from dr_tb_member_gene_order main
+inner join (select * from dr_tb_gene a left join dr_tb_gene_lang b on a.id=b.oid and b.lang='$SysLangCode') gene on main.gene_id=gene.id
+inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='$SysLangCode') doctor on main.doctor_id=doctor.id
+inner join dr_tb_member m on main.member_id=m.id
+where main.member_id=$member_id ";
+
+		$sql.=" ) aa order by created_time";
+		
+
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
 
 		return $result;
 	}
+	
 
+	public function getGeneAppointment($member_id,$id){
+		Global $SysLangCode;
+
+		$member_id=mysql_real_escape_string($member_id);
+		$id=mysql_real_escape_string($id);
+		$sql="select main.*,doctor.name doctor_name,gene.name gene_name
+		  from dr_tb_member_gene_order main
+inner join (select * from dr_tb_gene a left join dr_tb_gene_lang b on a.id=b.oid and b.lang='$SysLangCode') gene on main.gene_id=gene.id
+inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='$SysLangCode') doctor on main.doctor_id=doctor.id
+inner join dr_tb_member m on main.member_id=m.id
+where main.member_id=$member_id and main.id=$id";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+
+		return $result;
+	}
 
 	public function getVaccineAppointment($member_id,$id){
 		Global $SysLangCode;

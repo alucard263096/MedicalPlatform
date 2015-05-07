@@ -12,7 +12,7 @@
   require ROOT.'/include/login.inc.php';
  require ROOT.'/classes/datamgr/order.cls.php';
 
-  $list=$orderMgr->getVaccineAppointmentList($_SESSION[SESSIONNAME]["Member"]["id"]);
+  $list=$orderMgr->getAppointmentList($_SESSION[SESSIONNAME]["Member"]["id"]);
   
 
   $smarty->assign("list",$list);

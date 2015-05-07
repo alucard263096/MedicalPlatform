@@ -25,6 +25,7 @@
   `h_status` VARCHAR(1) NULL,
   `h_comment` VARCHAR(1000) NULL,
   `payment` VARCHAR(1) NULL,
+  `express_no` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
 
 
