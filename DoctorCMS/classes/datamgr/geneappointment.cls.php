@@ -39,8 +39,7 @@
 		$id=mysql_real_escape_string($id);
 		$guid=mysql_real_escape_string($guid);
 
-		$sql="update dr_tb_member_gene_order set guid='$guid', status='M',updated_user=$user_id,updated_date=now(),
-		real_payment='Y',real_payment_confirmer=$user_id,real_payment_confirm_date=now()
+		$sql="update dr_tb_member_gene_order set guid='$guid', status='M',updated_user=$user_id,updated_date=now()
 		where id=$id ";
 		$query = $this->dbmgr->query($sql);
 	}
