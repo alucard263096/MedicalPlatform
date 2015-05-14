@@ -129,4 +129,8 @@
     <price>Price</price>
     <webprice>Website Price</webprice>
   </service>
+  <gene>
+    <a>a</a>
+    <guidhasbeenused>Pin Code has been used.</guidhasbeenused>
+  </gene>
 </root>

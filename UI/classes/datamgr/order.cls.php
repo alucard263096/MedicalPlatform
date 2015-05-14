@@ -355,7 +355,15 @@ where main.member_id=$member_id ";
 
 		$sql.=" union ";
 
-		$sql.="select main.id,'gn' act,'gene' image_group,gene.name,gene.image image,doctor.name doctor,'' message,
+		$sql.="select main.id,'gn' act,'gene' image_group,gene.name,gene.image image,doctor.name doctor,
+		case main.status
+when 'P' then '等待确认付款'
+when 'M' then '已经确认付款，等待寄出检测工具'
+when 'K' then '已经寄出检测工具，等待回收'
+when 'R' then '已经回收检测工具，等待发出报告'
+when 'G' then '已经寄出报告，等待回访'
+when 'F' then '完成检测过程'
+ end as message,
 		'' order_date,main.status,main.created_time,main.payment,
 		0 passdate 
 		 from dr_tb_member_gene_order main
@@ -380,7 +388,15 @@ where main.member_id=$member_id ";
 		$member_id=mysql_real_escape_string($member_id);
 		$id=mysql_real_escape_string($id);
 		$order_no=mysql_real_escape_string($order_no);
-		$sql="select main.*,doctor.name doctor_name,gene.name gene_name
+		$sql="select main.*,doctor.name doctor_name,gene.name gene_name,
+		case main.status
+when 'P' then '等待确认付款'
+when 'M' then '已经确认付款，等待寄出检测工具'
+when 'K' then '已经寄出检测工具，等待回收'
+when 'R' then '已经回收检测工具，等待发出报告'
+when 'G' then '已经寄出报告，等待回访'
+when 'F' then '完成检测过程'
+ end as message
 		  from dr_tb_member_gene_order main
 inner join (select * from dr_tb_gene a left join dr_tb_gene_lang b on a.id=b.oid and b.lang='$SysLangCode') gene on main.gene_id=gene.id
 inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='$SysLangCode') doctor on main.doctor_id=doctor.id

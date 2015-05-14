@@ -92,5 +92,6 @@
   <gene>
     <genedefineindoctorgene>基因检查项目已经被创建，请于列表页搜索进入</genedefineindoctorgene>
     <codehasbeenused>该基因编号已经被其它疫苗所使用</codehasbeenused>
+    <guidhasbeenused>标识符已经被使用</guidhasbeenused>
   </gene>
 </root>

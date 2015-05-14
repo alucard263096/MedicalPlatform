@@ -30,6 +30,7 @@
                 </div>
             </div>
             <div class="col-xs-12 text-center" style="margin-top:20px;margin-bottom:20px; border-bottom-left-radius:10px;-moz-border-bottom-left-radius: 10px;-webkit-border-bottom-left-radius: 10px;border-bottom-right-radius:10px;-moz-border-bottom-right-radius: 10px;-webkit-border-bottom-right-radius: 10px;">
+                <h4 id="guidcode">{{$info.message}}</h4>
                 <div  class="row"><div class="grayfont col-xs-12">订单详情</div></div>
                 <hr style="margin:0px;" />
                 <div style="padding-top:12px" class="row bsmall"><div class="col-xs-5 text-left">订单价格：</div><div class="col-xs-6 text-left"><strong>{{$info.price}}</strong> 元</div></div>
@@ -42,7 +43,7 @@
         </div>
         {{if $info.status=='P' and $info.payment=="N" }}
         <div class="col-xs-12">
-            <a href="#" data-role="button" style="color:snow; background-color:#ED7945;">立即付款</a>
+            <a href="{{$rootpath}}/payment/submit.php?act=gn&type=ALIPAY&id={{$info.id}}" data-role="button" style="color:snow; background-color:#ED7945;">立即付款</a>
         </div>
         {{/if}}
     </div>

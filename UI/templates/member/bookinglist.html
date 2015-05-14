@@ -6,7 +6,7 @@
     <hr style="margin-bottom:0px;" />
     <div class="col-xs-12 tabc" id="tab_1">
         {{foreach from=$list item=rs}}
-        {{if $rs.status=="P" and $rs.passdate<=0 }}
+        {{if $rs.status<>"F" and $rs.passdate<=0 }}
         <a href="{{$rootpath}}/member/booking.php?id={{$rs.id}}&act={{$rs.act}}">
             <div class="col-xs-12" style="padding-top:20px;padding-left:0px;padding-right:0px;">
                 <div class="col-xs-3" style="padding:0px;">

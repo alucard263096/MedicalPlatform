@@ -129,4 +129,8 @@
     <price>价格</price>
     <webprice>网上价格</webprice>
   </service>
+  <gene>
+    <a>a</a>
+    <guidhasbeenused>标识符已经被使用</guidhasbeenused>
+  </gene>
 </root>

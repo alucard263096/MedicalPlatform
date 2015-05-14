@@ -42,6 +42,7 @@
 	echo "SUCCESS";
 
   }else{
+	$_REQUEST["doctor_id"]=$SysUser["doctor_id"];
 	$model->DefaultShow($smarty,$dbmgr,$action,"geneappointment",$_REQUEST);
   }
 

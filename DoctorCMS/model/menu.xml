@@ -117,6 +117,14 @@
           <name_en-us>Batch Validation</name_en-us>
           <url>/Appointment/batchvalidation.php</url>
         </submenu>
+        <submenu>
+          <id>geneappointment</id>
+          <name>基因检测预约列表</name>
+          <name_zh-cn>基因检测预约列表</name_zh-cn>
+          <name_zh-hk>基因检测预约列表</name_zh-hk>
+          <name_en-us>Gene Checking Booking List</name_en-us>
+          <url>/Appointment/geneappointment.php</url>
+        </submenu>
       </submenus>
     </mainmenu>
   </mainmenus>
