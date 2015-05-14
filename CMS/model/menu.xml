@@ -238,6 +238,11 @@
           <name>客户咨询</name>
           <url>/Appointment/doctorquery.php</url>
         </submenu>
+        <submenu>
+          <id>geneappointment</id>
+          <name>基因检测预约列表</name>
+          <url>/Appointment/geneappointment.php</url>
+        </submenu>
       </submenus>
     </mainmenu>
     <mainmenu>

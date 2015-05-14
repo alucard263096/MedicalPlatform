@@ -52,17 +52,17 @@
 		$order_no=$this->genOrderNo("GN");
 
 		$sql="INSERT INTO `medicalplatform`.`dr_tb_member_gene_order`
-(`id`,`order_no`,
+(`id`,`order_no`,`guid`,
 `member_id`,`name`,`mobile`,`address`,`remark`,
 `gene_id`,`doctor_id`,`price`,
 `status`,
 `created_time`,`snapshot`,
-`payment`)
+`payment`,`payment_type`,`real_payment`)
 values 
-($id,'$order_no',
+($id,'$order_no','',
 $member_id,'$name','$mobile','$address','$remark',
 $gene_id,$doctor_id,$price,
-'P',now(),'','N') ";
+'P',now(),'','N','N','N') ";
 		$query = $this->dbmgr->query($sql);
 
 		$this->updateDoctorBookingCount($doctor_id);

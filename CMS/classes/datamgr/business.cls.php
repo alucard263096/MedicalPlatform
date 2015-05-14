@@ -34,7 +34,9 @@ select count(1) count,'dr_tb_requirement' name from dr_tb_requirement where hand
 union
 select count(1) count,'dr_tb_requirement' name from dr_tb_requirement where submit_user=$user_id and handling_type<>'P'  and review_type='P' 
 union
-select count(1) count,'dr_tb_member_question' name from dr_tb_member_question where status='P' and doctor_id=0  ";
+select count(1) count,'dr_tb_member_question' name from dr_tb_member_question where status='P' and doctor_id=0 
+union
+select count(1) count,'dr_tb_member_gene_order' name from dr_tb_member_gene_order where status='P' and payment='Y' and  guid='' ";
 
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
@@ -129,6 +131,27 @@ from dr_tb_member_question m
 		$arr["third"]="提交日期";
 		$arr["count"]=count($result);
 		$arr["link"]=$CONFIG['rootpath']."/Appointment/doctorquery.php";
+		$Array[]=$arr;
+
+		
+		$arr=Array();
+		$arr["name"]="等待添加唯一码的基因检测";
+		$user_id=mysql_real_escape_string($user_id);
+		$sql="select  m.id,m.name as first,
+ vl.name as second,dl.name as third 
+from dr_tb_member_gene_order m
+inner join dr_tb_gene_lang vl on m.gene_id=vl.oid and vl.lang='zh-cn'
+inner join dr_tb_doctor_lang dl on m.doctor_id=dl.oid and dl.lang='zh-cn'
+		where m.status='P' and m.payment='Y' and m.guid=''
+		limit 0,3 ";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array_all($query); 
+		$arr["result"]=$result;
+		$arr["first"]="客户名称";
+		$arr["second"]="基因检测项目";
+		$arr["third"]="医生名称";
+		$arr["count"]=count($result);
+		$arr["link"]=$CONFIG['rootpath']."/Appointment/geneappointment.php";
 		$Array[]=$arr;
 
 		return $Array;
