@@ -26,7 +26,6 @@
 	$doctor_id=$_REQUEST["did"];
 	$vaccine_id=$_REQUEST["vid"];
 
-	
 	$type=$_REQUEST["type"];
 	if($type=="modify"){
 		$id=$_REQUEST["id"];

@@ -76,8 +76,8 @@ $CONFIG["map"]["ak"]="nWM2HguMVHFCHcEBsNAaCnwd";
 $CONFIG["alipay"]["partner"]="";
 $CONFIG["alipay"]["seller_email"]="admin@imedlinks.com";
 $CONFIG["alipay"]["key"]="";
-$CONFIG["alipay"]["notify_url"]="";
-$CONFIG["alipay"]["call_back_url"]="";
+$CONFIG["alipay"]["notify_url"]=$CONFIG['URL']."/payment/notify_alipay.php";;
+$CONFIG["alipay"]["call_back_url"]=$CONFIG['URL']."/payment/callback_alipay.php";
 
 
 

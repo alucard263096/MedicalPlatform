@@ -52,7 +52,7 @@ interface AlipayMgr implements IPayment  {
 
 	}
 
-	public function submit($merchant_url,$trade_no,$subject,$total_fee){
+	public function submit($merchant_url,$trade_no,$subject,$total_fee,$pin_code){
 		require_once(ROOT.'/libs/alipay_wap_lib/alipay_submit.class.php');
 		//返回格式
 $format = "xml";
@@ -63,7 +63,7 @@ $v = "2.0";
 //必填，不需要修改
 
 //请求号
-$req_id = date('Ymdhis');
+$req_id = $pin_code;
 //必填，须保证每次请求都是唯一
 
 //**req_data详细信息**
@@ -111,7 +111,7 @@ $para_token = array(
 );
 
 //建立请求
-$alipaySubmit = new AlipaySubmit($alipay_config);
+$alipaySubmit = new AlipaySubmit($this->alipay_config);
 $html_text = $alipaySubmit->buildRequestHttp($para_token);
 
 //URLDECODE返回的信息
@@ -152,11 +152,68 @@ exit;
 	}
 
 	public function callback(){
+		require_once(ROOT.'/libs/alipay_wap_lib/alipay_notify.class.php');
+		
+		$alipayNotify = new AlipayNotify($this->alipay_config);
+		$verify_result = $alipayNotify->verifyReturn();
+		$ret=Array();
+
+		$ret["out_trade_no"]= $_GET['out_trade_no'];
+		$ret["trade_no"]= $_GET['trade_no'];
+
+		if($verify_result){
+			$ret["result"]= $_GET['result'];
+		}else{
+			$ret["result"]="FAIL";
+		}
+		return $ret;
 
 	}
 
-	public function server_nofify(){
+	public function notify(){
+		require_once(ROOT."/libs/alipay_wap_lib/alipay_notify.class.php");
+		$alipayNotify = new AlipayNotify($this->alipay_config);
+		$verify_result = $alipayNotify->verifyNotify();
+		
+		$ret=Array();
+		if($verify_result) {
+			$doc = new DOMDocument();	
+			if ($this->alipay_config['sign_type'] == 'MD5') {
+				$doc->loadXML($_POST['notify_data']);
+			}
+	
+			if ($alipay_config['sign_type'] == '0001') {
+				$doc->loadXML($alipayNotify->decrypt($_POST['notify_data']));
+			}
+	
+			if( ! empty($doc->getElementsByTagName( "notify" )->item(0)->nodeValue) ) {
+				//商户订单号
+				$out_trade_no = $doc->getElementsByTagName( "out_trade_no" )->item(0)->nodeValue;
+				//支付宝交易号
+				$trade_no = $doc->getElementsByTagName( "trade_no" )->item(0)->nodeValue;
+				//交易状态
+				$trade_status = $doc->getElementsByTagName( "trade_status" )->item(0)->nodeValue;
 
+				
+				$ret["out_trade_no"]= $out_trade_no;
+				$ret["trade_no"]= $trade_no;
+
+
+				if($trade_status == 'TRADE_FINISHED'
+				||$trade_status == 'TRADE_FINISHED'){
+					$ret["result"]="SUCCESS";
+				}else{
+					$ret["result"]="FAIL";
+				}
+			}else{
+				$ret["result"]="FAIL";
+			}
+			
+			
+		}else{
+			$ret["result"]="FAIL";
+		}
+		return $ret;
 	}
 }
  

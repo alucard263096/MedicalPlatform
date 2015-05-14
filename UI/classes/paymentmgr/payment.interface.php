@@ -3,7 +3,7 @@
 interface IPayment{
 
 
-	public function submit(){
+	public function submit($merchant_url,$trade_no,$subject,$total_fee,$pin_code){
 
 	}
 
@@ -11,7 +11,7 @@ interface IPayment{
 
 	}
 
-	public function server_nofify(){
+	public function notify(){
 
 	}
 }

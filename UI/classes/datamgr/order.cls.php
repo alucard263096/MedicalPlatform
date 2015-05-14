@@ -72,7 +72,24 @@ $gene_id,$doctor_id,$price,
 		$arr["id"]=$id;
 		return $arr;
 
+	}
 
+	public function updateGeneOrderPaymentInfo($member_id,$id,$payment_type){
+
+		$pin_code=md5("pt".$id);
+		$payment_type=mysql_real_escape_string($payment_type);
+
+		$sql="update dr_tb_member_gene_order set trade_pin_code='$pin_code',payment_type='$payment_type',is_submit='Y'
+		where member_id=$member_id and id=$id and is_submit='N'";
+		$query = $this->dbmgr->query($sql);
+	}
+
+	public function updateGeneAppointmentPayment($member_id,$id,$trade_no){
+		$payment_type=mysql_real_escape_string($trade_no);
+
+		$sql="update dr_tb_member_gene_order set payment_time=now(),trade_no='$trade_no',payment='Y'
+		where member_id=$member_id and id=$id ";
+		$query = $this->dbmgr->query($sql);
 	}
 
 	public function getBookingDateSelectedTime($office_id,$doctor_id,$order_date){
@@ -357,17 +374,24 @@ where main.member_id=$member_id ";
 	}
 	
 
-	public function getGeneAppointment($member_id,$id){
+	public function getGeneAppointment($member_id,$id,$order_no=""){
 		Global $SysLangCode;
 
 		$member_id=mysql_real_escape_string($member_id);
 		$id=mysql_real_escape_string($id);
+		$order_no=mysql_real_escape_string($order_no);
 		$sql="select main.*,doctor.name doctor_name,gene.name gene_name
 		  from dr_tb_member_gene_order main
 inner join (select * from dr_tb_gene a left join dr_tb_gene_lang b on a.id=b.oid and b.lang='$SysLangCode') gene on main.gene_id=gene.id
 inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='$SysLangCode') doctor on main.doctor_id=doctor.id
 inner join dr_tb_member m on main.member_id=m.id
-where main.member_id=$member_id and main.id=$id";
+where main.member_id=$member_id ";
+		if($order_no==""){
+			$sql.=" and main.id=$id";
+		}else{
+			$sql.=" and main.order_no='$order_no'";
+		}
+
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array($query); 
 
