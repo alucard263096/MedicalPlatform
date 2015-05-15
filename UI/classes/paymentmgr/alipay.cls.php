@@ -1,13 +1,13 @@
 <?php
 
-interface AlipayMgr implements IPayment  {
+class AlipayMgr implements IPayment  {
 	private	$alipay_config;
 	private $notify_url;
 	private $call_back_url;
 
 
 
-	private function __construct()
+	public function __construct()
 	{
 		Global $CONFIG;
 

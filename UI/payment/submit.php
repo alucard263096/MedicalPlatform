@@ -15,19 +15,20 @@
   $id=$_GET["id"];
   $type=$_GET["type"];
 
-  if($act=="pt"&&$type=="ALIPAY"){
+  if($act=="gn"&&$type=="ALIPAY"){
 	
   require ROOT.'/classes/paymentmgr/alipay.cls.php';
 
 	$orderMgr->updateGeneOrderPaymentInfo($member["id"],$id,$type);
 	
-	$info=getGeneAppointment($member["id"],$id);
+	$info=$orderMgr->getGeneAppointment($member["id"],$id);
 	$url=$CONFIG['URL']."/member/booking.php?act=gn&id=".$id;
 	//if($info["is_submit"]=="Y"){
 	//	ParentRedirect($url);
 	//}
 	$alipay=new AlipayMgr();
 	$alipay->submit($url,$info["order_no"],"基因检测项目".$info["order_no"],$info["price"],$info["trade_pin_code"]);
+	
   }
 
 ?>
