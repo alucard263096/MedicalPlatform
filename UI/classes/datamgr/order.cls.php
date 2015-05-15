@@ -57,12 +57,12 @@
 `gene_id`,`doctor_id`,`price`,
 `status`,
 `created_time`,`snapshot`,
-`payment`,`payment_type`,`real_payment`)
+`payment`,`payment_type`,`real_payment`,`is_submit`)
 values 
 ($id,'$order_no','',
 $member_id,'$name','$mobile','$address','$remark',
 $gene_id,$doctor_id,$price,
-'P',now(),'','N','N','N') ";
+'P',now(),'','N','N','N','N') ";
 		$query = $this->dbmgr->query($sql);
 
 		$this->updateDoctorBookingCount($doctor_id);
@@ -81,6 +81,7 @@ $gene_id,$doctor_id,$price,
 
 		$sql="update dr_tb_member_gene_order set trade_pin_code='$pin_code',payment_type='$payment_type',is_submit='Y'
 		where member_id=$member_id and id=$id and is_submit='N'";
+		echo $sql;
 		$query = $this->dbmgr->query($sql);
 	}
 
