@@ -27,7 +27,7 @@
 	//	ParentRedirect($url);
 	//}
 	$alipay=new AlipayMgr();
-	$alipay->submit($url,$info["order_no"],"基因检测项目".$info["order_no"],$info["price"],$info["trade_pin_code"]);
+	$alipay->submit($url,$info["order_no"],"Gene Checking".$info["order_no"],$info["price"],$info["trade_pin_code"]);
 	
   }
 
