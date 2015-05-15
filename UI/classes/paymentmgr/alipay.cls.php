@@ -35,7 +35,7 @@ class AlipayMgr implements IPayment  {
 
 
 		//签名方式 不需修改
-		$this->alipay_config['sign_type']    = '0001';
+		$this->alipay_config['sign_type']    = 'MD5';
 
 		//字符编码格式 目前支持 gbk 或 utf-8
 		$this->alipay_config['input_charset']= 'utf-8';
