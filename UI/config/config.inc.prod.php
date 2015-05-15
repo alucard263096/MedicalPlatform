@@ -71,4 +71,12 @@ $CONFIG["sms"]["templeteid"]["vaccine_order_info"]="15983";
 $CONFIG["map"]["ak"]="nWM2HguMVHFCHcEBsNAaCnwd";
 
 
+#[ALIPAY_WAP]
+$CONFIG["alipay"]["partner"]="2088911650995124 ";
+$CONFIG["alipay"]["seller_email"]="admin@imedlinks.com";
+$CONFIG["alipay"]["key"]="imedfamily123";
+$CONFIG["alipay"]["notify_url"]=$CONFIG['URL']."/payment/notify_alipay.php";;
+$CONFIG["alipay"]["call_back_url"]=$CONFIG['URL']."/payment/callback_alipay.php";
+
+
 ?>
