@@ -1,7 +1,7 @@
 <?php
 
 class AlipayMgr implements IPayment  {
-	private	$alipay_config;
+	private	$this->alipay_config;
 	private $notify_url;
 	private $call_back_url;
 
@@ -93,7 +93,7 @@ $total_fee = $total_fee;
 //必填
 
 //请求业务参数详细
-$req_data = '<direct_trade_create_req><notify_url>' . $notify_url . '</notify_url><call_back_url>' . $call_back_url . '</call_back_url><seller_account_name>' . trim($alipay_config['seller_email']) . '</seller_account_name><out_trade_no>' . $out_trade_no . '</out_trade_no><subject>' . $subject . '</subject><total_fee>' . $total_fee . '</total_fee><merchant_url>' . $merchant_url . '</merchant_url></direct_trade_create_req>';
+$req_data = '<direct_trade_create_req><notify_url>' . $notify_url . '</notify_url><call_back_url>' . $call_back_url . '</call_back_url><seller_account_name>' . trim($this->alipay_config['seller_email']) . '</seller_account_name><out_trade_no>' . $out_trade_no . '</out_trade_no><subject>' . $subject . '</subject><total_fee>' . $total_fee . '</total_fee><merchant_url>' . $merchant_url . '</merchant_url></direct_trade_create_req>';
 //必填
 
 /************************************************************/
@@ -101,13 +101,13 @@ $req_data = '<direct_trade_create_req><notify_url>' . $notify_url . '</notify_ur
 //构造要请求的参数数组，无需改动
 $para_token = array(
 		"service" => "alipay.wap.trade.create.direct",
-		"partner" => trim($alipay_config['partner']),
-		"sec_id" => trim($alipay_config['sign_type']),
+		"partner" => trim($this->alipay_config['partner']),
+		"sec_id" => trim($this->alipay_config['sign_type']),
 		"format"	=> $format,
 		"v"	=> $v,
 		"req_id"	=> $req_id,
 		"req_data"	=> $req_data,
-		"_input_charset"	=> trim(strtolower($alipay_config['input_charset']))
+		"_input_charset"	=> trim(strtolower($this->alipay_config['input_charset']))
 );
 
 //建立请求
@@ -133,17 +133,17 @@ $req_data = '<auth_and_execute_req><request_token>' . $request_token . '</reques
 //构造要请求的参数数组，无需改动
 $parameter = array(
 		"service" => "alipay.wap.auth.authAndExecute",
-		"partner" => trim($alipay_config['partner']),
-		"sec_id" => trim($alipay_config['sign_type']),
+		"partner" => trim($this->alipay_config['partner']),
+		"sec_id" => trim($this->alipay_config['sign_type']),
 		"format"	=> $format,
 		"v"	=> $v,
 		"req_id"	=> $req_id,
 		"req_data"	=> $req_data,
-		"_input_charset"	=> trim(strtolower($alipay_config['input_charset']))
+		"_input_charset"	=> trim(strtolower($this->alipay_config['input_charset']))
 );
 
 //建立请求
-$alipaySubmit = new AlipaySubmit($alipay_config);
+$alipaySubmit = new AlipaySubmit($this->alipay_config);
 $html_text = $alipaySubmit->buildRequestForm($parameter, 'get', '确认');
 echo $html_text;
 exit;
@@ -182,7 +182,7 @@ exit;
 				$doc->loadXML($_POST['notify_data']);
 			}
 	
-			if ($alipay_config['sign_type'] == '0001') {
+			if ($this->alipay_config['sign_type'] == '0001') {
 				$doc->loadXML($alipayNotify->decrypt($_POST['notify_data']));
 			}
 	
