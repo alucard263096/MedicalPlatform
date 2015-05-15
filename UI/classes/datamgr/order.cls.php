@@ -322,7 +322,7 @@ where gene_id=$gene_id;
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
 		if(count($result)>0){
-			$sql="update dr_tb_gete_value set booking_count=ifnull(booking_count,233)+1 where gene_id=$gene_id";
+			$sql="update dr_tb_gene_value set booking_count=ifnull(booking_count,233)+1 where gene_id=$gene_id";
 
 		}else{
 			$sql="select ifnull(max(id),0)+1 from dr_tb_gene_value";
