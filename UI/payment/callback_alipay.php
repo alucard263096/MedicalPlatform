@@ -16,7 +16,7 @@
   $alipay=new AlipayMgr();
   $ret=$alipay->callback();
   if($ret["out_trade_no"]==""){
-	WindowRedirect(ROOT."/member/bookinglist.php");
+	WindowRedirect($CONFIG['URL']."/member/bookinglist.php");
   }
 
   $info=$orderMgr->getGeneAppointment($member["id"],0,$ret["out_trade_no"]);
@@ -24,7 +24,7 @@
 	$orderMgr->updateGeneAppointmentPayment($member["id"],$info["id"],$ret["trade_no"]);
   }
   
-  WindowRedirect(ROOT."/member/booking.php?act=gn&id=".$info["id"]);
+  WindowRedirect($CONFIG['URL']."/member/booking.php?act=gn&id=".$info["id"]);
 
   
 

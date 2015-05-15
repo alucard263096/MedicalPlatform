@@ -358,12 +358,12 @@ where main.member_id=$member_id ";
 
 		$sql.="select main.id,'gn' act,'gene' image_group,gene.name,gene.image image,doctor.name doctor,
 		case main.status
-when 'P' then 'µÈ´ıÈ·ÈÏ¸¶¿î'
-when 'M' then 'ÒÑ¾­È·ÈÏ¸¶¿î£¬µÈ´ı¼Ä³ö¼ì²â¹¤¾ß'
-when 'K' then 'ÒÑ¾­¼Ä³ö¼ì²â¹¤¾ß£¬µÈ´ı»ØÊÕ'
-when 'R' then 'ÒÑ¾­»ØÊÕ¼ì²â¹¤¾ß£¬µÈ´ı·¢³ö±¨¸æ'
-when 'G' then 'ÒÑ¾­¼Ä³ö±¨¸æ£¬µÈ´ı»Ø·Ã'
-when 'F' then 'Íê³É¼ì²â¹ı³Ì'
+when 'P' then 'ç­‰å¾…ç¡®è®¤ä»˜æ¬¾'
+when 'M' then 'å·²ç»ç¡®è®¤ä»˜æ¬¾ï¼Œç­‰å¾…å¯„å‡ºæ£€æµ‹å·¥å…·'
+when 'K' then 'å·²ç»å¯„å‡ºæ£€æµ‹å·¥å…·ï¼Œç­‰å¾…å›æ”¶'
+when 'R' then 'å·²ç»å›æ”¶æ£€æµ‹å·¥å…·ï¼Œç­‰å¾…å‘å‡ºæŠ¥å‘Š'
+when 'G' then 'å·²ç»å¯„å‡ºæŠ¥å‘Šï¼Œç­‰å¾…å›è®¿'
+when 'F' then 'å®Œæˆæ£€æµ‹è¿‡ç¨‹'
  end as message,
 		'' order_date,main.status,main.created_time,main.payment,
 		0 passdate 
@@ -391,12 +391,12 @@ where main.member_id=$member_id ";
 		$order_no=mysql_real_escape_string($order_no);
 		$sql="select main.*,doctor.name doctor_name,gene.name gene_name,
 		case main.status
-when 'P' then 'µÈ´ıÈ·ÈÏ¸¶¿î'
-when 'M' then 'ÒÑ¾­È·ÈÏ¸¶¿î£¬µÈ´ı¼Ä³ö¼ì²â¹¤¾ß'
-when 'K' then 'ÒÑ¾­¼Ä³ö¼ì²â¹¤¾ß£¬µÈ´ı»ØÊÕ'
-when 'R' then 'ÒÑ¾­»ØÊÕ¼ì²â¹¤¾ß£¬µÈ´ı·¢³ö±¨¸æ'
-when 'G' then 'ÒÑ¾­¼Ä³ö±¨¸æ£¬µÈ´ı»Ø·Ã'
-when 'F' then 'Íê³É¼ì²â¹ı³Ì'
+when 'P' then 'ç­‰å¾…ç¡®è®¤ä»˜æ¬¾'
+when 'M' then 'å·²ç»ç¡®è®¤ä»˜æ¬¾ï¼Œç­‰å¾…å¯„å‡ºæ£€æµ‹å·¥å…·'
+when 'K' then 'å·²ç»å¯„å‡ºæ£€æµ‹å·¥å…·ï¼Œç­‰å¾…å›æ”¶'
+when 'R' then 'å·²ç»å›æ”¶æ£€æµ‹å·¥å…·ï¼Œç­‰å¾…å‘å‡ºæŠ¥å‘Š'
+when 'G' then 'å·²ç»å¯„å‡ºæŠ¥å‘Šï¼Œç­‰å¾…å›è®¿'
+when 'F' then 'å®Œæˆæ£€æµ‹è¿‡ç¨‹'
  end as message
 		  from dr_tb_member_gene_order main
 inner join (select * from dr_tb_gene a left join dr_tb_gene_lang b on a.id=b.oid and b.lang='$SysLangCode') gene on main.gene_id=gene.id
