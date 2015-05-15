@@ -27,7 +27,7 @@
 		$id=mysql_real_escape_string($id);
 		$guid=mysql_real_escape_string($guid);
 
-		$sql="select 1 from  where id=$id and guid='$guid' ";
+		$sql="select 1 from dr_tb_member_gene_order where id=$id and guid='$guid' ";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
 

@@ -1,6 +1,7 @@
 <?php
   require '../include/common.inc.php';
   include ROOT.'/include/init.inc.php';
+include ROOT.'/classes/datamgr/geneappointment.cls.php';
   $action=$_REQUEST["action"];
   $model=new XmlModel("geneappointment","geneappointment.php");
   
