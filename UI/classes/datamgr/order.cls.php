@@ -81,7 +81,7 @@ $gene_id,$doctor_id,$price,
 
 		$sql="update dr_tb_member_gene_order set trade_pin_code='$pin_code',payment_type='$payment_type',is_submit='Y'
 		where member_id=$member_id and id=$id and is_submit='N'";
-		echo $sql;
+		//echo $sql;
 		$query = $this->dbmgr->query($sql);
 	}
 

@@ -97,7 +97,7 @@ $req_data = '<direct_trade_create_req><notify_url>' . $notify_url . '</notify_ur
 //必填
 
 /************************************************************/
-
+echo $req_id;
 //构造要请求的参数数组，无需改动
 $para_token = array(
 		"service" => "alipay.wap.trade.create.direct",
@@ -114,9 +114,10 @@ $para_token = array(
 $alipaySubmit = new AlipaySubmit($this->alipay_config);
 $html_text = $alipaySubmit->buildRequestHttp($para_token);
 
+
 //URLDECODE返回的信息
 $html_text = urldecode($html_text);
-
+echo $html_text;
 //解析远程模拟提交后返回的信息
 $para_html_text = $alipaySubmit->parseResponse($html_text);
 
