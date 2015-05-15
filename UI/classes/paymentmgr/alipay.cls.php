@@ -1,7 +1,7 @@
 <?php
 
 class AlipayMgr implements IPayment  {
-	private	$this->alipay_config;
+	private	$alipay_config;
 	private $notify_url;
 	private $call_back_url;
 
