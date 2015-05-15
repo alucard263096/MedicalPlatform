@@ -17,7 +17,7 @@
   $ret=$alipay->notify();
 
   $info=$orderMgr->getGeneAppointment($member["id"],0,$ret["out_trade_no"]);
-  if($ret["return"]=="SUCCESS"){
+  if($ret["result"]=="SUCCESS"){
 	$orderMgr->updateGeneAppointmentPayment($member["id"],$info["id"],$ret["trade_no"]);
   }
 

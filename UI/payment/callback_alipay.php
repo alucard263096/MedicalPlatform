@@ -20,7 +20,7 @@
   }
 
   $info=$orderMgr->getGeneAppointment($member["id"],0,$ret["out_trade_no"]);
-  if($ret["return"]=="success"){
+  if($ret["result"]=="success"){
 	$orderMgr->updateGeneAppointmentPayment($member["id"],$info["id"],$ret["trade_no"]);
   }
   
