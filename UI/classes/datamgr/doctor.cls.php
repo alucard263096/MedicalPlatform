@@ -65,8 +65,8 @@
 
 			$sql="select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
 		,dv.price,dv.web_price,
-		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
-		, ifnull(dvv.totle_score,4) totle_score
+		ifnull(dvv.service_level,5) service_level, ifnull(dvv.pro_level,5) pro_level, ifnull(dvv.facility_level,5) facility_level
+		, ifnull(dvv.totle_score,5) totle_score
 		 from dr_tb_doctor_vaccine dv 
 inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
 left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
@@ -335,10 +335,10 @@ where o.id=$office_id ";
 			return $_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["standard_doctor_value"];
 		}else{
 			
-				$sql="select ifnull(avg(service_level),3.9) service_level,
-		ifnull(avg(pro_level),3.6) pro_level,
-		ifnull(avg(facility_level),3.7) facility_level,
-		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value";
+				$sql="select ifnull(avg(service_level),5) service_level,
+		ifnull(avg(pro_level),5) pro_level,
+		ifnull(avg(facility_level),5) facility_level,
+		ifnull(avg(totle_score),5) totle_score from dr_tb_doctor_value";
 
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array($query); 
@@ -355,8 +355,8 @@ where o.id=$office_id ";
 		$doctor_id=mysql_real_escape_string($doctor_id);
 
 		$sql="select d.*,dl.*,sl.name specialist,
-		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
-		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+		ifnull(dvv.service_level,5) service_level, ifnull(dvv.pro_level,5) pro_level, ifnull(dvv.facility_level,5) facility_level
+		, ifnull(dvv.totle_score,5) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
 left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
 left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
 left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='$SysLangCode'
@@ -392,8 +392,8 @@ where e.status='A' and d.id=$doctor_id";
 	
 
 		$sql="select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,
-		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
-		, ifnull(dvv.totle_score,4) totle_score
+		ifnull(dvv.service_level,5) service_level, ifnull(dvv.pro_level,5) pro_level, ifnull(dvv.facility_level,5) facility_level
+		, ifnull(dvv.totle_score,5) totle_score
 		 from  dr_tb_doctor d 
 left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'
 left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
