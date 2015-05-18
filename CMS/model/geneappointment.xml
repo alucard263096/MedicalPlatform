@@ -63,20 +63,6 @@
       <disableindetail>1</disableindetail>
     </field>
     <field>
-      <name>医生</name>
-      <key>doctor_id</key>
-      <type>fkey</type>
-      <fmutillang>1</fmutillang>
-      <displayfield>name</displayfield>
-      <notnull>1</notnull>
-      <tablename>dr_tb_doctor</tablename>
-      <ntbname>r_doctor</ntbname>
-      <condition>1=1 </condition>
-      <search>1</search>
-      <displayinlist>1</displayinlist>
-      <disableindetail>1</disableindetail>
-    </field>
-    <field>
       <name>价格</name>
       <key>price</key>
       <type>text</type>

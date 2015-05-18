@@ -203,16 +203,6 @@
           <url>/Doctor/service.php</url>
         </submenu>
         <submenu>
-          <id>doctorgene_list</id>
-          <name>医生基因检测列表</name>
-          <url>/Doctor/gene.php</url>
-        </submenu>
-        <submenu>
-          <id>doctorgene_add</id>
-          <name>医生基因检测新增</name>
-          <url>/Doctor/gene.php?action=add</url>
-        </submenu>
-        <submenu>
           <id>officeopenhour_list</id>
           <name>诊所开放时间列表</name>
           <url>/Doctor/officeopenhour.php</url>

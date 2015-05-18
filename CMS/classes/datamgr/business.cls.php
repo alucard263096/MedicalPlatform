@@ -138,11 +138,11 @@ from dr_tb_member_question m
 		$arr["name"]="等待添加唯一码的基因检测";
 		$user_id=mysql_real_escape_string($user_id);
 		$sql="select  m.id,m.name as first,
- vl.name as second,dl.name as third 
+ vl.name as second,created_time as third 
 from dr_tb_member_gene_order m
 inner join dr_tb_gene_lang vl on m.gene_id=vl.oid and vl.lang='zh-cn'
-inner join dr_tb_doctor_lang dl on m.doctor_id=dl.oid and dl.lang='zh-cn'
 		where m.status='P' and m.payment='Y' and m.guid=''
+		order by created_time
 		limit 0,3 ";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
