@@ -62,14 +62,11 @@
 
 	$smarty->display(ROOT.'/templates/order/order.html');
   }else if($action=="gene"){
-	$doctor_id=$_REQUEST["did"];
 	$gene_id=$_REQUEST["vid"];
 
 	$caution=$bannerMgr->getGeneralText("gene_order_caution");
-	$doctorInfo=$doctorMgr->getDoctor($doctor_id);
 	$geneInfo=$geneMgr->getGene($gene_id);
 	
-	$smarty->assign("doctor",$doctorInfo);
 	$smarty->assign("gene",$geneInfo);
 	$smarty->assign("caution",$caution);
 

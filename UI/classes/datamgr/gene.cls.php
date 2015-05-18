@@ -43,7 +43,7 @@
 
 		$id=mysql_real_escape_string($id);
 
-		$sql="select o.*,ol.*
+		$sql="select *
 		from dr_tb_gene o
 left join dr_tb_gene_lang ol on o.id=ol.oid and ol.lang='$SysLangCode'
 where o.status='A' and o.id=$id

@@ -24,7 +24,6 @@
   $remark=$_REQUEST["remark"];
   $price=$_REQUEST["price"];
   $gene_id=$_REQUEST["gene_id"];
-  $doctor_id=$_REQUEST["doctor_id"];
   $snapshot=$_REQUEST["snapshot"];
 
   $action=$_REQUEST["action"];
@@ -33,7 +32,7 @@
   $info=$geneMgr->getGene($gene_id);
 
   $arr=$orderMgr->createGeneOrder($member_id,$name,$mobile,$address,$remark
-  ,$gene_id,$doctor_id,$info["price"],
+  ,$gene_id,$info["price"],
 	$snapshot);
 
   echo "SUCCESS".$arr["id"].",".$arr["id"];

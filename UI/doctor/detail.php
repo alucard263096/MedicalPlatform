@@ -87,8 +87,7 @@
 
   $smarty->assign("standard",$standard);
 
-  if($action=="vaccine"
-  ||$action=="gene"){
+  if($action=="vaccine"){
 	
 	$smarty->assign("office_id",$office_id);
 	$smarty->assign("vid",$vid);

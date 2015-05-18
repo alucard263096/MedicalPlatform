@@ -541,23 +541,6 @@ where doctor_id=$doctor_id;
 		$query = $this->dbmgr->query($sql);
 	}
 
-	public function getGeneDoctorList($gene_id){
-	
-		$gene_id=mysql_real_escape_string($gene_id);
-	$sql="select doctor_list from dr_tb_doctor_gene
-where gene_id=$gene_id
-and status='A'
-";
-		$query = $this->dbmgr->query($sql);
-		$result = $this->dbmgr->fetch_array($query); 
-		$doctor_list=$result["doctor_list"];
-		if($doctor_list==""){
-			$doctor_list="0";
-		}
-		return $this->getDoctorList($doctor_list);
-
-	}
-
  }
  
  $doctorMgr=DoctorMgr::getInstance();

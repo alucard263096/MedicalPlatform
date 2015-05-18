@@ -33,10 +33,10 @@
     
     <div class="col-xs-12 xsmall" style="padding-top:0px;padding-bottom:10px;">
         <div class="col-xs-9" style="padding:0px;margin-top:15px;">
-        价格：<span style="color: #42A4D3;font-size:16px;">{{$info.price}}元</span>
+        价格（人民币）：<span style="color: #42A4D3;font-size:16px;">{{$info.price}}元</span>
         </div>
         <div class="col-xs-3" style="padding-top:5px;padding-left:0px;padding-right:0px;">
-            <a href="{{$rootpath}}/doctor/index.php?action=gene&id={{$info.id}}" data-role="button" style="padding:5px;font-size:13px; background-color: #42A4D3;color:snow;">立即检查</a>
+            <a href="{{$rootpath}}/order/order.php?action=gene&vid={{$info.id}}" data-role="button" style="padding:5px;font-size:13px; background-color: #42A4D3;color:snow;">立即付款</a>
         </div>
     </div>
     <hr style="margin-bottom:0px;border:solid thin #42A4D3;" />

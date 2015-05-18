@@ -22,25 +22,6 @@
         </a>
     </div>  
     <hr style="margin-bottom:0px;" />
-    <div class="col-xs-12" style="padding:15px;">
-        <a>
-            <div class="col-xs-4" style="padding-left:0px;padding-right:0px;">                
-                {{if $info.photo==""}}
-                <img class="MiddleODdivImg" src="{{$rootpath}}/themes/img/icons/huiyuan.jpg">
-                {{else}}
-                <img class="MiddleODdivImg" src="{{$uploadpath}}/doctor_photo/{{$info.photo}}">
-                {{/if}}
-            </div>
-            <div class="col-xs-8  snapshot" style="padding-left: 0px;padding-right:0px;">
-                <div class="col-xs-12" style="padding-left:0px;padding-right:0px;">
-                    <div class="col-xs-6" style="padding-left:0px;padding-right:0px;">{{$doctor.name}}</div>
-                    <div class="col-xs-6 grayfont lighter bsmall" style="margin-top:4px;">{{$doctor.specialist}}</div>
-                </div>
-                <div class="col-xs-12 grayfont xsmall" style="padding-left:0px;padding-right:0px;margin-top:10px;">{{$doctor.pro_title}}</div>
-            </div>
-        </a>
-    </div>
-    <hr style="margin-bottom:0px;" />
     
 
     <div class="col-xs-12 " style="background-color:#DBDBDC">
@@ -118,7 +99,6 @@
                 "address":clientaddress,
                 "remark":clientremark,
                 "gene_id":{{$gene.id}},
-                "doctor_id":{{$doctor.id}},
                 "price":{{$gene.price}},
                 "act":"gene",
                 "snapshot":""

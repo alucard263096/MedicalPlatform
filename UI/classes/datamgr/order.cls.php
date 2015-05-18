@@ -24,7 +24,7 @@
 	}
 
 	public function createGeneOrder($member_id,$name,$mobile,$address,$remark
-	,$gene_id,$doctor_id,$price,
+	,$gene_id,$price,
 	$snapshot){
 		
 		
@@ -35,7 +35,6 @@
 		$address=mysql_real_escape_string($address);
 		$remark=mysql_real_escape_string($remark);
 		$gene_id=mysql_real_escape_string($gene_id);
-		$doctor_id=mysql_real_escape_string($doctor_id);
 		$price=mysql_real_escape_string($price);
 		$snapshot=mysql_real_escape_string($snapshot);
 		
@@ -54,18 +53,17 @@
 		$sql="INSERT INTO `medicalplatform`.`dr_tb_member_gene_order`
 (`id`,`order_no`,`guid`,
 `member_id`,`name`,`mobile`,`address`,`remark`,
-`gene_id`,`doctor_id`,`price`,
+`gene_id`,`price`,
 `status`,
 `created_time`,`snapshot`,
 `payment`,`payment_type`,`real_payment`,`is_submit`)
 values 
 ($id,'$order_no','',
 $member_id,'$name','$mobile','$address','$remark',
-$gene_id,$doctor_id,$price,
+$gene_id,$price,
 'P',now(),'','N','N','N','N') ";
 		$query = $this->dbmgr->query($sql);
 
-		$this->updateDoctorBookingCount($doctor_id);
 		$this->updateGeneBookingCount($gene_id);
 
 		$this->dbmgr->commit_trans();
@@ -356,7 +354,7 @@ where main.member_id=$member_id ";
 
 		$sql.=" union ";
 
-		$sql.="select main.id,'gn' act,'gene' image_group,gene.name,gene.image image,doctor.name doctor,
+		$sql.="select main.id,'gn' act,'gene' image_group,gene.name,gene.image image,'' doctor,
 		case main.status
 when 'P' then '等待确认付款'
 when 'M' then '已经确认付款，等待寄出检测工具'
@@ -369,7 +367,6 @@ when 'F' then '完成检测过程'
 		0 passdate 
 		 from dr_tb_member_gene_order main
 inner join (select * from dr_tb_gene a left join dr_tb_gene_lang b on a.id=b.oid and b.lang='$SysLangCode') gene on main.gene_id=gene.id
-inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='$SysLangCode') doctor on main.doctor_id=doctor.id
 inner join dr_tb_member m on main.member_id=m.id
 where main.member_id=$member_id ";
 
@@ -389,7 +386,7 @@ where main.member_id=$member_id ";
 		$member_id=mysql_real_escape_string($member_id);
 		$id=mysql_real_escape_string($id);
 		$order_no=mysql_real_escape_string($order_no);
-		$sql="select main.*,doctor.name doctor_name,gene.name gene_name,
+		$sql="select main.*,gene.name gene_name,
 		case main.status
 when 'P' then '等待确认付款'
 when 'M' then '已经确认付款，等待寄出检测工具'
@@ -400,7 +397,6 @@ when 'F' then '完成检测过程'
  end as message
 		  from dr_tb_member_gene_order main
 inner join (select * from dr_tb_gene a left join dr_tb_gene_lang b on a.id=b.oid and b.lang='$SysLangCode') gene on main.gene_id=gene.id
-inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='$SysLangCode') doctor on main.doctor_id=doctor.id
 inner join dr_tb_member m on main.member_id=m.id
 where main.member_id=$member_id ";
 		if($order_no==""){

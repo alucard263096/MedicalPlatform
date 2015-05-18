@@ -47,7 +47,7 @@ $notify_url = $this->notify_url;
 
 $call_back_url = $this->call_back_url;
 
-$merchant_url =$booking_url;
+//$merchant_url =$booking_url;
 
 $out_trade_no = $trade_no;
 
@@ -58,7 +58,7 @@ $total_fee = $total_fee;
 $req_data = '<direct_trade_create_req><notify_url>' . $notify_url . '</notify_url><call_back_url>' . $call_back_url . '</call_back_url><seller_account_name>' . trim($this->alipay_config['seller_email']) . '</seller_account_name><out_trade_no>' . $out_trade_no . '</out_trade_no><subject>' . $subject . '</subject><total_fee>' . $total_fee . '</total_fee><merchant_url>' . $merchant_url . '</merchant_url></direct_trade_create_req>';
 
 /************************************************************/
-echo $req_id;
+//echo $req_id;
 $para_token = array(
 		"service" => "alipay.wap.trade.create.direct",
 		"partner" => trim($this->alipay_config['partner']),
@@ -80,7 +80,6 @@ $para_html_text = $alipaySubmit->parseResponse($html_text);
 $request_token = $para_html_text['request_token'];
 
 
-/**************************������Ȩ��token���ý��׽ӿ�alipay.wap.auth.authAndExecute**************************/
 
 $req_data = '<auth_and_execute_req><request_token>' . $request_token . '</request_token></auth_and_execute_req>';
 
