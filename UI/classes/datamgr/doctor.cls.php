@@ -266,7 +266,7 @@ left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='$SysLangCode
 	
 		$doctor_list=mysql_real_escape_string($doctor_list);
 
-		$sql="select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		$sql="select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,ol.addressnav,
 		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,\",\",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,\",\",1))+2,length(coordinate))  y
 		,dl.name district,bl.name block
 		from dr_tb_office_openhour oo
