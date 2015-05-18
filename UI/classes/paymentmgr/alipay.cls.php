@@ -47,7 +47,7 @@ $notify_url = $this->notify_url;
 
 $call_back_url = $this->call_back_url;
 
-//$merchant_url =$booking_url;
+$merchant_url =$booking_url;
 
 $out_trade_no = $trade_no;
 
