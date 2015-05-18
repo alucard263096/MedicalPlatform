@@ -9,8 +9,12 @@
         <ul class="table-view" style="margin-top:0px;">
             {{foreach from=$doctor_list item=rs }}
             <li class="table-view-cell media">
-                <a class="navigate-right" onclick="loadBookingInfo({{$rs.id}})">
-                    <img class="media-object pull-left" width="76px" src="{{$uploadpath}}/doctor_photo/{{$rs.photo}}">
+                <a class="navigate-right" onclick="loadBookingInfo({{$rs.id}})">                    
+                    {{if $info.photo==""}}
+                    <img class="media-object pull-left" width="76px" src="{{$rootpath}}/themes/img/icons/huiyuan.jpg">
+                    {{else}}
+                    <img class="media-object pull-left" width="76px" src="{{$uploadpath}}/doctor_photo/{{$info.photo}}">
+                    {{/if}}
                     <div class="media-body">
                         {{$rs.doctorname}}
                         <p>{{$rs.doctorsummary}}</p>

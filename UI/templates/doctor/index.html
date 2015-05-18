@@ -41,7 +41,11 @@
         <a href="{{$rootpath}}/doctor/detail.php?id={{$rs.doctor_id}}&vid={{$vaccine_id}}">
             <div class="col-xs-4 text-center">
                 <div class="col-xs-12" style="padding-left:0px;padding-right:0px;">
+                    {{if $rs.photo==""}}
+                    <img class="MiddleODdivImg" src="{{$rootpath}}/themes/img/icons/huiyuan.jpg">
+                    {{else}}
                     <img class="MiddleODdivImg" src="{{$uploadpath}}/doctor_photo/{{$rs.photo}}">
+                    {{/if}}
                 </div>
                 <div class="col-xs-12 text-center" style="padding-left:0px;padding-right:0px;">
                     <div class="divraty" score="{{$rs.totle_score}}"></div>

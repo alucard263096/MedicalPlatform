@@ -24,8 +24,12 @@
     <hr style="margin-bottom:0px;" />
     <div class="col-xs-12" style="padding:15px;">
         <a>
-            <div class="col-xs-4" style="padding-left:0px;padding-right:0px;">
-                <img class="MiddleODdivImg" src="{{$uploadpath}}/doctor_photo/{{$doctor.photo}}">
+            <div class="col-xs-4" style="padding-left:0px;padding-right:0px;">                
+                {{if $info.photo==""}}
+                <img class="MiddleODdivImg" src="{{$rootpath}}/themes/img/icons/huiyuan.jpg">
+                {{else}}
+                <img class="MiddleODdivImg" src="{{$uploadpath}}/doctor_photo/{{$info.photo}}">
+                {{/if}}
             </div>
             <div class="col-xs-8  snapshot" style="padding-left: 0px;padding-right:0px;">
                 <div class="col-xs-12" style="padding-left:0px;padding-right:0px;">
