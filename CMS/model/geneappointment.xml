@@ -946,7 +946,7 @@
       <search>1</search>
     </field>
     <field>
-      <name>寄出检测品快递物流公司</name>
+      <name>寄出报告快递物流公司</name>
       <key>report_express_com</key>
       <type>select</type>
       <displayinlist>1</displayinlist>
