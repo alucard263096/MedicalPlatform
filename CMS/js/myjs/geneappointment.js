@@ -63,6 +63,9 @@ var SendCheckItem = function () {
     var message = "";
     if ($("#content_express_no").val() == "") {
         message += "<p>请输入或选择<span style='color:red;'>寄出检测品快递单号</span></p>";
+    }
+    if ($("#content_express_com").val() == "no-value") {
+        message += "<p>请输入或选择<span style='color:red;'>寄出检测品快递物流公司</span></p>";
     }    if (message != "") {
         //infoDialog(message);
         warningDialog(message);
@@ -72,7 +75,8 @@ var SendCheckItem = function () {
     $("#btnSendCheckItem").prop("disabled", "disabled");    var json = {
         action: "UPDATE_EXPRESSNO",
         id: $("#content_id").val(),
-        express_no: $("#content_express_no").val()
+        express_no: $("#content_express_no").val(),
+        express_com: $("#content_express_com").val()
     };    $.post("geneappointment.php", json, function (data) {
 
         $("#btnSendCheckItem").prop("disabled", "");
@@ -111,6 +115,9 @@ var SendReport = function () {
     var message = "";
     if ($("#content_report_express_no").val() == "") {
         message += "<p>请输入或选择<span style='color:red;'>寄出报告快递单号</span></p>";
+    }
+    if ($("#content_report_express_com").val() == "no-value") {
+        message += "<p>请输入或选择<span style='color:red;'>寄出报告快递物流公司</span></p>";
     }    if (message != "") {
         //infoDialog(message);
         warningDialog(message);
@@ -120,7 +127,8 @@ var SendReport = function () {
     $("#btnSendReport").prop("disabled", "disabled");    var json = {
         action: "UPDATE_REPORTEXPRESSNO",
         id: $("#content_id").val(),
-        report_express_no: $("#content_report_express_no").val()
+        report_express_no: $("#content_report_express_no").val(),
+        report_express_com: $("#content_report_express_com").val()
     };    $.post("geneappointment.php", json, function (data) {
 
         $("#btnSendReport").prop("disabled", "");

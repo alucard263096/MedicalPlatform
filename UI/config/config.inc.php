@@ -80,7 +80,6 @@ $CONFIG["alipay"]["notify_url"]=$CONFIG['URL']."/payment/notify_alipay.php";;
 $CONFIG["alipay"]["call_back_url"]=$CONFIG['URL']."/payment/callback_alipay.php";
 
 #[EXPRESS]
-$CONFIG["express"]["company_code"]="yunda";
 $CONFIG["express"]["sceret_key"]="5ff680a328eed4272e31b5fa93b18783";
 $CONFIG["express"]["api_id"]="110815";
 $CONFIG["express"]["type"]="xml";

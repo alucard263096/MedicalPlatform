@@ -356,12 +356,12 @@ where main.member_id=$member_id ";
 
 		$sql.="select main.id,'gn' act,'gene' image_group,gene.name,gene.image image,'' doctor,
 		case main.status
-when 'P' then '等待确认付款'
-when 'M' then '已经确认付款，等待寄出检测工具'
-when 'K' then '已经寄出检测工具，等待回收'
-when 'R' then '已经回收检测工具，等待发出报告'
-when 'G' then '已经寄出报告，等待回访'
-when 'F' then '完成检测过程'
+when 'P' then '等待系统确认'
+when 'M' then '系统已确认，等待寄出采集工具'
+when 'K' then '采集工具已经寄出，等待回收标本'
+when 'R' then '标本已收到，请耐心等待报告结果'
+when 'G' then '报告已寄出，请耐心等待结果'
+when 'F' then '已完成'
  end as message,
 		'' order_date,main.status,main.created_time,main.payment,
 		0 passdate 

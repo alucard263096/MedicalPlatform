@@ -20,7 +20,8 @@ include ROOT.'/classes/datamgr/geneappointment.cls.php';
 	
 	$id=$_POST["id"];
 	$express_no=$_POST["express_no"];
-	$geneAppointmentMgr->UpdateExpressNo($id,$express_no);
+	$express_com=$_POST["express_com"];
+	$geneAppointmentMgr->UpdateExpressNo($id,$express_com,$express_no);
 	echo "SUCCESS";
 
   }elseif($_REQUEST["action"]=="UPDATE_RECEIVE"){
@@ -33,7 +34,8 @@ include ROOT.'/classes/datamgr/geneappointment.cls.php';
 	
 	$id=$_POST["id"];
 	$report_express_no=$_POST["report_express_no"];
-	$geneAppointmentMgr->UpdateReportExpressNo($id,$report_express_no);
+	$report_express_com=$_POST["report_express_com"];
+	$geneAppointmentMgr->UpdateReportExpressNo($id,$report_express_com,$report_express_no);
 	echo "SUCCESS";
 
   }elseif($_REQUEST["action"]=="UPDATE_FINISHED"){

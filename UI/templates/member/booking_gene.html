@@ -31,8 +31,8 @@
                 <div style="padding-top:5px" class="row bsmall"><div class="col-xs-5 text-left">收件人电话：</div><div class="col-xs-6 text-left">{{$info.mobile}}</div></div>
                 <div style="padding-top:5px" class="row bsmall"><div class="col-xs-5 text-left">收件人地址：</div><div class="col-xs-6 text-left">{{$info.address}}</div></div>
                 <div style="padding-top:5px" class="row bsmall"><div class="col-xs-5 text-left">留言：</div><div class="col-xs-6 text-left">{{$info.remark}}</div></div>
-                <div style="padding-top:5px" class="row bsmall express_report" express="{{$info.express_no}}"><div class="col-xs-5 text-left">物流状态：</div><div class="col-xs-6 text-left"> </div></div>
-                <div style="padding-top:5px" class="row bsmall express_report" express="{{$info.report_express_no}}"><div class="col-xs-5 text-left">报告物流状态：</div><div class="col-xs-6 text-left"> </div></div>
+                <div style="padding-top:5px" class="row bsmall express_report" com="{{$info.express_com}}" express="{{$info.express_no}}"><div class="col-xs-5 text-left">物流状态：</div><div class="col-xs-6 text-left"> </div></div>
+                <div style="padding-top:5px" class="row bsmall express_report" com="{{$info.report_express_com}}" express="{{$info.report_express_no}}"><div class="col-xs-5 text-left">报告物流状态：</div><div class="col-xs-6 text-left"> </div></div>
             </div>
         </div>
         {{if $info.status=='P' and $info.payment=="N" }}
@@ -47,9 +47,10 @@
         $(".express_report").hide();
         $(".express_report").each(function(){
             var express_no = $(this).attr("express");
+            var com = $(this).attr("com");
             var ecc = $(this);
-            if (express_no != "") {
-                $.get("{{$rootpath}}/common/express.php?id=" + express_no, function (data) {
+            if (express_no != "" && com!="") {
+                $.get("{{$rootpath}}/common/express.php?id=" + express_no + "&com=" + com, function (data) {
                     ecc.find("div:last").html(data);
                     ecc.show();
                 });

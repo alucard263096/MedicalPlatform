@@ -45,12 +45,13 @@
 		$query = $this->dbmgr->query($sql);
 	}
 
-	public function UpdateExpressNo($id,$express_no){
+	public function UpdateExpressNo($id,$express_com,$express_no){
 	
 		$id=mysql_real_escape_string($id);
 		$express_no=mysql_real_escape_string($express_no);
+		$express_com=mysql_real_escape_string($express_com);
 
-		$sql="update dr_tb_member_gene_order set express_no='$express_no', status='K'
+		$sql="update dr_tb_member_gene_order set express_no='$express_no',express_com='$express_com' status='K'
 		where id=$id ";
 		$query = $this->dbmgr->query($sql);
 	}
@@ -62,12 +63,13 @@
 		where id=$id ";
 		$query = $this->dbmgr->query($sql);
 	}
-	public function UpdateReportExpressNo($id,$report_express_no){
+	public function UpdateReportExpressNo($id,$report_express_com,$report_express_no){
 	
 		$id=mysql_real_escape_string($id);
-		$express_no=mysql_real_escape_string($express_no);
+		$report_express_no=mysql_real_escape_string($report_express_no);
+		$report_express_com=mysql_real_escape_string($report_express_com);
 
-		$sql="update dr_tb_member_gene_order set express_no='$express_no', status='K'
+		$sql="update dr_tb_member_gene_order set report_express_no='$report_express_no', report_express_com='$report_express_com', status='K'
 		where id=$id ";
 		$query = $this->dbmgr->query($sql);
 	}
