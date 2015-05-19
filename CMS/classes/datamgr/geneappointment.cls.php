@@ -69,7 +69,7 @@
 		$report_express_no=mysql_real_escape_string($report_express_no);
 		$report_express_com=mysql_real_escape_string($report_express_com);
 
-		$sql="update dr_tb_member_gene_order set report_express_no='$report_express_no', report_express_com='$report_express_com', status='K'
+		$sql="update dr_tb_member_gene_order set report_express_no='$report_express_no', report_express_com='$report_express_com', status='G'
 		where id=$id ";
 		$query = $this->dbmgr->query($sql);
 	}
