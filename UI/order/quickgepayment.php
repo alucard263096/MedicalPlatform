@@ -20,7 +20,7 @@
   $member_id=$member["id"];
   $name=$_REQUEST["name"];
   $mobile=$_REQUEST["mobile"];
-  $mobile=$_REQUEST["address"];
+  $address=$_REQUEST["address"];
   $remark=$_REQUEST["remark"];
   $price=$_REQUEST["price"];
   $gene_id=$_REQUEST["gene_id"];
