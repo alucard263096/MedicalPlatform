@@ -51,7 +51,7 @@
 		$express_no=mysql_real_escape_string($express_no);
 		$express_com=mysql_real_escape_string($express_com);
 
-		$sql="update dr_tb_member_gene_order set express_no='$express_no',express_com='$express_com' status='K'
+		$sql="update dr_tb_member_gene_order set express_no='$express_no',express_com='$express_com', status='K'
 		where id=$id ";
 		$query = $this->dbmgr->query($sql);
 	}

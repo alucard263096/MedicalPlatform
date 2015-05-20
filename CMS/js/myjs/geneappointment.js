@@ -50,7 +50,7 @@ var UpdateGuid = function () {
 
         if (data == "SUCCESS") {
             infoDialog("操作成功");
-            $("#content_status").val("M");
+            setSelectizeValueById("content_status","M");
             ToggleButton();
         } else {
             errorDialog(data);
@@ -83,7 +83,7 @@ var SendCheckItem = function () {
 
         if (data == "SUCCESS") {
             infoDialog("操作成功");
-            $("#content_status").val("K");
+            setSelectizeValueById("content_status","K");
             ToggleButton();
         } else {
             errorDialog(data);
@@ -102,7 +102,7 @@ var ReceiveCheckItem = function () {
 
         if (data == "SUCCESS") {
             infoDialog("操作成功");
-            $("#content_status").val("R");
+            setSelectizeValueById("content_status","R");
             ToggleButton();
         } else {
             errorDialog(data);
@@ -135,7 +135,7 @@ var SendReport = function () {
 
         if (data == "SUCCESS") {
             infoDialog("操作成功");
-            $("#content_status").val("G");
+            setSelectizeValueById("content_status","G");
             ToggleButton();
         } else {
             errorDialog(data);
@@ -154,10 +154,16 @@ var Finished = function () {
 
         if (data == "SUCCESS") {
             infoDialog("操作成功");
-            $("#content_status").val("F");
+            setSelectizeValueById("content_status","F");
             ToggleButton();
         } else {
             errorDialog(data);
         }
     });
+};
+
+
+var setSelectizeValueById = function (id, value) {
+    var $select = $('#' + id).selectize();
+    $select[0].selectize.setValue(value);
 };
