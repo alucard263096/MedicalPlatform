@@ -30,6 +30,7 @@
 	$smarty->assign("doctorlist",$drlist);
 	$smarty->assign("district_condition",$districtCondition);
 	$smarty->assign("act",$action);
+	$smarty->assign("Title","选择医生");
 	$smarty->display(ROOT.'/templates/doctor/spdoctor.html');
 
   }else{
@@ -45,7 +46,8 @@
 	$doctor_list=getListIdStr($drlist,"doctor_id");
 	$districtCondition=$doctorMgr->getDistrictCondition($doctor_list);
 	$smarty->assign("district_condition",$districtCondition);
-
+	
+  $smarty->assign("Title","医生");
 	$smarty->display(ROOT.'/templates/doctor/index.html');
 
   }

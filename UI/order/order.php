@@ -20,7 +20,7 @@
 
 	$member=$_SESSION[SESSIONNAME]["Member"];
 	$smarty->assign("member",$member);
-
+	
   if($action=="vaccine"){
 	
 	$doctor_id=$_REQUEST["did"];

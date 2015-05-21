@@ -22,7 +22,7 @@ $smarty->right_delimiter="}}";
  $rep=array($CONFIG['smarty']['rootpath']=>'');
  $smarty->assign('script_path',strtr($_SERVER["PHP_SELF"],$rep));
  $smarty->assign('charset',$CONFIG['charset']);
- $smarty->assign('Title',$CONFIG['Title']);
+ $smarty->assign('WebsiteTitle',$CONFIG['Title']);
  $smarty->assign('Url',$CONFIG['URL']);
  $smarty->assign('Domain',$CONFIG['Domain']);
  $smarty->assign('uploadpath',$CONFIG['smarty']['rootpath']."/".$CONFIG['fileupload']['upload_path']);

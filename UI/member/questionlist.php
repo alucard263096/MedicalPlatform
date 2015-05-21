@@ -16,7 +16,8 @@
 
   $smarty->assign("list",$list);
   $smarty->assign("list_count",count($list));
-
+  
+	$smarty->assign("Title","我的咨询");
 
   $smarty->display(ROOT.'/templates/member/questionlist.html');
   

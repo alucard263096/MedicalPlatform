@@ -18,6 +18,7 @@
 
   $smarty->assign("list",$list);
   $smarty->assign("list_count",count($list));
+	$smarty->assign("Title","我的关注");
 
 
   $smarty->display(ROOT.'/templates/member/doctorlist.html');

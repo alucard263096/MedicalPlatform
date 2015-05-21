@@ -16,6 +16,8 @@
 
   $vaccineCategory=$vaccineMgr->getVaccineCategory();
   $smarty->assign("VaccineCategory",$vaccineCategory);
+  
+  $smarty->assign("Title","疫苗");
 
   $smarty->display(ROOT.'/templates/vaccine/index.html');
 

@@ -20,6 +20,7 @@
 	$memberMgr->readQuestion($id,$_SESSION[SESSIONNAME]["Member"]["id"]);
   }
   $smarty->assign("info",$info);
+	$smarty->assign("Title","问题详情");
   $smarty->display(ROOT.'/templates/member/question.html');
 
 ?>

@@ -1,6 +1,22 @@
 <div  data-role="header" data-position="fixed" data-tap-toggle="false">
     <div data-role="header" style="background-color: #44A5D3;">
-        <h1 style="color:snow">港医汇欢迎你</h1>
+        <div class="row">
+            <div class="col-xs-2" style="margin-top:5px;margin-left:5px;">
+                <img src="{{$rootpath}}/img/logo_t.png" />
+            </div>
+            <div class="col-xs-8 text-center" style="padding:0px;">
+                <h4 style="color:snow">
+                    {{if $Title==""}}
+                    港医汇
+                    {{else}}
+                    {{$Title}}
+                    {{/if}}
+                </h4>
+            </div>
+            <div class="col-xs-2">
+
+            </div>
+        </div>
     </div><!-- /header -->
 
     <style>

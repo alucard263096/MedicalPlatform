@@ -20,6 +20,9 @@
   //echo  $vaccine["summary"];
   $smarty->assign("info",$vaccine);
 
+  
+  $smarty->assign("Title","疫苗详情");
+
   $smarty->display(ROOT.'/templates/vaccine/detail.html');
 
 ?>

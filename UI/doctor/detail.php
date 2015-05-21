@@ -87,6 +87,8 @@
 
   $smarty->assign("standard",$standard);
 
+  $smarty->assign("Title","医生详情");
+
   if($action=="vaccine"){
 	
 	$smarty->assign("office_id",$office_id);
