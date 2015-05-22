@@ -15,6 +15,10 @@ include ROOT.'/classes/datamgr/geneappointment.cls.php';
 		exit();
 	}
 	$geneAppointmentMgr->UpdateGuid($id,$guid,$user["id"]);
+	require ROOT.'/classes/datamgr/sms.cls.php';
+	$info=$geneAppointmentMgr->GetAppointmentInfo($id);
+	$smsMgr->SendGeneOrderConfirm($info["mobile"],$info["gene_name"]);
+
 	echo "SUCCESS";
   }elseif($_REQUEST["action"]=="UPDATE_EXPRESSNO"){
 	
@@ -28,6 +32,10 @@ include ROOT.'/classes/datamgr/geneappointment.cls.php';
 	
 	$id=$_POST["id"];
 	$geneAppointmentMgr->UpdateReceive($id);
+	require ROOT.'/classes/datamgr/sms.cls.php';
+	$info=$geneAppointmentMgr->GetAppointmentInfo($id);
+	$smsMgr->SendGeneToolReceived($info["mobile"],$info["guid"]);
+
 	echo "SUCCESS";
 
   }elseif($_REQUEST["action"]=="UPDATE_REPORTEXPRESSNO"){

@@ -22,6 +22,29 @@
 	{
 		
 	}
+
+	public function GetAppointmentInfo($id){
+		
+		$sql="select main.*,gene.name gene_name,
+		case main.status
+when 'P' then '等待系统确认'
+when 'M' then '系统已确认，等待寄出采集工具'
+when 'K' then '采集工具已经寄出，等待回收标本'
+when 'R' then '标本已收到，请耐心等待报告结果'
+when 'G' then '报告已寄出，请耐心等待结果'
+when 'F' then '已完成'
+ end as message
+		  from dr_tb_member_gene_order main
+inner join (select * from dr_tb_gene a left join dr_tb_gene_lang b on a.id=b.oid and b.lang='zh-cn') gene on main.gene_id=gene.id
+inner join dr_tb_member m on main.member_id=m.id
+where 1=1 and main.id=$id ";
+		
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query); 
+		
+		return $result;
+	}
+
 	public function CheckGuidOnly($id,$guid){
 		
 		$id=mysql_real_escape_string($id);
