@@ -5,6 +5,7 @@
  * To change the template for this generated file go to
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
+ $isdisplaylogin=false;
   require '../include/common.inc.php';
   require ROOT.'/classes/paymentmgr/payment.interface.php';
   require ROOT.'/classes/datamgr/order.cls.php';
