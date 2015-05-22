@@ -61,7 +61,7 @@ class SmsMgr
 
 	private function Send($to,$arr,$templeteId){
 	Global $CONFIG;
-			 logger_mgr::logInfo("ready to send :$to");
+	logger_mgr::logInfo("ready to send :$to");
 	if($CONFIG['solution_configuration']=="debug"){
 	return true;
 	}
@@ -73,7 +73,7 @@ class SmsMgr
 		if($result->statusCode!=0) {
 			 $str= "error code :" . $result->statusCode . " ";
 			 $str.= "error msg :" . $result->statusMsg . " ";
-			 logger_mgr::logInfo("sms :$str");
+			 logger_mgr::logError("sms :$str");
 			 //echo $str;
 			 //TODO 添加错误处理逻辑
 			 return false;
@@ -84,7 +84,7 @@ class SmsMgr
 			 $str.= "dateCreated:".$smsmessage->dateCreated." ";
 			 $str.=  "smsMessageSid:".$smsmessage->smsMessageSid."";
 			 //TODO 添加成功处理逻辑
-			 logger_mgr::logInfo("sms :$str");
+			 logger_mgr::logDebug("sms :$str");
 			 //echo $str;
 			 return true;
 		 }
