@@ -43,25 +43,43 @@
 		$this->dbmgr->begin_trans();
 
 
-		$sql="select ifnull(max(id),0)+1 from dr_tb_member_gene_order";
+		$sql="select ifnull(max(id),0)+1 from dr_tb_order";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array($query); 
 		$id=$result[0];
 
 		$order_no=$this->genOrderNo("GN");
 
-		$sql="INSERT INTO `medicalplatform`.`dr_tb_member_gene_order`
-(`id`,`order_no`,`guid`,
+		$sql="INSERT INTO `medicalplatform`.`dr_tb_order`
+(`id`,`order_no`,`guid`,act,
 `member_id`,`name`,`mobile`,`address`,`remark`,
-`gene_id`,`price`,
-`status`,
+`price`,`status`,
 `created_time`,`snapshot`,
 `payment`,`payment_type`,`real_payment`,`is_submit`)
 values 
-($id,'$order_no','',
+($id,'$order_no','','gn'
 $member_id,'$name','$mobile','$address','$remark',
-$gene_id,$price,
-'P',now(),'','N','N','N','N') ";
+$price,'P',now(),'','N','N','N','N') ";
+		$query = $this->dbmgr->query($sql);
+
+		$sql="INSERT INTO `medicalplatform`.`dr_tb_order_gene`
+(`order_id`,`gene_id`)
+values 
+($id,$gene_id,$price) ";
+		$query = $this->dbmgr->query($sql);
+
+		
+		$sql="INSERT INTO `medicalplatform`.`dr_tb_order_payment`
+(`order_id`,`payment`,`payment_type`,`real_payment`,`is_submit`)
+values 
+($id,'N','N','N','N') ";
+		$query = $this->dbmgr->query($sql);
+
+		
+		$sql="INSERT INTO `medicalplatform`.`dr_tb_order_express`
+(`order_id`)
+values 
+($id) ";
 		$query = $this->dbmgr->query($sql);
 
 		$this->updateGeneBookingCount($gene_id);
@@ -72,22 +90,22 @@ $gene_id,$price,
 
 	}
 
-	public function updateGeneOrderPaymentInfo($member_id,$id,$payment_type){
+	public function updateGeneOrderPaymentInfo($id,$payment_type){
 
 		$pin_code=md5("pt".$id);
 		$payment_type=mysql_real_escape_string($payment_type);
 
-		$sql="update dr_tb_member_gene_order set trade_pin_code='$pin_code',payment_type='$payment_type',is_submit='Y'
-		where member_id=$member_id and id=$id and is_submit='N'";
+		$sql="update dr_tb_order_payment set trade_pin_code='$pin_code',payment_type='$payment_type',is_submit='Y'
+		where order_id=$id and is_submit='N'";
 		//echo $sql;
 		$query = $this->dbmgr->query($sql);
 	}
 
-	public function updateGeneAppointmentPayment($member_id,$id,$trade_no){
+	public function updateGeneAppointmentPayment($id,$trade_no){
 		$payment_type=mysql_real_escape_string($trade_no);
 
-		$sql="update dr_tb_member_gene_order set payment_time=now(),trade_no='$trade_no',payment='Y'
-		where member_id=$member_id and id=$id ";
+		$sql="update dr_tb_order_payment set payment_time=now(),trade_no='$trade_no',payment='Y'
+		where id=$id ";
 		$query = $this->dbmgr->query($sql);
 	}
 
@@ -126,17 +144,17 @@ where ovc.office_id=$office_id and ovc.doctor_id=$doctor_id and o.order_date='$o
 	public function genOrderNo($prefix){
 		
 		$d=date('Ym',time());
-		$sql="select seq from dr_order_no_gen
+		$sql="select seq from dr_tb_order_no_gen
 		where prefix='$prefix' and dateremark='$d' ";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array($query); 
 		$seq= $result[0];
 		if($seq==""){
-			$sql="insert into dr_order_no_gen (prefix,dateremark,seq) values ('$prefix','$d',2)";
+			$sql="insert into dr_tb_order_no_gen (prefix,dateremark,seq) values ('$prefix','$d',2)";
 			$query = $this->dbmgr->query($sql);
 			$seq= 1;
 		}else{
-			$sql="update dr_order_no_gen set seq=seq+1 where prefix='$prefix' and dateremark='$d' ";
+			$sql="update dr_tb_order_no_gen set seq=seq+1 where prefix='$prefix' and dateremark='$d' ";
 			$query = $this->dbmgr->query($sql);
 		}
 		return $prefix.$d.sprintf("%06d", $seq);
@@ -201,10 +219,22 @@ where ovc.office_id=$office_id and ovc.doctor_id=$doctor_id and o.order_date='$o
 
 		$order_no=$this->genOrderNo("VC");
 
-		$sql="INSERT INTO `dr_tb_member_vaccine_order`
-(`id`,`order_no`,`guid`,`member_id`,`name`,`mobile`,`email`,`idport_type`,`idport`,`order_date`,`order_time`,`vaccine_id`,`doctor_id`,`office_id`,`price`,`status`,`created_time`,`snapshot`,h_status )
+
+		$sql="INSERT INTO `dr_tb_order`
+(`id`,`order_no`,`guid`,act,
+`member_id`,`name`,`mobile`,`email`,`idport_type`,`idport`,
+`order_date`,`order_time`,`price`,
+`status`,`created_time`,`snapshot`,h_status )
 VALUES
-($id,'$order_no','$guid',$member_id,'$name','$mobile','$email','$idport_type','$idport','$order_date',$order_time,$vaccine_id,$doctor_id,$office_id,$price,'P',now(),'$snapshot','P');
+($id,'$order_no','$guid','vc',$member_id,'$name','$mobile','$email','$idport_type','$idport','$order_date',$order_time,$price,'P',now(),'$snapshot','P');
+ ";
+		$query = $this->dbmgr->query($sql);
+
+		
+		$sql="INSERT INTO `dr_tb_order_vaccine`
+(`order_id`,vaccine_id,doctor_id,office_id )
+VALUES
+($id,$vaccine_id,$doctor_id,$office_id);
  ";
 		$query = $this->dbmgr->query($sql);
 
@@ -239,14 +269,14 @@ VALUES
 
 		$this->dbmgr->begin_trans();
 
-		$sql="select guid from dr_tb_member_vaccine_order where id=$id ";
+		$sql="select guid from dr_tb_order where id=$id ";
 			$query = $this->dbmgr->query($sql);
 			$result = $this->dbmgr->fetch_array($query);
 		$guid=$result["guid"];
 
 		//$guid=guid();
 
-		$sql="update `dr_tb_member_vaccine_order` set
+		$sql="update `dr_tb_order` set
 		`name`='$name',
 		`mobile`='$mobile',
 		`email`='$email',
@@ -254,10 +284,16 @@ VALUES
 		`idport`='$idport',
 		`order_date`='$order_date',
 		`order_time`='$order_time',
-		`office_id`='$office_id',
 		`price`='$price',
 		`status`='P'
 		where id=$id and member_id=$member_id
+		 ";
+
+		$query = $this->dbmgr->query($sql);
+
+		$sql="update `dr_tb_order_vaccine` set
+		`office_id`='$office_id'
+		where order_id=$id 
 		 ";
 
 		$query = $this->dbmgr->query($sql);
@@ -346,10 +382,11 @@ where gene_id=$gene_id;
 		$member_id=mysql_real_escape_string($member_id);
 		$sql="select * from (";
 
-		$sql.="select main.id,'vc' act,'vaccine' image_group,vaccine.name,vaccine.image image,doctor.name doctor,office.address message,
+		$sql.="select main.id,'vaccine' image_group,vaccine.name,vaccine.image image,doctor.name doctor,office.address message,
 		main.order_date,main.status,main.created_time,'' payment,
 		(TO_DAYS(NOW()) - TO_DAYS(main.order_date)) passdate 
-		 from dr_tb_member_vaccine_order main
+		 from (select * from dr_tb_order o
+		 inner join dr_tb_order_vaccine os on main.id=os.order and main.act='vc') main
 inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='$SysLangCode') vaccine on main.vaccine_id=vaccine.id
 inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='$SysLangCode') doctor on main.doctor_id=doctor.id
 inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='$SysLangCode') office on main.office_id=office.id
@@ -359,7 +396,7 @@ where main.member_id=$member_id ";
 
 		$sql.=" union ";
 
-		$sql.="select main.id,'gn' act,'gene' image_group,gene.name,gene.image image,'' doctor,
+		$sql.="select main.id,'gene' image_group,gene.name,gene.image image,'' doctor,
 		case main.status
 when 'P' then '等待系统确认'
 when 'M' then '系统已确认，等待寄出采集工具'
@@ -370,7 +407,8 @@ when 'F' then '已完成'
  end as message,
 		'' order_date,main.status,main.created_time,main.payment,
 		0 passdate 
-		 from dr_tb_member_gene_order main
+		 from (select * from dr_tb_order o
+		 inner join dr_tb_order_gene os on main.id=os.order and main.act='gn') main
 inner join (select * from dr_tb_gene a left join dr_tb_gene_lang b on a.id=b.oid and b.lang='$SysLangCode') gene on main.gene_id=gene.id
 inner join dr_tb_member m on main.member_id=m.id
 where main.member_id=$member_id ";
@@ -385,7 +423,7 @@ where main.member_id=$member_id ";
 	}
 	
 
-	public function getGeneAppointment($member_id,$id,$order_no=""){
+	public function getGeneAppointment($id,$order_no=""){
 		Global $SysLangCode;
 
 		$member_id=mysql_real_escape_string($member_id);
@@ -400,7 +438,8 @@ when 'R' then '标本已收到，请耐心等待报告结果'
 when 'G' then '报告已寄出，请耐心等待结果'
 when 'F' then '已完成'
  end as message
-		  from dr_tb_member_gene_order main
+		  from (select * from dr_tb_order o
+		 inner join dr_tb_order_gene os on main.id=os.order and main.act='gn') main
 inner join (select * from dr_tb_gene a left join dr_tb_gene_lang b on a.id=b.oid and b.lang='$SysLangCode') gene on main.gene_id=gene.id
 inner join dr_tb_member m on main.member_id=m.id
 where 1=1 ";
@@ -423,7 +462,8 @@ where 1=1 ";
 		$id=mysql_real_escape_string($id);
 		$sql="select main.*,t.name order_rtime,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
 		TO_DAYS(NOW()) - TO_DAYS(main.order_date) passdate
-		  from dr_tb_member_vaccine_order main
+		  from (select * from dr_tb_order o
+		 inner join dr_tb_order_vaccine os on main.id=os.order and main.act='vc') main
 inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='$SysLangCode') vaccine on main.vaccine_id=vaccine.id
 inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='$SysLangCode') doctor on main.doctor_id=doctor.id
 inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='$SysLangCode') office on main.office_id=office.id
@@ -441,7 +481,8 @@ where main.member_id=$member_id and main.id=$id";
 		Global $SysLangCode;
 		$sql="select a.id, a.idport_type,a.idport, a.order_no,a.price, o.name office_name,a.guid,a.order_date,t.name order_time,a.name clientname,a.mobile clientmobile 
 		,TO_DAYS(NOW()) - TO_DAYS(a.order_date) passdate
-		from dr_tb_member_vaccine_order a
+		from (select * from dr_tb_order o
+		 inner join dr_tb_order_vaccine os on main.id=os.order and main.act='vc') a
 inner join dr_tb_office_lang o on a.office_id=o.oid and o.lang='$SysLangCode'
 inner join dr_tb_time t on a.order_time=t.id
 where a.member_id=$member_id
@@ -461,7 +502,7 @@ order by created_time desc";
 		$id=mysql_real_escape_string($id);
 		$sql="select *
 		,TO_DAYS(NOW()) - TO_DAYS(order_date) passdate
-		from dr_tb_member_vaccine_order 
+		from dr_tb_order 
 where id=$id ";
 
 		$query = $this->dbmgr->query($sql);

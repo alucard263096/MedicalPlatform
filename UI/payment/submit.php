@@ -19,9 +19,9 @@
 	
   require ROOT.'/classes/paymentmgr/alipay.cls.php';
 
-	$orderMgr->updateGeneOrderPaymentInfo($member["id"],$id,$type);
+	$orderMgr->updateGeneOrderPaymentInfo($id,$type);
 	
-	$info=$orderMgr->getGeneAppointment($member["id"],$id);
+	$info=$orderMgr->getGeneAppointment($id);
 	$url=$CONFIG['URL']."/member/booking.php?act=gn&id=".$id;
 	//if($info["is_submit"]=="Y"){
 	//	ParentRedirect($url);
