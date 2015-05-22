@@ -12,6 +12,7 @@
   $geneList=$geneMgr->getGeneList();
   //print_r($vaccineList);
   $smarty->assign("GeneList",$geneList);
+  $smarty->assign("Title","基因");
 
   $smarty->display(ROOT.'/templates/gene/index.html');
 

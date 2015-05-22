@@ -12,6 +12,7 @@
   $info=$geneMgr->getGene($_REQUEST["id"]);
   //echo  $vaccine["summary"];
   $smarty->assign("info",$info);
+	$smarty->assign("Title","基因详情");
 
   $smarty->display(ROOT.'/templates/gene/detail.html');
 
