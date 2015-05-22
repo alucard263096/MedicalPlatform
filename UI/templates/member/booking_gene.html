@@ -26,13 +26,13 @@
                 <h4 id="guidcode">{{$info.message}}</h4>
                 <div  class="row"><div class="grayfont col-xs-12">订单详情</div></div>
                 <hr style="margin:0px;" />
-                <div style="padding-top:12px" class="row bsmall"><div class="col-xs-5 text-left">订单价格：</div><div class="col-xs-6 text-left"><strong>{{$info.price}}</strong> 元</div></div>
-                <div style="padding-top:12px" class="row bsmall"><div class="col-xs-5 text-left">收件人姓名：</div><div class="col-xs-6 text-left">{{$info.name}}</div></div>
-                <div style="padding-top:5px" class="row bsmall"><div class="col-xs-5 text-left">收件人电话：</div><div class="col-xs-6 text-left">{{$info.mobile}}</div></div>
-                <div style="padding-top:5px" class="row bsmall"><div class="col-xs-5 text-left">收件人地址：</div><div class="col-xs-6 text-left">{{$info.address}}</div></div>
-                <div style="padding-top:5px" class="row bsmall"><div class="col-xs-5 text-left">留言：</div><div class="col-xs-6 text-left">{{$info.remark}}</div></div>
-                <div style="padding-top:5px" class="row bsmall express_report" com="{{$info.express_com}}" express="{{$info.express_no}}"><div class="col-xs-5 text-left">物流状态：</div><div class="col-xs-6 text-left"> </div></div>
-                <div style="padding-top:5px" class="row bsmall express_report" com="{{$info.report_express_com}}" express="{{$info.report_express_no}}"><div class="col-xs-5 text-left">报告物流状态：</div><div class="col-xs-6 text-left"> </div></div>
+                <div style="padding-top:12px" class="row bsmall"><div class="col-xs-5 text-left">订单价格：</div><div class="col-xs-6 text-left" style="padding-right:0px;"><strong>{{$info.price}}</strong> 元</div></div>
+                <div style="padding-top:12px" class="row bsmall"><div class="col-xs-5 text-left">收件人姓名：</div><div class="col-xs-6 text-left" style="padding-right:0px;">{{$info.name}}</div></div>
+                <div style="padding-top:5px" class="row bsmall"><div class="col-xs-5 text-left">收件人电话：</div><div class="col-xs-6 text-left" style="padding-right:0px;">{{$info.mobile}}</div></div>
+                <div style="padding-top:5px" class="row bsmall"><div class="col-xs-5 text-left">收件人地址：</div><div class="col-xs-6 text-left" style="padding-right:0px;">{{$info.address}}</div></div>
+                <div style="padding-top:5px" class="row bsmall"><div class="col-xs-5 text-left">留言：</div><div class="col-xs-6 text-left" style="padding-right:0px;">{{$info.remark}}</div></div>
+                <div style="padding-top:5px" class="row bsmall express_report" com="{{$info.express_com}}" express="{{$info.express_no}}"><div class="col-xs-5 text-left">物流状态：</div><div class="col-xs-6 text-left" style="padding-right:0px;"> </div></div>
+                <div style="padding-top:5px" class="row bsmall express_report" com="{{$info.report_express_com}}" express="{{$info.report_express_no}}"><div class="col-xs-5 text-left">报告物流状态：</div><div class="col-xs-6 text-left" style="padding-right:0px;"> </div></div>
             </div>
         </div>
         {{if $info.status=='P' and $info.payment=="N" }}
