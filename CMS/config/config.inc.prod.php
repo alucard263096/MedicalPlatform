@@ -10,7 +10,7 @@ $CONFIG["frontendurl"]="http://www.myhkdoc.com";
 $CONFIG["SessionName"]="FooterCMS";
 
 $CONFIG['smarty']['rootpath']		= '/CMS'; 
-$CONFIG['solution_configuration']='debug';
+$CONFIG['solution_configuration']='prod';
 $CONFIG['server']		= 'windows';   //windows or linux
 
 #[Smarty config]
