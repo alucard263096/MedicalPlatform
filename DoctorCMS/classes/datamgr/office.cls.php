@@ -58,15 +58,16 @@
 		$doctor_id=mysql_real_escape_string($doctor_id);
 		$start_date=mysql_real_escape_string($start_date);
 		$end_date=mysql_real_escape_string($end_date);
-		$sql="select main.*,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
+		$sql="select main.*,ovc.*,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
 		t.name order_rtime,t.start_time,t.end_time
-		 from dr_tb_member_vaccine_order main
-inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='$SysLangCode') doctor on main.doctor_id=doctor.id
-inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='$SysLangCode') office on main.office_id=office.id
-inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='$SysLangCode') vaccine on main.vaccine_id=vaccine.id
+from dr_tb_order main
+inner join dr_tb_order_vaccine ovc on main.id=ovc.order_id
+inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='$SysLangCode') doctor on ovc.doctor_id=doctor.id
+inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='$SysLangCode') office on ovc.office_id=office.id
+inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='$SysLangCode') vaccine on ovc.vaccine_id=vaccine.id
 inner join dr_tb_member m on main.member_id=m.id
 inner join dr_tb_time t on main.order_time=t.id
-where main.office_id=$office_id and main.doctor_id=$doctor_id ";
+where ovc.office_id=$office_id and ovc.doctor_id=$doctor_id ";
 if($start_date!="" && $end_date!=""){
  $sql=$sql." and main.order_date>='$start_date' and main.order_date<='$end_date' ";
  }else{
