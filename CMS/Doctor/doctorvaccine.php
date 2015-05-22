@@ -1,13 +1,11 @@
 <?php
   require '../include/common.inc.php';
   include ROOT.'/include/init.inc.php';
-  require ROOT.'/classes/modelmgr/DoctorXmlModel.cls.php';
+  require ROOT.'/classes/modelmgr/DoctorVaccineXmlModel.cls.php';
   $action=$_REQUEST["action"];
-  $model=new DoctorXmlModel("doctor.php");
+  $model=new DoctorVaccineXmlModel("doctorvaccine.php");
   
-  $smarty->assign("MyModule","doctor");
-  
-  
-  $model->DefaultShow($smarty,$dbmgr,$action,"doctor",$_REQUEST);
+	$smarty->assign("MyModule","doctor");
 
+  $model->DefaultShow($smarty,$dbmgr,$action,"doctorvaccine",$_REQUEST);
 ?>
