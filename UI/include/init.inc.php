@@ -1,7 +1,7 @@
 <?php
 
 //login redirect
-if(!isset($_SESSION[SESSIONNAME]["Welcome"]))
+if(!isset($_SESSION[SESSIONNAME]["Welcome"])&&$isdisplaylogin!=false)
 {
 	$_SESSION[SESSIONNAME]["Welcome"]=1;
 	$smarty->assign("request_url","http://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]);

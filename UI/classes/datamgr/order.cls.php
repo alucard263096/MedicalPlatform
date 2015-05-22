@@ -398,7 +398,7 @@ when 'F' then '已完成'
 		  from dr_tb_member_gene_order main
 inner join (select * from dr_tb_gene a left join dr_tb_gene_lang b on a.id=b.oid and b.lang='$SysLangCode') gene on main.gene_id=gene.id
 inner join dr_tb_member m on main.member_id=m.id
-where main.member_id=$member_id ";
+where 1=1 ";
 		if($order_no==""){
 			$sql.=" and main.id=$id";
 		}else{

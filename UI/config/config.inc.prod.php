@@ -12,7 +12,7 @@ $CONFIG["SessionName"]="FooterCMSUI";
 $CONFIG["SupportMultiLanguage"]=true;
 
 $CONFIG['smarty']['rootpath']		= 'http://www.myhkdoc.com'; 
-$CONFIG['solution_configuration']='debug';
+$CONFIG['solution_configuration']='prod';
 $CONFIG['server']		= 'windows';   //windows or linux
 
 #[Smarty config]
