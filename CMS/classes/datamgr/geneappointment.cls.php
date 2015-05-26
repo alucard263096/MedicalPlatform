@@ -35,7 +35,7 @@ when 'G' then '报告已寄出，请耐心等待结果'
 when 'F' then '已完成'
  end as message
 		  from (select * from dr_tb_order o
-		 inner join dr_tb_order_gene os on o.id=os.order_id and o.act='ge')  main
+		 inner join dr_tb_order_gene os on o.id=os.order_id and o.act='gn')  main
 inner join (select * from dr_tb_gene a left join dr_tb_gene_lang b on a.id=b.oid and b.lang='zh-cn') gene on main.gene_id=gene.id
 inner join dr_tb_member m on main.member_id=m.id
 where 1=1 and main.id=$id ";
