@@ -23,6 +23,14 @@ function ParentRedirect($url)
 	echo "</script>";
 	exit();
 }
+function ArrayToString($arr){
+	$str="";
+	foreach($arr as $key=>$value){
+		$str.="<$key:$value>
+		";
+	}
+	return $str;
+}
 function WindowRedirect($url)
 {
 	//Header("Location: $url");

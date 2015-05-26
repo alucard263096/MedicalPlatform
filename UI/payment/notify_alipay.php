@@ -11,13 +11,15 @@
   require ROOT.'/classes/datamgr/order.cls.php';
   require ROOT.'/classes/paymentmgr/alipay.cls.php';
 
-
+  logger_mgr::logInfo("notify alipay start :".$_SERVER["REQUEST_URI"]);
+   logger_mgr::logInfo("notify alipay parameter".ArrayToString($_REQUEST));
   $alipay=new AlipayMgr();
   $ret=$alipay->notify();
+  
+   logger_mgr::logInfo("notify alipay verify return ".ArrayToString($ret));
 
-  $info=$orderMgr->getGeneAppointment(0,$ret["out_trade_no"]);
-  if($ret["result"]=="SUCCESS"){
-	$orderMgr->updateGeneAppointmentPayment($info["id"],$ret["trade_no"]);
-  }
-
+	  if($ret["result"]=="SUCCESS"){
+	  $info=$orderMgr->getGeneAppointment(0,$ret["out_trade_no"]);
+		$orderMgr->updateGeneAppointmentPayment($info["id"],$ret["trade_no"]);
+	  }
 ?>
