@@ -147,7 +147,7 @@ exit;
 				$ret["trade_no"]= $trade_no;
 
 
-				if($trade_status == 'TRADE_FINISHED'
+				if($trade_status == 'TRADE_SUCCESS'
 				||$trade_status == 'TRADE_FINISHED'){
 					$ret["result"]="SUCCESS";
 				}else{
