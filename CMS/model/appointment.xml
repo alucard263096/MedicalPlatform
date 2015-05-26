@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
   <name>预约</name>
-  <tablename>dr_tb_member_vaccine_order</tablename>
-  <searchcondition>1=1</searchcondition>
+  <tablename>dr_v_order</tablename>
+  <searchcondition>act='vc'</searchcondition>
   <fields>
     <field>
       <name>订单编号</name>
@@ -184,4 +184,23 @@
       <notnull>1</notnull>
     </field>
   </fields>
+  <options>
+    <option>
+      <name>处理</name>
+      <id>btnHandle</id>
+      <type>function</type>
+      <function>Handle()</function>
+      <detail>1</detail>
+    </option>
+    <option>null
+    </option>
+  </options>
+  <javascripts>
+    <javascript>
+      <filename>appointment.js</filename>
+      <detail>1</detail>
+    </javascript>
+    <javascript>
+    </javascript>
+  </javascripts>
 </root>

@@ -4,8 +4,8 @@
   <name_zh-cn>预约</name_zh-cn>
   <name_zh-hk>预约</name_zh-hk>
   <name_en-us>My Appointment</name_en-us>
-  <tablename>dr_tb_member_vaccine_order</tablename>
-  <searchcondition>1=1</searchcondition>
+  <tablename>dr_v_order</tablename>
+  <searchcondition>act='vc'</searchcondition>
   <fields>
     <field>
       <name>订单编号</name>

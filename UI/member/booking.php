@@ -29,7 +29,7 @@
 	  $smarty->assign("info",$info);
 	  $smarty->display(ROOT.'/templates/member/booking_vaccine.html');
   }else{
-	  $info=$orderMgr->getGeneAppointment($_SESSION[SESSIONNAME]["Member"]["id"],$id);
+	  $info=$orderMgr->getGeneAppointment($id);
   
 	  $smarty->assign("info",$info);
 	  $smarty->display(ROOT.'/templates/member/booking_gene.html');

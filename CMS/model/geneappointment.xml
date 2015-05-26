@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
   <name>基因检测</name>
-  <tablename>dr_tb_member_gene_order</tablename>
-  <searchcondition>1=1</searchcondition>
+  <tablename>dr_v_order</tablename>
+  <searchcondition>act='gn'</searchcondition>
   <fields>
     <field>
       <name>订单编号</name>

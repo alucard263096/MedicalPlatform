@@ -54,18 +54,17 @@
 (`id`,`order_no`,`guid`,act,
 `member_id`,`name`,`mobile`,`address`,`remark`,
 `price`,`status`,
-`created_time`,`snapshot`,
-`payment`,`payment_type`,`real_payment`,`is_submit`)
+`created_time`,`snapshot`)
 values 
-($id,'$order_no','','gn'
+($id,'$order_no','','gn',
 $member_id,'$name','$mobile','$address','$remark',
-$price,'P',now(),'','N','N','N','N') ";
+$price,'P',now(),'') ";
 		$query = $this->dbmgr->query($sql);
 
 		$sql="INSERT INTO `medicalplatform`.`dr_tb_order_gene`
 (`order_id`,`gene_id`)
 values 
-($id,$gene_id,$price) ";
+($id,$gene_id) ";
 		$query = $this->dbmgr->query($sql);
 
 		
@@ -222,11 +221,11 @@ where ovc.office_id=$office_id and ovc.doctor_id=$doctor_id and o.order_date='$o
 
 		$sql="INSERT INTO `dr_tb_order`
 (`id`,`order_no`,`guid`,act,
-`member_id`,`name`,`mobile`,`email`,`idport_type`,`idport`,
+`member_id`,`name`,`mobile`,`idport_type`,`idport`,
 `order_date`,`order_time`,`price`,
 `status`,`created_time`,`snapshot`,h_status )
 VALUES
-($id,'$order_no','$guid','vc',$member_id,'$name','$mobile','$email','$idport_type','$idport','$order_date',$order_time,$price,'P',now(),'$snapshot','P');
+($id,'$order_no','$guid','vc',$member_id,'$name','$mobile','$idport_type','$idport','$order_date',$order_time,$price,'P',now(),'$snapshot','P');
  ";
 		$query = $this->dbmgr->query($sql);
 
@@ -279,7 +278,6 @@ VALUES
 		$sql="update `dr_tb_order` set
 		`name`='$name',
 		`mobile`='$mobile',
-		`email`='$email',
 		`idport_type`='$idport_type',
 		`idport`='$idport',
 		`order_date`='$order_date',
@@ -382,11 +380,11 @@ where gene_id=$gene_id;
 		$member_id=mysql_real_escape_string($member_id);
 		$sql="select * from (";
 
-		$sql.="select main.id,'vaccine' image_group,vaccine.name,vaccine.image image,doctor.name doctor,office.address message,
+		$sql.="select main.act,main.id,'vaccine' image_group,vaccine.name,vaccine.image image,doctor.name doctor,office.address message,
 		main.order_date,main.status,main.created_time,'' payment,
 		(TO_DAYS(NOW()) - TO_DAYS(main.order_date)) passdate 
 		 from (select * from dr_tb_order o
-		 inner join dr_tb_order_vaccine os on main.id=os.order and main.act='vc') main
+		 inner join dr_tb_order_vaccine os on o.id=os.order_id and o.act='vc') main
 inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='$SysLangCode') vaccine on main.vaccine_id=vaccine.id
 inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='$SysLangCode') doctor on main.doctor_id=doctor.id
 inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='$SysLangCode') office on main.office_id=office.id
@@ -396,7 +394,7 @@ where main.member_id=$member_id ";
 
 		$sql.=" union ";
 
-		$sql.="select main.id,'gene' image_group,gene.name,gene.image image,'' doctor,
+		$sql.="select main.act,main.id,'gene' image_group,gene.name,gene.image image,'' doctor,
 		case main.status
 when 'P' then '等待系统确认'
 when 'M' then '系统已确认，等待寄出采集工具'
@@ -407,8 +405,9 @@ when 'F' then '已完成'
  end as message,
 		'' order_date,main.status,main.created_time,main.payment,
 		0 passdate 
-		 from (select * from dr_tb_order o
-		 inner join dr_tb_order_gene os on main.id=os.order and main.act='gn') main
+		 from (select o.*,op.*,os.gene_id from dr_tb_order o
+		 inner join dr_tb_order_payment op on o.id=op.order_id and o.act='gn'
+		 inner join dr_tb_order_gene os on o.id=os.order_id and o.act='gn') main
 inner join (select * from dr_tb_gene a left join dr_tb_gene_lang b on a.id=b.oid and b.lang='$SysLangCode') gene on main.gene_id=gene.id
 inner join dr_tb_member m on main.member_id=m.id
 where main.member_id=$member_id ";
@@ -438,8 +437,9 @@ when 'R' then '标本已收到，请耐心等待报告结果'
 when 'G' then '报告已寄出，请耐心等待结果'
 when 'F' then '已完成'
  end as message
-		  from (select * from dr_tb_order o
-		 inner join dr_tb_order_gene os on main.id=os.order and main.act='gn') main
+		  from (select o.*,op.*,os.gene_id from dr_tb_order o
+		 inner join dr_tb_order_payment op on o.id=op.order_id and o.act='gn'
+		 inner join dr_tb_order_gene os on o.id=os.order_id and o.act='gn') main
 inner join (select * from dr_tb_gene a left join dr_tb_gene_lang b on a.id=b.oid and b.lang='$SysLangCode') gene on main.gene_id=gene.id
 inner join dr_tb_member m on main.member_id=m.id
 where 1=1 ";
@@ -463,7 +463,7 @@ where 1=1 ";
 		$sql="select main.*,t.name order_rtime,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
 		TO_DAYS(NOW()) - TO_DAYS(main.order_date) passdate
 		  from (select * from dr_tb_order o
-		 inner join dr_tb_order_vaccine os on main.id=os.order and main.act='vc') main
+		 inner join dr_tb_order_vaccine os on o.id=os.order_id and o.act='vc') main
 inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='$SysLangCode') vaccine on main.vaccine_id=vaccine.id
 inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='$SysLangCode') doctor on main.doctor_id=doctor.id
 inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='$SysLangCode') office on main.office_id=office.id
@@ -482,7 +482,7 @@ where main.member_id=$member_id and main.id=$id";
 		$sql="select a.id, a.idport_type,a.idport, a.order_no,a.price, o.name office_name,a.guid,a.order_date,t.name order_time,a.name clientname,a.mobile clientmobile 
 		,TO_DAYS(NOW()) - TO_DAYS(a.order_date) passdate
 		from (select * from dr_tb_order o
-		 inner join dr_tb_order_vaccine os on main.id=os.order and main.act='vc') a
+		 inner join dr_tb_order_vaccine os on o.id=os.order_id and o.act='vc') a
 inner join dr_tb_office_lang o on a.office_id=o.oid and o.lang='$SysLangCode'
 inner join dr_tb_time t on a.order_time=t.id
 where a.member_id=$member_id
@@ -502,7 +502,7 @@ order by created_time desc";
 		$id=mysql_real_escape_string($id);
 		$sql="select *
 		,TO_DAYS(NOW()) - TO_DAYS(order_date) passdate
-		from dr_tb_order 
+		from dr_v_order
 where id=$id ";
 
 		$query = $this->dbmgr->query($sql);
