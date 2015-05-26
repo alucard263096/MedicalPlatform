@@ -14,6 +14,8 @@
 
   $alipay=new AlipayMgr();
   $ret=$alipay->notify();
+  print_r($_GET);
+  print_r($ret);
 
   $info=$orderMgr->getGeneAppointment(0,$ret["out_trade_no"]);
   if($ret["result"]=="SUCCESS"){

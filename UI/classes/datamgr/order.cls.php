@@ -101,10 +101,10 @@ values
 	}
 
 	public function updateGeneAppointmentPayment($id,$trade_no){
-		$payment_type=mysql_real_escape_string($trade_no);
+		$trade_no=mysql_real_escape_string($trade_no);
 
 		$sql="update dr_tb_order_payment set payment_time=now(),trade_no='$trade_no',payment='Y'
-		where id=$id ";
+		where order_id=$id ";
 		$query = $this->dbmgr->query($sql);
 	}
 
