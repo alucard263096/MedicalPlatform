@@ -19,9 +19,9 @@
 	WindowRedirect($CONFIG['URL']."/member/bookinglist.php");
   }
 
-  $info=$orderMgr->getGeneAppointment($member["id"],0,$ret["out_trade_no"]);
+  $info=$orderMgr->getGeneAppointment(0,$ret["out_trade_no"]);
   if($ret["result"]=="success"){
-	$orderMgr->updateGeneAppointmentPayment($member["id"],$info["id"],$ret["trade_no"]);
+	$orderMgr->updateGeneAppointmentPayment($info["id"],$ret["trade_no"]);
   }
   
   WindowRedirect($CONFIG['URL']."/member/booking.php?act=gn&id=".$info["id"]);
