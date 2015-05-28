@@ -62,6 +62,23 @@
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
             },
+            defaultView:"agendaWeek",
+            allDaySlot:false,
+            selectable: true,
+            selectHelper: true,
+            select: function(start, end) {
+                var title = prompt('Event Title:');
+                var eventData;
+                if (title) {
+                    eventData = {
+                        title: title,
+                        start: start,
+                        end: end
+                    };
+                    $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+                }
+                $('#calendar').fullCalendar('unselect');
+            },
             eventLimit: true, // allow "more" link when too many events
             eventClick: function(calEvent, jsEvent, view) {
                 $("#cb_order_no").text(calEvent.order_no);
@@ -123,6 +140,25 @@
 				    {{if $rs.status=='F'}},color: '#257e4a'{{elseif $rs.status=='C'}},color: '#C75F15'{{/if}}
 				}
             {{/foreach}}
+                {{foreach from=$workday.worktime item=rs}}
+                ,
+				{
+				    start: '{{$rs.date}}T{{$rs.start_time}}',
+                    end: '{{$rs.date}}T{{$rs.end_time}}',
+				    overlap: false,
+				    rendering: 'background',
+				    color: 'green'
+				}
+				{{/foreach}}
+				{{foreach from=$workday.workday item=rs}}
+                ,
+				{
+				    start: '{{$rs.date}}',
+                    end: '{{$rs.date}}',
+				    overlap: false,
+				    rendering: 'background',
+                    color: 'green'
+				}				{{/foreach}}
             ]
         });
 

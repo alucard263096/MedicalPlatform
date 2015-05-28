@@ -11,7 +11,8 @@
 		echo "SUCCESS";
 		exit;
 	}
-
+	
+	$workdayTime=$officeMgr->getWorkDayTimeList($office_id,$SysUser["doctor_id"]);
 
 
 	$list=$officeMgr->getAppointmentList($office_id,$SysUser["doctor_id"]);
@@ -19,6 +20,7 @@
 	$smarty->assign("MyModule","appointment");
 	$smarty->assign("MyMenuId","agenda_$office_id");
 	$smarty->assign("eventlist",$list);
+	$smarty->assign("workday",$workdayTime);
 	$smarty->display(ROOT.'/templates/appointment/agenda.html');
 
 

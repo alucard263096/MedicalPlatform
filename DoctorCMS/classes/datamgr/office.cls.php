@@ -81,7 +81,62 @@ if($start_date!="" && $end_date!=""){
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
 
+		
+
 		return $result;
+	}
+
+	public function getWorkDayTimeList($office_id,$doctor_id){
+		Global $SysLangCode;
+		$id=mysql_real_escape_string($id);
+		$sql="select * from dr_tb_office_openhour 
+	where office_id=$office_id and doctor_id=$doctor_id ";
+	
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query);
+
+		
+		$sql="select * from dr_tb_time ";
+		$query = $this->dbmgr->query($sql);
+		$timetable = $this->dbmgr->fetch_array_all($query);
+
+		$today=date("Y-m-d");
+		//echo $today;
+		$today_time = strtotime($today);
+		$lastday_time=strtotime('+1 Month',$today_time);
+		$lastday=date('Y-m-d',$lastday_time);
+		//echo $lastday;
+
+		$workArr=array();
+		$workTimeArr=array();
+		$curdate=$today;
+		$curdate_time=$today_time;
+		while($curdate_time<=$lastday_time){
+			$dayweek=date("w",$curdate_time);
+			$meet_day=$result["meet_day".$dayweek];
+
+			if($meet_day!=""){
+				if(count($workArr)==0||$workArr[count($workArr)-1]!=$curdate){
+					$workArr[]=$curdate;
+				}
+				$meettime=explode(",",$meet_day);
+				foreach($meettime as $val){
+					$tarr=array();
+					$startdate=$timetable[$val-1]["start_time"];
+					$enddate=$timetable[$val-1]["end_time"];
+					$tarr["date"]=$curdate;
+					$tarr["start_time"]=$startdate;
+					$tarr["end_time"]=$enddate;
+
+					$workTimeArr[]=$tarr;
+				}
+			}
+			$curdate_time+=24*60*60;
+			$curdate=date("Y-m-d",$curdate_time);
+		}
+		$ret["workday"]=$workArr;
+		$ret["worktime"]=$workTimeArr;
+		return $ret;
 	}
  }
  

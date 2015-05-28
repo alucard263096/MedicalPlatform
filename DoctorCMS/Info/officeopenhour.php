@@ -13,14 +13,18 @@
 	$result=$officeMgr->getOfficeOpenHour($_REQUEST["primary_id"]);
 	  if($result["doctor_id"]!=$SysUser["doctor_id"]){
 		echo "hack";
+		exit;
 	  }
   }else{
 	$action="edit";
     $_REQUEST["id"]=base64_decode($_REQUEST["id"]);
-	
 	  $result=$officeMgr->getOfficeOpenHour($_REQUEST["id"]);
+	  //echo $result["doctor_id"];
+	  //echo "==";
+	  //echo $SysUser["doctor_id"];
 		  if($result["doctor_id"]!=$SysUser["doctor_id"]){
 			echo "hack";
+		exit;
 		  }
 	  $model->XmlData["name"]=$result["office_name"].$SysLang["info"]["openhour"];
   }

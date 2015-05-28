@@ -44,7 +44,7 @@ $MenuArray=json_decode(json_encode((array) simplexml_load_string($str)), true);
 					$arr=Array();
 					$arr["id"]="officeopenhour_".$result[$i]["office_id"]."_add";
 					$arr["name"]=$result[$i]["office_name"].$SysLang["info"]["openhour"];
-					$arr["url"]="/Info/officeopenhour.php?id=".base64_encode($result[$i]["office_id"]);
+					$arr["url"]="/Info/officeopenhour.php?id=".base64_encode($result[$i]["id"]);
 
 					$MenuArray["mainmenus"]["mainmenu"][$j]["submenus"]["submenu"][]=$arr;
 			}
