@@ -13,7 +13,7 @@
 
   $act=$_GET["act"];
   $id=$_GET["id"];
-  $type=$_GET["type"];
+  $type=$_GET["type"]; 
 
   if($act=="gn"&&$type=="ALIPAY"){
 	

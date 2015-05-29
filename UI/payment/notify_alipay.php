@@ -7,7 +7,7 @@
  */
  $isdisplaylogin=false;
   require '../include/common.inc.php';
-  require ROOT.'/classes/paymentmgr/payment.interface.php';
+  require ROOT.'/classes/paymentmgr/payment.interface.php'; 
   require ROOT.'/classes/datamgr/order.cls.php';
   require ROOT.'/classes/paymentmgr/alipay.cls.php';
 

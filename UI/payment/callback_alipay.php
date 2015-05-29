@@ -12,7 +12,7 @@
 
   require ROOT.'/include/login.inc.php';
   $member=$_SESSION[SESSIONNAME]["Member"];
-
+   
   $alipay=new AlipayMgr();
   $ret=$alipay->callback();
   if($ret["out_trade_no"]==""){
