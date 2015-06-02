@@ -66,18 +66,20 @@
             allDaySlot:false,
             selectable: true,
             selectHelper: true,
-            select: function(start, end) {
-                var title = prompt('Event Title:');
-                var eventData;
-                if (title) {
-                    eventData = {
-                        title: title,
-                        start: start,
-                        end: end
-                    };
-                    $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+            select: function(start, end, jsEvent, view) {
+                if(view.name!="month"){
+                    var title = prompt('Event Title:');
+                    var eventData;
+                    if (title) {
+                        eventData = {
+                            title: title,
+                            start: start,
+                            end: end
+                        };
+                        $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+                    }
+                    $('#calendar').fullCalendar('unselect');
                 }
-                $('#calendar').fullCalendar('unselect');
             },
             eventLimit: true, // allow "more" link when too many events
             eventClick: function(calEvent, jsEvent, view) {

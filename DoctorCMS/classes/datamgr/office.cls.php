@@ -121,14 +121,29 @@ if($start_date!="" && $end_date!=""){
 				}
 				$meettime=explode(",",$meet_day);
 				foreach($meettime as $val){
-					$tarr=array();
 					$startdate=$timetable[$val-1]["start_time"];
+					$startval=$val;
 					$enddate=$timetable[$val-1]["end_time"];
-					$tarr["date"]=$curdate;
-					$tarr["start_time"]=$startdate;
-					$tarr["end_time"]=$enddate;
+					$endval=$val;
 
-					$workTimeArr[]=$tarr;
+					$lastcount=count($workTimeArr)-1;
+					if($lastcount>=0
+					&&$workTimeArr[$lastcount]["date"]==$curdate
+					&&$workTimeArr[$lastcount]["end_time_val"]==$val-1){
+
+						$workTimeArr[$lastcount]["end_time"]=$enddate;
+						$workTimeArr[$lastcount]["end_time_val"]=$endval;
+						
+					}else{
+						$tarr=array();
+						$tarr["date"]=$curdate;
+						$tarr["start_time"]=$startdate;
+						$tarr["end_time"]=$enddate;
+						$tarr["start_time_val"]=$startval;
+						$tarr["end_time_val"]=$endval;
+
+						$workTimeArr[]=$tarr;
+					}
 				}
 			}
 			$curdate_time+=24*60*60;
