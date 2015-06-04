@@ -51,6 +51,22 @@
 </div>
 
 
+<div id="worktype_box" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="worktype_boxtitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="worktype_boxboxtitle" class="modal-title">{{$SysLang.appointment.datespecialtype}}</h4>
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" id="worktype_boxBtnOT" data-dismiss="modal" class="btn btn-success btnDateType" datetype="O">{{$SysLang.appointment.ot}}</button>
+                <button type="button" id="worktype_boxBtnLeave" data-dismiss="modal" class="btn btn-success btnDateType" datetype="L">{{$SysLang.appointment.leave}}</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{$SysLang.common.close}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
 
     $(document).ready(function () {
@@ -68,17 +84,73 @@
             selectHelper: true,
             select: function(start, end, jsEvent, view) {
                 if(view.name!="month"){
-                    var title = prompt('Event Title:');
-                    var eventData;
-                    if (title) {
-                        eventData = {
-                            title: title,
-                            start: start,
-                            end: end
-                        };
-                        $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+
+                    var obj=$(this);
+                    var events=new Array();
+                    var daydiff=(end-start)/86400000;
+                    for(i=0;i<daydiff;i++){
+                        var start_arr=start.toArray();
+                        var end_arr=end.toArray();
+                        var startdt=null;
+                        var enddt=null;
+                        var n_start=new Date(start_arr[0],start_arr[1],start_arr[2],start_arr[3],start_arr[4],start_arr[5],start_arr[6]);
+                        var currentdate=new   Date((n_start/1000+86400*i)*1000);
+                        var year=currentdate.getFullYear();
+                        var month=currentdate.getMonth();
+                        var date=currentdate.getDate();
+                        if(i==0){
+                            if(start_arr[3]<8){
+                                startdt=new Date(year,month,date,8,0,0,0);
+                            }else{
+                                startdt=new Date(year,month,date,start_arr[3],start_arr[4],0,0);
+                            }
+                        }else{
+                            startdt=new Date(year,month,date,8,0,0,0);
+                        }
+                        
+                        if(daydiff-i<=1){
+                            if(end_arr[3]>21){
+                                enddt=new Date(year,month,date,21,0,0,0);
+                            }else{
+                                enddt=new Date(year,month,date,end_arr[3],end_arr[4],0,0);
+                            }
+                        }else{
+                            enddt=new Date(year,month,date,21,0,0,0);
+                        }
+                        var eventData = {
+                            start: startdt,
+                            start_str:strDateFormat(startdt),
+                            end: enddt,
+                            end_str:strDateFormat(enddt)};
+                        events[events.length]=eventData;
+
                     }
-                    $('#calendar').fullCalendar('unselect');
+                    //alert(events.length);
+                    //for (var i = 0; i < events.length; i++) {
+                   //     $('#calendar').fullCalendar('renderEvent', events[i], true);
+                   // }
+                    //$('#calendar').fullCalendar('unselect');
+                    if(events.length>0){
+                        $(".btnDateType").unbind("click").click(function () {
+                            var datetype=$(this).attr("datetype");
+                            SubmitToAgendaAPI(events,datetype);
+                            $('#calendar').fullCalendar('unselect');
+                        });
+
+                        $("#worktype_box").modal("show");
+
+                    }
+                    //var title = prompt('Event Title:');
+                    //var eventData;
+                    //if (title) {
+                    //    eventData = {
+                    //        title: title,
+                    //        start: start,
+                    //        end: end
+                    //    };
+                    //    $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+                    //}
+                    //$('#calendar').fullCalendar('unselect');
                 }
             },
             eventLimit: true, // allow "more" link when too many events
@@ -166,7 +238,39 @@
 
        
 
-    });
+				});
+    function strDateFormat(date){
+        return date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes();
+    }
+    function SubmitToAgendaAPI(events,datetype){
+        
+        var json={
+            action:"specialdate",
+            datetype:datetype,
+            office_id:{{$office_id}},
+            events:events
+        }
+
+        $.post("{{$rootpath}}/Appointment/agenda.php",json,function(data){
+            if(data=="DUPLIC"){
+                infoDialog("{{$SysLang.appointment.datespecialduplic}}");
+            }else if(data=="SUCCESS"){
+                
+                for (var i = 0; i < events.length; i++) {
+                    var color="green";
+                    var title="{{$SysLang.appointment.ot}}";
+                    if(datetype=="L"){
+                        color="gold";
+                        title="{{$SysLang.appointment.leave}}";
+                    }
+                    events[i]["title"]=title;
+                    events[i]["color"]=color;
+                    $('#calendar').fullCalendar('renderEvent', events[i], true);
+                }
+                $('#calendar').fullCalendar('unselect');
+            }
+        });
+    }
 
 </script>
 

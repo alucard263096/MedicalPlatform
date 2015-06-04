@@ -153,6 +153,125 @@ if($start_date!="" && $end_date!=""){
 		$ret["worktime"]=$workTimeArr;
 		return $ret;
 	}
+	
+
+	public function getSpecialDayTimeList($office_id,$doctor_id,$type){
+		Global $SysLangCode;
+		$office_id=mysql_real_escape_string($office_id);
+		$doctor_id=mysql_real_escape_string($doctor_id);
+		$type=mysql_real_escape_string($type);
+
+		$sql="select * from dr_tb_office_specialhour 
+	where office_id=$office_id and doctor_id=$doctor_id and type='$type'
+	 and (TO_DAYS(NOW()) - TO_DAYS(order_date))<=0 
+	 order by o_date,order_time ";
+	
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array($query);
+
+		$sql="select * from dr_tb_time ";
+		$query = $this->dbmgr->query($sql);
+		$timetable = $this->dbmgr->fetch_array_all($query);
+
+		
+		//echo $lastday;
+
+		$workTimeArr=array();
+		$curdate=$today;
+		$curdate_time=$today_time;
+		//while($curdate_time<=$lastday_time)
+		foreach($result as $value){
+			$val=$value["order_time"];
+					$startdate=$timetable[$val-1]["start_time"];
+					$startval=$val;
+					$enddate=$timetable[$val-1]["end_time"];
+					$endval=$val;
+
+					$lastcount=count($workTimeArr)-1;
+					if($lastcount>=0
+					&&$workTimeArr[$lastcount]["date"]==$curdate
+					&&$workTimeArr[$lastcount]["end_time_val"]==$val-1){
+
+						$workTimeArr[$lastcount]["end_time"]=$enddate;
+						$workTimeArr[$lastcount]["end_time_val"]=$endval;
+						
+					}else{
+						$tarr=array();
+						$tarr["date"]=$curdate;
+						$tarr["start_time"]=$startdate;
+						$tarr["end_time"]=$enddate;
+						$tarr["start_time_val"]=$startval;
+						$tarr["end_time_val"]=$endval;
+
+						$workTimeArr[]=$tarr;
+					}
+		}
+		return $workTimeArr;
+	}
+
+	function updateSpecialDate($office_id,$doctor_id,$datetype,$events){
+		//release the time id
+		for($i=0;$i<count($events);$i++){
+			$starttime=explode(":",explode(" ",$events[$i]["start_str"])[1]);
+			$endtime=explode(":",explode(" ",$events[$i]["end_str"])[1]);
+			$arr=Array();
+			$arr_str="0";
+			$start_i=($starttime[0]-8)*2+1;
+			if($starttime[1]==30){
+				$start_i++;
+			}
+			$end_i=($endtime[0]-8)*2;
+			if($endtime[1]==30){
+				$end_i++;
+			}
+			for($j=$start_i;$j<=$end_i;$j++){
+				$arr[]=$j;
+				$arr_str.=",".$j;
+			}
+			$events[$i]["timetable"]=$arr;
+			$events[$i]["timetable_str"]=$arr_str;
+			$events[$i]["date"]=explode(" ",$events[$i]["start_str"])[0];
+		}
+		//print_r($events);
+		$office_id=mysql_real_escape_string($office_id);
+		$doctor_id=mysql_real_escape_string($doctor_id);
+		$datetype=mysql_real_escape_string($datetype);
+
+		$sql="select 1 from dr_tb_office_specialhour
+where doctor_id=$doctor_id and office_id=$office_id
+and (";
+	for($i=0;$i<count($events);$i++){
+		if($i!=0){
+		$sql.=" or";
+		}
+		$date=$events[$i]["date"];
+		$timetable=$events[$i]["timetable_str"];
+		$date=mysql_real_escape_string($date);
+		$timetable=mysql_real_escape_string($timetable);
+		$sql.="( o_date='$date' and o_time in ($timetable) )";
+	}
+$sql.=")";
+		$query = $this->dbmgr->query($sql);
+		$result = $this->dbmgr->fetch_array_all($query);
+		if(count($result)>0){
+			return "DUPLIC";
+		}
+		$this->dbmgr->begin_trans();
+		foreach ($events as $value) {
+			$date=$value["date"];
+			foreach ($value["timetable"] as $t){
+			$sql="insert into dr_tb_office_specialhour
+			(doctor_id,office_id,o_date,o_time,type) values
+			($doctor_id,$office_id,'$date',$t,'$datetype')";
+			$this->dbmgr->query($sql);
+			}
+		}
+		
+		$this->dbmgr->commit_trans();
+		return "SUCCESS";
+	}
+
+
  }
  
  $officeMgr=OfficeMgr::getInstance();

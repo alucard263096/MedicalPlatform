@@ -117,6 +117,10 @@
     <agenda>日程</agenda>
     <detail>预约详情</detail>
     <cancel>取消预约</cancel>
+    <datespecialtype>选择特殊工作日插入类型</datespecialtype>
+    <ot>加班</ot>
+    <leave>休假</leave>
+    <datespecialduplic>你选择的日期和现有的时间表有冲突，请选择其它日期或者取消现有的时间以解决冲突。</datespecialduplic>
   </appointment>
   <doctor>
     <d></d>
