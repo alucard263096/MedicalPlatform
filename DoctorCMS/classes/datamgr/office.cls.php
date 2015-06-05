@@ -163,7 +163,7 @@ if($start_date!="" && $end_date!=""){
 
 		$sql="select * from dr_tb_office_specialhour 
 	where office_id=$office_id and doctor_id=$doctor_id and type='$type'
-	 and (TO_DAYS(NOW()) - TO_DAYS(o_date))>=0 
+	 and (TO_DAYS(NOW()) - TO_DAYS(o_date))<=0 
 	 order by o_date,o_time ";
 	
 		$query = $this->dbmgr->query($sql);
