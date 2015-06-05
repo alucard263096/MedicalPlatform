@@ -279,7 +279,8 @@ $sql.=")";
 			}
 			$event["timetable"]=$arr;
 			$event["timetable_str"]=$arr_str;
-			$event["date"]=explode(" ",$event["start_str"])[0];
+			$cc=explode(" ",$event["start_str"]);
+			$event["date"]=$cc[0];
 		return $event;
 	}
 	function cancelSpecialDate($office_id,$doctor_id,$event){
