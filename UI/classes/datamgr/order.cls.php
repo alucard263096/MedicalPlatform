@@ -121,7 +121,15 @@ where id not in (
 select order_time from dr_tb_order o
 inner join dr_tb_order_vaccine ovc on o.id=ovc.order_id
 where ovc.office_id=$office_id and ovc.doctor_id=$doctor_id and o.order_date='$order_date' and o.status='P'
- ) and id in ($meetdays)";
+ ) and 
+ ( id in ($meetdays) or id in (
+select o_time from dr_tb_office_specialhour osp
+where osp.office_id=$office_id and osp.doctor_id=$doctor_id and osp.o_date='$order_date' and osp.type='O'
+ ))
+and id not in (
+select o_time from dr_tb_office_specialhour osp
+where osp.office_id=$office_id and osp.doctor_id=$doctor_id and osp.o_date='$order_date' and osp.type='L'
+)";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query); 
 		return $result;
