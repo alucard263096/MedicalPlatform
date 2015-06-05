@@ -17,6 +17,7 @@
       <tablename>dr_tb_doctor</tablename>
       <ntbname>r_doctor</ntbname>
       <condition>r_doctor.status='A' </condition>
+      <disableindetail>1</disableindetail>
     </field>
     <field>
       <name>诊所</name>
@@ -31,6 +32,7 @@
       <tablename>dr_tb_office</tablename>
       <ntbname>r_office</ntbname>
       <condition>r_office.status='A' </condition>
+      <disableindetail>1</disableindetail>
     </field>
     <field>
       <name>周日预约时间段</name>
@@ -134,4 +136,28 @@
       <search>1</search>
     </option>
   </options>
+  <javascripts>
+    <javascript>
+      <filename>officeopenhour.js</filename>
+      <detail>1</detail>
+    </javascript>
+    <javascript>
+      <filename>../../vendors/fullcalendar/lib/moment.min.js</filename>
+      <detail>1</detail>
+    </javascript>
+    <javascript>
+      <filename>../../vendors/fullcalendar/fullcalendar.js</filename>
+      <detail>1</detail>
+    </javascript>
+  </javascripts>
+  <csss>
+    <css>
+      <filename>../../vendors/fullcalendar/fullcalendar.css</filename>
+      <detail>1</detail>
+    </css>
+    <css>
+      <filename>../../vendors/fullcalendar/fullcalendar.print.css</filename>
+      <detail>1</detail>
+    </css>
+  </csss>
 </root>

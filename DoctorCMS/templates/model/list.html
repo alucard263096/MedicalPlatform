@@ -118,6 +118,11 @@
 <script type="text/javascript" src="{{$rootpath}}/js/myjs/{{$rs.filename}}"></script>
 {{/if}}
 {{/foreach}}
+{{foreach from=$ModelData.csss.css item=rs}}
+{{if $rs.search=="1"}}
+<link href="{{$rootpath}}/js/myjs/{{$rs.filename}}" rel='stylesheet' />
+{{/if}}
+{{/foreach}}
 <script>
     var ds=null;
     $(document).ready(function(){
