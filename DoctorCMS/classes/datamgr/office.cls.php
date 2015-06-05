@@ -259,8 +259,10 @@ $sql.=")";
 	}
 
 	function analyEventTimeID($event){
-			$starttime=explode(":",explode(" ",$event["start_str"])[1]);
-			$endtime=explode(":",explode(" ",$event["end_str"])[1]);
+			$cc=explode(" ",$event["start_str"]);
+			$starttime=explode(":",$cc[1]);
+			$cc=explode(" ",$event["end_str"]);
+			$endtime=explode(":",$cc[1]);
 			$arr=Array();
 			$arr_str="0";
 			$start_i=($starttime[0]-8)*2+1;
