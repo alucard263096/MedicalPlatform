@@ -16,9 +16,17 @@
 		$office_id=$_REQUEST["office_id"];
 		echo $officeMgr->updateSpecialDate($office_id,$SysUser["doctor_id"],$datetype,$events);
 		exit;
+	}else if($action=="cancelspecialdate"){
+	
+		$event=$_REQUEST["event"];
+		$office_id=$_REQUEST["office_id"];
+		echo $officeMgr->cancelSpecialDate($office_id,$SysUser["doctor_id"],$event);
+		exit;
 	}
 	
 	$workdayTime=$officeMgr->getWorkDayTimeList($office_id,$SysUser["doctor_id"]);
+	$OTTime=$officeMgr->getSpecialDayTimeList($office_id,$SysUser["doctor_id"],"O");
+	$LeaveTime=$officeMgr->getSpecialDayTimeList($office_id,$SysUser["doctor_id"],"L");
 
 
 	$list=$officeMgr->getAppointmentList($office_id,$SysUser["doctor_id"]);
@@ -29,6 +37,9 @@
 	$smarty->assign("MyMenuId","agenda_$office_id");
 	$smarty->assign("eventlist",$list);
 	$smarty->assign("workday",$workdayTime);
+	$smarty->assign("OTworkday",$OTTime);
+	$smarty->assign("Leaveworkday",$LeaveTime);
+	$smarty->assign("order_id",1);
 	$smarty->display(ROOT.'/templates/appointment/agenda.html');
 
 

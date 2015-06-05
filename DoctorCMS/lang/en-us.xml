@@ -121,6 +121,7 @@
     <ot>Overtime</ot>
     <leave>Leave</leave>
     <datespecialduplic>The time table you select has been used, please choose another time table or cancle the conlict.</datespecialduplic>
+    <wanttocancel>Do you want to cancel the Special Operation Time Table?</wanttocancel>
   </appointment>
   <doctor>
     <d></d>

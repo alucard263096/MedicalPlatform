@@ -113,11 +113,10 @@ where main.guid in ($guid) and ovc.doctor_id=$doctor_id";
 		Global $SysUser;
 		
 		$user_id=$SysUser["id"];
-		$doctor_id=$SysUser["doctor_id"];
 		$id=mysql_real_escape_string($id);
 
 		$sql="update dr_tb_order set updated_user=$user_id,updated_date=now(),status='C'
-		where id=$id and doctor_id=$doctor_id ";
+		where id=$id";
 		$query = $this->dbmgr->query($sql);
 	}
  }

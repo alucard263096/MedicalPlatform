@@ -163,11 +163,12 @@ if($start_date!="" && $end_date!=""){
 
 		$sql="select * from dr_tb_office_specialhour 
 	where office_id=$office_id and doctor_id=$doctor_id and type='$type'
-	 and (TO_DAYS(NOW()) - TO_DAYS(order_date))<=0 
-	 order by o_date,order_time ";
+	 and (TO_DAYS(NOW()) - TO_DAYS(o_date))>=0 
+	 order by o_date,o_time ";
 	
 		$query = $this->dbmgr->query($sql);
-		$result = $this->dbmgr->fetch_array($query);
+		$result = $this->dbmgr->fetch_array_all($query);
+
 
 		$sql="select * from dr_tb_time ";
 		$query = $this->dbmgr->query($sql);
@@ -180,12 +181,15 @@ if($start_date!="" && $end_date!=""){
 		$curdate=$today;
 		$curdate_time=$today_time;
 		//while($curdate_time<=$lastday_time)
-		foreach($result as $value){
-			$val=$value["order_time"];
+		for($i=0;$i<count($result);$i++){
+		$value=$result[$i];
+			$val=$value["o_time"];
 					$startdate=$timetable[$val-1]["start_time"];
 					$startval=$val;
 					$enddate=$timetable[$val-1]["end_time"];
 					$endval=$val;
+
+					$curdate=$value["o_date"];
 
 					$lastcount=count($workTimeArr)-1;
 					if($lastcount>=0
@@ -206,31 +210,14 @@ if($start_date!="" && $end_date!=""){
 						$workTimeArr[]=$tarr;
 					}
 		}
+		//print_r($workTimeArr);
 		return $workTimeArr;
 	}
 
 	function updateSpecialDate($office_id,$doctor_id,$datetype,$events){
 		//release the time id
 		for($i=0;$i<count($events);$i++){
-			$starttime=explode(":",explode(" ",$events[$i]["start_str"])[1]);
-			$endtime=explode(":",explode(" ",$events[$i]["end_str"])[1]);
-			$arr=Array();
-			$arr_str="0";
-			$start_i=($starttime[0]-8)*2+1;
-			if($starttime[1]==30){
-				$start_i++;
-			}
-			$end_i=($endtime[0]-8)*2;
-			if($endtime[1]==30){
-				$end_i++;
-			}
-			for($j=$start_i;$j<=$end_i;$j++){
-				$arr[]=$j;
-				$arr_str.=",".$j;
-			}
-			$events[$i]["timetable"]=$arr;
-			$events[$i]["timetable_str"]=$arr_str;
-			$events[$i]["date"]=explode(" ",$events[$i]["start_str"])[0];
+			$events[$i]=$this->analyEventTimeID($events[$i]);
 		}
 		//print_r($events);
 		$office_id=mysql_real_escape_string($office_id);
@@ -271,6 +258,46 @@ $sql.=")";
 		return "SUCCESS";
 	}
 
+	function analyEventTimeID($event){
+			$starttime=explode(":",explode(" ",$event["start_str"])[1]);
+			$endtime=explode(":",explode(" ",$event["end_str"])[1]);
+			$arr=Array();
+			$arr_str="0";
+			$start_i=($starttime[0]-8)*2+1;
+			if($starttime[1]==30){
+				$start_i++;
+			}
+			$end_i=($endtime[0]-8)*2;
+			if($endtime[1]==30){
+				$end_i++;
+			}
+			for($j=$start_i;$j<=$end_i;$j++){
+				$arr[]=$j;
+				$arr_str.=",".$j;
+			}
+			$event["timetable"]=$arr;
+			$event["timetable_str"]=$arr_str;
+			$event["date"]=explode(" ",$event["start_str"])[0];
+		return $event;
+	}
+	function cancelSpecialDate($office_id,$doctor_id,$event){
+	//print_r($event);
+	//exit;
+		$event=$this->analyEventTimeID($event);
+		$o_date=$event["date"];
+		$o_time=$event["timetable_str"];
+		$office_id=mysql_real_escape_string($office_id);
+		$doctor_id=mysql_real_escape_string($doctor_id);
+		$o_date=mysql_real_escape_string($o_date);
+		$o_time=mysql_real_escape_string($o_time);
+
+		$sql="delete from dr_tb_office_specialhour
+where doctor_id=$doctor_id and office_id=$office_id
+and o_date='$o_date' and o_time in ($o_time) ";
+		$this->dbmgr->query($sql);
+		return "SUCCESS";
+
+	}
 
  }
  

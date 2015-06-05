@@ -60,7 +60,22 @@
             </div>
             <div class="modal-footer text-center">
                 <button type="button" id="worktype_boxBtnOT" data-dismiss="modal" class="btn btn-success btnDateType" datetype="O">{{$SysLang.appointment.ot}}</button>
-                <button type="button" id="worktype_boxBtnLeave" data-dismiss="modal" class="btn btn-success btnDateType" datetype="L">{{$SysLang.appointment.leave}}</button>
+                <button type="button" id="worktype_boxBtnLeave" data-dismiss="modal" class="btn btn-warning btnDateType" datetype="L">{{$SysLang.appointment.leave}}</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{$SysLang.common.close}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="worktypecancel_box" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="worktypecancel_boxtitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="worktypecancel_boxboxtitle" class="modal-title">{{$SysLang.appointment.wanttocancel}}</h4>
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" id="worktypecancel_boxBtnCancel" data-dismiss="modal" class="btn btn-success">{{$SysLang.appointment.cancel}}</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">{{$SysLang.common.close}}</button>
             </div>
         </div>
@@ -68,7 +83,7 @@
 </div>
 
 <script>
-
+    var eventlid=1000;
     $(document).ready(function () {
         
 
@@ -118,6 +133,7 @@
                             enddt=new Date(year,month,date,21,0,0,0);
                         }
                         var eventData = {
+                            id:eventlid++,
                             start: startdt,
                             start_str:strDateFormat(startdt),
                             end: enddt,
@@ -155,41 +171,14 @@
             },
             eventLimit: true, // allow "more" link when too many events
             eventClick: function(calEvent, jsEvent, view) {
-                $("#cb_order_no").text(calEvent.order_no);
-                $("#cb_vaccine_name").text(calEvent.vaccine_name);
-                $("#cb_clientname").text(calEvent.clientname);
-                $("#cb_price").text(calEvent.price);
-                $("#cb_order_time").text(calEvent.order_time);
-                $("#cb_status").text(calEvent.status);
-                $("#cb_order_id").val(calEvent.id);
 
-                var obj=$(this);
-
-                if(calEvent.statuscode!="P"){
-                    $("#cancel_boxBtnCancel").hide();
+                var type=calEvent.type;
+                if(type=="Order"){
+                    displayOrder(calEvent,$(this));
                 }else{
-                    $("#cancel_boxBtnCancel").show();
+                    cancelSpecialWorkday(calEvent,$(this));
                 }
-                $("#cancel_boxBtnCancel").unbind("click").click(function () {
-                    var json={
-                        action:"cancel",
-                        order_id:calEvent.id
-                    }
-                    $.post("{{$rootpath}}/Appointment/agenda.php",json,function(data){
-                        //alert(data);
-                        if(data=="SUCCESS"){
-                            obj.css('border-color', '#C75F15');
-                            obj.css('background-color', '#C75F15');
-                            calEvent.status="{{$SysLang.validate.cancel}}";
-                            calEvent.statuscode="C";
-                            $("#cancel_box").modal("hide");
-                        }else{
-                            alert("System Error");
-                        }
-                    });
-                    
-                });
-                $("#cancel_box").modal("show");
+                
 
             },
             events: [
@@ -200,6 +189,8 @@
             {{foreach from=$eventlist item=rs}}
             ,
 				{
+				    id:'{{$order_id++}}',
+                    type:"Order",
 				    title: '{{$rs.vaccine_name}}',
 				    start: '{{$rs.order_date}}T{{$rs.start_time}}',
 				    end: '{{$rs.order_date}}T{{$rs.end_time}}',
@@ -210,13 +201,14 @@
 				    price:"{{$rs.price}}",
 				    status:"{{if $rs.status=='P'}}{{$SysLang.validate.padding}}{{elseif $rs.status=='F'}}{{$SysLang.validate.finish}}{{elseif $rs.status=='C'}}{{$SysLang.validate.cancel}}{{/if}}",
                     statuscode:"{{$rs.status}}",
-				    id:"{{$rs.id}}"
+				    order_id:"{{$rs.id}}"
 				    {{if $rs.status=='F'}},color: '#257e4a'{{elseif $rs.status=='C'}},color: '#C75F15'{{/if}}
 				}
             {{/foreach}}
                 {{foreach from=$workday.worktime item=rs}}
                 ,
 				{
+				    id:'{{$order_id++}}',
 				    start: '{{$rs.date}}T{{$rs.start_time}}',
                     end: '{{$rs.date}}T{{$rs.end_time}}',
 				    overlap: false,
@@ -227,11 +219,38 @@
 				{{foreach from=$workday.workday item=rs}}
                 ,
 				{
+				    id:'{{$order_id++}}',
 				    start: '{{$rs.date}}',
                     end: '{{$rs.date}}',
 				    overlap: false,
 				    rendering: 'background',
                     color: 'green'
+				}				{{/foreach}}
+				{{foreach from=$OTworkday item=rs}}
+                ,
+				{
+				    id:'{{$order_id++}}',
+				    title:"{{$SysLang.appointment.ot}}",
+				    start: '{{$rs.date}}T{{$rs.start_time}}',
+                    end: '{{$rs.date}}T{{$rs.end_time}}',
+                    start_str: '{{$rs.date}} {{$rs.start_time}}',
+                    end_str: '{{$rs.date}} {{$rs.end_time}}',
+                    color: 'green',
+                    type:"Workday",
+                    status:"O"
+				}				{{/foreach}}
+				{{foreach from=$Leaveworkday item=rs}}
+                ,
+				{
+				    id:'{{$order_id++}}',
+				    title:"{{$SysLang.appointment.leave}}",
+				    start: '{{$rs.date}}T{{$rs.start_time}}',
+                    end: '{{$rs.date}}T{{$rs.end_time}}',
+                    start_str: '{{$rs.date}} {{$rs.start_time}}',
+                    end_str: '{{$rs.date}} {{$rs.end_time}}',
+                    color: 'orange',
+                    type:"Workday",
+                    status:"L"
 				}				{{/foreach}}
             ]
         });
@@ -260,7 +279,7 @@
                     var color="green";
                     var title="{{$SysLang.appointment.ot}}";
                     if(datetype=="L"){
-                        color="gold";
+                        color="orange";
                         title="{{$SysLang.appointment.leave}}";
                     }
                     events[i]["title"]=title;
@@ -271,7 +290,65 @@
             }
         });
     }
+    function displayOrder(calEvent,obj){
+        $("#cb_order_no").text(calEvent.order_no);
+        $("#cb_vaccine_name").text(calEvent.vaccine_name);
+        $("#cb_clientname").text(calEvent.clientname);
+        $("#cb_price").text(calEvent.price);
+        $("#cb_order_time").text(calEvent.order_time);
+        $("#cb_status").text(calEvent.status);
+        $("#cb_order_id").val(calEvent.order_id);
 
+
+        if(calEvent.statuscode!="P"){
+            $("#cancel_boxBtnCancel").hide();
+        }else{
+            $("#cancel_boxBtnCancel").show();
+        }
+        $("#cancel_boxBtnCancel").unbind("click").click(function () {
+            var json={
+                action:"cancel",
+                order_id:calEvent.order_id
+            };
+            $.post("{{$rootpath}}/Appointment/agenda.php",json,function(data){
+                //alert(data);
+                if(data=="SUCCESS"){
+                    obj.css('border-color', '#C75F15');
+                    obj.css('background-color', '#C75F15');
+                    calEvent.status="{{$SysLang.validate.cancel}}";
+                    calEvent.statuscode="C";
+                    $("#cancel_box").modal("hide");
+                }else{
+                    alert("System Error");
+                }
+            });
+        });
+        $("#cancel_box").modal("show");
+
+    }
+
+    function cancelSpecialWorkday(calEvent,obj){
+        $("#worktypecancel_boxBtnCancel").unbind("click").click(function () {
+            var event={
+                start_str:calEvent.start_str,
+                end_str:calEvent.end_str
+            };
+
+            var json={
+                action:"cancelspecialdate",
+                office_id:{{$office_id}},
+                event:event
+            };
+            $.post("{{$rootpath}}/Appointment/agenda.php",json,function(data){
+                if(data=="SUCCESS"){
+                    $('#calendar').fullCalendar('removeEvents', calEvent.id);
+                }else{
+                    alert(data);
+                }
+            });
+        });
+        $("#worktypecancel_box").modal("show");
+    }
 </script>
 
 
