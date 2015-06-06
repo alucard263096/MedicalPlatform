@@ -12,6 +12,11 @@ $is_android = (strpos($agent, 'android')) ? 1 : 0;
 
 if($smarty!=null){
 
+	if($CONFIG['solution_configuration']!="debug"&&$is_pc==1){
+		$smarty->display(ROOT.'/templates/pc.html');
+		exit;
+	}
+
 	$smarty->assign("is_pc",$is_pc);
 	$smarty->assign("is_iphone",$is_iphone);
 	$smarty->assign("is_ipad",$is_ipad);
