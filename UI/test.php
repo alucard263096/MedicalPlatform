@@ -1,4 +1,4 @@
 <?php
-
-print_r($_COOKIE);
+  require 'include/common.inc.php';
+echo $agent;
 ?>
