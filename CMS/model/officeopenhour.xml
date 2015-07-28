@@ -139,7 +139,7 @@
   <javascripts>
     <javascript>
       <filename>officeopenhour.js</filename>
-      <detail>1</detail>
+      <detail>0</detail>
     </javascript>
     <javascript>
       <filename>../../vendors/fullcalendar/lib/moment.min.js</filename>
