@@ -60,5 +60,6 @@ $CONFIG["sms"]["SoftVersion"]="2013-12-26";
 $CONFIG["sms"]["timeout"]="30";//mins
 $CONFIG["sms"]["templeteid"]["gene_order_confirmed"]="20018";
 $CONFIG["sms"]["templeteid"]["gene_tools_received"]="20033";
+$CONFIG["sms"]["templeteid"]["query_confirmed"]="27660";
 
 ?>

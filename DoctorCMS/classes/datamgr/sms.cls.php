@@ -42,24 +42,6 @@ class SmsMgr
 		 $this->rest->setAppId($this->appId);
 	}
 
-
-	public function SendGeneOrderConfirm($mobile,$gene_name){
-		Global $CONFIG;
-
-		$templeteId=$CONFIG["sms"]["templeteid"]["gene_order_confirmed"];
-		$arr=Array($gene_name);
-		$result=$this->Send($mobile,$arr,$templeteId);
-	}
-	
-	public function SendGeneToolReceived($mobile,$guid){
-		Global $CONFIG;
-
-		$templeteId=$CONFIG["sms"]["templeteid"]["gene_tools_received"];
-		$arr=Array($guid);
-		$result=$this->Send($mobile,$arr,$templeteId);
-	}
-
-	
 	public function SendQueryConfirm($mobile,$question){
 		Global $CONFIG;
 
