@@ -60,11 +60,11 @@ class SmsMgr
 	}
 
 	
-	public function SendQueryConfirm($mobile,$question){
+	public function SendQueryConfirm($mobile,$submit_date){
 		Global $CONFIG;
 
 		$templeteId=$CONFIG["sms"]["templeteid"]["query_confirmed"];
-		$arr=Array($question);
+		$arr=Array($submit_date);
 		$result=$this->Send($mobile,$arr,$templeteId);
 	}
 

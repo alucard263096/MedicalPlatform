@@ -11,7 +11,7 @@ class DoctorQueryXmlModel extends XmlModel{
 		$ret=parent::Save($dbMgr,$request,$sysuser);
 		if(substr($ret,0,5)=="right"){
 			if($request["status"]=="F"){
-				$smsMgr->SendQueryConfirm($request["member_mobile"],$request["description"]);
+				$smsMgr->SendQueryConfirm($request["member_mobile"],$request["submit_date"]);
 			}
 		}
 
