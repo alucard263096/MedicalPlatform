@@ -3,12 +3,17 @@ $WebsiteConfig["applestore_id"]="123456";
 $WebsiteConfig["googleplay_id"]="123456";
 
 $agent = strtolower($_SERVER['HTTP_USER_AGENT']);
-
+//echo $agent;
 //·ÖÎöÊý¾Ý
-$is_pc = (strpos($agent, 'windows nt'))||(strpos($agent, 'mac')) ? 1 : 0;   
+//$is_pc = (strpos($agent, 'windows nt'))||(strpos($agent, 'mac')) ? 1 : 0;   
 $is_iphone = (strpos($agent, 'iphone')) ? 1 : 0;   
 $is_ipad = (strpos($agent, 'ipad')) ? 1 : 0;   
 $is_android = (strpos($agent, 'android')) ? 1 : 0;   
+if($is_iphone||$is_ipad||$is_android){
+	$is_pc=0;
+}else{
+	$is_pc=1;
+}
 
 if($smarty!=null){
 
