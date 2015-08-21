@@ -15,7 +15,7 @@
 	$ret=array();
 	$str="'__'";
 	for($i<2;$i<=count($arr);$i++){
-		$str.=",'".mysql_real_escape_string($arr[$i][1])."'";
+		$str.=",'".parameter_filter($arr[$i][1])."'";
 		$array=array();
 		$array["guid"]=$arr[$i][1];
 		$ret[]=$array;

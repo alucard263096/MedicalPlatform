@@ -143,20 +143,20 @@ class XmlModel
 
 				if($request[$value["key"]."_from"]!=""){
 
-					$sql=$sql." and r_main.".$value["key"].">='".mysql_real_escape_string($request[$value["key"]."_from"])."'";
+					$sql=$sql." and r_main.".$value["key"].">='".parameter_filter($request[$value["key"]."_from"])."'";
 
 				}
 
 				if($request[$value["key"]."_to"]!=""){
 
-					$sql=$sql." and r_main.".$value["key"]."<='".mysql_real_escape_string($request[$value["key"]."_to"])."'";
+					$sql=$sql." and r_main.".$value["key"]."<='".parameter_filter($request[$value["key"]."_to"])."'";
 
 				}
 
 			}else if($value["type"]=="fkey"){
 
 				if($request[$value["key"]]!="0"&&$request[$value["key"]]!=""){
-					$sql=$sql." and r_main.".$value["key"]."=".mysql_real_escape_string($request[$value["key"]])."";
+					$sql=$sql." and r_main.".$value["key"]."=".parameter_filter($request[$value["key"]])."";
 				}
 
 
@@ -164,7 +164,7 @@ class XmlModel
 				if($request[$value["key"]]!=""
 				&&$request[$value["key"]]!="no-value"){
 
-					$sql=$sql." and r_main.".$value["key"]." like '%".mysql_real_escape_string($request[$value["key"]])."%'";
+					$sql=$sql." and r_main.".$value["key"]." like '%".parameter_filter($request[$value["key"]])."%'";
 					
 				}
 			}
@@ -332,7 +332,7 @@ class XmlModel
 			if($value["type"]=="password"){
 				$sql=$sql.",'".md5($request[$value["key"]])."'";
 			}else{
-				$sql=$sql.",'".mysql_real_escape_string($request[$value["key"]])."'";
+				$sql=$sql.",'".parameter_filter($request[$value["key"]])."'";
 			}
 		}
 		$sql=$sql.",now(),$sysuser,now(),$sysuser )";
@@ -352,7 +352,7 @@ class XmlModel
 			||$value["type"]=="password"){
 				continue;
 			}
-			$sql=$sql.", `".$value["key"]."`='".mysql_real_escape_string($request[$value["key"]])."'";
+			$sql=$sql.", `".$value["key"]."`='".parameter_filter($request[$value["key"]])."'";
 		}
 		$sql=$sql." where id=$id";
 		$query = $dbMgr->query($sql);
@@ -361,7 +361,7 @@ class XmlModel
 			if($value["type"]=="password"){
 				$sql="update ".$this->XmlData["tablename"]." set ";
 				$sql=$sql." `".$value["key"]."`='".md5($request[$value["key"]])."'";
-				$sql=$sql." where id=$id and ".$value["key"]."<>'".mysql_real_escape_string($request[$value["key"]])."'";
+				$sql=$sql." where id=$id and ".$value["key"]."<>'".parameter_filter($request[$value["key"]])."'";
 				$query = $dbMgr->query($sql);
 			}
 		}
@@ -370,7 +370,7 @@ class XmlModel
 				$sql="update ".$this->XmlData["tablename"]."_lang set lang='".$lang["code"]."'";
 				foreach ($fields as $value){
 					if($value["ismutillang"]=="1"){
-						$sql=$sql.", `".$value["key"]."`='".mysql_real_escape_string($request[$value["key"]."_".$lang["code"]])."'";
+						$sql=$sql.", `".$value["key"]."`='".parameter_filter($request[$value["key"]."_".$lang["code"]])."'";
 					}
 				}
 				$sql=$sql." where oid=$id and lang='".$lang["code"]."'";
@@ -393,7 +393,7 @@ class XmlModel
 				$sql=$sql." ) values ( $id ,'".$lang["code"]."' ";
 				foreach ($fields as $value){
 					if($value["ismutillang"]=="1"){
-						$sql=$sql.",'".mysql_real_escape_string($request[$value["key"]."_".$lang["code"]])."'";
+						$sql=$sql.",'".parameter_filter($request[$value["key"]."_".$lang["code"]])."'";
 					}
 				}
 				$sql=$sql." )";

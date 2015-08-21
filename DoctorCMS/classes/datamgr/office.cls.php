@@ -25,7 +25,7 @@
 	
 	public function getOfficeOpenHour($id)
 	{Global $SysLangCode;
-		$id=mysql_real_escape_string($id);
+		$id=parameter_filter($id);
 		$sql="select a.id,a.doctor_id,a.office_id,bl.name office_name from dr_tb_office_openhour a
 	inner join dr_tb_office b on a.office_id=b.id
 	left join dr_tb_office_lang bl on b.id=bl.oid and bl.lang='$SysLangCode' 
@@ -38,7 +38,7 @@
 
 	public function getOfficeOpenHourList($doctor_id){
 	Global $SysLangCode;
-		$doctor_id=mysql_real_escape_string($doctor_id);
+		$doctor_id=parameter_filter($doctor_id);
 
 	$sql="select a.id,a.doctor_id,a.office_id,bl.name office_name from dr_tb_office_openhour a
 	inner join dr_tb_office b on a.office_id=b.id
@@ -54,10 +54,10 @@
 	public function getAppointmentList($office_id,$doctor_id,$start_date,$end_date){
 		Global $SysLangCode;
 
-		$office_id=mysql_real_escape_string($office_id);
-		$doctor_id=mysql_real_escape_string($doctor_id);
-		$start_date=mysql_real_escape_string($start_date);
-		$end_date=mysql_real_escape_string($end_date);
+		$office_id=parameter_filter($office_id);
+		$doctor_id=parameter_filter($doctor_id);
+		$start_date=parameter_filter($start_date);
+		$end_date=parameter_filter($end_date);
 		$sql="select main.*,ovc.*,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
 		t.name order_rtime,t.start_time,t.end_time
 from dr_tb_order main
@@ -88,7 +88,7 @@ if($start_date!="" && $end_date!=""){
 
 	public function getWorkDayTimeList($office_id,$doctor_id){
 		Global $SysLangCode;
-		$id=mysql_real_escape_string($id);
+		$id=parameter_filter($id);
 		$sql="select * from dr_tb_office_openhour 
 	where office_id=$office_id and doctor_id=$doctor_id ";
 	
@@ -157,9 +157,9 @@ if($start_date!="" && $end_date!=""){
 
 	public function getSpecialDayTimeList($office_id,$doctor_id,$type){
 		Global $SysLangCode;
-		$office_id=mysql_real_escape_string($office_id);
-		$doctor_id=mysql_real_escape_string($doctor_id);
-		$type=mysql_real_escape_string($type);
+		$office_id=parameter_filter($office_id);
+		$doctor_id=parameter_filter($doctor_id);
+		$type=parameter_filter($type);
 
 		$sql="select * from dr_tb_office_specialhour 
 	where office_id=$office_id and doctor_id=$doctor_id and type='$type'
@@ -220,9 +220,9 @@ if($start_date!="" && $end_date!=""){
 			$events[$i]=$this->analyEventTimeID($events[$i]);
 		}
 		//print_r($events);
-		$office_id=mysql_real_escape_string($office_id);
-		$doctor_id=mysql_real_escape_string($doctor_id);
-		$datetype=mysql_real_escape_string($datetype);
+		$office_id=parameter_filter($office_id);
+		$doctor_id=parameter_filter($doctor_id);
+		$datetype=parameter_filter($datetype);
 
 		$sql="select 1 from dr_tb_office_specialhour
 where doctor_id=$doctor_id and office_id=$office_id
@@ -233,8 +233,8 @@ and (";
 		}
 		$date=$events[$i]["date"];
 		$timetable=$events[$i]["timetable_str"];
-		$date=mysql_real_escape_string($date);
-		$timetable=mysql_real_escape_string($timetable);
+		$date=parameter_filter($date);
+		$timetable=parameter_filter($timetable);
 		$sql.="( o_date='$date' and o_time in ($timetable) )";
 	}
 $sql.=")";
@@ -289,10 +289,10 @@ $sql.=")";
 		$event=$this->analyEventTimeID($event);
 		$o_date=$event["date"];
 		$o_time=$event["timetable_str"];
-		$office_id=mysql_real_escape_string($office_id);
-		$doctor_id=mysql_real_escape_string($doctor_id);
-		$o_date=mysql_real_escape_string($o_date);
-		$o_time=mysql_real_escape_string($o_time);
+		$office_id=parameter_filter($office_id);
+		$doctor_id=parameter_filter($doctor_id);
+		$o_date=parameter_filter($o_date);
+		$o_time=parameter_filter($o_time);
 
 		$sql="delete from dr_tb_office_specialhour
 where doctor_id=$doctor_id and office_id=$office_id

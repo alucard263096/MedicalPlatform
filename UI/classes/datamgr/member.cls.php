@@ -26,8 +26,8 @@
 	public function getMemberByEmailMobile($email,$mobile){
 		Global $SysLangCode;
 
-		$email=mysql_real_escape_string($email);
-		$mobile=mysql_real_escape_string($mobile);
+		$email=parameter_filter($email);
+		$mobile=parameter_filter($mobile);
 
 		$sql="select * from dr_tb_member
 where status='A' and (  mobile='$mobile' )";//email='$email' or
@@ -46,10 +46,10 @@ where status='A' and (  mobile='$mobile' )";//email='$email' or
 		
 		$this->dbmgr->begin_trans();
 
-		$email=mysql_real_escape_string($email);
-		$mobile=mysql_real_escape_string($mobile);
-		$password=mysql_real_escape_string($password);
-		$name=mysql_real_escape_string($name);
+		$email=parameter_filter($email);
+		$mobile=parameter_filter($mobile);
+		$password=parameter_filter($password);
+		$name=parameter_filter($name);
 		//logger_mgr::logDebug("a $password b");
 		$password=md5($password);
 
@@ -71,7 +71,7 @@ where status='A' and (  mobile='$mobile' )";//email='$email' or
 	
 	public function getMemberDoctorList($member_id){
 		Global $SysLangCode;
-		$member_id=mysql_real_escape_string($member_id);
+		$member_id=parameter_filter($member_id);
 		$sql="select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,dl.advanced,
 		ifnull(dvv.service_level,5) service_level, ifnull(dvv.pro_level,5) pro_level, ifnull(dvv.facility_level,5) facility_level
 		, ifnull(dvv.totle_score,5) totle_score
@@ -90,8 +90,8 @@ order by totle_score";
 	}
 	public function getMemberDoctor($member_id,$doctor_id){
 		
-		$member_id=mysql_real_escape_string($member_id);
-		$doctor_id=mysql_real_escape_string($doctor_id);
+		$member_id=parameter_filter($member_id);
+		$doctor_id=parameter_filter($doctor_id);
 
 		$sql="select * from dr_tb_member_doctor where member_id=$member_id and doctor_id=$doctor_id ";
 		$query = $this->dbmgr->query($sql);
@@ -101,8 +101,8 @@ order by totle_score";
 	}
 	public function lookDoctor($member_id,$doctor_id){
 		if(count($this->getMemberDoctor($member_id,$doctor_id))==0){
-			$member_id=mysql_real_escape_string($member_id);
-			$doctor_id=mysql_real_escape_string($doctor_id);
+			$member_id=parameter_filter($member_id);
+			$doctor_id=parameter_filter($doctor_id);
 
 			$sql="insert into dr_tb_member_doctor (member_id,doctor_id) values ($member_id,$doctor_id) ";
 			$query = $this->dbmgr->query($sql); 
@@ -123,8 +123,8 @@ limit 0,1";
 	
 	public function readQuestion($questionid,$member_id){
 		
-		$questionid=mysql_real_escape_string($questionid);
-		$member_id=mysql_real_escape_string($member_id);
+		$questionid=parameter_filter($questionid);
+		$member_id=parameter_filter($member_id);
 
 		$sql="update dr_tb_member_question set `read`='1' where member_id=$member_id and id=$questionid ";
 		$query = $this->dbmgr->query($sql);
@@ -132,7 +132,7 @@ limit 0,1";
 
 	public function getMemberInfo($member_id){
 		
-		$member_id=mysql_real_escape_string($member_id);
+		$member_id=parameter_filter($member_id);
 
 		$sql="select * from dr_tb_member_info where member_id=$member_id ";
 		$query = $this->dbmgr->query($sql);
@@ -144,9 +144,9 @@ limit 0,1";
 
 	public function updateMemberInfo($member_id,$field,$value){
 	
-		$member_id=mysql_real_escape_string($member_id);
-		$field=mysql_real_escape_string($field);
-		$value=mysql_real_escape_string($value);
+		$member_id=parameter_filter($member_id);
+		$field=parameter_filter($field);
+		$value=parameter_filter($value);
 
 		if($field=="name"){
 			$sql="update dr_tb_member set name='$value' where id=$member_id ";
@@ -176,7 +176,7 @@ limit 0,1";
 
 		$description.=">>>>>>>$mobile,$name";
 
-		$description=mysql_real_escape_string($description);
+		$description=parameter_filter($description);
 
 		$sql="
 		INSERT INTO `medicalplatform`.`dr_tb_requirement`

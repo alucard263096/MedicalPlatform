@@ -156,7 +156,7 @@ order by o.seq ";
 	public function getVaccine($id){
 		Global $SysLangCode,$SysLang;
 
-		$id=mysql_real_escape_string($id);
+		$id=parameter_filter($id);
 
 		$sql="select o.*,ol.*
 		from dr_tb_vaccine o
@@ -185,8 +185,8 @@ where o.status='A' and o.id in ( $ids )";
 
 	public function getVaccineDoctorPrice($doctor_id,$vaccine_id){
 		
-		$doctor_id=mysql_real_escape_string($doctor_id);
-		$vaccine_id=mysql_real_escape_string($vaccine_id);
+		$doctor_id=parameter_filter($doctor_id);
+		$vaccine_id=parameter_filter($vaccine_id);
 
 		$sql="select id,web_price from dr_tb_doctor_vaccine
 where doctor_id=$doctor_id and vaccine_id=$vaccine_id and status='A'";

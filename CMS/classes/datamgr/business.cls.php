@@ -58,7 +58,7 @@ where o.status='P' and p.payment='Y' and o.guid='' and o.act='gn'";
 
 		$arr=Array();
 		$arr["name"]="疫苗预约取消";
-		$user_id=mysql_real_escape_string($user_id);
+		$user_id=parameter_filter($user_id);
 		$sql="select id,name as first,
  mobile  as second,order_date  as third 
 from dr_tb_order 
@@ -78,7 +78,7 @@ order by updated_date desc
 		
 		$arr=Array();
 		$arr["name"]="需求等待修改";
-		$user_id=mysql_real_escape_string($user_id);
+		$user_id=parameter_filter($user_id);
 		$sql="select  m.id,m.title as first,
 case m.type when 'R' then '新需求' else  'Bug' end as second,user.user_name as third 
 from dr_tb_requirement m
@@ -99,7 +99,7 @@ inner join dr_tb_user user on m.submit_user=user.id
 		
 		$arr=Array();
 		$arr["name"]="需求等待审阅";
-		$user_id=mysql_real_escape_string($user_id);
+		$user_id=parameter_filter($user_id);
 		$sql="select  m.id,m.title as first,
 case m.handling_type when 'F' then '已处理' else  '不处理' end as second,user.user_name as third 
 from dr_tb_requirement m
@@ -120,7 +120,7 @@ inner join dr_tb_user user on m.handling_user=user.id
 		
 		$arr=Array();
 		$arr["name"]="等待处理客户问题";
-		$user_id=mysql_real_escape_string($user_id);
+		$user_id=parameter_filter($user_id);
 		$sql="select  m.id,m.member_name as first,
  m.member_mobile as second,m.submit_date as third 
 from dr_tb_member_question m
@@ -140,7 +140,7 @@ from dr_tb_member_question m
 		
 		$arr=Array();
 		$arr["name"]="等待添加唯一码的基因检测";
-		$user_id=mysql_real_escape_string($user_id);
+		$user_id=parameter_filter($user_id);
 		$sql="select o.id,o.name as first,
  gl.name as second,created_time as third 
 from dr_tb_order o

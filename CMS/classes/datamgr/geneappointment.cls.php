@@ -48,8 +48,8 @@ where 1=1 and main.id=$id ";
 
 	public function CheckGuidOnly($id,$guid){
 		
-		$id=mysql_real_escape_string($id);
-		$guid=mysql_real_escape_string($guid);
+		$id=parameter_filter($id);
+		$guid=parameter_filter($guid);
 
 		$sql="select 1 from dr_tb_order where id=$id and guid='$guid' ";
 		$query = $this->dbmgr->query($sql);
@@ -60,8 +60,8 @@ where 1=1 and main.id=$id ";
 	
 	public function UpdateGuid($id,$guid,$user_id){
 		
-		$id=mysql_real_escape_string($id);
-		$guid=mysql_real_escape_string($guid);
+		$id=parameter_filter($id);
+		$guid=parameter_filter($guid);
 
 		$sql="update dr_tb_order set guid='$guid', status='M',updated_user=$user_id,updated_date=now()
 		where id=$id ";
@@ -74,9 +74,9 @@ where 1=1 and main.id=$id ";
 
 	public function UpdateExpressNo($id,$express_com,$express_no){
 	
-		$id=mysql_real_escape_string($id);
-		$express_no=mysql_real_escape_string($express_no);
-		$express_com=mysql_real_escape_string($express_com);
+		$id=parameter_filter($id);
+		$express_no=parameter_filter($express_no);
+		$express_com=parameter_filter($express_com);
 
 		$sql="update dr_tb_order set status='K'
 		where id=$id ";
@@ -89,7 +89,7 @@ where 1=1 and main.id=$id ";
 	}
 	public function UpdateReceive($id){
 	
-		$id=mysql_real_escape_string($id);
+		$id=parameter_filter($id);
 
 		$sql="update dr_tb_order set status='R'
 		where id=$id ";
@@ -97,9 +97,9 @@ where 1=1 and main.id=$id ";
 	}
 	public function UpdateReportExpressNo($id,$report_express_com,$report_express_no){
 	
-		$id=mysql_real_escape_string($id);
-		$report_express_no=mysql_real_escape_string($report_express_no);
-		$report_express_com=mysql_real_escape_string($report_express_com);
+		$id=parameter_filter($id);
+		$report_express_no=parameter_filter($report_express_no);
+		$report_express_com=parameter_filter($report_express_com);
 
 		$sql="update dr_tb_order set  status='G'
 		where id=$id ";
@@ -111,7 +111,7 @@ where 1=1 and main.id=$id ";
 	}
 	public function UpdateFinished($id){
 	
-		$id=mysql_real_escape_string($id);
+		$id=parameter_filter($id);
 
 		$sql="update dr_tb_order set status='F'
 		where id=$id ";

@@ -44,9 +44,9 @@ class SmsMgr
 
 	public function getLastSent($mobile,$type){
 		
-		$mobile=mysql_real_escape_string($mobile);
-		$type=mysql_real_escape_string($type);
-		$timeout=mysql_real_escape_string($this->timeout);
+		$mobile=parameter_filter($mobile);
+		$type=parameter_filter($type);
+		$timeout=parameter_filter($this->timeout);
 
 		$sql="select id, code, ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(lastsent_time))/60) lastsent,((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60) created_mins 
 		from dr_tb_sms_code 
@@ -109,10 +109,10 @@ class SmsMgr
 		$result=$this->Send($mobile,$arr,$templeteId);
 		if($result){
 			
-			$mobile=mysql_real_escape_string($mobile);
-			$verifycode=mysql_real_escape_string($verifycode);
-			$verifycode=mysql_real_escape_string($verifycode);
-			$templeteId=mysql_real_escape_string($templeteId);
+			$mobile=parameter_filter($mobile);
+			$verifycode=parameter_filter($verifycode);
+			$verifycode=parameter_filter($verifycode);
+			$templeteId=parameter_filter($templeteId);
 
 			if($lstrs["id"]==""){
 				$sql="select ifnull(max(id),0)+1 from dr_tb_sms_code";

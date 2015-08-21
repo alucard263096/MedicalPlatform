@@ -10,7 +10,7 @@ class GeneXmlModel extends XmlModel{
 	Global $SysLang; 
 		if($request["primary_id"]==""){
 			$code=$request["code"];
-			$code=mysql_real_escape_string($code);
+			$code=parameter_filter($code);
 			$sql="select * from dr_tb_gene where code='$code' ";
 			$query = $dbMgr->query($sql);
 			$userRows = $dbMgr->fetch_array_all($query); 

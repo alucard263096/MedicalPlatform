@@ -26,7 +26,7 @@
 	public function getVaccineAppointmentByOrderNo($order_no){
 		Global $SysLangCode,$SysUser;
 
-		$order_no=mysql_real_escape_string($order_no);
+		$order_no=parameter_filter($order_no);
 		$doctor_id=$SysUser["doctor_id"];
 
 		$sql="select main.*,ovc.*,t.name order_rtime,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
@@ -48,7 +48,7 @@ where main.order_no='$order_no' and ovc.doctor_id=$doctor_id";
 	public function getVaccineAppointmentByGuid($key,$guid){
 		Global $SysLangCode,$SysUser;
 
-		$guid=mysql_real_escape_string($guid);
+		$guid=parameter_filter($guid);
 		$doctor_id=$SysUser["doctor_id"];
 		$sql="select main.*,ovc.*,t.name order_rtime,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
 		TO_DAYS(NOW()) - TO_DAYS(main.order_date) expire_days
@@ -102,7 +102,7 @@ where main.guid in ($guid) and ovc.doctor_id=$doctor_id";
 		
 		$user_id=$SysUser["id"];
 		$doctor_id=$SysUser["doctor_id"];
-		$id=mysql_real_escape_string($id);
+		$id=parameter_filter($id);
 
 		$sql="update dr_tb_order set updated_user=$user_id,updated_date=now(),status='F' 
 		where id=$id and doctor_id=$doctor_id ";
@@ -113,7 +113,7 @@ where main.guid in ($guid) and ovc.doctor_id=$doctor_id";
 		Global $SysUser;
 		
 		$user_id=$SysUser["id"];
-		$id=mysql_real_escape_string($id);
+		$id=parameter_filter($id);
 
 		$sql="update dr_tb_order set updated_user=$user_id,updated_date=now(),status='C'
 		where id=$id";

@@ -25,7 +25,7 @@
 	
 	public function getUserByName($loginname)
 	{
-		$loginname=mysql_real_escape_string($loginname);
+		$loginname=parameter_filter($loginname);
 		$sql="select * from dr_tb_doctor_account where login_id='$loginname' ";
 		$query = $this->dbmgr->query($sql);
 		$result = $this->dbmgr->fetch_array_all($query);

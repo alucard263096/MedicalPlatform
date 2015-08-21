@@ -44,7 +44,7 @@ order by a.licence_code,b.name
 	public function getSpecialistDoctorServiceEffectId($doctor_id){
 	
 	
-		$doctor_id=mysql_real_escape_string($doctor_id);
+		$doctor_id=parameter_filter($doctor_id);
 	$sql="
 select p.* from dr_tb_doctor a
 inner join dr_tb_specialist p on  a.is_general='N' and a.specialist_id=p.id
@@ -86,7 +86,7 @@ order by el.name
 		$this->dbmgr->begin_trans();
 		$doctor_id=$request["doctor_id"];
 
-		$doctor_id=mysql_real_escape_string($doctor_id);
+		$doctor_id=parameter_filter($doctor_id);
 		
 		$effect_list=$this->getSpecialistDoctorServiceEffectId($doctor_id);
 		$effect_list=explode(",",$effect_list);
@@ -97,14 +97,14 @@ order by el.name
 		foreach ($effect_list as $value){
 			
 			$effect_id=$value;
-			$effect_id=mysql_real_escape_string($effect_id);
+			$effect_id=parameter_filter($effect_id);
 			
 			$selected=$request["effect_".$effect_id."_select"];
 			$price=$request["effect_".$effect_id."_price"];
 			$web_price=$request["effect_".$effect_id."_web_price"];
 			
-			$price=mysql_real_escape_string($price);
-			$web_price=mysql_real_escape_string($web_price);
+			$price=parameter_filter($price);
+			$web_price=parameter_filter($web_price);
 
 			if($selected=="Y"){
 				

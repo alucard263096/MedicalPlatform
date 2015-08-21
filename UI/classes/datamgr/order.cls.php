@@ -29,14 +29,14 @@
 		
 		
 
-		$member_id=mysql_real_escape_string($member_id);
-		$name=mysql_real_escape_string($name);
-		$mobile=mysql_real_escape_string($mobile);
-		$address=mysql_real_escape_string($address);
-		$remark=mysql_real_escape_string($remark);
-		$gene_id=mysql_real_escape_string($gene_id);
-		$price=mysql_real_escape_string($price);
-		$snapshot=mysql_real_escape_string($snapshot);
+		$member_id=parameter_filter($member_id);
+		$name=parameter_filter($name);
+		$mobile=parameter_filter($mobile);
+		$address=parameter_filter($address);
+		$remark=parameter_filter($remark);
+		$gene_id=parameter_filter($gene_id);
+		$price=parameter_filter($price);
+		$snapshot=parameter_filter($snapshot);
 		
 		
 
@@ -92,7 +92,7 @@ values
 	public function updateGeneOrderPaymentInfo($id,$payment_type){
 
 		$pin_code=md5("pt".$id);
-		$payment_type=mysql_real_escape_string($payment_type);
+		$payment_type=parameter_filter($payment_type);
 
 		$sql="update dr_tb_order_payment set trade_pin_code='$pin_code',payment_type='$payment_type',is_submit='Y'
 		where order_id=$id and is_submit='N'";
@@ -101,7 +101,7 @@ values
 	}
 
 	public function updateGeneAppointmentPayment($id,$trade_no){
-		$trade_no=mysql_real_escape_string($trade_no);
+		$trade_no=parameter_filter($trade_no);
 
 		$sql="update dr_tb_order_payment set payment_time=now(),trade_no='$trade_no',payment='Y'
 		where order_id=$id ";
@@ -110,9 +110,9 @@ values
 
 	public function getBookingDateSelectedTime($office_id,$doctor_id,$order_date){
 
-		$office_id=mysql_real_escape_string($office_id);
-		$doctor_id=mysql_real_escape_string($doctor_id);
-		$order_date=mysql_real_escape_string($order_date);
+		$office_id=parameter_filter($office_id);
+		$doctor_id=parameter_filter($doctor_id);
+		$order_date=parameter_filter($order_date);
 
 		$meetdays=$this->getOpenHour($office_id,$doctor_id,$order_date);
 
@@ -185,19 +185,19 @@ where osp.office_id=$office_id and osp.doctor_id=$doctor_id and osp.o_date='$ord
 	$snapshot,$doctor_vaccine_id){
 		
 
-		$member_id=mysql_real_escape_string($member_id);
-		$name=mysql_real_escape_string($name);
-		$mobile=mysql_real_escape_string($mobile);
-		$email=mysql_real_escape_string($email);
-		$idport_type=mysql_real_escape_string($idport_type);
-		$idport=mysql_real_escape_string($idport);
-		$order_date=mysql_real_escape_string($order_date);
-		$order_time=mysql_real_escape_string($order_time);
-		$vaccine_id=mysql_real_escape_string($vaccine_id);
-		$doctor_id=mysql_real_escape_string($doctor_id);
-		$office_id=mysql_real_escape_string($office_id);
-		$price=mysql_real_escape_string($price);
-		$snapshot=mysql_real_escape_string($snapshot);
+		$member_id=parameter_filter($member_id);
+		$name=parameter_filter($name);
+		$mobile=parameter_filter($mobile);
+		$email=parameter_filter($email);
+		$idport_type=parameter_filter($idport_type);
+		$idport=parameter_filter($idport);
+		$order_date=parameter_filter($order_date);
+		$order_time=parameter_filter($order_time);
+		$vaccine_id=parameter_filter($vaccine_id);
+		$doctor_id=parameter_filter($doctor_id);
+		$office_id=parameter_filter($office_id);
+		$price=parameter_filter($price);
+		$snapshot=parameter_filter($snapshot);
 		
 		
 
@@ -258,18 +258,18 @@ VALUES
 	$snapshot,$doctor_vaccine_id,$id){
 		
 
-		$member_id=mysql_real_escape_string($member_id);
-		$name=mysql_real_escape_string($name);
-		$mobile=mysql_real_escape_string($mobile);
-		$email=mysql_real_escape_string($email);
-		$idport_type=mysql_real_escape_string($idport_type);
-		$idport=mysql_real_escape_string($idport);
-		$order_date=mysql_real_escape_string($order_date);
-		$order_time=mysql_real_escape_string($order_time);
-		$office_id=mysql_real_escape_string($office_id);
-		$price=mysql_real_escape_string($price);
-		$snapshot=mysql_real_escape_string($snapshot);
-		$id=mysql_real_escape_string($id);
+		$member_id=parameter_filter($member_id);
+		$name=parameter_filter($name);
+		$mobile=parameter_filter($mobile);
+		$email=parameter_filter($email);
+		$idport_type=parameter_filter($idport_type);
+		$idport=parameter_filter($idport);
+		$order_date=parameter_filter($order_date);
+		$order_time=parameter_filter($order_time);
+		$office_id=parameter_filter($office_id);
+		$price=parameter_filter($price);
+		$snapshot=parameter_filter($snapshot);
+		$id=parameter_filter($id);
 		
 		
 
@@ -384,7 +384,7 @@ where gene_id=$gene_id;
 	public function getAppointmentList($member_id){
 		Global $SysLangCode;
 
-		$member_id=mysql_real_escape_string($member_id);
+		$member_id=parameter_filter($member_id);
 		$sql="select * from (";
 
 		$sql.="select main.act,main.id,'vaccine' image_group,vaccine.name,vaccine.image image,doctor.name doctor,office.address message,
@@ -432,9 +432,9 @@ where main.member_id=$member_id ";
 	public function getGeneAppointment($id,$order_no=""){
 		Global $SysLangCode;
 
-		$member_id=mysql_real_escape_string($member_id);
-		$id=mysql_real_escape_string($id);
-		$order_no=mysql_real_escape_string($order_no);
+		$member_id=parameter_filter($member_id);
+		$id=parameter_filter($id);
+		$order_no=parameter_filter($order_no);
 		$sql="select main.*,gene.name gene_name,
 		case main.status
 when 'P' then '等待系统确认'
@@ -465,8 +465,8 @@ where 1=1 ";
 	public function getVaccineAppointment($member_id,$id){
 		Global $SysLangCode;
 
-		$member_id=mysql_real_escape_string($member_id);
-		$id=mysql_real_escape_string($id);
+		$member_id=parameter_filter($member_id);
+		$id=parameter_filter($id);
 		$sql="select main.*,t.name order_rtime,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
 		TO_DAYS(NOW()) - TO_DAYS(main.order_date) passdate
 		  from (select * from dr_tb_order o
@@ -506,7 +506,7 @@ order by created_time desc";
 	}
 
 	public function getOrderData($id){
-		$id=mysql_real_escape_string($id);
+		$id=parameter_filter($id);
 		$sql="select *
 		,TO_DAYS(NOW()) - TO_DAYS(order_date) passdate
 		from dr_v_order

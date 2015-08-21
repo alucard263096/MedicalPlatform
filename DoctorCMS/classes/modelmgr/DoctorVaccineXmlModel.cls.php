@@ -12,8 +12,8 @@ class DoctorVaccineXmlModel extends XmlModel{
 			$doctor_id=$request["doctor_id"];
 			$vaccine_id=$request["vaccine_id"];
 
-			$doctor_id=mysql_real_escape_string($doctor_id);
-			$vaccine_id=mysql_real_escape_string($vaccine_id);
+			$doctor_id=parameter_filter($doctor_id);
+			$vaccine_id=parameter_filter($vaccine_id);
 
 			$sql="select * from dr_tb_doctor_vaccine where doctor_id=$doctor_id and vaccine_id=$vaccine_id ";
 			$query = $dbMgr->query($sql);

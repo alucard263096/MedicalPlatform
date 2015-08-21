@@ -41,7 +41,7 @@
 	public function getGene($id){
 		Global $SysLangCode,$SysLang;
 
-		$id=mysql_real_escape_string($id);
+		$id=parameter_filter($id);
 
 		$sql="select *
 		from dr_tb_gene o

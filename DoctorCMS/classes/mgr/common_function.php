@@ -13,6 +13,7 @@ function parameter_filter($param)
 {
 	$arr=array("'"=>"''");
 	$param = strtr($param,$arr);
+	$param = mysql_escape_string($param);
 	return $param;
 }
 function ParentRedirect($url)

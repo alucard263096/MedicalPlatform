@@ -25,9 +25,9 @@
 	
 	public function Handle($id,$h_status,$h_comment){
 		
-		$id=mysql_real_escape_string($id);
-		$h_status=mysql_real_escape_string($h_status);
-		$h_comment=mysql_real_escape_string($h_comment);
+		$id=parameter_filter($id);
+		$h_status=parameter_filter($h_status);
+		$h_comment=parameter_filter($h_comment);
 
 		$sql="update dr_tb_order set h_status='$h_status', h_comment='$h_comment',updated_date=now()
 		where id=$id ";

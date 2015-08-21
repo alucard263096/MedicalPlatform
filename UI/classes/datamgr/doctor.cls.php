@@ -61,7 +61,7 @@
 			return $_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["vaccinedoctorlist_$vaccineid"];
 		}else{
 
-			$vaccineid=mysql_real_escape_string($vaccineid);
+			$vaccineid=parameter_filter($vaccineid);
 
 			$sql="select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
 		,dv.price,dv.web_price,
@@ -103,8 +103,8 @@ order by totle_score desc";
 	public function getVaccineDoctor($vaccineid,$doctorid){
 		Global $SysLangCode,$CONFIG;
 		
-			$vaccineid=mysql_real_escape_string($vaccineid);
-			$doctorid=mysql_real_escape_string($doctorid);
+			$vaccineid=parameter_filter($vaccineid);
+			$doctorid=parameter_filter($doctorid);
 
 			$sql="select distinct  dv.web_price,v.id vaccine_id,
 			vl.name vaccine_name,vl.effect vaccine_effect,vl.used_group vaccine_used_group,v.image vaccine_image,
@@ -264,7 +264,7 @@ left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='$SysLangCode
 	public function getOfficeListByDoctor($doctor_list){
 		Global $SysLangCode;
 	
-		$doctor_list=mysql_real_escape_string($doctor_list);
+		$doctor_list=parameter_filter($doctor_list);
 
 		$sql="select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,ol.addressnav,
 		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,\",\",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,\",\",1))+2,length(coordinate))  y
@@ -284,7 +284,7 @@ where oo.status='A' and oo.doctor_id in ($doctor_list) ";
 	public function getOfficeDetail($office_id){
 		Global $SysLangCode;
 	
-		$office_id=mysql_real_escape_string($office_id);
+		$office_id=parameter_filter($office_id);
 
 		$sql="select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
 		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,\",\",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,\",\",1))+2,length(coordinate))  y
@@ -306,7 +306,7 @@ where o.id=$office_id ";
 		if($CONFIG['solution_configuration']!="debug"&&isset($_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["hospitallist_$doctor_id"])){
 			return $_SESSION[SESSIONNAME]["doctor"][$SysLangCode]["hospitallist_$doctor_id"];
 		}else{
-			$doctor_id=mysql_real_escape_string($doctor_id);
+			$doctor_id=parameter_filter($doctor_id);
 			$sql="select hospital_list_id from dr_tb_doctor where id=$doctor_id";
 			$query = $this->dbmgr->query($sql);
 			$result = $this->dbmgr->fetch_array($query); 
@@ -352,7 +352,7 @@ where o.id=$office_id ";
 	public function getDoctor($doctor_id){
 		Global $SysLangCode;
 	
-		$doctor_id=mysql_real_escape_string($doctor_id);
+		$doctor_id=parameter_filter($doctor_id);
 
 		$sql="select d.*,dl.*,sl.name specialist,
 		ifnull(dvv.service_level,5) service_level, ifnull(dvv.pro_level,5) pro_level, ifnull(dvv.facility_level,5) facility_level
@@ -371,7 +371,7 @@ where d.id=$doctor_id ";
 	public function getDoctorService($doctor_id){
 		Global $SysLangCode;
 	
-		$doctor_id=mysql_real_escape_string($doctor_id);
+		$doctor_id=parameter_filter($doctor_id);
 
 		$sql="select ds.*,el.name,el.description effect_description from dr_tb_doctor d
 inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
@@ -453,16 +453,16 @@ order by totle_score desc";
 	public function SubmitAQuestion($doctor_id,$member_id,$member_name,$member_mobile,
 	$description,$is_male,$age,$img_1,$img_2,$img_3){
 	
-		$doctor_id=mysql_real_escape_string($doctor_id);
-		$member_id=mysql_real_escape_string($member_id);
-		$member_name=mysql_real_escape_string($member_name);
-		$member_mobile=mysql_real_escape_string($member_mobile);
-		$description=mysql_real_escape_string($description);
-		$is_male=mysql_real_escape_string($is_male);
-		$age=mysql_real_escape_string($age);
-		$img_1=mysql_real_escape_string($img_1);
-		$img_2=mysql_real_escape_string($img_2);
-		$img_3=mysql_real_escape_string($img_3);
+		$doctor_id=parameter_filter($doctor_id);
+		$member_id=parameter_filter($member_id);
+		$member_name=parameter_filter($member_name);
+		$member_mobile=parameter_filter($member_mobile);
+		$description=parameter_filter($description);
+		$is_male=parameter_filter($is_male);
+		$age=parameter_filter($age);
+		$img_1=parameter_filter($img_1);
+		$img_2=parameter_filter($img_2);
+		$img_3=parameter_filter($img_3);
 
 		$this->dbmgr->begin_trans();
 		
@@ -488,8 +488,8 @@ order by totle_score desc";
 
 	public function getMemberQuestionList($member_id){
 
-		$member_id=mysql_real_escape_string($member_id);
-		$question_id=mysql_real_escape_string($question_id);
+		$member_id=parameter_filter($member_id);
+		$question_id=parameter_filter($question_id);
 		$sql="select q.id, q.doctor_id,q.description,q.submit_date,q.status from dr_tb_member_question q
 where q.member_id=$member_id 
 order by q.submit_date desc";
@@ -502,8 +502,8 @@ order by q.submit_date desc";
 
 	public function getMemberQuestion($member_id,$question_id){
 		Global $SysLangCode;
-		$member_id=mysql_real_escape_string($member_id);
-		$question_id=mysql_real_escape_string($question_id);
+		$member_id=parameter_filter($member_id);
+		$question_id=parameter_filter($question_id);
 		$sql="select q.doctor_id, q.submit_date,q.description,d.photo doctor_photo,q.reply from dr_tb_member_question q
 left join dr_tb_doctor d on q.doctor_id=d.id
 left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='$SysLangCode'

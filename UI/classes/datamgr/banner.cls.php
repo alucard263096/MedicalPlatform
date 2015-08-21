@@ -49,7 +49,7 @@
 	public function getBannerByCode($code)
 	{
 		Global $SysLangCode;
-		//$codelist=mysql_real_escape_string($codelist);
+		//$codelist=parameter_filter($codelist);
 		$ex=getLangEx();
 
 		$sql="
@@ -66,7 +66,7 @@
 	public function getBannerByCodeList($codelist)
 	{
 		Global $SysLangCode;
-		//$codelist=mysql_real_escape_string($codelist);
+		//$codelist=parameter_filter($codelist);
 		$ex=getLangEx();
 
 		$sql="
@@ -82,7 +82,7 @@
 
 	public function getGeneralText($code){
 		Global $SysLangCode;
-		//$codelist=mysql_real_escape_string($codelist);
+		//$codelist=parameter_filter($codelist);
 		$ex=getLangEx();
 
 		$sql="
