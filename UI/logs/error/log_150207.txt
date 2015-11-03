@@ -1,0 +1,5 @@
+07/02/2015 16:15:01 [error]: sql error :select o.*,ol.*
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+where o.status='A' and o.id=
+order by o.seq 

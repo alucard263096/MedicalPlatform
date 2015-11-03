@@ -1,0 +1,2 @@
+18/03/2015 21:42:26 [error]: sms :error code :172004 error msg :IP为空 
+18/03/2015 21:44:00 [error]: sms :error code :112311 error msg :【短信】短信模板不存在 

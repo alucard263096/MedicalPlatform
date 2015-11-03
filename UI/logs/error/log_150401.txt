@@ -1,0 +1,71 @@
+01/04/2015 10:32:28 [error]: sql error :select id, code, ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(lastsent_time))/60) lastsent,((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60) created_mins 
+		from dr_tb_sms_code 
+		where mobile='13751082562' and type='L' 
+		and ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60)<30
+		order by lastsent_time desc
+		limit 0,1
+01/04/2015 10:33:56 [error]: sql error :select id, code, ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(lastsent_time))/60) lastsent,((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60) created_mins 
+		from dr_tb_sms_code 
+		where mobile='' and type='L' 
+		and ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60)<30
+		order by lastsent_time desc
+		limit 0,1
+01/04/2015 10:34:08 [error]: sql error :select id, code, ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(lastsent_time))/60) lastsent,((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60) created_mins 
+		from dr_tb_sms_code 
+		where mobile='' and type='L' 
+		and ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60)<30
+		order by lastsent_time desc
+		limit 0,1
+01/04/2015 10:36:32 [error]: sql error :select id, code, ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(lastsent_time))/60) lastsent,((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60) created_mins 
+		from dr_tb_sms_code 
+		where mobile='' and type='L' 
+		and ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60)<30
+		order by lastsent_time desc
+		limit 0,1
+01/04/2015 10:37:28 [error]: sql error :select id, code, ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(lastsent_time))/60) lastsent,((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60) created_mins 
+		from dr_tb_sms_code 
+		where mobile='' and type='L' 
+		and ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60)<30
+		order by lastsent_time desc
+		limit 0,1
+01/04/2015 10:37:40 [error]: sql error :select id, code, ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(lastsent_time))/60) lastsent,((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60) created_mins 
+		from dr_tb_sms_code 
+		where mobile='13751082562' and type='L' 
+		and ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60)<30
+		order by lastsent_time desc
+		limit 0,1
+01/04/2015 10:38:19 [error]: sql error :select id, code, ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(lastsent_time))/60) lastsent,((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60) created_mins 
+		from dr_tb_sms_code 
+		where mobile='13751082562' and type='L' 
+		and ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60)<30
+		order by lastsent_time desc
+		limit 0,1
+01/04/2015 10:45:59 [error]: sql error :select id, code, ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(lastsent_time))/60) lastsent,((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60) created_mins 
+		from dr_tb_sms_code 
+		where mobile='13751082562' and type='M' 
+		and ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60)<30
+		order by lastsent_time desc
+		limit 0,1
+01/04/2015 10:47:47 [error]: sql error :select id, code, ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(lastsent_time))/60) lastsent,((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60) created_mins 
+		from dr_tb_sms_code 
+		where mobile='13751082562' and type='M' 
+		and ((UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_time))/60)<30
+		order by lastsent_time desc
+		limit 0,1
+01/04/2015 21:46:15 [error]: sql error :select 1 from dr_tb_member_question
+where member_id=2
+and reply<>'' 
+and `read`='0'
+limit 0,1
+01/04/2015 21:46:58 [error]: sql error :INSERT INTO `dr_tb_member_vaccine_order`
+(`id`,`order_no`,`guid`,`member_id`,`name`,`mobile`,`email`,`idport_type`,`idport`,`order_date`,`order_time`,`vaccine_id`,`doctor_id`,`office_id`,`price`,`status`,`created_time`,`snapshot`,h_status )
+VALUES
+(3,'VC201504000001','4958-5494-6149-3103',2,'蔡笋','13751082562','','G','555','2015-04-09',11,1,1,1,1.00,'P',now(),'','P');
+ 
+01/04/2015 21:59:16 [error]: sms :error code :112307 error msg :【短信】模板短信模板ID为空 
+01/04/2015 21:59:20 [error]: sms :error code :112307 error msg :【短信】模板短信模板ID为空 
+01/04/2015 22:00:35 [error]: sms :error code :112307 error msg :【短信】模板短信模板ID为空 
+01/04/2015 22:01:11 [error]: sms :error code :112307 error msg :【短信】模板短信模板ID为空 
+01/04/2015 22:01:39 [error]: sms :error code :112310 error msg :【短信】应用未上线，模板短信接收号码外呼受限 
+01/04/2015 22:02:34 [error]: sms :error code :112310 error msg :【短信】应用未上线，模板短信接收号码外呼受限 
+01/04/2015 22:03:23 [error]: sms :error code :160013 error msg :短信发送不支持该号码:1 

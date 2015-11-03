@@ -1,0 +1,5 @@
+19/01/2015 12:41:41 [debug]: sql :select * from tb_user where login_id='admin' 
+19/01/2015 12:41:47 [debug]: sql :select * from tb_user where login_id='admin' 
+19/01/2015 12:41:51 [debug]: sql :select * from tb_user where login_id='admin' 
+19/01/2015 12:41:52 [debug]: sql :select * from tb_news where id=9
+19/01/2015 12:43:13 [debug]: sql :update tb_news set updated_date=now(),updated_user=1, `title`='测试', `summary`='测试', `content`='<p><img alt=\\\"\\\" src=\\\"/upload/images/Koala.jpg\\\" /></p>\n', `published_date`='2015-01-07', `status`='I' where id=9

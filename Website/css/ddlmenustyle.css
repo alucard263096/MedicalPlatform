@@ -1,0 +1,33 @@
+body {
+	margin: 10px auto;
+	font-size:12px;
+} 
+dl, dt, dd{ margin:0; padding:0;} 
+dl {	
+	width: 200px;
+}
+dt {
+	padding: 5px 20px;
+	cursor: pointer;
+	position: relative;
+	margin:1px;
+    font-weight:bold;
+    
+}
+.leftIco{background: #51a635 url(../images/left.gif) 6px 7px  no-repeat;}
+.bottomIco{background: #51a635 url(../images/bottom.gif) 6px 7px  no-repeat;}
+dd {
+	display:none;
+}
+dd a{
+  display:block;
+  color:#006699;
+  background-color:#EFEFEF;
+  padding-left:20px;
+  font-weight:bold;
+  text-decoration:none;
+}
+dd a:hover{
+  color: #000000;
+  text-decoration:underline;
+}

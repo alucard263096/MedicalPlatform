@@ -1,0 +1,181 @@
+.header.text { font-family:Arial, Helvetica, sans-serif; font-size: 10px;}
+.header.login { font-family:Arial, Helvetica, sans-serif; font-size: 10px; }
+.header.textfield { width: 100px; }
+td, input {
+    font-family:Arial;
+    font-size:12px;
+}
+.hidden { position:absolute; top:0; left:-9999px; width:1px; height:1px; overflow:hidden; }
+/*
+.fg-button { clear:left; margin:0px 4px 4px 0px; padding: .4em 1em; text-decoration:none !important; cursor:pointer; position: relative; text-align: center; zoom: 1; }
+.fg-button .ui-icon { position: absolute; top: 50%; margin-top: -8px; left: 50%; margin-left: -8px; }
+a.fg-button { float:left;  }
+button.fg-button { width:auto; overflow:visible; } // removes extra button width in IE 
+
+.fg-button-icon-left { padding-left: 2.1em; }
+.fg-button-icon-right { padding-right: 2.1em; }
+.fg-button-icon-left .ui-icon { right: auto; left: .2em; margin-left: 0; }
+.fg-button-icon-right .ui-icon { left: auto; right: .2em; margin-left: 0; }
+.fg-button-icon-solo { display:block; width:8px; text-indent: -9999px; }	 // solo icon buttons must have block properties for the text-indent to work 
+
+.fg-button.ui-state-loading .ui-icon { background: url(/menu/spinner_bar.gif) no-repeat 0 0; }
+<!--[if IE 6]>
+.fg-menu-ipod .fg-menu li { width: 95%; }
+.fg-menu-ipod .ui-widget-content { border:0; }
+<![endif]-->
+*/
+/*Example CSS for demo ticker*/
+
+#headerticker {
+border: 1px ridge black;
+padding: 5px;
+background-color: #FEEEB8;
+}
+
+#headerticker div{ /*IE6 bug fix when text is bold and fade effect (alpha filter) is enabled. Style inner DIV with same color as outer DIV*/
+width: 20px;
+height: 80px;
+/*border: 1px ridge black;
+padding: 5px;*/
+background-color: #FEEEB8;
+}
+input
+{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.someclass{ //class to apply to your scroller(s) if desired
+}
+
+.ticker.header { font-family:Arial, Helvetica, sans-serif; font-size: 12px;  }
+.ticker.title { font-family:Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; }
+.ticker.date { font-family:Arial, Helvetica, sans-serif; font-size: 12px; color: #cccccc; }
+.ticker.text { font-family:Arial, Helvetica, sans-serif; font-size: 12px; }
+
+.script { font-family:Arial, Helvetica, sans-serif; font-size: 12px; padding: 1px; }
+.script:hover { border-color: #64acd8; }
+
+.cart { font-family:Arial, Helvetica, sans-serif; font-size: 12px; padding: 5px; overflow:auto; }
+
+.textfield_effect    {
+    /*we will first set the border styles.*/
+    border-width: 1px;
+    border-style: solid;
+    border-color: #097bc3;
+    /*we are now going to add in the shadow image that we created earlier*/
+    /*background-image: url(back_field.gif);*/
+    background-repeat: repeat-x;
+    /*I am going to add some text formatting of my own*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    width: 300px;
+    height: 18px;
+    }
+ 
+/*we are now going to style how the textfield will look when we
+hover over it and when we actually have it selected*/
+ 
+.textfield_effect:hover    {
+    border-color: #64acd8;
+    border-width: 1px;
+    }
+ 
+select    {
+    /*we will first set the border styles.*/
+    border-width: 1px;
+    border-style: solid;
+    border-color: #097bc3;
+    /*we are now going to add in the shadow image that we created earlier*/
+    //background-image: url(../back_field.gif);
+    //background-repeat: repeat-x;
+    /*I am going to add some text formatting of my own*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    }
+	
+select:hover    {
+    border-color: #64acd8;
+    border-width: 1px;
+    }
+ 
+/*we are now going to style how the textfield will look when we
+hover over it and when we actually have it selected*/
+ 
+.textfield_effect:hover    {
+    border-color: #64acd8;
+    border-width: 1px;
+    }
+
+fieldset    {
+	font-family:Arial, Helvetica, sans-serif;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+    margin-left:0px;
+    margin-right:0px;
+    }
+
+fieldset:hover    {
+    border-color: #0ca0ff;
+    }
+.fieldset    {
+	text-align:left;
+	font-family:Arial, Helvetica, sans-serif;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	padding:2px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	font-size: 18px;
+	color: #f77804;
+	font-style: normal;
+	font-weight: bolder;
+    }
+
+.fieldset:hover    {
+    border-color: #0ca0ff;
+    }
+    
+table.fieldsetContent	{
+	margin:10px;
+}
+.fieldsetContent	{
+	padding-left:10px;
+	padding-right:10px;
+	overflow-y: auto;
+}
+legend    {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #097bc3;
+    font-weight: bold;
+    }
+.down {font-size:12px;}
+.menubar td a { font-family:Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #ffffff; text-decoration:none; }
+.menubar td:hover a { font-family:Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #ffff00; text-decoration:none; }
+.text{ font-family:Arial, Helvetica, sans-serif; font-size: 12px;  }
+.text.title { font-family:Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; }
+.text.content { font-family:Arial, Helvetica, sans-serif; font-size: 12px; }
+.text.small { font-family:Arial, Helvetica, sans-serif; font-size: 9px; }
+
+.result_frame { border-width: 0px; overflow: auto; width: 100%; height:500px; }
+
+.bigtitle {
+	font-size: 15pt;
+	font-weight: bold;
+	color: #62C311; font-family: "Times New Roman", Times, serif; 
+}
+.caption { font-family: "Arial, Helvetica, sans-serif"; font-size: 30px; color:#CCCCCC; font-weight: bold;}

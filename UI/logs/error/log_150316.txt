@@ -1,0 +1,23 @@
+16/03/2015 21:37:56 [error]: sql error :select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from  dr_tb_doctor d 
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.status='A'
+order by totle_score
+16/03/2015 22:15:14 [error]: sql error :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=1 
+16/03/2015 22:33:36 [error]: sql error :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=1 

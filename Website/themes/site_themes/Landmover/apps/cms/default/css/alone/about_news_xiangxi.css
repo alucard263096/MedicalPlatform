@@ -1,0 +1,33 @@
+.news_xiangxi{ width:870px; margin:0 auto}
+.news_top{ padding-bottom:10px; border-bottom:1px solid #D9D9D9;}
+.share a{ background:url(../../images/common/share.jpg) no-repeat; height:17px; width:17px; display:inline-block; margin-right:5px;}
+.share a.share_1{ background-position:left top;}
+.share a.share_2{ background-position:-21px top;}
+.share a.share_3{ background-position:-42px top;}
+.share a.share_4{ background-position:-63px top;}
+.share a.share_5{ background-position:-84px top;}
+
+
+.grey_bg{ margin-top:20px; padding:20px 30px; background:#f8f8f8; }
+.lead_read{ }
+.lead_read span{ color:#2fa8df;}
+.news_con {font-size:14px;padding-top: 15px;}
+.news_con p{margin: 20px 0;}
+.news_con h1{font-size: 24px;line-height: 40px;}
+.news_con h2{font-size: 20px;line-height: 34px;}
+
+.view p{ height:30px;}
+.view p input{ margin-right:10px; vertical-align:-2px;}
+.view p.btn_box{ padding-left:217px;}
+.view p.btn_box input{ background:url(../../images/common/btnbg.gif) no-repeat; height:28px; line-height:28px; width:62px; overflow:hidden; color:#2fa8df; margin-right:20px; border:none; cursor:pointer}
+.abour_read{ margin-top:30px; margin-bottom:10px;}
+.abour_read p{ font-size:18px; margin-bottom:10px; font-weight:bold}
+.abour_read  ul li{ font-size:14px; line-height:25px;}
+.abour_read  ul li i{ vertical-align:3px; font-size:28px; color:#ABABAB;}
+.abour_read  ul li span{ color:#d9d9d9; margin-left:20px;}
+.discuss{ margin-bottom:200px;}
+.discuss strong{ font-size:18px;}
+.discuss textarea{ border:1px solid #D9D9D9; width:830px; height:70px; margin:12px 0; padding:10px 20px; color:#B3B3B3; background:none}
+.discuss input{ float:right; font-size:14px; height:33px; line-height:33px; width:86px; text-align:center; background:#7DBFF3; color:#FFF; border:none; border-radius:3px;}
+.discuss p{ color:#838383;}
+.discuss p a{ color:#005197;}

@@ -1,0 +1,660 @@
+04/02/2015 00:24:05 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:24:05 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:24:05 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 00:27:00 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:27:00 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:27:00 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 00:27:12 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:27:12 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:27:12 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 00:27:45 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:27:45 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:27:45 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 00:29:38 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:29:38 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:29:38 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 00:29:48 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:29:48 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:29:48 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 00:30:43 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:30:43 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:30:43 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 00:31:16 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:31:16 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:31:16 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 00:31:31 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:31:31 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:31:31 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 00:32:15 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:32:15 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:32:15 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 00:34:26 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:34:26 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:34:26 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 00:35:15 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:35:15 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:35:15 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 00:42:16 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:42:16 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:42:16 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 00:42:39 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:42:39 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:42:39 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 00:45:11 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 00:45:11 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 00:45:11 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 01:00:45 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 01:00:45 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 01:00:45 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 01:01:59 [debug]: sql :select o.id vaccine_id, 
+		ol.name vaccine_name,ol.effect vaccine_effect,ol.used_group vaccine_used_group ,ifnull(ov.booking_count,0)
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 01:01:59 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 01:01:59 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 01:05:22 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 01:05:22 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 01:05:22 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 21:47:02 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 21:47:02 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 21:47:02 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 21:47:48 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 21:47:48 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 21:47:48 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 21:47:52 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 21:47:52 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 21:47:52 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 21:48:14 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 21:48:14 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 21:48:14 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 21:55:47 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 21:55:47 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 21:55:47 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 21:56:00 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 21:56:00 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 21:56:00 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 22:01:44 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 22:01:44 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 22:01:44 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 22:19:53 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 22:19:53 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 22:19:53 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 22:45:33 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 22:45:33 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 22:45:33 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 23:27:16 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 23:27:16 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 23:27:16 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 23:27:46 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 23:27:46 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 23:27:46 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 23:57:06 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 23:57:06 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 23:57:06 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 23:57:17 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 23:57:17 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 23:57:17 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 23:57:56 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 23:57:56 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 23:57:56 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+04/02/2015 23:58:35 [debug]: sql :select o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+04/02/2015 23:58:35 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+04/02/2015 23:58:35 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq

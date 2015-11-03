@@ -1,0 +1,44 @@
+.header{z-index:10; border-bottom:1px solid #dbd9da}
+.site-nav{height:22px;background:#fff;padding:4px 0;line-height:22px;}
+.site-nav li{float:left;}
+.site-nav .left li{margin-right:20px;}
+
+.language{padding-left:40px;background:url(../../../images/2013v1/icon.jpg) no-repeat left -65px;}
+.welcome{padding-left:24px;background:url(../../../images/2013v1/icon.jpg) no-repeat left 1px;}
+.weibo{padding-left:30px;background:url(../../../images/2013v1/icon.jpg) no-repeat left -101px;}
+
+.search-box{width:141px;height:22px;background:url(../../../images/2013v1/search_bj_03.jpg) no-repeat left center;}
+.search-box input{background:none;border:0;width:105px;height:20px;left:0;top:0;color:#fff;padding-top:2px;}
+.search-box.focus{background:url(../../../images/2013v1/search_h_bj_03.jpg) no-repeat left center;}
+.search-box{margin-left:5px;}
+.search-button{width:22px;height:22px;right:0px;top:0px;}
+.online-sale{padding-left:20px; padding-right:10px; margin-right:4px; position:relative; cursor:pointer; z-index:1000000}
+.online-sale .c2{width:150px; padding:20px; padding-top:180px; text-align:center; background:#fff url(../../../images/2014/qrcode.png) center  no-repeat; position:absolute; margin-left:-72px; border:1px solid #ddd; z-index:1000000; *margin-top:15px; *margin-left:-130px;
+background-size:190px 190px}
+.phone-number img{display:block;margin-top:4px;margin-left:5px;}
+
+/*主导航*/
+.main-nav{height:80px;z-index:11;background:url(../../../images/2013v1/other_main_nav_bg.png) repeat-x;}
+.menu{font-size:16px;height:50px;}
+.menu li{float:left;padding-left:42px; position:relative;height:50px;}
+.menu a{display:block;}
+.menu a:hover{ text-decoration:none;}
+.menu .nav-arrow{width:22px;height:10px; position:absolute;z-index:5;left:50%;margin-left:8px;bottom:-1px;_bottom:-7px;background:url(../../../images/2013v1/nav_arrow_03.png) no-repeat  center center;display:none;}
+.logo{padding-right:18px;border-right:1px solid #005bac;margin-right:18px;}
+.winxin-box{ width:60px; height:60px; background:url(../../../images/2014/weixin_icon.jpg) no-repeat; position:relative; margin:10px 0 0 10px;}
+.winxin-box .c2{ width:102px; height:102px; padding:10px; background:#fff url(../../../images/2014/qrcode.png) center no-repeat; position:absolute; margin-top:-30px; margin-left:65px; border:1px solid #ddd;background-size:125px 125px;}
+
+/*子导航*/
+.subnav{background:#fff; height:50px; z-index:6;padding-top:10px;display:none;overflow:hidden;}
+.subnav-wrap{overflow:hidden;height:50px;}
+.subnav dt{font-weight:bold;font-family:'Microsoft YaHei';font-size:14px;margin-bottom:5px;}
+.subnav dt a{color:#005bac;}
+.subnav a{color:#888; text-decoration:none;}
+.subnav a:hover{color:#005bac;}
+.subnav .subnav-li{height:50px;width:980px;}
+.subnav dl{float:left;width:260px;}
+.subnav dl.onecell{width:100px;}
+.subnav dd{width:130px;float:left;}
+.nav-image{width:180px;overflow:hidden;float:left;}
+.nav-image .img{display:block;}
+.nav-image .desc{height:20px;background:#00b9ef;line-height:20px;overflow:hidden;color:#fff;padding:0 5px;}

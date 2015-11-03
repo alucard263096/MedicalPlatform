@@ -1,0 +1,48 @@
+03/11/2015 21:46:24 [debug]: sql :select * from tb_user where login_id='admin' 
+03/11/2015 21:46:26 [debug]: sql :select * from tb_user where login_id='admin' 
+03/11/2015 21:47:33 [debug]: sql :select * from tb_user where login_id='admin' 
+03/11/2015 21:47:37 [debug]: sql :select * from tb_user where login_id='admin' 
+03/11/2015 21:48:26 [debug]: sql :select * from tb_user where login_id='scai' 
+03/11/2015 21:50:01 [debug]: sql :select * from tb_user where login_id='scai' 
+03/11/2015 21:51:21 [debug]: sql :select * from tb_user where login_id='scai' 
+03/11/2015 21:51:26 [debug]: sql :select * from tb_user where login_id='admin' 
+03/11/2015 21:51:29 [debug]: sql :select * from tb_website_base where id=1
+03/11/2015 21:51:32 [debug]: sql :update tb_website_base set updated_date= now() ,updated_user=1, website_name='雷德睦华官方网站 ', favfile='1409191804914090721009favicon.ico', contacter='', qq='', email='', mobile='', phone='', seo_title='骨水泥 || 骨水泥专家', seo_keywords='骨水泥,Heraeus,MAST,手术膜', seo_description='骨水泥,Heraeus,MAST,手术膜' where id=1
+03/11/2015 21:51:36 [debug]: sql :select r_main.id ,r_main.name ,case   r_main.status  when 'A' then '启用' when 'I' then '禁用' else 'unknow'  end as status from tb_download_category as r_main   where  r_main.status<>'D' order by r_main.updated_date desc 
+03/11/2015 21:51:38 [debug]: sql :select * from tb_download_category where id=4
+03/11/2015 21:51:39 [debug]: sql :select r_main.id ,r_cate.name category_id ,r_main.name ,case   r_main.status  when 'A' then '启用' when 'I' then '禁用' else 'unknow'  end as status from tb_download_file as r_main  left join tb_download_category r_cate on r_main.category_id=r_cate.id   where  r_main.status<>'D' and r_main.category_id>0 and r_main.category_id=4 order by r_main.updated_date desc 
+03/11/2015 21:54:42 [debug]: sql :select r_main.id ,r_main.login_id ,case   r_main.is_admin when 'Y' then '是' else '否'  end as is_admin ,r_main.user_name ,case   r_main.status  when 'A' then '启用' when 'I' then '禁用' else 'unknow'  end as status from tb_user as r_main   where  r_main.status<>'D' order by r_main.updated_date desc 
+03/11/2015 22:07:21 [debug]: sql :select * from tb_user where login_id='admin' 
+03/11/2015 22:07:25 [debug]: sql :select * from tb_user where login_id='admin' 
+03/11/2015 22:07:43 [debug]: sql :select r_main.id ,r_main.seq ,r_main.slogan ,case   r_main.status  when 'A' then '启用' when 'I' then '禁用' else 'unknow'  end as status from tb_website_banner as r_main   where  r_main.status<>'D' order by r_main.updated_date desc 
+03/11/2015 22:07:44 [debug]: sql :select * from tb_website_banner where id=1
+03/11/2015 22:07:55 [debug]: Upload: 6B08F4A44A820EC7BF46541AFB04FFA7.jpg
+03/11/2015 22:07:55 [debug]: Type: image/jpeg
+03/11/2015 22:07:55 [debug]: Size: 94858
+03/11/2015 22:07:55 [debug]: Temp file: C:\Windows\Temp\phpA05C.tmp
+03/11/2015 22:07:55 [debug]: Stored in: F:/Apache2.4/htdocs/MedicalPlatform/Website/CMS/upload/banner/151103220556B08F4A44A820EC7BF46541AFB04FFA7.jpg
+03/11/2015 22:08:31 [debug]: sql :select * from tb_website_banner where id=1
+03/11/2015 22:08:39 [debug]: Upload: 6B08F4A44A820EC7BF46541AFB04FFA7.jpg
+03/11/2015 22:08:39 [debug]: Type: image/jpeg
+03/11/2015 22:08:39 [debug]: Size: 94858
+03/11/2015 22:08:39 [debug]: Temp file: C:\Windows\Temp\php4BE7.tmp
+03/11/2015 22:08:39 [debug]: Stored in: F:/Apache2.4/htdocs/MedicalPlatform/Website/CMS/upload/banner/151103220396B08F4A44A820EC7BF46541AFB04FFA7.jpg
+03/11/2015 22:08:54 [debug]: sql :update tb_website_banner set updated_date= now() ,updated_user=1, seq='3', slogan='<span style=\\\'\'color:#007dc6\\\'\'>SurgiWrap</span> 唯一兼具支撑保护与隔离的聚乳酸可吸收膜。', label='产品', title='<span style=\\\'\'color:#007dc6\\\'\'>聚乳酸手术保护膜</span>', cont='<p><span style=\"\\&quot;\\\\&quot;color:#007dc6\\\\&quot;\\&quot;\">SurgiWrap</span>聚乳酸脂手术保护膜（简称&ldquo;MAST膜&rdquo;）是由美国MAST Biosurgery Inc.研制生产。</p>\n', link='http://www.gushuini.com/product/detail.php?id=1', pic='151103220396B08F4A44A820EC7BF46541AFB04FFA7.jpg', status='A' where id=1
+03/11/2015 22:10:26 [debug]: sql :update tb_website_banner set updated_date= now() ,updated_user=1, seq='3', slogan='<span style=\\\'\'color:#007dc6\\\'\'>SurgiWrap</span> 唯一兼具支撑保护与隔离的聚乳酸可吸收膜。', label='产品', title='<span style=\\\'\'color:#007dc6\\\'\'>聚乳酸手术保护膜</span>', cont='<p><span style=\"\\&quot;\\\\&quot;color:#007dc6\\\\&quot;\\&quot;\">SurgiWrap</span>聚乳酸脂手术保护膜（简称&ldquo;MAST膜&rdquo;）是由美国MAST Biosurgery Inc.研制生产。</p>\n', link='http://www.gushuini.com/product/detail.php?id=1', pic='151103220396B08F4A44A820EC7BF46541AFB04FFA7.jpg', status='A' where id=1
+03/11/2015 22:10:31 [debug]: sql :select * from tb_website_banner where id=1
+03/11/2015 22:13:09 [debug]: sql :update tb_website_banner set updated_date= now() ,updated_user=1, seq='3', slogan='<span style=\\\'\'\'\'color:#007dc6\\\'\'\'\'>SurgiWrap</span> 唯一兼具支撑保护与隔离的聚乳酸可吸收膜。', label='产品', title='<span style=\\\'\'\'\'color:#007dc6\\\'\'\'\'>聚乳酸手术保护膜</span>', cont='<p><span style=\"\\\">SurgiWrap</span>聚乳酸脂手术保护膜（简称&ldquo;MAST膜&rdquo;）是由美国MAST Biosurgery Inc.研制生产。</p>\n', link='http://www.gushuini.com/product/detail.php?id=1', pic='151103220396B08F4A44A820EC7BF46541AFB04FFA7.jpg', status='A' where id=1
+03/11/2015 22:13:15 [debug]: Upload: 6B08F4A44A820EC7BF46541AFB04FFA7.jpg
+03/11/2015 22:13:15 [debug]: Type: image/jpeg
+03/11/2015 22:13:15 [debug]: Size: 94858
+03/11/2015 22:13:15 [debug]: Temp file: C:\Windows\Temp\php839B.tmp
+03/11/2015 22:13:15 [debug]: Stored in: F:/Apache2.4/htdocs/MedicalPlatform/Website/CMS//MedicalPlatform/Website/upload/banner/151103220156B08F4A44A820EC7BF46541AFB04FFA7.jpg
+03/11/2015 22:13:17 [debug]: sql :update tb_website_banner set updated_date= now() ,updated_user=1, seq='3', slogan='<span style=\\\'\'\'\'color:#007dc6\\\'\'\'\'>SurgiWrap</span> 唯一兼具支撑保护与隔离的聚乳酸可吸收膜。', label='产品', title='<span style=\\\'\'\'\'color:#007dc6\\\'\'\'\'>聚乳酸手术保护膜</span>', cont='<p><span style=\"\\\">SurgiWrap</span>聚乳酸脂手术保护膜（简称&ldquo;MAST膜&rdquo;）是由美国MAST Biosurgery Inc.研制生产。</p>\n', link='http://www.gushuini.com/product/detail.php?id=1', pic='151103220156B08F4A44A820EC7BF46541AFB04FFA7.jpg', status='A' where id=1
+03/11/2015 22:13:53 [debug]: sql :update tb_website_banner set updated_date= now() ,updated_user=1, seq='3', slogan='<span style=\\\'\'\'\'color:#007dc6\\\'\'\'\'>SurgiWrap</span> 唯一兼具支撑保护与隔离的聚乳酸可吸收膜。', label='产品', title='<span style=\\\'\'\'\'color:#007dc6\\\'\'\'\'>聚乳酸手术保护膜</span>', cont='<p><span style=\"\\\">SurgiWrap</span>聚乳酸脂手术保护膜（简称&ldquo;MAST膜&rdquo;）是由美国MAST Biosurgery Inc.研制生产。</p>\n', link='http://www.gushuini.com/product/detail.php?id=1', pic='151103220156B08F4A44A820EC7BF46541AFB04FFA7.jpg', status='A' where id=1
+03/11/2015 22:13:59 [debug]: sql :select * from tb_website_banner where id=1
+03/11/2015 22:16:01 [debug]: Upload: 6B08F4A44A820EC7BF46541AFB04FFA7.jpg
+03/11/2015 22:16:01 [debug]: Type: image/jpeg
+03/11/2015 22:16:01 [debug]: Size: 94858
+03/11/2015 22:16:01 [debug]: Temp file: C:\Windows\Temp\phpC5A.tmp
+03/11/2015 22:16:01 [debug]: Stored in: F:/Apache2.4/htdocs/MedicalPlatform/Website/CMS/../upload/banner/151103220016B08F4A44A820EC7BF46541AFB04FFA7.jpg
+03/11/2015 22:16:02 [debug]: sql :update tb_website_banner set updated_date= now() ,updated_user=1, seq='3', slogan='<span style=\\\'\'\'\'\'\'\'\'color:#007dc6\\\'\'\'\'\'\'\'\'>SurgiWrap</span> 唯一兼具支撑保护与隔离的聚乳酸可吸收膜。', label='产品', title='<span style=\\\'\'\'\'\'\'\'\'color:#007dc6\\\'\'\'\'\'\'\'\'>聚乳酸手术保护膜</span>', cont='<p><span style=\"\\\">SurgiWrap</span>聚乳酸脂手术保护膜（简称&ldquo;MAST膜&rdquo;）是由美国MAST Biosurgery Inc.研制生产。</p>\n', link='http://www.gushuini.com/product/detail.php?id=1', pic='151103220016B08F4A44A820EC7BF46541AFB04FFA7.jpg', status='A' where id=1
+03/11/2015 22:16:50 [debug]: sql :select * from tb_website_banner where id=1

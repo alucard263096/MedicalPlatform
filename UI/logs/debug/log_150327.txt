@@ -1,0 +1,60 @@
+27/03/2015 00:19:05 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus' 
+		 
+27/03/2015 00:19:05 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus-faith' 
+		 
+27/03/2015 00:19:05 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus-dream' 
+		 
+27/03/2015 00:19:23 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus' 
+		 
+27/03/2015 00:19:23 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus-faith' 
+		 
+27/03/2015 00:19:23 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus-dream' 
+		 
+27/03/2015 00:21:10 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus' 
+		 
+27/03/2015 00:21:10 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus-faith' 
+		 
+27/03/2015 00:21:10 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus-dream' 
+		 
+27/03/2015 00:34:23 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus' 
+		 
+27/03/2015 00:34:23 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus-faith' 
+		 
+27/03/2015 00:34:23 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus-dream' 
+		 
+27/03/2015 00:36:41 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus' 
+		 
+27/03/2015 00:36:41 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus-faith' 
+		 
+27/03/2015 00:36:41 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus-dream' 
+		 

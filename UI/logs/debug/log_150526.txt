@@ -1,0 +1,85 @@
+26/05/2015 22:48:40 [debug]: sms :<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <langs>
+    <lang>
+      <code>zh-cn</code>
+      <name>简体中文</name>
+    </lang>
+    <lang>
+      <code>zh-hk</code>
+      <name>繁体中文</name>
+    </lang>
+    <lang>
+      <code>en-us</code>
+      <name>English</name>
+    </lang>
+  </langs>
+</root>
+26/05/2015 22:49:28 [debug]: sms :<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <langs>
+    <lang>
+      <code>zh-cn</code>
+      <name>简体中文</name>
+    </lang>
+    <lang>
+      <code>zh-hk</code>
+      <name>繁体中文</name>
+    </lang>
+    <lang>
+      <code>en-us</code>
+      <name>English</name>
+    </lang>
+  </langs>
+</root>
+26/05/2015 22:49:31 [debug]: sms :<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <langs>
+    <lang>
+      <code>zh-cn</code>
+      <name>简体中文</name>
+    </lang>
+    <lang>
+      <code>zh-hk</code>
+      <name>繁体中文</name>
+    </lang>
+    <lang>
+      <code>en-us</code>
+      <name>English</name>
+    </lang>
+  </langs>
+</root>
+26/05/2015 22:49:32 [debug]: sms :<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <langs>
+    <lang>
+      <code>zh-cn</code>
+      <name>简体中文</name>
+    </lang>
+    <lang>
+      <code>zh-hk</code>
+      <name>繁体中文</name>
+    </lang>
+    <lang>
+      <code>en-us</code>
+      <name>English</name>
+    </lang>
+  </langs>
+</root>
+26/05/2015 22:50:01 [debug]: sms :<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <langs>
+    <lang>
+      <code>zh-cn</code>
+      <name>简体中文</name>
+    </lang>
+    <lang>
+      <code>zh-hk</code>
+      <name>繁体中文</name>
+    </lang>
+    <lang>
+      <code>en-us</code>
+      <name>English</name>
+    </lang>
+  </langs>
+</root>

@@ -1,0 +1,24 @@
+26/05/2015 22:50:27 [info]: sms :<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <langs>
+    <lang>
+      <code>zh-cn</code>
+      <name>简体中文</name>
+    </lang>
+    <lang>
+      <code>zh-hk</code>
+      <name>繁体中文</name>
+    </lang>
+    <lang>
+      <code>en-us</code>
+      <name>English</name>
+    </lang>
+  </langs>
+</root>
+26/05/2015 22:50:52 [info]: sms :Array
+26/05/2015 23:00:52 [info]: sms :1
+26/05/2015 23:11:27 [info]: notify alipay start :/MedicalPlatform/UI/payment/notify_alipay.php?a=1
+26/05/2015 23:11:27 [info]: notify alipay parameter<a:1>
+		
+26/05/2015 23:11:27 [info]: notify alipay verify return <result:FAIL>
+		

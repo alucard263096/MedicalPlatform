@@ -1,0 +1,96 @@
+body, td, input {
+    font-family:Arial;
+    font-size:12px;
+}
+
+/* 日程表格样式 */
+#calTable {
+    border-collapse:collapse;
+    border:5px solid #C3D9FF;
+}
+
+/* 每日单元格样式 */
+td.calBox {
+    border:1px solid #CCDDEE;
+    width:100px;
+    height:80px;
+    vertical-align:top;
+}
+
+/* 每日单元格内日期样式 */
+td.calBox div.date {
+    background:#E8EEF7;
+    font-size:11px;
+    padding:2px;
+    cursor:pointer;
+}
+
+/* 每日单元格内周六周日样式 */
+td.sat div.date, td.sun div.date{
+    color:red;
+}
+
+/* 今日样式 */
+td.calBox div.today {
+    background:#BBCCDD;
+}
+
+/* 周标识样式 */
+td.day {
+    text-align:center;
+    background:#C3D9FF;
+    border:1px solid #CCDDEE;
+    color:#112ABB;
+}
+
+/* 当前显示的年月样式 */
+#dateInfo {
+    font-weight:bold;
+    margin:3px;
+}
+
+/* 添加任务div样式 */
+#addBox {
+    display:none;
+    position:absolute;
+    width:300px;
+    border:1px solid #000;
+    height:100px;
+    background:#FFFF99;
+    padding:10px;
+}
+
+/* 添加任务内日期样式 */
+#taskDate {
+    height:30px;
+    font-weight:bold;
+    padding:3px;
+}
+
+/* 按钮样式 */
+.taskBtn {
+    margin:10px;
+}
+
+/* 编辑任务div样式 */
+#editBox {
+    display:none;
+    position:absolute;
+    width:300px;
+    border:1px solid #000;
+    height:60px;
+    background:#99FF99;
+    padding:10px;
+}
+
+/* 任务样式 */
+div.task {
+    width:98px;
+    overflow:hidden;
+    white-space:nowrap;
+    background:#668CB3;
+    border:1px solid #FFF;
+    color:#FFF;
+    padding:1 2 1 3;
+    cursor:pointer;
+}

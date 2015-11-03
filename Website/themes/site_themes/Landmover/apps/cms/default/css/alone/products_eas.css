@@ -1,0 +1,49 @@
+.clear2{overflow:hidden;zoom:1;}
+.f-l{float:left;}
+.f-r{float:right;}
+.show-list {width:100%; }
+.show-list i{ height:1px;  font-size:0px; line-height:1px; width:100%; float:left;}
+.show-list dl{padding-bottom:45px; float:left; width:100%;}
+/**
+.show-list dl span{ margin-top:-30px; padding-left:86px; background:url(../../images/2013v1/products/eas/easicon.jpg) no-repeat; height:42px; line-height:42px; padding-top:10px; margin-bottom:20px;}
+*/
+.show-list dl dt.l span{ margin-top:-30px;display:block; height:67px; line-height:67px; padding-top:30px; margin-bottom:20px;vertical-align:middle;}
+.show-list dl dt.l span.til{display:inline;line-height:67px;vertical-align:middle;margin:0px;padding:0px;}
+.show-list dl dt.r span.til{display:inline;line-height:67px;vertical-align:middle;margin:0px;padding:0px;}
+.show-list dl .icon-img{ display:block; margin-right:15px}
+.show-list dl span.span1{ background-position:0 0;}
+.show-list dl span.span2{ background-position:0 -67px;}
+.show-list dl span.span3{ background-position:0 -134px;}
+.show-list dl span.span4{ background-position:0 -201px;}
+.show-list dl p{ font-size:14px;}
+.show-list dl ul{ display:block; padding-top:70px;}
+.show-list dl ul li{  height:45px; width:142px; display:inline-block; margin-right:8px; cursor:pointer; position:relative; z-index:10!important; float:left;}
+.show-list dl ul li center{ background:url(../../images/common/editionicon.gif) no-repeat; display:inline-block; height:45px; width:142px;}
+.show-list dl ul li.iphone center{ background-position:0 0;}
+.show-list dl ul li.ipad center{ background-position:-145px 0;}
+.show-list dl ul li.android center{ background-position:-290px 0;}
+.show-list dl ul li em {background:#FFF;  left:0; bottom:45px; z-index:10!important; width:145px!important; position:absolute; display:inline-block}
+.show-list dl ul li em  img{ height:142px; width:142px;}
+
+
+.show-list .tip_button{
+	width:150px;
+	height:45px;
+	color:#ffffff;
+	font-size:16px;
+	line-height:45px;
+	text-align:center;
+	}
+.bluea{
+	background-color:#00BFA8;
+	}
+.greena{
+	background-color:#83BD0B;
+	}
+.orangea{
+	background-color:#FFAB00;
+	}
+	
+	
+	
+	

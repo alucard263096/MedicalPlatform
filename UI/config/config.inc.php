@@ -11,6 +11,7 @@ $CONFIG["frontendurl"]="http://localhost/MedicalPlatform/";
 $CONFIG["doctorurl"]="http://192.168.1.104/MedicalPlatform/DoctorCMS";
 $CONFIG["SessionName"]="FooterCMSUI";
 $CONFIG["SupportMultiLanguage"]=true;
+$CONFIG["websiteurl"]="http://localhost/MedicalPlatform/Website/";
 
 $CONFIG['smarty']['rootpath']		= '/MedicalPlatform/UI'; 
 $CONFIG['solution_configuration']='debug';

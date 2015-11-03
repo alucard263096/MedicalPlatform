@@ -1,0 +1,40 @@
+request body = <TemplateSMS>
+                    <to>13751082562</to> 
+                    <appId>8a48b5514bfd9130014c0c0b28a90a66</appId>
+                    <templateId>16093</templateId>
+                    <datas><data>615313</data><data>30</data></datas>
+                  </TemplateSMS>
+request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/aaf98f894bfd8efd014c0c06c970099e/SMS/TemplateSMS?sig=EDBD6A509D187CACBA376E4B6EA32847
+response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?><Response><statusCode>000000</statusCode><TemplateSMS><dateCreated>20150411224636</dateCreated><smsMessageSid>201504112246352387477</smsMessageSid></TemplateSMS></Response>
+request body = <TemplateSMS>
+                    <to>13751082562</to> 
+                    <appId>8a48b5514bfd9130014c0c0b28a90a66</appId>
+                    <templateId>16093</templateId>
+                    <datas><data>615313</data><data>30</data></datas>
+                  </TemplateSMS>
+request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/aaf98f894bfd8efd014c0c06c970099e/SMS/TemplateSMS?sig=0B4BC3731BDC83885EB21BDA3D6E6B98
+response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?><Response><statusCode>160021</statusCode><statusMsg>同一手机相同内容限定时间内只能发一次:13751082562:【港医汇】您的登录验证码是615313，请于30分钟内使用。 </statusMsg></Response>
+request body = <TemplateSMS>
+                    <to>13751082562</to> 
+                    <appId>8a48b5514bfd9130014c0c0b28a90a66</appId>
+                    <templateId>16093</templateId>
+                    <datas><data>615313</data><data>30</data></datas>
+                  </TemplateSMS>
+request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/aaf98f894bfd8efd014c0c06c970099e/SMS/TemplateSMS?sig=BD6ABF8681FF56F13493A738C7D622E3
+response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?><Response><statusCode>160021</statusCode><statusMsg>同一手机相同内容限定时间内只能发一次:13751082562:【港医汇】您的登录验证码是615313，请于30分钟内使用。 </statusMsg></Response>
+request body = <TemplateSMS>
+                    <to>13622353259</to> 
+                    <appId>8a48b5514bfd9130014c0c0b28a90a66</appId>
+                    <templateId>16094</templateId>
+                    <datas><data>564570</data><data>30</data></datas>
+                  </TemplateSMS>
+request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/aaf98f894bfd8efd014c0c06c970099e/SMS/TemplateSMS?sig=621BED5A6C787A9869F2C1E56DF2C176
+response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?><Response><statusCode>000000</statusCode><TemplateSMS><dateCreated>20150411230145</dateCreated><smsMessageSid>201504112301452389690</smsMessageSid></TemplateSMS></Response>
+request body = <TemplateSMS>
+                    <to>13622353259</to> 
+                    <appId>8a48b5514bfd9130014c0c0b28a90a66</appId>
+                    <templateId>15982</templateId>
+                    <datas><data>837427</data><data>30</data></datas>
+                  </TemplateSMS>
+request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/aaf98f894bfd8efd014c0c06c970099e/SMS/TemplateSMS?sig=471AEF3570C6E4052793CA6924BADF50
+response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?><Response><statusCode>000000</statusCode><TemplateSMS><dateCreated>20150411230316</dateCreated><smsMessageSid>201504112303162389882</smsMessageSid></TemplateSMS></Response>

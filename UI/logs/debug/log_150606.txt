@@ -1,0 +1,46 @@
+06/06/2015 08:16:26 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='indexpromotion' and status='A'
+		 
+06/06/2015 08:16:26 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4') and status='A'
+		 
+06/06/2015 08:16:26 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+06/06/2015 08:16:26 [debug]: sql :select d.*,dl.*,dv.totle_score,sl.name specialist_id_str from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+    left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+	where d.id in (11,6) and d.status='A'
+	order by totle_score desc
+	limit 0,4 
+06/06/2015 08:16:26 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+06/06/2015 08:16:27 [debug]: sql :select o.*,ol.*,ifnull(ov.booking_count,0) from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
+	where o.id in (1,3,4,5) and o.status='A'
+	order by o.seq
+	limit 0,2 
+06/06/2015 08:20:54 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='indexpromotion' and status='A'
+		 
+06/06/2015 08:20:54 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4') and status='A'
+		 
+06/06/2015 08:20:54 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+06/06/2015 08:20:54 [debug]: sql :select d.*,dl.*,dv.totle_score,sl.name specialist_id_str from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+    left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+	where d.id in (11,6) and d.status='A'
+	order by totle_score desc
+	limit 0,4 
+06/06/2015 08:20:54 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+06/06/2015 08:20:54 [debug]: sql :select o.*,ol.*,ifnull(ov.booking_count,0) from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
+	where o.id in (1,3,4,5) and o.status='A'
+	order by o.seq
+	limit 0,2 

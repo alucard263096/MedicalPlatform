@@ -1,0 +1,226 @@
+*{margin:0;padding:0;}
+
+.china_map{width:930px;height:900px; position:relative; margin:50px auto;}
+
+
+.name{color:#66a4dd; font-size:14px;}
+.name span{position:absolute;z-index:999; font-weight:bold;color:white;}
+
+
+.dn{display:none;}
+
+.province a{display:none; position:absolute;}
+
+.map_detail{ padding:15px 20px 20px 20px; color:#333; font-family:微软雅黑; border-radius:5px; width:180px; background:#fff; border:3px solid #98999b; position:absolute; z-index:1000;}
+
+.map_detail .arrow{width:15px; height:28px; background:url(../images/map/arrow.png) no-repeat; display:block; position:absolute; right:-15px; top:50%; margin-top:-14px;}
+.map_detail h2{font-size:16px; font-weight:normal; margin-bottom:15px;}
+.map_detail h3{font-size:16px; font-weight:normal; color:#0a61af; height:35px; line-height:35px; border-bottom:2px solid #dadada; width:460px; }
+.map_detail .fgs a{font-size:12px; color:#333; display:inline-block; margin-right:10px;}
+.map_detail .fgs{padding:10px 0px 10px 0px;}
+.map_detail h4{font-size:12px; font-weight:normal; color:#333; height:44px; line-height:44px; border-bottom:1px dotted #cfcfcf; background:url(../images/map/map_arrow_06.jpg) no-repeat right center; cursor:pointer;}
+.map_detail h4.cur{background:url(../images/map/map_arrow_03.jpg) no-repeat right center;}
+.map_detail .cnt{padding:15px 0; border-bottom:1px dotted #cfcfcf; line-height:18px; color:#666; display:none;}
+.map_detail .jxs{height:200px; overflow:hidden; position:relative;}
+
+.map_detail  .jxsin{padding-right:20px;}
+/*广东*/
+#pro_Guangdong{background:url(../images/map/Guangdong.png) no-repeat; width:152px; height:110px; left:570px; top:597px;}
+#detail_Guangdong{left:400px; top:555px;}
+#detail_Guangdong .arrow{margin-top:80px;}
+#name_Guangdong{ left:634px; top:627px;}
+
+/*安徽*/
+#pro_Anhui{background:url(../images/map/Anhui.png) no-repeat; width:93px; height:115px; left:665px; top:400px;}
+#detail_Anhui{left:467px; top:463px;}
+#name_Anhui{ left:690px; top:457px;}
+/*北京*/
+#pro_Beijing{background:url(../images/map/Beijing.png) no-repeat; width:43px; height:41px; left:661px; top:272px;}
+#detail_Beijing{left:436px; top:295px;}
+#name_Beijing{left:666px; top:280px;}
+
+#pro_Chongqing{background:url(../images/map/Chongqing.png) no-repeat; width:95px; height:99px; left:500px; top:452px;}
+#detail_Chongqing{left:305px; top:500px;}
+#name_Chongqing{left:522px; top:486px;}
+
+#pro_Fujian{background:url(../images/map/Fujian.png) no-repeat; width:87px; height:106px; left:690px; top:530px;}
+#detail_Fujian{left:493px; top:578px;}
+#name_Fujian{ left:714px; top:573px;}
+
+#pro_Gansu{background:url(../images/map/Gansu.png) no-repeat; width:261px; height:231px; left:305px; top:227px;}
+#detail_Gansu{left:232px; top:348px;}
+#name_Gansu{ left:369px; top:280px;}
+
+#pro_Guangxi{background:url(../images/map/Guangxi.png) no-repeat; width:153px; height:113px; left:480px; top:581px;}
+#detail_Guangxi{left:310px; top:558px;}
+#detail_Guangxi .arrow{margin-top:80px;}
+#name_Guangxi{left:540px; top:625px;}
+
+#pro_Guizhou{background:url(../images/map/Guizhou.png) no-repeat; width:118px; height:105px; left:466px; top:516px;}
+#detail_Guizhou{left:290px; top:566px;}
+#name_Guizhou{left:507px; top:562px;}
+
+#pro_Hainan{background:url(../images/map/Hainan.png) no-repeat; width:57px; height:46px; left:550px; top:706px;}
+#detail_Hainan{left:340px; top:725px;}
+#name_Hainan{left:560px; top:713px;}
+
+
+
+#pro_Hebei{background:url(../images/map/Hebei.png) no-repeat; width:108px; height:146px; left:633px; top:239px;}
+#detail_Hebei{left:425px; top:325px;}
+#name_Hebei{left:645px; top:320px;}
+
+
+#pro_Heilongjiang{background:url(../images/map/Heilongjiang.png) no-repeat; width:208px; height:194px; left:716px; top:14px;}
+#detail_Heilongjiang{left:570px; top:14px;}
+#detail_Heilongjiang .arrow{margin-top:-105px;}
+#name_Heilongjiang{left:716px; top:14px;}
+#name_Heilongjiang{ left:816px; top:129px;}
+
+#pro_Hongkong{background:url(../images/map/Hongkong.png) no-repeat; width:29px; height:24px; left:649px; top:646px;}
+#detail_Hongkong{left:425px; top:660px;}
+#name_Hongkong{left:649px; top:646px;}
+
+#pro_Hubei{background:url(../images/map/Hubei.png) no-repeat; width:146px; height:95px; left:552px; top:434px;}
+#detail_Hubei{left:420px; top:500px;}
+#name_Hubei{left:608px; top:475px;}
+
+#pro_Hunan{background:url(../images/map/Hunan.png) no-repeat; width:107px; height:126px; left:557px; top:498px;}
+#detail_Hunan{left:381px; top:560px;}
+#name_Hunan{ left:594px; top:544px;}
+
+#pro_Henan{background:url(../images/map/Henan.png) no-repeat; width:113px; height:109px; left:588px; top:370px;}
+#detail_Henan{left:422px; top:430px;}
+#name_Henan{ left:620px; top:414px;}
+
+#pro_Jiangsu{background:url(../images/map/Jiangsu.png) no-repeat; width:104px; height:108px; left:690px; top:390px;}
+#detail_Jiangsu{left:520px; top:460px;}
+#name_Jiangsu{ left:724px; top:414px;}
+
+
+#pro_Jiangxi{background:url(../images/map/Jiangxi.png) no-repeat; width:97px; height:129px; left:645px; top:494px;}
+#detail_Jiangxi{left:445px; top:560px;}
+#name_Jiangxi{ left:665px; top:542px;}
+
+#pro_Jilin{background:url(../images/map/Jilin.png) no-repeat; width:158px; height:109px; left:743px; top:160px;}
+#detail_Jilin{left:580px; top:220px;}
+#name_Jilin{  left:802px; top:195px;}
+
+
+#pro_Liaoning{background:url(../images/map/Liaoning.png) no-repeat; width:118px; height:108px; left:714px; top:215px;}
+#detail_Liaoning{left:840px; top:272px;}
+#name_Liaoning{ left:764px; top:250px;}
+
+
+#pro_Mongol{background:url(../images/map/Mongol.png) no-repeat; width:403px; height:332px; left:385px; top:25px;}
+#detail_Mongol{left:361px; top:270px;}
+#name_Mongol{ left:535px; top:274px;}
+
+#pro_Ningxia{background:url(../images/map/Ningxia.png) no-repeat; width:61px; height:88px; left:485px; top:310px;}
+#detail_Ningxia{left:280px; top:360px;}
+#name_Ningxia{ left:499px; top:343px;}
+
+
+#pro_Qinghai{background:url(../images/map/Qinghai.png) no-repeat; width:231px; height:174px; left:238px; top:291px;}
+#detail_Qinghai{left:120px; top:360px;}
+#name_Qinghai{  left:334px; top:364px;}
+
+#pro_Shaanxi{background:url(../images/map/Shaanxi.png) no-repeat; width:100px; height:170px; left:506px; top:307px;}
+#detail_Shaanxi{left:337px; top:400px;}
+#name_Shaanxi{ left:600px; top:338px;}
+
+#pro_Shandong{background:url(../images/map/Shandong.png) no-repeat; width:128px; height:87px; left:662px; top:330px;}
+#detail_Shandong{left:476px; top:373px;}
+#name_Shandong{ left:699px; top:358px;}
+
+#pro_Shanghai{background:url(../images/map/Shanghai.png) no-repeat; width:35px; height:33px; left:765px; top:462px;}
+#detail_Shanghai{left:533px; top:482px;}
+#name_Shanghai{ left:765px; top:462px;}
+
+#pro_Shanxi{background:url(../images/map/Shanxi.png) no-repeat; width:77px; height:131px; left:581px; top:282px;}
+#detail_Shanxi{left:378px; top:370px;}
+#name_Shanxi{ left:555px; top:387px;}
+
+#pro_Sichuan{background:url(../images/map/Sichuan.png) no-repeat; width:187px; height:179px; left:362px; top:413px;}
+#detail_Sichuan{left:215px; top:490px;}
+#name_Sichuan{left:436px; top:480px;}
+
+#pro_Taiwan{background:url(../images/map/Taiwan.png) no-repeat; width:44px; height:79px; left:766px; top:589px;}
+#detail_Taiwan{left:550px; top:620px;}
+#name_Taiwan{left:768px; top:613px;}
+
+#pro_Tianjin{background:url(../images/map/Tianjin.png) no-repeat; width:31px; height:38px; left:683px; top:295px;}
+#detail_Tianjin{left:460px; top:320px;}
+#name_Tianjin{ left:706px; top:312px;}
+
+#pro_Xinjiang{background:url(../images/map/Xinjiang.png) no-repeat; width:365px; height:281px; left:14px; top:81px;}
+#detail_Xinjiang{left:460px; top:250px;}
+#detail_Xinjiang .arrow{left:-12px; right:auto; background:url(../images/map/arrow_l.png) no-repeat;}
+#name_Xinjiang{left:182px; top:237px;}
+
+#pro_Xizang{background:url(../images/map/Xizang.png) no-repeat; width:357px; height:229px; left:41px; top:325px;}
+#detail_Xizang{left:488px; top:455px;}
+#detail_Xizang .arrow{left:-12px; right:auto; background:url(../images/map/arrow_l.png) no-repeat;}
+#name_Xizang{ left:187px; top:430px;}
+
+#pro_Yunnan{background:url(../images/map/Yunnan.png) no-repeat; width:170px; height:177px; left:347px; top:512px;}
+#detail_Yunnan{left:195px; top:560px;}
+#detail_Yunnan .arrow{margin-top:60px;}
+#name_Yunnan{ left:404px; top:603px;}
+
+#pro_Zhejiang{background:url(../images/map/Zhejiang.png) no-repeat; width:77px; height:76px; left:724px; top:484px;}
+#detail_Zhejiang{left:510px; top:520px;}
+#name_Zhejiang{left:745px; top:510px;}
+
+
+/*竖的滚动条*/
+.scroll_container {
+	overflow: hidden;
+	position: relative;
+}
+
+.scroll_container .scroll_absolute {
+    position: absolute;
+}
+
+.scroll_vertical_bar {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    width: 2px;
+    height: 100%;
+    background: #0baae8;
+    margin: 0;
+    padding: 0;
+}
+
+
+.scroll_container .scroll_drag {
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	background-color: #0baae8;
+}
+
+.scroll_container .scroll_arrow {
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+	background-color: #369DB4;
+}
+
+.scroll_container .scroll_vertical_bar .scroll_arrow {
+    height: 16px;
+}
+
+.scroll_drag_handle{width:10px; height:10px; background:url(../images/map/boll_03.png) no-repeat; display:block; position:absolute; left:50%; top:5px; margin-top:-5px; margin-left:-5px; display:block; cursor:pointer;}
+
+.topLayer{position:absolute; left:0; top:0; z-index:1000;}
+
+
+
+.closeMap{display:block; position:absolute; right:10px; top:10px; background:url(../images/map/close.jpg) no-repeat; width:21px; height:21px;}
+
+
+

@@ -1,0 +1,20 @@
+02/02/2015 23:49:54 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='' 
+		 
+02/02/2015 23:49:54 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4')
+		 
+02/02/2015 23:49:54 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+02/02/2015 23:49:54 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+02/02/2015 23:51:42 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='' 
+		 
+02/02/2015 23:51:42 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4')
+		 
+02/02/2015 23:51:42 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+02/02/2015 23:51:42 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1

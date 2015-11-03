@@ -1,0 +1,2367 @@
+02/04/2015 00:00:36 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 00:01:12 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 00:03:09 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 00:04:10 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 00:06:24 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 00:07:13 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 00:07:26 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 00:12:55 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 00:13:30 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 00:15:46 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='indexpromotion' and status='A'
+		 
+02/04/2015 00:15:46 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4') and status='A'
+		 
+02/04/2015 00:15:46 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+02/04/2015 00:15:47 [debug]: sql :select d.*,dl.*,dv.totle_score,sl.name specialist_id_str from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+    left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+	where d.id in (11,6) and d.status='A'
+	order by totle_score desc
+	limit 0,4 
+02/04/2015 00:15:47 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+02/04/2015 00:15:47 [debug]: sql :select o.*,ol.*,ifnull(ov.booking_count,0) from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
+	where o.id in (1,3,5) and o.status='A'
+	order by o.seq
+	limit 0,2 
+02/04/2015 00:17:03 [debug]: sql :select o.*,ol.*
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+where o.status='A' and o.id=1
+order by o.seq 
+02/04/2015 00:17:21 [debug]: sql :select * from dr_tb_member
+where status='A' and (  mobile='13751082562' )
+02/04/2015 00:17:21 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 
+order by totle_score desc
+02/04/2015 00:17:21 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:17:21 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:21 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:21 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:17:21 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:21 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:29 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=6 
+02/04/2015 00:17:29 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:17:29 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=6 
+02/04/2015 00:17:29 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (6) 
+02/04/2015 00:17:35 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 
+order by totle_score desc
+02/04/2015 00:17:35 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:17:35 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:35 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:35 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:17:35 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:35 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:43 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=5 
+02/04/2015 00:17:43 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:17:43 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=5 
+02/04/2015 00:17:43 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (5) 
+02/04/2015 00:17:47 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 
+order by totle_score desc
+02/04/2015 00:17:47 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:17:47 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:47 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:47 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:17:47 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:47 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:53 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=5 
+02/04/2015 00:17:53 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:17:53 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=5 
+02/04/2015 00:17:53 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (5) 
+02/04/2015 00:17:56 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 
+order by totle_score desc
+02/04/2015 00:17:56 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:17:56 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:56 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:56 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:17:56 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:17:56 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:18:02 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=5 
+02/04/2015 00:18:02 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:18:02 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=5 
+02/04/2015 00:18:02 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (5) 
+02/04/2015 00:18:05 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 
+order by totle_score desc
+02/04/2015 00:18:05 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:18:05 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:18:05 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:18:05 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:18:05 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:18:05 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:18:46 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 
+order by totle_score desc
+02/04/2015 00:18:46 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:18:46 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:18:46 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:18:46 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:18:46 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:18:46 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:19:22 [debug]: sql :select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from  dr_tb_doctor d 
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.status='A'
+order by totle_score desc
+02/04/2015 00:19:22 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:19:22 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:19:22 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:19:22 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:19:22 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:19:22 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:19:24 [debug]: sql :select distinct o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' 
+order by o.seq 
+02/04/2015 00:19:24 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+02/04/2015 00:19:24 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list,vcs.category_id from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+02/04/2015 00:19:26 [debug]: sql :select o.*,ol.*
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+where o.status='A' and o.id=1
+order by o.seq 
+02/04/2015 00:19:28 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 
+order by totle_score desc
+02/04/2015 00:19:28 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:19:28 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:19:28 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:19:28 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:19:28 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:19:28 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:21:43 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 00:21:44 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 
+order by totle_score desc
+02/04/2015 00:21:44 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:21:44 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:21:44 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:21:44 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:21:44 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:21:44 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:21:51 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=5 
+02/04/2015 00:22:18 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 
+order by totle_score desc
+02/04/2015 00:22:18 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:22:18 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:22:18 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:22:18 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:22:18 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:22:18 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:22:38 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=5 
+02/04/2015 00:22:38 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=5 
+02/04/2015 00:22:38 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:22:38 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=5 
+02/04/2015 00:22:38 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (5) 
+02/04/2015 00:24:33 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=5 
+02/04/2015 00:24:41 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 
+order by totle_score desc
+02/04/2015 00:24:41 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:24:41 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:24:41 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:24:41 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:24:41 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:24:41 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:26:22 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 
+order by totle_score desc
+02/04/2015 00:26:22 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:26:22 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:26:22 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:26:22 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:26:22 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:26:22 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:26:30 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=5 
+02/04/2015 00:26:46 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 
+order by totle_score desc
+02/04/2015 00:26:46 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:26:46 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:26:46 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:26:46 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:26:46 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:26:46 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:27:02 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=5 
+02/04/2015 00:28:24 [debug]: sql :select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from  dr_tb_doctor d 
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.status='A'
+order by totle_score desc
+02/04/2015 00:28:24 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:28:24 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:28:24 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:28:24 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:28:24 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:28:24 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:29:07 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=5 
+02/04/2015 00:29:07 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:29:07 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=5 
+02/04/2015 00:29:07 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (5) 
+02/04/2015 00:29:07 [debug]: sql :select distinct o.id , dv.web_price,
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' and dv.doctor_id=5
+order by o.seq 
+02/04/2015 00:29:07 [debug]: sql :select ds.*,el.name,el.description effect_description from dr_tb_doctor d
+inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
+inner join dr_tb_effect e on ds.effect_id=e.id
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='zh-cn'
+where e.status='A' and d.id=5
+02/04/2015 00:29:07 [debug]: sql :select hospital_list_id from dr_tb_doctor where id=5
+02/04/2015 00:29:08 [debug]: sql :select id,name,address from dr_tb_hospital h
+	left join dr_tb_hospital_lang hl on h.id=hl.oid and hl.lang='zh-cn' 
+    where h.status='A'
+    order by name
+02/04/2015 00:30:01 [debug]: sql :select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from  dr_tb_doctor d 
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.status='A'
+order by totle_score desc
+02/04/2015 00:30:01 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:30:01 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:30:01 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:30:01 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:30:01 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:30:01 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:30:07 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=10 
+02/04/2015 00:30:07 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:30:07 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=10 
+02/04/2015 00:30:07 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (10) 
+02/04/2015 00:30:07 [debug]: sql :select distinct o.id , dv.web_price,
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' and dv.doctor_id=10
+order by o.seq 
+02/04/2015 00:30:07 [debug]: sql :select ds.*,el.name,el.description effect_description from dr_tb_doctor d
+inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
+inner join dr_tb_effect e on ds.effect_id=e.id
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='zh-cn'
+where e.status='A' and d.id=10
+02/04/2015 00:30:07 [debug]: sql :select hospital_list_id from dr_tb_doctor where id=10
+02/04/2015 00:30:07 [debug]: sql :select id,name,address from dr_tb_hospital h
+	left join dr_tb_hospital_lang hl on h.id=hl.oid and hl.lang='zh-cn' 
+    where h.status='A'
+    order by name
+02/04/2015 00:30:10 [debug]: sql :select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from  dr_tb_doctor d 
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.status='A'
+order by totle_score desc
+02/04/2015 00:30:10 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:30:10 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:30:10 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:30:10 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:30:10 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:30:10 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:30:35 [debug]: sql :select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from  dr_tb_doctor d 
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.status='A'
+order by totle_score desc
+02/04/2015 00:30:35 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:30:35 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:30:35 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:30:35 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:30:35 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:30:35 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:31:25 [debug]: sql :select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from  dr_tb_doctor d 
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.status='A'
+order by totle_score desc
+02/04/2015 00:31:25 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:31:25 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:31:25 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:31:25 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:31:25 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:31:25 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:31:36 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=6 
+02/04/2015 00:31:36 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:31:36 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=6 
+02/04/2015 00:31:36 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (6) 
+02/04/2015 00:31:36 [debug]: sql :select distinct o.id , dv.web_price,
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' and dv.doctor_id=6
+order by o.seq 
+02/04/2015 00:31:36 [debug]: sql :select ds.*,el.name,el.description effect_description from dr_tb_doctor d
+inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
+inner join dr_tb_effect e on ds.effect_id=e.id
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='zh-cn'
+where e.status='A' and d.id=6
+02/04/2015 00:31:36 [debug]: sql :select hospital_list_id from dr_tb_doctor where id=6
+02/04/2015 00:31:36 [debug]: sql :select id,name,address from dr_tb_hospital h
+	left join dr_tb_hospital_lang hl on h.id=hl.oid and hl.lang='zh-cn' 
+    where h.status='A'
+    order by name
+02/04/2015 00:31:43 [debug]: sql :select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from  dr_tb_doctor d 
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.status='A'
+order by totle_score desc
+02/04/2015 00:31:43 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:31:43 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:31:43 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:31:43 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:31:43 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:31:43 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:31:50 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=4 
+02/04/2015 00:31:50 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:31:50 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=4 
+02/04/2015 00:31:50 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (4) 
+02/04/2015 00:31:50 [debug]: sql :select distinct o.id , dv.web_price,
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' and dv.doctor_id=4
+order by o.seq 
+02/04/2015 00:31:50 [debug]: sql :select ds.*,el.name,el.description effect_description from dr_tb_doctor d
+inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
+inner join dr_tb_effect e on ds.effect_id=e.id
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='zh-cn'
+where e.status='A' and d.id=4
+02/04/2015 00:31:50 [debug]: sql :select hospital_list_id from dr_tb_doctor where id=4
+02/04/2015 00:31:50 [debug]: sql :select id,name,address from dr_tb_hospital h
+	left join dr_tb_hospital_lang hl on h.id=hl.oid and hl.lang='zh-cn' 
+    where h.status='A'
+    order by name
+02/04/2015 00:32:36 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=4 
+02/04/2015 00:32:36 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:32:36 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=4 
+02/04/2015 00:32:36 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (4) 
+02/04/2015 00:32:36 [debug]: sql :select distinct o.id , dv.web_price,
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' and dv.doctor_id=4
+order by o.seq 
+02/04/2015 00:32:36 [debug]: sql :select ds.*,el.name,el.description effect_description from dr_tb_doctor d
+inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
+inner join dr_tb_effect e on ds.effect_id=e.id
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='zh-cn'
+where e.status='A' and d.id=4
+02/04/2015 00:39:55 [debug]: sql :select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from  dr_tb_doctor d 
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.status='A'
+order by totle_score desc
+02/04/2015 00:39:55 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:39:55 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:39:55 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:39:55 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:39:55 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:39:55 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:39:58 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=5 
+02/04/2015 00:39:58 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:39:58 [debug]: sql :select * from dr_tb_member_doctor where member_id=2 and doctor_id=5 
+02/04/2015 00:39:58 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (5) 
+02/04/2015 00:39:58 [debug]: sql :select distinct o.id , dv.web_price,
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' and dv.doctor_id=5
+order by o.seq 
+02/04/2015 00:39:58 [debug]: sql :select ds.*,el.name,el.description effect_description from dr_tb_doctor d
+inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
+inner join dr_tb_effect e on ds.effect_id=e.id
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='zh-cn'
+where e.status='A' and d.id=5
+02/04/2015 00:39:58 [debug]: sql :select hospital_list_id from dr_tb_doctor where id=5
+02/04/2015 00:39:58 [debug]: sql :select id,name,address from dr_tb_hospital h
+	left join dr_tb_hospital_lang hl on h.id=hl.oid and hl.lang='zh-cn' 
+    where h.status='A'
+    order by name
+02/04/2015 00:42:46 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=5 
+02/04/2015 00:42:46 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:42:46 [debug]: sql :select * from dr_tb_member_doctor where member_id=2 and doctor_id=5 
+02/04/2015 00:42:46 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (5) 
+02/04/2015 00:42:46 [debug]: sql :select distinct o.id , dv.web_price,
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' and dv.doctor_id=5
+order by o.seq 
+02/04/2015 00:42:46 [debug]: sql :select ds.*,el.name,el.description effect_description from dr_tb_doctor d
+inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
+inner join dr_tb_effect e on ds.effect_id=e.id
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='zh-cn'
+where e.status='A' and d.id=5
+02/04/2015 00:43:14 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=5 
+02/04/2015 00:43:14 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:43:14 [debug]: sql :select * from dr_tb_member_doctor where member_id=2 and doctor_id=5 
+02/04/2015 00:43:14 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (5) 
+02/04/2015 00:43:14 [debug]: sql :select distinct o.id , dv.web_price,
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' and dv.doctor_id=5
+order by o.seq 
+02/04/2015 00:43:14 [debug]: sql :select ds.*,el.name,el.description effect_description from dr_tb_doctor d
+inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
+inner join dr_tb_effect e on ds.effect_id=e.id
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='zh-cn'
+where e.status='A' and d.id=5
+02/04/2015 00:43:42 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 00:43:43 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=5 
+02/04/2015 00:43:43 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:43:43 [debug]: sql :select * from dr_tb_member_doctor where member_id=2 and doctor_id=5 
+02/04/2015 00:43:43 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (5) 
+02/04/2015 00:43:43 [debug]: sql :select distinct o.id , dv.web_price,
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' and dv.doctor_id=5
+order by o.seq 
+02/04/2015 00:43:43 [debug]: sql :select ds.*,el.name,el.description effect_description from dr_tb_doctor d
+inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
+inner join dr_tb_effect e on ds.effect_id=e.id
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='zh-cn'
+where e.status='A' and d.id=5
+02/04/2015 00:43:47 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=5 
+02/04/2015 00:44:24 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 00:44:26 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 00:44:53 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=5 
+02/04/2015 00:45:32 [debug]: sql :select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from  dr_tb_doctor d 
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.status='A'
+order by totle_score desc
+02/04/2015 00:45:32 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:45:32 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:45:32 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:45:32 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:45:32 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:45:32 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:45:44 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=4 
+02/04/2015 00:45:44 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:45:44 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=4 
+02/04/2015 00:45:44 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (4) 
+02/04/2015 00:45:44 [debug]: sql :select distinct o.id , dv.web_price,
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' and dv.doctor_id=4
+order by o.seq 
+02/04/2015 00:45:44 [debug]: sql :select ds.*,el.name,el.description effect_description from dr_tb_doctor d
+inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
+inner join dr_tb_effect e on ds.effect_id=e.id
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='zh-cn'
+where e.status='A' and d.id=4
+02/04/2015 00:45:57 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=4 
+02/04/2015 00:46:55 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=4 
+02/04/2015 00:47:22 [debug]: sql :select distinct o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' 
+order by o.seq 
+02/04/2015 00:47:22 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+02/04/2015 00:47:22 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list,vcs.category_id from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+02/04/2015 00:47:36 [debug]: sql :select o.*,ol.*
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+where o.status='A' and o.id=1
+order by o.seq 
+02/04/2015 00:47:49 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 
+order by totle_score desc
+02/04/2015 00:47:49 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:47:49 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:47:49 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:47:49 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:47:49 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:47:49 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:48:31 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=5 
+02/04/2015 00:48:31 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:48:31 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=5 
+02/04/2015 00:48:31 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (5) 
+02/04/2015 00:48:46 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=5 
+02/04/2015 00:48:58 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='order_caution' 
+		 
+02/04/2015 00:48:58 [debug]: sql :select distinct  dv.web_price,v.id vaccine_id,
+			vl.name vaccine_name,vl.effect vaccine_effect,vl.used_group vaccine_used_group,v.image vaccine_image,
+			dl.name doctor_name,d.is_general doctor_is_general,dl.pro_title doctor_pro_title,d.photo doctor_photo,sl.name doctor_specialist
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+inner join dr_tb_vaccine v on dv.vaccine_id=v.id and v.status='A'
+left join dr_tb_vaccine_lang vl on v.id=vl.oid and vl.lang='zh-cn'
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 and dv.doctor_id=5 
+02/04/2015 00:48:58 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (5) 
+02/04/2015 00:48:58 [debug]: sql :select a.order_no,a.price, o.name office_name,a.guid,a.order_date,t.name order_time,a.name clientname,a.mobile clientmobile 
+		from dr_tb_member_vaccine_order a
+inner join dr_tb_office_lang o on a.office_id=o.oid and o.lang='zh-cn'
+inner join dr_tb_time t on a.order_time=t.id
+where a.member_id=1
+and a.doctor_id=5
+and a.vaccine_id=1
+and a.status='P'
+order by created_time desc
+02/04/2015 00:51:45 [debug]: sql :
+		select code, content_sc content from dr_tb_general
+		where code='order_caution' 
+		 
+02/04/2015 00:51:45 [debug]: sql :select distinct  dv.web_price,v.id vaccine_id,
+			vl.name vaccine_name,vl.effect vaccine_effect,vl.used_group vaccine_used_group,v.image vaccine_image,
+			dl.name doctor_name,d.is_general doctor_is_general,dl.pro_title doctor_pro_title,d.photo doctor_photo,sl.name doctor_specialist
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+inner join dr_tb_vaccine v on dv.vaccine_id=v.id and v.status='A'
+left join dr_tb_vaccine_lang vl on v.id=vl.oid and vl.lang='zh-cn'
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 and dv.doctor_id=5 
+02/04/2015 00:51:45 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (5) 
+02/04/2015 00:51:45 [debug]: sql :select a.order_no,a.price, o.name office_name,a.guid,a.order_date,t.name order_time,a.name clientname,a.mobile clientmobile 
+		from dr_tb_member_vaccine_order a
+inner join dr_tb_office_lang o on a.office_id=o.oid and o.lang='zh-cn'
+inner join dr_tb_time t on a.order_time=t.id
+where a.member_id=1
+and a.doctor_id=5
+and a.vaccine_id=1
+and a.status='P'
+order by created_time desc
+02/04/2015 00:51:58 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=5 
+02/04/2015 00:53:21 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=5 
+02/04/2015 00:53:21 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:53:21 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=5 
+02/04/2015 00:53:21 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (5) 
+02/04/2015 00:53:26 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=1 
+order by totle_score desc
+02/04/2015 00:53:26 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:53:26 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:53:26 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:53:26 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,3,7,6,5,1,8,4,2) 
+02/04/2015 00:53:26 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:53:26 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,3,7,6,5,1,8,4,2)
+02/04/2015 00:53:31 [debug]: sql :select * from dr_tb_member_info where member_id=1 
+02/04/2015 00:53:33 [debug]: sql :select 1 from dr_tb_member_question
+where member_id=1
+and reply<>'' 
+and `read`='0'
+limit 0,1
+02/04/2015 00:53:36 [debug]: sql :select main.*,t.name order_rtime,doctor.name doctor_name,vaccine.image vaccine_image,vaccine.name vaccine_name,office.name office_name,office.address office_address,
+		(TO_DAYS(NOW()) - TO_DAYS(main.order_date)) passdate 
+		 from dr_tb_member_vaccine_order main
+inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='zh-cn') vaccine on main.vaccine_id=vaccine.id
+inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='zh-cn') doctor on main.doctor_id=doctor.id
+inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='zh-cn') office on main.office_id=office.id
+inner join dr_tb_member m on main.member_id=m.id
+inner join dr_tb_time t on main.order_time=t.id
+where main.member_id=1 
+order by main.order_date,main.order_time
+02/04/2015 00:53:42 [debug]: sql :select main.*,t.name order_rtime,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
+		TO_DAYS(NOW()) - TO_DAYS(main.order_date) passdate
+		  from dr_tb_member_vaccine_order main
+inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='zh-cn') vaccine on main.vaccine_id=vaccine.id
+inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='zh-cn') doctor on main.doctor_id=doctor.id
+inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='zh-cn') office on main.office_id=office.id
+inner join dr_tb_member m on main.member_id=m.id
+inner join dr_tb_time t on main.order_time=t.id
+where main.member_id=1 and main.id=6
+02/04/2015 00:53:56 [debug]: sql :select main.*,t.name order_rtime,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
+		TO_DAYS(NOW()) - TO_DAYS(main.order_date) passdate
+		  from dr_tb_member_vaccine_order main
+inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='zh-cn') vaccine on main.vaccine_id=vaccine.id
+inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='zh-cn') doctor on main.doctor_id=doctor.id
+inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='zh-cn') office on main.office_id=office.id
+inner join dr_tb_member m on main.member_id=m.id
+inner join dr_tb_time t on main.order_time=t.id
+where main.member_id=1 and main.id=6
+02/04/2015 00:54:08 [debug]: sql :select main.*,t.name order_rtime,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
+		TO_DAYS(NOW()) - TO_DAYS(main.order_date) passdate
+		  from dr_tb_member_vaccine_order main
+inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='zh-cn') vaccine on main.vaccine_id=vaccine.id
+inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='zh-cn') doctor on main.doctor_id=doctor.id
+inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='zh-cn') office on main.office_id=office.id
+inner join dr_tb_member m on main.member_id=m.id
+inner join dr_tb_time t on main.order_time=t.id
+where main.member_id=1 and main.id=6
+02/04/2015 00:55:13 [debug]: sql :select main.*,t.name order_rtime,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
+		TO_DAYS(NOW()) - TO_DAYS(main.order_date) passdate
+		  from dr_tb_member_vaccine_order main
+inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='zh-cn') vaccine on main.vaccine_id=vaccine.id
+inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='zh-cn') doctor on main.doctor_id=doctor.id
+inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='zh-cn') office on main.office_id=office.id
+inner join dr_tb_member m on main.member_id=m.id
+inner join dr_tb_time t on main.order_time=t.id
+where main.member_id=1 and main.id=6
+02/04/2015 00:55:42 [debug]: sql :select main.*,t.name order_rtime,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
+		TO_DAYS(NOW()) - TO_DAYS(main.order_date) passdate
+		  from dr_tb_member_vaccine_order main
+inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='zh-cn') vaccine on main.vaccine_id=vaccine.id
+inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='zh-cn') doctor on main.doctor_id=doctor.id
+inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='zh-cn') office on main.office_id=office.id
+inner join dr_tb_member m on main.member_id=m.id
+inner join dr_tb_time t on main.order_time=t.id
+where main.member_id=1 and main.id=6
+02/04/2015 00:56:25 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=4 
+02/04/2015 00:56:58 [debug]: sql :select main.*,t.name order_rtime,doctor.name doctor_name,vaccine.name vaccine_name,office.name office_name,office.address office_address ,
+		TO_DAYS(NOW()) - TO_DAYS(main.order_date) passdate
+		  from dr_tb_member_vaccine_order main
+inner join (select * from dr_tb_vaccine a left join dr_tb_vaccine_lang b on a.id=b.oid and b.lang='zh-cn') vaccine on main.vaccine_id=vaccine.id
+inner join (select * from dr_tb_doctor a left join dr_tb_doctor_lang b on a.id=b.oid and b.lang='zh-cn') doctor on main.doctor_id=doctor.id
+inner join (select * from dr_tb_office a left join dr_tb_office_lang b on a.id=b.oid and b.lang='zh-cn') office on main.office_id=office.id
+inner join dr_tb_member m on main.member_id=m.id
+inner join dr_tb_time t on main.order_time=t.id
+where main.member_id=1 and main.id=6
+02/04/2015 00:57:26 [debug]: sql :select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from  dr_tb_doctor d 
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.status='A'
+order by totle_score desc
+02/04/2015 00:57:26 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:57:26 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:57:26 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:57:26 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:57:26 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:57:26 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:58:06 [debug]: sql :select distinct o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' 
+order by o.seq 
+02/04/2015 00:58:06 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+02/04/2015 00:58:06 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list,vcs.category_id from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+02/04/2015 00:58:11 [debug]: sql :select distinct d.id doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist,dl.advanced,dl.pro_title,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from  dr_tb_doctor d 
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.status='A'
+order by totle_score desc
+02/04/2015 00:58:11 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:58:11 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:58:11 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:58:11 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6) 
+02/04/2015 00:58:11 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:58:11 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,10,11,4,5,7,2,3,1,8,9,6)
+02/04/2015 00:58:18 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=4 
+02/04/2015 00:58:18 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:58:18 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=4 
+02/04/2015 00:58:18 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (4) 
+02/04/2015 00:58:18 [debug]: sql :select distinct o.id , dv.web_price,
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' and dv.doctor_id=4
+order by o.seq 
+02/04/2015 00:58:18 [debug]: sql :select ds.*,el.name,el.description effect_description from dr_tb_doctor d
+inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
+inner join dr_tb_effect e on ds.effect_id=e.id
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='zh-cn'
+where e.status='A' and d.id=4
+02/04/2015 00:58:29 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=4 
+02/04/2015 00:58:29 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 00:58:29 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=4 
+02/04/2015 00:58:29 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (4) 
+02/04/2015 00:58:29 [debug]: sql :select distinct o.id , dv.web_price,
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' and dv.doctor_id=4
+order by o.seq 
+02/04/2015 00:58:29 [debug]: sql :select ds.*,el.name,el.description effect_description from dr_tb_doctor d
+inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
+inner join dr_tb_effect e on ds.effect_id=e.id
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='zh-cn'
+where e.status='A' and d.id=4
+02/04/2015 00:58:38 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=4 
+02/04/2015 01:00:27 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=4 
+02/04/2015 01:00:31 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 01:00:55 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=4 
+02/04/2015 01:02:48 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=4 
+02/04/2015 01:03:15 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 01:03:25 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=1 
+02/04/2015 01:03:52 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count, ifnull(dvv.query_count,177) query_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=4 
+02/04/2015 01:03:52 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+02/04/2015 01:03:52 [debug]: sql :select * from dr_tb_member_doctor where member_id=1 and doctor_id=4 
+02/04/2015 01:03:52 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (4) 
+02/04/2015 01:03:52 [debug]: sql :select distinct o.id , dv.web_price,
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id 
+where o.status='A' and dv.doctor_id=4
+order by o.seq 
+02/04/2015 01:03:52 [debug]: sql :select ds.*,el.name,el.description effect_description from dr_tb_doctor d
+inner join dr_tb_doctor_service ds on d.id=ds.doctor_id
+inner join dr_tb_effect e on ds.effect_id=e.id
+left join dr_tb_effect_lang el on e.id=el.oid and el.lang='zh-cn'
+where e.status='A' and d.id=4
+02/04/2015 01:04:06 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=4 
+02/04/2015 01:05:16 [debug]: sql :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id=4 

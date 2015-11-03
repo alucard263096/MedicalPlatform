@@ -1,0 +1,47 @@
+.prompt_box{}
+.prompt_list{ font-size:16px;margin-top:10px; float:left; border-bottom:1px solid #D9D9D9;padding-top:20px;  width:450px; min-height:270px;}
+.prompt_list_first{padding-left:230px; background:url(../../images/product/product_r.png) no-repeat left top; }
+.prompt_list_second{padding-right:230px;background:url(../../images/product/product_m.png) no-repeat  right top; }
+.prompt_list_third{padding-left:230px;background:url(../../images/product/product_l.png) no-repeat  left top; }
+.prompt_list strong{ font-size:24px; display:block; line-height:24px;margin-bottom:5px;color:#cccccc}
+.prompt_list strong.substrong{ font-size:20px; color:#4C9500}
+.prompt_list a{ color:blue;text-decoration:underline;}
+
+.product_detail td
+{
+	vertical-align:top;
+}
+
+.product_detail_title
+{
+	font-size:28px; 
+	color:#4C9500;
+	text-align:left;
+}
+
+
+.product_detail_desc
+{
+	font-size:22px; 
+	color:#cccccc;
+	text-align:left;
+}
+.tips{
+	display:none;
+	}
+.tips strong{
+	line-height:30px;
+	font-size:28px; 
+	color:#CCCCCC;
+	}
+.tips p{
+	margin-top:20px;
+	}
+.tips ul{
+	margin-top:20px;
+	}
+.tips li{
+	float:left;
+	width:360px;
+	padding:10px;
+	}

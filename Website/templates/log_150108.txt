@@ -1,0 +1,199 @@
+08/01/2015 11:14:27 [debug]: sql :select * from dr_tb_user where login_id='steve' 
+08/01/2015 11:14:28 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:14:28 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:14:28 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:14:36 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:14:36 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:14:36 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:14:36 [debug]: sql :select  m.id,m.name as first,
+ m.mobile  as second,m.order_date  as third 
+from dr_tb_member_vaccine_order m
+		where status='C' and h_status='P'
+        order by m.updated_date desc
+		limit 0,3 
+08/01/2015 11:14:36 [debug]: sql :select  m.id,m.title as first,
+case m.type when 'R' then '新需求' else  'Bug' end as second,user.user_name as third 
+from dr_tb_requirement m
+inner join dr_tb_user user on m.submit_user=user.id
+		where handling_user=2 and handling_type='P' 
+        order by m.updated_date desc
+		limit 0,3 
+08/01/2015 11:14:36 [debug]: sql :select  m.id,m.title as first,
+case m.handling_type when 'F' then '已处理' else  '不处理' end as second,user.user_name as third 
+from dr_tb_requirement m
+inner join dr_tb_user user on m.handling_user=user.id
+		where submit_user=2 and handling_type<>'P'  and review_type='P'
+        order by m.updated_date desc
+		limit 0,3 
+08/01/2015 11:14:46 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:14:46 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:14:46 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:14:46 [debug]: sql :select * from dr_tb_requirement where id=3
+08/01/2015 11:14:46 [debug]: sql :select id,user_name as name from dr_tb_user as r_submit_user where r_submit_user.status='A'
+08/01/2015 11:14:46 [debug]: sql :select id,user_name as name from dr_tb_user as r_handling_user where r_handling_user.status='A'
+08/01/2015 11:14:57 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:14:57 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:14:57 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:14:57 [debug]: sql :update dr_tb_requirement set updated_date=now(),updated_user=2, `title`='增加一个邮箱账户', `type`='R', `description`='麻烦再exmail里面加一个账户，应该是administrator或者operator之类的，我后期可能会用这个来发送邮件给客户，例如用户取消预约或者成功预约之类的', `attachment_1`='', `attachment_2`='', `attachment_3`='', `submit_user`='2', `handling_comment`='admin@imedlinks.com\npw: imed123', `handling_type`='F', `handling_user`='5', `review_comment`='谢谢蔡总', `review_type`='T' where id=3
+08/01/2015 11:15:03 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:15:03 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:15:03 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:15:03 [debug]: sql :select  m.id,m.name as first,
+ m.mobile  as second,m.order_date  as third 
+from dr_tb_member_vaccine_order m
+		where status='C' and h_status='P'
+        order by m.updated_date desc
+		limit 0,3 
+08/01/2015 11:15:03 [debug]: sql :select  m.id,m.title as first,
+case m.type when 'R' then '新需求' else  'Bug' end as second,user.user_name as third 
+from dr_tb_requirement m
+inner join dr_tb_user user on m.submit_user=user.id
+		where handling_user=2 and handling_type='P' 
+        order by m.updated_date desc
+		limit 0,3 
+08/01/2015 11:15:03 [debug]: sql :select  m.id,m.title as first,
+case m.handling_type when 'F' then '已处理' else  '不处理' end as second,user.user_name as third 
+from dr_tb_requirement m
+inner join dr_tb_user user on m.handling_user=user.id
+		where submit_user=2 and handling_type<>'P'  and review_type='P'
+        order by m.updated_date desc
+		limit 0,3 
+08/01/2015 11:15:07 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:15:07 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:15:07 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:15:07 [debug]: sql :select id,user_name as name from dr_tb_user as r_submit_user where r_submit_user.status='A'
+08/01/2015 11:15:07 [debug]: sql :select id,user_name as name from dr_tb_user as r_handling_user where r_handling_user.status='A'
+08/01/2015 11:15:09 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:15:09 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:15:09 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:15:09 [debug]: sql :select r_main.id ,r_main.title ,case   r_main.type  when 'R' then '新需求' when 'B' then 'Bug' else 'unknow'  end as type ,r_submit_user.user_name submit_user ,case   r_main.handling_type  when 'P' then '等待处理' when 'F' then '已处理' when 'N' then '不处理' else 'unknow'  end as handling_type ,r_handling_user.user_name handling_user ,case   r_main.review_type  when 'P' then '等待审阅' when 'T' then '通过' when 'N' then '不通过' else 'unknow'  end as review_type from dr_tb_requirement as r_main  left join dr_tb_user r_submit_user on r_main.submit_user=r_submit_user.id  left join dr_tb_user r_handling_user on r_main.handling_user=r_handling_user.id   where  1=1 order by r_main.updated_date desc 
+08/01/2015 11:15:23 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:15:23 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:15:23 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:15:23 [debug]: sql :select r_main.id ,r_main.title ,case   r_main.type  when 'R' then '新需求' when 'B' then 'Bug' else 'unknow'  end as type ,r_submit_user.user_name submit_user ,case   r_main.handling_type  when 'P' then '等待处理' when 'F' then '已处理' when 'N' then '不处理' else 'unknow'  end as handling_type ,r_handling_user.user_name handling_user ,case   r_main.review_type  when 'P' then '等待审阅' when 'T' then '通过' when 'N' then '不通过' else 'unknow'  end as review_type from dr_tb_requirement as r_main  left join dr_tb_user r_submit_user on r_main.submit_user=r_submit_user.id  left join dr_tb_user r_handling_user on r_main.handling_user=r_handling_user.id   where  1=1 and r_main.handling_user=2 order by r_main.updated_date desc 
+08/01/2015 11:15:29 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:15:29 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:15:29 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:15:29 [debug]: sql :select * from dr_tb_requirement where id=1
+08/01/2015 11:15:29 [debug]: sql :select id,user_name as name from dr_tb_user as r_submit_user where r_submit_user.status='A'
+08/01/2015 11:15:29 [debug]: sql :select id,user_name as name from dr_tb_user as r_handling_user where r_handling_user.status='A'
+08/01/2015 11:15:45 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:15:45 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:15:45 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:15:45 [debug]: sql :select id,user_name as name from dr_tb_user as r_submit_user where r_submit_user.status='A'
+08/01/2015 11:15:45 [debug]: sql :select id,user_name as name from dr_tb_user as r_handling_user where r_handling_user.status='A'
+08/01/2015 11:15:54 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:15:54 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:15:54 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:15:54 [debug]: sql :select r_main.id ,r_main.title ,case   r_main.type  when 'R' then '新需求' when 'B' then 'Bug' else 'unknow'  end as type ,r_submit_user.user_name submit_user ,case   r_main.handling_type  when 'P' then '等待处理' when 'F' then '已处理' when 'N' then '不处理' else 'unknow'  end as handling_type ,r_handling_user.user_name handling_user ,case   r_main.review_type  when 'P' then '等待审阅' when 'T' then '通过' when 'N' then '不通过' else 'unknow'  end as review_type from dr_tb_requirement as r_main  left join dr_tb_user r_submit_user on r_main.submit_user=r_submit_user.id  left join dr_tb_user r_handling_user on r_main.handling_user=r_handling_user.id   where  1=1 and r_main.handling_type like '%P%' and r_main.handling_user=2 order by r_main.updated_date desc 
+08/01/2015 11:16:00 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:16:00 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:16:00 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:16:00 [debug]: sql :select * from dr_tb_requirement where id=8
+08/01/2015 11:16:00 [debug]: sql :select id,user_name as name from dr_tb_user as r_submit_user where r_submit_user.status='A'
+08/01/2015 11:16:00 [debug]: sql :select id,user_name as name from dr_tb_user as r_handling_user where r_handling_user.status='A'
+08/01/2015 11:19:59 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:19:59 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:19:59 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:19:59 [debug]: sql :update dr_tb_requirement set updated_date=now(),updated_user=2, `title`='疫苗预约', `type`='R', `description`='1.用户在选择完疫苗和医生后，应该有个页面，上面会显示医生和疫苗的信息加用户评论，如设计图-2合1疫苗预约\n2.选择医生那里是不是需要加筛选条件如设计图选择医生附件二', `attachment_1`='15010723030QQ截图20150107234747.jpg', `attachment_2`='1501072301011111111111111111.jpg', `attachment_3`='', `submit_user`='6', `handling_comment`='1、不要跟着我现有的设计的流程走，你可以重新设计过程等，比如疫苗的选择入口或者诊所在别的地方选择等。关注大流程就是   选择疫苗-》选择医生-》选择诊所-》选择日期-》选择时间   这个大的选择顺序不变就OK了~~~~~医生入口类似\n2、需要加筛选条件和排序条件的，医生的筛选条件可能是   最近诊所，医生服务级别，用户评级等选项，这个东西你来设计，或者找田总问问清楚~~~~~周末估计要讨论', `handling_type`='F', `handling_user`='2', `review_comment`='', `review_type`='P' where id=8
+08/01/2015 11:20:04 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:20:04 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:20:04 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:20:04 [debug]: sql :select id,user_name as name from dr_tb_user as r_submit_user where r_submit_user.status='A'
+08/01/2015 11:20:04 [debug]: sql :select id,user_name as name from dr_tb_user as r_handling_user where r_handling_user.status='A'
+08/01/2015 11:20:12 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:20:12 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:20:12 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:20:12 [debug]: sql :select r_main.id ,r_main.title ,case   r_main.type  when 'R' then '新需求' when 'B' then 'Bug' else 'unknow'  end as type ,r_submit_user.user_name submit_user ,case   r_main.handling_type  when 'P' then '等待处理' when 'F' then '已处理' when 'N' then '不处理' else 'unknow'  end as handling_type ,r_handling_user.user_name handling_user ,case   r_main.review_type  when 'P' then '等待审阅' when 'T' then '通过' when 'N' then '不通过' else 'unknow'  end as review_type from dr_tb_requirement as r_main  left join dr_tb_user r_submit_user on r_main.submit_user=r_submit_user.id  left join dr_tb_user r_handling_user on r_main.handling_user=r_handling_user.id   where  1=1 and r_main.handling_type like '%P%' and r_main.handling_user=2 order by r_main.updated_date desc 
+08/01/2015 11:20:20 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:20:20 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:20:20 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:20:20 [debug]: sql :select * from dr_tb_requirement where id=4
+08/01/2015 11:20:20 [debug]: sql :select id,user_name as name from dr_tb_user as r_submit_user where r_submit_user.status='A'
+08/01/2015 11:20:20 [debug]: sql :select id,user_name as name from dr_tb_user as r_handling_user where r_handling_user.status='A'
+08/01/2015 11:21:01 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:21:01 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:21:01 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:21:01 [debug]: sql :update dr_tb_requirement set updated_date=now(),updated_user=2, `title`='会员注册', `type`='R', `description`='用手机短信验证、注册，取消邮箱注册', `attachment_1`='', `attachment_2`='', `attachment_3`='', `submit_user`='4', `handling_comment`='记得页面设计要关注这点，你搞完  处理人转回给我', `handling_type`='P', `handling_user`='6', `review_comment`='', `review_type`='P' where id=4
+08/01/2015 11:21:11 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:21:11 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:21:11 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:21:11 [debug]: sql :select id,user_name as name from dr_tb_user as r_submit_user where r_submit_user.status='A'
+08/01/2015 11:21:11 [debug]: sql :select id,user_name as name from dr_tb_user as r_handling_user where r_handling_user.status='A'
+08/01/2015 11:21:14 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:21:14 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:21:14 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:21:14 [debug]: sql :select r_main.id ,r_main.title ,case   r_main.type  when 'R' then '新需求' when 'B' then 'Bug' else 'unknow'  end as type ,r_submit_user.user_name submit_user ,case   r_main.handling_type  when 'P' then '等待处理' when 'F' then '已处理' when 'N' then '不处理' else 'unknow'  end as handling_type ,r_handling_user.user_name handling_user ,case   r_main.review_type  when 'P' then '等待审阅' when 'T' then '通过' when 'N' then '不通过' else 'unknow'  end as review_type from dr_tb_requirement as r_main  left join dr_tb_user r_submit_user on r_main.submit_user=r_submit_user.id  left join dr_tb_user r_handling_user on r_main.handling_user=r_handling_user.id   where  1=1 and r_main.handling_type like '%P%' and r_main.handling_user=2 order by r_main.updated_date desc 
+08/01/2015 11:22:08 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:22:08 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:22:08 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:22:08 [debug]: sql :select * from dr_tb_requirement where id=6
+08/01/2015 11:22:08 [debug]: sql :select id,user_name as name from dr_tb_user as r_submit_user where r_submit_user.status='A'
+08/01/2015 11:22:08 [debug]: sql :select id,user_name as name from dr_tb_user as r_handling_user where r_handling_user.status='A'
+08/01/2015 11:22:11 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:22:11 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:22:11 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:22:11 [debug]: sql :select id,user_name as name from dr_tb_user as r_submit_user where r_submit_user.status='A'
+08/01/2015 11:22:11 [debug]: sql :select id,user_name as name from dr_tb_user as r_handling_user where r_handling_user.status='A'
+08/01/2015 11:22:12 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:22:12 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:22:12 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:22:12 [debug]: sql :select r_main.id ,r_main.title ,case   r_main.type  when 'R' then '新需求' when 'B' then 'Bug' else 'unknow'  end as type ,r_submit_user.user_name submit_user ,case   r_main.handling_type  when 'P' then '等待处理' when 'F' then '已处理' when 'N' then '不处理' else 'unknow'  end as handling_type ,r_handling_user.user_name handling_user ,case   r_main.review_type  when 'P' then '等待审阅' when 'T' then '通过' when 'N' then '不通过' else 'unknow'  end as review_type from dr_tb_requirement as r_main  left join dr_tb_user r_submit_user on r_main.submit_user=r_submit_user.id  left join dr_tb_user r_handling_user on r_main.handling_user=r_handling_user.id   where  1=1 and r_main.handling_type like '%P%' and r_main.handling_user=2 order by r_main.updated_date desc 
+08/01/2015 11:22:14 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:22:14 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:22:14 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:22:14 [debug]: sql :select * from dr_tb_requirement where id=5
+08/01/2015 11:22:14 [debug]: sql :select id,user_name as name from dr_tb_user as r_submit_user where r_submit_user.status='A'
+08/01/2015 11:22:14 [debug]: sql :select id,user_name as name from dr_tb_user as r_handling_user where r_handling_user.status='A'
+08/01/2015 11:22:16 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:22:16 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:22:16 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:22:16 [debug]: sql :select id,user_name as name from dr_tb_user as r_submit_user where r_submit_user.status='A'
+08/01/2015 11:22:16 [debug]: sql :select id,user_name as name from dr_tb_user as r_handling_user where r_handling_user.status='A'
+08/01/2015 11:22:49 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 11:22:49 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 11:22:49 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 11:22:49 [debug]: sql :select  m.id,m.name as first,
+ m.mobile  as second,m.order_date  as third 
+from dr_tb_member_vaccine_order m
+		where status='C' and h_status='P'
+        order by m.updated_date desc
+		limit 0,3 
+08/01/2015 11:22:49 [debug]: sql :select  m.id,m.title as first,
+case m.type when 'R' then '新需求' else  'Bug' end as second,user.user_name as third 
+from dr_tb_requirement m
+inner join dr_tb_user user on m.submit_user=user.id
+		where handling_user=2 and handling_type='P' 
+        order by m.updated_date desc
+		limit 0,3 
+08/01/2015 11:22:49 [debug]: sql :select  m.id,m.title as first,
+case m.handling_type when 'F' then '已处理' else  '不处理' end as second,user.user_name as third 
+from dr_tb_requirement m
+inner join dr_tb_user user on m.handling_user=user.id
+		where submit_user=2 and handling_type<>'P'  and review_type='P'
+        order by m.updated_date desc
+		limit 0,3 
+08/01/2015 12:11:24 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 12:11:24 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 12:11:24 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 12:11:24 [debug]: sql :select oid id,name as name from   (select * from dr_tb_doctor r_doctor_a 
+							left join dr_tb_doctor_lang r_doctor_b 
+							on r_doctor_a.id=r_doctor_b.oid and r_doctor_b.lang='zh-cn'  ) r_doctor  where r_doctor.status='A'  
+08/01/2015 12:11:36 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 12:11:36 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 12:11:36 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 12:11:36 [debug]: sql :select * from dr_tb_doctor_account where login_id='aa' 
+08/01/2015 12:11:36 [debug]: sql :select ifnull(max(id),0)+1 from dr_tb_doctor_account
+08/01/2015 12:11:36 [debug]: sql :insert into dr_tb_doctor_account (id,`doctor_id`,`login_id`,`password`,`accessright`,`email`,`remarks`,`status`,created_date,created_user,updated_date,updated_user ) values (5,'1','aa','6512bd43d9caa6e02c990b0a82652dca','D','aa','','A',now(),2,now(),2 )
+08/01/2015 12:11:36 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 12:11:36 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 12:11:36 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 12:11:36 [debug]: sql :select * from dr_tb_doctor_account where id=5
+08/01/2015 12:11:36 [debug]: sql :select oid id,name as name from   (select * from dr_tb_doctor r_doctor_a 
+							left join dr_tb_doctor_lang r_doctor_b 
+							on r_doctor_a.id=r_doctor_b.oid and r_doctor_b.lang='zh-cn'  ) r_doctor  where r_doctor.status='A'  
+08/01/2015 12:11:38 [debug]: sql :select count(1) from dr_tb_member_vaccine_order where status='C' and h_status='P' 
+08/01/2015 12:11:38 [debug]: sql :select count(1) from dr_tb_requirement where handling_user=2 and handling_type='P'  
+08/01/2015 12:11:38 [debug]: sql :select count(1) from dr_tb_requirement where submit_user=2 and handling_type<>'P'  and review_type='P'  
+08/01/2015 12:11:38 [debug]: sql :update dr_tb_doctor_account set updated_date=now(),updated_user=2, `doctor_id`='1', `login_id`='aa', `accessright`='D', `email`='aa', `remarks`='', `status`='A' where id=5
+08/01/2015 12:11:38 [debug]: sql :update dr_tb_doctor_account set  `password`='7bfc85c0d74ff05806e0b5a0fa0c1df1' where id=5 and password<>'6512bd43d9caa6e02c990b0a82652dca'

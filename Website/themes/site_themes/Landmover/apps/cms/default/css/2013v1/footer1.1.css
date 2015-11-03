@@ -1,0 +1,12 @@
+/*页脚*/
+.footer{ background:#F5F5F5; padding:10px 0}
+.footer dl{ display:block; float:left; width:245px; height:auto}
+.footer dl dt{ padding:10px 0; font:14px; font-weight:bold }
+.bottom-menu{ height:70px; border-top:1px solid #DCDCDC; line-height:70px; margin-top:20px}
+.bottom-menu .l{width:60px;height:70px; line-height:70px; cursor:pointer; position:relative;}
+.bottom-menu .m{width:575px;height:70px; margin-left:5px}
+.bottom-menu .r{width:220px; text-align:right; height:50px; padding-top:20px; padding-right:60px; background:url(../../images/2013v1/bottom_img_03.jpg) right center no-repeat; line-height:18px}
+.friendly-link{ height:45px; line-height:45px; color:#ccc; background:#777;}
+.friendly-link a{color:#ccc;}
+.footer .uplinks {left:-24px; bottom:48px; background:#fff; padding:10px; z-index:10; line-height:22px; width:80px;}
+.footer .uplinks a{ display:block}

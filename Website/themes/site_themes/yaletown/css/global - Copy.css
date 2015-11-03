@@ -1,0 +1,375 @@
+@import url("../css/reset.css");
+
+/* ---- GLOBALS ---- */
+* {margin:0; padding:0;}
+body {
+    font: 12px/1.4em Verdana, Arial, Helvetica, sans-serif;
+	background: #333;
+    color:#666;
+	margin: 0;
+} 
+hr { display: none; }
+strong, b { font-weight: bold; }
+em, i { font-style: italic; }
+a {color: #BF892B;text-decoration: none;}
+a:hover {color: #BD1A1A}
+
+/* ---- WRAPPERS ---- */
+#outer{width: 100%; background: url(../gfx/home_bg.gif) repeat-x #A09E91}
+body.inside #outer {background: url(../gfx/inside_bg.gif) repeat-x #A09E91}
+#inner {width: 100%; background: url(../gfx/brick_top_right.png) no-repeat 100% 0}
+#wrapper {width: 789px;  position: relative; background: url(../gfx/footer_line.gif) no-repeat 0 100%; padding: 0 0 3px 0}
+#header {height: 153px;}
+#header .slogan {display: block; width: 294px; height: 41px; text-indent:-999em; background: url(../gfx/head_title.gif) no-repeat 0 0; position: absolute; top: 24px; right: 0;}
+#logo {width: 223px; height: 148px; display: block; background: url(../gfx/logo.gif) no-repeat 0 0; position: absolute; top: 4px; left: 0; text-indent: -999em;}
+
+/*--FOOTER--*/
+#footer {width: 100%; height:40px;background: #484846}
+#footer p {font-size: 10px; display: block; margin: 0 0 0 250px; line-height: 40px; color: #999}
+#footer a { color: #999; text-decoration: underline; }
+#footer a:hover { color:#ccc;}
+/* ---- CONTAINER ---- */
+#container {background: url(../gfx/container_bg.gif) repeat-y; padding: 0 0 15px 0}
+#primary {width: 566px; float: right; background: #fff;}
+#secondary {width: 223px; float: left}
+#secondary .sideContent { padding: 10px 20px 30px; }
+#secondary h2 {font-size: 14px; color: #CECCBD; padding: 0 0 10px 0; margin: 0 0 10px; border-bottom: 1px solid #3F6968;}
+
+.head_image {margin: 0 0 15px 0}
+.content {padding: 10px 20px;}
+.content hr {display: block; border: none; background: #ccc; height: 1px; margin:0 0 15px 0}
+.content h2 { font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, sans-serif; font-size: 16px; color: #4E7A7B; margin: 0 0 20px 0}
+.content p {line-height: 18px; margin: 0 0 20px 0;}
+
+
+/* ---- NAVIGATION ---- */
+#navigation {width: 566px; position: absolute; top: 94px; right: 0;}
+#navigation ul {position: relative}
+#navigation li {float: left}
+#navigation a {color: #ffffff}
+#navigation a:hover {color: #cccccc}
+#navigation li .gnav {display: block; height: 40px;font-size:16px;text-align:center;}
+
+#navigation #n-home .gnav {width: 86px;}
+body#home #n-home .gnav, #navigation #n-home .gnav:hover {background-position: 0 -40px}
+
+#navigation #n-profile .gnav {width: 90px; background-position: -86px 0}
+body#profile #n-profile .gnav, #navigation #n-profile .gnav:hover, #navigation #n-profile .gnav.on {background-position: -86px -40px}
+
+#navigation #n-people .gnav {width: 95px;background-position: -176px 0}
+body#people #n-people .gnav, #navigation #n-people .gnav:hover, #navigation #n-people .gnav.on {background-position: -176px -40px}
+
+#navigation #n-portfolio .gnav {width: 111px; background-position: -271px 0}
+body#portfolio #n-portfolio .gnav, #navigation #n-portfolio .gnav:hover, #navigation #n-portfolio .gnav.on {background-position: -271px -40px}
+
+#navigation #n-press .gnav {width: 87px; background-position: -382px 0}
+body#news #n-press .gnav, #navigation #n-press .gnav:hover, #navigation #n-press .gnav.on {background-position: -382px -40px}
+
+#navigation #n-contact .gnav {width: 97px; background-position: -469px 0}
+body#contact #n-contact .gnav, #navigation #n-contact .gnav:hover {background-position: -469px -40px}
+
+/* ---- MENU SUBNAV ---- */
+#navigation ul li #subnav_press {width: 185px}
+#navigation ul li .subnav {width: 195px; background: url(../gfx/subnav_bg.png) repeat 0 0; position: absolute; top: 58px; display: none}
+.subnav li {width: 100%}
+.subnav li a {display: block; width: 100%; font-size: 11px; color: #A2A095; padding: 5px 0}
+.subnav li a:hover {background: url(../gfx/subnav_hoverbg.jpg) repeat-x 0 0; color: #fff}
+.subnav li a span {background: url(../gfx/bullet_arrow.png) no-repeat 10px 50%; padding: 0 0 0 20px}
+
+/* ---- SIDE NAVIGATION ---- */
+#sidenav ul li {width: 223px; }
+#sidenav ul li a {width: 193px; padding: 8px 30px 8px 0; display: block; text-align: right; color: #ABBABA; background: url(../gfx/sidenav_arrow_white.png) no-repeat 95% 50%; font-size: 12px; }
+#sidenav ul li a:hover,#sidenav ul li.active a, #sidenav ul li.active_parent a {color: #000; background: url(../gfx/sidenav_arrow_black.png) no-repeat 95% 50% #fff}
+
+#sidenav ul li ul {background: #1C3635; padding: 10px 0}
+#sidenav ul li ul li a, #sidenav ul li.active_parent li a, #sidenav ul li.active ul li a {width: 200px; color: #B1AA75; font-size: 12px; text-decoration: underline; background: url(../gfx/sidenav_sub_arrow.png) no-repeat 85% 50%; padding: 4px 50px 4px 0;}
+#sidenav ul li ul li.active  a { text-decoration: none; background: url(../gfx/sidenav_sub_arrow.png) no-repeat 85% 50% transparent; color: #fff; font-weight:}
+#sidenav ul li ul li a:hover {background: url(../gfx/sidenav_sub_arrow.png) no-repeat 85% 50% transparent; color: #fff}
+
+/* ---- BUTTONS ---- */
+.middle {margin: 0 25px;}
+.btn_cta {background: url(../gfx/cta_button.png) no-repeat 0 0; 
+	width: 154px; height: 37px; 
+	display: inline-block; line-height: 37px; 
+	font-size: 12px; text-indent: 20px;
+	color: #000;
+}
+.btn_cta:hover {background-position: 0 -37px; color: #fff;}
+.btn_full {background:url(../gfx/bullet_arrow.png) no-repeat 0 3px; padding: 0 0 0 10px; color: #E8E6D6; font-size: 10px;}
+.btn_full:hover {color: #fff; text-decoration: underline}
+
+
+/* -- NEWSBOX -- */
+.newsBox {color: #9CAEAE}
+.newsBox img{margin: 0 0 15px 0}
+.newsBox h3 {font: normal 14px/18px "Lucida Sans Unicode", "Lucida Grande", sans-serif; margin: 0 0 5px}
+.newsBox h3 a {color: #CCCCBD;}
+.newsBox h3 a:hover {color: #fff; text-decoration: underline }
+.newsBox .date {color: #fff; display: block; margin: 0 0 15px 0}
+.newsBox p {font-size: 11px; margin: 0 0 10px 0}
+
+/* ---- PORTFOLIO ---- */
+#primary .portfolio .folioBox {background: url(../gfx/folio_box_bg.gif) no-repeat 0 0; width: 143px; height: 179px; padding: 5px; display:block; float: left; margin: 10px;}
+.folioBox p {font-size: 11px; line-height: 14px; margin: 0; padding: 0 5px;}
+
+/* ---- CONTENT STYLES ---- */
+.content h3 {
+	margin: 0 0 15px;
+	font-size: 14px;
+	color: #666640;
+}
+.content ul {
+	margin: 0 0 15px;
+}
+.content ul li {
+	list-style: disc;
+	margin: 0 0 8px 30px;
+}
+.content p.more {
+	padding: 10px 0;
+	margin: 10px 0;
+	border-top: 1px dotted #999;
+}
+.content table tr td {
+	border-top: 1px dotted #999;
+	padding: 10px;
+	margin: 10px 0;
+}
+.content table tr td.headingBlock {
+	border-right: 1px dotted #999;
+}
+.content table tr.grey {
+	background: #E5E4E0;
+}
+
+/* ---- FAQ ---- */
+.portfolioCategories {
+	margin: 0 0 0 15px;
+}
+.portfolioCategories li {
+	display: block;
+	float: left;
+	width: 145px;
+	height: 168px;
+	margin: 0 15px 0 0;
+}
+.portfolioCategories li a {
+	display: block;
+	width: 145px;
+	height: 168px;
+	text-indent: -999em;
+}
+.portfolioCategories li.node_cleantech a {
+	background: url(../gfx/btn_cat_cleantech.jpg) no-repeat 0 0;
+}
+.portfolioCategories li.node_cleantech a:hover {
+	background-position: -145px 0;
+}
+.portfolioCategories li.node_information-technology a {
+	background: url(../gfx/btn_cat_it.jpg) no-repeat 0 0;
+}
+.portfolioCategories li.node_information-technology a:hover {
+	background-position: -145px 0;
+}
+.portfolioCategories li.node_all-investments a {
+	background: url(../gfx/btn_cat_allinvestments.jpg) no-repeat 0 0;
+}
+.portfolioCategories li.node_all-investments a:hover {
+	background-position: -145px 0;
+}
+/* ---- FAQ ---- */
+.content ul.faqlist h3 {
+	margin: 0 0 5px;
+}
+.content ul.faqlist {
+	margin: 0;
+	padding: 0;
+}
+.content ul.faqlist li {
+	list-style: none;
+	margin: 0 0 15px;
+	padding: 0;
+}
+
+/* ---- NEWS ---- */
+.companyList {
+	margin: 0 0 10px 0;
+}
+.companyList .instruction {
+	text-align: right;
+	float: right;
+	display: block;
+	padding: 20px 0 5px 0;
+	font-size: 11px;
+	color: #999;
+}
+.companyList a.active {
+	font-weight: bold;
+}
+.companyList a {
+	padding: 0 5px 0 0;
+}
+.infobox {
+	margin: 10px 0 0 0;
+	padding: 10px 0 0 0;
+	border-top: 1px dotted #999;
+}
+.featureimage {
+	margin: 0 0 10px 0;
+	padding: 0 0 10px 0;
+	border-bottom: 1px dotted #999;
+	text-align: center;
+}
+.infobox a.btn_allcompanies {
+	width: 176px;
+	height: 17px;
+	line-height: 17px;
+	background: url(../gfx/btn_allpfnews.gif) no-repeat 0 0;
+	text-indent: -999em;
+	display: block;
+	float: right;
+}
+.content ul.newsList {
+	margin: 10px 0 0 0;
+	padding: 10px 0 0 0;
+	border-top: 1px dotted #999;	
+}
+.content .newsList li,
+.content .newsList dd {
+	margin: 0 0 15px;
+	padding: 0;
+	list-style: none;
+}
+.content .newsList .source {
+	font-weight: bold;
+}
+.content .newsList span {
+	font-size: 11px;
+}
+.content .newsList li p {
+	margin: 3px 0 0 0;
+	padding: 0;
+	line-height: 1.2em;
+	font-size: 11px;
+	color: #999;
+}
+.content .newsList a {
+	color: #2a5c5d;
+}
+.content .newsList a:hover {
+	color: #bd1a1a;
+}
+.content .newsList dt {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 10px 0 10px 0;
+	border-top: 1px dotted #999;
+	padding: 10px 0 0 0;	
+}
+#filter_wrapper {
+	border-top: 1px dotted #999;
+	padding: 10px 0 0 0;
+}
+#filter_wrapper label {
+	font-size: 11px;
+	color: #999;
+}
+
+/* ---- PEOPLE - index ---- */
+.content .peopleListing  .peoplelist {
+	margin: 0 0 10px;
+	padding: 0;
+}
+.content .peopleListing h3 {
+	margin: 0 0 5px;
+	padding: 0;
+}
+.peopleListing .peoplelist li {
+	float: left;
+	margin: 0 0 5px 0;
+	width: 102px;
+	line-height: 1.2em;
+	list-style: none !important;	
+}
+.peopleListing .peoplelist li span {
+	display: block;
+	font-size: 11px;
+}
+/* ---- PEOPLE - bios ---- */
+.content .peopleBioListing .biolist li {
+	margin: 0;
+	padding: 0 0 20px;
+	list-style: none !important;
+}
+.content .peopleBioListing .biolist li .thumb {
+	float: left;
+	width: 130px;
+	height: 130px;
+}
+.content .peopleBioListing .biolist li .stats {
+	float: right;
+	width: 390px;
+}
+.content .peopleBioListing .biolist li .stats .logos {
+	float: left;
+	background: #ccc;
+}
+.content .peopleBioListing .biolist li .stats .logos img {
+	float: left;
+}
+.content .peopleBioListing .biolist li .stats h4 {
+	clear: left;
+	color: #000000;
+	font-weight: bold;
+	font-size: 13px;
+}
+.content .peopleBioListing .biolist li .stats .protitle {
+	display: block;
+	color: red;
+	font-size: 16px;
+	padding-top:10px;
+}
+.content .peopleBioListing .biolist li .bio {
+	clear: both;
+	margin: 5px 0 15px;
+	padding: 5px 0 0 0;
+	border-top: 1px dotted #999;
+}
+.content .peopleBioListing .biolist li .bio p {
+	margin: 0;
+	padding: 0;
+	line-height: 1.4em;
+	color: #666;
+}
+.content .peopleBioListing .expandme  span { margin: 0; padding: 0; }
+
+/* -- SIGNUP BOX -- */
+#signup h2 {margin: 0 0 15px 0 }
+#signup p {font-size: 11px; color: #519A98; margin: 0 0 10px 0}
+#signup input {width:158px; height: 25px; background:url(../gfx/signup_fieldbg.png) no-repeat 0 0; padding: 5px 10px 0 10px;font: 11px Verdana, Geneva, sans-serif; color:#000; border: none; margin: 0 0 10px 0}
+
+#signup #btn_signup {float: right; display: block; width: 60px; height:23px;background-color:black; color:white;  border: none; cursor:pointer; }
+#signup #btn_signup:hover {background-position: 0 -23px;}
+
+/* ---- HACKS ---- */
+.clear {
+	clear: both;
+}
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+#productcontent {width: 800px; float: right; background: #fff;}
+
+

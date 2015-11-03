@@ -1,0 +1,8 @@
+27/03/2015 00:18:10 [error]: sql error :
+		select code, title_sc name pic from dr_tb_general
+		where code='aboutus' and status='A'
+		 
+27/03/2015 00:18:36 [error]: sql error :
+		select code, content_sc content from dr_tb_general
+		where code='aboutus' and status='A'
+		 

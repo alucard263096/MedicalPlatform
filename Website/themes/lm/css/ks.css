@@ -1,0 +1,54 @@
+/*---kingdee2014-03-24---*/
+
+.kingdee_bn{width:980px; height:301px;position:relative;}
+.kingdee_bn ul{ position:absolute; z-index:999; top:0px; left:0px; padding:50px 0px 0px 40px;font-family:"微软雅黑";}
+.kingdee_bn ul h3{ font-size:29px; font-weight:bold; color:#FFF; line-height:32px; }
+.kingdee_bn ul p{ font-size:12px; color:#FFF; padding:15px 0px;}
+.kingdee_bn ul span{ display:block; float:left; margin:0px 5px 0px 0px; width:100px; height:30px; font-size:14px; text-align:center;font-family:"微软雅黑";}
+.kingdee_bn ul a.button{ background:#009bef; width: 100px; height: 30px; font-size: 14px; line-height: 30px; display: block; float: left; text-align: center; color: #fff; margin-right: 4px;}
+.kingdee_bn ul a.button:hover{background-color: #005bac; text-decoration: none;}
+
+
+.kengdee_box{width:980px; margin:15px 0px; padding:0px 0px 15px 0px;}
+.kengdee_box dl{float:left; width:330px;}
+.kengdee_box dl dt{ float:left; width:100px;}
+.kengdee_box dl dt img{width:100px; height:100px; display:block;}
+.kengdee_box dl dd{ float:right; width:188px; padding:0px 30px 0px 0px; color:#777777;}
+.kengdee_box dl dd h3{ font-size:16px; padding:0px 0px 5px; font-weight:bold;}
+.kengdee_box dl dd a{text-decoration: none;}
+.kengdee_box dl dd h4{ font-size:24px; padding:8px 0px 19px ; color:#888888; font-weight:bold; font-family:"微软雅黑";}
+.kengdee_box dl dd p{ height:52px; overflow:hidden; line-height:18px;}
+.kengdee_box dl dd a.more{ display:inline-block; float:right; padding:1px 15px 0px 0px;background:url(../images/2014/kengdee04.jpg) no-repeat right}
+.kengdee_box dl.windth320{width:320px}
+.kengdee_box dl dd.windt200px{ width:200px; padding:0px;}
+.kengdee_box .buttons a{width: 88px;height: 24px; border:1px solid #00b9ef; color: #777777; display: inline-block; text-align: center;}
+.kengdee_box .buttons a:hover{background:#00b9ef; color:#fff;}
+
+
+.kengdee_intro{width:980px; margin:0px 0px 15px; padding:0px 0px 15px 0px; border-bottom:1px solid #dcdcdc;}
+.kengdee_intro dl{ width:980px;}
+.kengdee_intro dl dt{ float:left; width:380px; padding:0px 0px 0px 25px;}
+.kengdee_intro dl dt img{ width:380px; height:310px; display:block;}
+.kengdee_intro dl dd{ float:right; width:490px; padding:50px 15px 0px 0px;}
+.kengdee_intro dl dd h3{ font-size:24px; font-weight:normal;color:#555555; font-family:"微软雅黑";}
+.kengdee_intro dl dd p{ padding:30px 100px 20px 0px; color:#777777; line-height:23px;}
+.kengdee_intro dl dd a.cur{ font-family:"微软雅黑"; font-size:14px; color:#005bac;}
+
+.kengdee_mobile{width:980px; margin:0px 0px 15px; padding:0px 0px 15px 0px; border-bottom:1px solid #dcdcdc;}
+.kengdee_mobile h3{ text-align:center; font-size:24px; font-weight:bold; padding:20px 0px 15px;}
+.kengdee_mobile dl{ margin:0px; padding:0px; text-align:center;}
+.kengdee_mobile dl span{display:inline-block;width:127px;height:165px; margin:0px 15px; text-align:center;}
+.kengdee_mobile dl span a{display:inline-block;width:127px;height:165px;}
+.kengdee_mobile dl span a:hover{background:url(../../images/2014/kengdee08.jpg) top}
+.kengdee_mobile dl span img{ padding:10px 0px 0px;}
+.kengdee_mobile dl span p{ font-family:"微软雅黑"; color:#005bac; line-height:18px; padding:8px 0px 0px;}
+
+/*覆盖背景*/
+.focus-con li{background:none;}
+
+.ks-focus{height:301px;}
+.ks-contro{ bottom:10px !important;}
+
+.ks-focus .title{width:475px;}
+.ks-contro{ margin-left:-10px !important;}
+

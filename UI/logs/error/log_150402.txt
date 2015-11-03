@@ -1,0 +1,18 @@
+02/04/2015 00:55:20 [error]: sql error :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id= 
+02/04/2015 00:55:37 [error]: sql error :select o.coordinate,ol.name,ol.address,ol.description,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		,dl.name district,bl.name block
+		from  dr_tb_office o 
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+left join dr_tb_block_lang bl on o.block_id=bl.oid and bl.lang='zh-cn' 
+left join dr_tb_block b on b.id=bl.oid
+left join dr_tb_district_lang dl on b.district_id=dl.oid  and dl.lang='zh-cn' 
+where o.id= 

@@ -1,0 +1,491 @@
+17/02/2015 10:08:09 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='indexpromotion' and status='A'
+		 
+17/02/2015 10:08:09 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4') and status='A'
+		 
+17/02/2015 10:08:10 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+17/02/2015 10:08:10 [debug]: sql :select d.*,dl.*,dv.totle_score,sl.name specialist_id_str from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+    left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+	where d.id in (2,1) and d.status='A'
+	order by totle_score
+	limit 0,4 
+17/02/2015 10:08:10 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+17/02/2015 10:08:10 [debug]: sql :select o.*,ol.*,ifnull(ov.booking_count,0) from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
+	where o.id in (1,2) and o.status='A'
+	order by booking_count
+	limit 0,2 
+17/02/2015 10:08:15 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='indexpromotion' and status='A'
+		 
+17/02/2015 10:08:15 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4') and status='A'
+		 
+17/02/2015 10:08:15 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+17/02/2015 10:08:15 [debug]: sql :select d.*,dl.*,dv.totle_score,sl.name specialist_id_str from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+    left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+	where d.id in (2,1) and d.status='A'
+	order by totle_score
+	limit 0,4 
+17/02/2015 10:08:15 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+17/02/2015 10:08:15 [debug]: sql :select o.*,ol.*,ifnull(ov.booking_count,0) from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
+	where o.id in (1,2) and o.status='A'
+	order by booking_count
+	limit 0,2 
+17/02/2015 10:08:18 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='indexpromotion' and status='A'
+		 
+17/02/2015 10:08:18 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4') and status='A'
+		 
+17/02/2015 10:08:18 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+17/02/2015 10:08:18 [debug]: sql :select d.*,dl.*,dv.totle_score,sl.name specialist_id_str from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+    left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+	where d.id in (2,1) and d.status='A'
+	order by totle_score
+	limit 0,4 
+17/02/2015 10:08:18 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+17/02/2015 10:08:18 [debug]: sql :select o.*,ol.*,ifnull(ov.booking_count,0) from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
+	where o.id in (1,2) and o.status='A'
+	order by booking_count
+	limit 0,2 
+17/02/2015 10:08:21 [debug]: sql :select o.*,ol.*
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+where o.status='A' and o.id=1
+order by o.seq 
+17/02/2015 10:08:25 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='indexpromotion' and status='A'
+		 
+17/02/2015 10:08:25 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4') and status='A'
+		 
+17/02/2015 10:08:25 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+17/02/2015 10:08:25 [debug]: sql :select d.*,dl.*,dv.totle_score,sl.name specialist_id_str from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+    left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+	where d.id in (2,1) and d.status='A'
+	order by totle_score
+	limit 0,4 
+17/02/2015 10:08:25 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+17/02/2015 10:08:25 [debug]: sql :select o.*,ol.*,ifnull(ov.booking_count,0) from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
+	where o.id in (1,2) and o.status='A'
+	order by booking_count
+	limit 0,2 
+17/02/2015 10:08:27 [debug]: sql :select o.*,ol.*
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+where o.status='A' and o.id=1
+order by o.seq 
+17/02/2015 10:08:34 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='indexpromotion' and status='A'
+		 
+17/02/2015 10:08:34 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4') and status='A'
+		 
+17/02/2015 10:08:34 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+17/02/2015 10:08:34 [debug]: sql :select d.*,dl.*,dv.totle_score,sl.name specialist_id_str from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+    left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+	where d.id in (2,1) and d.status='A'
+	order by totle_score
+	limit 0,4 
+17/02/2015 10:08:34 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+17/02/2015 10:08:34 [debug]: sql :select o.*,ol.*,ifnull(ov.booking_count,0) from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
+	where o.id in (1,2) and o.status='A'
+	order by booking_count
+	limit 0,2 
+17/02/2015 10:08:35 [debug]: sql :select o.*,ol.*
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+where o.status='A' and o.id=1
+order by o.seq 
+17/02/2015 10:08:45 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='indexpromotion' and status='A'
+		 
+17/02/2015 10:08:45 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4') and status='A'
+		 
+17/02/2015 10:08:45 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+17/02/2015 10:08:45 [debug]: sql :select d.*,dl.*,dv.totle_score,sl.name specialist_id_str from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+    left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+	where d.id in (2,1) and d.status='A'
+	order by totle_score
+	limit 0,4 
+17/02/2015 10:08:45 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+17/02/2015 10:08:45 [debug]: sql :select o.*,ol.*,ifnull(ov.booking_count,0) from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
+	where o.id in (1,2) and o.status='A'
+	order by booking_count
+	limit 0,2 
+17/02/2015 10:08:49 [debug]: sql :select o.*,ol.*
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+where o.status='A' and o.id=2
+order by o.seq 
+17/02/2015 10:08:55 [debug]: sql :select o.*,ol.*
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+where o.status='A' and o.id=2
+order by o.seq 
+17/02/2015 10:08:57 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=2 
+order by totle_score
+17/02/2015 10:08:58 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,1) 
+17/02/2015 10:08:58 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,1)
+17/02/2015 10:08:58 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,1)
+17/02/2015 10:08:58 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,1) 
+17/02/2015 10:08:58 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,1)
+17/02/2015 10:08:58 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,1)
+17/02/2015 10:09:00 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=1 
+17/02/2015 10:09:00 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+17/02/2015 10:11:24 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=1 
+17/02/2015 10:11:24 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+17/02/2015 10:11:34 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=2 
+order by totle_score
+17/02/2015 10:11:34 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,1) 
+17/02/2015 10:11:34 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,1)
+17/02/2015 10:11:34 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,1)
+17/02/2015 10:11:34 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,1) 
+17/02/2015 10:11:34 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,1)
+17/02/2015 10:11:34 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,1)
+17/02/2015 10:11:50 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='indexpromotion' and status='A'
+		 
+17/02/2015 10:11:50 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4') and status='A'
+		 
+17/02/2015 10:11:50 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+17/02/2015 10:11:50 [debug]: sql :select d.*,dl.*,dv.totle_score,sl.name specialist_id_str from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+    left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+	where d.id in (2,1) and d.status='A'
+	order by totle_score
+	limit 0,4 
+17/02/2015 10:11:50 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+17/02/2015 10:11:50 [debug]: sql :select o.*,ol.*,ifnull(ov.booking_count,0) from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
+	where o.id in (1,2) and o.status='A'
+	order by booking_count
+	limit 0,2 
+17/02/2015 10:12:09 [debug]: sql :select d.*,dl.*,sl.name specialist,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score, ifnull(dvv.booking_count,233) booking_count from dr_tb_doctor d
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where d.id=1 
+17/02/2015 10:12:09 [debug]: sql :select ifnull(avg(service_level),3.9) service_level,
+		ifnull(avg(pro_level),3.6) pro_level,
+		ifnull(avg(facility_level),3.7) facility_level,
+		ifnull(avg(totle_score),4.1) totle_score from dr_tb_doctor_value
+17/02/2015 10:12:14 [debug]: sql :select distinct dv.doctor_id,dl.name doctor_name,d.photo,d.is_general,sl.name specialist
+		,dv.price,dv.web_price,
+		ifnull(dvv.service_level,4) service_level, ifnull(dvv.pro_level,4) pro_level, ifnull(dvv.facility_level,4) facility_level
+		, ifnull(dvv.totle_score,4) totle_score
+		 from dr_tb_doctor_vaccine dv 
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+left join dr_tb_doctor_value dvv on d.id=dvv.doctor_id
+left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+where dv.status='A' and dv.vaccine_id=2 
+order by totle_score
+17/02/2015 10:12:14 [debug]: sql :select oo.*,o.coordinate,ol.name,ol.address,ol.description,ol.open_hour ,o.coordinate,
+		substring(coordinate,1,length(SUBSTRING_INDEX(coordinate,",",1))) x,substring(coordinate,length(SUBSTRING_INDEX(coordinate,",",1))+2,length(coordinate))  y
+		from dr_tb_office_openhour oo
+inner join dr_tb_office o on oo.office_id=o.id and o.status='A'
+left join dr_tb_office_lang ol on o.id=ol.oid and ol.lang='zh-cn' 
+where oo.status='A' and oo.doctor_id in (0,1) 
+17/02/2015 10:12:14 [debug]: sql :select distinct dc.id district_id,dcl.name from dr_tb_district dc
+inner join dr_tb_block b on dc.id=b.district_id
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_district_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,1)
+17/02/2015 10:12:14 [debug]: sql :select distinct b.district_id,b.id block_id,bl.name from  dr_tb_block b 
+inner join dr_tb_office o on b.id=o.block_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_block_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,1)
+17/02/2015 10:12:14 [debug]: sql :select * from dr_tb_hot_district hd 
+left join dr_tb_hot_district_lang hdl on hd.id=hdl.oid and hdl.lang='zh-cn' 
+inner join dr_tb_office o on hd.id=o.hot_district_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+where oo.status='A' and oo.doctor_id in (0,1) 
+17/02/2015 10:12:14 [debug]: sql :select distinct dc.id subway_id,dcl.name from dr_tb_subway dc
+inner join dr_tb_subway_station b on dc.id=b.subway_id
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_lang dcl on dc.id=dcl.oid and dcl.lang='zh-cn'
+where oo.doctor_id in (0,1)
+17/02/2015 10:12:14 [debug]: sql :select distinct b.subway_id,b.id station_id,bl.name from  dr_tb_subway_station b 
+inner join dr_tb_office o on b.id=o.station1_id or b.id=o.station2_id
+inner join dr_tb_office_openhour oo on o.id=oo.office_id
+left join dr_tb_subway_station_lang bl on b.id=bl.oid  and bl.lang='zh-cn'
+		where oo.doctor_id in (0,1)
+17/02/2015 10:12:47 [debug]: sql :select * from dr_tb_member
+where status='A' and (  mobile='13751082562' )
+17/02/2015 10:12:48 [debug]: sql :select * from dr_tb_member
+where status='A' and (  mobile='13751082562' )
+17/02/2015 10:12:50 [debug]: sql :select * from dr_tb_member
+where status='A' and (  mobile='13751082562' )
+17/02/2015 10:12:51 [debug]: sql :select * from dr_tb_member
+where status='A' and (  mobile='13751082562' )
+17/02/2015 10:15:19 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='indexpromotion' and status='A'
+		 
+17/02/2015 10:15:19 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4') and status='A'
+		 
+17/02/2015 10:15:19 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+17/02/2015 10:15:19 [debug]: sql :select d.*,dl.*,dv.totle_score,sl.name specialist_id_str from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+    left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+	where d.id in (2,1) and d.status='A'
+	order by totle_score
+	limit 0,4 
+17/02/2015 10:15:19 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+17/02/2015 10:15:19 [debug]: sql :select o.*,ol.*,ifnull(ov.booking_count,0) from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
+	where o.id in (1,2) and o.status='A'
+	order by booking_count
+	limit 0,2 
+17/02/2015 10:15:24 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='indexpromotion' and status='A'
+		 
+17/02/2015 10:15:24 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4') and status='A'
+		 
+17/02/2015 10:15:24 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+17/02/2015 10:15:24 [debug]: sql :select d.*,dl.*,dv.totle_score,sl.name specialist_id_str from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+    left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+	where d.id in (2,1) and d.status='A'
+	order by totle_score
+	limit 0,4 
+17/02/2015 10:15:24 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+17/02/2015 10:15:24 [debug]: sql :select o.*,ol.*,ifnull(ov.booking_count,0) from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
+	where o.id in (1,2) and o.status='A'
+	order by booking_count
+	limit 0,2 
+17/02/2015 10:15:31 [debug]: sql :select distinct o.id , 
+		ol.name ,ol.effect ,ol.used_group  ,ol.ref_price,o.image ,ifnull(ov.booking_count,20) booking_count
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+inner join dr_tb_doctor_vaccine dv on dv.vaccine_id=o.id and dv.status='A'
+inner join dr_tb_doctor d on dv.doctor_id=d.id and d.status='A'
+left join dr_tb_vaccine_value ov on d.id=dv.vaccine_id 
+where o.status='A' 
+order by ov.booking_count 
+17/02/2015 10:15:31 [debug]: sql :select vc.id,vc.seq,vcl.name,vc.category from 
+		dr_tb_vaccine_category vc
+		left join dr_tb_vaccine_category_lang vcl on vc.id=vcl.oid   and vcl.lang='zh-cn'
+		where vc.status='A' 
+		order by vc.seq
+17/02/2015 10:15:31 [debug]: sql :select vcs.id,vcs.seq,vcsl.name,vcs.vaccine_list,vcs.category_id from 
+		dr_tb_vaccine_category_sub vcs
+		left join dr_tb_vaccine_category_sub_lang vcsl on vcs.id=vcsl.oid  and vcsl.lang='zh-cn'
+		inner join dr_tb_vaccine_category vc on vcs.category_id=vc.id and vc.status='A'
+		where vcs.status='A' 
+		order by vcs.seq
+17/02/2015 10:15:36 [debug]: sql :select o.*,ol.*
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+where o.status='A' and o.id=1
+order by o.seq 
+17/02/2015 10:18:07 [debug]: sql :select o.*,ol.*
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+where o.status='A' and o.id=1
+order by o.seq 
+17/02/2015 10:18:15 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='indexpromotion' and status='A'
+		 
+17/02/2015 10:18:15 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4') and status='A'
+		 
+17/02/2015 10:18:15 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+17/02/2015 10:18:15 [debug]: sql :select d.*,dl.*,dv.totle_score,sl.name specialist_id_str from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+    left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+	where d.id in (2,1) and d.status='A'
+	order by totle_score
+	limit 0,4 
+17/02/2015 10:18:15 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+17/02/2015 10:18:15 [debug]: sql :select o.*,ol.*,ifnull(ov.booking_count,0) from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
+	where o.id in (1,2) and o.status='A'
+	order by booking_count
+	limit 0,2 
+17/02/2015 10:18:30 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code ='indexpromotion' and status='A'
+		 
+17/02/2015 10:18:30 [debug]: sql :
+		select code, title_sc name,link,pic_sc pic from dr_tb_banner
+		where code in ('indextop1','indextop2','indextop3','indextop4') and status='A'
+		 
+17/02/2015 10:18:30 [debug]: sql :select doctor_list from dr_tb_doctor_promoted where id=1
+17/02/2015 10:18:30 [debug]: sql :select d.*,dl.*,dv.totle_score,sl.name specialist_id_str from dr_tb_doctor d
+	left join dr_tb_doctor_lang dl on d.id=dl.oid and dl.lang='zh-cn'
+	left join dr_tb_doctor_value dv on d.id=dv.doctor_id
+    left join dr_tb_specialist_lang sl on d.specialist_id=sl.oid and sl.lang='zh-cn'
+	where d.id in (2,1) and d.status='A'
+	order by totle_score
+	limit 0,4 
+17/02/2015 10:18:30 [debug]: sql :select vaccine_list from dr_tb_vaccine_promoted where id=1
+17/02/2015 10:18:30 [debug]: sql :select o.*,ol.*,ifnull(ov.booking_count,0) from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+	left join dr_tb_vaccine_value ov on o.id=ov.vaccine_id
+	where o.id in (1,2) and o.status='A'
+	order by booking_count
+	limit 0,2 
+17/02/2015 10:18:34 [debug]: sql :select o.*,ol.*
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+where o.status='A' and o.id=1
+order by o.seq 
+17/02/2015 10:24:34 [debug]: sql :select o.*,ol.*
+		from dr_tb_vaccine o
+left join dr_tb_vaccine_lang ol on o.id=ol.oid and ol.lang='zh-cn'
+where o.status='A' and o.id=1
+order by o.seq 

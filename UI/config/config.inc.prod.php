@@ -10,6 +10,7 @@ $CONFIG["doctorurl"]="http://www.myhkdoc.com/DoctorCMS";
 $CONFIG['lang']="zh-cn";//en-us
 $CONFIG["SessionName"]="FooterCMSUI";
 $CONFIG["SupportMultiLanguage"]=true;
+$CONFIG["websiteurl"]="http://www.myhkdoc.com/Website/";
 
 $CONFIG['smarty']['rootpath']		= 'http://www.myhkdoc.com'; 
 $CONFIG['solution_configuration']='prod';

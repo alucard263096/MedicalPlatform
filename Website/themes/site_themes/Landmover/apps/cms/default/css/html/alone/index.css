@@ -1,0 +1,100 @@
+
+/*首页背景颜色*/
+.wraper{ background-repeat:no-repeat; background-position: center top; overflow:hidden;}
+*html{background-image: url(about:blank);}
+
+/*首页海报*/
+.posters{height:360px; position:relative; width:980px;}
+.posters ul{ display:block; width:1920px; height:360px; margin-left:-470px; position:absolute; overflow:hidden;}
+.contro-dot{ z-index:100000; bottom:10px; left:10px}
+.contro-dot a{ display:block; width:10px; height:10px; background:url(../../../images/2013v1/dot.png) no-repeat; float:left; margin-right:10px; text-indent:30px; overflow:hidden; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50); opacity:0.5; }
+.contro-dot a.activeSlide{filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100); opacity:1;}
+.posters ul li{display:block; width:1920px; height:360px; position:relative}
+.posters li .notes { height:200px; width:400px; z-index:100; margin-left:470px; padding:50px; font-size:30px; color:#fff; line-height:40px}
+.posters li .notes a{ font-size:14px; color:#fff; text-decoration:none; font-family:"宋体";}
+
+/*首页滚动菜单*/
+.scroll-menu{height:40px;width:100%; background:#009BEF}
+.scroll-menu ul{ margin-left:120px}
+.scroll-menu li{line-height:40px; height:40px; padding:0 30px; background:#0081D4; float:left; color:#fff; font-size:14px; border-right:1px solid #009BEF; cursor:pointer;}
+.fix{position:fixed; top:0; z-index:10000}
+
+/*首页公司动态*/
+.active-news,{ background:#ffffff;}
+.erpsoft{ background:#f5f5f5;}
+.active-news .active{ width:300px; height:330px; float:left; padding-top:10px; margin:10px 0}
+.active-news .active h4{ font-size:16px;}
+.active-news .weibo{width:319px; border-left:1px solid #ccc; padding:10px 0 0 20px; background:none}
+.active-news .weixin{ width:185px; height:72px; background: url(../../../images/2013v1/weixin2code.png) 7px center no-repeat; padding-left:105px; line-height:18px; font-size:14px; padding-top:30px; margin:10px 0 15px 0}
+.active-news .weibo .con{ width:300px; height:290px; }
+
+
+.erpsoft .active{ width:300px; height:130px; float:left; padding-top:10px; margin:10px 0}
+.erpsoft .active h4{ font-size:16px;}
+.erpsoft .weibo{width:319px; border-left:1px solid #ccc; padding:10px 0 0 20px; background:none}
+.erpsoft .weixin{ width:185px; height:72px; background: url(../../../images/2013v1/weixin2code.png) 7px center no-repeat; padding-left:105px; line-height:18px; font-size:14px; padding-top:30px; margin:10px 0 15px 0}
+.erpsoft .weibo .con{ width:300px; height:290px; }
+
+/*移动应用*/
+.mod-title{ padding:30px 0; }
+.mod-title h3{ font-size:36px;}
+
+.mobileapp li,.erpsoft li{ display:block; width:120px; height:100px; margin-left:5px; float:left; overflow:hidden}
+
+.mobileapp li a,.erpsoft li a{display:block; width:120px; height:100px; text-decoration:none}
+.mobileapp li a .icon,.erpsoft li a .icon{display:block; width:120px; height:90px; background:#CCC;}
+.mobileapp li a .tt,.erpsoft li a .tt{display:block; height:44px; line-height:44px;}
+.mobileapp li a .icon{ background:#009BEF;color:white;font-size:25px;text-align:center;line-height:90px; }
+.mobileapp li a:hover .icon{ background-color:#105EA9}
+
+
+/*管理软件*/
+.erpsoft li,.erpsoft li a{ height:130px;color:#FFF; position:relative}
+.erpsoft li a .tt{position:absolute; bottom:0; background:#105EA9 url(../../../images/2013v1/arrow_w.png) 210px center no-repeat; width:210px; height:34px; line-height:18px; padding:10px}
+.erpsoft li a .icon{background:#009BEF; font-size:24px; height:100px; padding-top:30px}
+.erpsoft li a:hover .tt{ background-image:url(../../../images/2013v1/arrow_b.png); color:#009BEF }
+
+.softlist .list{ height:286px; width:230px; float:left}
+.softlist .lingyu{ width:730px; float:right;}
+.softlist .list h4{ font-size:20px; padding:20px 0}
+.softlist .list dt{ font-weight:bold; font-size:14px; padding-bottom:5px}
+.softlist .lingyu dl{ display:block; width:230px; height:80px; float:left; margin-right:20px}
+.mr0{ margin-right:0 !important}
+
+/*关注金蝶*/
+.aboutme{ background:#FFF}
+.aboutme .active{ height:300px}
+.aboutme span.tel{ font-size:20px; color:#005BAC}
+.aboutme .join{ height:50px; line-height:50px; width:280px;}
+.aboutme .join span,.aboutme .join a{ display:block;height:50px; line-height:50px; width:80px; font-size:14px; float:left}
+.aboutme .join a,.table .submit input{ background:#00B9EF; width:100px; text-align:center; height:22px; line-height:22px; color:#fff; margin-top:12px; border:none }
+.table .input_text{ height:25px; width:266px}
+.table span.l{ display:block; width:40px}
+.table .submit input{ margin-top:0; cursor:pointer }
+
+/*成功案例*/
+
+.banner{background-repeat:no-repeat; background-position:center; height:270px}
+.banner .page{position:relative; height:270px}
+.banner .tab{ height:40px; width:980px; position:absolute; bottom:0; text-align:center}
+.banner .tab li{display:inline-block; zoom:1; *display:inline; padding:0 30px; height:40px; margin-left:1px; line-height:40px; color:#fff; background:#009BEF; cursor:pointer}
+.banner .tab li.cur{ background:#fff; color:#005BAC}
+.tabcon dl{ display:block; width:180px; height:510px; float:left; margin-right:20px;}
+.tabcon dl dt,.tabcon h4{ padding:16px 0; border-bottom:1px solid #DCDCDC; font-size:20px; line-height:26px; margin-bottom:10px}
+.tabcon dl dd{ color:#777}
+.tabcon li{ width:300px; height:80px; float:left; padding-right:26px; color:#777}
+.tabcon li span{ display:block; font-weight:bold}
+
+
+/*页脚*/
+.footer{  padding:10px 0}
+.footer dl{ display:block; float:left; width:245px; height:auto}
+.footer dl dt{ padding:10px 0; font:14px; font-weight:bold }
+.bottom-menu{ height:70px; border-top:1px solid #DCDCDC; line-height:70px; margin-top:20px}
+.bottom-menu .l{width:200px;height:70px; line-height:70px; cursor:pointer; position:relative;}
+.bottom-menu .m{width:435px;height:70px; margin-left:5px}
+.bottom-menu .r{width:280px; text-align:right; height:50px; padding-top:20px; padding-right:60px; background:url(../../../images/2013v1/bottom_img_03.jpg) right center no-repeat; line-height:18px}
+.friendly-link{ height:45px; line-height:45px; color:#ccc; background:#777;}
+.friendly-link a{color:#ccc;}
+.footer .uplinks {left:-24px; bottom:48px; background:#fff; padding:10px; z-index:10; line-height:22px; width:80px;}
+.footer .uplinks a{ display:block}
