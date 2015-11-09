@@ -314,7 +314,7 @@ class XmlModel
 			if($value["type"]=="grid"){
 				continue;
 			}
-			$sql=$sql.",".$value["key"]."";
+			$sql=$sql.",`".$value["key"]."`";
 		}
 		$sql=$sql.",created_date,created_user,updated_date,updated_user ) values (";
 		$sql=$sql.$id;
@@ -349,7 +349,7 @@ class XmlModel
 			||$value["type"]=="password"){
 				continue;
 			}
-			$sql=$sql.", ".$value["key"]."='".parameter_filter($request[$value["key"]])."'";
+			$sql=$sql.", `".$value["key"]."`='".parameter_filter($request[$value["key"]])."'";
 		}
 		$sql=$sql." where id=$id";
 		$query = $dbMgr->query($sql);
@@ -357,7 +357,7 @@ class XmlModel
 		foreach ($fields as $value){
 			if($value["type"]=="password"){
 				$sql="update ".$this->XmlData["tablename"]." set ";
-				$sql=$sql." ".$value["key"]."='".md5($request[$value["key"]])."'";
+				$sql=$sql." `".$value["key"]."`='".md5($request[$value["key"]])."'";
 				$sql=$sql." where id=$id and ".$value["key"]."<>'".parameter_filter($request[$value["key"]])."'";
 				$query = $dbMgr->query($sql);
 			}
@@ -367,7 +367,7 @@ class XmlModel
 				$sql="update ".$this->XmlData["tablename"]."_lang set lang='".$lang["code"]."'";
 				foreach ($fields as $value){
 					if($value["ismutillang"]=="1"){
-						$sql=$sql.", ".$value["key"]."='".parameter_filter($request[$value["key"]."_".$lang["code"]])."'";
+						$sql=$sql.", `".$value["key"]."`='".parameter_filter($request[$value["key"]."_".$lang["code"]])."'";
 					}
 				}
 				$sql=$sql." where oid=$id and lang='".$lang["code"]."'";
@@ -384,7 +384,7 @@ class XmlModel
 				$fields=$this->XmlData["fields"]["field"];
 				foreach ($fields as $value){
 					if($value["ismutillang"]=="1"){
-					$sql=$sql.",".$value["key"]."";
+					$sql=$sql.",`".$value["key"]."`";
 					}
 				}
 				$sql=$sql." ) values ( $id ,'".$lang["code"]."' ";
