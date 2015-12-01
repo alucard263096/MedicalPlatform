@@ -98,6 +98,16 @@ class SmsMgr
 		$result=$this->Send("15920593055",$arr,$templeteId);
 	}
 
+	
+	public function SendQuestionForTest($mobile,$question){
+		Global $CONFIG;
+
+		$templeteId=$CONFIG["sms"]["templeteid"]["vaccine_order_info"];
+		
+		$arr=Array($mobile.$question);
+		$result=$this->Send("15920593055",$arr,$templeteId);
+	}
+
 	private function PerpareSendWithVerifyCode($mobile,$type,$templeteId){
 		$lstrs=$this->getLastSent($mobile,$type);
 		if($lstrs["id"]==""){

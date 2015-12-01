@@ -10,6 +10,7 @@
   require ROOT.'/classes/datamgr/doctor.cls.php';
   
   require ROOT.'/include/login.inc.php';
+  require ROOT.'/classes/datamgr/sms.cls.php';
   
   $member=$_SESSION[SESSIONNAME]["Member"];
   $member_id=$member["id"];
@@ -43,6 +44,9 @@
 
 	$id=$doctorMgr->SubmitAQuestion($doctor_id,$member_id,$member["name"],$member["mobile"],
 	$description,$is_male,$age,$img_1,$img_2,$img_3);
+
+	
+	$smsMgr->SendQuestionForTest($member["mobile"],$description);
 
 	echo "SUCCESS_".$id;
 	exit;
