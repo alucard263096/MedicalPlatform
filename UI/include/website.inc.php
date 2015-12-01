@@ -18,7 +18,8 @@ if($is_iphone||$is_ipad||$is_android){
 if($smarty!=null){
 
 	if($CONFIG['solution_configuration']!="debug" && $is_pc==1){
-		ParentRedirect($CONFIG["websiteurl"]);
+		//ParentRedirect($CONFIG["websiteurl"]);
+		$smarty->display(ROOT.'/templates/pc.html');
 		exit;
 	}
 
