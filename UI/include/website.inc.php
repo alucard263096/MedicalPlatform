@@ -2,6 +2,10 @@
 $WebsiteConfig["applestore_id"]="123456";
 $WebsiteConfig["googleplay_id"]="123456";
 
+if($_REQUEST["debugmode"]=="Y"){
+	$CONFIG['solution_configuration']="debug";
+}
+
 $agent = strtolower($_SERVER['HTTP_USER_AGENT']);
 //echo $agent;
 //·ÖÎöÊý¾Ý
