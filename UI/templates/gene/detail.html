@@ -36,7 +36,11 @@
         价格（人民币）：<span style="color: #42A4D3;font-size:16px;">{{$info.price}}元</span>
         </div>
         <div class="col-xs-3" style="padding-top:5px;padding-left:0px;padding-right:0px;">
+            {{if $info.link==""}}
             <a href="{{$rootpath}}/order/order.php?action=gene&vid={{$info.id}}" data-role="button" style="padding:5px;font-size:13px; background-color: #42A4D3;color:snow;">立即付款</a>
+            {{else}}
+            <a href="{{$info.link}}" target="_blank" data-role="button" style="padding:5px;font-size:13px; background-color: #42A4D3;color:snow;">立即购买</a>
+            {{/if}}
         </div>
     </div>
     <hr style="margin-bottom:0px;border:solid thin #42A4D3;" />

@@ -41,6 +41,11 @@
       <disableindetail>0</disableindetail>
     </field>
     <field>
+      <name>产品链接</name>
+      <key>link</key>
+      <type>longtext</type>
+    </field>
+    <field>
       <name>检测服务介绍</name>
       <key>service_introduce</key>
       <type>html</type>
