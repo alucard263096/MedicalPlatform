@@ -84,4 +84,9 @@ $CONFIG["express"]["sceret_key"]="5ff680a328eed4272e31b5fa93b18783";
 $CONFIG["express"]["api_id"]="110815";
 $CONFIG["express"]["type"]="xml";
 
+
+#[PINGXX]
+$CONFIG["pingxx"]["key"]="sk_test_8ynDqHvDenTKabnzH8ijjj1K";
+$CONFIG["pingxx"]["app_id"]="app_fzPu58njXbP4fP8q";
+
 ?>

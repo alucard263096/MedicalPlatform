@@ -14,7 +14,7 @@
   $act=$_GET["act"];
   $id=$_GET["id"];
   $type=$_GET["type"]; 
-
+/*
   if($act=="gn"&&$type=="ALIPAY"){
 	
   require ROOT.'/classes/paymentmgr/alipay.cls.php';
@@ -30,5 +30,18 @@
 	$alipay->submit($url,$info["order_no"],"Gene Checking".$info["order_no"],$info["price"],$info["trade_pin_code"]);
 	
   }
+  */
+
+  require ROOT.'/classes/paymentmgr/pingxx.cls.php';
+
+	$orderMgr->updateGeneOrderPaymentInfo($id,$type);
+	
+	$info=$orderMgr->getGeneAppointment($id);
+	$url=$CONFIG['URL']."/member/booking.php?act=gn&id=".$id;
+	//if($info["is_submit"]=="Y"){
+	//	ParentRedirect($url);
+	//}
+	$pay=new PingxxMgr();
+	$pay->submit($url,$info["order_no"],"Gene Checking".$info["order_no"],$info["price"],$info["trade_pin_code"]);
 
 ?>

@@ -77,12 +77,18 @@ $CONFIG["map"]["ak"]="nWM2HguMVHFCHcEBsNAaCnwd";
 $CONFIG["alipay"]["partner"]="2088911650995124";
 $CONFIG["alipay"]["seller_email"]="admin@imedlinks.com";
 $CONFIG["alipay"]["key"]="q6c0lw514g7hk1mn41ivdjjtowqt3mfn";
-$CONFIG["alipay"]["notify_url"]=$CONFIG['URL']."/payment/notify_alipay.php";;
+$CONFIG["alipay"]["notify_url"]=$CONFIG['URL']."/payment/notify_alipay.php";
 $CONFIG["alipay"]["call_back_url"]=$CONFIG['URL']."/payment/callback_alipay.php";
 
 #[EXPRESS]
 $CONFIG["express"]["sceret_key"]="5ff680a328eed4272e31b5fa93b18783";
 $CONFIG["express"]["api_id"]="110815";
 $CONFIG["express"]["type"]="xml";
+
+
+#[PINGXX]
+$CONFIG["pingxx"]["key"]="sk_test_8ynDqHvDenTKabnzH8ijjj1K";
+$CONFIG["pingxx"]["app_id"]="app_fzPu58njXbP4fP8q";
+
 
 ?>
