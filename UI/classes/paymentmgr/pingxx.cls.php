@@ -90,7 +90,7 @@ require_once(ROOT.'/libs/pingxx/init.php');
     $ch = \Pingpp\Charge::create(
         array(
             'subject'   => $subject,
-            'body'      => '',
+            'body'      => 'test body',
             'amount'    => $amount,
             'order_no'  => $orderNo,
             'currency'  => 'cny',
